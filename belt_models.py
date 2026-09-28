@@ -222,3 +222,56 @@ def standings(games, reigns):
         out.append({"season": s, "best": best_t, "best_rec": best_v, "holder": holder, "holder_rec": hv,
                     "holder_rank": rank, "teams": len(eligible), "match": holder == best_t})
     return out
+
+
+def what_if(key, games, belt_games, reigns, tie_rule, recent, today, gap_days, start=None, picks=24):
+    """Flip famous belt games and replay history. Returns one entry per flip:
+    who'd hold the belt today, and when (if ever) the alternate belt rejoined
+    the real one."""
+    by_id = {str(g["id"]): i for i, g in enumerate(games)}
+    changes = [bg for bg in belt_games if bg["outcome"] == "changed"]
+    chosen, seen = [], set()
+
+    def add(bg):
+        if bg["n"] not in seen and str(bg.get("game_id")) in by_id:
+            seen.add(bg["n"])
+            chosen.append(bg)
+
+    ender = {}
+    for r in reigns:
+        if r.get("end_date"):
+            ender[r["index"]] = r
+    for r in sorted(reigns, key=lambda r: -r.get("defenses", 0))[:8]:     # the games that ended the longest reigns
+        nxt = next((bg for bg in changes if bg.get("holder") == r["team"] and bg["date"] == (r.get("end_date") or "")), None)
+        if nxt:
+            add(nxt)
+    for bg in [b for b in changes if b["season_type"] != "regular"][-8:]:   # recent playoff title changes
+        add(bg)
+    for bg in changes[-8:]:                                                  # the latest title changes
+        add(bg)
+    real_tail = [(str(b.get("game_id")), b["new_holder"]) for b in belt_games]
+    out = []
+    for bg in chosen[:picks]:
+        i = by_id[str(bg["game_id"])]
+        g = dict(games[i])
+        g["home_points"], g["away_points"] = g["away_points"], g["home_points"]
+        if g["home_points"] == g["away_points"]:
+            continue
+        alt_games = games[:i] + [g] + games[i + 1:]
+        abgs, areigns, _ = belt_engine.resolve_vacancies(alt_games, tie_rule, start["team"] if start else None, start, recent, today,
+                                                        gap_threshold_days=gap_days, first_game_date=start["start_date"] if start else games[0]["date"])
+        alt = [(str(b.get("game_id")), b["new_holder"]) for b in abgs]
+        # longest common suffix = where the two histories agree again
+        k = 0
+        while k < min(len(alt), len(real_tail)) and alt[-1 - k] == real_tail[-1 - k]:
+            k += 1
+        rejoin = None
+        if k:
+            gid = alt[len(alt) - k][0]
+            rejoin = next((b["date"] for b in abgs[len(alt) - k:len(alt) - k + 1]), None)
+        after = [r for r in areigns if r["start_date"] >= bg["date"]]
+        out.append({"n": bg["n"], "date": bg["date"], "flip_winner": bg["holder"], "flip_loser": bg["opponent"],
+                    "today": areigns[-1]["team"], "rejoin": rejoin if k else None,
+                    "alt_reigns": len([r for r in after if not rejoin or r["start_date"] < rejoin]),
+                    "path": [r["team"] for r in after[:12]]})
+    return out

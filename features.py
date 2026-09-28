@@ -896,6 +896,10 @@ def build_more(lg, d):
         ("playoffs/", "The belt in the playoffs", "Every postseason belt game, season by season."),
         ("splits/", "Home, road & overtime", "Road warriors, home fortresses and extra-time title changes."),
         ("standings/", "Belt vs. the standings", "Did the holder have the best record?"),
+        ("what-if/", "What if?", "Famous title changes flipped and replayed."),
+        ("games/", "Every belt game", "Searchable by team, decade and result."),
+        ("players/", "Players", "Everyone who has played in a belt game, with stats."),
+        ("leaders/", "Belt-game leaders", "Career and single-game leaders when the belt is on the line."),
         ("data/", "Data & press", "Every reign and belt game as CSV, plus the API."),
         ("/embed/", "Badge for your site", "A badge that always shows the current holder."),
         ("feed.xml", "RSS feed", f"Every {lg['name']} title change, as it happens."),
@@ -1606,6 +1610,7 @@ def build_game_pages(lg, d):
   <p>{prev_txt}</p>
   <p>{after}</p>
   {numbers([(f"{r['index']:,}", "Reign number"), (r['reign_no'], "Team's reign"), (r.get('defenses', 0), "Defenses"), (f"{r['days']:,}", "Days held")])}
+  {box_html(lg, d, bg)}
   <p class="mono more"><a href="{team_url(lg, w)}">{e(n(w))} belt history →</a> · <a href="{b(lg)}/compare/?a={w}&amp;b={l}">{e(lg['short_name'](w))} vs. {e(lg['short_name'](l))} →</a></p>
   {nav}
 </section>"""
@@ -1640,6 +1645,7 @@ def build_defense_pages(lg, d):
 </section>
 <section class="wrap block prose">
   {recap_html(lg, rc)}
+  {box_html(lg, d, bg)}
   <p class="mono more"><a href="{b(lg)}/seasons/{s}/#g{bg['n']}">{e(sl(lg, s))} season →</a> · <a href="{team_url(lg, h)}">{e(n(h))} belt history →</a></p>
 </section>"""
         page(lg, f"{rc.get('headline') or n(h, s) + ' keep the ' + lg['name'] + ' belt'} ({S.d_short(bg['date'], True)})", body, f"games/{bg['n']}/",
@@ -1660,6 +1666,7 @@ def latest_recap_card(lg, d):
 
 
 def build_batch2(lg, d):
+    build_players(lg, d)
     build_schedule(lg, d)
     build_lean(lg, d)
     build_dod(lg, d)
@@ -1670,6 +1677,7 @@ def build_batch2(lg, d):
     build_data(lg, d)
     build_game_pages(lg, d)
     build_defense_pages(lg, d)
+    build_what_if(lg, d)
 
 
 # ================================================== long tables (tablekit) ==
@@ -1863,3 +1871,265 @@ def build_tables(lg, d):
     build_teams_table(lg, d)
     build_rivalries_table(lg, d)
     build_losers_table(lg, d)
+
+
+def build_what_if(lg, d):
+    wi = (d.get("models") or {}).get("what_if") or []
+    if not wi:
+        return
+    n = lg["team_name"]
+    today_holder = d["current"]["team"]
+    cards = []
+    bg_by_n = {bg["n"]: bg for bg in d["belt_games"]}
+    for x in wi:
+        bg = bg_by_n.get(x["n"])
+        s = bg["season"] if bg else int(x["date"][:4])
+        real = f'{e(n(x["flip_loser"], s))} beat {e(n(x["flip_winner"], s))} {_winner_score(bg)}' if bg else ""
+        alt_path = x["path"][:max(1, x["alt_reigns"])] if x["rejoin"] else x["path"][:8]
+        path = " → ".join(e(lg["short_name"](t)) for t in alt_path)
+        if x["rejoin"]:
+            days = (date.fromisoformat(x["rejoin"]) - date.fromisoformat(x["date"])).days
+            verdict = (("History snaps back fast" if days < 60 else "It takes a while") + f": the belt is back on its real path by {S.d_long(x['rejoin'])}, "
+                       f"{S.plural(days, 'day')} later" + (f", after {S.plural(x['alt_reigns'], 'reign')} that never happened." if x["alt_reigns"] else "."))
+        else:
+            verdict = f"The belt never finds its way back. Today it would belong to <b>{e(n(x['today']))}</b>, not {e(n(today_holder))}."
+        cards.append(f"""<div class="wicard">
+  <div class="kicker">{S.d_long(x['date'])} · {e(sl(lg, s))}</div>
+  <h3 class="disp">What if {e(n(x['flip_winner'], s))} had won?</h3>
+  <p class="mono note">Real result: {real}{(' · <a href="' + game_url(lg, bg) + '">the game</a>') if bg else ''}</p>
+  <p>{verdict}</p>
+  {f'<p class="mono note">The alternate belt: {path}</p>' if path else ''}
+</div>""")
+    changed = sum(1 for x in wi if not x["rejoin"])
+    body = f"""{S.subnav(lg, "more")}
+<section class="wrap block">
+  <div class="head"><h1 class="disp">What if?</h1><span class="mono note">{len(wi)} famous title changes, replayed the other way</span></div>
+  <p class="intro">We took famous {e(lg['name'])} title changes, flipped the result, and replayed every game since through the same rules. Sometimes the belt finds its way home within days. {"Sometimes it never does." if changed else "So far, every alternate belt has found its way home."}</p>
+  <div class="wigrid">{"".join(cards)}</div>
+</section>"""
+    page(lg, f"What if? {lg['name']} belt history replayed", body, "what-if/",
+         f"Famous {lg['name']} belt title changes flipped and replayed: would the lineal belt ever find its way back?")
+
+
+# ============================================================ player data ==
+# Box scores for belt games (data/<lg>/box/belt_box.json):
+#   {"games": {belt game n: {"gid", "players": [[id, name, side h/a, *stats]]}}}
+# with the stat columns listed in BOX_SCHEMA for each league.
+
+BOX_SCHEMA = {
+    "nba": {"cols": ["MIN", "PTS", "REB", "AST", "STL", "BLK", "FGM", "FGA", "3PM", "3PA", "FTM", "FTA"],
+            "since": {"REB": 1950, "MIN": 1951, "STL": 1973, "BLK": 1973, "3PM": 1979, "3PA": 1979},
+            "show": ["MIN", "PTS", "REB", "AST", "STL", "BLK", ("FG", "FGM", "FGA"), ("3P", "3PM", "3PA"), ("FT", "FTM", "FTA")],
+            "totals": ["PTS", "REB", "AST", "STL", "BLK", "3PM"], "key": "PTS",
+            "leaders": [("PTS", "Points"), ("REB", "Rebounds"), ("AST", "Assists"), ("STL", "Steals"), ("BLK", "Blocks"), ("3PM", "Threes")],
+            "source": ('Player box scores: <a href="https://www.kaggle.com/datasets/eoinamoore/historical-nba-data-and-player-box-scores">'
+                       'Historical NBA Data and Player Box Scores</a> by Eoin Moore (CC0).')},
+}
+
+
+def _box(lg):
+    p = os.path.join("data", lg.get("key", ""), "box", "belt_box.json")
+    if os.path.exists(p):
+        with open(p) as f:
+            return (json.load(f) or {}).get("games") or {}
+    return {}
+
+
+def _stat_rows(lg, box):
+    """Normalize to {n: [(pid, name, side, {stat: value or None})]} with era gaps blanked."""
+    sc = BOX_SCHEMA[lg["key"]]
+    out = {}
+    for n_, g in box.items():
+        out[int(n_)] = g["players"]
+    return sc, out
+
+
+def player_slug(name, pid):
+    return f"{S.slug(name)}-{pid}"
+
+
+def build_players(lg, d):
+    k = lg.get("key")
+    if k not in BOX_SCHEMA:
+        return
+    box = _box(lg)
+    if not box:
+        return
+    sc = BOX_SCHEMA[k]
+    cols = sc["cols"]
+    ix = {c: i + 3 for i, c in enumerate(cols)}
+    n = lg["team_name"]
+    by_n = {bg["n"]: bg for bg in d["belt_games"]}
+    players = {}
+    game_lines = defaultdict(list)   # belt game n -> rows with team code
+
+    def val(row, c, season):
+        v = row[ix[c]] if ix[c] < len(row) else None
+        if v is None:
+            return None
+        if sc["since"].get(c) and season < sc["since"][c]:
+            return None
+        return v
+
+    for n_str, g in box.items():
+        bg = by_n.get(int(n_str))
+        if not bg:
+            continue
+        s = bg["season"]
+        home = bg["home"]
+        away = bg["opponent"] if bg["home"] == bg.get("holder") else bg.get("holder") or bg["opponent"]
+        hp, ap = (int(x) for x in bg["score"].split("-"))
+        for row in g["players"]:
+            pid, name, side = str(row[0]), row[1], row[2]
+            team = home if side == "h" else away
+            opp = away if side == "h" else home
+            stats = {c: val(row, c, s) for c in cols}
+            if (stats.get("FGA") is not None and stats.get("FGM") is not None and stats["FGA"] < stats["FGM"]):
+                stats["FGA"] = None
+            won = (hp > ap) if side == "h" else (ap > hp)
+            p = players.setdefault(pid, {"name": name, "games": [], "teams": Counter()})
+            p["teams"][team] += 1
+            kind = ("took" if bg["outcome"] == "changed" and bg["new_holder"] == team else
+                    "lost" if bg["outcome"] == "changed" else
+                    "kept" if bg.get("holder") == team else "fell")
+            p["games"].append((bg, team, opp, won, kind, stats))
+            game_lines[bg["n"]].append((pid, name, team, stats))
+    if not players:
+        return
+    # ---- player pages
+    rows = []
+    teams_all = set()
+    for pid, p in players.items():
+        gs = sorted(p["games"], key=lambda x: x[0]["n"])
+        slug = player_slug(p["name"], pid)
+        url = f"{b(lg)}/players/{slug}/"
+        p["url"] = url
+        w = sum(1 for x in gs if x[3])
+        took = sum(1 for x in gs if x[4] == "took")
+        tot = {c: sum((x[5].get(c) or 0) for x in gs) for c in sc["totals"]}
+        main_team = p["teams"].most_common(1)[0][0]
+        teams_all |= set(p["teams"])
+        best = max(gs, key=lambda x: x[5].get(sc["key"]) or 0)
+        p.update({"n": len(gs), "w": w, "took": took, "tot": tot, "main": main_team, "best": best})
+        head = "".join(f'<th class="mono r">{e(c if isinstance(c, str) else c[0])}</th>' for c in sc["show"])
+
+        def cell(stats, c):
+            if isinstance(c, str):
+                v = stats.get(c)
+                return "—" if v is None else (f"{v:g}" if isinstance(v, float) else str(v))
+            m, a = stats.get(c[1]), stats.get(c[2])
+            return "—" if m is None or a is None else f"{m}-{a}"
+
+        trs = "".join(
+            f'<tr><td class="mono">{S.d_short(bg["date"], True)}</td><td>{e(lg["short_name"](team))} {"vs." if bg["home"] == team else "at"} {e(n(opp, bg["season"]))}'
+            f'<small>{"Took the belt" if kind == "took" else "Lost the belt" if kind == "lost" else "Kept the belt" if kind == "kept" else "Challenger, lost"} · {_winner_score(bg)}</small></td>'
+            f'<td class="mono">{"W" if won else "L"}</td>' + "".join(f'<td class="mono r">{cell(st, c)}</td>' for c in sc["show"]) + "</tr>"
+            for bg, team, opp, won, kind, st in reversed(gs))
+        teams_line = ", ".join(e(n(t)) for t, _ in p["teams"].most_common())
+        pp, s2 = lg["team_colors"](main_team)
+        top, bottom, ink, accent = S.plate(pp, s2)
+        per = sc["key"]
+        avg = tot.get(per, 0) / len(gs) if gs else 0
+        body = f"""{S.subnav(lg, "more")}
+<section class="plate slim" style="--top:{top};--bottom:{bottom};--ink:{ink};--accent:{accent}">
+  <div class="wrap-in">
+    <div class="kicker dot">{e(lg['name'])} belt games · {teams_line}</div>
+    <h1 class="disp holder" style="--fit:{max(len(x) for x in p['name'].split())}">{e(p['name'])}</h1>
+    <p class="lede">Played in {S.plural(len(gs), 'belt game')} from {S.d_long(gs[0][0]['date'])} to {S.d_long(gs[-1][0]['date'])}, winning {w}. {f"Helped take the belt {S.plural(took, 'time')}." if took else ""}</p>
+  </div>
+</section>
+<section class="wrap block">
+  {numbers([(len(gs), "Belt games"), (f"{w}–{len(gs) - w}", "Record"), (took, "Title-winning games"), (f"{avg:.1f}", f"{per} per belt game")])}
+  <p class="intro">Belt-game totals: {", ".join(f"{tot[c]:,} {c}" for c in sc["totals"] if tot.get(c))}.</p>
+  <div class="tablewrap"><table class="history box"><thead><tr><th class="mono">Date</th><th class="mono">Game</th><th class="mono">W/L</th>{head}</tr></thead><tbody>{trs}</tbody></table></div>
+  <p class="mono note">{sc['source']} Stats a season didn't track show as —.</p>
+  <p class="mono more"><a href="{b(lg)}/players/">All players →</a> · <a href="{b(lg)}/leaders/">Belt-game leaders →</a></p>
+</section>"""
+        page(lg, f"{p['name']} in {lg['name']} belt games", body, f"players/{slug}/",
+             f"{p['name']}: {len(gs)} lineal {lg['name']} belt games, {w} wins, {took} title-winning games. Every belt-game stat line.")
+        rows.append({"c": [f'<i style="background:{pp}"></i><a href="{url}">{e(p["name"])}</a><small>{e(lg["short_name"](main_team))}</small>',
+                           str(len(gs)), f"{w}–{len(gs) - w}", str(took)] + [f"{tot.get(c, 0):,}" for c in sc["totals"][:3]] + [f"{avg:.1f}"],
+                     "t": (p["name"] + " " + " ".join(n(t) for t in p["teams"])).lower(),
+                     "k": [p["name"].split()[-1] + " " + p["name"], len(gs), w, took] + [tot.get(c, 0) for c in sc["totals"][:3]] + [round(avg, 2)],
+                     "f": {"team": main_team}})
+    rows.sort(key=lambda r: -r["k"][1])
+    paged_table(lg, "players/", title=f"Every player in a {lg['name']} belt game", subnav_on="more",
+                description=f"Every player who has appeared in a lineal {lg['name']} belt game, with belt-game records and stats.",
+                heading=f"Players in {lg['name']} belt games", note=f"{len(players):,} players",
+                intro=f'<p class="intro">Everyone who has played with the belt on the line. Search a name, filter by team, or sort any column. <a href="{b(lg)}/leaders/">Belt-game leaders →</a></p>',
+                columns=[("Player", "", True), ("Belt games", "mono r", True), ("W–L", "mono r", True), ("Title wins", "mono r", True)]
+                + [(c, "mono r", True) for c in sc["totals"][:3]] + [(f"{sc['key']}/G", "mono r", True)],
+                rows=rows, order_labels=None, filters=[("team", "Any team", [(t, n(t)) for t in sorted(teams_all, key=lambda t: n(t))])],
+                empty="No players match.")
+    # ---- leaders
+    plist = list(players.items())
+
+    def lead_table(title, items):
+        trs = "".join(f'<tr><td class="mono n">{i}</td><td><a href="{p["url"]}">{e(p["name"])}</a><small>{e(lg["short_name"](p["main"]))}</small></td><td class="mono r">{v}</td></tr>'
+                      for i, (p, v) in enumerate(items, 1))
+        return f'<div><h2 class="disp sub">{e(title)}</h2><table class="history"><tbody>{trs}</tbody></table></div>'
+
+    def top(f, k_=10):
+        return sorted(((p, f(p)) for _, p in plist), key=lambda x: -x[1])[:k_]
+
+    career = [lead_table("Most belt games", [(p, f"{v:,}") for p, v in top(lambda p: p["n"])]),
+              lead_table("Most belt-game wins", [(p, f"{v:,}") for p, v in top(lambda p: p["w"])]),
+              lead_table("Most title-winning games", [(p, f"{v:,}") for p, v in top(lambda p: p["took"])])]
+    career += [lead_table(f"Career {lab.lower()} in belt games", [(p, f"{v:,}") for p, v in top(lambda p, c=c: p["tot"].get(c, 0))])
+               for c, lab in sc["leaders"] if c in sc["totals"]]
+    singles = []
+    for c, lab in sc["leaders"][:4]:
+        best = []
+        for _, p in plist:
+            for bg, team, opp, won, kind, st in p["games"]:
+                if st.get(c) is not None:
+                    best.append((st[c], p, bg, opp))
+        best.sort(key=lambda x: -x[0])
+        trs = "".join(f'<tr><td class="mono">{v}</td><td><a href="{p["url"]}">{e(p["name"])}</a><small>vs. {e(n(opp, bg["season"]))} · {S.d_short(bg["date"], True)}</small></td></tr>'
+                      for v, p, bg, opp in best[:10])
+        singles.append(f'<div><h2 class="disp sub">Most {lab.lower()} in one belt game</h2><table class="history"><tbody>{trs}</tbody></table></div>')
+    body = f"""{S.subnav(lg, "more")}
+<section class="wrap block">
+  <div class="head"><h1 class="disp">Belt-game leaders</h1><span class="mono note">{len(players):,} players · {len(box):,} belt games with box scores</span></div>
+  <p class="intro">Who shows up when the belt is on the line. Counting only {e(lg['name'])} belt games. <a href="{b(lg)}/players/">Every player →</a></p>
+  <div class="leadgrid">{"".join(career)}</div>
+  <div class="leadgrid">{"".join(singles)}</div>
+  <p class="mono note">{sc['source']}</p>
+</section>"""
+    page(lg, f"{lg['name']} belt-game leaders", body, "leaders/",
+         f"Career and single-game leaders in lineal {lg['name']} belt games: points, rebounds, assists, wins and title-winning games.")
+    d["_players"] = players
+    d["_game_lines"] = game_lines
+
+
+def box_html(lg, d, bg):
+    """Full box score for a belt game (used on game pages)."""
+    lines = (d.get("_game_lines") or {}).get(bg["n"])
+    k = lg.get("key")
+    if not lines or k not in BOX_SCHEMA:
+        return ""
+    sc = BOX_SCHEMA[k]
+    players = d.get("_players") or {}
+    n = lg["team_name"]
+    out = []
+    for team in [x for x in (bg["opponent"] if bg["home"] != bg["opponent"] else None, bg["home"]) if x] or []:
+        pass
+    teams = []
+    for pid, name, team, st in lines:
+        if team not in teams:
+            teams.append(team)
+
+    def cell(stats, c):
+        if isinstance(c, str):
+            v = stats.get(c)
+            return "—" if v is None else (f"{v:g}" if isinstance(v, float) else str(v))
+        m, a = stats.get(c[1]), stats.get(c[2])
+        return "—" if m is None or a is None else f"{m}-{a}"
+
+    head = "".join(f'<th class="mono r">{e(c if isinstance(c, str) else c[0])}</th>' for c in sc["show"])
+    for team in teams:
+        rows = sorted([x for x in lines if x[2] == team], key=lambda x: -(x[3].get(sc["key"]) or 0))
+        trs = "".join(f'<tr><td><a href="{players[pid]["url"]}">{e(name)}</a></td>' + "".join(f'<td class="mono r">{cell(st, c)}</td>' for c in sc["show"]) + "</tr>"
+                      for pid, name, t, st in rows if pid in players)
+        out.append(f'<h3 class="disp sub">{e(n(team, bg["season"]))}</h3><div class="tablewrap"><table class="history box"><thead><tr><th class="mono">Player</th>{head}</tr></thead><tbody>{trs}</tbody></table></div>')
+    return f'<section class="pv-sec"><div class="kicker">Box score</div>{"".join(out)}<p class="mono note">{sc["source"]}</p></section>'

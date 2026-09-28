@@ -320,3 +320,10 @@ ol.degrees{list-style:none;padding:0;margin:0;border-top:1px solid var(--line2)}
 th[data-k]{cursor:pointer;user-select:none;white-space:nowrap}th[data-k]:after{content:" ↕";opacity:.35}th.tk-up:after{content:" ↑";opacity:1}th.tk-down:after{content:" ↓";opacity:1}
 .tk-empty{display:none;padding:18px 0;color:var(--muted)}
 tr.cur td{background:rgba(169,127,56,.14)}
+
+.wigrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.wicard{background:var(--card);border:1px solid var(--line);padding:18px 20px}.wicard h3{font-size:26px;margin:6px 0 4px;line-height:1}.wicard p{margin:8px 0}
+@media (max-width:900px){.wigrid{grid-template-columns:1fr}}
+
+.leadgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-bottom:26px}
+.box td,.box th{padding:6px 8px;font-size:13px}.box td small{display:block}
+@media (max-width:900px){.leadgrid{grid-template-columns:1fr}}

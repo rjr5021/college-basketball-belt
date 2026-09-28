@@ -189,6 +189,7 @@ def main(today=None):
                      for g in fut if holder in (g["home"], g["away"])][:40],
         "meet": {t: [g["date"], g["home"]] for g in reversed(fut) if holder in (g["home"], g["away"])
                  for t in [g["away"] if g["home"] == holder else g["home"]]},
+        "what_if": M.what_if("cbb", games, belt_games, reigns, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS, start=start),
         "losers": M.losers("cbb", games, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS),
     }
     extras["models"] = models
@@ -196,6 +197,8 @@ def main(today=None):
     team_info = {}
     everyone = set(n_reigns) | {t for bg in belt_games for t in (bg.get("holder"), bg["opponent"]) if t}
     everyone |= set(models["elo"]) | {models["losers"]["current"]["team"]}
+    everyone |= {t for x in models["what_if"] for t in x["path"] + [x["today"], x["flip_winner"], x["flip_loser"]]}
+    everyone |= {r[1] for r in models["losers"]["all"]}
     for tid in everyone | ({next_game["challenger"]} if next_game else set()):
         p, s2 = D.colors(teams, tid)
         team_info[tid] = {"name": names.get(tid, tid), "primary": p, "secondary": s2,
