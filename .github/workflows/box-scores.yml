@@ -1,0 +1,43 @@
+# Player box scores for belt games from the CollegeBasketballData API
+# (fetch_boxscores.py). The first run backfills every belt game the API has
+# box scores for (~900 calls, once; CBB_BOX_MAX caps a single run). After
+# that each run costs a call per new belt-game date, and nothing when there
+# are none. Commits data/cbb/box; the next "Update and deploy" run builds
+# the player pages from it.
+name: Box scores
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 10 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: box
+  cancel-in-progress: false
+
+jobs:
+  box:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Belt lineage (for the belt-game list)
+        run: python build_lineage.py
+      - name: Fetch box scores
+        env:
+          CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
+        run: python fetch_boxscores.py
+      - name: Commit box scores
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/cbb/box
+          git diff --cached --quiet && echo "no box score changes" && exit 0
+          git commit -m "Update box scores [skip ci]"
+          for i in 1 2 3 4; do git pull --rebase -X theirs && git push && break; git rebase --abort 2>/dev/null; sleep $((i * 7)); done
