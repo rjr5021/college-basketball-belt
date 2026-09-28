@@ -897,6 +897,9 @@ def build_more(lg, d):
         ("splits/", "Home, road & overtime", "Road warriors, home fortresses and extra-time title changes."),
         ("standings/", "Belt vs. the standings", "Did the holder have the best record?"),
         ("what-if/", "What if?", "Famous title changes flipped and replayed."),
+        ("map/", "The belt map", "Every city that has held it, and the belt's journey."),
+        ("states/", "By state", "Which states have held the belt longest."),
+        ("web/", "Web of the belt", "Who took it from whom, as a network."),
         ("games/", "Every belt game", "Searchable by team, decade and result."),
         ("players/", "Players", "Everyone who has played in a belt game, with stats."),
         ("leaders/", "Belt-game leaders", "Career and single-game leaders when the belt is on the line."),
@@ -944,16 +947,22 @@ def build(lg, d):
 def _extra(lg):
     for p in (os.path.join("data", lg.get("key", ""), "preview_extra.json"), os.path.join("data", "preview_extra.json")):
         if os.path.exists(p):
-            with open(p) as f:
-                return json.load(f) or {}, os.path.dirname(p)
+            try:
+                with open(p) as f:
+                    return json.load(f) or {}, os.path.dirname(p)
+            except ValueError:
+                return {}, os.path.dirname(p)
     return {}, None
 
 
 def _ledger(folder):
     p = os.path.join(folder or "", "lean_ledger.json")
     if folder and os.path.exists(p):
-        with open(p) as f:
-            return json.load(f) or []
+        try:
+            with open(p) as f:
+                return json.load(f) or []
+        except ValueError:
+            return []
     return []
 
 
@@ -1540,8 +1549,11 @@ def build_data(lg, d):
 def _recaps(lg):
     for p in (os.path.join("data", lg.get("key", ""), "recaps.json"), os.path.join("data", "recaps.json")):
         if os.path.exists(p):
-            with open(p) as f:
-                return json.load(f) or {}
+            try:
+                with open(p) as f:
+                    return json.load(f) or {}
+            except ValueError:
+                return {}
     return {}
 
 
@@ -1678,6 +1690,7 @@ def build_batch2(lg, d):
     build_game_pages(lg, d)
     build_defense_pages(lg, d)
     build_what_if(lg, d)
+    build_geo(lg, d)
 
 
 # ================================================== long tables (tablekit) ==
@@ -2133,3 +2146,182 @@ def box_html(lg, d, bg):
                       for pid, name, t, st in rows if pid in players)
         out.append(f'<h3 class="disp sub">{e(n(team, bg["season"]))}</h3><div class="tablewrap"><table class="history box"><thead><tr><th class="mono">Player</th>{head}</tr></thead><tbody>{trs}</tbody></table></div>')
     return f'<section class="pv-sec"><div class="kicker">Box score</div>{"".join(out)}<p class="mono note">{sc["source"]}</p></section>'
+
+
+# ================================================= map, journey, states, web ==
+
+D3 = "https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"
+TOPO = "https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"
+
+
+def _place(lg, code, season=None):
+    fn = lg.get("place")
+    if fn:
+        return fn(code, season)
+    try:
+        import places
+    except ImportError:
+        return None
+    return places.place(lg["team_name"](code, season) if season is not None else lg["team_name"](code))
+
+
+def _geo_reigns(lg, d):
+    out = []
+    for r in d["reigns"]:
+        p = _place(lg, r["team"], r.get("season"))
+        if p:
+            out.append((r, p))
+    return out
+
+
+def build_states(lg, d):
+    gr = _geo_reigns(lg, d)
+    if len(gr) < len(d["reigns"]) * 0.8:
+        return
+    try:
+        from places import STATE_NAMES
+    except ImportError:
+        STATE_NAMES = {}
+    days, reigns, teams = Counter(), Counter(), defaultdict(set)
+    for r, (city, st, la, lo) in gr:
+        days[st] += r["days"]
+        reigns[st] += 1
+        teams[st].add(r["team"])
+    tot = sum(days.values()) or 1
+    rows = "".join(
+        f'<tr><td>{e(STATE_NAMES.get(s_, s_))}</td><td class="bar"><span style="width:{v / days.most_common(1)[0][1] * 100:.1f}%;background:var(--brass)"></span></td>'
+        f'<td class="mono r">{v:,}</td><td class="mono r">{pct(v / tot)}</td><td class="mono r">{reigns[s_]:,}</td>'
+        f'<td><small>{", ".join(e(lg["short_name"](t)) for t in sorted(teams[s_], key=lambda t: lg["short_name"](t)))}</small></td></tr>'
+        for s_, v in days.most_common())
+    body = f"""{S.subnav(lg, "more")}
+<section class="wrap block">
+  <div class="head"><h1 class="disp">The {e(lg['name'])} belt by state</h1><span class="mono note">{len(days)} states and provinces have held it</span></div>
+  <p class="intro">Days with the belt, by where the holder played. <a href="{b(lg)}/map/">See it on the map →</a></p>
+  <div class="tablewrap"><table class="history odds"><thead><tr><th class="mono">State / province</th><th></th><th class="mono r">Days</th><th class="mono r">Share</th><th class="mono r">Reigns</th><th class="mono">Teams</th></tr></thead><tbody>{rows}</tbody></table></div>
+</section>"""
+    page(lg, f"The {lg['name']} belt by state", body, "states/", f"Which states and provinces have held the lineal {lg['name']} belt, and for how long.")
+
+
+def build_map(lg, d):
+    gr = _geo_reigns(lg, d)
+    if len(gr) < len(d["reigns"]) * 0.8:
+        return
+    cities, cidx = [], {}
+    agg = defaultdict(lambda: [0, 0, set()])
+    reigns = []
+    teams, tidx = [], {}
+    for r, (city, st, la, lo) in gr:
+        k = f"{city}, {st}"
+        if k not in cidx:
+            cidx[k] = len(cities)
+            cities.append([k, lo, la])
+        era = lg["team_name"](r["team"], r.get("season"))
+        if era not in tidx:
+            tidx[era] = len(teams)
+            teams.append([era, lg["team_colors"](r["team"])[0]])
+        a = agg[k]
+        a[0] += r["days"]
+        a[1] += 1
+        a[2].add(lg["short_name"](r["team"]))
+        reigns.append([r["start_date"], cidx[k], tidx[era], r.get("defenses", 0)])
+    for c in cities:
+        a = agg[c[0]]
+        c += [a[0], a[1], ", ".join(sorted(a[2]))]
+    S.write(out(lg, "map/data.json"), json.dumps({"cities": cities, "teams": teams, "reigns": reigns}, separators=(",", ":")))
+    body = f"""{S.subnav(lg, "more")}
+<section class="wrap block">
+  <div class="head"><h1 class="disp">The {e(lg['name'])} belt map</h1><span class="mono note">{len(cities)} cities · circle size = days held</span></div>
+  <div class="mapbar"><button class="mono" id="play">▶ Play the journey</button><input type="range" id="slider" min="0" value="0" aria-label="Reign"><span class="mono note" id="mlabel">Every city that has held the belt</span></div>
+  <div id="map" class="mapbox"></div>
+  <p class="mono note"><a href="{b(lg)}/states/">By state →</a> · <a href="{b(lg)}/web/">Web of the belt →</a></p>
+</section>
+<script src="{D3}"></script><script src="{TOPO}"></script>
+<script>
+(function(){{
+var box=document.getElementById('map'),W=box.clientWidth,H=Math.round(W*0.62),svg=d3.select(box).append('svg').attr('viewBox','0 0 '+W+' '+H);
+var tip=d3.select(box).append('div').attr('class','maptip');
+Promise.all([fetch('{b(lg)}/map/data.json').then(function(r){{return r.json();}}),
+ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json').then(function(r){{return r.json();}}),
+ fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json').then(function(r){{return r.json();}})]).then(function(a){{
+ var D=a[0],world=a[1],us=a[2];
+ var pts={{type:'MultiPoint',coordinates:D.cities.map(function(c){{return [c[1],c[2]];}})}};
+ var proj=d3.geoConicConformal().parallels([30,50]).rotate([96,0]).fitExtent([[30,30],[W-30,H-30]],pts),path=d3.geoPath(proj);
+ var countries=topojson.feature(world,world.objects.countries).features.filter(function(f){{return ['840','124','484'].indexOf(String(f.id))>=0;}});
+ svg.append('g').selectAll('path').data(countries).join('path').attr('d',path).attr('class','land');
+ svg.append('path').datum(topojson.mesh(us,us.objects.states,function(a,b){{return a!==b;}})).attr('d',path).attr('class','borders');
+ var mx=d3.max(D.cities,function(c){{return c[3];}}),r=d3.scaleSqrt().domain([0,mx]).range([2,Math.max(18,W/40)]);
+ var g=svg.append('g');
+ var dots=g.selectAll('circle').data(D.cities).join('circle').attr('cx',function(c){{return proj([c[1],c[2]])[0];}}).attr('cy',function(c){{return proj([c[1],c[2]])[1];}})
+  .attr('r',function(c){{return r(c[3]);}}).attr('class','city')
+  .on('mousemove',function(ev,c){{tip.style('display','block').style('left',(ev.offsetX+12)+'px').style('top',(ev.offsetY+12)+'px').html('<b>'+c[0]+'</b><br>'+c[3].toLocaleString()+' days · '+c[4]+' reigns<br><small>'+c[5]+'</small>');}})
+  .on('mouseleave',function(){{tip.style('display','none');}});
+ var sl=document.getElementById('slider'),lab=document.getElementById('mlabel'),btn=document.getElementById('play'),timer=null;
+ sl.max=D.reigns.length-1;
+ var belt=g.append('circle').attr('r',9).attr('class','beltdot').style('display','none'),trail=g.append('path').attr('class','trail');
+ function show(i){{var rg=D.reigns[i],c=D.cities[rg[1]],p=proj([c[1],c[2]]),t=D.teams[rg[2]];
+  belt.style('display',null).attr('fill',t[1]).transition().duration(timer?120:0).attr('cx',p[0]).attr('cy',p[1]);
+  var tr=D.reigns.slice(Math.max(0,i-12),i+1).map(function(x){{var cc=D.cities[x[1]];return proj([cc[1],cc[2]]);}});
+  trail.attr('d',d3.line().curve(d3.curveCatmullRom)(tr));
+  lab.textContent=rg[0].slice(0,4)+' · '+t[0]+' ('+c[0]+')';}}
+ sl.oninput=function(){{show(+sl.value);}};
+ btn.onclick=function(){{if(timer){{clearInterval(timer);timer=null;btn.textContent='▶ Play the journey';return;}}
+  if(+sl.value>=D.reigns.length-1)sl.value=0;btn.textContent='❚❚ Pause';var step=Math.max(1,Math.round(D.reigns.length/900));
+  timer=setInterval(function(){{var v=+sl.value+step;if(v>=D.reigns.length){{v=D.reigns.length-1;clearInterval(timer);timer=null;btn.textContent='▶ Play again';}}sl.value=v;show(v);}},60);}};
+ }});
+}})();
+</script>"""
+    page(lg, f"The {lg['name']} belt map and journey", body, "map/",
+         f"Every city that has held the lineal {lg['name']} belt, and an animated journey of the belt from city to city since {lg['first_season']}.")
+
+
+def build_web(lg, d, max_nodes=60):
+    ch = [bg for bg in d["belt_games"] if bg["outcome"] == "changed" and bg.get("holder")]
+    days = Counter()
+    for r in d["reigns"]:
+        days[r["team"]] += r["days"]
+    keep = {t for t, _ in days.most_common(max_nodes)}
+    pairs = Counter()
+    for bg in ch:
+        a, bb = bg["holder"], bg["new_holder"]
+        if a in keep and bb in keep:
+            pairs[(a, bb)] += 1
+    nodes = [{"id": t, "n": lg["team_name"](t), "s": lg["short_name"](t), "c": lg["team_colors"](t)[0], "d": days[t], "u": team_url(lg, t)} for t in keep]
+    links = [{"source": a, "target": bb, "w": w} for (a, bb), w in pairs.items()]
+    S.write(out(lg, "web/data.json"), json.dumps({"nodes": nodes, "links": links}, separators=(",", ":")))
+    body = f"""{S.subnav(lg, "more")}
+<section class="wrap block">
+  <div class="head"><h1 class="disp">Web of the belt</h1><span class="mono note">{len(nodes)} teams · {sum(pairs.values()):,} handoffs</span></div>
+  <p class="intro">Every line is a handoff: one team took the belt straight from another. Thicker lines, more handoffs. Bigger circles held it longer. Drag a team; tap one to see its belt page.</p>
+  <div id="web" class="mapbox"></div>
+</section>
+<script src="{D3}"></script>
+<script>
+(function(){{
+var box=document.getElementById('web'),W=box.clientWidth,H=Math.max(520,Math.round(W*0.7));
+var svg=d3.select(box).append('svg').attr('viewBox','0 0 '+W+' '+H),tip=d3.select(box).append('div').attr('class','maptip');
+fetch('{b(lg)}/web/data.json').then(function(r){{return r.json();}}).then(function(D){{
+ var mx=d3.max(D.nodes,function(n){{return n.d;}}),r=d3.scaleSqrt().domain([0,mx]).range([4,Math.max(22,W/32)]);
+ var lw=d3.scaleSqrt().domain([1,d3.max(D.links,function(l){{return l.w;}})||1]).range([.6,7]);
+ var sim=d3.forceSimulation(D.nodes).force('link',d3.forceLink(D.links).id(function(n){{return n.id;}}).distance(90).strength(function(l){{return Math.min(1,l.w/20);}}))
+  .force('charge',d3.forceManyBody().strength(-260)).force('x',d3.forceX(W/2).strength(.07)).force('y',d3.forceY(H/2).strength(.09)).force('collide',d3.forceCollide(function(n){{return r(n.d)+3;}}));
+ var link=svg.append('g').attr('class','wlinks').selectAll('line').data(D.links).join('line').attr('stroke-width',function(l){{return lw(l.w);}});
+ var node=svg.append('g').selectAll('g').data(D.nodes).join('g').attr('class','wnode').call(d3.drag().on('start',function(ev,n){{if(!ev.active)sim.alphaTarget(.3).restart();n.fx=n.x;n.fy=n.y;}}).on('drag',function(ev,n){{n.fx=ev.x;n.fy=ev.y;}}).on('end',function(ev,n){{if(!ev.active)sim.alphaTarget(0);n.fx=null;n.fy=null;}}));
+ node.append('circle').attr('r',function(n){{return r(n.d);}}).attr('fill',function(n){{return n.c;}});
+ node.append('text').text(function(n){{return n.s;}}).attr('dy',function(n){{return r(n.d)+12;}});
+ node.on('click',function(ev,n){{location.href=n.u;}}).on('mousemove',function(ev,n){{
+  var out=D.links.filter(function(l){{return l.source.id===n.id||l.target.id===n.id;}}).sort(function(a,b){{return b.w-a.w;}}).slice(0,4)
+   .map(function(l){{return l.source.id===n.id?('lost it to '+l.target.s+' ×'+l.w):('took it from '+l.source.s+' ×'+l.w);}});
+  tip.style('display','block').style('left',(ev.offsetX+12)+'px').style('top',(ev.offsetY+12)+'px').html('<b>'+n.n+'</b><br>'+n.d.toLocaleString()+' days<br><small>'+out.join('<br>')+'</small>');}})
+  .on('mouseleave',function(){{tip.style('display','none');}});
+ sim.on('tick',function(){{link.attr('x1',function(l){{return l.source.x;}}).attr('y1',function(l){{return l.source.y;}}).attr('x2',function(l){{return l.target.x;}}).attr('y2',function(l){{return l.target.y;}});
+  node.attr('transform',function(n){{n.x=Math.max(20,Math.min(W-20,n.x));n.y=Math.max(20,Math.min(H-20,n.y));return 'translate('+n.x+','+n.y+')';}});}});
+}});
+}})();
+</script>"""
+    page(lg, f"Web of the {lg['name']} belt", body, "web/", f"Every handoff of the lineal {lg['name']} belt as a network: who took it from whom, and how often.")
+
+
+def build_geo(lg, d):
+    build_states(lg, d)
+    build_map(lg, d)
+    build_web(lg, d)
