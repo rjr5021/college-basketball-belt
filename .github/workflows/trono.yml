@@ -1,0 +1,33 @@
+# One-time (manual) download of Prof. John Trono's NCAA basketball scores
+# archive, 1949-50 to 1999-2000, into data/trono/ (see fetch_trono.py).
+name: Trono archive
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: box
+  cancel-in-progress: false
+
+jobs:
+  trono:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Download archive
+        run: python -u fetch_trono.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/trono
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "Trono archive files [skip ci]"
+          for i in 1 2 3 4; do git pull --rebase -X theirs && git push && break; git rebase --abort 2>/dev/null; sleep $((i * 7)); done
