@@ -1,0 +1,23 @@
+id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,home_points,away_points,neutral,home_conf,away_conf,home_seed,away_seed,venue,city,state,notes
+372124,1949-03-11,,1949,postseason,NIT,final,New York University,Bradley,392,29,67,89,,Indep.,MVC,,7,,,,NIT-FIRST-ROUND
+372125,1949-03-11,,1949,postseason,NIT,final,Manhattan,San Francisco,155,259,43,68,,Indep.,Indep.,,8,,,,NIT-FIRST-ROUND
+372126,1949-03-11,,1949,postseason,NIT,final,St. John's,Bowling Green,279,28,64,77,,Indep.,Indep.,,10,,,,NIT-FIRST-ROUND
+372127,1949-03-11,,1949,postseason,NIT,final,City College of New York,Loyola Chicago,393,151,47,62,,,Indep.,,16,,,,NIT-FIRST-ROUND
+372128,1949-03-13,,1949,postseason,NIT,final,Kentucky,Loyola Chicago,135,151,56,61,,SEC,Indep.,1,16,,,,NIT-QUARTERFINAL
+372129,1949-03-13,,1949,postseason,NIT,final,Saint Louis,Bowling Green,252,28,74,80,,MVC,Indep.,3,10,,,,NIT-QUARTERFINAL
+372130,1949-03-13,,1949,postseason,NIT,final,Western Kentucky,Bradley,350,29,86,95,,OVC,MVC,5,7,,,,NIT-QUARTERFINAL
+372131,1949-03-13,,1949,postseason,NIT,final,Utah,San Francisco,331,259,63,64,,,Indep.,12,8,,,,NIT-QUARTERFINAL
+372132,1949-03-16,,1949,postseason,NIT,final,Bradley,Loyola Chicago,29,151,50,55,,MVC,Indep.,7,16,,,,NIT-SEMIFINAL
+372133,1949-03-16,,1949,postseason,NIT,final,Bowling Green,San Francisco,28,259,39,49,,Indep.,Indep.,10,8,,,,NIT-SEMIFINAL
+372134,1949-03-17,,1949,postseason,NCAA,final,Arkansas,Oregon State,12,224,38,56,1,,Pac-12,,,,,,"NCAA Men's Tourn., West - Regional Semifinal"
+372135,1949-03-17,,1949,postseason,NCAA,final,Oklahoma State,Wyoming,218,358,40,39,1,MVC,,,,,,,"NCAA Men's Tourn., West - Regional Semifinal"
+372136,1949-03-18,,1949,postseason,NIT,final,Bradley,Bowling Green,29,28,77,82,,MVC,Indep.,7,10,,,,NIT-THIRD-PLACE
+372137,1949-03-18,,1949,postseason,NIT,final,Loyola Chicago,San Francisco,151,259,47,48,,Indep.,Indep.,16,8,,,,NIT-FINAL
+372138,1949-03-18,,1949,postseason,NCAA,final,Arkansas,Wyoming,12,358,61,48,1,,,,,,,,"NCAA Men's Tourn., West - Regional Third Place"
+372139,1949-03-18,,1949,postseason,NCAA,final,Oklahoma State,Oregon State,218,224,55,30,1,MVC,Pac-12,,,,,,"NCAA Men's Tourn., West - Regional Final"
+372140,1949-03-20,,1949,postseason,NCAA,final,Illinois,Yale,118,360,71,67,1,Big Ten,Ivy,,,,,,"NCAA Men's Tourn., East - Regional Semifinal"
+372141,1949-03-20,,1949,postseason,NCAA,final,Kentucky,Villanova,135,338,85,72,1,SEC,Indep.,,,,,,"NCAA Men's Tourn., East - Regional Semifinal"
+372142,1949-03-21,,1949,postseason,NCAA,final,Illinois,Kentucky,118,135,47,76,1,Big Ten,SEC,,,,,,"NCAA Men's Tourn., East - Regional Final"
+372143,1949-03-21,,1949,postseason,NCAA,final,Villanova,Yale,338,360,78,67,1,Indep.,Ivy,,,,,,"NCAA Men's Tourn., East - Regional Third Place"
+372144,1949-03-25,,1949,postseason,NCAA,final,Illinois,Oregon State,118,224,57,53,1,Big Ten,Pac-12,,,,,,"NCAA Men's Tourn., National - National Third Place"
+372145,1949-03-25,,1949,postseason,NCAA,final,Kentucky,Oklahoma State,135,218,46,36,1,SEC,MVC,,,,,,"NCAA Men's Tourn., National - National Final"
