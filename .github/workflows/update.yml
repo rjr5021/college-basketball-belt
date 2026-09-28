@@ -1,0 +1,44 @@
+# Refresh data/games/*.csv from the CollegeBasketballData API and commit it.
+# The first run (no data yet) backfills every season; later runs make one or
+# two API calls each. Run it by hand with "full" ticked to redo the backfill.
+name: Update data
+
+on:
+  workflow_dispatch:
+    inputs:
+      full:
+        description: "Full backfill (every season, a few hundred API calls)"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "41 */3 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch games
+        env:
+          CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
+        run: python fetch_games.py ${{ inputs.full && '--full' || '' }}
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "Update game data [skip ci]"
+          git pull --rebase
+          git push

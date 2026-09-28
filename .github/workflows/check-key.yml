@@ -1,7 +1,6 @@
+# One-off probe of the CBBD key (run by hand only; it spends ~12 API calls).
 name: Check CBBD key
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 jobs:
   check:
