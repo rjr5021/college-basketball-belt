@@ -189,3 +189,34 @@ a.tile{color:var(--ink)}
   .history.march td:nth-child(5),.history.march th:nth-child(5){display:none}
   .big{font-size:30px}
 }
+/* ---- deeper pages ---- */
+.topright{display:flex;align-items:center;gap:14px}.searchlink{color:var(--ink);display:flex}
+.prevlink{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:inherit;opacity:.85;padding-top:10px;border-top:1px solid rgba(255,255,255,.18)}.prevlink:hover{color:inherit;opacity:1}
+.intro{font-size:19px;color:var(--body);max-width:900px;margin:0 0 24px}
+.sub{font-size:30px;font-weight:800;margin:36px 0 14px}
+.strip{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;height:30px;padding:0 10px 0 8px;border-left:6px solid var(--c);background:var(--card);border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink)}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--line2);color:var(--muted);white-space:nowrap}
+.tag.chg{background:var(--ink);color:var(--paper);border-color:var(--ink)}.tag.post{border-color:var(--brass);color:var(--brass-text);margin-left:6px}
+.history.games td:nth-child(3){font-size:16px}.history.games td i{display:inline-block;width:8px;height:18px;margin-right:10px;vertical-align:-3px}
+.history.games td a{color:var(--ink);border-bottom:1px solid var(--line2)}
+.history tr:target{background:#f3e6c8}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:28px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.history.form td{font-size:15px}.res{display:inline-block;width:20px;text-align:center;font-weight:500}.res.W{color:#2f7d32}.res.L{color:#b3261e}.res.T{color:var(--muted)}
+.compare{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:24px}.compare label{display:flex;flex-direction:column;gap:6px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.compare select{height:44px;min-width:260px;padding:0 10px;font-family:Spectral,serif;font-size:17px;background:var(--card);border:1px solid var(--line2);color:var(--ink)}
+.storygrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.storycard{display:flex;flex-direction:column;gap:10px;padding:20px;background:var(--card);border:1px solid var(--line);color:var(--ink);min-height:150px}
+.storycard .lg{font-size:11px;letter-spacing:.14em;color:var(--brass-text)}.storycard b{font-size:26px;font-weight:800;line-height:.95}.storycard span:last-child{font-size:15px;color:var(--muted)}
+.story .dek{font-size:22px;color:var(--muted);margin-top:-8px}.story ol li{margin-bottom:12px}
+.searchbox{width:100%;max-width:640px;height:54px;padding:0 18px;font-size:16px;border:1px solid var(--line2);background:var(--card);color:var(--ink)}
+.results{list-style:none;padding:0;margin:20px 0 0;max-width:640px}.results li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:18px}.results .mono{font-size:12px;color:var(--muted)}
+@media (max-width:1100px){.storygrid{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}}
+@media (max-width:700px){.storygrid{grid-template-columns:1fr}.compare select{min-width:0;width:100%}.compare label{flex:1 1 100%}.history.games td:nth-child(4),.history.games th:nth-child(4){display:none}.sub{font-size:24px}.searchlink{display:none}}
+.history.games td:nth-child(2){font-size:13px;white-space:nowrap}
+.colleges{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.college{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;background:var(--ink);color:var(--paper)}
+.college:hover{color:var(--paper);background:#000}.college .mono{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#e0b567}
+.college b{font-size:28px;font-weight:800;flex:1}.college .go{color:rgba(231,226,213,.7)}
+@media (max-width:1100px){.colleges{grid-template-columns:1fr}.college{flex-wrap:wrap}}

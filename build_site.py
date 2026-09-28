@@ -22,7 +22,7 @@ DOMAIN = "collegebasketballbelt.com"
 OUT = "site"
 ADSENSE_PUBLISHER_ID = ""        # "pub-3317069252410560" once the site is approved in AdSense
 GOATCOUNTER_CODE = ""            # e.g. "collegebasketballbelt" once the GoatCounter site exists
-STYLES_VERSION = "1"
+STYLES_VERSION = "2"
 ORANGE = "#de762c"
 
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -119,6 +119,23 @@ def score_text(score):
     return f"{max(hp, ap)}–{min(hp, ap)}"
 
 
+kickoff_12h = tip_12h
+
+
+def won_score_text(r):
+    return score_text(r["won_score"]) if r.get("won_score") else ""
+
+
+SUBNAV = [("current", "/", "Current"), ("next", "/next/", "Next defense"), ("history", "/history/", "Full history"),
+          ("seasons", "/seasons/", "Seasons"), ("records", "/records/", "Records"), ("teams", "/teams/", "Teams"),
+          ("rivalries", "/rivalries/", "Rivalries"), ("compare", "/compare/", "Compare"), ("march", "/march/", "March")]
+
+
+def subnav(lg=None, on=None):
+    links = "".join(f'<a href="{h}"{" class=on" if k == on else ""}>{t}</a>' for k, h, t in SUBNAV)
+    return f'<nav class="subnav mono" aria-label="Belt sections">{links}</nav>'
+
+
 # ----------------------------------------------------------- data access --
 
 D = {}
@@ -161,7 +178,7 @@ LOGO = ('<svg width="40" height="24" viewBox="0 0 40 24" fill="none" aria-hidden
         '<circle cx="20" cy="12" r="5" fill="#de762c"/><path d="M15 12 H25 M20 7 V17" stroke="#211a12" stroke-width="1"/></svg>')
 
 NAV = [("belt", "/", "The Belt"), ("history", "/history/", "History"), ("records", "/records/", "Records"),
-       ("teams", "/teams/", "Teams"), ("march", "/march/", "March"), ("rules", "/rules/", "Rules")]
+       ("march", "/march/", "March"), ("stories", "/stories/", "Stories"), ("rules", "/rules/", "Rules")]
 
 
 def page(title, body, *, path, description, active=None, jsonld=None):
@@ -203,7 +220,7 @@ def page(title, body, *, path, description, active=None, jsonld=None):
 <header class="top">
   <a class="brand" href="/">{LOGO}<span>The College Basketball Belt</span></a>
   <nav class="primary mono" aria-label="Sections">{nav}</nav>
-  <a class="pill mono" href="#alerts">Get belt alerts</a>
+  <div class="topright"><a class="searchlink" href="/search/" aria-label="Search"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11 L15 15"/></svg></a><a class="pill mono" href="#alerts">Get belt alerts</a></div>
 </header>
 <main id="main">
 {body}
@@ -268,6 +285,7 @@ def holder_plate(d):
       </div>
       <div class="meta mono"><span>{weekday(ng['date'])} {d_short(ng['date'])} · {tip_12h(ng.get('kickoff'))}</span></div>
       {f'<div class="meta mono"><span>{e(place)}</span></div>' if place else ''}
+      <a class="mono prevlink" href="/next/">Game preview →</a>
     </aside>"""
     days = cur["days"]
     return f"""<section class="plate" style="--top:{top};--bottom:{bottom};--ink:{ink};--accent:{accent}">
@@ -362,7 +380,8 @@ def build_home(d):
     <div class="hot"><span class="mono">Crowned in April</span><b class="disp">{e(last['champion'])}</b></div>
   </div>
 </section>"""
-    body = f"""{holder_plate(d)}
+    body = f"""{subnav(None, "current")}
+{holder_plate(d)}
 <section class="wrap split">
   <div>
     <div class="head"><h2 class="disp">Chain of custody</h2><a class="mono more" href="/history/">All {len(d['reigns']):,} reigns →</a></div>
@@ -382,13 +401,34 @@ def build_home(d):
   {record_card("Most reigns", [(tname(t), v) for t, v in rec['most_reigns'][:3]])}
   {record_card("Most defenses in one reign", [(f"{r['name']}, {season_label(r['season']) if r['season'] > 1949 else '1949'}", f"{r['defenses']} def.") for r in rec['longest_reigns'][:3]])}
   {football_card()}
-</section>"""
+</section>
+{home_extras()}"""
     cur = d["current"]
     ld = {"@context": "https://schema.org", "@type": "SportsTeam", "name": cur["name"], "sport": "Basketball",
           "award": f"The College Basketball Belt (lineal), {ordinal(cur['reign_no'])} reign since {cur['start_date']}"}
     write("index.html", page(f"The College Basketball Belt: {cur['name']} holds it", body, path="/", active="belt",
                              description=f"{cur['name']} holds the College Basketball Belt, the lineal championship of men's college basketball: beat the holder, take the belt. Every game since 1949–50.",
                              jsonld=ld))
+
+
+def reign_link(r):
+    import site_extras
+    from cbb_league import LEAGUE
+    D.setdefault("_bg", {bg["n"]: bg for bg in D["belt_games"]})
+    return site_extras.reign_url(LEAGUE, D, r)
+
+
+def home_extras():
+    import site_extras
+    from cbb_league import LEAGUE
+    today = date.today()
+    items = site_extras.otd_items({"cbb": D}).get(f"{today:%m-%d}", [])
+    otd = (f'<section class="wrap block"><div class="head"><h2 class="disp">Today in belt history</h2><a class="mono more" href="/on-this-day/">All of {MONTHS_LONG[today.month - 1]} {today.day} →</a></div>'
+           f'{site_extras.otd_list(items, 6)}</section>') if items else ""
+    cards = "".join(f'<a class="storycard" href="/stories/{sl_}/"><b class="disp">{e(t)}</b></a>' for sl_, t in [
+        ("longest-reigns", "The longest reigns"), ("droughts", "The longest droughts"),
+        ("wildest-seasons", "The wildest seasons"), ("rivalries", "The rivalries that decided it")])
+    return otd + f'<section class="wrap block"><div class="head"><h2 class="disp">Stories</h2><a class="mono more" href="/stories/">All stories →</a></div><div class="storygrid">{cards}</div></section>'
 
 
 def build_history(d):
@@ -399,10 +439,11 @@ def build_history(d):
             rows.append(f'<tr class="dec" id="d{dec}"><th colspan="5" class="disp">{dec}s</th></tr>')
             last_dec = dec
         p, _ = tcolor(r["team"])
-        rows.append(f"""<tr><td class="mono n">{r['index']}</td><td><i style="background:{p}"></i><a href="{team_url(r['team'])}">{e(r['name'])}</a><small>{how_won(r, True).lower() if r.get('seed') else how_won(r).replace('Beat', 'beat', 1)}</small></td>
+        rows.append(f"""<tr><td class="mono n"><a href="{reign_link(r)}">{r['index']}</a></td><td><i style="background:{p}"></i><a href="{team_url(r['team'])}">{e(r['name'])}</a><small>{how_won(r, True).lower() if r.get('seed') else how_won(r).replace('Beat', 'beat', 1)}</small></td>
 <td class="mono">{d_short(r['start_date'], True)}</td><td class="mono">{d_short(r['end_date'], True) if r.get('end_date') else 'Holding'}</td><td class="mono r">{r.get('defenses', 0)} · {r['days']:,}d</td></tr>""")
     decades = sorted({int(r["start_date"][:3] + "0") for r in d["reigns"]}, reverse=True)
-    body = f"""<section class="wrap block">
+    body = f"""{subnav(None, "history")}
+<section class="wrap block">
   <div class="head"><h1 class="disp">Every reign</h1><span class="mono note">{len(d['reigns']):,} reigns · {d['records']['belt_games']:,} belt games since 1949–50</span></div>
   <nav class="jump mono" aria-label="Jump to decade">{"".join(f'<a href="#d{x}">{x}s</a>' for x in decades)}</nav>
   <div class="tablewrap"><table class="history">
@@ -421,8 +462,14 @@ def build_records(d):
         record_card("Most reigns", [(tname(t), v) for t, v in rec["most_reigns"]]),
         record_card("Most defenses in one reign", [(f"{r['name']}, {season_label(r['season']) if r['season'] > 1949 else '1949'}", r["defenses"]) for r in rec["longest_reigns"]]),
         record_card("Most successful defenses (all reigns)", [(tname(t), v) for t, v in rec["most_defenses_total"]]),
+        record_card("Most defenses in one season", [(f"{tname(x['team'])}, {season_label(x['season'])}", x["defenses"]) for x in rec.get("most_defenses_season", [])]),
+        record_card("Most belt games played", [(tname(t), f"{v:,}") for t, v in rec.get("most_belt_games", [])]),
+        record_card("Busiest seasons (title changes)", [(season_label(s_), v) for s_, v in rec.get("busiest_seasons", [])]),
+        record_card("Longest waits since last holding it", [(tname(x["team"]), f"{x['days']:,} days") for x in rec.get("droughts", [])]),
+        record_card("Most title takeovers from one team", [(f"{tname(x['winner'])} from {tname(x['loser'])}", x["times"]) for x in rec.get("top_takeovers", [])]),
     ])
-    body = f"""<section class="wrap block">
+    body = f"""{subnav(None, "records")}
+<section class="wrap block">
   <div class="head"><h1 class="disp">Belt records</h1><span class="mono note">Through {d_long(d['generated'])}</span></div>
   <div class="numbers">
     <div><b class="disp">{len(d['reigns']):,}</b><span class="mono">Reigns</span></div>
@@ -430,6 +477,7 @@ def build_records(d):
     <div><b class="disp">{rec['programs']}</b><span class="mono">Programs have held it</span></div>
     <div><b class="disp">{rec['ncaa_changes']}</b><span class="mono">Title changes in the NCAA tournament</span></div>
   </div>
+  <p class="intro">{len(rec.get("never_held", []))} current Division I programs have never held the belt.</p>
   <div class="cards4">{cards}</div>
 </section>"""
     write("records/index.html", page("College Basketball Belt records", body, path="/records/", active="records",
@@ -446,7 +494,8 @@ def build_teams(d):
         days = sum(r["days"] for r in rs)
         cards.append(f'<a class="teamcard" href="{team_url(tid)}"><i style="background:{p}"></i><b class="disp">{e(tname(tid))}</b><span class="mono">{plural(len(rs), "reign")} · {days:,} days · last {rs[-1]["start_date"][:4]}</span></a>')
         build_team(d, tid, rs)
-    body = f"""<section class="wrap block">
+    body = f"""{subnav(None, "teams")}
+<section class="wrap block">
   <div class="head"><h1 class="disp">Every program that has held the belt</h1><span class="mono note">{len(by)} programs · sorted by days held</span></div>
   <div class="teamgrid">{"".join(cards)}</div>
 </section>"""
@@ -471,9 +520,17 @@ def build_team(d, tid, rs):
     <div class="stats"><div><b class="disp">{len(rs)}</b><span class="mono">Reigns</span></div><div><b class="disp">{days:,}</b><span class="mono">Days held</span></div><div><b class="disp">{defs}</b><span class="mono">Defenses</span></div><div><b class="disp">{rs[0]['start_date'][:4]}</b><span class="mono">First reign</span></div></div>
   </div>
 </section>
-<section class="wrap block"><div class="head"><h2 class="disp">Every reign</h2></div><ol class="chain">{rows}</ol></section>"""
+<section class="wrap block"><div class="head"><h2 class="disp">Every reign</h2></div><ol class="chain">{rows}</ol></section>
+{team_extras_html(tid)}"""
     write(f"teams/{slug(name)}/index.html", page(f"{name} and the College Basketball Belt", body, path=team_url(tid), active="teams",
                                                   description=f"{name}: {plural(len(rs), 'reign')} with the lineal college basketball championship belt, {days:,} days held."))
+
+
+def team_extras_html(tid):
+    import site_extras
+    from cbb_league import LEAGUE
+    D.setdefault("_bg", {bg["n"]: bg for bg in D["belt_games"]})
+    return site_extras.team_extras(LEAGUE, D, tid)
 
 
 def build_march(d):
@@ -482,7 +539,8 @@ def build_march(d):
         rows.append(f"""<tr><td class="mono">{m['label']}</td><td>{e(m['entering'] or '—')}{'' if m['in_field'] or not m['entering'] else '<small>not in the NCAA field</small>'}</td><td>{march_result(m)}</td><td>{e(m['champion'])}</td><td class="mono r">{m['changes_after_start']}</td></tr>""")
     kept = sum(1 for m in d["march"] if m["entering"] and m["entering"] == m["champion"])
     missed = sum(1 for m in d["march"] if m["entering"] and not m["in_field"])
-    body = f"""<section class="wrap block">
+    body = f"""{subnav(None, "march")}
+<section class="wrap block">
   <div class="head"><h1 class="disp">The belt versus the bracket</h1><span class="mono note">Every NCAA tournament since 1950</span></div>
   <p class="intro">Who carried the belt into each NCAA tournament, and how it ended. {plural(kept, 'holder')} took the belt into March and kept it all the way to the title; {plural(missed, 'time')} the holder wasn't in the NCAA field at all.</p>
   <div class="tablewrap"><table class="history march">
@@ -592,6 +650,8 @@ def main():
     build_records(D)
     build_teams(D)
     build_march(D)
+    import site_extras
+    site_extras.build_all({"cbb": D})
     build_static(D)
     build_feed(D)
     build_api(D)

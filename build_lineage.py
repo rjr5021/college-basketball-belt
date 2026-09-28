@@ -15,6 +15,7 @@ from collections import Counter, defaultdict
 from datetime import date
 
 import belt_engine
+import belt_extras as X
 import cbb_data as D
 
 
@@ -155,8 +156,20 @@ def main(today=None):
             by_month[int(bg["date"][5:7])] += 1
     months = [(m, by_month.get(m, 0)) for m in (11, 12, 1, 2, 3, 4)]
 
+    lgx = {"key": "cbb", "name": "College Basketball", "season_label": D.season_label,
+           "team_name": lambda code, season=None: names.get(code, code)}
+    if next_game:
+        next_game["season"] = cur_season = max(g["season"] for g in upcoming if holder in (g["home"], g["away"]))
+        next_game["stadium"] = ", ".join(x for x in (next_game.get("venue"), next_game.get("city")) if x) or None
+    X.annotate(lgx, games, belt_games, reigns)
+    records.update(X.extra_records(lgx, belt_games, reigns, recent, today))
+    extras = {"seasons": X.seasons(lgx, games, belt_games, reigns, today),
+              "rivalries": X.rivalries(lgx, belt_games),
+              "preview": X.preview(lgx, games, belt_games, reigns, next_game, today)}
+
     team_info = {}
-    for tid in set(n_reigns) | ({next_game["challenger"]} if next_game else set()):
+    everyone = set(n_reigns) | {t for bg in belt_games for t in (bg.get("holder"), bg["opponent"]) if t}
+    for tid in everyone | ({next_game["challenger"]} if next_game else set()):
         p, s2 = D.colors(teams, tid)
         team_info[tid] = {"name": names.get(tid, tid), "primary": p, "secondary": s2,
                           "mascot": D.nickname(teams, tid, names.get(tid, tid))}
@@ -165,7 +178,7 @@ def main(today=None):
         "generated": today, "reigns": reigns, "belt_games": belt_games, "vacancies": vacancies,
         "current": current, "next_game": next_game, "records": records, "march": march,
         "last_season": last_done, "last_season_label": D.season_label(last_done), "months": months,
-        "teams": team_info, "first_season": D.FIRST_SEASON, "seed": D.SEED,
+        "teams": team_info, "first_season": D.FIRST_SEASON, "seed": D.SEED, **extras,
     }
     os.makedirs("data", exist_ok=True)
     with open(os.path.join("data", "lineage.json"), "w") as f:
