@@ -386,8 +386,8 @@ def build_home(d):
     cur = d["current"]
     ld = {"@context": "https://schema.org", "@type": "SportsTeam", "name": cur["name"], "sport": "Basketball",
           "award": f"The College Basketball Belt (lineal), {ordinal(cur['reign_no'])} reign since {cur['start_date']}"}
-    write("index.html", page(f"The College Basketball Belt: {cur['name']} hold it", body, path="/", active="belt",
-                             description=f"{cur['name']} hold the College Basketball Belt, the lineal championship of men's college basketball: beat the holder, take the belt. Every game since 1949–50.",
+    write("index.html", page(f"The College Basketball Belt: {cur['name']} holds it", body, path="/", active="belt",
+                             description=f"{cur['name']} holds the College Basketball Belt, the lineal championship of men's college basketball: beat the holder, take the belt. Every game since 1949–50.",
                              jsonld=ld))
 
 
