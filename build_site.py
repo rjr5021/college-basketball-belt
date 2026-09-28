@@ -556,6 +556,16 @@ def build_feed(d):
 </channel></rss>""")
 
 
+def build_api(d):
+    cur, ng = d["current"], d.get("next_game")
+    out = {"holder": cur["name"], "since": cur["start_date"], "days_held": cur["days"],
+           "defenses": cur.get("defenses", 0), "team_reign_number": cur["reign_no"],
+           "next_game": ({"team": cur["name"], "opponent": ng["challenger_name"], "is_home": ng["holder_home"],
+                          "neutral": ng["neutral"], "date": ng["date"], "venue_name": ng.get("venue")} if ng else None),
+           "generated_at": d["generated"], "site": SITE_URL}
+    write("api/current.json", json.dumps(out, indent=1))
+
+
 def build_sitemap():
     urls = []
     for root, _, files in os.walk(OUT):
@@ -584,6 +594,7 @@ def main():
     build_march(D)
     build_static(D)
     build_feed(D)
+    build_api(D)
     build_sitemap()
     for f in ("styles.css", "favicon.png", "apple-touch-icon.png", "icon-512.png", "og.png"):
         if os.path.exists(f):
