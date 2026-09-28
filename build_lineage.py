@@ -206,7 +206,8 @@ def main(today=None):
         "what_if": M.what_if("cbb", games, belt_games, reigns, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS, start=start),
         "groups": conference_belts(games, fut, recent, today),
         "losers": M.losers("cbb", games, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS),
-        "polls": PL.compute(reigns),
+        "polls": PL.compute(reigns, {s_: (min(g["date"] for g in games if g["season"] == s_),
+                                           min((g["date"] for g in ncaa if g["season"] == s_), default=None)) for s_ in {g["season"] for g in games}}),
     }
     extras["models"] = models
 

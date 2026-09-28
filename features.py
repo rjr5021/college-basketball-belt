@@ -2477,13 +2477,18 @@ def build_polls(lg, d):
                      "f": {"decade": x["season"] // 10 * 10, "no1": "y" if yes else "n"}})
     unr = "".join(f'<tr><td><i style="background:{lg["team_colors"](t)[0]}"></i>{tlink(lg, t)}</td><td class="mono">{S.d_short(a, True)} – {S.d_short(z, True)}</td>'
                   f'<td class="mono r">{k}</td></tr>' for t, a, z, k in m["unranked"][:10])
+    est = ""
+    if m.get("estimated"):
+        a, z = m["estimated"][0], m["estimated"][-1]
+        est = (f'<p class="mono note">Poll dates for {sl(a)} through {sl(z)} are estimated from week numbers '
+               f'(the source data has no dates for those seasons), so a holder can be off by a week around a title change.</p>')
     intro = f"""{lead}
   {numbers([(pct(m['ranked'] / m['polls']), "Of AP polls with a ranked holder"), (pct(m['top1'] / m['polls']), "Holder was No. 1"),
             (pct(m['top5'] / m['polls']), "Holder in the top 5"), (f"{m['polls']:,}", "AP polls since " + sl(seas[0]['season']))])}
-  <p class="intro">The poll is voters' opinion; the belt is who actually beat whom. Here's how often they agree: first the longest stretches an unranked team held the belt, then every season.</p>"""
+  <p class="intro">The poll is voters' opinion; the belt is who actually beat whom. Here's how often they agree: first the longest stretches an unranked team held the belt, then every season.</p>{est}"""
     extra = f"""<h2 class="disp sub">Unranked, but holding the belt</h2>
   <p class="intro">The longest runs of AP polls in which the belt holder wasn't ranked at all.</p>
-  <table class="history"><thead><tr><th class="mono">Holder</th><th class="mono">Polls</th><th class="mono r">Weeks</th></tr></thead><tbody>{unr}</tbody></table>"""
+  <table class="history"><thead><tr><th class="mono">Holder</th><th class="mono">Stretch</th><th class="mono r">Polls</th></tr></thead><tbody>{unr}</tbody></table>"""
     paged_table(lg, "ap-poll/", title=f"The {lg['name']} belt vs. the AP poll", subnav_on="more",
                 description=f"How often the lineal {lg['name']} belt holder was ranked, or No. 1, in the AP poll, season by season since {sl(seas[0]['season'])}.",
                 heading="The belt vs. the AP poll", note=f"{len(seas)} seasons · {m['polls']:,} polls", intro=intro,
