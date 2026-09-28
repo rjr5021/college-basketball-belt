@@ -51,6 +51,19 @@ jobs:
           git push
       - name: Build lineage
         run: python build_lineage.py
+      - name: Preview extras (ESPN, weather, AI preview)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python enrich_preview.py
+        continue-on-error: true
+      - name: Commit preview data
+        run: |
+          git add -A data
+          git diff --cached --quiet && echo "no preview changes" && exit 0
+          git commit -m "Update preview data [skip ci]"
+          git pull --rebase
+          git push
+        continue-on-error: true
       - name: Build site
         run: python build_site.py
       - uses: actions/upload-pages-artifact@v3
