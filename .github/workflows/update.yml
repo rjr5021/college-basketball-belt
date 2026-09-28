@@ -47,8 +47,7 @@ jobs:
           git add -A data
           git diff --cached --quiet && echo "no data changes" && exit 0
           git commit -m "Update game data [skip ci]"
-          git pull --rebase
-          git push
+          for i in 1 2 3 4; do git pull --rebase && git push && break; sleep $((i * 7)); done
       - name: Build lineage
         run: python build_lineage.py
       - name: Preview extras (ESPN, weather, AI preview)
@@ -61,8 +60,7 @@ jobs:
           git add -A data
           git diff --cached --quiet && echo "no preview changes" && exit 0
           git commit -m "Update preview data [skip ci]"
-          git pull --rebase
-          git push
+          for i in 1 2 3 4; do git pull --rebase && git push && break; sleep $((i * 7)); done
         continue-on-error: true
       - name: Build site
         run: python build_site.py
