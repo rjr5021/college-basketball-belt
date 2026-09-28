@@ -1,0 +1,830 @@
+season,week,date,poll,team_id,team,rank,points,first
+2004,1,,AP Top 25,10,Arizona State,,15,0
+2004,1,,AP Top 25,34,Butler,,5,0
+2004,1,,AP Top 25,174,Mississippi State,,8,0
+2004,1,,AP Top 25,315,UIC,,2,0
+2004,1,,AP Top 25,5,Alabama,,7,0
+2004,1,,AP Top 25,236,Purdue,,7,0
+2004,1,,AP Top 25,216,Ohio State,,39,0
+2004,1,,AP Top 25,40,California,,61,0
+2004,1,,AP Top 25,323,USC,,8,0
+2004,1,,AP Top 25,313,UCLA,,13,0
+2004,1,,AP Top 25,155,Manhattan,,5,0
+2004,1,,AP Top 25,337,Vermont,,2,0
+2004,1,,AP Top 25,163,Memphis,,12,0
+2004,1,,AP Top 25,263,Seton Hall,,1,0
+2004,1,,AP Top 25,18,BYU,,23,0
+2004,1,,AP Top 25,98,Georgia,,3,0
+2004,1,,AP Top 25,16,Auburn,,15,0
+2004,1,,AP Top 25,359,Xavier,,63,0
+2004,1,,AP Top 25,160,Maryland,,64,0
+2004,1,,AP Top 25,121,Indiana,,1,0
+2004,1,,AP Top 25,170,Michigan,,6,0
+2004,1,,AP Top 25,289,Temple,,5,0
+2004,1,,AP Top 25,235,Providence,,13,0
+2004,1,,AP Top 25,136,LSU,,14,0
+2004,1,,AP Top 25,12,Arkansas,,2,0
+2004,1,,AP Top 25,56,Colorado,,12,0
+2004,1,,AP Top 25,223,Oregon,,57,0
+2004,1,,AP Top 25,64,Dayton,,1,0
+2004,1,,AP Top 25,331,Utah,,30,0
+2004,1,,AP Top 25,352,Wichita State,,3,0
+2004,1,,AP Top 25,189,Nevada,,3,0
+2004,1,,AP Top 25,208,Northern Illinois,,3,0
+2004,1,,AP Top 25,314,UConn,1,1796,69
+2004,1,,AP Top 25,72,Duke,2,1677,1
+2004,1,,AP Top 25,169,Michigan State,3,1623,1
+2004,1,,AP Top 25,11,Arizona,4,1494,0
+2004,1,,AP Top 25,177,Missouri,5,1438,0
+2004,1,,AP Top 25,131,Kansas,6,1414,1
+2004,1,,AP Top 25,286,Syracuse,7,1334,0
+2004,1,,AP Top 25,87,Florida,8,1217,0
+2004,1,,AP Top 25,200,North Carolina,9,1172,0
+2004,1,,AP Top 25,135,Kentucky,10,1115,0
+2004,1,,AP Top 25,295,Texas,11,1100,0
+2004,1,,AP Top 25,118,Illinois,12,946,0
+2004,1,,AP Top 25,251,Saint Joseph's,13,865,0
+2004,1,,AP Top 25,217,Oklahoma,14,862,0
+2004,1,,AP Top 25,355,Wisconsin,15,719,0
+2004,1,,AP Top 25,102,Gonzaga,16,714,0
+2004,1,,AP Top 25,150,Louisville,17,615,0
+2004,1,,AP Top 25,51,Cincinnati,18,538,0
+2004,1,,AP Top 25,342,Wake Forest,19,528,0
+2004,1,,AP Top 25,281,Stanford,20,521,0
+2004,1,,AP Top 25,213,Notre Dame,21,427,0
+2004,1,,AP Top 25,229,Pittsburgh,22,348,0
+2004,1,,AP Top 25,157,Marquette,23,226,0
+2004,1,,AP Top 25,185,NC State,24,118,0
+2004,1,,AP Top 25,218,Oklahoma State,25,102,0
+2004,2,,AP Top 25,160,Maryland,,64,0
+2004,2,,AP Top 25,34,Butler,,4,0
+2004,2,,AP Top 25,194,Niagara,,1,0
+2004,2,,AP Top 25,155,Manhattan,,5,0
+2004,2,,AP Top 25,331,Utah,,58,0
+2004,2,,AP Top 25,216,Ohio State,,5,0
+2004,2,,AP Top 25,10,Arizona State,,15,0
+2004,2,,AP Top 25,359,Xavier,,69,0
+2004,2,,AP Top 25,298,Texas Tech,,24,0
+2004,2,,AP Top 25,170,Michigan,,6,0
+2004,2,,AP Top 25,263,Seton Hall,,2,0
+2004,2,,AP Top 25,40,California,,26,0
+2004,2,,AP Top 25,352,Wichita State,,2,0
+2004,2,,AP Top 25,69,Detroit Mercy,,1,0
+2004,2,,AP Top 25,64,Dayton,,2,0
+2004,2,,AP Top 25,223,Oregon,,47,0
+2004,2,,AP Top 25,189,Nevada,,1,0
+2004,2,,AP Top 25,208,Northern Illinois,,3,0
+2004,2,,AP Top 25,236,Purdue,,8,0
+2004,2,,AP Top 25,111,Holy Cross,,1,0
+2004,2,,AP Top 25,98,Georgia,,3,0
+2004,2,,AP Top 25,18,BYU,,22,0
+2004,2,,AP Top 25,16,Auburn,,11,0
+2004,2,,AP Top 25,56,Colorado,,9,0
+2004,2,,AP Top 25,313,UCLA,,15,0
+2004,2,,AP Top 25,136,LSU,,6,0
+2004,2,,AP Top 25,338,Villanova,,2,0
+2004,2,,AP Top 25,12,Arkansas,,4,0
+2004,2,,AP Top 25,174,Mississippi State,,7,0
+2004,2,,AP Top 25,220,Ole Miss,,1,0
+2004,2,,AP Top 25,235,Providence,,10,0
+2004,2,,AP Top 25,315,UIC,,1,0
+2004,2,,AP Top 25,121,Indiana,,17,0
+2004,2,,AP Top 25,314,UConn,1,1797,69
+2004,2,,AP Top 25,72,Duke,2,1666,1
+2004,2,,AP Top 25,169,Michigan State,3,1615,1
+2004,2,,AP Top 25,11,Arizona,4,1501,0
+2004,2,,AP Top 25,177,Missouri,5,1450,0
+2004,2,,AP Top 25,131,Kansas,6,1420,1
+2004,2,,AP Top 25,286,Syracuse,7,1337,0
+2004,2,,AP Top 25,87,Florida,8,1221,0
+2004,2,,AP Top 25,200,North Carolina,9,1157,0
+2004,2,,AP Top 25,135,Kentucky,10,1125,0
+2004,2,,AP Top 25,295,Texas,11,1115,0
+2004,2,,AP Top 25,118,Illinois,12,950,0
+2004,2,,AP Top 25,251,Saint Joseph's,13,872,0
+2004,2,,AP Top 25,217,Oklahoma,14,847,0
+2004,2,,AP Top 25,355,Wisconsin,15,728,0
+2004,2,,AP Top 25,102,Gonzaga,16,670,0
+2004,2,,AP Top 25,150,Louisville,17,612,0
+2004,2,,AP Top 25,342,Wake Forest,18,550,0
+2004,2,,AP Top 25,51,Cincinnati,19,534,0
+2004,2,,AP Top 25,281,Stanford,20,517,0
+2004,2,,AP Top 25,213,Notre Dame,21,409,0
+2004,2,,AP Top 25,229,Pittsburgh,22,389,0
+2004,2,,AP Top 25,157,Marquette,23,238,0
+2004,2,,AP Top 25,218,Oklahoma State,24,119,0
+2004,2,,AP Top 25,185,NC State,25,109,0
+2004,3,,AP Top 25,223,Oregon,,20,0
+2004,3,,AP Top 25,40,California,,1,0
+2004,3,,AP Top 25,48,Charlotte,,9,0
+2004,3,,AP Top 25,194,Niagara,,1,0
+2004,3,,AP Top 25,336,Vanderbilt,,5,0
+2004,3,,AP Top 25,216,Ohio State,,3,0
+2004,3,,AP Top 25,155,Manhattan,,1,0
+2004,3,,AP Top 25,10,Arizona State,,13,0
+2004,3,,AP Top 25,359,Xavier,,2,0
+2004,3,,AP Top 25,64,Dayton,,53,0
+2004,3,,AP Top 25,121,Indiana,,17,0
+2004,3,,AP Top 25,16,Auburn,,12,0
+2004,3,,AP Top 25,184,Murray State,,1,0
+2004,3,,AP Top 25,174,Mississippi State,,11,0
+2004,3,,AP Top 25,98,Georgia,,5,0
+2004,3,,AP Top 25,160,Maryland,,59,0
+2004,3,,AP Top 25,96,George Washington,,2,0
+2004,3,,AP Top 25,12,Arkansas,,1,0
+2004,3,,AP Top 25,18,BYU,,5,0
+2004,3,,AP Top 25,136,LSU,,9,0
+2004,3,,AP Top 25,189,Nevada,,1,0
+2004,3,,AP Top 25,313,UCLA,,4,0
+2004,3,,AP Top 25,185,NC State,,83,0
+2004,3,,AP Top 25,298,Texas Tech,,32,0
+2004,3,,AP Top 25,90,Florida State,,3,0
+2004,3,,AP Top 25,34,Butler,,4,0
+2004,3,,AP Top 25,235,Providence,,10,0
+2004,3,,AP Top 25,150,Louisville,,99,0
+2004,3,,AP Top 25,124,Iowa,,71,0
+2004,3,,AP Top 25,131,Kansas,1,1750,52
+2004,3,,AP Top 25,87,Florida,2,1604,8
+2004,3,,AP Top 25,314,UConn,3,1524,1
+2004,3,,AP Top 25,177,Missouri,4,1487,3
+2004,3,,AP Top 25,169,Michigan State,5,1389,0
+2004,3,,AP Top 25,72,Duke,6,1325,1
+2004,3,,AP Top 25,11,Arizona,7,1302,0
+2004,3,,AP Top 25,295,Texas,8,1272,2
+2004,3,,AP Top 25,135,Kentucky,9,1234,1
+2004,3,,AP Top 25,200,North Carolina,10,1200,1
+2004,3,,AP Top 25,118,Illinois,11,1071,0
+2004,3,,AP Top 25,251,Saint Joseph's,12,916,0
+2004,3,,AP Top 25,101,Georgia Tech,13,874,0
+2004,3,,AP Top 25,217,Oklahoma,14,835,0
+2004,3,,AP Top 25,355,Wisconsin,15,720,0
+2004,3,,AP Top 25,286,Syracuse,16,692,0
+2004,3,,AP Top 25,102,Gonzaga,17,570,0
+2004,3,,AP Top 25,342,Wake Forest,18,552,0
+2004,3,,AP Top 25,51,Cincinnati,19,527,0
+2004,3,,AP Top 25,236,Purdue,20,493,0
+2004,3,,AP Top 25,281,Stanford,21,471,0
+2004,3,,AP Top 25,229,Pittsburgh,22,391,0
+2004,3,,AP Top 25,213,Notre Dame,23,342,0
+2004,3,,AP Top 25,157,Marquette,24,205,0
+2004,3,,AP Top 25,218,Oklahoma State,25,117,0
+2004,4,,AP Top 25,174,Mississippi State,,14,0
+2004,4,,AP Top 25,184,Murray State,,2,0
+2004,4,,AP Top 25,16,Auburn,,15,0
+2004,4,,AP Top 25,26,Boston College,,2,0
+2004,4,,AP Top 25,185,NC State,,7,0
+2004,4,,AP Top 25,208,Northern Illinois,,1,0
+2004,4,,AP Top 25,336,Vanderbilt,,36,0
+2004,4,,AP Top 25,98,Georgia,,14,0
+2004,4,,AP Top 25,298,Texas Tech,,5,0
+2004,4,,AP Top 25,155,Manhattan,,1,0
+2004,4,,AP Top 25,313,UCLA,,26,0
+2004,4,,AP Top 25,160,Maryland,,32,0
+2004,4,,AP Top 25,96,George Washington,,1,0
+2004,4,,AP Top 25,223,Oregon,,24,0
+2004,4,,AP Top 25,213,Notre Dame,,5,0
+2004,4,,AP Top 25,339,Virginia,,6,0
+2004,4,,AP Top 25,34,Butler,,1,0
+2004,4,,AP Top 25,150,Louisville,,60,0
+2004,4,,AP Top 25,134,Kent State,,3,0
+2004,4,,AP Top 25,218,Oklahoma State,,35,0
+2004,4,,AP Top 25,90,Florida State,,14,0
+2004,4,,AP Top 25,136,LSU,,5,0
+2004,4,,AP Top 25,18,BYU,,15,0
+2004,4,,AP Top 25,266,South Carolina,,8,0
+2004,4,,AP Top 25,273,Southern Illinois,,1,0
+2004,4,,AP Top 25,194,Niagara,,2,0
+2004,4,,AP Top 25,87,Florida,1,1732,46
+2004,4,,AP Top 25,314,UConn,2,1593,9
+2004,4,,AP Top 25,177,Missouri,3,1512,6
+2004,4,,AP Top 25,72,Duke,4,1422,0
+2004,4,,AP Top 25,131,Kansas,5,1364,0
+2004,4,,AP Top 25,295,Texas,6,1351,3
+2004,4,,AP Top 25,200,North Carolina,7,1339,3
+2004,4,,AP Top 25,135,Kentucky,8,1324,1
+2004,4,,AP Top 25,11,Arizona,9,1212,0
+2004,4,,AP Top 25,101,Georgia Tech,10,1167,4
+2004,4,,AP Top 25,217,Oklahoma,11,1071,0
+2004,4,,AP Top 25,251,Saint Joseph's,12,986,0
+2004,4,,AP Top 25,281,Stanford,13,941,0
+2004,4,,AP Top 25,118,Illinois,14,829,0
+2004,4,,AP Top 25,342,Wake Forest,15,754,0
+2004,4,,AP Top 25,236,Purdue,16,725,0
+2004,4,,AP Top 25,102,Gonzaga,17,693,0
+2004,4,,AP Top 25,51,Cincinnati,18,573,0
+2004,4,,AP Top 25,286,Syracuse,19,567,0
+2004,4,,AP Top 25,229,Pittsburgh,20,457,0
+2004,4,,AP Top 25,169,Michigan State,21,417,0
+2004,4,,AP Top 25,157,Marquette,22,415,0
+2004,4,,AP Top 25,355,Wisconsin,23,373,0
+2004,4,,AP Top 25,124,Iowa,24,132,0
+2004,4,,AP Top 25,64,Dayton,25,116,0
+2004,5,,AP Top 25,163,Memphis,,1,0
+2004,5,,AP Top 25,336,Vanderbilt,,80,0
+2004,5,,AP Top 25,266,South Carolina,,10,0
+2004,5,,AP Top 25,313,UCLA,,9,0
+2004,5,,AP Top 25,339,Virginia,,10,0
+2004,5,,AP Top 25,25,Boise State,,1,0
+2004,5,,AP Top 25,331,Utah,,7,0
+2004,5,,AP Top 25,213,Notre Dame,,5,0
+2004,5,,AP Top 25,235,Providence,,26,0
+2004,5,,AP Top 25,124,Iowa,,40,0
+2004,5,,AP Top 25,26,Boston College,,6,0
+2004,5,,AP Top 25,218,Oklahoma State,,4,0
+2004,5,,AP Top 25,18,BYU,,15,0
+2004,5,,AP Top 25,96,George Washington,,2,0
+2004,5,,AP Top 25,90,Florida State,,20,0
+2004,5,,AP Top 25,16,Auburn,,23,0
+2004,5,,AP Top 25,138,Lafayette,,1,0
+2004,5,,AP Top 25,185,NC State,,9,0
+2004,5,,AP Top 25,298,Texas Tech,,8,0
+2004,5,,AP Top 25,240,Rhode Island,,2,0
+2004,5,,AP Top 25,184,Murray State,,4,0
+2004,5,,AP Top 25,169,Michigan State,,68,0
+2004,5,,AP Top 25,223,Oregon,,7,0
+2004,5,,AP Top 25,174,Mississippi State,,31,0
+2004,5,,AP Top 25,61,Creighton,,5,0
+2004,5,,AP Top 25,314,UConn,1,1685,21
+2004,5,,AP Top 25,135,Kentucky,2,1618,26
+2004,5,,AP Top 25,72,Duke,3,1535,1
+2004,5,,AP Top 25,200,North Carolina,4,1507,6
+2004,5,,AP Top 25,101,Georgia Tech,5,1418,14
+2004,5,,AP Top 25,131,Kansas,6,1409,0
+2004,5,,AP Top 25,11,Arizona,7,1407,2
+2004,5,,AP Top 25,217,Oklahoma,8,1217,0
+2004,5,,AP Top 25,281,Stanford,9,1081,2
+2004,5,,AP Top 25,177,Missouri,10,1057,0
+2004,5,,AP Top 25,251,Saint Joseph's,11,1050,0
+2004,5,,AP Top 25,295,Texas,11,1050,0
+2004,5,,AP Top 25,102,Gonzaga,13,987,0
+2004,5,,AP Top 25,342,Wake Forest,14,914,0
+2004,5,,AP Top 25,87,Florida,15,863,0
+2004,5,,AP Top 25,51,Cincinnati,16,648,0
+2004,5,,AP Top 25,236,Purdue,17,647,0
+2004,5,,AP Top 25,229,Pittsburgh,18,544,0
+2004,5,,AP Top 25,286,Syracuse,19,535,0
+2004,5,,AP Top 25,150,Louisville,20,406,0
+2004,5,,AP Top 25,118,Illinois,21,398,0
+2004,5,,AP Top 25,355,Wisconsin,22,367,0
+2004,5,,AP Top 25,157,Marquette,23,303,0
+2004,5,,AP Top 25,64,Dayton,24,183,0
+2004,5,,AP Top 25,160,Maryland,25,176,0
+2004,6,,AP Top 25,138,Lafayette,,2,0
+2004,6,,AP Top 25,240,Rhode Island,,3,0
+2004,6,,AP Top 25,61,Creighton,,9,0
+2004,6,,AP Top 25,56,Colorado,,7,0
+2004,6,,AP Top 25,185,NC State,,4,0
+2004,6,,AP Top 25,313,UCLA,,1,0
+2004,6,,AP Top 25,339,Virginia,,15,0
+2004,6,,AP Top 25,248,SMU,,2,0
+2004,6,,AP Top 25,25,Boise State,,2,0
+2004,6,,AP Top 25,266,South Carolina,,12,0
+2004,6,,AP Top 25,174,Mississippi State,,61,0
+2004,6,,AP Top 25,90,Florida State,,23,0
+2004,6,,AP Top 25,136,LSU,,16,0
+2004,6,,AP Top 25,331,Utah,,5,0
+2004,6,,AP Top 25,218,Oklahoma State,,5,0
+2004,6,,AP Top 25,18,BYU,,27,0
+2004,6,,AP Top 25,298,Texas Tech,,11,0
+2004,6,,AP Top 25,69,Detroit Mercy,,1,0
+2004,6,,AP Top 25,235,Providence,,34,0
+2004,6,,AP Top 25,157,Marquette,,100,0
+2004,6,,AP Top 25,169,Michigan State,,11,0
+2004,6,,AP Top 25,26,Boston College,,4,0
+2004,6,,AP Top 25,124,Iowa,,17,0
+2004,6,,AP Top 25,314,UConn,1,1636,21
+2004,6,,AP Top 25,135,Kentucky,2,1614,25
+2004,6,,AP Top 25,72,Duke,3,1539,2
+2004,6,,AP Top 25,101,Georgia Tech,4,1479,16
+2004,6,,AP Top 25,11,Arizona,5,1364,2
+2004,6,,AP Top 25,281,Stanford,6,1292,2
+2004,6,,AP Top 25,217,Oklahoma,7,1275,0
+2004,6,,AP Top 25,342,Wake Forest,8,1264,1
+2004,6,,AP Top 25,200,North Carolina,9,1162,0
+2004,6,,AP Top 25,251,Saint Joseph's,10,1084,0
+2004,6,,AP Top 25,177,Missouri,11,1044,0
+2004,6,,AP Top 25,131,Kansas,12,962,0
+2004,6,,AP Top 25,87,Florida,13,788,0
+2004,6,,AP Top 25,51,Cincinnati,14,771,0
+2004,6,,AP Top 25,102,Gonzaga,15,726,0
+2004,6,,AP Top 25,229,Pittsburgh,16,634,0
+2004,6,,AP Top 25,286,Syracuse,17,620,0
+2004,6,,AP Top 25,295,Texas,18,573,0
+2004,6,,AP Top 25,355,Wisconsin,19,530,0
+2004,6,,AP Top 25,150,Louisville,20,513,0
+2004,6,,AP Top 25,118,Illinois,21,342,0
+2004,6,,AP Top 25,236,Purdue,22,284,0
+2004,6,,AP Top 25,64,Dayton,23,224,0
+2004,6,,AP Top 25,160,Maryland,24,203,0
+2004,6,,AP Top 25,336,Vanderbilt,25,130,0
+2004,7,,AP Top 25,329,Utah State,,1,0
+2004,7,,AP Top 25,169,Michigan State,,3,0
+2004,7,,AP Top 25,160,Maryland,,31,0
+2004,7,,AP Top 25,266,South Carolina,,9,0
+2004,7,,AP Top 25,90,Florida State,,106,0
+2004,7,,AP Top 25,327,UTEP,,2,0
+2004,7,,AP Top 25,248,SMU,,2,0
+2004,7,,AP Top 25,339,Virginia,,2,0
+2004,7,,AP Top 25,136,LSU,,27,0
+2004,7,,AP Top 25,235,Providence,,60,0
+2004,7,,AP Top 25,124,Iowa,,2,0
+2004,7,,AP Top 25,240,Rhode Island,,2,0
+2004,7,,AP Top 25,298,Texas Tech,,26,0
+2004,7,,AP Top 25,64,Dayton,,54,0
+2004,7,,AP Top 25,56,Colorado,,8,0
+2004,7,,AP Top 25,61,Creighton,,35,0
+2004,7,,AP Top 25,26,Boston College,,9,0
+2004,7,,AP Top 25,163,Memphis,,21,0
+2004,7,,AP Top 25,218,Oklahoma State,,10,0
+2004,7,,AP Top 25,18,BYU,,9,0
+2004,7,,AP Top 25,125,Iowa State,,2,0
+2004,7,,AP Top 25,331,Utah,,6,0
+2004,7,,AP Top 25,170,Michigan,,16,0
+2004,7,,AP Top 25,314,UConn,1,1711,37
+2004,7,,AP Top 25,72,Duke,2,1623,5
+2004,7,,AP Top 25,101,Georgia Tech,3,1606,21
+2004,7,,AP Top 25,11,Arizona,4,1442,4
+2004,7,,AP Top 25,281,Stanford,5,1427,3
+2004,7,,AP Top 25,342,Wake Forest,6,1389,1
+2004,7,,AP Top 25,217,Oklahoma,7,1359,0
+2004,7,,AP Top 25,135,Kentucky,8,1300,0
+2004,7,,AP Top 25,200,North Carolina,9,1192,0
+2004,7,,AP Top 25,251,Saint Joseph's,10,1183,0
+2004,7,,AP Top 25,150,Louisville,11,985,0
+2004,7,,AP Top 25,51,Cincinnati,12,940,0
+2004,7,,AP Top 25,131,Kansas,13,868,0
+2004,7,,AP Top 25,87,Florida,14,815,0
+2004,7,,AP Top 25,229,Pittsburgh,15,763,0
+2004,7,,AP Top 25,102,Gonzaga,16,758,0
+2004,7,,AP Top 25,286,Syracuse,17,665,0
+2004,7,,AP Top 25,355,Wisconsin,18,625,0
+2004,7,,AP Top 25,295,Texas,19,511,0
+2004,7,,AP Top 25,118,Illinois,20,460,0
+2004,7,,AP Top 25,236,Purdue,21,320,0
+2004,7,,AP Top 25,336,Vanderbilt,22,238,0
+2004,7,,AP Top 25,177,Missouri,23,178,0
+2004,7,,AP Top 25,174,Mississippi State,24,139,0
+2004,7,,AP Top 25,157,Marquette,25,135,0
+2004,8,,AP Top 25,136,LSU,,3,0
+2004,8,,AP Top 25,298,Texas Tech,,83,0
+2004,8,,AP Top 25,57,Colorado State,,3,0
+2004,8,,AP Top 25,351,Western Michigan,,6,0
+2004,8,,AP Top 25,240,Rhode Island,,2,0
+2004,8,,AP Top 25,61,Creighton,,86,0
+2004,8,,AP Top 25,266,South Carolina,,5,0
+2004,8,,AP Top 25,263,Seton Hall,,13,0
+2004,8,,AP Top 25,177,Missouri,,6,0
+2004,8,,AP Top 25,25,Boise State,,1,0
+2004,8,,AP Top 25,163,Memphis,,29,0
+2004,8,,AP Top 25,27,Boston University,,1,0
+2004,8,,AP Top 25,160,Maryland,,25,0
+2004,8,,AP Top 25,220,Ole Miss,,2,0
+2004,8,,AP Top 25,98,Georgia,,1,0
+2004,8,,AP Top 25,188,Nebraska,,1,0
+2004,8,,AP Top 25,18,BYU,,13,0
+2004,8,,AP Top 25,64,Dayton,,3,0
+2004,8,,AP Top 25,97,Georgetown,,2,0
+2004,8,,AP Top 25,170,Michigan,,7,0
+2004,8,,AP Top 25,218,Oklahoma State,,40,0
+2004,8,,AP Top 25,90,Florida State,,22,0
+2004,8,,AP Top 25,26,Boston College,,4,0
+2004,8,,AP Top 25,329,Utah State,,5,0
+2004,8,,AP Top 25,314,UConn,1,1752,50
+2004,8,,AP Top 25,72,Duke,2,1673,5
+2004,8,,AP Top 25,11,Arizona,3,1533,5
+2004,8,,AP Top 25,281,Stanford,4,1528,5
+2004,8,,AP Top 25,342,Wake Forest,5,1477,5
+2004,8,,AP Top 25,217,Oklahoma,6,1408,2
+2004,8,,AP Top 25,135,Kentucky,7,1390,0
+2004,8,,AP Top 25,101,Georgia Tech,8,1282,0
+2004,8,,AP Top 25,251,Saint Joseph's,9,1252,0
+2004,8,,AP Top 25,150,Louisville,10,1126,0
+2004,8,,AP Top 25,51,Cincinnati,11,1023,0
+2004,8,,AP Top 25,200,North Carolina,12,964,0
+2004,8,,AP Top 25,131,Kansas,13,903,0
+2004,8,,AP Top 25,87,Florida,14,854,0
+2004,8,,AP Top 25,229,Pittsburgh,15,843,0
+2004,8,,AP Top 25,102,Gonzaga,16,760,0
+2004,8,,AP Top 25,286,Syracuse,17,745,0
+2004,8,,AP Top 25,295,Texas,18,576,0
+2004,8,,AP Top 25,118,Illinois,19,489,0
+2004,8,,AP Top 25,336,Vanderbilt,20,424,0
+2004,8,,AP Top 25,355,Wisconsin,21,305,0
+2004,8,,AP Top 25,174,Mississippi State,22,267,0
+2004,8,,AP Top 25,157,Marquette,23,202,0
+2004,8,,AP Top 25,236,Purdue,24,131,0
+2004,8,,AP Top 25,235,Providence,25,130,0
+2004,9,,AP Top 25,185,NC State,,3,0
+2004,9,,AP Top 25,27,Boston University,,2,0
+2004,9,,AP Top 25,48,Charlotte,,4,0
+2004,9,,AP Top 25,134,Kent State,,1,0
+2004,9,,AP Top 25,26,Boston College,,1,0
+2004,9,,AP Top 25,90,Florida State,,2,0
+2004,9,,AP Top 25,235,Providence,,1,0
+2004,9,,AP Top 25,236,Purdue,,94,0
+2004,9,,AP Top 25,329,Utah State,,8,0
+2004,9,,AP Top 25,351,Western Michigan,,12,0
+2004,9,,AP Top 25,241,Rice,,3,0
+2004,9,,AP Top 25,125,Iowa State,,1,0
+2004,9,,AP Top 25,218,Oklahoma State,,6,0
+2004,9,,AP Top 25,263,Seton Hall,,27,0
+2004,9,,AP Top 25,136,LSU,,24,0
+2004,9,,AP Top 25,163,Memphis,,4,0
+2004,9,,AP Top 25,189,Nevada,,2,0
+2004,9,,AP Top 25,266,South Carolina,,12,0
+2004,9,,AP Top 25,160,Maryland,,26,0
+2004,9,,AP Top 25,314,UConn,1,1767,52
+2004,9,,AP Top 25,72,Duke,2,1689,4
+2004,9,,AP Top 25,281,Stanford,3,1647,11
+2004,9,,AP Top 25,342,Wake Forest,4,1562,5
+2004,9,,AP Top 25,135,Kentucky,5,1477,0
+2004,9,,AP Top 25,251,Saint Joseph's,6,1356,0
+2004,9,,AP Top 25,11,Arizona,7,1249,0
+2004,9,,AP Top 25,150,Louisville,8,1248,0
+2004,9,,AP Top 25,200,North Carolina,9,1146,0
+2004,9,,AP Top 25,51,Cincinnati,10,1136,0
+2004,9,,AP Top 25,217,Oklahoma,11,973,0
+2004,9,,AP Top 25,101,Georgia Tech,12,952,0
+2004,9,,AP Top 25,229,Pittsburgh,13,926,0
+2004,9,,AP Top 25,131,Kansas,14,923,0
+2004,9,,AP Top 25,87,Florida,15,914,0
+2004,9,,AP Top 25,102,Gonzaga,16,810,0
+2004,9,,AP Top 25,286,Syracuse,17,806,0
+2004,9,,AP Top 25,295,Texas,18,619,0
+2004,9,,AP Top 25,355,Wisconsin,19,472,0
+2004,9,,AP Top 25,174,Mississippi State,20,388,0
+2004,9,,AP Top 25,157,Marquette,21,294,0
+2004,9,,AP Top 25,298,Texas Tech,22,240,0
+2004,9,,AP Top 25,336,Vanderbilt,23,222,0
+2004,9,,AP Top 25,61,Creighton,24,218,0
+2004,9,,AP Top 25,118,Illinois,25,133,0
+2004,10,,AP Top 25,300,Toledo,,2,0
+2004,10,,AP Top 25,241,Rice,,1,0
+2004,10,,AP Top 25,118,Illinois,,21,0
+2004,10,,AP Top 25,136,LSU,,13,0
+2004,10,,AP Top 25,5,Alabama,,5,0
+2004,10,,AP Top 25,26,Boston College,,3,0
+2004,10,,AP Top 25,61,Creighton,,107,0
+2004,10,,AP Top 25,329,Utah State,,35,0
+2004,10,,AP Top 25,331,Utah,,10,0
+2004,10,,AP Top 25,64,Dayton,,1,0
+2004,10,,AP Top 25,2,Air Force,,6,0
+2004,10,,AP Top 25,163,Memphis,,2,0
+2004,10,,AP Top 25,160,Maryland,,66,0
+2004,10,,AP Top 25,209,Northern Iowa,,4,0
+2004,10,,AP Top 25,273,Southern Illinois,,1,0
+2004,10,,AP Top 25,351,Western Michigan,,46,0
+2004,10,,AP Top 25,108,Hawai'i,,5,0
+2004,10,,AP Top 25,157,Marquette,,25,0
+2004,10,,AP Top 25,235,Providence,,32,0
+2004,10,,AP Top 25,185,NC State,,10,0
+2004,10,,AP Top 25,155,Manhattan,,1,0
+2004,10,,AP Top 25,72,Duke,1,1763,45
+2004,10,,AP Top 25,281,Stanford,2,1733,24
+2004,10,,AP Top 25,251,Saint Joseph's,3,1548,1
+2004,10,,AP Top 25,314,UConn,4,1529,0
+2004,10,,AP Top 25,150,Louisville,5,1443,0
+2004,10,,AP Top 25,51,Cincinnati,6,1429,2
+2004,10,,AP Top 25,200,North Carolina,7,1262,0
+2004,10,,AP Top 25,229,Pittsburgh,8,1207,0
+2004,10,,AP Top 25,135,Kentucky,9,1181,0
+2004,10,,AP Top 25,342,Wake Forest,10,1072,0
+2004,10,,AP Top 25,101,Georgia Tech,11,1068,0
+2004,10,,AP Top 25,131,Kansas,12,1026,0
+2004,10,,AP Top 25,286,Syracuse,13,1004,0
+2004,10,,AP Top 25,11,Arizona,14,971,0
+2004,10,,AP Top 25,102,Gonzaga,15,921,0
+2004,10,,AP Top 25,295,Texas,16,833,0
+2004,10,,AP Top 25,87,Florida,17,549,0
+2004,10,,AP Top 25,298,Texas Tech,18,530,0
+2004,10,,AP Top 25,174,Mississippi State,19,501,0
+2004,10,,AP Top 25,217,Oklahoma,20,337,0
+2004,10,,AP Top 25,355,Wisconsin,21,303,0
+2004,10,,AP Top 25,336,Vanderbilt,22,292,0
+2004,10,,AP Top 25,236,Purdue,23,247,0
+2004,10,,AP Top 25,218,Oklahoma State,24,140,0
+2004,10,,AP Top 25,266,South Carolina,25,115,0
+2004,11,,AP Top 25,263,Seton Hall,,14,0
+2004,11,,AP Top 25,351,Western Michigan,,10,0
+2004,11,,AP Top 25,136,LSU,,1,0
+2004,11,,AP Top 25,185,NC State,,44,0
+2004,11,,AP Top 25,155,Manhattan,,2,0
+2004,11,,AP Top 25,157,Marquette,,7,0
+2004,11,,AP Top 25,90,Florida State,,75,0
+2004,11,,AP Top 25,336,Vanderbilt,,45,0
+2004,11,,AP Top 25,61,Creighton,,10,0
+2004,11,,AP Top 25,329,Utah State,,51,0
+2004,11,,AP Top 25,108,Hawai'i,,14,0
+2004,11,,AP Top 25,64,Dayton,,8,0
+2004,11,,AP Top 25,2,Air Force,,32,0
+2004,11,,AP Top 25,163,Memphis,,1,0
+2004,11,,AP Top 25,209,Northern Iowa,,3,0
+2004,11,,AP Top 25,160,Maryland,,23,0
+2004,11,,AP Top 25,337,Vermont,,1,0
+2004,11,,AP Top 25,273,Southern Illinois,,21,0
+2004,11,,AP Top 25,72,Duke,1,1766,44
+2004,11,,AP Top 25,281,Stanford,2,1743,26
+2004,11,,AP Top 25,251,Saint Joseph's,3,1640,2
+2004,11,,AP Top 25,150,Louisville,4,1597,0
+2004,11,,AP Top 25,135,Kentucky,5,1418,0
+2004,11,,AP Top 25,314,UConn,6,1298,0
+2004,11,,AP Top 25,229,Pittsburgh,7,1287,0
+2004,11,,AP Top 25,51,Cincinnati,8,1248,0
+2004,11,,AP Top 25,11,Arizona,9,1187,0
+2004,11,,AP Top 25,102,Gonzaga,10,1147,0
+2004,11,,AP Top 25,174,Mississippi State,11,1012,0
+2004,11,,AP Top 25,200,North Carolina,12,1006,0
+2004,11,,AP Top 25,298,Texas Tech,13,967,0
+2004,11,,AP Top 25,101,Georgia Tech,14,895,0
+2004,11,,AP Top 25,131,Kansas,15,683,0
+2004,11,,AP Top 25,295,Texas,16,599,0
+2004,11,,AP Top 25,355,Wisconsin,17,595,0
+2004,11,,AP Top 25,218,Oklahoma State,18,580,0
+2004,11,,AP Top 25,342,Wake Forest,19,444,0
+2004,11,,AP Top 25,286,Syracuse,20,442,0
+2004,11,,AP Top 25,236,Purdue,21,418,0
+2004,11,,AP Top 25,87,Florida,22,366,0
+2004,11,,AP Top 25,235,Providence,23,313,0
+2004,11,,AP Top 25,266,South Carolina,24,293,0
+2004,11,,AP Top 25,217,Oklahoma,25,94,0
+2004,12,,AP Top 25,333,VCU,,1,0
+2004,12,,AP Top 25,90,Florida State,,53,0
+2004,12,,AP Top 25,337,Vermont,,2,0
+2004,12,,AP Top 25,157,Marquette,,49,0
+2004,12,,AP Top 25,185,NC State,,58,0
+2004,12,,AP Top 25,125,Iowa State,,2,0
+2004,12,,AP Top 25,336,Vanderbilt,,113,0
+2004,12,,AP Top 25,169,Michigan State,,3,0
+2004,12,,AP Top 25,263,Seton Hall,,101,0
+2004,12,,AP Top 25,134,Kent State,,4,0
+2004,12,,AP Top 25,61,Creighton,,17,0
+2004,12,,AP Top 25,163,Memphis,,10,0
+2004,12,,AP Top 25,2,Air Force,,116,0
+2004,12,,AP Top 25,108,Hawai'i,,7,0
+2004,12,,AP Top 25,118,Illinois,,3,0
+2004,12,,AP Top 25,236,Purdue,,26,0
+2004,12,,AP Top 25,48,Charlotte,,20,0
+2004,12,,AP Top 25,64,Dayton,,27,0
+2004,12,,AP Top 25,351,Western Michigan,,17,0
+2004,12,,AP Top 25,273,Southern Illinois,,65,0
+2004,12,,AP Top 25,241,Rice,,4,0
+2004,12,,AP Top 25,72,Duke,1,1767,44
+2004,12,,AP Top 25,281,Stanford,2,1749,26
+2004,12,,AP Top 25,251,Saint Joseph's,3,1660,2
+2004,12,,AP Top 25,229,Pittsburgh,4,1485,0
+2004,12,,AP Top 25,314,UConn,5,1476,0
+2004,12,,AP Top 25,150,Louisville,6,1353,0
+2004,12,,AP Top 25,174,Mississippi State,7,1350,0
+2004,12,,AP Top 25,102,Gonzaga,8,1330,0
+2004,12,,AP Top 25,135,Kentucky,9,1229,0
+2004,12,,AP Top 25,51,Cincinnati,10,1008,0
+2004,12,,AP Top 25,295,Texas,11,968,0
+2004,12,,AP Top 25,11,Arizona,12,963,0
+2004,12,,AP Top 25,218,Oklahoma State,13,962,0
+2004,12,,AP Top 25,355,Wisconsin,14,860,0
+2004,12,,AP Top 25,101,Georgia Tech,15,800,0
+2004,12,,AP Top 25,342,Wake Forest,16,683,0
+2004,12,,AP Top 25,200,North Carolina,17,607,0
+2004,12,,AP Top 25,286,Syracuse,18,586,0
+2004,12,,AP Top 25,298,Texas Tech,19,545,0
+2004,12,,AP Top 25,131,Kansas,20,513,0
+2004,12,,AP Top 25,87,Florida,21,178,0
+2004,12,,AP Top 25,217,Oklahoma,22,172,0
+2004,12,,AP Top 25,235,Providence,23,156,0
+2004,12,,AP Top 25,329,Utah State,24,152,0
+2004,12,,AP Top 25,266,South Carolina,25,150,0
+2004,13,,AP Top 25,286,Syracuse,,187,0
+2004,13,,AP Top 25,160,Maryland,,14,0
+2004,13,,AP Top 25,336,Vanderbilt,,24,0
+2004,13,,AP Top 25,327,UTEP,,7,0
+2004,13,,AP Top 25,2,Air Force,,62,0
+2004,13,,AP Top 25,163,Memphis,,71,0
+2004,13,,AP Top 25,48,Charlotte,,39,0
+2004,13,,AP Top 25,27,Boston University,,4,0
+2004,13,,AP Top 25,64,Dayton,,54,0
+2004,13,,AP Top 25,61,Creighton,,5,0
+2004,13,,AP Top 25,108,Hawai'i,,23,0
+2004,13,,AP Top 25,217,Oklahoma,,46,0
+2004,13,,AP Top 25,90,Florida State,,40,0
+2004,13,,AP Top 25,134,Kent State,,12,0
+2004,13,,AP Top 25,169,Michigan State,,42,0
+2004,13,,AP Top 25,118,Illinois,,40,0
+2004,13,,AP Top 25,157,Marquette,,14,0
+2004,13,,AP Top 25,337,Vermont,,2,0
+2004,13,,AP Top 25,136,LSU,,41,0
+2004,13,,AP Top 25,351,Western Michigan,,33,0
+2004,13,,AP Top 25,263,Seton Hall,,55,0
+2004,13,,AP Top 25,72,Duke,1,1765,43
+2004,13,,AP Top 25,281,Stanford,2,1753,27
+2004,13,,AP Top 25,251,Saint Joseph's,3,1659,2
+2004,13,,AP Top 25,229,Pittsburgh,4,1502,0
+2004,13,,AP Top 25,314,UConn,5,1499,0
+2004,13,,AP Top 25,174,Mississippi State,6,1405,0
+2004,13,,AP Top 25,102,Gonzaga,7,1392,0
+2004,13,,AP Top 25,135,Kentucky,8,1281,0
+2004,13,,AP Top 25,150,Louisville,9,1189,0
+2004,13,,AP Top 25,218,Oklahoma State,10,1166,0
+2004,13,,AP Top 25,295,Texas,11,1156,0
+2004,13,,AP Top 25,131,Kansas,12,879,0
+2004,13,,AP Top 25,51,Cincinnati,13,846,0
+2004,13,,AP Top 25,200,North Carolina,14,723,0
+2004,13,,AP Top 25,101,Georgia Tech,15,705,0
+2004,13,,AP Top 25,11,Arizona,16,667,0
+2004,13,,AP Top 25,355,Wisconsin,17,646,0
+2004,13,,AP Top 25,298,Texas Tech,18,415,0
+2004,13,,AP Top 25,329,Utah State,19,349,0
+2004,13,,AP Top 25,342,Wake Forest,20,333,0
+2004,13,,AP Top 25,185,NC State,21,327,0
+2004,13,,AP Top 25,87,Florida,22,294,0
+2004,13,,AP Top 25,273,Southern Illinois,23,219,0
+2004,13,,AP Top 25,235,Providence,24,215,0
+2004,13,,AP Top 25,266,South Carolina,25,200,0
+2004,14,,AP Top 25,286,Syracuse,,194,0
+2004,14,,AP Top 25,27,Boston University,,8,0
+2004,14,,AP Top 25,169,Michigan State,,14,0
+2004,14,,AP Top 25,87,Florida,,57,0
+2004,14,,AP Top 25,329,Utah State,,117,0
+2004,14,,AP Top 25,118,Illinois,,87,0
+2004,14,,AP Top 25,64,Dayton,,40,0
+2004,14,,AP Top 25,263,Seton Hall,,40,0
+2004,14,,AP Top 25,217,Oklahoma,,59,0
+2004,14,,AP Top 25,65,DePaul,,1,0
+2004,14,,AP Top 25,155,Manhattan,,1,0
+2004,14,,AP Top 25,160,Maryland,,6,0
+2004,14,,AP Top 25,189,Nevada,,6,0
+2004,14,,AP Top 25,134,Kent State,,26,0
+2004,14,,AP Top 25,108,Hawai'i,,1,0
+2004,14,,AP Top 25,2,Air Force,,94,0
+2004,14,,AP Top 25,48,Charlotte,,26,0
+2004,14,,AP Top 25,75,East Tennessee State,,1,0
+2004,14,,AP Top 25,351,Western Michigan,,25,0
+2004,14,,AP Top 25,281,Stanford,1,1791,64
+2004,14,,AP Top 25,251,Saint Joseph's,2,1721,8
+2004,14,,AP Top 25,72,Duke,3,1613,0
+2004,14,,AP Top 25,174,Mississippi State,4,1541,0
+2004,14,,AP Top 25,229,Pittsburgh,5,1491,0
+2004,14,,AP Top 25,102,Gonzaga,6,1481,0
+2004,14,,AP Top 25,218,Oklahoma State,7,1394,0
+2004,14,,AP Top 25,314,UConn,8,1225,0
+2004,14,,AP Top 25,135,Kentucky,9,1153,0
+2004,14,,AP Top 25,150,Louisville,10,1005,0
+2004,14,,AP Top 25,295,Texas,11,964,0
+2004,14,,AP Top 25,355,Wisconsin,12,915,0
+2004,14,,AP Top 25,185,NC State,13,884,0
+2004,14,,AP Top 25,11,Arizona,14,869,0
+2004,14,,AP Top 25,342,Wake Forest,15,652,0
+2004,14,,AP Top 25,200,North Carolina,16,638,0
+2004,14,,AP Top 25,51,Cincinnati,17,620,0
+2004,14,,AP Top 25,101,Georgia Tech,18,580,0
+2004,14,,AP Top 25,235,Providence,19,441,0
+2004,14,,AP Top 25,273,Southern Illinois,20,376,0
+2004,14,,AP Top 25,131,Kansas,21,319,0
+2004,14,,AP Top 25,298,Texas Tech,22,244,0
+2004,14,,AP Top 25,163,Memphis,23,240,0
+2004,14,,AP Top 25,136,LSU,24,227,0
+2004,14,,AP Top 25,266,South Carolina,25,213,0
+2004,15,,AP Top 25,27,Boston University,,10,0
+2004,15,,AP Top 25,96,George Washington,,1,0
+2004,15,,AP Top 25,336,Vanderbilt,,15,0
+2004,15,,AP Top 25,75,East Tennessee State,,12,0
+2004,15,,AP Top 25,26,Boston College,,2,0
+2004,15,,AP Top 25,266,South Carolina,,39,0
+2004,15,,AP Top 25,48,Charlotte,,78,0
+2004,15,,AP Top 25,305,UAB,,10,0
+2004,15,,AP Top 25,286,Syracuse,,80,0
+2004,15,,AP Top 25,263,Seton Hall,,20,0
+2004,15,,AP Top 25,64,Dayton,,15,0
+2004,15,,AP Top 25,87,Florida,,10,0
+2004,15,,AP Top 25,331,Utah,,3,0
+2004,15,,AP Top 25,217,Oklahoma,,8,0
+2004,15,,AP Top 25,327,UTEP,,5,0
+2004,15,,AP Top 25,189,Nevada,,5,0
+2004,15,,AP Top 25,169,Michigan State,,68,0
+2004,15,,AP Top 25,134,Kent State,,76,0
+2004,15,,AP Top 25,351,Western Michigan,,45,0
+2004,15,,AP Top 25,155,Manhattan,,12,0
+2004,15,,AP Top 25,2,Air Force,,55,0
+2004,15,,AP Top 25,136,LSU,,28,0
+2004,15,,AP Top 25,281,Stanford,1,1791,64
+2004,15,,AP Top 25,251,Saint Joseph's,2,1732,8
+2004,15,,AP Top 25,229,Pittsburgh,3,1593,0
+2004,15,,AP Top 25,102,Gonzaga,4,1536,0
+2004,15,,AP Top 25,72,Duke,5,1507,0
+2004,15,,AP Top 25,218,Oklahoma State,6,1499,0
+2004,15,,AP Top 25,174,Mississippi State,7,1353,0
+2004,15,,AP Top 25,314,UConn,8,1299,0
+2004,15,,AP Top 25,135,Kentucky,9,1240,0
+2004,15,,AP Top 25,295,Texas,10,1140,0
+2004,15,,AP Top 25,342,Wake Forest,11,1007,0
+2004,15,,AP Top 25,200,North Carolina,12,785,0
+2004,15,,AP Top 25,235,Providence,13,745,0
+2004,15,,AP Top 25,185,NC State,14,716,0
+2004,15,,AP Top 25,51,Cincinnati,15,643,0
+2004,15,,AP Top 25,273,Southern Illinois,16,620,0
+2004,15,,AP Top 25,11,Arizona,17,587,0
+2004,15,,AP Top 25,101,Georgia Tech,18,566,0
+2004,15,,AP Top 25,163,Memphis,19,540,0
+2004,15,,AP Top 25,131,Kansas,20,474,0
+2004,15,,AP Top 25,150,Louisville,21,450,0
+2004,15,,AP Top 25,355,Wisconsin,22,445,0
+2004,15,,AP Top 25,118,Illinois,23,283,0
+2004,15,,AP Top 25,329,Utah State,24,141,0
+2004,15,,AP Top 25,298,Texas Tech,25,111,0
+2004,16,,AP Top 25,336,Vanderbilt,,3,0
+2004,16,,AP Top 25,266,South Carolina,,15,0
+2004,16,,AP Top 25,351,Western Michigan,,22,0
+2004,16,,AP Top 25,75,East Tennessee State,,3,0
+2004,16,,AP Top 25,298,Texas Tech,,4,0
+2004,16,,AP Top 25,327,UTEP,,17,0
+2004,16,,AP Top 25,2,Air Force,,49,0
+2004,16,,AP Top 25,48,Charlotte,,26,0
+2004,16,,AP Top 25,189,Nevada,,8,0
+2004,16,,AP Top 25,134,Kent State,,16,0
+2004,16,,AP Top 25,177,Missouri,,1,0
+2004,16,,AP Top 25,155,Manhattan,,3,0
+2004,16,,AP Top 25,343,Washington,,4,0
+2004,16,,AP Top 25,65,DePaul,,2,0
+2004,16,,AP Top 25,263,Seton Hall,,51,0
+2004,16,,AP Top 25,305,UAB,,1,0
+2004,16,,AP Top 25,5,Alabama,,2,0
+2004,16,,AP Top 25,333,VCU,,1,0
+2004,16,,AP Top 25,87,Florida,,25,0
+2004,16,,AP Top 25,64,Dayton,,14,0
+2004,16,,AP Top 25,26,Boston College,,6,0
+2004,16,,AP Top 25,136,LSU,,1,0
+2004,16,,AP Top 25,27,Boston University,,8,0
+2004,16,,AP Top 25,169,Michigan State,,150,0
+2004,16,,AP Top 25,281,Stanford,1,1795,67
+2004,16,,AP Top 25,251,Saint Joseph's,2,1722,5
+2004,16,,AP Top 25,72,Duke,3,1603,0
+2004,16,,AP Top 25,102,Gonzaga,4,1596,0
+2004,16,,AP Top 25,174,Mississippi State,5,1466,0
+2004,16,,AP Top 25,229,Pittsburgh,6,1370,0
+2004,16,,AP Top 25,314,UConn,7,1333,0
+2004,16,,AP Top 25,218,Oklahoma State,8,1318,0
+2004,16,,AP Top 25,135,Kentucky,9,1296,0
+2004,16,,AP Top 25,295,Texas,10,1193,0
+2004,16,,AP Top 25,342,Wake Forest,11,1073,0
+2004,16,,AP Top 25,235,Providence,12,933,0
+2004,16,,AP Top 25,51,Cincinnati,13,821,0
+2004,16,,AP Top 25,200,North Carolina,14,770,0
+2004,16,,AP Top 25,273,Southern Illinois,15,736,0
+2004,16,,AP Top 25,185,NC State,16,611,0
+2004,16,,AP Top 25,355,Wisconsin,17,556,0
+2004,16,,AP Top 25,118,Illinois,18,520,0
+2004,16,,AP Top 25,101,Georgia Tech,19,429,0
+2004,16,,AP Top 25,163,Memphis,20,382,0
+2004,16,,AP Top 25,131,Kansas,21,371,0
+2004,16,,AP Top 25,11,Arizona,22,355,0
+2004,16,,AP Top 25,329,Utah State,23,244,0
+2004,16,,AP Top 25,286,Syracuse,24,238,0
+2004,16,,AP Top 25,150,Louisville,25,237,0
+2004,17,,AP Top 25,5,Alabama,,1,0
+2004,17,,AP Top 25,263,Seton Hall,,34,0
+2004,17,,AP Top 25,150,Louisville,,41,0
+2004,17,,AP Top 25,298,Texas Tech,,10,0
+2004,17,,AP Top 25,65,DePaul,,42,0
+2004,17,,AP Top 25,217,Oklahoma,,1,0
+2004,17,,AP Top 25,343,Washington,,36,0
+2004,17,,AP Top 25,234,Princeton,,1,0
+2004,17,,AP Top 25,155,Manhattan,,4,0
+2004,17,,AP Top 25,25,Boise State,,2,0
+2004,17,,AP Top 25,18,BYU,,1,0
+2004,17,,AP Top 25,333,VCU,,1,0
+2004,17,,AP Top 25,189,Nevada,,20,0
+2004,17,,AP Top 25,87,Florida,,6,0
+2004,17,,AP Top 25,225,Pacific,,1,0
+2004,17,,AP Top 25,26,Boston College,,36,0
+2004,17,,AP Top 25,48,Charlotte,,48,0
+2004,17,,AP Top 25,64,Dayton,,5,0
+2004,17,,AP Top 25,327,UTEP,,2,0
+2004,17,,AP Top 25,169,Michigan State,,70,0
+2004,17,,AP Top 25,266,South Carolina,,3,0
+2004,17,,AP Top 25,75,East Tennessee State,,10,0
+2004,17,,AP Top 25,351,Western Michigan,,31,0
+2004,17,,AP Top 25,157,Marquette,,1,0
+2004,17,,AP Top 25,251,Saint Joseph's,1,1795,67
+2004,17,,AP Top 25,281,Stanford,2,1648,2
+2004,17,,AP Top 25,102,Gonzaga,3,1604,1
+2004,17,,AP Top 25,174,Mississippi State,4,1557,0
+2004,17,,AP Top 25,72,Duke,5,1519,2
+2004,17,,AP Top 25,229,Pittsburgh,6,1451,0
+2004,17,,AP Top 25,218,Oklahoma State,7,1410,0
+2004,17,,AP Top 25,135,Kentucky,8,1370,0
+2004,17,,AP Top 25,314,UConn,9,1158,0
+2004,17,,AP Top 25,355,Wisconsin,10,927,0
+2004,17,,AP Top 25,295,Texas,11,914,0
+2004,17,,AP Top 25,118,Illinois,12,898,0
+2004,17,,AP Top 25,51,Cincinnati,13,844,0
+2004,17,,AP Top 25,101,Georgia Tech,14,817,0
+2004,17,,AP Top 25,342,Wake Forest,15,672,0
+2004,17,,AP Top 25,200,North Carolina,16,665,0
+2004,17,,AP Top 25,185,NC State,17,654,0
+2004,17,,AP Top 25,131,Kansas,18,607,0
+2004,17,,AP Top 25,286,Syracuse,19,593,0
+2004,17,,AP Top 25,235,Providence,20,521,0
+2004,17,,AP Top 25,11,Arizona,21,400,0
+2004,17,,AP Top 25,329,Utah State,22,322,0
+2004,17,,AP Top 25,163,Memphis,23,310,0
+2004,17,,AP Top 25,273,Southern Illinois,24,264,0
+2004,17,,AP Top 25,2,Air Force,25,73,0

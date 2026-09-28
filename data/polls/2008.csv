@@ -1,0 +1,870 @@
+season,week,date,poll,team_id,team,rank,points,first
+2008,1,,AP Top 25,314,UConn,,50,0
+2008,1,,AP Top 25,177,Missouri,,8,0
+2008,1,,AP Top 25,18,BYU,,3,0
+2008,1,,AP Top 25,3,Akron,,2,0
+2008,1,,AP Top 25,338,Villanova,,144,0
+2008,1,,AP Top 25,339,Virginia,,19,0
+2008,1,,AP Top 25,5,Alabama,,14,0
+2008,1,,AP Top 25,160,Maryland,,6,0
+2008,1,,AP Top 25,34,Butler,,114,0
+2008,1,,AP Top 25,87,Florida,,35,0
+2008,1,,AP Top 25,113,Houston,,1,0
+2008,1,,AP Top 25,63,Davidson,,50,0
+2008,1,,AP Top 25,275,Southern Miss,,2,0
+2008,1,,AP Top 25,286,Syracuse,,103,0
+2008,1,,AP Top 25,235,Providence,,3,0
+2008,1,,AP Top 25,52,Clemson,,83,0
+2008,1,,AP Top 25,333,VCU,,19,0
+2008,1,,AP Top 25,336,Vanderbilt,,6,0
+2008,1,,AP Top 25,95,George Mason,,1,0
+2008,1,,AP Top 25,174,Mississippi State,,38,0
+2008,1,,AP Top 25,355,Wisconsin,,15,0
+2008,1,,AP Top 25,213,Notre Dame,,18,0
+2008,1,,AP Top 25,192,New Mexico State,,4,0
+2008,1,,AP Top 25,189,Nevada,,6,0
+2008,1,,AP Top 25,329,Utah State,,4,0
+2008,1,,AP Top 25,347,West Virginia,,20,0
+2008,1,,AP Top 25,216,Ohio State,,128,0
+2008,1,,AP Top 25,359,Xavier,,73,0
+2008,1,,AP Top 25,118,Illinois,,2,0
+2008,1,,AP Top 25,343,Washington,,6,0
+2008,1,,AP Top 25,200,North Carolina,1,1728,29
+2008,1,,AP Top 25,313,UCLA,2,1710,24
+2008,1,,AP Top 25,163,Memphis,3,1680,18
+2008,1,,AP Top 25,131,Kansas,4,1568,0
+2008,1,,AP Top 25,97,Georgetown,5,1504,1
+2008,1,,AP Top 25,150,Louisville,6,1380,0
+2008,1,,AP Top 25,292,Tennessee,7,1371,0
+2008,1,,AP Top 25,169,Michigan State,8,1296,0
+2008,1,,AP Top 25,121,Indiana,9,1145,0
+2008,1,,AP Top 25,344,Washington State,10,1103,0
+2008,1,,AP Top 25,157,Marquette,11,1002,0
+2008,1,,AP Top 25,223,Oregon,12,918,0
+2008,1,,AP Top 25,72,Duke,13,868,0
+2008,1,,AP Top 25,102,Gonzaga,14,711,0
+2008,1,,AP Top 25,295,Texas,15,638,0
+2008,1,,AP Top 25,293,Texas A&M,16,623,0
+2008,1,,AP Top 25,11,Arizona,17,499,0
+2008,1,,AP Top 25,323,USC,18,480,0
+2008,1,,AP Top 25,12,Arkansas,19,468,0
+2008,1,,AP Top 25,135,Kentucky,20,372,0
+2008,1,,AP Top 25,185,NC State,21,338,0
+2008,1,,AP Top 25,229,Pittsburgh,22,293,0
+2008,1,,AP Top 25,281,Stanford,23,290,0
+2008,1,,AP Top 25,273,Southern Illinois,24,222,0
+2008,1,,AP Top 25,132,Kansas State,25,216,0
+2008,2,,AP Top 25,314,UConn,,56,0
+2008,2,,AP Top 25,95,George Mason,,3,0
+2008,2,,AP Top 25,135,Kentucky,,16,0
+2008,2,,AP Top 25,3,Akron,,5,0
+2008,2,,AP Top 25,63,Davidson,,55,0
+2008,2,,AP Top 25,333,VCU,,25,0
+2008,2,,AP Top 25,339,Virginia,,18,0
+2008,2,,AP Top 25,336,Vanderbilt,,11,0
+2008,2,,AP Top 25,323,USC,,4,0
+2008,2,,AP Top 25,286,Syracuse,,118,0
+2008,2,,AP Top 25,359,Xavier,,95,0
+2008,2,,AP Top 25,216,Ohio State,,55,0
+2008,2,,AP Top 25,87,Florida,,56,0
+2008,2,,AP Top 25,347,West Virginia,,22,0
+2008,2,,AP Top 25,160,Maryland,,8,0
+2008,2,,AP Top 25,5,Alabama,,15,0
+2008,2,,AP Top 25,235,Providence,,4,0
+2008,2,,AP Top 25,177,Missouri,,8,0
+2008,2,,AP Top 25,18,BYU,,10,0
+2008,2,,AP Top 25,355,Wisconsin,,21,0
+2008,2,,AP Top 25,189,Nevada,,6,0
+2008,2,,AP Top 25,350,Western Kentucky,,1,0
+2008,2,,AP Top 25,257,San Diego State,,2,0
+2008,2,,AP Top 25,118,Illinois,,1,0
+2008,2,,AP Top 25,164,Mercer,,4,0
+2008,2,,AP Top 25,94,Gardner-Webb,,7,0
+2008,2,,AP Top 25,217,Oklahoma,,5,0
+2008,2,,AP Top 25,174,Mississippi State,,51,0
+2008,2,,AP Top 25,343,Washington,,6,0
+2008,2,,AP Top 25,113,Houston,,2,0
+2008,2,,AP Top 25,213,Notre Dame,,21,0
+2008,2,,AP Top 25,52,Clemson,,99,0
+2008,2,,AP Top 25,275,Southern Miss,,2,0
+2008,2,,AP Top 25,200,North Carolina,1,1737,29
+2008,2,,AP Top 25,313,UCLA,2,1710,24
+2008,2,,AP Top 25,163,Memphis,3,1686,18
+2008,2,,AP Top 25,131,Kansas,4,1566,0
+2008,2,,AP Top 25,97,Georgetown,5,1503,1
+2008,2,,AP Top 25,150,Louisville,6,1394,0
+2008,2,,AP Top 25,292,Tennessee,7,1386,0
+2008,2,,AP Top 25,121,Indiana,8,1172,0
+2008,2,,AP Top 25,344,Washington State,9,1142,0
+2008,2,,AP Top 25,157,Marquette,10,1026,0
+2008,2,,AP Top 25,223,Oregon,11,1003,0
+2008,2,,AP Top 25,169,Michigan State,12,976,0
+2008,2,,AP Top 25,72,Duke,13,917,0
+2008,2,,AP Top 25,102,Gonzaga,14,779,0
+2008,2,,AP Top 25,293,Texas A&M,15,693,0
+2008,2,,AP Top 25,295,Texas,16,684,0
+2008,2,,AP Top 25,11,Arizona,17,581,0
+2008,2,,AP Top 25,12,Arkansas,18,558,0
+2008,2,,AP Top 25,229,Pittsburgh,19,413,0
+2008,2,,AP Top 25,281,Stanford,20,389,0
+2008,2,,AP Top 25,185,NC State,21,382,0
+2008,2,,AP Top 25,132,Kansas State,22,297,0
+2008,2,,AP Top 25,273,Southern Illinois,23,282,0
+2008,2,,AP Top 25,338,Villanova,24,190,0
+2008,2,,AP Top 25,34,Butler,25,122,0
+2008,3,,AP Top 25,61,Creighton,,1,0
+2008,3,,AP Top 25,168,Miami,,27,0
+2008,3,,AP Top 25,216,Ohio State,,77,0
+2008,3,,AP Top 25,355,Wisconsin,,74,0
+2008,3,,AP Top 25,12,Arkansas,,106,0
+2008,3,,AP Top 25,118,Illinois,,1,0
+2008,3,,AP Top 25,343,Washington,,8,0
+2008,3,,AP Top 25,95,George Mason,,3,0
+2008,3,,AP Top 25,354,Winthrop,,5,0
+2008,3,,AP Top 25,174,Mississippi State,,23,0
+2008,3,,AP Top 25,314,UConn,,30,0
+2008,3,,AP Top 25,323,USC,,6,0
+2008,3,,AP Top 25,336,Vanderbilt,,23,0
+2008,3,,AP Top 25,347,West Virginia,,29,0
+2008,3,,AP Top 25,359,Xavier,,22,0
+2008,3,,AP Top 25,281,Stanford,,43,0
+2008,3,,AP Top 25,215,Ohio,,2,0
+2008,3,,AP Top 25,11,Arizona,,128,0
+2008,3,,AP Top 25,160,Maryland,,3,0
+2008,3,,AP Top 25,235,Providence,,2,0
+2008,3,,AP Top 25,63,Davidson,,45,0
+2008,3,,AP Top 25,5,Alabama,,26,0
+2008,3,,AP Top 25,240,Rhode Island,,4,0
+2008,3,,AP Top 25,193,New Orleans,,1,0
+2008,3,,AP Top 25,257,San Diego State,,6,0
+2008,3,,AP Top 25,135,Kentucky,,6,0
+2008,3,,AP Top 25,185,NC State,,41,0
+2008,3,,AP Top 25,20,Baylor,,2,0
+2008,3,,AP Top 25,18,BYU,,22,0
+2008,3,,AP Top 25,177,Missouri,,18,0
+2008,3,,AP Top 25,200,North Carolina,1,1725,26
+2008,3,,AP Top 25,313,UCLA,2,1716,26
+2008,3,,AP Top 25,163,Memphis,3,1689,19
+2008,3,,AP Top 25,131,Kansas,4,1566,0
+2008,3,,AP Top 25,97,Georgetown,5,1508,1
+2008,3,,AP Top 25,150,Louisville,6,1396,0
+2008,3,,AP Top 25,292,Tennessee,7,1384,0
+2008,3,,AP Top 25,121,Indiana,8,1200,0
+2008,3,,AP Top 25,344,Washington State,9,1170,0
+2008,3,,AP Top 25,169,Michigan State,10,1042,0
+2008,3,,AP Top 25,157,Marquette,11,1039,0
+2008,3,,AP Top 25,223,Oregon,12,1021,0
+2008,3,,AP Top 25,72,Duke,13,962,0
+2008,3,,AP Top 25,102,Gonzaga,14,834,0
+2008,3,,AP Top 25,295,Texas,15,789,0
+2008,3,,AP Top 25,293,Texas A&M,16,759,0
+2008,3,,AP Top 25,229,Pittsburgh,17,582,0
+2008,3,,AP Top 25,132,Kansas State,18,487,0
+2008,3,,AP Top 25,273,Southern Illinois,19,400,0
+2008,3,,AP Top 25,338,Villanova,20,297,0
+2008,3,,AP Top 25,286,Syracuse,21,257,0
+2008,3,,AP Top 25,34,Butler,22,244,0
+2008,3,,AP Top 25,339,Virginia,23,227,0
+2008,3,,AP Top 25,52,Clemson,24,187,0
+2008,3,,AP Top 25,87,Florida,25,135,0
+2008,4,,AP Top 25,96,George Washington,,1,0
+2008,4,,AP Top 25,339,Virginia,,62,0
+2008,4,,AP Top 25,168,Miami,,68,0
+2008,4,,AP Top 25,26,Boston College,,18,0
+2008,4,,AP Top 25,20,Baylor,,5,0
+2008,4,,AP Top 25,298,Texas Tech,,1,0
+2008,4,,AP Top 25,177,Missouri,,18,0
+2008,4,,AP Top 25,338,Villanova,,162,0
+2008,4,,AP Top 25,286,Syracuse,,90,0
+2008,4,,AP Top 25,263,Seton Hall,,54,0
+2008,4,,AP Top 25,347,West Virginia,,17,0
+2008,4,,AP Top 25,314,UConn,,34,0
+2008,4,,AP Top 25,118,Illinois,,4,0
+2008,4,,AP Top 25,216,Ohio State,,53,0
+2008,4,,AP Top 25,95,George Mason,,34,0
+2008,4,,AP Top 25,215,Ohio,,2,0
+2008,4,,AP Top 25,167,Miami (OH),,3,0
+2008,4,,AP Top 25,273,Southern Illinois,,80,0
+2008,4,,AP Top 25,191,New Mexico,,1,0
+2008,4,,AP Top 25,135,Kentucky,,4,0
+2008,4,,AP Top 25,87,Florida,,12,0
+2008,4,,AP Top 25,336,Vanderbilt,,109,0
+2008,4,,AP Top 25,12,Arkansas,,64,0
+2008,4,,AP Top 25,253,Saint Mary's,,50,0
+2008,4,,AP Top 25,281,Stanford,,27,0
+2008,4,,AP Top 25,11,Arizona,,85,0
+2008,4,,AP Top 25,193,New Orleans,,9,0
+2008,4,,AP Top 25,200,North Carolina,1,1736,28
+2008,4,,AP Top 25,313,UCLA,2,1727,25
+2008,4,,AP Top 25,163,Memphis,3,1689,18
+2008,4,,AP Top 25,131,Kansas,4,1577,0
+2008,4,,AP Top 25,97,Georgetown,5,1536,1
+2008,4,,AP Top 25,344,Washington State,6,1360,0
+2008,4,,AP Top 25,72,Duke,7,1353,0
+2008,4,,AP Top 25,295,Texas,8,1240,0
+2008,4,,AP Top 25,293,Texas A&M,9,1163,0
+2008,4,,AP Top 25,169,Michigan State,10,1015,0
+2008,4,,AP Top 25,292,Tennessee,11,973,0
+2008,4,,AP Top 25,150,Louisville,12,964,0
+2008,4,,AP Top 25,157,Marquette,13,950,0
+2008,4,,AP Top 25,229,Pittsburgh,14,871,0
+2008,4,,AP Top 25,121,Indiana,15,766,0
+2008,4,,AP Top 25,34,Butler,16,742,0
+2008,4,,AP Top 25,223,Oregon,17,511,0
+2008,4,,AP Top 25,52,Clemson,18,495,0
+2008,4,,AP Top 25,102,Gonzaga,19,454,0
+2008,4,,AP Top 25,355,Wisconsin,20,234,0
+2008,4,,AP Top 25,18,BYU,21,225,0
+2008,4,,AP Top 25,323,USC,22,217,0
+2008,4,,AP Top 25,359,Xavier,23,199,0
+2008,4,,AP Top 25,185,NC State,24,173,0
+2008,4,,AP Top 25,132,Kansas State,25,163,0
+2008,5,,AP Top 25,281,Stanford,,42,0
+2008,5,,AP Top 25,12,Arkansas,,67,0
+2008,5,,AP Top 25,132,Kansas State,,15,0
+2008,5,,AP Top 25,339,Virginia,,55,0
+2008,5,,AP Top 25,185,NC State,,17,0
+2008,5,,AP Top 25,168,Miami,,102,0
+2008,5,,AP Top 25,255,Sam Houston,,1,0
+2008,5,,AP Top 25,61,Creighton,,21,0
+2008,5,,AP Top 25,347,West Virginia,,26,0
+2008,5,,AP Top 25,253,Saint Mary's,,115,0
+2008,5,,AP Top 25,355,Wisconsin,,57,0
+2008,5,,AP Top 25,220,Ole Miss,,4,0
+2008,5,,AP Top 25,216,Ohio State,,2,0
+2008,5,,AP Top 25,40,California,,30,0
+2008,5,,AP Top 25,87,Florida,,13,0
+2008,5,,AP Top 25,314,UConn,,6,0
+2008,5,,AP Top 25,263,Seton Hall,,9,0
+2008,5,,AP Top 25,95,George Mason,,4,0
+2008,5,,AP Top 25,273,Southern Illinois,,7,0
+2008,5,,AP Top 25,200,North Carolina,1,1770,46
+2008,5,,AP Top 25,163,Memphis,2,1716,21
+2008,5,,AP Top 25,131,Kansas,3,1632,2
+2008,5,,AP Top 25,295,Texas,4,1548,2
+2008,5,,AP Top 25,97,Georgetown,5,1529,1
+2008,5,,AP Top 25,72,Duke,6,1422,0
+2008,5,,AP Top 25,313,UCLA,7,1370,0
+2008,5,,AP Top 25,344,Washington State,8,1355,0
+2008,5,,AP Top 25,169,Michigan State,9,1093,0
+2008,5,,AP Top 25,292,Tennessee,10,1004,0
+2008,5,,AP Top 25,157,Marquette,11,959,0
+2008,5,,AP Top 25,229,Pittsburgh,12,928,0
+2008,5,,AP Top 25,34,Butler,13,892,0
+2008,5,,AP Top 25,150,Louisville,14,878,0
+2008,5,,AP Top 25,121,Indiana,15,811,0
+2008,5,,AP Top 25,293,Texas A&M,16,781,0
+2008,5,,AP Top 25,102,Gonzaga,17,574,0
+2008,5,,AP Top 25,52,Clemson,18,570,0
+2008,5,,AP Top 25,223,Oregon,19,556,0
+2008,5,,AP Top 25,18,BYU,20,371,0
+2008,5,,AP Top 25,359,Xavier,21,338,0
+2008,5,,AP Top 25,11,Arizona,22,224,0
+2008,5,,AP Top 25,336,Vanderbilt,23,173,0
+2008,5,,AP Top 25,323,USC,24,161,0
+2008,5,,AP Top 25,338,Villanova,25,152,0
+2008,6,,AP Top 25,323,USC,,118,0
+2008,6,,AP Top 25,339,Virginia,,2,0
+2008,6,,AP Top 25,40,California,,9,0
+2008,6,,AP Top 25,87,Florida,,24,0
+2008,6,,AP Top 25,64,Dayton,,36,0
+2008,6,,AP Top 25,240,Rhode Island,,41,0
+2008,6,,AP Top 25,61,Creighton,,5,0
+2008,6,,AP Top 25,168,Miami,,133,0
+2008,6,,AP Top 25,111,Holy Cross,,1,0
+2008,6,,AP Top 25,347,West Virginia,,70,0
+2008,6,,AP Top 25,26,Boston College,,15,0
+2008,6,,AP Top 25,63,Davidson,,1,0
+2008,6,,AP Top 25,185,NC State,,2,0
+2008,6,,AP Top 25,255,Sam Houston,,1,0
+2008,6,,AP Top 25,355,Wisconsin,,14,0
+2008,6,,AP Top 25,281,Stanford,,61,0
+2008,6,,AP Top 25,12,Arkansas,,88,0
+2008,6,,AP Top 25,220,Ole Miss,,10,0
+2008,6,,AP Top 25,200,North Carolina,1,1772,48
+2008,6,,AP Top 25,163,Memphis,2,1708,19
+2008,6,,AP Top 25,131,Kansas,3,1637,2
+2008,6,,AP Top 25,295,Texas,4,1560,2
+2008,6,,AP Top 25,97,Georgetown,5,1528,1
+2008,6,,AP Top 25,72,Duke,6,1434,0
+2008,6,,AP Top 25,344,Washington State,7,1358,0
+2008,6,,AP Top 25,313,UCLA,8,1356,0
+2008,6,,AP Top 25,169,Michigan State,9,1136,0
+2008,6,,AP Top 25,157,Marquette,10,1053,0
+2008,6,,AP Top 25,229,Pittsburgh,11,1034,0
+2008,6,,AP Top 25,292,Tennessee,12,1033,0
+2008,6,,AP Top 25,121,Indiana,13,924,0
+2008,6,,AP Top 25,293,Texas A&M,14,846,0
+2008,6,,AP Top 25,52,Clemson,15,702,0
+2008,6,,AP Top 25,223,Oregon,16,694,0
+2008,6,,AP Top 25,359,Xavier,17,503,0
+2008,6,,AP Top 25,34,Butler,18,413,0
+2008,6,,AP Top 25,102,Gonzaga,19,386,0
+2008,6,,AP Top 25,336,Vanderbilt,20,379,0
+2008,6,,AP Top 25,11,Arizona,21,360,0
+2008,6,,AP Top 25,150,Louisville,22,286,0
+2008,6,,AP Top 25,338,Villanova,23,279,0
+2008,6,,AP Top 25,253,Saint Mary's,24,197,0
+2008,6,,AP Top 25,18,BYU,25,191,0
+2008,7,,AP Top 25,161,Massachusetts,,6,0
+2008,7,,AP Top 25,111,Holy Cross,,1,0
+2008,7,,AP Top 25,61,Creighton,,4,0
+2008,7,,AP Top 25,240,Rhode Island,,92,0
+2008,7,,AP Top 25,12,Arkansas,,16,0
+2008,7,,AP Top 25,253,Saint Mary's,,30,0
+2008,7,,AP Top 25,10,Arizona State,,3,0
+2008,7,,AP Top 25,118,Illinois,,8,0
+2008,7,,AP Top 25,355,Wisconsin,,17,0
+2008,7,,AP Top 25,26,Boston College,,1,0
+2008,7,,AP Top 25,220,Ole Miss,,22,0
+2008,7,,AP Top 25,255,Sam Houston,,1,0
+2008,7,,AP Top 25,64,Dayton,,70,0
+2008,7,,AP Top 25,87,Florida,,51,0
+2008,7,,AP Top 25,70,Drake,,6,0
+2008,7,,AP Top 25,191,New Mexico,,1,0
+2008,7,,AP Top 25,281,Stanford,,94,0
+2008,7,,AP Top 25,359,Xavier,,117,0
+2008,7,,AP Top 25,150,Louisville,,14,0
+2008,7,,AP Top 25,236,Purdue,,3,0
+2008,7,,AP Top 25,286,Syracuse,,1,0
+2008,7,,AP Top 25,188,Nebraska,,2,0
+2008,7,,AP Top 25,20,Baylor,,2,0
+2008,7,,AP Top 25,200,North Carolina,1,1772,48
+2008,7,,AP Top 25,163,Memphis,2,1710,19
+2008,7,,AP Top 25,131,Kansas,3,1638,2
+2008,7,,AP Top 25,295,Texas,4,1559,2
+2008,7,,AP Top 25,97,Georgetown,5,1530,1
+2008,7,,AP Top 25,72,Duke,6,1432,0
+2008,7,,AP Top 25,344,Washington State,7,1361,0
+2008,7,,AP Top 25,313,UCLA,8,1347,0
+2008,7,,AP Top 25,169,Michigan State,9,1140,0
+2008,7,,AP Top 25,157,Marquette,10,1066,0
+2008,7,,AP Top 25,229,Pittsburgh,11,1060,0
+2008,7,,AP Top 25,292,Tennessee,12,1024,0
+2008,7,,AP Top 25,121,Indiana,13,941,0
+2008,7,,AP Top 25,293,Texas A&M,14,881,0
+2008,7,,AP Top 25,52,Clemson,15,742,0
+2008,7,,AP Top 25,34,Butler,16,567,0
+2008,7,,AP Top 25,336,Vanderbilt,17,562,0
+2008,7,,AP Top 25,102,Gonzaga,18,496,0
+2008,7,,AP Top 25,11,Arizona,19,490,0
+2008,7,,AP Top 25,338,Villanova,20,411,0
+2008,7,,AP Top 25,18,BYU,21,305,0
+2008,7,,AP Top 25,168,Miami,22,274,0
+2008,7,,AP Top 25,223,Oregon,23,257,0
+2008,7,,AP Top 25,347,West Virginia,24,139,0
+2008,7,,AP Top 25,323,USC,25,134,0
+2008,8,,AP Top 25,113,Houston,,4,0
+2008,8,,AP Top 25,161,Massachusetts,,6,0
+2008,8,,AP Top 25,64,Dayton,,84,0
+2008,8,,AP Top 25,102,Gonzaga,,120,0
+2008,8,,AP Top 25,8,American University,,1,0
+2008,8,,AP Top 25,61,Creighton,,4,0
+2008,8,,AP Top 25,20,Baylor,,8,0
+2008,8,,AP Top 25,281,Stanford,,132,0
+2008,8,,AP Top 25,355,Wisconsin,,23,0
+2008,8,,AP Top 25,253,Saint Mary's,,51,0
+2008,8,,AP Top 25,70,Drake,,3,0
+2008,8,,AP Top 25,223,Oregon,,12,0
+2008,8,,AP Top 25,339,Virginia,,9,0
+2008,8,,AP Top 25,87,Florida,,13,0
+2008,8,,AP Top 25,255,Sam Houston,,3,0
+2008,8,,AP Top 25,150,Louisville,,2,0
+2008,8,,AP Top 25,359,Xavier,,14,0
+2008,8,,AP Top 25,10,Arizona State,,5,0
+2008,8,,AP Top 25,200,North Carolina,1,1774,47
+2008,8,,AP Top 25,163,Memphis,2,1740,24
+2008,8,,AP Top 25,131,Kansas,3,1668,1
+2008,8,,AP Top 25,344,Washington State,4,1481,0
+2008,8,,AP Top 25,313,UCLA,5,1452,0
+2008,8,,AP Top 25,229,Pittsburgh,6,1408,0
+2008,8,,AP Top 25,169,Michigan State,7,1396,0
+2008,8,,AP Top 25,97,Georgetown,8,1245,0
+2008,8,,AP Top 25,295,Texas,9,1241,0
+2008,8,,AP Top 25,72,Duke,10,1158,0
+2008,8,,AP Top 25,292,Tennessee,11,1086,0
+2008,8,,AP Top 25,157,Marquette,12,1076,0
+2008,8,,AP Top 25,121,Indiana,13,940,0
+2008,8,,AP Top 25,293,Texas A&M,14,898,0
+2008,8,,AP Top 25,336,Vanderbilt,15,675,0
+2008,8,,AP Top 25,34,Butler,16,634,0
+2008,8,,AP Top 25,11,Arizona,17,575,0
+2008,8,,AP Top 25,338,Villanova,18,507,0
+2008,8,,AP Top 25,168,Miami,19,443,0
+2008,8,,AP Top 25,18,BYU,20,383,0
+2008,8,,AP Top 25,52,Clemson,21,331,0
+2008,8,,AP Top 25,220,Ole Miss,22,241,0
+2008,8,,AP Top 25,347,West Virginia,23,240,0
+2008,8,,AP Top 25,323,USC,24,181,0
+2008,8,,AP Top 25,240,Rhode Island,25,133,0
+2008,9,,AP Top 25,113,Houston,,10,0
+2008,9,,AP Top 25,359,Xavier,,11,0
+2008,9,,AP Top 25,102,Gonzaga,,5,0
+2008,9,,AP Top 25,10,Arizona State,,6,0
+2008,9,,AP Top 25,20,Baylor,,19,0
+2008,9,,AP Top 25,253,Saint Mary's,,85,0
+2008,9,,AP Top 25,223,Oregon,,3,0
+2008,9,,AP Top 25,213,Notre Dame,,3,0
+2008,9,,AP Top 25,255,Sam Houston,,1,0
+2008,9,,AP Top 25,217,Oklahoma,,46,0
+2008,9,,AP Top 25,191,New Mexico,,1,0
+2008,9,,AP Top 25,161,Massachusetts,,8,0
+2008,9,,AP Top 25,70,Drake,,8,0
+2008,9,,AP Top 25,339,Virginia,,11,0
+2008,9,,AP Top 25,87,Florida,,2,0
+2008,9,,AP Top 25,168,Miami,,59,0
+2008,9,,AP Top 25,150,Louisville,,1,0
+2008,9,,AP Top 25,347,West Virginia,,15,0
+2008,9,,AP Top 25,18,BYU,,27,0
+2008,9,,AP Top 25,200,North Carolina,1,1772,45
+2008,9,,AP Top 25,163,Memphis,2,1744,26
+2008,9,,AP Top 25,131,Kansas,3,1667,1
+2008,9,,AP Top 25,344,Washington State,4,1534,0
+2008,9,,AP Top 25,313,UCLA,5,1499,0
+2008,9,,AP Top 25,169,Michigan State,6,1419,0
+2008,9,,AP Top 25,97,Georgetown,7,1324,0
+2008,9,,AP Top 25,292,Tennessee,8,1259,0
+2008,9,,AP Top 25,72,Duke,9,1252,0
+2008,9,,AP Top 25,157,Marquette,10,1157,0
+2008,9,,AP Top 25,121,Indiana,11,1054,0
+2008,9,,AP Top 25,293,Texas A&M,12,1000,0
+2008,9,,AP Top 25,229,Pittsburgh,13,875,0
+2008,9,,AP Top 25,295,Texas,14,857,0
+2008,9,,AP Top 25,336,Vanderbilt,15,780,0
+2008,9,,AP Top 25,34,Butler,16,720,0
+2008,9,,AP Top 25,338,Villanova,17,601,0
+2008,9,,AP Top 25,220,Ole Miss,18,464,0
+2008,9,,AP Top 25,52,Clemson,19,424,0
+2008,9,,AP Top 25,64,Dayton,20,385,0
+2008,9,,AP Top 25,11,Arizona,21,306,0
+2008,9,,AP Top 25,323,USC,22,264,0
+2008,9,,AP Top 25,240,Rhode Island,23,257,0
+2008,9,,AP Top 25,281,Stanford,24,242,0
+2008,9,,AP Top 25,355,Wisconsin,25,223,0
+2008,10,,AP Top 25,255,Sam Houston,,2,0
+2008,10,,AP Top 25,213,Notre Dame,,74,0
+2008,10,,AP Top 25,347,West Virginia,,42,0
+2008,10,,AP Top 25,18,BYU,,22,0
+2008,10,,AP Top 25,150,Louisville,,3,0
+2008,10,,AP Top 25,216,Ohio State,,2,0
+2008,10,,AP Top 25,323,USC,,3,0
+2008,10,,AP Top 25,10,Arizona State,,53,0
+2008,10,,AP Top 25,217,Oklahoma,,78,0
+2008,10,,AP Top 25,253,Saint Mary's,,12,0
+2008,10,,AP Top 25,194,Niagara,,1,0
+2008,10,,AP Top 25,191,New Mexico,,1,0
+2008,10,,AP Top 25,40,California,,4,0
+2008,10,,AP Top 25,161,Massachusetts,,5,0
+2008,10,,AP Top 25,70,Drake,,22,0
+2008,10,,AP Top 25,314,UConn,,2,0
+2008,10,,AP Top 25,87,Florida,,1,0
+2008,10,,AP Top 25,11,Arizona,,26,0
+2008,10,,AP Top 25,119,Illinois State,,1,0
+2008,10,,AP Top 25,200,North Carolina,1,1768,46
+2008,10,,AP Top 25,163,Memphis,2,1742,25
+2008,10,,AP Top 25,131,Kansas,3,1674,1
+2008,10,,AP Top 25,344,Washington State,4,1532,0
+2008,10,,AP Top 25,313,UCLA,5,1522,0
+2008,10,,AP Top 25,169,Michigan State,6,1422,0
+2008,10,,AP Top 25,97,Georgetown,7,1332,0
+2008,10,,AP Top 25,292,Tennessee,8,1282,0
+2008,10,,AP Top 25,72,Duke,9,1257,0
+2008,10,,AP Top 25,121,Indiana,10,1125,0
+2008,10,,AP Top 25,293,Texas A&M,11,1102,0
+2008,10,,AP Top 25,295,Texas,12,944,0
+2008,10,,AP Top 25,336,Vanderbilt,13,925,0
+2008,10,,AP Top 25,34,Butler,14,822,0
+2008,10,,AP Top 25,157,Marquette,15,751,0
+2008,10,,AP Top 25,220,Ole Miss,16,650,0
+2008,10,,AP Top 25,64,Dayton,17,554,0
+2008,10,,AP Top 25,52,Clemson,18,518,0
+2008,10,,AP Top 25,338,Villanova,19,465,0
+2008,10,,AP Top 25,229,Pittsburgh,20,461,0
+2008,10,,AP Top 25,355,Wisconsin,21,407,0
+2008,10,,AP Top 25,240,Rhode Island,22,393,0
+2008,10,,AP Top 25,281,Stanford,23,185,0
+2008,10,,AP Top 25,359,Xavier,24,128,0
+2008,10,,AP Top 25,168,Miami,25,85,0
+2008,11,,AP Top 25,102,Gonzaga,,2,0
+2008,11,,AP Top 25,281,Stanford,,53,0
+2008,11,,AP Top 25,314,UConn,,2,0
+2008,11,,AP Top 25,216,Ohio State,,3,0
+2008,11,,AP Top 25,150,Louisville,,16,0
+2008,11,,AP Top 25,223,Oregon,,39,0
+2008,11,,AP Top 25,347,West Virginia,,15,0
+2008,11,,AP Top 25,11,Arizona,,5,0
+2008,11,,AP Top 25,253,Saint Mary's,,41,0
+2008,11,,AP Top 25,265,South Alabama,,1,0
+2008,11,,AP Top 25,134,Kent State,,2,0
+2008,11,,AP Top 25,12,Arkansas,,5,0
+2008,11,,AP Top 25,70,Drake,,75,0
+2008,11,,AP Top 25,217,Oklahoma,,11,0
+2008,11,,AP Top 25,119,Illinois State,,7,0
+2008,11,,AP Top 25,20,Baylor,,4,0
+2008,11,,AP Top 25,87,Florida,,47,0
+2008,11,,AP Top 25,132,Kansas State,,1,0
+2008,11,,AP Top 25,177,Missouri,,2,0
+2008,11,,AP Top 25,200,North Carolina,1,1765,45
+2008,11,,AP Top 25,163,Memphis,2,1739,24
+2008,11,,AP Top 25,131,Kansas,3,1678,3
+2008,11,,AP Top 25,313,UCLA,4,1578,0
+2008,11,,AP Top 25,97,Georgetown,5,1439,0
+2008,11,,AP Top 25,292,Tennessee,6,1404,0
+2008,11,,AP Top 25,72,Duke,7,1362,0
+2008,11,,AP Top 25,344,Washington State,8,1342,0
+2008,11,,AP Top 25,121,Indiana,9,1215,0
+2008,11,,AP Top 25,293,Texas A&M,10,1184,0
+2008,11,,AP Top 25,169,Michigan State,11,988,0
+2008,11,,AP Top 25,34,Butler,12,985,0
+2008,11,,AP Top 25,157,Marquette,13,955,0
+2008,11,,AP Top 25,64,Dayton,14,793,0
+2008,11,,AP Top 25,229,Pittsburgh,15,670,0
+2008,11,,AP Top 25,336,Vanderbilt,16,658,0
+2008,11,,AP Top 25,355,Wisconsin,17,649,0
+2008,11,,AP Top 25,220,Ole Miss,18,612,0
+2008,11,,AP Top 25,295,Texas,19,592,0
+2008,11,,AP Top 25,359,Xavier,20,395,0
+2008,11,,AP Top 25,168,Miami,21,286,0
+2008,11,,AP Top 25,10,Arizona State,22,257,0
+2008,11,,AP Top 25,240,Rhode Island,23,196,0
+2008,11,,AP Top 25,52,Clemson,24,187,0
+2008,11,,AP Top 25,338,Villanova,25,140,0
+2008,12,,AP Top 25,160,Maryland,,1,0
+2008,12,,AP Top 25,3,Akron,,2,0
+2008,12,,AP Top 25,217,Oklahoma,,4,0
+2008,12,,AP Top 25,87,Florida,,49,0
+2008,12,,AP Top 25,53,Cleveland State,,1,0
+2008,12,,AP Top 25,52,Clemson,,136,0
+2008,12,,AP Top 25,265,South Alabama,,5,0
+2008,12,,AP Top 25,174,Mississippi State,,2,0
+2008,12,,AP Top 25,161,Massachusetts,,47,0
+2008,12,,AP Top 25,191,New Mexico,,3,0
+2008,12,,AP Top 25,61,Creighton,,1,0
+2008,12,,AP Top 25,253,Saint Mary's,,144,0
+2008,12,,AP Top 25,240,Rhode Island,,17,0
+2008,12,,AP Top 25,168,Miami,,15,0
+2008,12,,AP Top 25,347,West Virginia,,90,0
+2008,12,,AP Top 25,102,Gonzaga,,32,0
+2008,12,,AP Top 25,150,Louisville,,7,0
+2008,12,,AP Top 25,51,Cincinnati,,5,0
+2008,12,,AP Top 25,323,USC,,26,0
+2008,12,,AP Top 25,132,Kansas State,,120,0
+2008,12,,AP Top 25,163,Memphis,1,1777,49
+2008,12,,AP Top 25,131,Kansas,2,1751,23
+2008,12,,AP Top 25,292,Tennessee,3,1591,0
+2008,12,,AP Top 25,72,Duke,4,1543,0
+2008,12,,AP Top 25,200,North Carolina,5,1536,0
+2008,12,,AP Top 25,344,Washington State,6,1442,0
+2008,12,,AP Top 25,121,Indiana,7,1351,0
+2008,12,,AP Top 25,313,UCLA,8,1312,0
+2008,12,,AP Top 25,97,Georgetown,9,1235,0
+2008,12,,AP Top 25,169,Michigan State,10,1175,0
+2008,12,,AP Top 25,355,Wisconsin,11,1048,0
+2008,12,,AP Top 25,295,Texas,12,887,0
+2008,12,,AP Top 25,229,Pittsburgh,13,781,0
+2008,12,,AP Top 25,336,Vanderbilt,14,748,0
+2008,12,,AP Top 25,34,Butler,15,742,0
+2008,12,,AP Top 25,64,Dayton,16,567,0
+2008,12,,AP Top 25,220,Ole Miss,17,529,0
+2008,12,,AP Top 25,338,Villanova,18,502,0
+2008,12,,AP Top 25,293,Texas A&M,18,502,0
+2008,12,,AP Top 25,281,Stanford,20,444,0
+2008,12,,AP Top 25,157,Marquette,21,332,0
+2008,12,,AP Top 25,70,Drake,22,313,0
+2008,12,,AP Top 25,359,Xavier,23,230,0
+2008,12,,AP Top 25,10,Arizona State,24,182,0
+2008,12,,AP Top 25,20,Baylor,25,173,0
+2008,13,,AP Top 25,168,Miami,,7,0
+2008,13,,AP Top 25,314,UConn,,108,0
+2008,13,,AP Top 25,338,Villanova,,27,0
+2008,13,,AP Top 25,240,Rhode Island,,17,0
+2008,13,,AP Top 25,333,VCU,,1,0
+2008,13,,AP Top 25,113,Houston,,9,0
+2008,13,,AP Top 25,10,Arizona State,,16,0
+2008,13,,AP Top 25,217,Oklahoma,,28,0
+2008,13,,AP Top 25,174,Mississippi State,,112,0
+2008,13,,AP Top 25,213,Notre Dame,,63,0
+2008,13,,AP Top 25,64,Dayton,,69,0
+2008,13,,AP Top 25,11,Arizona,,102,0
+2008,13,,AP Top 25,323,USC,,63,0
+2008,13,,AP Top 25,265,South Alabama,,22,0
+2008,13,,AP Top 25,236,Purdue,,34,0
+2008,13,,AP Top 25,52,Clemson,,20,0
+2008,13,,AP Top 25,347,West Virginia,,63,0
+2008,13,,AP Top 25,322,UNLV,,4,0
+2008,13,,AP Top 25,150,Louisville,,40,0
+2008,13,,AP Top 25,102,Gonzaga,,17,0
+2008,13,,AP Top 25,251,Saint Joseph's,,3,0
+2008,13,,AP Top 25,163,Memphis,1,1774,46
+2008,13,,AP Top 25,131,Kansas,2,1754,26
+2008,13,,AP Top 25,72,Duke,3,1625,0
+2008,13,,AP Top 25,200,North Carolina,4,1596,0
+2008,13,,AP Top 25,313,UCLA,5,1500,0
+2008,13,,AP Top 25,97,Georgetown,6,1377,0
+2008,13,,AP Top 25,292,Tennessee,7,1339,0
+2008,13,,AP Top 25,169,Michigan State,8,1320,0
+2008,13,,AP Top 25,344,Washington State,9,1261,0
+2008,13,,AP Top 25,295,Texas,10,1129,0
+2008,13,,AP Top 25,121,Indiana,11,1065,0
+2008,13,,AP Top 25,34,Butler,12,948,0
+2008,13,,AP Top 25,355,Wisconsin,13,848,0
+2008,13,,AP Top 25,281,Stanford,14,786,0
+2008,13,,AP Top 25,359,Xavier,15,638,0
+2008,13,,AP Top 25,70,Drake,16,616,0
+2008,13,,AP Top 25,157,Marquette,17,513,0
+2008,13,,AP Top 25,229,Pittsburgh,18,464,0
+2008,13,,AP Top 25,336,Vanderbilt,19,397,0
+2008,13,,AP Top 25,87,Florida,20,374,0
+2008,13,,AP Top 25,253,Saint Mary's,21,310,0
+2008,13,,AP Top 25,132,Kansas State,22,281,0
+2008,13,,AP Top 25,293,Texas A&M,23,277,0
+2008,13,,AP Top 25,220,Ole Miss,24,217,0
+2008,13,,AP Top 25,20,Baylor,25,166,0
+2008,14,,AP Top 25,243,Rider,,1,0
+2008,14,,AP Top 25,102,Gonzaga,,60,0
+2008,14,,AP Top 25,240,Rhode Island,,89,0
+2008,14,,AP Top 25,20,Baylor,,47,0
+2008,14,,AP Top 25,18,BYU,,2,0
+2008,14,,AP Top 25,322,UNLV,,37,0
+2008,14,,AP Top 25,174,Mississippi State,,8,0
+2008,14,,AP Top 25,217,Oklahoma,,13,0
+2008,14,,AP Top 25,220,Ole Miss,,90,0
+2008,14,,AP Top 25,12,Arkansas,,78,0
+2008,14,,AP Top 25,215,Ohio,,2,0
+2008,14,,AP Top 25,52,Clemson,,18,0
+2008,14,,AP Top 25,251,Saint Joseph's,,7,0
+2008,14,,AP Top 25,11,Arizona,,51,0
+2008,14,,AP Top 25,150,Louisville,,24,0
+2008,14,,AP Top 25,87,Florida,,94,0
+2008,14,,AP Top 25,319,UNC Asheville,,1,0
+2008,14,,AP Top 25,323,USC,,21,0
+2008,14,,AP Top 25,340,Virginia Tech,,5,0
+2008,14,,AP Top 25,163,Memphis,1,1800,72
+2008,14,,AP Top 25,72,Duke,2,1682,0
+2008,14,,AP Top 25,200,North Carolina,3,1637,0
+2008,14,,AP Top 25,131,Kansas,4,1574,0
+2008,14,,AP Top 25,313,UCLA,5,1552,0
+2008,14,,AP Top 25,97,Georgetown,6,1433,0
+2008,14,,AP Top 25,292,Tennessee,7,1394,0
+2008,14,,AP Top 25,355,Wisconsin,8,1211,0
+2008,14,,AP Top 25,281,Stanford,9,1170,0
+2008,14,,AP Top 25,34,Butler,10,1065,0
+2008,14,,AP Top 25,169,Michigan State,11,975,0
+2008,14,,AP Top 25,295,Texas,12,910,0
+2008,14,,AP Top 25,359,Xavier,13,889,0
+2008,14,,AP Top 25,121,Indiana,14,885,0
+2008,14,,AP Top 25,70,Drake,15,817,0
+2008,14,,AP Top 25,157,Marquette,16,726,0
+2008,14,,AP Top 25,344,Washington State,17,683,0
+2008,14,,AP Top 25,293,Texas A&M,18,591,0
+2008,14,,AP Top 25,314,UConn,19,476,0
+2008,14,,AP Top 25,132,Kansas State,20,361,0
+2008,14,,AP Top 25,229,Pittsburgh,21,258,0
+2008,14,,AP Top 25,213,Notre Dame,22,224,0
+2008,14,,AP Top 25,336,Vanderbilt,23,171,0
+2008,14,,AP Top 25,236,Purdue,24,143,0
+2008,14,,AP Top 25,253,Saint Mary's,25,125,0
+2008,15,,AP Top 25,174,Mississippi State,,2,0
+2008,15,,AP Top 25,240,Rhode Island,,15,0
+2008,15,,AP Top 25,18,BYU,,9,0
+2008,15,,AP Top 25,265,South Alabama,,1,0
+2008,15,,AP Top 25,20,Baylor,,5,0
+2008,15,,AP Top 25,52,Clemson,,6,0
+2008,15,,AP Top 25,12,Arkansas,,71,0
+2008,15,,AP Top 25,322,UNLV,,2,0
+2008,15,,AP Top 25,102,Gonzaga,,14,0
+2008,15,,AP Top 25,329,Utah State,,1,0
+2008,15,,AP Top 25,87,Florida,,23,0
+2008,15,,AP Top 25,160,Maryland,,2,0
+2008,15,,AP Top 25,157,Marquette,,82,0
+2008,15,,AP Top 25,11,Arizona,,11,0
+2008,15,,AP Top 25,163,Memphis,1,1800,72
+2008,15,,AP Top 25,72,Duke,2,1714,0
+2008,15,,AP Top 25,131,Kansas,3,1662,0
+2008,15,,AP Top 25,292,Tennessee,4,1553,0
+2008,15,,AP Top 25,200,North Carolina,5,1511,0
+2008,15,,AP Top 25,313,UCLA,6,1383,0
+2008,15,,AP Top 25,281,Stanford,7,1354,0
+2008,15,,AP Top 25,97,Georgetown,8,1207,0
+2008,15,,AP Top 25,34,Butler,9,1132,0
+2008,15,,AP Top 25,169,Michigan State,10,1071,0
+2008,15,,AP Top 25,295,Texas,11,1014,0
+2008,15,,AP Top 25,359,Xavier,12,962,0
+2008,15,,AP Top 25,121,Indiana,13,933,0
+2008,15,,AP Top 25,70,Drake,14,863,0
+2008,15,,AP Top 25,355,Wisconsin,15,816,0
+2008,15,,AP Top 25,293,Texas A&M,16,713,0
+2008,15,,AP Top 25,314,UConn,17,658,0
+2008,15,,AP Top 25,132,Kansas State,18,486,0
+2008,15,,AP Top 25,236,Purdue,19,467,0
+2008,15,,AP Top 25,213,Notre Dame,20,465,0
+2008,15,,AP Top 25,344,Washington State,21,419,0
+2008,15,,AP Top 25,229,Pittsburgh,22,301,0
+2008,15,,AP Top 25,150,Louisville,23,246,0
+2008,15,,AP Top 25,336,Vanderbilt,24,222,0
+2008,15,,AP Top 25,253,Saint Mary's,25,204,0
+2008,16,,AP Top 25,60,Cornell,,1,0
+2008,16,,AP Top 25,18,BYU,,43,0
+2008,16,,AP Top 25,174,Mississippi State,,7,0
+2008,16,,AP Top 25,134,Kent State,,3,0
+2008,16,,AP Top 25,52,Clemson,,39,0
+2008,16,,AP Top 25,240,Rhode Island,,6,0
+2008,16,,AP Top 25,350,Western Kentucky,,1,0
+2008,16,,AP Top 25,282,Stephen F. Austin,,2,0
+2008,16,,AP Top 25,11,Arizona,,8,0
+2008,16,,AP Top 25,229,Pittsburgh,,59,0
+2008,16,,AP Top 25,102,Gonzaga,,18,0
+2008,16,,AP Top 25,163,Memphis,1,1800,72
+2008,16,,AP Top 25,292,Tennessee,2,1699,0
+2008,16,,AP Top 25,200,North Carolina,3,1592,0
+2008,16,,AP Top 25,131,Kansas,4,1567,0
+2008,16,,AP Top 25,72,Duke,5,1519,0
+2008,16,,AP Top 25,313,UCLA,6,1498,0
+2008,16,,AP Top 25,295,Texas,7,1310,0
+2008,16,,AP Top 25,34,Butler,8,1228,0
+2008,16,,AP Top 25,281,Stanford,9,1156,0
+2008,16,,AP Top 25,359,Xavier,10,1122,0
+2008,16,,AP Top 25,355,Wisconsin,11,1033,0
+2008,16,,AP Top 25,97,Georgetown,12,989,0
+2008,16,,AP Top 25,314,UConn,13,925,0
+2008,16,,AP Top 25,236,Purdue,14,877,0
+2008,16,,AP Top 25,121,Indiana,15,796,0
+2008,16,,AP Top 25,70,Drake,16,612,0
+2008,16,,AP Top 25,344,Washington State,17,581,0
+2008,16,,AP Top 25,150,Louisville,18,543,0
+2008,16,,AP Top 25,169,Michigan State,19,503,0
+2008,16,,AP Top 25,336,Vanderbilt,20,432,0
+2008,16,,AP Top 25,213,Notre Dame,21,361,0
+2008,16,,AP Top 25,293,Texas A&M,22,345,0
+2008,16,,AP Top 25,253,Saint Mary's,23,302,0
+2008,16,,AP Top 25,132,Kansas State,24,247,0
+2008,16,,AP Top 25,157,Marquette,25,176,0
+2008,17,,AP Top 25,174,Mississippi State,,8,0
+2008,17,,AP Top 25,168,Miami,,62,0
+2008,17,,AP Top 25,350,Western Kentucky,,3,0
+2008,17,,AP Top 25,10,Arizona State,,1,0
+2008,17,,AP Top 25,11,Arizona,,11,0
+2008,17,,AP Top 25,60,Cornell,,1,0
+2008,17,,AP Top 25,135,Kentucky,,3,0
+2008,17,,AP Top 25,18,BYU,,20,0
+2008,17,,AP Top 25,191,New Mexico,,1,0
+2008,17,,AP Top 25,282,Stephen F. Austin,,7,0
+2008,17,,AP Top 25,323,USC,,11,0
+2008,17,,AP Top 25,333,VCU,,4,0
+2008,17,,AP Top 25,52,Clemson,,26,0
+2008,17,,AP Top 25,305,UAB,,1,0
+2008,17,,AP Top 25,87,Florida,,3,0
+2008,17,,AP Top 25,229,Pittsburgh,,7,0
+2008,17,,AP Top 25,293,Texas A&M,,21,0
+2008,17,,AP Top 25,265,South Alabama,,14,0
+2008,17,,AP Top 25,132,Kansas State,,14,0
+2008,17,,AP Top 25,63,Davidson,,40,0
+2008,17,,AP Top 25,292,Tennessee,1,1797,69
+2008,17,,AP Top 25,163,Memphis,2,1682,0
+2008,17,,AP Top 25,200,North Carolina,3,1668,2
+2008,17,,AP Top 25,313,UCLA,4,1593,1
+2008,17,,AP Top 25,295,Texas,5,1478,0
+2008,17,,AP Top 25,131,Kansas,6,1368,0
+2008,17,,AP Top 25,72,Duke,7,1344,0
+2008,17,,AP Top 25,281,Stanford,8,1264,0
+2008,17,,AP Top 25,359,Xavier,9,1228,0
+2008,17,,AP Top 25,355,Wisconsin,10,1175,0
+2008,17,,AP Top 25,97,Georgetown,11,1101,0
+2008,17,,AP Top 25,121,Indiana,12,969,0
+2008,17,,AP Top 25,150,Louisville,13,828,0
+2008,17,,AP Top 25,34,Butler,14,752,0
+2008,17,,AP Top 25,314,UConn,15,688,0
+2008,17,,AP Top 25,236,Purdue,16,655,0
+2008,17,,AP Top 25,213,Notre Dame,17,630,0
+2008,17,,AP Top 25,336,Vanderbilt,18,627,0
+2008,17,,AP Top 25,169,Michigan State,19,625,0
+2008,17,,AP Top 25,70,Drake,20,621,0
+2008,17,,AP Top 25,157,Marquette,21,389,0
+2008,17,,AP Top 25,344,Washington State,22,364,0
+2008,17,,AP Top 25,134,Kent State,23,125,0
+2008,17,,AP Top 25,102,Gonzaga,24,94,0
+2008,17,,AP Top 25,253,Saint Mary's,25,77,0
+2008,18,,AP Top 25,305,UAB,,7,0
+2008,18,,AP Top 25,293,Texas A&M,,3,0
+2008,18,,AP Top 25,265,South Alabama,,27,0
+2008,18,,AP Top 25,323,USC,,7,0
+2008,18,,AP Top 25,244,Robert Morris,,1,0
+2008,18,,AP Top 25,60,Cornell,,2,0
+2008,18,,AP Top 25,134,Kent State,,19,0
+2008,18,,AP Top 25,20,Baylor,,7,0
+2008,18,,AP Top 25,10,Arizona State,,4,0
+2008,18,,AP Top 25,350,Western Kentucky,,3,0
+2008,18,,AP Top 25,18,BYU,,63,0
+2008,18,,AP Top 25,168,Miami,,13,0
+2008,18,,AP Top 25,333,VCU,,3,0
+2008,18,,AP Top 25,174,Mississippi State,,34,0
+2008,18,,AP Top 25,282,Stephen F. Austin,,1,0
+2008,18,,AP Top 25,253,Saint Mary's,,22,0
+2008,18,,AP Top 25,229,Pittsburgh,,25,0
+2008,18,,AP Top 25,200,North Carolina,1,1745,38
+2008,18,,AP Top 25,163,Memphis,2,1706,21
+2008,18,,AP Top 25,313,UCLA,3,1664,12
+2008,18,,AP Top 25,292,Tennessee,4,1625,1
+2008,18,,AP Top 25,131,Kansas,5,1459,0
+2008,18,,AP Top 25,72,Duke,6,1403,0
+2008,18,,AP Top 25,281,Stanford,7,1317,0
+2008,18,,AP Top 25,359,Xavier,8,1232,0
+2008,18,,AP Top 25,295,Texas,9,1227,0
+2008,18,,AP Top 25,355,Wisconsin,10,1199,0
+2008,18,,AP Top 25,97,Georgetown,11,1147,0
+2008,18,,AP Top 25,150,Louisville,12,1010,0
+2008,18,,AP Top 25,314,UConn,13,848,0
+2008,18,,AP Top 25,34,Butler,14,813,0
+2008,18,,AP Top 25,236,Purdue,15,779,0
+2008,18,,AP Top 25,336,Vanderbilt,16,658,0
+2008,18,,AP Top 25,169,Michigan State,17,657,0
+2008,18,,AP Top 25,121,Indiana,18,646,0
+2008,18,,AP Top 25,213,Notre Dame,19,578,0
+2008,18,,AP Top 25,70,Drake,20,346,0
+2008,18,,AP Top 25,157,Marquette,21,334,0
+2008,18,,AP Top 25,102,Gonzaga,22,323,0
+2008,18,,AP Top 25,344,Washington State,23,245,0
+2008,18,,AP Top 25,52,Clemson,24,124,0
+2008,18,,AP Top 25,63,Davidson,25,74,0
+2008,19,,AP Top 25,12,Arkansas,,11,0
+2008,19,,AP Top 25,253,Saint Mary's,,3,0
+2008,19,,AP Top 25,317,UMBC,,1,0
+2008,19,,AP Top 25,134,Kent State,,26,0
+2008,19,,AP Top 25,25,Boise State,,1,0
+2008,19,,AP Top 25,18,BYU,,49,0
+2008,19,,AP Top 25,347,West Virginia,,7,0
+2008,19,,AP Top 25,174,Mississippi State,,4,0
+2008,19,,AP Top 25,251,Saint Joseph's,,2,0
+2008,19,,AP Top 25,98,Georgia,,2,0
+2008,19,,AP Top 25,121,Indiana,,135,0
+2008,19,,AP Top 25,293,Texas A&M,,4,0
+2008,19,,AP Top 25,323,USC,,70,0
+2008,19,,AP Top 25,350,Western Kentucky,,4,0
+2008,19,,AP Top 25,322,UNLV,,37,0
+2008,19,,AP Top 25,60,Cornell,,6,0
+2008,19,,AP Top 25,265,South Alabama,,1,0
+2008,19,,AP Top 25,200,North Carolina,1,1779,53
+2008,19,,AP Top 25,163,Memphis,2,1710,13
+2008,19,,AP Top 25,313,UCLA,3,1674,5
+2008,19,,AP Top 25,131,Kansas,4,1596,1
+2008,19,,AP Top 25,292,Tennessee,5,1449,0
+2008,19,,AP Top 25,355,Wisconsin,6,1412,0
+2008,19,,AP Top 25,295,Texas,7,1390,0
+2008,19,,AP Top 25,97,Georgetown,8,1271,0
+2008,19,,AP Top 25,72,Duke,9,1223,0
+2008,19,,AP Top 25,281,Stanford,10,1122,0
+2008,19,,AP Top 25,34,Butler,11,1004,0
+2008,19,,AP Top 25,359,Xavier,12,957,0
+2008,19,,AP Top 25,150,Louisville,13,894,0
+2008,19,,AP Top 25,70,Drake,14,794,0
+2008,19,,AP Top 25,213,Notre Dame,15,672,0
+2008,19,,AP Top 25,314,UConn,16,670,0
+2008,19,,AP Top 25,229,Pittsburgh,17,586,0
+2008,19,,AP Top 25,169,Michigan State,18,523,0
+2008,19,,AP Top 25,336,Vanderbilt,19,493,0
+2008,19,,AP Top 25,236,Purdue,20,418,0
+2008,19,,AP Top 25,344,Washington State,21,377,0
+2008,19,,AP Top 25,52,Clemson,22,364,0
+2008,19,,AP Top 25,63,Davidson,23,253,0
+2008,19,,AP Top 25,102,Gonzaga,24,232,0
+2008,19,,AP Top 25,157,Marquette,25,174,0

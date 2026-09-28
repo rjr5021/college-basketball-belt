@@ -1,0 +1,790 @@
+season,week,date,poll,team_id,team,rank,points,first
+2015,1,,AP Top 25,18,BYU,,2,0
+2015,1,,AP Top 25,282,Stephen F. Austin,,1,0
+2015,1,,AP Top 25,218,Oklahoma State,,6,0
+2015,1,,AP Top 25,313,UCLA,,35,0
+2015,1,,AP Top 25,149,Louisiana Tech,,9,0
+2015,1,,AP Top 25,90,Florida State,,5,0
+2015,1,,AP Top 25,229,Pittsburgh,,20,0
+2015,1,,AP Top 25,64,Dayton,,6,0
+2015,1,,AP Top 25,322,UNLV,,2,0
+2015,1,,AP Top 25,327,UTEP,,1,0
+2015,1,,AP Top 25,96,George Washington,,7,0
+2015,1,,AP Top 25,173,Minnesota,,34,0
+2015,1,,AP Top 25,97,Georgetown,,5,0
+2015,1,,AP Top 25,132,Kansas State,,27,0
+2015,1,,AP Top 25,347,West Virginia,,1,0
+2015,1,,AP Top 25,136,LSU,,8,0
+2015,1,,AP Top 25,56,Colorado,,57,0
+2015,1,,AP Top 25,185,NC State,,14,0
+2015,1,,AP Top 25,20,Baylor,,1,0
+2015,1,,AP Top 25,160,Maryland,,3,0
+2015,1,,AP Top 25,124,Iowa,,58,0
+2015,1,,AP Top 25,213,Notre Dame,,6,0
+2015,1,,AP Top 25,118,Illinois,,3,0
+2015,1,,AP Top 25,281,Stanford,,71,0
+2015,1,,AP Top 25,163,Memphis,,15,0
+2015,1,,AP Top 25,12,Arkansas,,21,0
+2015,1,,AP Top 25,51,Cincinnati,,8,0
+2015,1,,AP Top 25,135,Kentucky,1,1604,52
+2015,1,,AP Top 25,11,Arizona,2,1518,5
+2015,1,,AP Top 25,355,Wisconsin,3,1483,8
+2015,1,,AP Top 25,72,Duke,4,1415,0
+2015,1,,AP Top 25,131,Kansas,5,1346,0
+2015,1,,AP Top 25,200,North Carolina,6,1274,0
+2015,1,,AP Top 25,87,Florida,7,1153,0
+2015,1,,AP Top 25,150,Louisville,8,1114,0
+2015,1,,AP Top 25,339,Virginia,9,1090,0
+2015,1,,AP Top 25,295,Texas,10,1061,0
+2015,1,,AP Top 25,352,Wichita State,11,1027,0
+2015,1,,AP Top 25,338,Villanova,12,885,0
+2015,1,,AP Top 25,102,Gonzaga,13,840,0
+2015,1,,AP Top 25,125,Iowa State,14,781,0
+2015,1,,AP Top 25,333,VCU,15,574,0
+2015,1,,AP Top 25,257,San Diego State,16,560,0
+2015,1,,AP Top 25,314,UConn,17,552,0
+2015,1,,AP Top 25,169,Michigan State,18,521,0
+2015,1,,AP Top 25,217,Oklahoma,19,426,0
+2015,1,,AP Top 25,216,Ohio State,20,340,0
+2015,1,,AP Top 25,188,Nebraska,21,309,0
+2015,1,,AP Top 25,248,SMU,22,285,0
+2015,1,,AP Top 25,286,Syracuse,23,178,0
+2015,1,,AP Top 25,170,Michigan,24,167,0
+2015,1,,AP Top 25,107,Harvard,25,98,0
+2015,1,,AP Top 25,331,Utah,25,98,0
+2015,2,,AP Top 25,213,Notre Dame,,10,0
+2015,2,,AP Top 25,18,BYU,,2,0
+2015,2,,AP Top 25,124,Iowa,,48,0
+2015,2,,AP Top 25,209,Northern Iowa,,1,0
+2015,2,,AP Top 25,12,Arkansas,,23,0
+2015,2,,AP Top 25,96,George Washington,,5,0
+2015,2,,AP Top 25,51,Cincinnati,,5,0
+2015,2,,AP Top 25,20,Baylor,,2,0
+2015,2,,AP Top 25,281,Stanford,,63,0
+2015,2,,AP Top 25,282,Stephen F. Austin,,1,0
+2015,2,,AP Top 25,163,Memphis,,11,0
+2015,2,,AP Top 25,118,Illinois,,3,0
+2015,2,,AP Top 25,218,Oklahoma State,,6,0
+2015,2,,AP Top 25,160,Maryland,,3,0
+2015,2,,AP Top 25,173,Minnesota,,11,0
+2015,2,,AP Top 25,185,NC State,,6,0
+2015,2,,AP Top 25,56,Colorado,,52,0
+2015,2,,AP Top 25,313,UCLA,,41,0
+2015,2,,AP Top 25,136,LSU,,5,0
+2015,2,,AP Top 25,97,Georgetown,,1,0
+2015,2,,AP Top 25,132,Kansas State,,29,0
+2015,2,,AP Top 25,327,UTEP,,2,0
+2015,2,,AP Top 25,149,Louisiana Tech,,9,0
+2015,2,,AP Top 25,229,Pittsburgh,,10,0
+2015,2,,AP Top 25,64,Dayton,,7,0
+2015,2,,AP Top 25,90,Florida State,,6,0
+2015,2,,AP Top 25,135,Kentucky,1,1574,49
+2015,2,,AP Top 25,11,Arizona,2,1491,4
+2015,2,,AP Top 25,355,Wisconsin,3,1475,7
+2015,2,,AP Top 25,72,Duke,4,1422,4
+2015,2,,AP Top 25,131,Kansas,5,1306,0
+2015,2,,AP Top 25,200,North Carolina,6,1254,0
+2015,2,,AP Top 25,150,Louisville,7,1130,0
+2015,2,,AP Top 25,87,Florida,8,1127,0
+2015,2,,AP Top 25,339,Virginia,9,1065,0
+2015,2,,AP Top 25,295,Texas,10,1061,0
+2015,2,,AP Top 25,352,Wichita State,11,1002,0
+2015,2,,AP Top 25,338,Villanova,12,858,0
+2015,2,,AP Top 25,102,Gonzaga,13,841,0
+2015,2,,AP Top 25,125,Iowa State,14,746,0
+2015,2,,AP Top 25,333,VCU,15,654,0
+2015,2,,AP Top 25,257,San Diego State,16,564,0
+2015,2,,AP Top 25,314,UConn,17,525,0
+2015,2,,AP Top 25,217,Oklahoma,18,466,0
+2015,2,,AP Top 25,169,Michigan State,19,443,0
+2015,2,,AP Top 25,216,Ohio State,20,361,0
+2015,2,,AP Top 25,188,Nebraska,21,298,0
+2015,2,,AP Top 25,248,SMU,22,290,0
+2015,2,,AP Top 25,286,Syracuse,23,190,0
+2015,2,,AP Top 25,170,Michigan,24,177,0
+2015,2,,AP Top 25,331,Utah,25,118,0
+2015,3,,AP Top 25,218,Oklahoma State,,14,0
+2015,3,,AP Top 25,51,Cincinnati,,4,0
+2015,3,,AP Top 25,240,Rhode Island,,16,0
+2015,3,,AP Top 25,163,Memphis,,10,0
+2015,3,,AP Top 25,20,Baylor,,7,0
+2015,3,,AP Top 25,209,Northern Iowa,,17,0
+2015,3,,AP Top 25,64,Dayton,,3,0
+2015,3,,AP Top 25,327,UTEP,,3,0
+2015,3,,AP Top 25,97,Georgetown,,10,0
+2015,3,,AP Top 25,235,Providence,,63,0
+2015,3,,AP Top 25,217,Oklahoma,,108,0
+2015,3,,AP Top 25,331,Utah,,42,0
+2015,3,,AP Top 25,286,Syracuse,,15,0
+2015,3,,AP Top 25,359,Xavier,,1,0
+2015,3,,AP Top 25,121,Indiana,,6,0
+2015,3,,AP Top 25,118,Illinois,,5,0
+2015,3,,AP Top 25,205,Northeastern,,1,0
+2015,3,,AP Top 25,188,Nebraska,,5,0
+2015,3,,AP Top 25,358,Wyoming,,4,0
+2015,3,,AP Top 25,281,Stanford,,80,0
+2015,3,,AP Top 25,40,California,,5,0
+2015,3,,AP Top 25,185,NC State,,4,0
+2015,3,,AP Top 25,160,Maryland,,3,0
+2015,3,,AP Top 25,173,Minnesota,,21,0
+2015,3,,AP Top 25,18,BYU,,2,0
+2015,3,,AP Top 25,135,Kentucky,1,1622,62
+2015,3,,AP Top 25,355,Wisconsin,2,1494,3
+2015,3,,AP Top 25,11,Arizona,3,1491,0
+2015,3,,AP Top 25,72,Duke,4,1474,0
+2015,3,,AP Top 25,200,North Carolina,5,1314,0
+2015,3,,AP Top 25,150,Louisville,6,1219,0
+2015,3,,AP Top 25,295,Texas,7,1187,0
+2015,3,,AP Top 25,339,Virginia,8,1165,0
+2015,3,,AP Top 25,352,Wichita State,9,1120,0
+2015,3,,AP Top 25,102,Gonzaga,10,1077,0
+2015,3,,AP Top 25,131,Kansas,11,981,0
+2015,3,,AP Top 25,338,Villanova,12,917,0
+2015,3,,AP Top 25,125,Iowa State,13,828,0
+2015,3,,AP Top 25,333,VCU,14,760,0
+2015,3,,AP Top 25,257,San Diego State,15,736,0
+2015,3,,AP Top 25,216,Ohio State,16,557,0
+2015,3,,AP Top 25,168,Miami,17,521,0
+2015,3,,AP Top 25,87,Florida,18,473,0
+2015,3,,AP Top 25,170,Michigan,19,401,0
+2015,3,,AP Top 25,169,Michigan State,20,399,0
+2015,3,,AP Top 25,347,West Virginia,21,344,0
+2015,3,,AP Top 25,313,UCLA,22,173,0
+2015,3,,AP Top 25,61,Creighton,23,148,0
+2015,3,,AP Top 25,314,UConn,24,144,0
+2015,3,,AP Top 25,12,Arkansas,25,131,0
+2015,4,,AP Top 25,235,Providence,,56,0
+2015,4,,AP Top 25,253,Saint Mary's,,1,0
+2015,4,,AP Top 25,313,UCLA,,3,0
+2015,4,,AP Top 25,220,Ole Miss,,2,0
+2015,4,,AP Top 25,185,NC State,,12,0
+2015,4,,AP Top 25,20,Baylor,,3,0
+2015,4,,AP Top 25,314,UConn,,76,0
+2015,4,,AP Top 25,343,Washington,,17,0
+2015,4,,AP Top 25,209,Northern Iowa,,83,0
+2015,4,,AP Top 25,40,California,,8,0
+2015,4,,AP Top 25,218,Oklahoma State,,69,0
+2015,4,,AP Top 25,287,TCU,,2,0
+2015,4,,AP Top 25,188,Nebraska,,4,0
+2015,4,,AP Top 25,286,Syracuse,,49,0
+2015,4,,AP Top 25,97,Georgetown,,30,0
+2015,4,,AP Top 25,87,Florida,,40,0
+2015,4,,AP Top 25,213,Notre Dame,,1,0
+2015,4,,AP Top 25,358,Wyoming,,10,0
+2015,4,,AP Top 25,279,St. John's,,5,0
+2015,4,,AP Top 25,219,Old Dominion,,2,0
+2015,4,,AP Top 25,61,Creighton,,29,0
+2015,4,,AP Top 25,333,VCU,,52,0
+2015,4,,AP Top 25,263,Seton Hall,,5,0
+2015,4,,AP Top 25,135,Kentucky,1,1622,62
+2015,4,,AP Top 25,355,Wisconsin,2,1511,3
+2015,4,,AP Top 25,11,Arizona,3,1488,0
+2015,4,,AP Top 25,72,Duke,4,1475,0
+2015,4,,AP Top 25,150,Louisville,5,1260,0
+2015,4,,AP Top 25,295,Texas,6,1254,0
+2015,4,,AP Top 25,339,Virginia,7,1196,0
+2015,4,,AP Top 25,352,Wichita State,8,1165,0
+2015,4,,AP Top 25,102,Gonzaga,9,1133,0
+2015,4,,AP Top 25,338,Villanova,10,1075,0
+2015,4,,AP Top 25,131,Kansas,11,1063,0
+2015,4,,AP Top 25,200,North Carolina,12,864,0
+2015,4,,AP Top 25,257,San Diego State,13,784,0
+2015,4,,AP Top 25,216,Ohio State,14,759,0
+2015,4,,AP Top 25,168,Miami,15,697,0
+2015,4,,AP Top 25,347,West Virginia,16,601,0
+2015,4,,AP Top 25,170,Michigan,17,454,0
+2015,4,,AP Top 25,12,Arkansas,18,438,0
+2015,4,,AP Top 25,169,Michigan State,19,423,0
+2015,4,,AP Top 25,125,Iowa State,20,330,0
+2015,4,,AP Top 25,160,Maryland,21,306,0
+2015,4,,AP Top 25,217,Oklahoma,22,254,0
+2015,4,,AP Top 25,34,Butler,23,222,0
+2015,4,,AP Top 25,118,Illinois,24,104,0
+2015,4,,AP Top 25,331,Utah,25,88,0
+2015,5,,AP Top 25,20,Baylor,,49,0
+2015,5,,AP Top 25,121,Indiana,,3,0
+2015,5,,AP Top 25,118,Illinois,,91,0
+2015,5,,AP Top 25,185,NC State,,3,0
+2015,5,,AP Top 25,219,Old Dominion,,2,0
+2015,5,,AP Top 25,64,Dayton,,1,0
+2015,5,,AP Top 25,170,Michigan,,14,0
+2015,5,,AP Top 25,333,VCU,,6,0
+2015,5,,AP Top 25,97,Georgetown,,62,0
+2015,5,,AP Top 25,360,Yale,,1,0
+2015,5,,AP Top 25,40,California,,19,0
+2015,5,,AP Top 25,136,LSU,,5,0
+2015,5,,AP Top 25,61,Creighton,,7,0
+2015,5,,AP Top 25,124,Iowa,,60,0
+2015,5,,AP Top 25,287,TCU,,45,0
+2015,5,,AP Top 25,263,Seton Hall,,57,0
+2015,5,,AP Top 25,57,Colorado State,,28,0
+2015,5,,AP Top 25,12,Arkansas,,22,0
+2015,5,,AP Top 25,169,Michigan State,,120,0
+2015,5,,AP Top 25,135,Kentucky,1,1600,64
+2015,5,,AP Top 25,72,Duke,2,1518,0
+2015,5,,AP Top 25,11,Arizona,3,1486,0
+2015,5,,AP Top 25,150,Louisville,4,1319,0
+2015,5,,AP Top 25,355,Wisconsin,5,1316,0
+2015,5,,AP Top 25,339,Virginia,6,1285,0
+2015,5,,AP Top 25,338,Villanova,7,1173,0
+2015,5,,AP Top 25,295,Texas,8,1155,0
+2015,5,,AP Top 25,102,Gonzaga,9,1145,0
+2015,5,,AP Top 25,131,Kansas,10,1083,0
+2015,5,,AP Top 25,352,Wichita State,11,929,0
+2015,5,,AP Top 25,216,Ohio State,12,808,0
+2015,5,,AP Top 25,331,Utah,13,717,0
+2015,5,,AP Top 25,125,Iowa State,14,668,0
+2015,5,,AP Top 25,34,Butler,15,593,0
+2015,5,,AP Top 25,217,Oklahoma,16,557,0
+2015,5,,AP Top 25,343,Washington,17,428,0
+2015,5,,AP Top 25,257,San Diego State,18,390,0
+2015,5,,AP Top 25,160,Maryland,19,370,0
+2015,5,,AP Top 25,168,Miami,20,359,0
+2015,5,,AP Top 25,200,North Carolina,21,350,0
+2015,5,,AP Top 25,347,West Virginia,22,313,0
+2015,5,,AP Top 25,209,Northern Iowa,23,232,0
+2015,5,,AP Top 25,279,St. John's,24,211,0
+2015,5,,AP Top 25,213,Notre Dame,25,200,0
+2015,6,,AP Top 25,218,Oklahoma State,,4,0
+2015,6,,AP Top 25,219,Old Dominion,,4,0
+2015,6,,AP Top 25,40,California,,37,0
+2015,6,,AP Top 25,287,TCU,,80,0
+2015,6,,AP Top 25,226,Penn State,,3,0
+2015,6,,AP Top 25,57,Colorado State,,75,0
+2015,6,,AP Top 25,63,Davidson,,1,0
+2015,6,,AP Top 25,136,LSU,,4,0
+2015,6,,AP Top 25,263,Seton Hall,,14,0
+2015,6,,AP Top 25,97,Georgetown,,41,0
+2015,6,,AP Top 25,209,Northern Iowa,,65,0
+2015,6,,AP Top 25,20,Baylor,,97,0
+2015,6,,AP Top 25,333,VCU,,6,0
+2015,6,,AP Top 25,12,Arkansas,,19,0
+2015,6,,AP Top 25,135,Kentucky,1,1625,65
+2015,6,,AP Top 25,72,Duke,2,1545,0
+2015,6,,AP Top 25,11,Arizona,3,1505,0
+2015,6,,AP Top 25,150,Louisville,4,1349,0
+2015,6,,AP Top 25,355,Wisconsin,5,1331,0
+2015,6,,AP Top 25,339,Virginia,6,1294,0
+2015,6,,AP Top 25,338,Villanova,7,1215,0
+2015,6,,AP Top 25,102,Gonzaga,8,1175,0
+2015,6,,AP Top 25,295,Texas,9,1154,0
+2015,6,,AP Top 25,131,Kansas,10,1102,0
+2015,6,,AP Top 25,352,Wichita State,11,959,0
+2015,6,,AP Top 25,216,Ohio State,12,838,0
+2015,6,,AP Top 25,125,Iowa State,13,772,0
+2015,6,,AP Top 25,331,Utah,14,670,0
+2015,6,,AP Top 25,217,Oklahoma,15,647,0
+2015,6,,AP Top 25,343,Washington,16,598,0
+2015,6,,AP Top 25,160,Maryland,17,512,0
+2015,6,,AP Top 25,168,Miami,18,426,0
+2015,6,,AP Top 25,257,San Diego State,19,424,0
+2015,6,,AP Top 25,279,St. John's,20,353,0
+2015,6,,AP Top 25,213,Notre Dame,21,351,0
+2015,6,,AP Top 25,347,West Virginia,22,333,0
+2015,6,,AP Top 25,34,Butler,23,259,0
+2015,6,,AP Top 25,200,North Carolina,24,122,0
+2015,6,,AP Top 25,169,Michigan State,25,116,0
+2015,7,,AP Top 25,63,Davidson,,1,0
+2015,7,,AP Top 25,263,Seton Hall,,3,0
+2015,7,,AP Top 25,333,VCU,,70,0
+2015,7,,AP Top 25,12,Arkansas,,22,0
+2015,7,,AP Top 25,168,Miami,,27,0
+2015,7,,AP Top 25,257,San Diego State,,72,0
+2015,7,,AP Top 25,121,Indiana,,11,0
+2015,7,,AP Top 25,219,Old Dominion,,7,0
+2015,7,,AP Top 25,218,Oklahoma State,,3,0
+2015,7,,AP Top 25,173,Minnesota,,2,0
+2015,7,,AP Top 25,335,Valparaiso,,1,0
+2015,7,,AP Top 25,97,Georgetown,,85,0
+2015,7,,AP Top 25,226,Penn State,,4,0
+2015,7,,AP Top 25,87,Florida,,4,0
+2015,7,,AP Top 25,34,Butler,,2,0
+2015,7,,AP Top 25,136,LSU,,7,0
+2015,7,,AP Top 25,40,California,,32,0
+2015,7,,AP Top 25,135,Kentucky,1,1625,65
+2015,7,,AP Top 25,72,Duke,2,1548,0
+2015,7,,AP Top 25,11,Arizona,3,1502,0
+2015,7,,AP Top 25,150,Louisville,4,1344,0
+2015,7,,AP Top 25,339,Virginia,5,1336,0
+2015,7,,AP Top 25,355,Wisconsin,6,1322,0
+2015,7,,AP Top 25,338,Villanova,7,1214,0
+2015,7,,AP Top 25,102,Gonzaga,8,1170,0
+2015,7,,AP Top 25,295,Texas,9,1149,0
+2015,7,,AP Top 25,131,Kansas,10,1096,0
+2015,7,,AP Top 25,352,Wichita State,11,966,0
+2015,7,,AP Top 25,125,Iowa State,12,821,0
+2015,7,,AP Top 25,343,Washington,13,798,0
+2015,7,,AP Top 25,331,Utah,14,796,0
+2015,7,,AP Top 25,160,Maryland,15,678,0
+2015,7,,AP Top 25,213,Notre Dame,16,536,0
+2015,7,,AP Top 25,279,St. John's,17,517,0
+2015,7,,AP Top 25,347,West Virginia,18,464,0
+2015,7,,AP Top 25,217,Oklahoma,19,436,0
+2015,7,,AP Top 25,200,North Carolina,20,414,0
+2015,7,,AP Top 25,216,Ohio State,21,411,0
+2015,7,,AP Top 25,20,Baylor,22,203,0
+2015,7,,AP Top 25,209,Northern Iowa,23,162,0
+2015,7,,AP Top 25,57,Colorado State,24,144,0
+2015,7,,AP Top 25,287,TCU,25,120,0
+2015,8,,AP Top 25,287,TCU,,132,0
+2015,8,,AP Top 25,12,Arkansas,,27,0
+2015,8,,AP Top 25,257,San Diego State,,40,0
+2015,8,,AP Top 25,219,Old Dominion,,7,0
+2015,8,,AP Top 25,173,Minnesota,,2,0
+2015,8,,AP Top 25,333,VCU,,101,0
+2015,8,,AP Top 25,136,LSU,,7,0
+2015,8,,AP Top 25,322,UNLV,,5,0
+2015,8,,AP Top 25,40,California,,1,0
+2015,8,,AP Top 25,15,Army,,1,0
+2015,8,,AP Top 25,96,George Washington,,7,0
+2015,8,,AP Top 25,121,Indiana,,4,0
+2015,8,,AP Top 25,281,Stanford,,2,0
+2015,8,,AP Top 25,63,Davidson,,1,0
+2015,8,,AP Top 25,87,Florida,,2,0
+2015,8,,AP Top 25,226,Penn State,,5,0
+2015,8,,AP Top 25,135,Kentucky,1,1625,65
+2015,8,,AP Top 25,72,Duke,2,1559,0
+2015,8,,AP Top 25,339,Virginia,3,1457,0
+2015,8,,AP Top 25,355,Wisconsin,4,1395,0
+2015,8,,AP Top 25,150,Louisville,5,1327,0
+2015,8,,AP Top 25,338,Villanova,6,1316,0
+2015,8,,AP Top 25,102,Gonzaga,7,1249,0
+2015,8,,AP Top 25,11,Arizona,8,1243,0
+2015,8,,AP Top 25,125,Iowa State,9,1005,0
+2015,8,,AP Top 25,331,Utah,10,956,0
+2015,8,,AP Top 25,295,Texas,11,903,0
+2015,8,,AP Top 25,160,Maryland,12,869,0
+2015,8,,AP Top 25,131,Kansas,13,775,0
+2015,8,,AP Top 25,213,Notre Dame,14,709,0
+2015,8,,AP Top 25,279,St. John's,15,690,0
+2015,8,,AP Top 25,352,Wichita State,16,630,0
+2015,8,,AP Top 25,347,West Virginia,17,584,0
+2015,8,,AP Top 25,217,Oklahoma,18,530,0
+2015,8,,AP Top 25,200,North Carolina,19,483,0
+2015,8,,AP Top 25,216,Ohio State,20,435,0
+2015,8,,AP Top 25,343,Washington,21,253,0
+2015,8,,AP Top 25,20,Baylor,22,238,0
+2015,8,,AP Top 25,209,Northern Iowa,23,216,0
+2015,8,,AP Top 25,57,Colorado State,24,194,0
+2015,8,,AP Top 25,97,Georgetown,25,140,0
+2015,9,,AP Top 25,110,Hofstra,,1,0
+2015,9,,AP Top 25,18,BYU,,3,0
+2015,9,,AP Top 25,64,Dayton,,5,0
+2015,9,,AP Top 25,359,Xavier,,2,0
+2015,9,,AP Top 25,287,TCU,,33,0
+2015,9,,AP Top 25,124,Iowa,,63,0
+2015,9,,AP Top 25,51,Cincinnati,,6,0
+2015,9,,AP Top 25,343,Washington,,13,0
+2015,9,,AP Top 25,97,Georgetown,,7,0
+2015,9,,AP Top 25,218,Oklahoma State,,9,0
+2015,9,,AP Top 25,34,Butler,,53,0
+2015,9,,AP Top 25,266,South Carolina,,16,0
+2015,9,,AP Top 25,57,Colorado State,,31,0
+2015,9,,AP Top 25,209,Northern Iowa,,72,0
+2015,9,,AP Top 25,121,Indiana,,9,0
+2015,9,,AP Top 25,136,LSU,,50,0
+2015,9,,AP Top 25,281,Stanford,,29,0
+2015,9,,AP Top 25,358,Wyoming,,11,0
+2015,9,,AP Top 25,63,Davidson,,1,0
+2015,9,,AP Top 25,96,George Washington,,39,0
+2015,9,,AP Top 25,289,Temple,,33,0
+2015,9,,AP Top 25,135,Kentucky,1,1600,64
+2015,9,,AP Top 25,72,Duke,2,1535,0
+2015,9,,AP Top 25,339,Virginia,3,1446,0
+2015,9,,AP Top 25,355,Wisconsin,4,1397,0
+2015,9,,AP Top 25,150,Louisville,5,1322,0
+2015,9,,AP Top 25,102,Gonzaga,6,1275,0
+2015,9,,AP Top 25,11,Arizona,7,1260,0
+2015,9,,AP Top 25,338,Villanova,8,1089,0
+2015,9,,AP Top 25,331,Utah,9,1059,0
+2015,9,,AP Top 25,295,Texas,10,976,0
+2015,9,,AP Top 25,160,Maryland,11,966,0
+2015,9,,AP Top 25,131,Kansas,12,884,0
+2015,9,,AP Top 25,213,Notre Dame,13,775,0
+2015,9,,AP Top 25,347,West Virginia,14,712,0
+2015,9,,AP Top 25,352,Wichita State,15,686,0
+2015,9,,AP Top 25,217,Oklahoma,16,674,0
+2015,9,,AP Top 25,125,Iowa State,17,663,0
+2015,9,,AP Top 25,200,North Carolina,18,591,0
+2015,9,,AP Top 25,263,Seton Hall,19,448,0
+2015,9,,AP Top 25,333,VCU,20,311,0
+2015,9,,AP Top 25,20,Baylor,21,186,0
+2015,9,,AP Top 25,216,Ohio State,22,184,0
+2015,9,,AP Top 25,12,Arkansas,23,103,0
+2015,9,,AP Top 25,279,St. John's,24,92,0
+2015,9,,AP Top 25,219,Old Dominion,25,80,0
+2015,10,,AP Top 25,287,TCU,,2,0
+2015,10,,AP Top 25,169,Michigan State,,67,0
+2015,10,,AP Top 25,223,Oregon,,2,0
+2015,10,,AP Top 25,216,Ohio State,,70,0
+2015,10,,AP Top 25,286,Syracuse,,3,0
+2015,10,,AP Top 25,34,Butler,,2,0
+2015,10,,AP Top 25,64,Dayton,,55,0
+2015,10,,AP Top 25,257,San Diego State,,2,0
+2015,10,,AP Top 25,248,SMU,,1,0
+2015,10,,AP Top 25,63,Davidson,,1,0
+2015,10,,AP Top 25,185,NC State,,6,0
+2015,10,,AP Top 25,110,Hofstra,,1,0
+2015,10,,AP Top 25,97,Georgetown,,7,0
+2015,10,,AP Top 25,235,Providence,,17,0
+2015,10,,AP Top 25,57,Colorado State,,1,0
+2015,10,,AP Top 25,121,Indiana,,15,0
+2015,10,,AP Top 25,5,Alabama,,7,0
+2015,10,,AP Top 25,105,Green Bay,,3,0
+2015,10,,AP Top 25,136,LSU,,12,0
+2015,10,,AP Top 25,279,St. John's,,10,0
+2015,10,,AP Top 25,219,Old Dominion,,1,0
+2015,10,,AP Top 25,135,Kentucky,1,1623,63
+2015,10,,AP Top 25,339,Virginia,2,1561,2
+2015,10,,AP Top 25,102,Gonzaga,3,1446,0
+2015,10,,AP Top 25,72,Duke,4,1432,0
+2015,10,,AP Top 25,338,Villanova,5,1358,0
+2015,10,,AP Top 25,150,Louisville,6,1264,0
+2015,10,,AP Top 25,355,Wisconsin,7,1200,0
+2015,10,,AP Top 25,331,Utah,8,1185,0
+2015,10,,AP Top 25,131,Kansas,9,1100,0
+2015,10,,AP Top 25,11,Arizona,10,1037,0
+2015,10,,AP Top 25,125,Iowa State,11,922,0
+2015,10,,AP Top 25,213,Notre Dame,12,903,0
+2015,10,,AP Top 25,352,Wichita State,13,832,0
+2015,10,,AP Top 25,160,Maryland,14,801,0
+2015,10,,AP Top 25,200,North Carolina,15,719,0
+2015,10,,AP Top 25,347,West Virginia,16,627,0
+2015,10,,AP Top 25,333,VCU,17,578,0
+2015,10,,AP Top 25,217,Oklahoma,18,485,0
+2015,10,,AP Top 25,12,Arkansas,19,431,0
+2015,10,,AP Top 25,295,Texas,20,345,0
+2015,10,,AP Top 25,263,Seton Hall,21,298,0
+2015,10,,AP Top 25,20,Baylor,22,278,0
+2015,10,,AP Top 25,209,Northern Iowa,23,212,0
+2015,10,,AP Top 25,218,Oklahoma State,24,132,0
+2015,10,,AP Top 25,358,Wyoming,25,71,0
+2015,11,,AP Top 25,257,San Diego State,,34,0
+2015,11,,AP Top 25,169,Michigan State,,8,0
+2015,11,,AP Top 25,248,SMU,,11,0
+2015,11,,AP Top 25,281,Stanford,,31,0
+2015,11,,AP Top 25,34,Butler,,11,0
+2015,11,,AP Top 25,358,Wyoming,,4,0
+2015,11,,AP Top 25,149,Louisiana Tech,,2,0
+2015,11,,AP Top 25,216,Ohio State,,3,0
+2015,11,,AP Top 25,168,Miami,,41,0
+2015,11,,AP Top 25,235,Providence,,17,0
+2015,11,,AP Top 25,218,Oklahoma State,,47,0
+2015,11,,AP Top 25,57,Colorado State,,16,0
+2015,11,,AP Top 25,343,Washington,,1,0
+2015,11,,AP Top 25,292,Tennessee,,2,0
+2015,11,,AP Top 25,136,LSU,,6,0
+2015,11,,AP Top 25,98,Georgia,,13,0
+2015,11,,AP Top 25,253,Saint Mary's,,18,0
+2015,11,,AP Top 25,219,Old Dominion,,5,0
+2015,11,,AP Top 25,96,George Washington,,1,0
+2015,11,,AP Top 25,97,Georgetown,,33,0
+2015,11,,AP Top 25,12,Arkansas,,15,0
+2015,11,,AP Top 25,279,St. John's,,1,0
+2015,11,,AP Top 25,135,Kentucky,1,1623,63
+2015,11,,AP Top 25,339,Virginia,2,1562,2
+2015,11,,AP Top 25,102,Gonzaga,3,1467,0
+2015,11,,AP Top 25,338,Villanova,4,1429,0
+2015,11,,AP Top 25,72,Duke,5,1345,0
+2015,11,,AP Top 25,355,Wisconsin,6,1282,0
+2015,11,,AP Top 25,11,Arizona,7,1228,0
+2015,11,,AP Top 25,213,Notre Dame,8,1055,0
+2015,11,,AP Top 25,125,Iowa State,9,1004,0
+2015,11,,AP Top 25,150,Louisville,10,1003,0
+2015,11,,AP Top 25,131,Kansas,11,943,0
+2015,11,,AP Top 25,331,Utah,12,940,0
+2015,11,,AP Top 25,160,Maryland,13,937,0
+2015,11,,AP Top 25,352,Wichita State,14,857,0
+2015,11,,AP Top 25,200,North Carolina,15,803,0
+2015,11,,AP Top 25,333,VCU,16,670,0
+2015,11,,AP Top 25,295,Texas,17,554,0
+2015,11,,AP Top 25,347,West Virginia,18,501,0
+2015,11,,AP Top 25,217,Oklahoma,19,445,0
+2015,11,,AP Top 25,209,Northern Iowa,20,387,0
+2015,11,,AP Top 25,20,Baylor,21,260,0
+2015,11,,AP Top 25,64,Dayton,22,241,0
+2015,11,,AP Top 25,121,Indiana,23,93,0
+2015,11,,AP Top 25,263,Seton Hall,24,91,0
+2015,11,,AP Top 25,124,Iowa,25,85,0
+2015,12,,AP Top 25,136,LSU,,10,0
+2015,12,,AP Top 25,64,Dayton,,28,0
+2015,12,,AP Top 25,263,Seton Hall,,10,0
+2015,12,,AP Top 25,216,Ohio State,,43,0
+2015,12,,AP Top 25,304,Tulsa,,2,0
+2015,12,,AP Top 25,358,Wyoming,,14,0
+2015,12,,AP Top 25,281,Stanford,,16,0
+2015,12,,AP Top 25,248,SMU,,43,0
+2015,12,,AP Top 25,63,Davidson,,1,0
+2015,12,,AP Top 25,235,Providence,,29,0
+2015,12,,AP Top 25,12,Arkansas,,54,0
+2015,12,,AP Top 25,293,Texas A&M,,2,0
+2015,12,,AP Top 25,253,Saint Mary's,,1,0
+2015,12,,AP Top 25,282,Stephen F. Austin,,1,0
+2015,12,,AP Top 25,257,San Diego State,,4,0
+2015,12,,AP Top 25,105,Green Bay,,1,0
+2015,12,,AP Top 25,98,Georgia,,28,0
+2015,12,,AP Top 25,57,Colorado State,,57,0
+2015,12,,AP Top 25,135,Kentucky,1,1624,64
+2015,12,,AP Top 25,339,Virginia,2,1561,1
+2015,12,,AP Top 25,102,Gonzaga,3,1476,0
+2015,12,,AP Top 25,72,Duke,4,1402,0
+2015,12,,AP Top 25,355,Wisconsin,5,1351,0
+2015,12,,AP Top 25,11,Arizona,6,1300,0
+2015,12,,AP Top 25,338,Villanova,7,1187,0
+2015,12,,AP Top 25,213,Notre Dame,8,1139,0
+2015,12,,AP Top 25,131,Kansas,9,1120,0
+2015,12,,AP Top 25,150,Louisville,10,1027,0
+2015,12,,AP Top 25,331,Utah,11,996,0
+2015,12,,AP Top 25,352,Wichita State,12,893,0
+2015,12,,AP Top 25,200,North Carolina,13,878,0
+2015,12,,AP Top 25,333,VCU,14,734,0
+2015,12,,AP Top 25,125,Iowa State,15,719,0
+2015,12,,AP Top 25,160,Maryland,16,715,0
+2015,12,,AP Top 25,347,West Virginia,17,558,0
+2015,12,,AP Top 25,209,Northern Iowa,18,440,0
+2015,12,,AP Top 25,295,Texas,19,431,0
+2015,12,,AP Top 25,20,Baylor,20,407,0
+2015,12,,AP Top 25,97,Georgetown,21,334,0
+2015,12,,AP Top 25,121,Indiana,22,165,0
+2015,12,,AP Top 25,168,Miami,23,164,0
+2015,12,,AP Top 25,217,Oklahoma,24,90,0
+2015,12,,AP Top 25,34,Butler,25,70,0
+2015,13,,AP Top 25,121,Indiana,,18,0
+2015,13,,AP Top 25,218,Oklahoma State,,2,0
+2015,13,,AP Top 25,281,Stanford,,3,0
+2015,13,,AP Top 25,282,Stephen F. Austin,,5,0
+2015,13,,AP Top 25,169,Michigan State,,1,0
+2015,13,,AP Top 25,359,Xavier,,8,0
+2015,13,,AP Top 25,240,Rhode Island,,1,0
+2015,13,,AP Top 25,263,Seton Hall,,22,0
+2015,13,,AP Top 25,57,Colorado State,,11,0
+2015,13,,AP Top 25,184,Murray State,,2,0
+2015,13,,AP Top 25,293,Texas A&M,,40,0
+2015,13,,AP Top 25,64,Dayton,,9,0
+2015,13,,AP Top 25,335,Valparaiso,,1,0
+2015,13,,AP Top 25,235,Providence,,3,0
+2015,13,,AP Top 25,257,San Diego State,,18,0
+2015,13,,AP Top 25,304,Tulsa,,8,0
+2015,13,,AP Top 25,149,Louisiana Tech,,2,0
+2015,13,,AP Top 25,289,Temple,,2,0
+2015,13,,AP Top 25,98,Georgia,,1,0
+2015,13,,AP Top 25,12,Arkansas,,21,0
+2015,13,,AP Top 25,135,Kentucky,1,1625,65
+2015,13,,AP Top 25,102,Gonzaga,2,1503,0
+2015,13,,AP Top 25,339,Virginia,3,1470,0
+2015,13,,AP Top 25,72,Duke,4,1416,0
+2015,13,,AP Top 25,355,Wisconsin,5,1381,0
+2015,13,,AP Top 25,11,Arizona,6,1338,0
+2015,13,,AP Top 25,338,Villanova,7,1209,0
+2015,13,,AP Top 25,131,Kansas,8,1177,0
+2015,13,,AP Top 25,150,Louisville,9,1114,0
+2015,13,,AP Top 25,213,Notre Dame,10,1072,0
+2015,13,,AP Top 25,125,Iowa State,11,892,0
+2015,13,,AP Top 25,200,North Carolina,12,861,0
+2015,13,,AP Top 25,331,Utah,13,824,0
+2015,13,,AP Top 25,209,Northern Iowa,14,792,0
+2015,13,,AP Top 25,347,West Virginia,15,779,0
+2015,13,,AP Top 25,352,Wichita State,16,678,0
+2015,13,,AP Top 25,160,Maryland,17,508,0
+2015,13,,AP Top 25,333,VCU,18,479,0
+2015,13,,AP Top 25,20,Baylor,19,420,0
+2015,13,,AP Top 25,216,Ohio State,20,358,0
+2015,13,,AP Top 25,217,Oklahoma,21,312,0
+2015,13,,AP Top 25,34,Butler,22,250,0
+2015,13,,AP Top 25,248,SMU,23,221,0
+2015,13,,AP Top 25,97,Georgetown,24,162,0
+2015,13,,AP Top 25,295,Texas,25,106,0
+2015,14,,AP Top 25,97,Georgetown,,9,0
+2015,14,,AP Top 25,257,San Diego State,,2,0
+2015,14,,AP Top 25,282,Stephen F. Austin,,22,0
+2015,14,,AP Top 25,295,Texas,,25,0
+2015,14,,AP Top 25,335,Valparaiso,,1,0
+2015,14,,AP Top 25,219,Old Dominion,,3,0
+2015,14,,AP Top 25,107,Harvard,,2,0
+2015,14,,AP Top 25,124,Iowa,,38,0
+2015,14,,AP Top 25,289,Temple,,6,0
+2015,14,,AP Top 25,293,Texas A&M,,7,0
+2015,14,,AP Top 25,220,Ole Miss,,3,0
+2015,14,,AP Top 25,51,Cincinnati,,21,0
+2015,14,,AP Top 25,240,Rhode Island,,12,0
+2015,14,,AP Top 25,359,Xavier,,2,0
+2015,14,,AP Top 25,121,Indiana,,13,0
+2015,14,,AP Top 25,235,Providence,,26,0
+2015,14,,AP Top 25,184,Murray State,,20,0
+2015,14,,AP Top 25,135,Kentucky,1,1625,65
+2015,14,,AP Top 25,339,Virginia,2,1518,0
+2015,14,,AP Top 25,102,Gonzaga,3,1486,0
+2015,14,,AP Top 25,72,Duke,4,1450,0
+2015,14,,AP Top 25,355,Wisconsin,5,1385,0
+2015,14,,AP Top 25,338,Villanova,6,1294,0
+2015,14,,AP Top 25,11,Arizona,7,1185,0
+2015,14,,AP Top 25,131,Kansas,8,1171,0
+2015,14,,AP Top 25,150,Louisville,9,1120,0
+2015,14,,AP Top 25,213,Notre Dame,10,948,0
+2015,14,,AP Top 25,331,Utah,11,946,0
+2015,14,,AP Top 25,200,North Carolina,12,871,0
+2015,14,,AP Top 25,209,Northern Iowa,13,846,0
+2015,14,,AP Top 25,125,Iowa State,14,842,0
+2015,14,,AP Top 25,352,Wichita State,15,743,0
+2015,14,,AP Top 25,20,Baylor,16,694,0
+2015,14,,AP Top 25,217,Oklahoma,17,565,0
+2015,14,,AP Top 25,34,Butler,18,462,0
+2015,14,,AP Top 25,160,Maryland,19,347,0
+2015,14,,AP Top 25,333,VCU,20,296,0
+2015,14,,AP Top 25,347,West Virginia,21,273,0
+2015,14,,AP Top 25,218,Oklahoma State,21,273,0
+2015,14,,AP Top 25,216,Ohio State,23,271,0
+2015,14,,AP Top 25,12,Arkansas,24,221,0
+2015,14,,AP Top 25,248,SMU,25,81,0
+2015,15,,AP Top 25,289,Temple,,28,0
+2015,15,,AP Top 25,293,Texas A&M,,8,0
+2015,15,,AP Top 25,169,Michigan State,,17,0
+2015,15,,AP Top 25,184,Murray State,,38,0
+2015,15,,AP Top 25,335,Valparaiso,,8,0
+2015,15,,AP Top 25,97,Georgetown,,23,0
+2015,15,,AP Top 25,235,Providence,,44,0
+2015,15,,AP Top 25,295,Texas,,70,0
+2015,15,,AP Top 25,257,San Diego State,,64,0
+2015,15,,AP Top 25,64,Dayton,,10,0
+2015,15,,AP Top 25,121,Indiana,,7,0
+2015,15,,AP Top 25,135,Kentucky,1,1625,65
+2015,15,,AP Top 25,339,Virginia,2,1524,0
+2015,15,,AP Top 25,102,Gonzaga,3,1475,0
+2015,15,,AP Top 25,72,Duke,4,1449,0
+2015,15,,AP Top 25,355,Wisconsin,5,1387,0
+2015,15,,AP Top 25,338,Villanova,6,1302,0
+2015,15,,AP Top 25,11,Arizona,7,1213,0
+2015,15,,AP Top 25,131,Kansas,8,1195,0
+2015,15,,AP Top 25,331,Utah,9,1051,0
+2015,15,,AP Top 25,213,Notre Dame,10,1038,0
+2015,15,,AP Top 25,209,Northern Iowa,11,955,0
+2015,15,,AP Top 25,150,Louisville,12,882,0
+2015,15,,AP Top 25,352,Wichita State,13,862,0
+2015,15,,AP Top 25,125,Iowa State,14,761,0
+2015,15,,AP Top 25,200,North Carolina,15,658,0
+2015,15,,AP Top 25,160,Maryland,16,640,0
+2015,15,,AP Top 25,217,Oklahoma,17,554,0
+2015,15,,AP Top 25,12,Arkansas,18,476,0
+2015,15,,AP Top 25,34,Butler,19,456,0
+2015,15,,AP Top 25,20,Baylor,20,364,0
+2015,15,,AP Top 25,248,SMU,21,299,0
+2015,15,,AP Top 25,218,Oklahoma State,22,240,0
+2015,15,,AP Top 25,347,West Virginia,23,154,0
+2015,15,,AP Top 25,216,Ohio State,24,139,0
+2015,15,,AP Top 25,333,VCU,25,109,0
+2015,16,,AP Top 25,223,Oregon,,1,0
+2015,16,,AP Top 25,295,Texas,,1,0
+2015,16,,AP Top 25,282,Stephen F. Austin,,2,0
+2015,16,,AP Top 25,169,Michigan State,,56,0
+2015,16,,AP Top 25,293,Texas A&M,,8,0
+2015,16,,AP Top 25,184,Murray State,,42,0
+2015,16,,AP Top 25,216,Ohio State,,12,0
+2015,16,,AP Top 25,97,Georgetown,,58,0
+2015,16,,AP Top 25,218,Oklahoma State,,25,0
+2015,16,,AP Top 25,240,Rhode Island,,3,0
+2015,16,,AP Top 25,335,Valparaiso,,10,0
+2015,16,,AP Top 25,135,Kentucky,1,1625,65
+2015,16,,AP Top 25,339,Virginia,2,1526,0
+2015,16,,AP Top 25,102,Gonzaga,3,1471,0
+2015,16,,AP Top 25,72,Duke,4,1448,0
+2015,16,,AP Top 25,355,Wisconsin,5,1390,0
+2015,16,,AP Top 25,338,Villanova,6,1306,0
+2015,16,,AP Top 25,11,Arizona,7,1228,0
+2015,16,,AP Top 25,131,Kansas,8,1111,0
+2015,16,,AP Top 25,213,Notre Dame,9,1109,0
+2015,16,,AP Top 25,209,Northern Iowa,10,1032,0
+2015,16,,AP Top 25,352,Wichita State,11,930,0
+2015,16,,AP Top 25,125,Iowa State,12,887,0
+2015,16,,AP Top 25,331,Utah,13,876,0
+2015,16,,AP Top 25,160,Maryland,14,695,0
+2015,16,,AP Top 25,200,North Carolina,15,655,0
+2015,16,,AP Top 25,217,Oklahoma,16,622,0
+2015,16,,AP Top 25,150,Louisville,17,613,0
+2015,16,,AP Top 25,12,Arkansas,18,564,0
+2015,16,,AP Top 25,20,Baylor,19,473,0
+2015,16,,AP Top 25,347,West Virginia,20,453,0
+2015,16,,AP Top 25,248,SMU,21,357,0
+2015,16,,AP Top 25,333,VCU,22,182,0
+2015,16,,AP Top 25,34,Butler,23,165,0
+2015,16,,AP Top 25,257,San Diego State,24,117,0
+2015,16,,AP Top 25,235,Providence,25,72,0
+2015,17,,AP Top 25,304,Tulsa,,7,0
+2015,17,,AP Top 25,97,Georgetown,,13,0
+2015,17,,AP Top 25,335,Valparaiso,,2,0
+2015,17,,AP Top 25,293,Texas A&M,,20,0
+2015,17,,AP Top 25,18,BYU,,21,0
+2015,17,,AP Top 25,240,Rhode Island,,3,0
+2015,17,,AP Top 25,282,Stephen F. Austin,,2,0
+2015,17,,AP Top 25,57,Colorado State,,7,0
+2015,17,,AP Top 25,63,Davidson,,18,0
+2015,17,,AP Top 25,64,Dayton,,61,0
+2015,17,,AP Top 25,279,St. John's,,27,0
+2015,17,,AP Top 25,223,Oregon,,33,0
+2015,17,,AP Top 25,333,VCU,,3,0
+2015,17,,AP Top 25,136,LSU,,6,0
+2015,17,,AP Top 25,25,Boise State,,53,0
+2015,17,,AP Top 25,257,San Diego State,,7,0
+2015,17,,AP Top 25,135,Kentucky,1,1625,65
+2015,17,,AP Top 25,339,Virginia,2,1547,0
+2015,17,,AP Top 25,72,Duke,3,1501,0
+2015,17,,AP Top 25,338,Villanova,4,1417,0
+2015,17,,AP Top 25,11,Arizona,5,1338,0
+2015,17,,AP Top 25,355,Wisconsin,6,1318,0
+2015,17,,AP Top 25,102,Gonzaga,7,1244,0
+2015,17,,AP Top 25,352,Wichita State,8,1104,0
+2015,17,,AP Top 25,131,Kansas,9,1087,0
+2015,17,,AP Top 25,160,Maryland,10,1035,0
+2015,17,,AP Top 25,209,Northern Iowa,11,908,0
+2015,17,,AP Top 25,213,Notre Dame,12,879,0
+2015,17,,AP Top 25,331,Utah,13,823,0
+2015,17,,AP Top 25,20,Baylor,14,801,0
+2015,17,,AP Top 25,217,Oklahoma,15,759,0
+2015,17,,AP Top 25,150,Louisville,16,728,0
+2015,17,,AP Top 25,125,Iowa State,17,536,0
+2015,17,,AP Top 25,12,Arkansas,18,515,0
+2015,17,,AP Top 25,200,North Carolina,19,435,0
+2015,17,,AP Top 25,347,West Virginia,20,389,0
+2015,17,,AP Top 25,34,Butler,21,359,0
+2015,17,,AP Top 25,248,SMU,22,210,0
+2015,17,,AP Top 25,216,Ohio State,23,114,0
+2015,17,,AP Top 25,235,Providence,24,91,0
+2015,17,,AP Top 25,184,Murray State,25,79,0
+2015,18,,AP Top 25,18,BYU,,18,0
+2015,18,,AP Top 25,169,Michigan State,,15,0
+2015,18,,AP Top 25,279,St. John's,,6,0
+2015,18,,AP Top 25,235,Providence,,63,0
+2015,18,,AP Top 25,236,Purdue,,1,0
+2015,18,,AP Top 25,136,LSU,,8,0
+2015,18,,AP Top 25,257,San Diego State,,3,0
+2015,18,,AP Top 25,335,Valparaiso,,1,0
+2015,18,,AP Top 25,203,North Florida,,1,0
+2015,18,,AP Top 25,124,Iowa,,7,0
+2015,18,,AP Top 25,282,Stephen F. Austin,,2,0
+2015,18,,AP Top 25,64,Dayton,,1,0
+2015,18,,AP Top 25,223,Oregon,,69,0
+2015,18,,AP Top 25,216,Ohio State,,40,0
+2015,18,,AP Top 25,135,Kentucky,1,1625,65
+2015,18,,AP Top 25,72,Duke,2,1544,0
+2015,18,,AP Top 25,339,Virginia,3,1454,0
+2015,18,,AP Top 25,338,Villanova,4,1444,0
+2015,18,,AP Top 25,11,Arizona,5,1360,0
+2015,18,,AP Top 25,355,Wisconsin,6,1344,0
+2015,18,,AP Top 25,102,Gonzaga,7,1229,0
+2015,18,,AP Top 25,160,Maryland,8,1103,0
+2015,18,,AP Top 25,131,Kansas,9,1040,0
+2015,18,,AP Top 25,209,Northern Iowa,10,1037,0
+2015,18,,AP Top 25,213,Notre Dame,11,1026,0
+2015,18,,AP Top 25,352,Wichita State,12,797,0
+2015,18,,AP Top 25,125,Iowa State,13,786,0
+2015,18,,AP Top 25,150,Louisville,14,780,0
+2015,18,,AP Top 25,217,Oklahoma,15,772,0
+2015,18,,AP Top 25,20,Baylor,16,701,0
+2015,18,,AP Top 25,331,Utah,17,587,0
+2015,18,,AP Top 25,347,West Virginia,18,525,0
+2015,18,,AP Top 25,200,North Carolina,19,406,0
+2015,18,,AP Top 25,248,SMU,20,339,0
+2015,18,,AP Top 25,12,Arkansas,21,300,0
+2015,18,,AP Top 25,34,Butler,22,287,0
+2015,18,,AP Top 25,97,Georgetown,23,223,0
+2015,18,,AP Top 25,63,Davidson,24,99,0
+2015,18,,AP Top 25,25,Boise State,25,82,0

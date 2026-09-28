@@ -1,0 +1,782 @@
+season,week,date,poll,team_id,team,rank,points,first
+2013,1,,AP Top 25,32,Bucknell,,1,0
+2013,1,,AP Top 25,229,Pittsburgh,,32,0
+2013,1,,AP Top 25,97,Georgetown,,9,0
+2013,1,,AP Top 25,157,Marquette,,23,0
+2013,1,,AP Top 25,132,Kansas State,,12,0
+2013,1,,AP Top 25,251,Saint Joseph's,,25,0
+2013,1,,AP Top 25,57,Colorado State,,1,0
+2013,1,,AP Top 25,218,Oklahoma State,,14,0
+2013,1,,AP Top 25,295,Texas,,46,0
+2013,1,,AP Top 25,252,Saint Louis,,46,0
+2013,1,,AP Top 25,173,Minnesota,,40,0
+2013,1,,AP Top 25,71,Drexel,,5,0
+2013,1,,AP Top 25,168,Miami,,8,0
+2013,1,,AP Top 25,335,Valparaiso,,3,0
+2013,1,,AP Top 25,160,Maryland,,1,0
+2013,1,,AP Top 25,63,Davidson,,5,0
+2013,1,,AP Top 25,215,Ohio,,9,0
+2013,1,,AP Top 25,209,Northern Iowa,,5,0
+2013,1,,AP Top 25,191,New Mexico,,9,0
+2013,1,,AP Top 25,184,Murray State,,59,0
+2013,1,,AP Top 25,141,Lehigh,,2,0
+2013,1,,AP Top 25,333,VCU,,58,0
+2013,1,,AP Top 25,5,Alabama,,5,0
+2013,1,,AP Top 25,292,Tennessee,,15,0
+2013,1,,AP Top 25,347,West Virginia,,6,0
+2013,1,,AP Top 25,281,Stanford,,2,0
+2013,1,,AP Top 25,222,Oral Roberts,,1,0
+2013,1,,AP Top 25,253,Saint Mary's,,6,0
+2013,1,,AP Top 25,34,Butler,,33,0
+2013,1,,AP Top 25,121,Indiana,1,1592,43
+2013,1,,AP Top 25,150,Louisville,2,1568,20
+2013,1,,AP Top 25,135,Kentucky,3,1453,2
+2013,1,,AP Top 25,216,Ohio State,4,1292,0
+2013,1,,AP Top 25,170,Michigan,5,1290,0
+2013,1,,AP Top 25,185,NC State,6,1270,0
+2013,1,,AP Top 25,131,Kansas,7,1210,0
+2013,1,,AP Top 25,72,Duke,8,1094,0
+2013,1,,AP Top 25,286,Syracuse,9,1062,0
+2013,1,,AP Top 25,87,Florida,10,936,0
+2013,1,,AP Top 25,200,North Carolina,11,904,0
+2013,1,,AP Top 25,11,Arizona,12,902,0
+2013,1,,AP Top 25,313,UCLA,13,840,0
+2013,1,,AP Top 25,169,Michigan State,14,789,0
+2013,1,,AP Top 25,177,Missouri,15,664,0
+2013,1,,AP Top 25,61,Creighton,16,622,0
+2013,1,,AP Top 25,163,Memphis,17,539,0
+2013,1,,AP Top 25,322,UNLV,18,488,0
+2013,1,,AP Top 25,20,Baylor,19,486,0
+2013,1,,AP Top 25,257,San Diego State,20,463,0
+2013,1,,AP Top 25,102,Gonzaga,21,384,0
+2013,1,,AP Top 25,213,Notre Dame,22,297,0
+2013,1,,AP Top 25,314,UConn,23,262,0
+2013,1,,AP Top 25,355,Wisconsin,23,285,0
+2013,1,,AP Top 25,51,Cincinnati,24,120,0
+2013,1,,AP Top 25,90,Florida State,25,101,0
+2013,2,,AP Top 25,229,Pittsburgh,,36,0
+2013,2,,AP Top 25,173,Minnesota,,58,0
+2013,2,,AP Top 25,5,Alabama,,5,0
+2013,2,,AP Top 25,253,Saint Mary's,,8,0
+2013,2,,AP Top 25,252,Saint Louis,,32,0
+2013,2,,AP Top 25,32,Bucknell,,1,0
+2013,2,,AP Top 25,251,Saint Joseph's,,30,0
+2013,2,,AP Top 25,295,Texas,,20,0
+2013,2,,AP Top 25,347,West Virginia,,7,0
+2013,2,,AP Top 25,333,VCU,,75,0
+2013,2,,AP Top 25,132,Kansas State,,12,0
+2013,2,,AP Top 25,184,Murray State,,64,0
+2013,2,,AP Top 25,157,Marquette,,18,0
+2013,2,,AP Top 25,281,Stanford,,4,0
+2013,2,,AP Top 25,292,Tennessee,,18,0
+2013,2,,AP Top 25,191,New Mexico,,7,0
+2013,2,,AP Top 25,168,Miami,,9,0
+2013,2,,AP Top 25,97,Georgetown,,1,0
+2013,2,,AP Top 25,34,Butler,,22,0
+2013,2,,AP Top 25,90,Florida State,,7,0
+2013,2,,AP Top 25,160,Maryland,,1,0
+2013,2,,AP Top 25,209,Northern Iowa,,4,0
+2013,2,,AP Top 25,63,Davidson,,4,0
+2013,2,,AP Top 25,215,Ohio,,6,0
+2013,2,,AP Top 25,121,Indiana,1,1598,46
+2013,2,,AP Top 25,150,Louisville,2,1572,18
+2013,2,,AP Top 25,135,Kentucky,3,1438,1
+2013,2,,AP Top 25,216,Ohio State,4,1339,0
+2013,2,,AP Top 25,170,Michigan,5,1327,0
+2013,2,,AP Top 25,185,NC State,6,1278,0
+2013,2,,AP Top 25,131,Kansas,7,1222,0
+2013,2,,AP Top 25,286,Syracuse,8,1163,0
+2013,2,,AP Top 25,72,Duke,9,1109,0
+2013,2,,AP Top 25,87,Florida,10,1007,0
+2013,2,,AP Top 25,200,North Carolina,11,944,0
+2013,2,,AP Top 25,11,Arizona,12,882,0
+2013,2,,AP Top 25,313,UCLA,13,746,0
+2013,2,,AP Top 25,177,Missouri,14,716,0
+2013,2,,AP Top 25,61,Creighton,15,678,0
+2013,2,,AP Top 25,20,Baylor,16,578,0
+2013,2,,AP Top 25,163,Memphis,17,570,0
+2013,2,,AP Top 25,322,UNLV,18,538,0
+2013,2,,AP Top 25,102,Gonzaga,19,437,0
+2013,2,,AP Top 25,213,Notre Dame,20,343,0
+2013,2,,AP Top 25,169,Michigan State,21,325,0
+2013,2,,AP Top 25,355,Wisconsin,22,324,0
+2013,2,,AP Top 25,314,UConn,23,262,0
+2013,2,,AP Top 25,51,Cincinnati,24,152,0
+2013,2,,AP Top 25,257,San Diego State,25,128,0
+2013,3,,AP Top 25,352,Wichita State,,13,0
+2013,3,,AP Top 25,132,Kansas State,,7,0
+2013,3,,AP Top 25,32,Bucknell,,5,0
+2013,3,,AP Top 25,184,Murray State,,4,0
+2013,3,,AP Top 25,191,New Mexico,,6,0
+2013,3,,AP Top 25,209,Northern Iowa,,2,0
+2013,3,,AP Top 25,5,Alabama,,13,0
+2013,3,,AP Top 25,215,Ohio,,7,0
+2013,3,,AP Top 25,251,Saint Joseph's,,24,0
+2013,3,,AP Top 25,160,Maryland,,1,0
+2013,3,,AP Top 25,90,Florida State,,15,0
+2013,3,,AP Top 25,253,Saint Mary's,,9,0
+2013,3,,AP Top 25,173,Minnesota,,93,0
+2013,3,,AP Top 25,157,Marquette,,13,0
+2013,3,,AP Top 25,355,Wisconsin,,60,0
+2013,3,,AP Top 25,295,Texas,,25,0
+2013,3,,AP Top 25,229,Pittsburgh,,43,0
+2013,3,,AP Top 25,359,Xavier,,7,0
+2013,3,,AP Top 25,213,Notre Dame,,40,0
+2013,3,,AP Top 25,292,Tennessee,,2,0
+2013,3,,AP Top 25,121,Indiana,1,1602,46
+2013,3,,AP Top 25,150,Louisville,2,1579,19
+2013,3,,AP Top 25,216,Ohio State,3,1404,0
+2013,3,,AP Top 25,170,Michigan,4,1388,0
+2013,3,,AP Top 25,72,Duke,5,1372,0
+2013,3,,AP Top 25,286,Syracuse,6,1291,0
+2013,3,,AP Top 25,87,Florida,7,1203,0
+2013,3,,AP Top 25,135,Kentucky,8,1166,0
+2013,3,,AP Top 25,200,North Carolina,9,1064,0
+2013,3,,AP Top 25,11,Arizona,10,983,0
+2013,3,,AP Top 25,313,UCLA,11,845,0
+2013,3,,AP Top 25,131,Kansas,12,797,0
+2013,3,,AP Top 25,177,Missouri,13,794,0
+2013,3,,AP Top 25,61,Creighton,14,721,0
+2013,3,,AP Top 25,169,Michigan State,15,692,0
+2013,3,,AP Top 25,185,NC State,16,600,0
+2013,3,,AP Top 25,102,Gonzaga,17,559,0
+2013,3,,AP Top 25,322,UNLV,18,556,0
+2013,3,,AP Top 25,163,Memphis,19,548,0
+2013,3,,AP Top 25,218,Oklahoma State,20,449,0
+2013,3,,AP Top 25,314,UConn,21,321,0
+2013,3,,AP Top 25,51,Cincinnati,22,265,0
+2013,3,,AP Top 25,56,Colorado,23,237,0
+2013,3,,AP Top 25,20,Baylor,24,202,0
+2013,3,,AP Top 25,257,San Diego State,25,98,0
+2013,4,,AP Top 25,355,Wisconsin,,16,0
+2013,4,,AP Top 25,292,Tennessee,,3,0
+2013,4,,AP Top 25,157,Marquette,,7,0
+2013,4,,AP Top 25,184,Murray State,,5,0
+2013,4,,AP Top 25,215,Ohio,,8,0
+2013,4,,AP Top 25,251,Saint Joseph's,,9,0
+2013,4,,AP Top 25,333,VCU,,1,0
+2013,4,,AP Top 25,90,Florida State,,10,0
+2013,4,,AP Top 25,289,Temple,,5,0
+2013,4,,AP Top 25,229,Pittsburgh,,55,0
+2013,4,,AP Top 25,314,UConn,,93,0
+2013,4,,AP Top 25,223,Oregon,,44,0
+2013,4,,AP Top 25,40,California,,12,0
+2013,4,,AP Top 25,5,Alabama,,108,0
+2013,4,,AP Top 25,313,UCLA,,85,0
+2013,4,,AP Top 25,352,Wichita State,,99,0
+2013,4,,AP Top 25,34,Butler,,20,0
+2013,4,,AP Top 25,57,Colorado State,,1,0
+2013,4,,AP Top 25,20,Baylor,,4,0
+2013,4,,AP Top 25,163,Memphis,,23,0
+2013,4,,AP Top 25,213,Notre Dame,,42,0
+2013,4,,AP Top 25,121,Indiana,1,1606,47
+2013,4,,AP Top 25,72,Duke,2,1554,18
+2013,4,,AP Top 25,170,Michigan,3,1421,0
+2013,4,,AP Top 25,216,Ohio State,4,1416,0
+2013,4,,AP Top 25,150,Louisville,5,1347,0
+2013,4,,AP Top 25,286,Syracuse,6,1323,0
+2013,4,,AP Top 25,87,Florida,7,1227,0
+2013,4,,AP Top 25,135,Kentucky,8,1180,0
+2013,4,,AP Top 25,11,Arizona,9,1076,0
+2013,4,,AP Top 25,131,Kansas,10,937,0
+2013,4,,AP Top 25,61,Creighton,11,926,0
+2013,4,,AP Top 25,102,Gonzaga,12,854,0
+2013,4,,AP Top 25,169,Michigan State,13,818,0
+2013,4,,AP Top 25,200,North Carolina,14,718,0
+2013,4,,AP Top 25,218,Oklahoma State,15,668,0
+2013,4,,AP Top 25,177,Missouri,16,665,0
+2013,4,,AP Top 25,51,Cincinnati,17,571,0
+2013,4,,AP Top 25,185,NC State,18,553,0
+2013,4,,AP Top 25,56,Colorado,19,478,0
+2013,4,,AP Top 25,97,Georgetown,20,257,0
+2013,4,,AP Top 25,173,Minnesota,21,197,0
+2013,4,,AP Top 25,118,Illinois,22,185,0
+2013,4,,AP Top 25,257,San Diego State,23,182,0
+2013,4,,AP Top 25,322,UNLV,24,175,0
+2013,4,,AP Top 25,191,New Mexico,25,141,0
+2013,5,,AP Top 25,57,Colorado State,,5,0
+2013,5,,AP Top 25,136,LSU,,1,0
+2013,5,,AP Top 25,314,UConn,,92,0
+2013,5,,AP Top 25,289,Temple,,9,0
+2013,5,,AP Top 25,25,Boise State,,22,0
+2013,5,,AP Top 25,160,Maryland,,9,0
+2013,5,,AP Top 25,358,Wyoming,,5,0
+2013,5,,AP Top 25,56,Colorado,,44,0
+2013,5,,AP Top 25,184,Murray State,,4,0
+2013,5,,AP Top 25,229,Pittsburgh,,164,0
+2013,5,,AP Top 25,168,Miami,,7,0
+2013,5,,AP Top 25,20,Baylor,,49,0
+2013,5,,AP Top 25,223,Oregon,,155,0
+2013,5,,AP Top 25,135,Kentucky,,186,0
+2013,5,,AP Top 25,34,Butler,,18,0
+2013,5,,AP Top 25,157,Marquette,,1,0
+2013,5,,AP Top 25,5,Alabama,,96,0
+2013,5,,AP Top 25,340,Virginia Tech,,170,0
+2013,5,,AP Top 25,121,Indiana,1,1605,45
+2013,5,,AP Top 25,72,Duke,2,1577,20
+2013,5,,AP Top 25,170,Michigan,3,1467,0
+2013,5,,AP Top 25,286,Syracuse,4,1384,0
+2013,5,,AP Top 25,150,Louisville,5,1332,0
+2013,5,,AP Top 25,87,Florida,6,1324,0
+2013,5,,AP Top 25,216,Ohio State,7,1254,0
+2013,5,,AP Top 25,11,Arizona,8,1190,0
+2013,5,,AP Top 25,131,Kansas,9,1079,0
+2013,5,,AP Top 25,102,Gonzaga,10,1054,0
+2013,5,,AP Top 25,51,Cincinnati,11,919,0
+2013,5,,AP Top 25,177,Missouri,12,866,0
+2013,5,,AP Top 25,118,Illinois,13,654,0
+2013,5,,AP Top 25,173,Minnesota,14,584,0
+2013,5,,AP Top 25,97,Georgetown,15,545,0
+2013,5,,AP Top 25,61,Creighton,16,469,0
+2013,5,,AP Top 25,257,San Diego State,17,410,0
+2013,5,,AP Top 25,191,New Mexico,18,402,0
+2013,5,,AP Top 25,169,Michigan State,19,347,0
+2013,5,,AP Top 25,200,North Carolina,20,321,0
+2013,5,,AP Top 25,322,UNLV,21,285,0
+2013,5,,AP Top 25,213,Notre Dame,22,278,0
+2013,5,,AP Top 25,218,Oklahoma State,23,263,0
+2013,5,,AP Top 25,352,Wichita State,24,245,0
+2013,5,,AP Top 25,185,NC State,25,234,0
+2013,6,,AP Top 25,229,Pittsburgh,,177,0
+2013,6,,AP Top 25,333,VCU,,6,0
+2013,6,,AP Top 25,34,Butler,,5,0
+2013,6,,AP Top 25,223,Oregon,,177,0
+2013,6,,AP Top 25,157,Marquette,,8,0
+2013,6,,AP Top 25,136,LSU,,1,0
+2013,6,,AP Top 25,340,Virginia Tech,,3,0
+2013,6,,AP Top 25,5,Alabama,,3,0
+2013,6,,AP Top 25,135,Kentucky,,44,0
+2013,6,,AP Top 25,184,Murray State,,4,0
+2013,6,,AP Top 25,358,Wyoming,,15,0
+2013,6,,AP Top 25,168,Miami,,3,0
+2013,6,,AP Top 25,160,Maryland,,5,0
+2013,6,,AP Top 25,314,UConn,,10,0
+2013,6,,AP Top 25,121,Indiana,1,1580,44
+2013,6,,AP Top 25,72,Duke,2,1551,20
+2013,6,,AP Top 25,170,Michigan,3,1444,0
+2013,6,,AP Top 25,286,Syracuse,4,1378,0
+2013,6,,AP Top 25,87,Florida,5,1319,0
+2013,6,,AP Top 25,150,Louisville,6,1303,0
+2013,6,,AP Top 25,216,Ohio State,7,1211,0
+2013,6,,AP Top 25,11,Arizona,8,1178,0
+2013,6,,AP Top 25,131,Kansas,9,1087,0
+2013,6,,AP Top 25,118,Illinois,10,991,0
+2013,6,,AP Top 25,51,Cincinnati,11,944,0
+2013,6,,AP Top 25,177,Missouri,12,877,0
+2013,6,,AP Top 25,173,Minnesota,13,714,0
+2013,6,,AP Top 25,102,Gonzaga,14,699,0
+2013,6,,AP Top 25,97,Georgetown,15,577,0
+2013,6,,AP Top 25,61,Creighton,16,525,0
+2013,6,,AP Top 25,191,New Mexico,17,512,0
+2013,6,,AP Top 25,257,San Diego State,18,491,0
+2013,6,,AP Top 25,169,Michigan State,19,328,0
+2013,6,,AP Top 25,322,UNLV,20,305,0
+2013,6,,AP Top 25,200,North Carolina,21,298,0
+2013,6,,AP Top 25,213,Notre Dame,22,283,0
+2013,6,,AP Top 25,352,Wichita State,23,280,0
+2013,6,,AP Top 25,218,Oklahoma State,24,251,0
+2013,6,,AP Top 25,185,NC State,25,213,0
+2013,7,,AP Top 25,184,Murray State,,4,0
+2013,7,,AP Top 25,314,UConn,,4,0
+2013,7,,AP Top 25,157,Marquette,,8,0
+2013,7,,AP Top 25,160,Maryland,,2,0
+2013,7,,AP Top 25,229,Pittsburgh,,158,0
+2013,7,,AP Top 25,223,Oregon,,176,0
+2013,7,,AP Top 25,333,VCU,,7,0
+2013,7,,AP Top 25,168,Miami,,3,0
+2013,7,,AP Top 25,135,Kentucky,,41,0
+2013,7,,AP Top 25,352,Wichita State,,6,0
+2013,7,,AP Top 25,32,Bucknell,,1,0
+2013,7,,AP Top 25,358,Wyoming,,14,0
+2013,7,,AP Top 25,72,Duke,1,1622,62
+2013,7,,AP Top 25,170,Michigan,2,1543,3
+2013,7,,AP Top 25,286,Syracuse,3,1465,0
+2013,7,,AP Top 25,11,Arizona,4,1371,0
+2013,7,,AP Top 25,150,Louisville,5,1362,0
+2013,7,,AP Top 25,121,Indiana,6,1321,0
+2013,7,,AP Top 25,216,Ohio State,7,1249,0
+2013,7,,AP Top 25,87,Florida,8,1163,0
+2013,7,,AP Top 25,131,Kansas,9,1110,0
+2013,7,,AP Top 25,118,Illinois,10,1044,0
+2013,7,,AP Top 25,51,Cincinnati,11,967,0
+2013,7,,AP Top 25,177,Missouri,12,886,0
+2013,7,,AP Top 25,173,Minnesota,13,730,0
+2013,7,,AP Top 25,102,Gonzaga,14,710,0
+2013,7,,AP Top 25,97,Georgetown,15,579,0
+2013,7,,AP Top 25,191,New Mexico,16,548,0
+2013,7,,AP Top 25,61,Creighton,17,530,0
+2013,7,,AP Top 25,257,San Diego State,18,493,0
+2013,7,,AP Top 25,34,Butler,19,361,0
+2013,7,,AP Top 25,169,Michigan State,20,343,0
+2013,7,,AP Top 25,322,UNLV,21,315,0
+2013,7,,AP Top 25,213,Notre Dame,22,291,0
+2013,7,,AP Top 25,200,North Carolina,23,256,0
+2013,7,,AP Top 25,218,Oklahoma State,24,244,0
+2013,7,,AP Top 25,185,NC State,25,198,0
+2013,8,,AP Top 25,135,Kentucky,,37,0
+2013,8,,AP Top 25,223,Oregon,,6,0
+2013,8,,AP Top 25,333,VCU,,16,0
+2013,8,,AP Top 25,352,Wichita State,,11,0
+2013,8,,AP Top 25,314,UConn,,6,0
+2013,8,,AP Top 25,160,Maryland,,7,0
+2013,8,,AP Top 25,191,New Mexico,,66,0
+2013,8,,AP Top 25,200,North Carolina,,16,0
+2013,8,,AP Top 25,358,Wyoming,,28,0
+2013,8,,AP Top 25,289,Temple,,36,0
+2013,8,,AP Top 25,72,Duke,1,1623,63
+2013,8,,AP Top 25,170,Michigan,2,1551,2
+2013,8,,AP Top 25,11,Arizona,3,1463,0
+2013,8,,AP Top 25,150,Louisville,4,1422,0
+2013,8,,AP Top 25,121,Indiana,5,1383,0
+2013,8,,AP Top 25,131,Kansas,6,1309,0
+2013,8,,AP Top 25,177,Missouri,7,1157,0
+2013,8,,AP Top 25,51,Cincinnati,8,1144,0
+2013,8,,AP Top 25,286,Syracuse,9,1140,0
+2013,8,,AP Top 25,216,Ohio State,10,965,0
+2013,8,,AP Top 25,173,Minnesota,11,878,0
+2013,8,,AP Top 25,118,Illinois,12,875,0
+2013,8,,AP Top 25,102,Gonzaga,13,824,0
+2013,8,,AP Top 25,87,Florida,14,772,0
+2013,8,,AP Top 25,97,Georgetown,15,674,0
+2013,8,,AP Top 25,61,Creighton,16,589,0
+2013,8,,AP Top 25,257,San Diego State,17,557,0
+2013,8,,AP Top 25,34,Butler,18,512,0
+2013,8,,AP Top 25,169,Michigan State,19,416,0
+2013,8,,AP Top 25,322,UNLV,20,382,0
+2013,8,,AP Top 25,213,Notre Dame,21,337,0
+2013,8,,AP Top 25,218,Oklahoma State,22,318,0
+2013,8,,AP Top 25,185,NC State,23,264,0
+2013,8,,AP Top 25,229,Pittsburgh,24,189,0
+2013,8,,AP Top 25,132,Kansas State,25,152,0
+2013,9,,AP Top 25,223,Oregon,,3,0
+2013,9,,AP Top 25,314,UConn,,9,0
+2013,9,,AP Top 25,352,Wichita State,,11,0
+2013,9,,AP Top 25,160,Maryland,,5,0
+2013,9,,AP Top 25,358,Wyoming,,28,0
+2013,9,,AP Top 25,135,Kentucky,,13,0
+2013,9,,AP Top 25,200,North Carolina,,38,0
+2013,9,,AP Top 25,289,Temple,,21,0
+2013,9,,AP Top 25,313,UCLA,,6,0
+2013,9,,AP Top 25,322,UNLV,,52,0
+2013,9,,AP Top 25,333,VCU,,15,0
+2013,9,,AP Top 25,72,Duke,1,1623,63
+2013,9,,AP Top 25,170,Michigan,2,1547,2
+2013,9,,AP Top 25,11,Arizona,3,1474,0
+2013,9,,AP Top 25,150,Louisville,4,1434,0
+2013,9,,AP Top 25,121,Indiana,5,1378,0
+2013,9,,AP Top 25,131,Kansas,6,1313,0
+2013,9,,AP Top 25,286,Syracuse,7,1197,0
+2013,9,,AP Top 25,216,Ohio State,8,1079,0
+2013,9,,AP Top 25,173,Minnesota,9,978,0
+2013,9,,AP Top 25,102,Gonzaga,10,946,0
+2013,9,,AP Top 25,118,Illinois,11,929,0
+2013,9,,AP Top 25,177,Missouri,12,912,0
+2013,9,,AP Top 25,87,Florida,13,810,0
+2013,9,,AP Top 25,51,Cincinnati,14,761,0
+2013,9,,AP Top 25,97,Georgetown,15,718,0
+2013,9,,AP Top 25,61,Creighton,16,629,0
+2013,9,,AP Top 25,34,Butler,17,591,0
+2013,9,,AP Top 25,169,Michigan State,18,447,0
+2013,9,,AP Top 25,257,San Diego State,19,437,0
+2013,9,,AP Top 25,191,New Mexico,20,389,0
+2013,9,,AP Top 25,213,Notre Dame,21,361,0
+2013,9,,AP Top 25,218,Oklahoma State,22,333,0
+2013,9,,AP Top 25,185,NC State,23,270,0
+2013,9,,AP Top 25,229,Pittsburgh,24,219,0
+2013,9,,AP Top 25,132,Kansas State,25,149,0
+2013,10,,AP Top 25,218,Oklahoma State,,64,0
+2013,10,,AP Top 25,200,North Carolina,,4,0
+2013,10,,AP Top 25,135,Kentucky,,27,0
+2013,10,,AP Top 25,157,Marquette,,41,0
+2013,10,,AP Top 25,358,Wyoming,,87,0
+2013,10,,AP Top 25,313,UCLA,,41,0
+2013,10,,AP Top 25,223,Oregon,,11,0
+2013,10,,AP Top 25,333,VCU,,94,0
+2013,10,,AP Top 25,289,Temple,,13,0
+2013,10,,AP Top 25,160,Maryland,,29,0
+2013,10,,AP Top 25,229,Pittsburgh,,1,0
+2013,10,,AP Top 25,72,Duke,1,1622,62
+2013,10,,AP Top 25,170,Michigan,2,1553,3
+2013,10,,AP Top 25,150,Louisville,3,1447,0
+2013,10,,AP Top 25,11,Arizona,4,1442,0
+2013,10,,AP Top 25,121,Indiana,5,1381,0
+2013,10,,AP Top 25,131,Kansas,6,1322,0
+2013,10,,AP Top 25,286,Syracuse,7,1211,0
+2013,10,,AP Top 25,173,Minnesota,8,1121,0
+2013,10,,AP Top 25,102,Gonzaga,9,1064,0
+2013,10,,AP Top 25,177,Missouri,10,1006,0
+2013,10,,AP Top 25,87,Florida,11,922,0
+2013,10,,AP Top 25,118,Illinois,12,881,0
+2013,10,,AP Top 25,61,Creighton,13,789,0
+2013,10,,AP Top 25,34,Butler,14,761,0
+2013,10,,AP Top 25,216,Ohio State,15,710,0
+2013,10,,AP Top 25,257,San Diego State,16,591,0
+2013,10,,AP Top 25,213,Notre Dame,17,547,0
+2013,10,,AP Top 25,132,Kansas State,18,472,0
+2013,10,,AP Top 25,97,Georgetown,19,441,0
+2013,10,,AP Top 25,185,NC State,20,438,0
+2013,10,,AP Top 25,51,Cincinnati,21,375,0
+2013,10,,AP Top 25,169,Michigan State,22,267,0
+2013,10,,AP Top 25,352,Wichita State,23,135,0
+2013,10,,AP Top 25,322,UNLV,24,113,0
+2013,10,,AP Top 25,191,New Mexico,25,102,0
+2013,11,,AP Top 25,229,Pittsburgh,,2,0
+2013,11,,AP Top 25,25,Boise State,,9,0
+2013,11,,AP Top 25,20,Baylor,,1,0
+2013,11,,AP Top 25,51,Cincinnati,,121,0
+2013,11,,AP Top 25,358,Wyoming,,1,0
+2013,11,,AP Top 25,314,UConn,,70,0
+2013,11,,AP Top 25,97,Georgetown,,56,0
+2013,11,,AP Top 25,289,Temple,,5,0
+2013,11,,AP Top 25,322,UNLV,,26,0
+2013,11,,AP Top 25,168,Miami,,9,0
+2013,11,,AP Top 25,220,Ole Miss,,55,0
+2013,11,,AP Top 25,355,Wisconsin,,25,0
+2013,11,,AP Top 25,352,Wichita State,,6,0
+2013,11,,AP Top 25,329,Utah State,,1,0
+2013,11,,AP Top 25,150,Louisville,1,1591,36
+2013,11,,AP Top 25,121,Indiana,2,1527,13
+2013,11,,AP Top 25,72,Duke,3,1501,14
+2013,11,,AP Top 25,131,Kansas,4,1416,1
+2013,11,,AP Top 25,170,Michigan,5,1415,1
+2013,11,,AP Top 25,286,Syracuse,6,1284,0
+2013,11,,AP Top 25,11,Arizona,7,1205,0
+2013,11,,AP Top 25,102,Gonzaga,8,1141,0
+2013,11,,AP Top 25,173,Minnesota,9,1041,0
+2013,11,,AP Top 25,87,Florida,10,1019,0
+2013,11,,AP Top 25,216,Ohio State,11,939,0
+2013,11,,AP Top 25,61,Creighton,12,896,0
+2013,11,,AP Top 25,34,Butler,13,855,0
+2013,11,,AP Top 25,185,NC State,14,836,0
+2013,11,,AP Top 25,257,San Diego State,15,704,0
+2013,11,,AP Top 25,132,Kansas State,16,670,0
+2013,11,,AP Top 25,177,Missouri,17,598,0
+2013,11,,AP Top 25,169,Michigan State,18,426,0
+2013,11,,AP Top 25,191,New Mexico,19,368,0
+2013,11,,AP Top 25,213,Notre Dame,20,295,0
+2013,11,,AP Top 25,223,Oregon,21,238,0
+2013,11,,AP Top 25,333,VCU,22,212,0
+2013,11,,AP Top 25,118,Illinois,23,199,0
+2013,11,,AP Top 25,313,UCLA,24,185,0
+2013,11,,AP Top 25,157,Marquette,25,177,0
+2013,12,,AP Top 25,97,Georgetown,,4,0
+2013,12,,AP Top 25,163,Memphis,,6,0
+2013,12,,AP Top 25,322,UNLV,,32,0
+2013,12,,AP Top 25,358,Wyoming,,28,0
+2013,12,,AP Top 25,229,Pittsburgh,,1,0
+2013,12,,AP Top 25,149,Louisiana Tech,,2,0
+2013,12,,AP Top 25,355,Wisconsin,,55,0
+2013,12,,AP Top 25,57,Colorado State,,7,0
+2013,12,,AP Top 25,32,Bucknell,,1,0
+2013,12,,AP Top 25,200,North Carolina,,3,0
+2013,12,,AP Top 25,313,UCLA,,41,0
+2013,12,,AP Top 25,257,San Diego State,,26,0
+2013,12,,AP Top 25,125,Iowa State,,3,0
+2013,12,,AP Top 25,157,Marquette,,92,0
+2013,12,,AP Top 25,72,Duke,1,1578,39
+2013,12,,AP Top 25,170,Michigan,2,1539,11
+2013,12,,AP Top 25,131,Kansas,3,1486,7
+2013,12,,AP Top 25,286,Syracuse,3,1486,8
+2013,12,,AP Top 25,150,Louisville,5,1348,0
+2013,12,,AP Top 25,11,Arizona,6,1270,0
+2013,12,,AP Top 25,121,Indiana,7,1211,0
+2013,12,,AP Top 25,87,Florida,8,1181,0
+2013,12,,AP Top 25,34,Butler,9,1146,0
+2013,12,,AP Top 25,102,Gonzaga,10,994,0
+2013,12,,AP Top 25,132,Kansas State,11,927,0
+2013,12,,AP Top 25,173,Minnesota,12,905,0
+2013,12,,AP Top 25,169,Michigan State,13,831,0
+2013,12,,AP Top 25,216,Ohio State,14,701,0
+2013,12,,AP Top 25,191,New Mexico,15,659,0
+2013,12,,AP Top 25,223,Oregon,16,624,0
+2013,12,,AP Top 25,61,Creighton,17,611,0
+2013,12,,AP Top 25,185,NC State,18,587,0
+2013,12,,AP Top 25,333,VCU,19,433,0
+2013,12,,AP Top 25,352,Wichita State,20,363,0
+2013,12,,AP Top 25,51,Cincinnati,21,322,0
+2013,12,,AP Top 25,177,Missouri,22,234,0
+2013,12,,AP Top 25,220,Ole Miss,23,172,0
+2013,12,,AP Top 25,213,Notre Dame,24,123,0
+2013,12,,AP Top 25,168,Miami,25,93,0
+2013,13,,AP Top 25,57,Colorado State,,1,0
+2013,13,,AP Top 25,213,Notre Dame,,12,0
+2013,13,,AP Top 25,253,Saint Mary's,,2,0
+2013,13,,AP Top 25,137,La Salle,,3,0
+2013,13,,AP Top 25,97,Georgetown,,121,0
+2013,13,,AP Top 25,20,Baylor,,5,0
+2013,13,,AP Top 25,149,Louisiana Tech,,8,0
+2013,13,,AP Top 25,313,UCLA,,34,0
+2013,13,,AP Top 25,229,Pittsburgh,,10,0
+2013,13,,AP Top 25,338,Villanova,,6,0
+2013,13,,AP Top 25,355,Wisconsin,,45,0
+2013,13,,AP Top 25,10,Arizona State,,14,0
+2013,13,,AP Top 25,125,Iowa State,,4,0
+2013,13,,AP Top 25,322,UNLV,,56,0
+2013,13,,AP Top 25,163,Memphis,,4,0
+2013,13,,AP Top 25,333,VCU,,4,0
+2013,13,,AP Top 25,170,Michigan,1,1611,51
+2013,13,,AP Top 25,131,Kansas,2,1572,13
+2013,13,,AP Top 25,121,Indiana,3,1457,0
+2013,13,,AP Top 25,87,Florida,4,1420,1
+2013,13,,AP Top 25,72,Duke,5,1328,0
+2013,13,,AP Top 25,286,Syracuse,6,1322,0
+2013,13,,AP Top 25,102,Gonzaga,7,1177,0
+2013,13,,AP Top 25,11,Arizona,8,1160,0
+2013,13,,AP Top 25,34,Butler,9,1023,0
+2013,13,,AP Top 25,223,Oregon,10,969,0
+2013,13,,AP Top 25,216,Ohio State,11,945,0
+2013,13,,AP Top 25,150,Louisville,12,905,0
+2013,13,,AP Top 25,169,Michigan State,13,897,0
+2013,13,,AP Top 25,168,Miami,14,894,0
+2013,13,,AP Top 25,352,Wichita State,15,621,0
+2013,13,,AP Top 25,220,Ole Miss,16,473,0
+2013,13,,AP Top 25,177,Missouri,17,464,0
+2013,13,,AP Top 25,132,Kansas State,18,463,0
+2013,13,,AP Top 25,185,NC State,19,431,0
+2013,13,,AP Top 25,191,New Mexico,20,333,0
+2013,13,,AP Top 25,61,Creighton,21,312,0
+2013,13,,AP Top 25,257,San Diego State,22,302,0
+2013,13,,AP Top 25,173,Minnesota,23,281,0
+2013,13,,AP Top 25,51,Cincinnati,24,220,0
+2013,13,,AP Top 25,157,Marquette,25,216,0
+2013,14,,AP Top 25,314,UConn,,2,0
+2013,14,,AP Top 25,252,Saint Louis,,8,0
+2013,14,,AP Top 25,185,NC State,,64,0
+2013,14,,AP Top 25,253,Saint Mary's,,27,0
+2013,14,,AP Top 25,149,Louisiana Tech,,24,0
+2013,14,,AP Top 25,22,Belmont,,1,0
+2013,14,,AP Top 25,313,UCLA,,8,0
+2013,14,,AP Top 25,135,Kentucky,,21,0
+2013,14,,AP Top 25,57,Colorado State,,49,0
+2013,14,,AP Top 25,257,San Diego State,,17,0
+2013,14,,AP Top 25,333,VCU,,8,0
+2013,14,,AP Top 25,355,Wisconsin,,28,0
+2013,14,,AP Top 25,322,UNLV,,13,0
+2013,14,,AP Top 25,339,Virginia,,4,0
+2013,14,,AP Top 25,220,Ole Miss,,75,0
+2013,14,,AP Top 25,352,Wichita State,,49,0
+2013,14,,AP Top 25,3,Akron,,4,0
+2013,14,,AP Top 25,163,Memphis,,44,0
+2013,14,,AP Top 25,121,Indiana,1,1615,58
+2013,14,,AP Top 25,87,Florida,2,1536,7
+2013,14,,AP Top 25,170,Michigan,3,1490,0
+2013,14,,AP Top 25,72,Duke,4,1413,0
+2013,14,,AP Top 25,131,Kansas,5,1350,0
+2013,14,,AP Top 25,102,Gonzaga,6,1249,0
+2013,14,,AP Top 25,11,Arizona,7,1248,0
+2013,14,,AP Top 25,168,Miami,8,1132,0
+2013,14,,AP Top 25,286,Syracuse,9,1091,0
+2013,14,,AP Top 25,216,Ohio State,10,1033,0
+2013,14,,AP Top 25,150,Louisville,11,1018,0
+2013,14,,AP Top 25,169,Michigan State,12,994,0
+2013,14,,AP Top 25,132,Kansas State,13,782,0
+2013,14,,AP Top 25,34,Butler,14,774,0
+2013,14,,AP Top 25,191,New Mexico,15,660,0
+2013,14,,AP Top 25,61,Creighton,16,578,0
+2013,14,,AP Top 25,51,Cincinnati,17,552,0
+2013,14,,AP Top 25,173,Minnesota,18,454,0
+2013,14,,AP Top 25,223,Oregon,19,390,0
+2013,14,,AP Top 25,97,Georgetown,20,364,0
+2013,14,,AP Top 25,177,Missouri,21,245,0
+2013,14,,AP Top 25,218,Oklahoma State,22,235,0
+2013,14,,AP Top 25,229,Pittsburgh,23,207,0
+2013,14,,AP Top 25,157,Marquette,24,137,0
+2013,14,,AP Top 25,213,Notre Dame,25,132,0
+2013,15,,AP Top 25,3,Akron,,12,0
+2013,15,,AP Top 25,253,Saint Mary's,,62,0
+2013,15,,AP Top 25,51,Cincinnati,,68,0
+2013,15,,AP Top 25,339,Virginia,,4,0
+2013,15,,AP Top 25,322,UNLV,,6,0
+2013,15,,AP Top 25,257,San Diego State,,53,0
+2013,15,,AP Top 25,122,Indiana State,,5,0
+2013,15,,AP Top 25,352,Wichita State,,3,0
+2013,15,,AP Top 25,61,Creighton,,56,0
+2013,15,,AP Top 25,252,Saint Louis,,34,0
+2013,15,,AP Top 25,333,VCU,,35,0
+2013,15,,AP Top 25,173,Minnesota,,80,0
+2013,15,,AP Top 25,118,Illinois,,26,0
+2013,15,,AP Top 25,22,Belmont,,2,0
+2013,15,,AP Top 25,313,UCLA,,8,0
+2013,15,,AP Top 25,177,Missouri,,69,0
+2013,15,,AP Top 25,149,Louisiana Tech,,43,0
+2013,15,,AP Top 25,217,Oklahoma,,1,0
+2013,15,,AP Top 25,220,Ole Miss,,1,0
+2013,15,,AP Top 25,185,NC State,,24,0
+2013,15,,AP Top 25,121,Indiana,1,1559,26
+2013,15,,AP Top 25,72,Duke,2,1515,20
+2013,15,,AP Top 25,168,Miami,3,1499,17
+2013,15,,AP Top 25,170,Michigan,4,1428,0
+2013,15,,AP Top 25,102,Gonzaga,5,1371,2
+2013,15,,AP Top 25,286,Syracuse,6,1293,0
+2013,15,,AP Top 25,87,Florida,7,1286,0
+2013,15,,AP Top 25,169,Michigan State,8,1178,0
+2013,15,,AP Top 25,11,Arizona,9,1062,0
+2013,15,,AP Top 25,132,Kansas State,10,1012,0
+2013,15,,AP Top 25,34,Butler,11,943,0
+2013,15,,AP Top 25,150,Louisville,12,842,0
+2013,15,,AP Top 25,216,Ohio State,13,828,0
+2013,15,,AP Top 25,131,Kansas,14,823,0
+2013,15,,AP Top 25,97,Georgetown,15,679,0
+2013,15,,AP Top 25,229,Pittsburgh,16,591,0
+2013,15,,AP Top 25,218,Oklahoma State,17,587,0
+2013,15,,AP Top 25,157,Marquette,18,493,0
+2013,15,,AP Top 25,191,New Mexico,19,433,0
+2013,15,,AP Top 25,355,Wisconsin,20,305,0
+2013,15,,AP Top 25,213,Notre Dame,21,264,0
+2013,15,,AP Top 25,163,Memphis,22,193,0
+2013,15,,AP Top 25,223,Oregon,23,137,0
+2013,15,,AP Top 25,57,Colorado State,24,125,0
+2013,15,,AP Top 25,135,Kentucky,25,87,0
+2013,16,,AP Top 25,51,Cincinnati,,20,0
+2013,16,,AP Top 25,149,Louisiana Tech,,48,0
+2013,16,,AP Top 25,352,Wichita State,,1,0
+2013,16,,AP Top 25,252,Saint Louis,,58,0
+2013,16,,AP Top 25,253,Saint Mary's,,2,0
+2013,16,,AP Top 25,185,NC State,,20,0
+2013,16,,AP Top 25,118,Illinois,,46,0
+2013,16,,AP Top 25,177,Missouri,,4,0
+2013,16,,AP Top 25,173,Minnesota,,52,0
+2013,16,,AP Top 25,61,Creighton,,1,0
+2013,16,,AP Top 25,160,Maryland,,2,0
+2013,16,,AP Top 25,3,Akron,,16,0
+2013,16,,AP Top 25,171,Middle Tennessee,,3,0
+2013,16,,AP Top 25,121,Indiana,1,1597,43
+2013,16,,AP Top 25,168,Miami,2,1571,20
+2013,16,,AP Top 25,102,Gonzaga,3,1428,2
+2013,16,,AP Top 25,169,Michigan State,4,1416,0
+2013,16,,AP Top 25,87,Florida,5,1387,0
+2013,16,,AP Top 25,72,Duke,6,1308,0
+2013,16,,AP Top 25,170,Michigan,7,1264,0
+2013,16,,AP Top 25,286,Syracuse,8,1125,0
+2013,16,,AP Top 25,131,Kansas,9,1077,0
+2013,16,,AP Top 25,150,Louisville,10,1011,0
+2013,16,,AP Top 25,97,Georgetown,11,952,0
+2013,16,,AP Top 25,11,Arizona,12,924,0
+2013,16,,AP Top 25,132,Kansas State,13,848,0
+2013,16,,AP Top 25,218,Oklahoma State,14,786,0
+2013,16,,AP Top 25,34,Butler,15,659,0
+2013,16,,AP Top 25,191,New Mexico,16,654,0
+2013,16,,AP Top 25,157,Marquette,17,524,0
+2013,16,,AP Top 25,216,Ohio State,18,458,0
+2013,16,,AP Top 25,355,Wisconsin,19,406,0
+2013,16,,AP Top 25,229,Pittsburgh,20,370,0
+2013,16,,AP Top 25,163,Memphis,21,362,0
+2013,16,,AP Top 25,57,Colorado State,22,307,0
+2013,16,,AP Top 25,223,Oregon,23,216,0
+2013,16,,AP Top 25,333,VCU,24,123,0
+2013,16,,AP Top 25,213,Notre Dame,25,79,0
+2013,17,,AP Top 25,57,Colorado State,,49,0
+2013,17,,AP Top 25,200,North Carolina,,8,0
+2013,17,,AP Top 25,22,Belmont,,1,0
+2013,17,,AP Top 25,171,Middle Tennessee,,2,0
+2013,17,,AP Top 25,314,UConn,,18,0
+2013,17,,AP Top 25,322,UNLV,,13,0
+2013,17,,AP Top 25,40,California,,5,0
+2013,17,,AP Top 25,118,Illinois,,19,0
+2013,17,,AP Top 25,333,VCU,,45,0
+2013,17,,AP Top 25,177,Missouri,,1,0
+2013,17,,AP Top 25,282,Stephen F. Austin,,1,0
+2013,17,,AP Top 25,253,Saint Mary's,,24,0
+2013,17,,AP Top 25,3,Akron,,43,0
+2013,17,,AP Top 25,352,Wichita State,,35,0
+2013,17,,AP Top 25,121,Indiana,1,1624,64
+2013,17,,AP Top 25,102,Gonzaga,2,1530,1
+2013,17,,AP Top 25,72,Duke,3,1461,0
+2013,17,,AP Top 25,170,Michigan,4,1411,0
+2013,17,,AP Top 25,168,Miami,5,1317,0
+2013,17,,AP Top 25,131,Kansas,6,1272,0
+2013,17,,AP Top 25,97,Georgetown,7,1236,0
+2013,17,,AP Top 25,87,Florida,8,1164,0
+2013,17,,AP Top 25,169,Michigan State,9,1105,0
+2013,17,,AP Top 25,150,Louisville,10,1047,0
+2013,17,,AP Top 25,11,Arizona,11,998,0
+2013,17,,AP Top 25,286,Syracuse,12,915,0
+2013,17,,AP Top 25,132,Kansas State,13,875,0
+2013,17,,AP Top 25,191,New Mexico,14,764,0
+2013,17,,AP Top 25,218,Oklahoma State,15,692,0
+2013,17,,AP Top 25,216,Ohio State,16,675,0
+2013,17,,AP Top 25,355,Wisconsin,17,558,0
+2013,17,,AP Top 25,252,Saint Louis,18,495,0
+2013,17,,AP Top 25,163,Memphis,19,453,0
+2013,17,,AP Top 25,34,Butler,20,351,0
+2013,17,,AP Top 25,213,Notre Dame,21,328,0
+2013,17,,AP Top 25,157,Marquette,22,317,0
+2013,17,,AP Top 25,229,Pittsburgh,23,158,0
+2013,17,,AP Top 25,223,Oregon,24,61,0
+2013,17,,AP Top 25,149,Louisiana Tech,25,54,0
+2013,18,,AP Top 25,22,Belmont,,3,0
+2013,18,,AP Top 25,61,Creighton,,7,0
+2013,18,,AP Top 25,40,California,,33,0
+2013,18,,AP Top 25,118,Illinois,,25,0
+2013,18,,AP Top 25,57,Colorado State,,1,0
+2013,18,,AP Top 25,34,Butler,,26,0
+2013,18,,AP Top 25,200,North Carolina,,109,0
+2013,18,,AP Top 25,171,Middle Tennessee,,5,0
+2013,18,,AP Top 25,322,UNLV,,43,0
+2013,18,,AP Top 25,173,Minnesota,,10,0
+2013,18,,AP Top 25,149,Louisiana Tech,,103,0
+2013,18,,AP Top 25,3,Akron,,4,0
+2013,18,,AP Top 25,253,Saint Mary's,,47,0
+2013,18,,AP Top 25,177,Missouri,,4,0
+2013,18,,AP Top 25,102,Gonzaga,1,1607,51
+2013,18,,AP Top 25,121,Indiana,2,1517,7
+2013,18,,AP Top 25,72,Duke,3,1471,5
+2013,18,,AP Top 25,131,Kansas,4,1433,0
+2013,18,,AP Top 25,97,Georgetown,5,1384,2
+2013,18,,AP Top 25,168,Miami,6,1245,0
+2013,18,,AP Top 25,170,Michigan,7,1240,0
+2013,18,,AP Top 25,150,Louisville,8,1217,0
+2013,18,,AP Top 25,132,Kansas State,9,1040,0
+2013,18,,AP Top 25,169,Michigan State,10,1006,0
+2013,18,,AP Top 25,87,Florida,11,993,0
+2013,18,,AP Top 25,191,New Mexico,12,950,0
+2013,18,,AP Top 25,218,Oklahoma State,13,833,0
+2013,18,,AP Top 25,216,Ohio State,14,763,0
+2013,18,,AP Top 25,157,Marquette,15,687,0
+2013,18,,AP Top 25,252,Saint Louis,16,675,0
+2013,18,,AP Top 25,286,Syracuse,17,589,0
+2013,18,,AP Top 25,11,Arizona,18,394,0
+2013,18,,AP Top 25,223,Oregon,19,332,0
+2013,18,,AP Top 25,229,Pittsburgh,20,326,0
+2013,18,,AP Top 25,333,VCU,21,277,0
+2013,18,,AP Top 25,355,Wisconsin,22,217,0
+2013,18,,AP Top 25,313,UCLA,23,196,0
+2013,18,,AP Top 25,213,Notre Dame,24,164,0
+2013,18,,AP Top 25,163,Memphis,25,149,0
+2013,19,,AP Top 25,338,Villanova,,1,0
+2013,19,,AP Top 25,34,Butler,,105,0
+2013,19,,AP Top 25,352,Wichita State,,6,0
+2013,19,,AP Top 25,322,UNLV,,7,0
+2013,19,,AP Top 25,335,Valparaiso,,1,0
+2013,19,,AP Top 25,223,Oregon,,4,0
+2013,19,,AP Top 25,253,Saint Mary's,,117,0
+2013,19,,AP Top 25,22,Belmont,,13,0
+2013,19,,AP Top 25,135,Kentucky,,5,0
+2013,19,,AP Top 25,57,Colorado State,,48,0
+2013,19,,AP Top 25,289,Temple,,20,0
+2013,19,,AP Top 25,200,North Carolina,,49,0
+2013,19,,AP Top 25,102,Gonzaga,1,1611,54
+2013,19,,AP Top 25,72,Duke,2,1559,11
+2013,19,,AP Top 25,121,Indiana,3,1491,0
+2013,19,,AP Top 25,150,Louisville,4,1421,0
+2013,19,,AP Top 25,97,Georgetown,5,1344,0
+2013,19,,AP Top 25,170,Michigan,6,1230,0
+2013,19,,AP Top 25,131,Kansas,7,1224,0
+2013,19,,AP Top 25,169,Michigan State,8,1184,0
+2013,19,,AP Top 25,168,Miami,9,1082,0
+2013,19,,AP Top 25,216,Ohio State,10,1073,0
+2013,19,,AP Top 25,132,Kansas State,11,932,0
+2013,19,,AP Top 25,157,Marquette,12,921,0
+2013,19,,AP Top 25,87,Florida,13,838,0
+2013,19,,AP Top 25,218,Oklahoma State,14,805,0
+2013,19,,AP Top 25,191,New Mexico,15,771,0
+2013,19,,AP Top 25,252,Saint Louis,16,557,0
+2013,19,,AP Top 25,229,Pittsburgh,17,551,0
+2013,19,,AP Top 25,11,Arizona,18,523,0
+2013,19,,AP Top 25,286,Syracuse,19,362,0
+2013,19,,AP Top 25,163,Memphis,20,316,0
+2013,19,,AP Top 25,313,UCLA,21,245,0
+2013,19,,AP Top 25,355,Wisconsin,22,191,0
+2013,19,,AP Top 25,61,Creighton,23,190,0
+2013,19,,AP Top 25,213,Notre Dame,24,171,0
+2013,19,,AP Top 25,333,VCU,25,157,0
