@@ -40,6 +40,12 @@ jobs:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
         run: python fetch_games.py ${{ inputs.full && '--full' || '' }}
         continue-on-error: true
+      - name: Fetch AP polls
+        if: github.event_name != 'push'
+        env:
+          CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
+        run: python fetch_polls.py
+        continue-on-error: true
       - name: Commit data
         run: |
           git config user.name "github-actions[bot]"
