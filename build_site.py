@@ -22,7 +22,7 @@ DOMAIN = "collegebasketballbelt.com"
 OUT = "site"
 ADSENSE_PUBLISHER_ID = ""        # "pub-3317069252410560" once the site is approved in AdSense
 GOATCOUNTER_CODE = ""            # e.g. "collegebasketballbelt" once the GoatCounter site exists
-STYLES_VERSION = "4"
+STYLES_VERSION = "5"
 ORANGE = "#de762c"
 
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]

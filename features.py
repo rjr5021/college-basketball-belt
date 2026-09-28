@@ -896,6 +896,7 @@ def build_more(lg, d):
         ("playoffs/", "The belt in the playoffs", "Every postseason belt game, season by season."),
         ("splits/", "Home, road & overtime", "Road warriors, home fortresses and extra-time title changes."),
         ("standings/", "Belt vs. the standings", "Did the holder have the best record?"),
+        ("ap-poll/", "Belt vs. the AP poll", "Was the holder ranked? How often the belt and No. 1 lined up."),
         ("what-if/", "What if?", "Famous title changes flipped and replayed."),
         ("__groups__", "", ""),
         ("map/", "The belt map", "Every city that has held it, and the belt's journey."),
@@ -912,6 +913,14 @@ def build_more(lg, d):
     ]
     if lg.get("key") in (None, "cbb"):
         cards = [c for c in cards if c[0] != "playoffs/"]
+    root = getattr(S, "OUT", "site")
+
+    def built(h):
+        if h.startswith("/") or h == "__groups__":
+            return True
+        path = os.path.join(root, out(lg, h))
+        return os.path.exists(os.path.join(path, "index.html") if h.endswith("/") else path)
+    cards = [c for c in cards if built(c[0])]
     gh = GROUP_HUB.get(lg.get("key", "cbb")) if (d.get("models") or {}).get("groups") else None
     cards = [(gh[0], gh[1], f"Belts that count only games inside each {gh[2]}.") if c[0] == "__groups__" else c for c in cards if c[0] != "__groups__" or gh]
     grid = "".join(f'<a class="morecard" href="{h if h.startswith("/") else b(lg) + "/" + h}"><b class="disp">{e(t)}</b><span>{e(x)}</span></a>' for h, t, x in cards)
@@ -939,7 +948,6 @@ def build(lg, d):
         build_feed(lg, d)
     build_ics(lg, d)
     build_badge(lg, d)
-    build_more(lg, d)
 
 
 # ========================================================= next-game preview ==
@@ -1697,6 +1705,7 @@ def build_batch2(lg, d):
     build_geo(lg, d)
     build_groups(lg, d)
     build_relocations(lg, d)
+    build_polls(lg, d)
 
 
 # ================================================== long tables (tablekit) ==
@@ -1890,6 +1899,7 @@ def build_tables(lg, d):
     build_teams_table(lg, d)
     build_rivalries_table(lg, d)
     build_losers_table(lg, d)
+    build_more(lg, d)     # last, so it only lists pages that were built
 
 
 def build_what_if(lg, d):
@@ -2210,10 +2220,12 @@ def build_states(lg, d):
     gr = _geo_reigns(lg, d)
     if len(gr) < len(d["reigns"]) * 0.8:
         return
-    try:
-        from places import STATE_NAMES
-    except ImportError:
-        STATE_NAMES = {}
+    STATE_NAMES = lg.get("state_names")
+    if STATE_NAMES is None:
+        try:
+            from places import STATE_NAMES
+        except ImportError:
+            STATE_NAMES = {}
     days, reigns, teams = Counter(), Counter(), defaultdict(set)
     for r, (city, st, la, lo) in gr:
         days[st] += r["days"]
@@ -2276,8 +2288,11 @@ Promise.all([fetch('{b(lg)}/map/data.json').then(function(r){{return r.json();}}
  fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json').then(function(r){{return r.json();}}),
  fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json').then(function(r){{return r.json();}})]).then(function(a){{
  var D=a[0],world=a[1],us=a[2];
- var pts={{type:'MultiPoint',coordinates:D.cities.map(function(c){{return [c[1],c[2]];}})}};
- var proj=d3.geoConicConformal().parallels([30,50]).rotate([96,0]).fitExtent([[30,30],[W-30,H-30]],pts),path=d3.geoPath(proj);
+ var far=function(c){{return c[1]<-140;}};
+ var pts={{type:'MultiPoint',coordinates:D.cities.filter(function(c){{return !far(c);}}).map(function(c){{return [c[1],c[2]];}})}};
+ var P0=d3.geoConicConformal().parallels([30,50]).rotate([96,0]).fitExtent([[30,30],[W-30,H-30]],pts),path=d3.geoPath(P0);
+ var proj=function(ll){{return ll[0]<-140?[36+(ll[0]+161)*9,H-34-(ll[1]-18.9)*9]:P0(ll);}};
+ if(D.cities.some(far))svg.append('text').attr('x',30).attr('y',H-8).attr('class','mapnote').text('Hawaii (not to scale)');
  var countries=topojson.feature(world,world.objects.countries).features.filter(function(f){{return ['840','124','484'].indexOf(String(f.id))>=0;}});
  svg.append('g').selectAll('path').data(countries).join('path').attr('d',path).attr('class','land');
  svg.append('path').datum(topojson.mesh(us,us.objects.states,function(a,b){{return a!==b;}})).attr('d',path).attr('class','borders');
@@ -2434,6 +2449,49 @@ def build_groups(lg, d):
   <div class="moregrid">{"".join(cards)}</div>
 </section>"""
     page(lg, f"{hub_title}: {lg['name']}", body, hub, f"{hub_title}: lineal belts that count only games inside each {word}, with current holders and records.")
+
+
+def build_polls(lg, d):
+    """The belt against the AP poll (college leagues with poll data)."""
+    m = (d.get("models") or {}).get("polls")
+    if not m or not m.get("polls"):
+        return
+    n, sl = lg["team_name"], lg["season_label"]
+    cur = m["current"]
+    lead = ""
+    if cur.get("team"):
+        rk = f"No. {cur['rank']}" if cur.get("rank") else "unranked"
+        lead = (f'<p class="intro">{tlink(lg, cur["team"])} {"is" if cur.get("rank") else "was"} <b>{rk}</b> in the latest AP poll '
+                f'({S.d_long(cur["date"])})' + (f'; No. 1 was {tlink(lg, cur["no1"])}.' if cur.get("no1") and cur["no1"] != cur["team"] else ".") + "</p>")
+    seas = m["seasons"]
+    rows = []
+    for x in reversed(seas):
+        yes = x["no1_held"]
+        rows.append({"c": [sl(x["season"]), str(x["polls"]),
+                           f'{x["ranked"]} <small>({pct(x["ranked"] / x["polls"])})</small>', str(x["top1"]),
+                           (f'{tlink(lg, x["best_team"])} <small class="mono">No. {x["best"]}</small>' if x["best_team"] else "—"),
+                           (tlink(lg, x["final_no1"]) if x["final_no1"] else "—"),
+                           ("Yes" if yes else "No") if yes is not None else "—"],
+                     "t": " ".join(n(t).lower() for t in x["holders"] + [x["final_no1"]] if t),
+                     "k": [x["season"], x["polls"], x["ranked"] / x["polls"], x["top1"], x["best"] or 99, n(x["final_no1"]) if x["final_no1"] else "", 1 if yes else 0],
+                     "f": {"decade": x["season"] // 10 * 10, "no1": "y" if yes else "n"}})
+    unr = "".join(f'<tr><td><i style="background:{lg["team_colors"](t)[0]}"></i>{tlink(lg, t)}</td><td class="mono">{S.d_short(a, True)} – {S.d_short(z, True)}</td>'
+                  f'<td class="mono r">{k}</td></tr>' for t, a, z, k in m["unranked"][:10])
+    intro = f"""{lead}
+  {numbers([(pct(m['ranked'] / m['polls']), "Of AP polls with a ranked holder"), (pct(m['top1'] / m['polls']), "Holder was No. 1"),
+            (pct(m['top5'] / m['polls']), "Holder in the top 5"), (f"{m['polls']:,}", "AP polls since " + sl(seas[0]['season']))])}
+  <p class="intro">The poll is voters' opinion; the belt is who actually beat whom. Here's how often they agree: first the longest stretches an unranked team held the belt, then every season.</p>"""
+    extra = f"""<h2 class="disp sub">Unranked, but holding the belt</h2>
+  <p class="intro">The longest runs of AP polls in which the belt holder wasn't ranked at all.</p>
+  <table class="history"><thead><tr><th class="mono">Holder</th><th class="mono">Polls</th><th class="mono r">Weeks</th></tr></thead><tbody>{unr}</tbody></table>"""
+    paged_table(lg, "ap-poll/", title=f"The {lg['name']} belt vs. the AP poll", subnav_on="more",
+                description=f"How often the lineal {lg['name']} belt holder was ranked, or No. 1, in the AP poll, season by season since {sl(seas[0]['season'])}.",
+                heading="The belt vs. the AP poll", note=f"{len(seas)} seasons · {m['polls']:,} polls", intro=intro,
+                columns=[("Season", "mono", True), ("Polls", "mono r", True), ("Holder ranked", "mono r", True), ("Holder No. 1", "mono r", True),
+                         ("Best-ranked holder", "", True), ("Final AP No. 1", "", True), ("No. 1 held it?", "mono", True)],
+                rows=rows, filters=[("decade", "Any decade", _decade_opts(x["season"] for x in seas)),
+                                    ("no1", "Final No. 1: any", [("y", "Held the belt that season"), ("n", "Never held it that season")])],
+                extra=extra, empty="No seasons match.")
 
 
 def build_relocations(lg, d):

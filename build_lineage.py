@@ -18,6 +18,7 @@ import belt_engine
 import belt_extras as X
 import belt_models as M
 import cbb_data as D
+import polls as PL
 
 
 def days_between(a, b):
@@ -205,6 +206,7 @@ def main(today=None):
         "what_if": M.what_if("cbb", games, belt_games, reigns, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS, start=start),
         "groups": conference_belts(games, fut, recent, today),
         "losers": M.losers("cbb", games, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS),
+        "polls": PL.compute(reigns),
     }
     extras["models"] = models
 
@@ -214,6 +216,7 @@ def main(today=None):
     everyone |= {t for x in models["what_if"] for t in x["path"] + [x["today"], x["flip_winner"], x["flip_loser"]]}
     everyone |= {r[1] for r in models["losers"]["all"]}
     everyone |= {r[1] for gb in models["groups"].values() for r in gb["reigns"]}
+    everyone |= {t for t in PL.teams(models["polls"]) if t in names}
     for tid in everyone | ({next_game["challenger"]} if next_game else set()):
         p, s2 = D.colors(teams, tid)
         team_info[tid] = {"name": names.get(tid, tid), "primary": p, "secondary": s2,
