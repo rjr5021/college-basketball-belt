@@ -305,3 +305,18 @@ ol.degrees{list-style:none;padding:0;margin:0;border-top:1px solid var(--line2)}
 @media (max-width:900px){.mhero{grid-template-columns:1fr}.mmid{flex-direction:row;flex-wrap:wrap;gap:6px 14px}.mday{font-size:40px}.stakes{grid-template-columns:1fr 1fr}.stakes>div:nth-child(3){border-left:0}.pv-grid{grid-template-columns:1fr}.pv-aside{position:static}.formcols{grid-template-columns:1fr}}
 
 .gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding-top:22px;margin-top:22px;border-top:1px solid var(--line)}
+
+.recapcard{display:block;background:var(--card);border:1px solid var(--line);padding:20px 22px;color:var(--ink)}.recapcard:hover{border-color:var(--brass)}.recapcard b{display:block;font-size:30px;font-weight:800;margin:6px 0}.recapcard p{margin:0;color:var(--body)}.recapcard .mono{font-size:11px;color:var(--muted)}
+.linescore td,.linescore th{padding:6px 8px}.recap{margin-bottom:28px}
+.linescore td:nth-child(n+2){font-size:13px;font-family:"IBM Plex Mono",monospace}
+
+/* tablekit: search, filters, sort, pages */
+.tk-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 14px}
+.tk-q{flex:1 1 220px;min-width:180px;font:inherit;font-size:15px;padding:9px 12px;background:var(--card);color:var(--ink);border:1px solid var(--line2)}
+.tk-bar select{font-size:13px}
+.tk-seg{display:flex;border:1px solid var(--line2)}.tk-seg button{font:500 11px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;padding:9px 12px;background:transparent;color:var(--brass-text);border:0;cursor:pointer}.tk-seg button.on{background:var(--ink);color:var(--paper)}
+.tk-info{font-size:12px;color:var(--muted);margin-left:auto}
+.tk-pager{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:14px 0;font:500 12px "IBM Plex Mono",monospace}.tk-pager a,.tk-pager span{padding:6px 10px;border:1px solid var(--line2)}.tk-pager .tk-on{background:var(--ink);color:var(--paper);border-color:var(--ink)}.tk-pager .tk-gap{border:0}
+th[data-k]{cursor:pointer;user-select:none;white-space:nowrap}th[data-k]:after{content:" ↕";opacity:.35}th.tk-up:after{content:" ↑";opacity:1}th.tk-down:after{content:" ↓";opacity:1}
+.tk-empty{display:none;padding:18px 0;color:var(--muted)}
+tr.cur td{background:rgba(169,127,56,.14)}

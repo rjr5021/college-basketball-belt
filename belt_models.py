@@ -172,6 +172,7 @@ def losers(league_key, games, tie_rule, recent, today, gap_days):
                      "days": r["days"]} for r in sorted(reigns, key=lambda r: (-r.get("defenses", 0), -r["days"]))[:10]],
         "recent": [{"date": b["date"], "new": b["new_holder"], "from": b["holder"], "score": b["score"],
                     "home": b["home"]} for b in changes[-15:]][::-1],
+        "all": [[r["index"], r["team"], r["start_date"], r.get("end_date"), r.get("defenses", 0), r["days"]] for r in reigns],
         "first": {"date": bgs[0]["date"], "team": bgs[0]["new_holder"], "opp": bgs[0]["opponent"]} if bgs else None,
     }
 

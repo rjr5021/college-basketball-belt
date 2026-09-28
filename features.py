@@ -305,6 +305,7 @@ def build_losers(lg, d):
   </div>
   <h2 class="disp sub">Longest Losers Belt reigns (losses in a row as holder)</h2>
   <div class="tablewrap"><table class="history"><tbody>{longest}</tbody></table></div>
+  <p class="mono more"><a href="{b(lg)}/losers-belt/reigns/">All {L['reigns']:,} Losers Belt reigns, searchable →</a></p>
   <h2 class="disp sub">Latest handoffs</h2>
   <div class="tablewrap"><table class="history"><tbody>{recent}</tbody></table></div>
 </section>"""
@@ -1244,6 +1245,9 @@ def _gline(lg, bg):
     n = lg["team_name"]
     s = bg["season"]
     hp, ap = _score(bg)
+    if not bg.get("holder"):
+        w, l = bg["new_holder"], bg["opponent"]
+        return f"{tlink(lg, w, s)} beat {tlink(lg, l, s)} {_winner_score(bg)} in the first game"
     if hp == ap:
         return f"{e(n(bg['holder'], s))} and {e(n(bg['opponent'], s))} tied {hp}–{ap}"
     w = bg["home"] if hp > ap else (bg["opponent"] if bg["home"] == bg["holder"] else bg["holder"])
@@ -1529,8 +1533,41 @@ def build_data(lg, d):
          f"Download every lineal {lg['name']} belt reign and belt game as CSV, plus the JSON API and feeds.")
 
 
+def _recaps(lg):
+    for p in (os.path.join("data", lg.get("key", ""), "recaps.json"), os.path.join("data", "recaps.json")):
+        if os.path.exists(p):
+            with open(p) as f:
+                return json.load(f) or {}
+    return {}
+
+
+def recap_html(lg, rc):
+    if not rc:
+        return ""
+    n = lg["team_name"]
+    paras = "".join(f"<p>{e(x)}</p>" for x in rc.get("recap") or [])
+    lead = "".join(f'<tr><td>{e(l["player"])}<small>{e(n(l["team"])) if l.get("team") else ""}</small></td><td class="mono">{e(l.get("category") or "")}</td><td class="mono r">{e(l["line"])}</td></tr>'
+                   for l in rc.get("leaders") or [])
+    ls = rc.get("linescore") or []
+    lsh = ""
+    if ls and all(r.get("periods") for r in ls):
+        k = max(len(r["periods"]) for r in ls)
+        head = "".join(f'<th class="mono r">{i + 1}</th>' for i in range(k))
+        rows = "".join(f'<tr><td>{e(r.get("team") or "")}</td>' + "".join(f'<td class="mono r">{e(x)}</td>' for x in r["periods"]) + f'<td class="mono r"><b>{e(str(r.get("score") or ""))}</b></td></tr>' for r in sorted(ls, key=lambda r: r.get("home_away") != "away"))
+        lsh = f'<div class="tablewrap"><table class="history linescore"><thead><tr><th></th>{head}<th class="mono r">T</th></tr></thead><tbody>{rows}</tbody></table></div>'
+    return f"""<article class="pv-article recap">
+  <div class="kicker">The recap · AI-written</div>
+  <h2 class="disp">{e(rc.get('headline') or '')}</h2>
+  {lsh}{paras}
+  {f'<h3 class="kicker">Leaders</h3><div class="tablewrap"><table class="history"><tbody>{lead}</tbody></table></div>' if lead else ''}
+  <p class="note">Written by Claude from ESPN's box score for this game.</p>
+</article>"""
+
+
 def build_game_pages(lg, d):
-    """One page per title change (the game that opened each reign)."""
+    """One page per title change (the game that opened each reign), plus
+    every belt game with a recap."""
+    rcs = _recaps(lg)
     n = lg["team_name"]
     bgs = d["belt_games"]
     reign_by_open = {r.get("opened_by"): r for r in d["reigns"] if r.get("opened_by")}
@@ -1565,6 +1602,7 @@ def build_game_pages(lg, d):
   </div>
 </section>
 <section class="wrap block prose">
+  {recap_html(lg, rcs.get(f"{bg.get('holder')}|{bg['opponent']}|{bg['date']}"))}
   <p>{prev_txt}</p>
   <p>{after}</p>
   {numbers([(f"{r['index']:,}", "Reign number"), (r['reign_no'], "Team's reign"), (r.get('defenses', 0), "Defenses"), (f"{r['days']:,}", "Days held")])}
@@ -1574,6 +1612,51 @@ def build_game_pages(lg, d):
         page(lg, f"{n(w, s)} beat {n(l, s)} {_winner_score(bg)} for the {lg['name']} belt ({S.d_short(bg['date'], True)})", body,
              f"games/{bg['n']}/",
              f"{n(w, s)} beat {n(l, s)} {_winner_score(bg)} on {S.d_long(bg['date'])} to take the lineal {lg['name']} championship belt. Reign {r['index']:,}: {r.get('defenses', 0)} defenses, {r['days']:,} days.")
+
+
+def build_defense_pages(lg, d):
+    rcs = _recaps(lg)
+    if not rcs:
+        return
+    n = lg["team_name"]
+    by_index = {r["index"]: r for r in d["reigns"]}
+    for bg in d["belt_games"]:
+        rc = rcs.get(f"{bg.get('holder')}|{bg['opponent']}|{bg['date']}")
+        if not rc or bg["outcome"] in ("changed", "established"):
+            continue
+        s = bg["season"]
+        h, o = bg["holder"], bg["opponent"]
+        r = by_index.get(bg.get("reign"))
+        p, s2 = lg["team_colors"](h)
+        top, bottom, ink, accent = S.plate(p, s2)
+        k = (r.get("belt_games") or []).index(bg["n"]) if r and bg["n"] in (r.get("belt_games") or []) else None
+        body = f"""{S.subnav(lg, "history")}
+<section class="plate slim" style="--top:{top};--bottom:{bottom};--ink:{ink};--accent:{accent}">
+  <div class="wrap-in">
+    <div class="kicker dot">Belt game {bg['n']:,} · {S.d_long(bg['date'])}</div>
+    <h1 class="disp holder" style="--fit:{max(len(x) for x in n(h, s).split())}">{e(n(h, s))} keep the belt</h1>
+    <p class="lede">{_gline(lg, bg)}.{(' Defense number ' + str(k + 1) + ' of reign ' + format(r['index'], ',') + '.') if k is not None and r else ''}</p>
+  </div>
+</section>
+<section class="wrap block prose">
+  {recap_html(lg, rc)}
+  <p class="mono more"><a href="{b(lg)}/seasons/{s}/#g{bg['n']}">{e(sl(lg, s))} season →</a> · <a href="{team_url(lg, h)}">{e(n(h))} belt history →</a></p>
+</section>"""
+        page(lg, f"{rc.get('headline') or n(h, s) + ' keep the ' + lg['name'] + ' belt'} ({S.d_short(bg['date'], True)})", body, f"games/{bg['n']}/",
+             f"{n(h, s)} defended the lineal {lg['name']} belt against {n(o, s)} on {S.d_long(bg['date'])}. Recap, line score and leaders.")
+
+
+def latest_recap_card(lg, d):
+    rcs = _recaps(lg)
+    if not rcs:
+        return ""
+    key, rc = max(rcs.items(), key=lambda kv: kv[1]["date"])
+    bg = next((x for x in reversed(d["belt_games"]) if f"{x.get('holder')}|{x['opponent']}|{x['date']}" == key), None)
+    if not bg:
+        return ""
+    return (f'<section class="wrap block"><div class="head"><h2 class="disp">Last belt game</h2><a class="mono more" href="{game_url(lg, bg)}">Full recap →</a></div>'
+            f'<a class="recapcard" href="{game_url(lg, bg)}"><span class="mono">{S.d_long(bg["date"])}</span><b class="disp">{e(rc.get("headline") or "")}</b>'
+            f'<p>{e((rc.get("recap") or [""])[0])}</p></a></section>')
 
 
 def build_batch2(lg, d):
@@ -1586,3 +1669,197 @@ def build_batch2(lg, d):
     build_standings(lg, d)
     build_data(lg, d)
     build_game_pages(lg, d)
+    build_defense_pages(lg, d)
+
+
+# ================================================== long tables (tablekit) ==
+
+PAGE_SIZE = 100
+
+
+def paged_table(lg, rel, *, title, description, heading, note, intro, columns, rows, filters=(), order_labels=("Newest first", "Oldest first"),
+                subnav_on="more", extra="", empty="Nothing matches.", size=PAGE_SIZE):
+    """A long table as real pages (/rel, /rel/page/N/) plus search, filters,
+    sorting and client-side paging from rel/data.json via /tablekit.js.
+
+    columns: [(label, css_class, sortable)]; rows (already in default order):
+    {"c": [cell html], "t": search text, "k": [sort keys], "f": {filter: value}, "cur": bool}
+    filters: [(key, label, [(value, label)])]"""
+    S.write(out(lg, rel + "data.json"), json.dumps({"rows": rows}, separators=(",", ":")))
+    cls = [c[1] for c in columns]
+    total = max(1, -(-len(rows) // size))
+    base = f"{b(lg)}/{rel}"
+    head = "".join(f'<th class="mono {c[1]}"' + (f' data-k="{i}"' if c[2] else "") + f'>{e(c[0])}</th>' for i, c in enumerate(columns))
+    sel = "".join(f'<select data-f="{k}" aria-label="{e(lab)}"><option value="">{e(lab)}</option>'
+                  + "".join(f'<option value="{e(str(v))}">{e(t)}</option>' for v, t in opts) + "</select>" for k, lab, opts in filters)
+    seg = (f'<div class="tk-seg" role="group" aria-label="Order"><button type="button" data-order="default" class="on">{e(order_labels[0])}</button>'
+           f'<button type="button" data-order="reverse">{e(order_labels[1])}</button></div>') if order_labels else ""
+    for p in range(1, total + 1):
+        chunk = rows[(p - 1) * size: p * size]
+        body_rows = "".join('<tr' + (' class="cur"' if x.get("cur") else "") + '>' + "".join(
+            f'<td{f" class={chr(34)}{cls[i]}{chr(34)}" if cls[i] else ""}>{c}</td>' for i, c in enumerate(x["c"])) + "</tr>" for x in chunk)
+
+        def link(q, label):
+            return f'<a href="{base if q == 1 else base + f"page/{q}/"}">{label}</a>'
+
+        nums = sorted({1, total, *[q for q in range(p - 2, p + 3) if 1 <= q <= total]})
+        pager, last = [], 0
+        if p > 1:
+            pager.append(link(p - 1, "← Prev"))
+        for q in nums:
+            if q - last > 1:
+                pager.append('<span class="tk-gap">…</span>')
+            pager.append(f'<span class="tk-on">{q}</span>' if q == p else link(q, q))
+            last = q
+        if p < total:
+            pager.append(link(p + 1, "Next →"))
+        pg = "".join(pager) if total > 1 else ""
+        cfg = json.dumps({"data": base + "data.json", "base": base, "size": size, "page": p, "cls": cls})
+        start = (p - 1) * size + 1
+        body = f"""{S.subnav(lg, subnav_on)}
+<section class="wrap block" data-tablekit='{e(cfg)}'>
+  <div class="head"><h1 class="disp">{e(heading)}{f' <span class="mono note">page {p}</span>' if p > 1 else ''}</h1><span class="mono note">{note}</span></div>
+  {intro if p == 1 else ''}
+  {extra if p == 1 else ''}
+  <div class="tk-bar"><input class="tk-q" type="search" placeholder="Filter by team…" aria-label="Filter by team" autocomplete="off">{sel}{seg}<span class="tk-info mono">{start:,}–{start + len(chunk) - 1:,} of {len(rows):,} · page {p} of {total}</span></div>
+  <nav class="tk-pager" aria-label="Pages">{pg}</nav>
+  <div class="tablewrap"><table class="history"><thead><tr>{head}</tr></thead><tbody>{body_rows}</tbody></table></div>
+  <p class="tk-empty">{e(empty)}</p>
+  <nav class="tk-pager" aria-label="Pages">{pg}</nav>
+</section>
+<script src="/tablekit.js" defer></script>"""
+        page(lg, title + (f" (page {p})" if p > 1 else ""), body, rel if p == 1 else f"{rel}page/{p}/",
+             description + (f" Page {p} of {total}." if p > 1 else ""))
+
+
+def _decade_opts(years):
+    return [(dcd, f"{dcd}s") for dcd in sorted({y // 10 * 10 for y in years}, reverse=True)]
+
+
+def build_history_table(lg, d):
+    n = lg["team_name"]
+    cur_i = d["reigns"][-1]["index"]
+    rows = []
+    for r in reversed(d["reigns"]):
+        t = r["team"]
+        s = r.get("season") or int(r["start_date"][:4])
+        how = (f"beat {e(n(r['won_from'], s))} {S.won_score_text(r)}" if r.get("won_from")
+               else "reclaimed (previous holder left)" if r.get("reclaimed_after") else "first game" if not r.get("seed") else "starting holder")
+        url = (f"{b(lg)}/games/{r['opened_by']}/" if r.get("opened_by") else f"{b(lg)}/reigns/{r['index']}/")
+        yr = int(r["start_date"][:4])
+        rows.append({
+            "c": [f'<a href="{url}">{r["index"]:,}</a>',
+                  f'<i style="background:{lg["team_colors"](t)[0]}"></i><a href="{team_url(lg, t)}">{e(n(t, s))}</a><small>{how}</small>',
+                  S.d_short(r["start_date"], True), S.d_short(r["end_date"], True) if r.get("end_date") else "Holding",
+                  str(r.get("defenses", 0)), f'{r["days"]:,}'],
+            "t": (n(t) + " " + n(t, s)).lower(),
+            "k": [r["index"], n(t), r["start_date"], r.get("end_date") or "9999", r.get("defenses", 0), r["days"]],
+            "f": {"decade": yr // 10 * 10, "team": t},
+            "cur": r["index"] == cur_i})
+    teams = sorted({r["team"] for r in d["reigns"]}, key=lambda t: n(t))
+    paged_table(lg, "history/", title=f"{lg['long_name']}: every reign since {lg['first_season']}",
+                description=f"The complete lineal {lg['name']} championship history: all {len(d['reigns']):,} reigns since {lg['first_season']}, searchable and sortable.",
+                heading=f"Every {lg['name']} reign", note=f"{len(d['reigns']):,} reigns · {len(d['belt_games']):,} belt games since {lg['first_season']}",
+                intro=f'<p class="intro">Every reign, newest first. Search a team, pick a decade, or click a column to sort. <a href="{b(lg)}/games/">Every belt game →</a></p>', subnav_on="history",
+                columns=[("#", "mono n", True), ("Holder", "", True), ("Won", "mono", True), ("Lost", "mono", True), ("Def.", "mono r", True), ("Days", "mono r", True)],
+                rows=rows, filters=[("decade", "Any decade", _decade_opts(int(r["start_date"][:4]) for r in d["reigns"])),
+                                    ("team", "Any team", [(t, n(t)) for t in teams])],
+                empty="No reigns match.")
+
+
+def build_all_games(lg, d):
+    n = lg["team_name"]
+    rows = []
+    for bg in reversed(d["belt_games"]):
+        s = bg["season"]
+        kind = "c" if bg["outcome"] in ("changed", "established") else "t" if bg["outcome"].endswith("(tie)") else "d"
+        tag = CHG_TAG if kind == "c" else '<span class="tag">Tie · defense</span>' if kind == "t" else DEF_TAG
+        link = f'<a href="{game_url(lg, bg)}">{bg["n"]:,}</a>' if kind == "c" else f'{bg["n"]:,}'
+        teams_ = [x for x in (bg.get("holder"), bg["opponent"]) if x]
+        rows.append({
+            "c": [link, S.d_short(bg["date"], True), _gline(lg, bg) + (f' <span class="tag post">{post_word(lg).capitalize()}</span>' if bg["season_type"] != "regular" else ""), tag],
+            "t": " ".join(n(x) + " " + n(x, s) for x in teams_).lower() + " " + str(s),
+            "k": [bg["n"], bg["date"], n(bg["new_holder"]), kind],
+            "f": {"kind": kind, "type": "p" if bg["season_type"] != "regular" else "r", "decade": int(bg["date"][:4]) // 10 * 10}})
+    paged_table(lg, "games/", title=f"Every {lg['name']} belt game",
+                description=f"All {len(d['belt_games']):,} games with the lineal {lg['name']} belt on the line, searchable by team, decade and result.",
+                heading=f"Every {lg['name']} belt game", note=f"{len(d['belt_games']):,} games", subnav_on="history",
+                intro=f'<p class="intro">Every game with the belt on the line, title changes and defenses. Filter by team, decade or result. <a href="{b(lg)}/history/">The reigns →</a></p>',
+                columns=[("Game", "mono n", True), ("Date", "mono", True), ("Result", "", True), ("", "r", True)],
+                rows=rows, filters=[("kind", "Any result", [("c", "Title changes"), ("d", "Defenses"), ("t", "Ties")]),
+                                    ("type", "Regular + " + post_word(lg), [("r", "Regular season"), ("p", post_word(lg).capitalize())]),
+                                    ("decade", "Any decade", _decade_opts(int(bg["date"][:4]) for bg in d["belt_games"]))],
+                empty="No belt games match.")
+
+
+def build_teams_table(lg, d):
+    n = lg["team_name"]
+    by = defaultdict(list)
+    for r in d["reigns"]:
+        by[r["team"]].append(r)
+    recent = set((d.get("models") or {}).get("elo") or {})
+    rows = []
+    for t, rs in sorted(by.items(), key=lambda kv: -sum(r["days"] for r in kv[1])):
+        days = sum(r["days"] for r in rs)
+        last = rs[-1]
+        rows.append({
+            "c": [f'<i style="background:{lg["team_colors"](t)[0]}"></i><a href="{team_url(lg, t)}">{e(n(t))}</a>',
+                  str(len(rs)), f"{days:,}", str(sum(r.get("defenses", 0) for r in rs)), str(max(r.get("defenses", 0) for r in rs)),
+                  "Now" if not last.get("end_date") else last["end_date"][:4]],
+            "t": n(t).lower(), "k": [n(t), len(rs), days, sum(r.get("defenses", 0) for r in rs), max(r.get("defenses", 0) for r in rs), last.get("end_date") or "9999"],
+            "f": {"active": "y" if t in recent else "n"}, "cur": not last.get("end_date")})
+    word = unit(lg)
+    paged_table(lg, "teams/", title=f"{lg['name']} belt: every team", subnav_on="teams",
+                description=f"Every {word[:-1]} that has held the lineal {lg['name']} championship belt, sortable by reigns, days and defenses.",
+                heading=f"Every {word[:-1]} that has held the {lg['name']} belt", note=f"{len(by)} {word}",
+                intro=f'<p class="intro">Sorted by total days with the belt. Click a column to re-sort.</p>',
+                columns=[(word[:-1].capitalize(), "", True), ("Reigns", "mono r", True), ("Days", "mono r", True), ("Defenses", "mono r", True), ("Best reign", "mono r", True), ("Last held", "mono r", True)],
+                rows=rows, filters=[("active", f"Current and former", [("y", "Active today"), ("n", "Former / defunct")])], order_labels=None,
+                empty=f"No {word} match.")
+
+
+def build_rivalries_table(lg, d, min_meetings=5):
+    n = lg["team_name"]
+    rv = [p for p in d.get("rivalries") or [] if p["meetings"] >= min_meetings]
+    rows = []
+    for p in rv:
+        x, y = sorted((S.slug(n(p["a"])), S.slug(n(p["b"]))))
+        url = f"{b(lg)}/rivalries/{x}-vs-{y}/"
+        rows.append({"c": [f'<a href="{url}">{e(n(p["a"]))} vs. {e(n(p["b"]))}</a>', str(p["meetings"]),
+                           f'{p["a_wins"]}–{p["b_wins"]}' + (f'–{p["ties"]}' if p["ties"] else ""), str(p["changes"]), p["last"][:4]],
+                     "t": (n(p["a"]) + " " + n(p["b"])).lower(), "k": [n(p["a"]), p["meetings"], p["a_wins"] - p["b_wins"], p["changes"], p["last"]],
+                     "f": {}})
+    paged_table(lg, "rivalries/", title=f"{lg['name']} belt rivalries", subnav_on="rivalries",
+                description=f"The rivalries that decided the lineal {lg['name']} championship belt most often, with every belt meeting.",
+                heading=f"{lg['name']} belt rivalries", note=f"{len(rv):,} pairs with {min_meetings}+ belt meetings",
+                intro=f'<p class="intro">The matchups that decided the belt most often. Want a pair that isn\'t here? <a href="{b(lg)}/compare/">Compare any two teams</a>.</p>',
+                columns=[("Matchup", "", True), ("Meetings", "mono r", True), ("W–L", "mono r", True), ("Title changes", "mono r", True), ("Last", "mono r", True)],
+                rows=rows, order_labels=None, empty="No rivalries match.")
+
+
+def build_losers_table(lg, d):
+    L = (d.get("models") or {}).get("losers") or {}
+    reigns = L.get("all") or []
+    if not reigns:
+        return
+    n = lg["team_name"]
+    rows = []
+    for i, r in enumerate(reversed(reigns)):
+        rows.append({"c": [f'{r[0]:,}', f'<i style="background:{lg["team_colors"](r[1])[0]}"></i><a href="{team_url(lg, r[1])}">{e(n(r[1]))}</a>',
+                           S.d_short(r[2], True), S.d_short(r[3], True) if r[3] else "Holding", str(r[4]), f"{r[5]:,}"],
+                     "t": n(r[1]).lower(), "k": [r[0], n(r[1]), r[2], r[3] or "9999", r[4], r[5]],
+                     "f": {"decade": int(r[2][:4]) // 10 * 10}, "cur": i == 0})
+    paged_table(lg, "losers-belt/reigns/", title=f"Every {lg['name']} Losers Belt reign", subnav_on="more",
+                description=f"All {len(reigns):,} reigns of the {lg['name']} Losers Belt, searchable and sortable.",
+                heading=f"Every Losers Belt reign", note=f"{len(reigns):,} reigns",
+                intro=f'<p class="intro">Lose to the holder and it\'s yours. <a href="{b(lg)}/losers-belt/">Back to the Losers Belt →</a></p>',
+                columns=[("#", "mono n", True), ("Stuck with it", "", True), ("From", "mono", True), ("To", "mono", True), ("Losses", "mono r", True), ("Days", "mono r", True)],
+                rows=rows, filters=[("decade", "Any decade", _decade_opts(int(r[2][:4]) for r in reigns))], empty="No reigns match.")
+
+
+def build_tables(lg, d):
+    build_history_table(lg, d)
+    build_all_games(lg, d)
+    build_teams_table(lg, d)
+    build_rivalries_table(lg, d)
+    build_losers_table(lg, d)

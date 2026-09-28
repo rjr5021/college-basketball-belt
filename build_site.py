@@ -384,10 +384,13 @@ def build_home(d):
     <div class="hot"><span class="mono">Crowned in April</span><b class="disp">{e(last['champion'])}</b></div>
   </div>
 </section>"""
+    import sys
     import features, cbb_league
+    features.init(sys.modules[__name__], lambda x: "", "The College Basketball Belt")
     body = f"""{subnav(None, "current")}
 {features.live_box(cbb_league.LEAGUE, d)}
 {holder_plate(d)}
+{features.latest_recap_card(cbb_league.LEAGUE, d)}
 <section class="wrap split">
   <div>
     <div class="head"><h2 class="disp">Chain of custody</h2><a class="mono more" href="/history/">All {len(d['reigns']):,} reigns →</a></div>
@@ -662,7 +665,7 @@ def main():
     build_feed(D)
     build_api(D)
     build_sitemap()
-    for f in ("styles.css", "favicon.png", "apple-touch-icon.png", "icon-512.png", "og.png"):
+    for f in ("styles.css", "favicon.png", "apple-touch-icon.png", "icon-512.png", "og.png", "tablekit.js"):
         if os.path.exists(f):
             shutil.copy(f, os.path.join(OUT, f))
     print(f"Built {sum(len(fs) for _, fs, _ in [(0, f, 0) for _, _, f in os.walk(OUT)])} files into {OUT}/")

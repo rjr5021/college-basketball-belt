@@ -421,6 +421,11 @@ def main():
             enrich(lg, lp, od, api_key)
         except Exception as e:  # noqa: BLE001
             log(f"[{lg.get('key')}] enrich failed: {e}")
+        try:
+            import recaps
+            recaps.run(lg, load(lp) or {}, od, api_key)
+        except Exception as e:  # noqa: BLE001
+            log(f"[{lg.get('key')}] recaps failed: {e}")
 
 
 if __name__ == "__main__":
