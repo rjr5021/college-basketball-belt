@@ -128,7 +128,8 @@ def won_score_text(r):
 
 SUBNAV = [("current", "/", "Current"), ("next", "/next/", "Next defense"), ("history", "/history/", "Full history"),
           ("seasons", "/seasons/", "Seasons"), ("records", "/records/", "Records"), ("teams", "/teams/", "Teams"),
-          ("rivalries", "/rivalries/", "Rivalries"), ("compare", "/compare/", "Compare"), ("march", "/march/", "March")]
+          ("rivalries", "/rivalries/", "Rivalries"), ("compare", "/compare/", "Compare"), ("march", "/march/", "March"),
+          ("stories", "/stories/", "Stories")]
 
 
 def subnav(lg=None, on=None):
@@ -178,7 +179,7 @@ LOGO = ('<svg width="40" height="24" viewBox="0 0 40 24" fill="none" aria-hidden
         '<circle cx="20" cy="12" r="5" fill="#de762c"/><path d="M15 12 H25 M20 7 V17" stroke="#211a12" stroke-width="1"/></svg>')
 
 NAV = [("belt", "/", "The Belt"), ("history", "/history/", "History"), ("records", "/records/", "Records"),
-       ("march", "/march/", "March"), ("stories", "/stories/", "Stories"), ("rules", "/rules/", "Rules")]
+       ("teams", "/teams/", "Teams"), ("march", "/march/", "March"), ("rules", "/rules/", "Rules")]
 
 
 def page(title, body, *, path, description, active=None, jsonld=None):

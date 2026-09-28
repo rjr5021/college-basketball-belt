@@ -511,14 +511,16 @@ def build_stories(datas):
         d = datas[lg["key"]]
         for sslug, title, dek, html in stories_for(lg, d):
             url = f"/stories/{sslug}/"
-            body = f"""<section class="wrap prose story"><div class="kicker">{lg['long_name']} · story</div><h1 class="disp">{e(title)}</h1><p class="dek">{e(dek)}</p>{html}
+            body = f"""{S.subnav(lg, "stories")}
+<section class="wrap prose story"><div class="kicker">{lg['long_name']} · story</div><h1 class="disp">{e(title)}</h1><p class="dek">{e(dek)}</p>{html}
 <p class="mono more"><a href="/stories/">More stories →</a></p></section>"""
             ld = {"@context": "https://schema.org", "@type": "Article", "headline": title, "description": dek,
                   "dateModified": d["generated"], "publisher": {"@type": "Organization", "name": "The College Basketball Belt"}}
             S.write(url.strip("/") + "/index.html", S.page(title, body, path=url, jsonld=ld, description=dek))
             cards.append((lg, title, dek, url))
     lis = "".join(f'<a class="storycard" href="{u}"><span class="mono lg">{lg["name"]}</span><b class="disp">{e(t)}</b><span>{e(dk)}</span></a>' for lg, t, dk, u in cards)
-    body = f"""<section class="wrap block"><div class="head"><h1 class="disp">Stories</h1><span class="mono note">Written from the data, updated with every game</span></div><div class="storygrid">{lis}</div></section>"""
+    body = f"""{S.subnav(lg, "stories")}
+<section class="wrap block"><div class="head"><h1 class="disp">Stories</h1><span class="mono note">Written from the data, updated with every game</span></div><div class="storygrid">{lis}</div></section>"""
     S.write("stories/index.html", S.page("Stories", body, path="/stories/",
                                          description="Long reads on the College Basketball Belt: the longest reigns, the longest droughts, the wildest seasons and the rivalries that decided it."))
     return cards
