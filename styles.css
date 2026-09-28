@@ -303,3 +303,5 @@ ol.degrees{list-style:none;padding:0;margin:0;border-top:1px solid var(--line2)}
 .abtn{display:block;text-align:center;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;padding:11px;margin:10px 0 0;border:1px solid var(--line2);color:var(--ink)}.abtn:hover{border-color:var(--brass);color:var(--ink)}
 .anums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}.anums b{display:block;font-size:30px;font-weight:900}.anums span{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 @media (max-width:900px){.mhero{grid-template-columns:1fr}.mmid{flex-direction:row;flex-wrap:wrap;gap:6px 14px}.mday{font-size:40px}.stakes{grid-template-columns:1fr 1fr}.stakes>div:nth-child(3){border-left:0}.pv-grid{grid-template-columns:1fr}.pv-aside{position:static}.formcols{grid-template-columns:1fr}}
+
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding-top:22px;margin-top:22px;border-top:1px solid var(--line)}

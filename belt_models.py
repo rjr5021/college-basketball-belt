@@ -174,3 +174,50 @@ def losers(league_key, games, tie_rule, recent, today, gap_days):
                     "home": b["home"]} for b in changes[-15:]][::-1],
         "first": {"date": bgs[0]["date"], "team": bgs[0]["new_holder"], "opp": bgs[0]["opponent"]} if bgs else None,
     }
+
+
+def standings(games, reigns):
+    """Season by season: the best regular-season record vs. who held the belt
+    when the regular season ended."""
+    by_season = defaultdict(list)
+    for g in games:
+        if g["season_type"] == "regular":
+            by_season[g["season"]].append(g)
+    out = []
+    for s in sorted(by_season):
+        gs = by_season[s]
+        rec = defaultdict(lambda: [0, 0, 0])
+        for g in gs:
+            h, a, hp, ap = g["home"], g["away"], g["home_points"], g["away_points"]
+            if hp > ap:
+                rec[h][0] += 1
+                rec[a][1] += 1
+            elif ap > hp:
+                rec[a][0] += 1
+                rec[h][1] += 1
+            else:
+                rec[h][2] += 1
+                rec[a][2] += 1
+        n_games = sorted((sum(v) for v in rec.values()))
+        min_games = n_games[len(n_games) // 2] * 0.6 if n_games else 0
+
+        def pct(v):
+            n = sum(v)
+            return (v[0] + v[2] / 2) / n if n else 0
+
+        eligible = [(t, v) for t, v in rec.items() if sum(v) >= min_games]
+        if not eligible:
+            continue
+        best_t, best_v = max(eligible, key=lambda tv: (pct(tv[1]), tv[1][0]))
+        last = gs[-1]["date"]
+        holder = None
+        for r in reigns:
+            if r["start_date"] <= last:
+                holder = r["team"]
+            else:
+                break
+        hv = rec.get(holder, [0, 0, 0])
+        rank = 1 + sum(1 for t, v in eligible if pct(v) > pct(hv))
+        out.append({"season": s, "best": best_t, "best_rec": best_v, "holder": holder, "holder_rec": hv,
+                    "holder_rank": rank, "teams": len(eligible), "match": holder == best_t})
+    return out

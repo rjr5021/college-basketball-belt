@@ -45,6 +45,8 @@ def reign_url(lg, d, r):
     if notable(r, d["reigns"][-1]["index"]):
         return f"/reigns/{r['index']}/"
     first = r.get("opened_by") or (r["belt_games"][0] if r.get("belt_games") else None)
+    if r.get("opened_by"):
+        return f"/games/{r['opened_by']}/"
     bg = d["_bg"].get(first) if first else None
     return season_url(lg, bg["season"], bg["n"]) if bg else f"/history/"
 
@@ -597,6 +599,7 @@ def build_all(datas):
         build_compare(lg, d)
         F.build(lg, d)
         F.build_preview(lg, d)
+        F.build_batch2(lg, d)
     F.build_embed([(lg, datas[lg["key"]]) for lg in LIVE])
     build_otd(datas)
     cards = build_stories(datas)

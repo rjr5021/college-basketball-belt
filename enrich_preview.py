@@ -39,7 +39,7 @@ except ImportError:  # pragma: no cover
 ESPN = {"nfl": "football/nfl", "nba": "basketball/nba", "nhl": "hockey/nhl", "mlb": "baseball/mlb",
         "cbb": "basketball/mens-college-basketball"}
 OUTDOOR_SPORTS = ("nfl", "mlb")
-MODEL = "claude-haiku-4-5-20251001"   # cheap + fast, same as the College Football Belt
+MODEL = "claude-sonnet-4-5"   # accurate with numbers; ~1-2 cents per preview
 MAX_TOKENS = 900
 SITE_BLURB = {
     "cbb": ("The College Basketball Belt", "a lineal championship belt that has passed from team to team on the court "
@@ -267,6 +267,16 @@ def build_prompt(lg, d, ng, espn, wx):
     side = "faces (neutral site)" if ng.get("neutral") else ("hosts" if ng["holder_home"] else "travels to")
     h2h = pv.get("h2h") or {}
     lines = [form_line(h, pv.get("holder_form")), form_line(c, pv.get("challenger_form"))]
+    for nm, rows in ((h, pv.get("holder_form")), (c, pv.get("challenger_form"))):
+        if rows:
+            streak, first = 0, rows[0]["result"]
+            for r in rows:
+                if r["result"] != first:
+                    break
+                streak += 1
+            word = {"W": "won", "L": "lost", "T": "tied"}[first]
+            lines.append(f"{nm} have {word} their last {streak} game{'s' if streak > 1 else ''} (most recent: {first} {rows[0]['score']} "
+                         f"{'vs' if rows[0]['home'] else 'at'} {rows[0]['opp_name']}).")
     rec = lambda r: f"{r['W']}-{r['L']}" + (f"-{r['T']}" if r.get("T") else "")
     if pv.get("holder_record"):
         lines.append(f"Records this season: {h} {rec(pv['holder_record'])}, {c} {rec(pv['challenger_record'])}.")
@@ -295,7 +305,7 @@ def build_prompt(lg, d, ng, espn, wx):
 
 Upcoming game: {h} (current belt holder) {side} {c} on {ng['date']}.
 
-Stats (this is everything you know -- do NOT invent player names, injuries, coaches, trades or any fact not listed here):
+Stats (this is everything you know -- do NOT invent player names, injuries, coaches, trades or any fact not listed here; every claim you make about form, streaks, margins or history must be checkable against these lines, so re-read them before writing):
 {stats}
 
 Write a JSON object with exactly these keys and nothing else:
@@ -383,12 +393,15 @@ def enrich(lg, lineage_path, out_dir, api_key):
     wx = weather(lg, ng, espn) or (old.get("weather") if same else None)
     start = (espn or {}).get("start_utc") or start_utc_from_et(ng)
     ai = old.get("ai") if same else None
+    if ai and ai.get("model") != MODEL:
+        ai = None   # rewrite once with the current model (the ledger keeps the first pick)
     if not ai and api_key:
         try:
             log(f"[{k}] writing the AI preview for {key} ({MODEL})")
             ai = parse(call_claude(build_prompt(lg, d, ng, espn, wx), api_key))
             if ai:
                 ai["written"] = date.today().isoformat()
+                ai["model"] = MODEL
         except Exception as e:  # noqa: BLE001
             log(f"[{k}] AI preview failed ({e}); the page builds without it")
             ai = None
