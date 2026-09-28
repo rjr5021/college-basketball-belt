@@ -515,7 +515,7 @@ def build_static(d):
     about = """<section class="wrap prose">
 <div class="kicker">About</div>
 <h1 class="disp">About the College Basketball Belt</h1>
-<p>The College Basketball Belt tracks the lineal championship of men's college basketball: one title, passed from team to team only by beating whoever holds it. It's the sister site of the <a href="https://collegefootballbelt.com">College Football Belt</a>, which has tracked the same idea in college football since 1869, and part of the <a href="https://beltholders.com">Belt Holders</a> network, which does it for the NFL, NBA and NHL.</p>
+<p>The College Basketball Belt tracks the lineal championship of men's college basketball: one title, passed from team to team only by beating whoever holds it. It's the sister site of the <a href="https://collegefootballbelt.com">College Football Belt</a>, which has tracked the same idea in college football since 1869, and part of the <a href="https://beltholders.com">Belt Holders</a> network, which does it for the NFL, NBA, NHL and MLB.</p>
 <p>The site is independent and fan-run. It isn't affiliated with the NCAA, any conference or any school. School names are used only to identify the teams.</p>
 <p>Find us at <a href="https://x.com/CollegeBBBelt">@CollegeBBBelt</a> or email <a href="mailto:hello@collegebasketballbelt.com">hello@collegebasketballbelt.com</a>.</p>
 </section>"""
