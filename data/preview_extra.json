@@ -1,0 +1,48 @@
+{
+ "key": "170|214|2026-11-02",
+ "updated": "2026-09-28T18:49Z",
+ "start_utc": "2026-11-02T05:00Z",
+ "espn": {
+  "event_id": "401925733",
+  "start_utc": "2026-11-02T05:00Z",
+  "state": "pre",
+  "tv": [],
+  "odds": null,
+  "teams": {
+   "170": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+    "abbr": "MICH",
+    "record": null,
+    "rank": null,
+    "home_away": "home"
+   },
+   "214": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2473.png",
+    "abbr": "OAK",
+    "record": null,
+    "rank": null,
+    "home_away": "away"
+   }
+  },
+  "venue": {
+   "name": "Crisler Center",
+   "city": "Ann Arbor",
+   "state": "MI",
+   "indoor": true
+  }
+ },
+ "weather": null,
+ "ai": {
+  "overview": "Michigan brings an impressive 37-3 record and the College Basketball Belt to this matchup against struggling Oakland, who sits at 15-16 on the season. The Wolverines have been nearly unstoppable in their belt reign, most recently dominating a playoff run, while Oakland seeks its first belt in program history against overwhelming odds.",
+  "key_matchups": [
+   "Michigan's elite season vs. Oakland's inconsistency: The Wolverines are 37-3 while Oakland has lost 3 of its last 5, including back-to-back defeats to mid-major competition.",
+   "Historical dominance on display: Michigan leads the all-time series 9-1 and won last year's meeting by 43 points (121-78), establishing a clear talent gap between the programs.",
+   "Oakland's belt desperation: The Golden Grizzlies have never held the belt and face a Michigan team that just defended it once while going through a dominant playoff stretch."
+  ],
+  "betting_angles": "Michigan's recent form is exceptional\u2014five straight wins by an average of 14+ points\u2014while Oakland has shown vulnerability against comparable competition. The historical head-to-head favors Michigan dramatically, including a 43-point victory just last season. Our model gives Michigan a 95% win probability, reflecting both the gap in current performance and the persistent advantage the Wolverines have established over Oakland.",
+  "predicted_winner": "Michigan",
+  "predicted_score": "Michigan 85, Oakland 62",
+  "prediction_writeup": "Michigan enters as the clear favorite and should retain the belt. The Wolverines' 37-3 record and dominant playoff run showcase a team firing on all cylinders, while Oakland's 15-16 mark and recent losses to mid-major programs indicate they lack the consistency to compete at this level. Michigan's 9-1 all-time advantage and 43-point victory last November demonstrate a significant talent gap that hasn't closed. The Grizzlies would need a historic upset performance to claim their first belt, but nothing in their recent form suggests they're capable of that against a Michigan team in peak form.",
+  "written": "2026-09-28"
+ }
+}
