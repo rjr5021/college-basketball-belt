@@ -25,7 +25,10 @@ prefix for a belt: "/nfl" on Belt Holders, "" on the College Basketball Belt.
 
 import hashlib
 import json
+import os
 import random
+import re
+from urllib.parse import quote
 from collections import Counter, defaultdict
 from datetime import date, datetime, timedelta
 
@@ -912,3 +915,297 @@ def build(lg, d):
     build_ics(lg, d)
     build_badge(lg, d)
     build_more(lg, d)
+
+
+# ========================================================= next-game preview ==
+# The College Football Belt's preview layout: split matchup hero, what's at
+# stake, odds line, "beat the lean" pick, AI preview, form, head to head and
+# a sidebar.  Reads preview_extra.json from enrich_preview.py when present;
+# every piece degrades gracefully without it.
+
+def _extra(lg):
+    for p in (os.path.join("data", lg.get("key", ""), "preview_extra.json"), os.path.join("data", "preview_extra.json")):
+        if os.path.exists(p):
+            with open(p) as f:
+                return json.load(f) or {}, os.path.dirname(p)
+    return {}, None
+
+
+def _ledger(folder):
+    p = os.path.join(folder or "", "lean_ledger.json")
+    if folder and os.path.exists(p):
+        with open(p) as f:
+            return json.load(f) or []
+    return []
+
+
+def _monogram(name):
+    parts = [w for w in re.split(r"[\s\-&]+", name) if w and w[0].isalnum()]
+    return "".join(w[0] for w in parts[:2]).upper() or name[:2].upper()
+
+
+def _location(lg, code):
+    full, short = lg["team_name"](code), lg["short_name"](code)
+    return full[: -len(short)].strip() if full.endswith(short) and full != short else ""
+
+
+def _gcal(title, start_iso, hours, details, loc):
+    try:
+        st = datetime.strptime(start_iso[:16].replace("Z", ""), "%Y-%m-%dT%H:%M")
+    except (TypeError, ValueError):
+        return None
+    en = st + timedelta(hours=hours)
+    q = {"action": "TEMPLATE", "text": title, "dates": f"{st:%Y%m%dT%H%M00Z}/{en:%Y%m%dT%H%M00Z}",
+         "details": details, "location": loc or ""}
+    return "https://calendar.google.com/calendar/render?" + "&".join(f"{k}={quote(str(v))}" for k, v in q.items())
+
+
+def _grade_ledger(ledger, d):
+    by = {}
+    for bg in d["belt_games"]:
+        if bg.get("holder"):
+            by[f"{bg['holder']}|{bg['opponent']}|{bg['date']}"] = bg["new_holder"] if not bg["outcome"].endswith("(tie)") else "tie"
+    w = l = 0
+    for x in ledger:
+        res = by.get(x["key"])
+        if res and x.get("pick"):
+            if res == x["pick"] or (res == "tie" and x["pick"] == x["holder"]):
+                w += 1
+            else:
+                l += 1
+    return w, l
+
+
+def build_preview(lg, d):
+    rel = "next/"
+    pv, ng, cur = d.get("preview"), d.get("next_game"), d["current"]
+    n, sn = lg["team_name"], lg["short_name"]
+    if not (pv and ng):
+        body = f"""{S.subnav(lg, "next")}
+<section class="wrap prose block"><div class="kicker">Next title defense</div><h1 class="disp">No defense scheduled yet</h1>
+<p>{e(cur['name'])} {verb(lg, 'hold', 'holds')} the {e(lg['name'])} belt. {verb(lg, 'Their', 'Its')} next game isn't on the schedule yet ({e((d.get('status') or '').lower())}); this page fills in as soon as it is.</p>
+<p><a href="{b(lg)}/">Back to the {e(lg['name'])} belt →</a></p></section>"""
+        page(lg, f"Next {lg['name']} belt defense", body, rel, f"Preview of the next lineal {lg['name']} championship title defense.")
+        return
+    x, folder = _extra(lg)
+    key = f"{ng['holder']}|{ng['challenger']}|{ng['date']}"
+    if x.get("key") != key:
+        x = {}
+    espn = x.get("espn") or {}
+    wx = x.get("weather")
+    ai = x.get("ai")
+    start = x.get("start_utc")
+    h, c = pv["holder"], pv["challenger"]
+    where = "vs." if ng["holder_home"] or ng.get("neutral") else "at"
+    home_word = "vs" if ng["holder_home"] else "at"
+    teams = espn.get("teams") or {}
+
+    def side(code, role):
+        p, s2 = lg["team_colors"](code)
+        top, bottom, ink, accent = S.plate(p, s2)
+        info = teams.get(str(code)) or {}
+        logo = (f'<img class="mlogo" src="{e(info["logo"])}" alt="" loading="lazy" onerror="this.outerHTML=\'<span class=mlogo>{_monogram(n(code))}</span>\'">'
+                if info.get("logo") else f'<span class="mlogo">{e(_monogram(n(code)))}</span>')
+        form = pv["holder_form"] if code == h else pv["challenger_form"]
+        wins = sum(1 for r in form if r["result"] == "W")
+        losses = sum(1 for r in form if r["result"] == "L")
+        last = form[0] if form else None
+        last_txt = ""
+        if last:
+            verb_ = {"W": "def.", "L": "lost to", "T": "tied"}[last["result"]]
+            last_txt = f" · Last: {verb_} {e(last['opp_name'])} {e(last['score'])}"
+        rank = f'<span class="mrank mono">No. {info["rank"]}</span>' if info.get("rank") else ""
+        rec = f'<span class="mrank mono">{e(info["record"])}</span>' if info.get("record") and not info.get("rank") else ""
+        if role == "holder":
+            kick = f"Holder · {S.ordinal(cur['reign_no'])} reign · {S.plural(cur.get('defenses', 0), 'defense')}"
+        else:
+            clr = pv.get("challenger_last_reign")
+            kick = "Challenger · " + (f"last held {(clr.get('end') or clr['start'])[:4]}" if clr else "never held it")
+        loc = _location(lg, code)
+        big = sn(code)
+        return f"""<div class="mside" style="--top:{top};--bottom:{bottom};--ink:{ink};--accent:{accent}">
+  <div class="kicker">{e(kick)}</div>
+  <div class="mname">{logo}<div>{f'<span class="mono mloc">{e(loc)}</span>' if loc else ''}<b class="disp" style="--fit:{max(len(w) for w in big.split())}">{e(big)}</b>{rank}{rec}</div></div>
+  <p class="mono mform">{wins}–{losses} in the last {len(form)}{last_txt}</p>
+</div>"""
+
+    venue = (espn.get("venue") or {})
+    vname = venue.get("name") or ng.get("stadium") or ng.get("venue")
+    vcity = ", ".join(v for v in (venue.get("city"), venue.get("state")) if v) or ng.get("city")
+    tv = " · ".join(espn.get("tv") or [])
+    time_el = (f'<span class="localtime" data-utc="{e(start)}">{S.kickoff_12h(ng.get("kickoff"))} ET</span>' if start
+               else e(S.kickoff_12h(ng.get("kickoff"))))
+    mid = f"""<div class="mmid">
+  <div class="kicker">Belt on the line</div>
+  <b class="disp mday">{S.weekday(ng['date']).upper()}</b>
+  <span>{S.d_long(ng['date'])}</span>
+  {f'<span>{e(vname)}{", " + e(vcity) if vcity and vcity not in (vname or "") else ""}</span>' if vname else ''}
+  {f'<span class="mono mtv">{e(tv)}</span>' if tv else ''}
+  <span class="mono mtime">{time_el}</span>
+</div>"""
+    hero = f'<section class="mhero wrap">{side(h, "holder")}{mid}{side(c, "challenger")}</section>'
+
+    # what's at stake
+    reign_days = (date.fromisoformat(ng["date"]) - date.fromisoformat(pv.get("holder_reign_start") or cur["start_date"])).days
+    next_def = pv["holder_streak"] + 1
+    bm = [bg for bg in d["belt_games"] if bg.get("holder") and {bg["holder"], bg["opponent"]} == {h, c}]
+    bm_h = sum(1 for bg in bm if bg["new_holder"] == h and not bg["outcome"].endswith("(tie)"))
+    bm_c = sum(1 for bg in bm if bg["new_holder"] == c and not bg["outcome"].endswith("(tie)"))
+    c_reign_no = pv["challenger_reigns"] + 1
+    cells = [
+        (f"If {sn(h)} {verb(lg, 'win', 'wins')}", f"{S.ordinal(next_def)} defense · reign reaches {reign_days:,} days"),
+        (f"If {sn(c)} {verb(lg, 'win', 'wins')}", "Belt changes hands · " + (f"{sn(c)}’s {S.ordinal(c_reign_no)} reign" if pv["challenger_reigns"] else f"first reign in {'program' if lg.get('singular') else 'franchise'} history")),
+        ("Head to head, belt games", (f"Met {S.plural(len(bm), 'time')} · {sn(h)} {bm_h}, {sn(c)} {bm_c}" if bm else "First belt game between these two")),
+    ]
+    if wx and wx.get("temp_f") is not None:
+        cells.append(("Kickoff weather" if lg.get("key") == "nfl" else "First-pitch weather",
+                       f"{wx['temp_f']}°F · {(wx.get('condition') or '').lower()} · wind {wx.get('wind_mph')} mph · {wx.get('precip_chance')}% rain<small class='mono'>forecast as of {wx.get('as_of')}</small>"))
+    else:
+        rec = lambda r: f"{r['W']}–{r['L']}" + (f"–{r['T']}" if r.get("T") else "")
+        cells.append((f"{sl(lg, pv['record_season'])} records", f"{sn(h)} {rec(pv['holder_record'])} · {sn(c)} {rec(pv['challenger_record'])}"))
+    stakes = "".join(f'<div><span class="kicker">{e(k)}</span><p>{v if "<small" in v else e(v)}</p></div>' for k, v in cells)
+
+    # odds line
+    m = d.get("models") or {}
+    odds_bits = []
+    if pv.get("holder_win_prob") is not None:
+        odds_bits.append(f'<b>{pct(pv["holder_win_prob"])}</b> to defend, per our Elo estimate')
+    look = m.get("outlook")
+    if look:
+        oh = dict(look["odds"]).get(h, 0)
+        odds_bits.append(f'<b>{pct(oh)}</b> to hold the belt through the regular season (<a href="{b(lg)}/outlook/">outlook</a>)')
+    o = espn.get("odds") or {}
+    if o.get("details"):
+        odds_bits.append(f'line <b>{e(o["details"])}</b>' + (f', O/U {e(str(o["over_under"]))}' if o.get("over_under") else "")
+                         + (f' ({e(o["provider"])})' if o.get("provider") else ""))
+    elif ng.get("spread") is not None:
+        fav = ng["home"] if ng["spread"] > 0 else ng["away"]
+        odds_bits.append(f'line <b>{e(sn(fav))} −{abs(ng["spread"]):g}</b>' if ng["spread"] else "line <b>pick ’em</b>")
+    oddsline = f'<p class="oddsline mono">{" · ".join(odds_bits)}</p>' if odds_bits else ""
+
+    # beat the lean
+    results = {}
+    for bg in d["belt_games"][-120:]:
+        if bg.get("holder"):
+            results[f"{bg['holder']}|{bg['opponent']}|{bg['date']}"] = bg["new_holder"]
+    ledger = _ledger(folder)
+    lw, ll = _grade_ledger(ledger, d)
+    lean_rec = f" The lean is {lw}–{ll} on {e(lg['name'])} belt games so far." if lw + ll else ""
+    lean_pick = ""
+    if ai and ai.get("predicted_winner"):
+        lean_pick = f' The lean says <b>{e(ai["predicted_winner"])}</b>.'
+    lk = lg.get("key", "cbb")
+    beat = f"""<section class="wrap"><div class="lean">
+  <div class="kicker">Beat the lean</div>
+  <div class="leanbtns"><button class="mono" data-p="{h}">{e(sn(h))} {verb(lg, 'keep', 'keeps')} it</button><button class="mono" data-p="{c}">{e(sn(c))} {verb(lg, 'take', 'takes')} it</button></div>
+  <p class="note" id="leannote">Pick before {'kickoff' if lk == 'nfl' else 'first pitch' if lk == 'mlb' else 'puck drop' if lk == 'nhl' else 'tipoff'}. We grade it after the game.{lean_pick}{lean_rec}</p>
+</div></section>
+<script>
+(function(){{
+var K='belt-picks-{lk}',G={json.dumps(key)},R={json.dumps(results, separators=(",", ":"))},N={json.dumps({h: sn(h), c: sn(c)})};
+var P={{}};try{{P=JSON.parse(localStorage.getItem(K)||'{{}}');}}catch(e){{}}
+var btns=document.querySelectorAll('.leanbtns button'),note=document.getElementById('leannote'),base=note.innerHTML;
+function show(){{
+ btns.forEach(function(b){{b.classList.toggle('on',P[G]===b.dataset.p);}});
+ var w=0,l=0;Object.keys(P).forEach(function(k){{if(R[k]){{if(R[k]===P[k])w++;else l++;}}}});
+ note.innerHTML=(P[G]?'Your pick: <b>'+N[P[G]]+'</b>. You can change it until the game starts. ':'')+base+(w+l?' Your record: <b>'+w+'–'+l+'</b>.':'');
+}}
+btns.forEach(function(b){{b.onclick=function(){{P[G]=b.dataset.p;try{{localStorage.setItem(K,JSON.stringify(P));}}catch(e){{}}show();}};}});
+show();
+}})();
+</script>"""
+
+    # the article (AI) or a stats summary
+    verbw = "travel to" if not lg.get("singular") else "travels to"
+    head = (f"{n(h)} {'host' if not lg.get('singular') else 'hosts'} {n(c)} with the belt on the line" if ng["holder_home"] and not ng.get("neutral")
+            else f"{n(h)} {verbw if not ng.get('neutral') else ('meet' if not lg.get('singular') else 'meets')} {n(c)} with the belt on the line")
+    if ai and ai.get("overview"):
+        km = "".join(f"<li>{e(k)}</li>" for k in ai.get("key_matchups") or [])
+        article = f"""<article class="pv-article">
+  <div class="kicker">The preview · AI-written</div>
+  <h2 class="disp">{e(head)}</h2>
+  <p>{e(ai['overview'])}</p>
+  {f'<h3 class="kicker">Worth watching</h3><ul>{km}</ul>' if km else ''}
+  {f'<h3 class="kicker">The numbers</h3><p>{e(ai["betting_angles"])}</p>' if ai.get('betting_angles') else ''}
+  {f'''<div class="leanbox"><div class="kicker">The lean</div><b class="disp">{e(ai["predicted_score"])}</b><p>{e(ai.get("prediction_writeup") or "")}</p>
+  <p class="note">Written by Claude from the stats on this page: a for-fun editorial call, not betting advice or a guarantee. If it stops being fun, the National Problem Gambling Helpline is 1-800-522-4700.</p></div>''' if ai.get('predicted_score') else ''}
+</article>"""
+    else:
+        h2h = pv["h2h"]
+        lead = (f"{n(h)} {verb(lg, 'lead', 'leads')} the all-time series {h2h['holder_wins']}–{h2h['challenger_wins']}" if h2h["holder_wins"] > h2h["challenger_wins"]
+                else f"{n(c)} {verb(lg, 'lead', 'leads')} the all-time series {h2h['challenger_wins']}–{h2h['holder_wins']}" if h2h["challenger_wins"] > h2h["holder_wins"]
+                else f"the all-time series is even at {h2h['holder_wins']}" if h2h["games"] else "they've never met")
+        article = f"""<article class="pv-article">
+  <div class="kicker">The preview</div>
+  <h2 class="disp">{e(head)}</h2>
+  <p>{e(n(h))} {verb(lg, 'put', 'puts')} the {e(lg['name'])} belt on the line for the {S.ordinal(next_def)} time this reign. {e(lead[0].upper() + lead[1:])}{', and ' + e(sn(c)) + (' have' if not lg.get('singular') else ' has') + (' never held the belt' if not pv['challenger_reigns'] else ' held it ' + S.plural(pv['challenger_reigns'], 'time') + ' before') }.</p>
+</article>"""
+
+    def form_col(code, rows):
+        info = teams.get(str(code)) or {}
+        logo = f'<img src="{e(info["logo"])}" alt="" loading="lazy">' if info.get("logo") else ""
+        lis = "".join(f'<li><span class="wl {r["result"]}">{r["result"]}</span><b class="mono">{e(r["score"])}</b>'
+                      f'<span>{"vs" if r["home"] else "at"} {e(r["opp_name"])}{" · playoffs" if r.get("postseason") else ""}</span>'
+                      f'<span class="mono d">{S.d_short(r["date"], True)}</span></li>' for r in rows)
+        return f'<div><h3 class="fhead">{logo}{e(n(code))}</h3><ul class="frows">{lis}</ul></div>'
+
+    form = f"""<section class="pv-sec"><div class="kicker">Recent form</div><h2 class="disp">Last {max(len(pv['holder_form']), len(pv['challenger_form']))} games</h2>
+  <div class="formcols">{form_col(h, pv['holder_form'])}{form_col(c, pv['challenger_form'])}</div></section>"""
+    h2h = pv["h2h"]
+    mt = pv.get("meetings") or []
+    mrows = "".join(f'<tr><td class="mono">{S.d_short(x["date"], True)}</td><td>{e(n(x["away"], x["season"]))} {"vs." if x.get("neutral") else "at"} {e(n(x["home"], x["season"]))}{" · playoffs" if x.get("postseason") else ""}</td>'
+                    f'<td class="mono r">{x["ap"]}–{x["hp"]}{(" " + e(x["note"])) if x.get("note") else ""}</td></tr>' for x in mt)
+    series = (f"{e(n(h))} {verb(lg, 'lead', 'leads')} the series {h2h['holder_wins']}–{h2h['challenger_wins']}" if h2h["holder_wins"] > h2h["challenger_wins"]
+              else f"{e(n(c))} {verb(lg, 'lead', 'leads')} the series {h2h['challenger_wins']}–{h2h['holder_wins']}" if h2h["challenger_wins"] > h2h["holder_wins"]
+              else f"The series is tied {h2h['holder_wins']}–{h2h['challenger_wins']}")
+    h2h_html = (f"""<section class="pv-sec"><div class="kicker">Head to head</div><h2 class="disp">All-time series</h2>
+  <p class="intro">{series}{f", {h2h['ties']} ties" if h2h.get('ties') else ""}, going back to {S.d_long(h2h['first'])}.</p>
+  <div class="tablewrap"><table class="history"><thead><tr><th class="mono">Date</th><th class="mono">Matchup</th><th class="mono r">Score (away–home)</th></tr></thead><tbody>{mrows}</tbody></table></div></section>"""
+                if h2h["games"] else f'<section class="pv-sec"><div class="kicker">Head to head</div><h2 class="disp">First meeting</h2><p class="intro">{e(n(h))} and {e(n(c))} have never played.</p></section>')
+
+    # sidebar
+    title = f"{lg['name']} belt: {sn(h)} {where} {sn(c)}"
+    gcal = _gcal(title, start, 3, f"{n(h)} defend the lineal {lg['name']} belt. {S.SITE_URL}{b(lg)}/next/", ", ".join(v for v in (vname, vcity) if v)) if start else None
+    webcal = f"webcal://{S.SITE_URL.split('//')[1]}{b(lg)}/belt.ics"
+    clr = pv.get("challenger_last_reign")
+    last_held = (clr.get("end") or clr["start"])[:4] if clr else "Never"
+    c_days = pv.get("challenger_days", 0)
+    c_def = pv.get("challenger_defenses", 0)
+    c_sent = (f"{e(n(c))} {verb(lg, 'have', 'has')} held the belt {S.plural(pv['challenger_reigns'], 'time')} for {c_days:,} days in total, most recently in {last_held}. "
+              f"With it in hand: {S.plural(c_def, 'successful defense')}." if pv["challenger_reigns"]
+              else f"{e(n(c))} {verb(lg, 'have', 'has')} never held the {e(lg['name'])} belt. A win would be the first reign ever.")
+    bm_line = (f"Met {S.plural(len(bm), 'time')} with the belt on the line: {e(sn(h))} {bm_h}, {e(sn(c))} {bm_c}. Last: {S.d_long(bm[-1]['date'])}."
+               if bm else "These two have never met with the belt on the line.")
+    aside = f"""<aside class="pv-aside">
+  <div class="acard"><div class="kicker">Don’t miss it</div>
+    {f'<a class="abtn mono" href="{e(gcal)}" target="_blank" rel="noopener">+ Google Calendar</a>' if gcal else ''}
+    <a class="abtn mono" href="{b(lg)}/belt.ics">↓ Download .ics (Apple / Outlook)</a>
+    <p class="note"><a href="{webcal}">Subscribe to the belt calendar</a>: it updates itself and follows the belt when it changes hands.</p>
+    <a class="abtn mono" href="#alerts">Email me if it changes hands</a>
+  </div>
+  <div class="acard"><div class="kicker">Belt history between these two</div><p>{bm_line}</p><a class="mono more" href="{b(lg)}/compare/?a={h}&amp;b={c}">Full comparison →</a></div>
+  <div class="acard"><div class="kicker">{e(n(c))} &amp; the belt</div>
+    <div class="anums"><div><b class="disp">{pv['challenger_reigns']}</b><span class="mono">Reigns</span></div><div><b class="disp">{c_days:,}</b><span class="mono">Days held</span></div><div><b class="disp">{last_held}</b><span class="mono">Last held</span></div></div>
+    <p>{c_sent}</p><a class="mono more" href="{team_url(lg, c)}">Team page →</a></div>
+</aside>"""
+    crumbs_html = f'<nav class="crumbs mono wrap"><a href="{b(lg)}/">{e(lg["name"])} belt</a> / <a href="{b(lg)}/seasons/">{e(sl(lg, ng.get("season") or pv.get("record_season")))}</a> / Up next</nav>'
+    body = f"""{S.subnav(lg, "next")}
+{live_box(lg, d)}
+{crumbs_html}
+<h1 class="sr">Up next: {e(n(h))} {where} {e(n(c))}, {S.d_long(ng['date'])}. The {e(lg['name'])} belt is on the line</h1>
+{hero}
+<section class="wrap"><div class="stakes">{stakes}</div>{oddsline}</section>
+{beat}
+<section class="wrap pv-grid"><div>{article}{form}{h2h_html}</div>{aside}</section>
+{next_extras(lg, d)}
+<script>
+document.querySelectorAll('.localtime').forEach(function(el){{try{{var d=new Date(el.dataset.utc.length===17?el.dataset.utc.replace('Z',':00Z'):el.dataset.utc);if(isNaN(d))return;
+el.textContent=d.toLocaleTimeString([],{{hour:'numeric',minute:'2-digit',timeZoneName:'short'}})+' your time';}}catch(e){{}}}});
+</script>"""
+    ld = {"@context": "https://schema.org", "@type": "SportsEvent", "name": f"{n(h)} {where} {n(c)}",
+          "startDate": start or ng["date"], "sport": lg.get("sport", ""),
+          "location": {"@type": "Place", "name": vname or "", "address": vcity or ""},
+          "competitor": [{"@type": "SportsTeam", "name": n(h)}, {"@type": "SportsTeam", "name": n(c)}]}
+    page(lg, f"{sn(h)} {where} {sn(c)} preview: {lg['name']} belt on the line {S.d_short(ng['date'])}", body, rel,
+         f"{n(h)} defend the lineal {lg['name']} championship belt {where} {n(c)} on {S.d_long(ng['date'])}: odds, the lean, recent form, head to head and what's at stake.",
+         jsonld=ld)

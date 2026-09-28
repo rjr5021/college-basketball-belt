@@ -180,6 +180,13 @@ def preview(league, games, belt_games, reigns, next_game, today):
                           "holder_side_wins": sum(1 for bg in belt_meet if bg["new_holder"] == bg["holder"] and not bg["outcome"].endswith("(tie)")),
                           "changes": sum(1 for bg in belt_meet if bg["outcome"] == "changed"),
                           "last": belt_meet[-1]["n"] if belt_meet else None},
+        "meetings": [{"season": g["season"], "date": g["date"], "home": g["home"], "away": g["away"],
+                      "hp": g["home_points"], "ap": g["away_points"], "note": g.get("note") or "",
+                      "postseason": g["season_type"] != "regular", "neutral": bool(g.get("neutral"))}
+                     for g in h2h[-10:]][::-1],
+        "holder_reign_start": h_reign["start_date"],
+        "challenger_days": sum(r["days"] for r in c_reigns),
+        "challenger_defenses": sum(r.get("defenses", 0) for r in c_reigns),
         "challenger_reigns": len(c_reigns),
         "challenger_last_reign": ({"start": c_reigns[-1]["start_date"], "end": c_reigns[-1].get("end_date"),
                                    "index": c_reigns[-1]["index"]} if c_reigns else None),
