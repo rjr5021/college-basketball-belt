@@ -1,0 +1,20 @@
+428 STB 64 TEM 81 A; site changed
+327 COR 59 SMU 67 H; site changed
+417 BRA 79 NCC 87 H; date changed
+420 BUC 69 COR 67 A; date changed
+521 EKY 67 MDT 82 A; date changed
+502 NCS 83 TOW 77 H; date changed
+420 CIT 100 MSH 80 H; date
+227 ORS 89 SJP 67 N; date changed
+228 FDU 74 SFP 64 N; date changed
+301 FDU 66 ROB 67 A; date changed
+524 UCL 75 LOU 65 H games added
+608 MAI 82 NEH 70 H; changed to
+606 ARM 85 SFN 71 H; date changed
+420 DET 73 YOU 72 H; date changed
+430 AKR 50 MDT 57 H; date changed
+526 FRF 72 YAL 77A; date changed
+420 FUR 76 NCC 91 A; date changed
+429 RIC 65 TAM 84 H; date changed
+323 GRA 66 TES 64 A; date changed
+403 GRA 64 TES 62 A; date changed
