@@ -64,6 +64,9 @@ jobs:
         continue-on-error: true
       - name: Build site
         run: python build_site.py
+      - name: Share image
+        run: pip install pillow && python og_images.py || cp site/og.png site/og-holder.png
+        continue-on-error: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
