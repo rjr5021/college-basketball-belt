@@ -900,6 +900,7 @@ def build_more(lg, d):
         ("__groups__", "", ""),
         ("map/", "The belt map", "Every city that has held it, and the belt's journey."),
         ("states/", "By state", "Which states have held the belt longest."),
+        ("relocations/", "The belt on the move", "Franchises that held it in more than one city."),
         ("web/", "Web of the belt", "Who took it from whom, as a network."),
         ("games/", "Every belt game", "Searchable by team, decade and result."),
         ("players/", "Players", "Everyone who has played in a belt game, with stats."),
@@ -1695,6 +1696,7 @@ def build_batch2(lg, d):
     build_what_if(lg, d)
     build_geo(lg, d)
     build_groups(lg, d)
+    build_relocations(lg, d)
 
 
 # ================================================== long tables (tablekit) ==
@@ -1941,15 +1943,38 @@ BOX_SCHEMA = {
             "leaders": [("PTS", "Points"), ("REB", "Rebounds"), ("AST", "Assists"), ("STL", "Steals"), ("BLK", "Blocks"), ("3PM", "Threes")],
             "source": ('Player box scores: <a href="https://www.kaggle.com/datasets/eoinamoore/historical-nba-data-and-player-box-scores">'
                        'Historical NBA Data and Player Box Scores</a> by Eoin Moore (CC0).')},
+    "nfl": {"cols": ["CMP", "ATT", "PYD", "PTD", "INT", "CAR", "RYD", "RTD", "REC", "TGT", "RECYD", "RECTD", "TKL", "SCK", "DINT", "FGM", "FGA"],
+            "since": {}, "derived": {"YDS": ["PYD", "RYD", "RECYD"], "TD": ["PTD", "RTD", "RECTD"]},
+            "show": [("C/ATT", "CMP", "ATT"), "PYD", "PTD", "INT", "CAR", "RYD", "RTD", "REC", "RECYD", "RECTD", "TKL", "SCK", "DINT"],
+            "totals": ["YDS", "TD", "PYD", "RYD", "RECYD", "SCK", "DINT"], "key": "YDS",
+            "leaders": [("PYD", "Passing yards"), ("RYD", "Rushing yards"), ("RECYD", "Receiving yards"), ("TD", "Touchdowns"), ("SCK", "Sacks"), ("DINT", "Interceptions")],
+            "source": 'Player stats since 1999: <a href="https://github.com/nflverse/nflverse-data">nflverse</a> (CC-BY 4.0).'},
+    "mlb": {"cols": ["AB", "R", "H", "HR", "RBI", "BB", "SO", "IP", "HA", "ER", "K", "BBA"], "since": {},
+            "show": ["AB", "R", "H", "HR", "RBI", "BB", "SO", "IP", "HA", "ER", "K"],
+            "totals": ["H", "HR", "RBI", "R", "K", "IP"], "key": "H",
+            "leaders": [("H", "Hits"), ("HR", "Home runs"), ("RBI", "RBIs"), ("K", "Strikeouts (pitching)"), ("R", "Runs"), ("IP", "Innings pitched")],
+            "source": "Box scores: MLB's Stats API (statsapi.mlb.com). HA, ER, K are pitching."},
+    "nhl": {"cols": ["G", "A", "PTS", "PM", "PIM", "SOG", "HIT", "SV", "SA"], "since": {},
+            "show": ["G", "A", "PTS", ("+/-", "PM", "PM"), "PIM", "SOG", "HIT", "SV", "SA"],
+            "totals": ["PTS", "G", "A", "SV", "HIT", "PIM"], "key": "PTS",
+            "leaders": [("G", "Goals"), ("A", "Assists"), ("PTS", "Points"), ("SV", "Saves"), ("HIT", "Hits"), ("PIM", "Penalty minutes")],
+            "source": 'Box scores: the NHL\'s own game center.'},
 }
 
 
 def _box(lg):
-    p = os.path.join("data", lg.get("key", ""), "box", "belt_box.json")
-    if os.path.exists(p):
-        with open(p) as f:
-            return (json.load(f) or {}).get("games") or {}
-    return {}
+    import glob
+    out = {}
+    for p in sorted(glob.glob(os.path.join("data", lg.get("key", "_"), "box", "*.json"))):
+        name = os.path.basename(p)
+        if not (name[:4].isdigit() or name == "belt_box.json"):
+            continue
+        try:
+            with open(p) as f:
+                out.update((json.load(f) or {}).get("games") or {})
+        except ValueError:
+            continue
+    return out
 
 
 def _stat_rows(lg, box):
@@ -2001,6 +2026,9 @@ def build_players(lg, d):
             team = home if side == "h" else away
             opp = away if side == "h" else home
             stats = {c: val(row, c, s) for c in cols}
+            for dk, parts in (sc.get("derived") or {}).items():
+                vals = [stats.get(x_) for x_ in parts]
+                stats[dk] = sum(v for v in vals if v is not None) if any(v is not None for v in vals) else None
             if (stats.get("FGA") is not None and stats.get("FGM") is not None and stats["FGA"] < stats["FGM"]):
                 stats["FGA"] = None
             won = (hp > ap) if side == "h" else (ap > hp)
@@ -2031,8 +2059,8 @@ def build_players(lg, d):
         head = "".join(f'<th class="mono r">{e(c if isinstance(c, str) else c[0])}</th>' for c in sc["show"])
 
         def cell(stats, c):
-            if isinstance(c, str):
-                v = stats.get(c)
+            if isinstance(c, str) or c[1] == c[2]:
+                v = stats.get(c if isinstance(c, str) else c[1])
                 return "—" if v is None else (f"{v:g}" if isinstance(v, float) else str(v))
             m, a = stats.get(c[1]), stats.get(c[2])
             return "—" if m is None or a is None else f"{m}-{a}"
@@ -2137,8 +2165,8 @@ def box_html(lg, d, bg):
             teams.append(team)
 
     def cell(stats, c):
-        if isinstance(c, str):
-            v = stats.get(c)
+        if isinstance(c, str) or c[1] == c[2]:
+            v = stats.get(c if isinstance(c, str) else c[1])
             return "—" if v is None else (f"{v:g}" if isinstance(v, float) else str(v))
         m, a = stats.get(c[1]), stats.get(c[2])
         return "—" if m is None or a is None else f"{m}-{a}"
@@ -2406,3 +2434,44 @@ def build_groups(lg, d):
   <div class="moregrid">{"".join(cards)}</div>
 </section>"""
     page(lg, f"{hub_title}: {lg['name']}", body, hub, f"{hub_title}: lineal belts that count only games inside each {word}, with current holders and records.")
+
+
+def build_relocations(lg, d):
+    """Franchises that moved, and how the belt treated them in each city."""
+    try:
+        import places  # noqa: F401
+    except ImportError:
+        return
+    n = lg["team_name"]
+    by = defaultdict(lambda: defaultdict(lambda: {"days": 0, "reigns": 0, "names": Counter(), "first": None, "last": None}))
+    for r in d["reigns"]:
+        p = _place(lg, r["team"], r.get("season"))
+        if not p:
+            continue
+        c = by[r["team"]][f"{p[0]}, {p[1]}"]
+        c["days"] += r["days"]
+        c["reigns"] += 1
+        c["names"][n(r["team"], r.get("season"))] += 1
+        c["first"] = c["first"] or r["start_date"]
+        c["last"] = r.get("end_date") or d["generated"]
+    movers = {t: cs for t, cs in by.items() if len(cs) > 1}
+    if not movers:
+        return
+    blocks = []
+    for t, cs in sorted(movers.items(), key=lambda kv: -sum(c["days"] for c in kv[1].values())):
+        tot = sum(c["days"] for c in cs.values()) or 1
+        rows = "".join(f'<tr><td>{e(city)}<small>{e(", ".join(nm for nm, _ in c["names"].most_common()))}</small></td>'
+                       f'<td class="mono">{c["first"][:4]}–{c["last"][:4]}</td><td class="mono r">{c["reigns"]:,}</td><td class="mono r">{c["days"]:,}</td>'
+                       f'<td class="bar"><span style="width:{c["days"] / tot * 100:.0f}%;background:{lg["team_colors"](t)[0]}"></span></td></tr>'
+                       for city, c in sorted(cs.items(), key=lambda kv: kv[1]["first"]))
+        best = max(cs.items(), key=lambda kv: kv[1]["days"])[0]
+        blocks.append(f'<h2 class="disp sub">{tlink(lg, t)}</h2><p class="mono note">Held it longest in {e(best)}</p>'
+                      f'<div class="tablewrap"><table class="history odds"><thead><tr><th class="mono">City</th><th class="mono">With the belt</th><th class="mono r">Reigns</th><th class="mono r">Days</th><th></th></tr></thead><tbody>{rows}</tbody></table></div>')
+    body = f"""{S.subnav(lg, "more")}
+<section class="wrap block">
+  <div class="head"><h1 class="disp">The belt on the move</h1><span class="mono note">{len(movers)} {unit(lg)} that changed cities</span></div>
+  <p class="intro">The belt follows the franchise, not the city. Here's every {e(lg['name'])} {unit(lg)[:-1]} that held it in more than one home, and where it did better.</p>
+  {"".join(blocks)}
+</section>"""
+    page(lg, f"The {lg['name']} belt on the move: relocated franchises", body, "relocations/",
+         f"Every {lg['name']} franchise that held the lineal belt in more than one city, and how each home compared.")
