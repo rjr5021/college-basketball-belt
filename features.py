@@ -1953,6 +1953,11 @@ BOX_SCHEMA = {
             "leaders": [("PTS", "Points"), ("REB", "Rebounds"), ("AST", "Assists"), ("STL", "Steals"), ("BLK", "Blocks"), ("3PM", "Threes")],
             "source": ('Player box scores: <a href="https://www.kaggle.com/datasets/eoinamoore/historical-nba-data-and-player-box-scores">'
                        'Historical NBA Data and Player Box Scores</a> by Eoin Moore (CC0).')},
+    "cbb": {"cols": ["MIN", "PTS", "REB", "AST", "STL", "BLK", "FGM", "FGA", "3PM", "3PA", "FTM", "FTA"], "since": {},
+            "show": ["MIN", "PTS", "REB", "AST", "STL", "BLK", ("FG", "FGM", "FGA"), ("3P", "3PM", "3PA"), ("FT", "FTM", "FTA")],
+            "totals": ["PTS", "REB", "AST", "STL", "BLK", "3PM"], "key": "PTS",
+            "leaders": [("PTS", "Points"), ("REB", "Rebounds"), ("AST", "Assists"), ("STL", "Steals"), ("BLK", "Blocks"), ("3PM", "Threes")],
+            "source": 'Player box scores: <a href="https://collegebasketballdata.com">CollegeBasketballData.com</a>.'},
     "nfl": {"cols": ["CMP", "ATT", "PYD", "PTD", "INT", "CAR", "RYD", "RTD", "REC", "TGT", "RECYD", "RECTD", "TKL", "SCK", "DINT", "FGM", "FGA"],
             "since": {}, "derived": {"YDS": ["PYD", "RYD", "RECYD"], "TD": ["PTD", "RTD", "RECTD"]},
             "show": [("C/ATT", "CMP", "ATT"), "PYD", "PTD", "INT", "CAR", "RYD", "RTD", "REC", "RECYD", "RECTD", "TKL", "SCK", "DINT"],
