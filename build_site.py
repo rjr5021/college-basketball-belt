@@ -205,11 +205,12 @@ def page(title, body, *, path, description, active=None, jsonld=None):
 <meta property="og:title" content="{e(full_title)}">
 <meta property="og:description" content="{e(description)}">
 <meta property="og:url" content="{canonical}">
-<meta property="og:image" content="{SITE_URL}/og.png">
+<meta property="og:image" content="{SITE_URL}/og-holder.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@CollegeBBBelt">
 <link rel="icon" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#211a12">
 <link rel="alternate" type="application/rss+xml" title="College Basketball Belt — title changes" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Spectral:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -633,6 +634,20 @@ def build_api(d):
     write("api/current.json", json.dumps(out, indent=1))
 
 
+def build_meta_files(d):
+    cur = d["current"]
+    lines = ["# The College Basketball Belt", "", "> A lineal championship belt for men's college basketball: it passes to whoever beats the holder, game by game, since the 1949 NCAA champion. Updated every three hours.", "",
+             f"- Current holder: {cur['name']} (since {cur['start_date']}, {cur.get('defenses', 0)} defenses)",
+             f"- [Current holder and next defense]({SITE_URL}/)", f"- [Every reign]({SITE_URL}/history/)", f"- [Records]({SITE_URL}/records/)",
+             f"- [March: the belt in the NCAA tournament]({SITE_URL}/march/)", f"- [Data downloads (CSV)]({SITE_URL}/data/)", f"- [Rules]({SITE_URL}/rules/)",
+             f"- [JSON API]({SITE_URL}/api/current.json)", "- Sister sites: https://collegefootballbelt.com, https://beltholders.com"]
+    write("llms.txt", "\n".join(lines) + "\n")
+    write("manifest.json", json.dumps({"name": "The College Basketball Belt", "short_name": "CBB Belt", "start_url": "/", "display": "standalone",
+                                       "background_color": "#e7e2d5", "theme_color": "#211a12",
+                                       "icons": [{"src": "/icon-512.png", "sizes": "512x512", "type": "image/png"},
+                                                 {"src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"}]}, indent=1))
+
+
 def build_sitemap():
     urls = []
     for root, _, files in os.walk(OUT):
@@ -664,6 +679,7 @@ def main():
     build_static(D)
     build_feed(D)
     build_api(D)
+    build_meta_files(D)
     build_sitemap()
     for f in ("styles.css", "favicon.png", "apple-touch-icon.png", "icon-512.png", "og.png", "tablekit.js"):
         if os.path.exists(f):

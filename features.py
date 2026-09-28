@@ -897,6 +897,7 @@ def build_more(lg, d):
         ("splits/", "Home, road & overtime", "Road warriors, home fortresses and extra-time title changes."),
         ("standings/", "Belt vs. the standings", "Did the holder have the best record?"),
         ("what-if/", "What if?", "Famous title changes flipped and replayed."),
+        ("__groups__", "", ""),
         ("map/", "The belt map", "Every city that has held it, and the belt's journey."),
         ("states/", "By state", "Which states have held the belt longest."),
         ("web/", "Web of the belt", "Who took it from whom, as a network."),
@@ -910,6 +911,8 @@ def build_more(lg, d):
     ]
     if lg.get("key") in (None, "cbb"):
         cards = [c for c in cards if c[0] != "playoffs/"]
+    gh = GROUP_HUB.get(lg.get("key", "cbb")) if (d.get("models") or {}).get("groups") else None
+    cards = [(gh[0], gh[1], f"Belts that count only games inside each {gh[2]}.") if c[0] == "__groups__" else c for c in cards if c[0] != "__groups__" or gh]
     grid = "".join(f'<a class="morecard" href="{h if h.startswith("/") else b(lg) + "/" + h}"><b class="disp">{e(t)}</b><span>{e(x)}</span></a>' for h, t, x in cards)
     body = f"""{S.subnav(lg, "more")}
 <section class="wrap block">
@@ -1691,6 +1694,7 @@ def build_batch2(lg, d):
     build_defense_pages(lg, d)
     build_what_if(lg, d)
     build_geo(lg, d)
+    build_groups(lg, d)
 
 
 # ================================================== long tables (tablekit) ==
@@ -2325,3 +2329,80 @@ def build_geo(lg, d):
     build_states(lg, d)
     build_map(lg, d)
     build_web(lg, d)
+
+
+# ============================================================= group belts ==
+
+GROUP_HUB = {"mlb": ("leagues/", "The AL and NL belts", "league"), "nfl": ("conferences/", "The AFC and NFC belts", "conference"),
+             "cbb": ("conferences/", "Conference belts", "conference")}
+
+
+def build_groups(lg, d):
+    groups = (d.get("models") or {}).get("groups") or {}
+    k = lg.get("key", "cbb")
+    if not groups or k not in GROUP_HUB:
+        return
+    hub, hub_title, word = GROUP_HUB[k]
+    n, sn = lg["team_name"], lg["short_name"]
+    cards = []
+    for gk, g in sorted(groups.items(), key=lambda kv: kv[1]["label"]):
+        slug = S.slug(gk)
+        cur = g["current"]
+        t = cur["team"]
+        p, s2 = lg["team_colors"](t)
+        top, bottom, ink, accent = S.plate(p, s2)
+        label = g["label"]
+        belt_name = f"{label} belt"
+        cards.append(f'<a class="morecard gcard" href="{b(lg)}/{hub}{slug}/" style="border-left:6px solid {p}"><span class="mono">{e(belt_name)}</span>'
+                     f'<b class="disp">{e(n(t))}</b><span>since {S.d_short(cur["start"], True)} · {S.plural(cur["defenses"], "defense")}</span></a>')
+        nxt = g.get("next")
+        nxt_html = ""
+        if nxt:
+            opp = nxt[2] if nxt[1] == t else nxt[1]
+            nxt_html = f'<p class="intro">Next {e(belt_name)} game: {S.weekday(nxt[0])}, {S.d_long(nxt[0])}, {"vs." if nxt[1] == t else "at"} {tlink(lg, opp)}.</p>'
+        won = ""
+        if cur.get("won_from"):
+            won = f"Took it from {e(n(cur['won_from']))}, {S.won_score_text({'won_score': cur['won_score']})}, on {S.d_long(cur['start'])}."
+        tab = lambda rows: "".join(f'<tr><td><i style="background:{lg["team_colors"](x)[0]}"></i>{tlink(lg, x)}</td><td class="mono r">{v:,}</td></tr>' for x, v in rows)
+        longest = "".join(f'<tr><td>{tlink(lg, r[0])}</td><td class="mono">{S.d_short(r[1], True)} – {S.d_short(r[2], True) if r[2] else "now"}</td><td class="mono r">{r[3]}</td></tr>' for r in g["longest"])
+        recent = "".join(f'<tr><td class="mono">{S.d_short(x[0], True)}</td><td>{tlink(lg, x[2])} beat {e(n(x[1]))}</td></tr>' for x in g["recent"])
+        body = f"""{S.subnav(lg, "more")}
+<section class="plate slim" style="--top:{top};--bottom:{bottom};--ink:{ink};--accent:{accent}">
+  <div class="wrap-in">
+    <div class="kicker dot">The {e(belt_name)} · current holder</div>
+    <h1 class="disp holder" style="--fit:{max(len(w) for w in n(t).split())}">{e(n(t))}</h1>
+    <p class="lede">{won} Only {e(label)} games count: the {word} belt passes to whoever beats the holder in a game between two {e(label)} teams.</p>
+  </div>
+</section>
+<section class="wrap block">
+  {numbers([(cur['defenses'], "Defenses this reign"), (f"{cur['days']:,}", "Days held"), (f"{g['reigns_n']:,}", "Reigns since " + str(g['first']['season'])), (f"{g['games']:,}", f"{word.capitalize()} belt games")])}
+  {nxt_html}
+  <div class="two">
+    <div><h2 class="disp sub">Most days with it</h2><table class="history"><tbody>{tab(g['most_days'])}</tbody></table></div>
+    <div><h2 class="disp sub">Most reigns</h2><table class="history"><tbody>{tab(g['most_reigns'])}</tbody></table></div>
+  </div>
+  <div class="two">
+    <div><h2 class="disp sub">Longest reigns</h2><table class="history"><tbody>{longest}</tbody></table></div>
+    <div><h2 class="disp sub">Latest title changes</h2><table class="history"><tbody>{recent}</tbody></table></div>
+  </div>
+  <p class="mono more"><a href="{b(lg)}/{hub}{slug}/reigns/">Every {e(belt_name)} reign →</a> · <a href="{b(lg)}/{hub}">All {word} belts →</a></p>
+</section>"""
+        page(lg, f"The {belt_name}: {n(t)} {verb(lg, 'hold', 'holds')} it", body, f"{hub}{slug}/",
+             f"The lineal {belt_name}, counting only {label} games: {n(t)} {verb(lg, 'hold', 'holds')} it. Records, longest reigns and every title change since {g['first']['season']}.")
+        rows = [{"c": [f'{r[0]:,}', f'<i style="background:{lg["team_colors"](r[1])[0]}"></i>{tlink(lg, r[1])}', S.d_short(r[2], True),
+                       S.d_short(r[3], True) if r[3] else "Holding", str(r[4]), f"{r[5]:,}"],
+                 "t": n(r[1]).lower(), "k": [r[0], n(r[1]), r[2], r[3] or "9999", r[4], r[5]], "f": {"decade": int(r[2][:4]) // 10 * 10},
+                 "cur": i == 0} for i, r in enumerate(reversed(g["reigns"]))]
+        paged_table(lg, f"{hub}{slug}/reigns/", title=f"Every {belt_name} reign", subnav_on="more",
+                    description=f"All {g['reigns_n']:,} reigns of the lineal {belt_name}, searchable and sortable.",
+                    heading=f"Every {belt_name} reign", note=f"{g['reigns_n']:,} reigns since {g['first']['season']}",
+                    intro=f'<p class="intro"><a href="{b(lg)}/{hub}{slug}/">Back to the {e(belt_name)} →</a></p>',
+                    columns=[("#", "mono n", True), ("Holder", "", True), ("Won", "mono", True), ("Lost", "mono", True), ("Def.", "mono r", True), ("Days", "mono r", True)],
+                    rows=rows, filters=[("decade", "Any decade", _decade_opts(int(r[2][:4]) for r in g["reigns"]))], empty="No reigns match.")
+    body = f"""{S.subnav(lg, "more")}
+<section class="wrap block">
+  <div class="head"><h1 class="disp">{e(hub_title)}</h1><span class="mono note">{len(groups)} belts</span></div>
+  <p class="intro">Same rules as the {e(lg['name'])} belt, but only games inside the {word} count. Beat the holder in a {word} game and it's yours.</p>
+  <div class="moregrid">{"".join(cards)}</div>
+</section>"""
+    page(lg, f"{hub_title}: {lg['name']}", body, hub, f"{hub_title}: lineal belts that count only games inside each {word}, with current holders and records.")

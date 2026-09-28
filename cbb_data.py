@@ -67,7 +67,8 @@ def load(today=None):
         base = {"id": int(r["id"]), "date": r["date"], "season": s, "week": None,
                 "season_type": r["season_type"] or "regular", "home": h, "away": a,
                 "neutral": r["neutral"] == "1", "tournament": r["tournament"], "notes": r["notes"],
-                "venue": r["venue"], "city": r["city"], "state": r["state"]}
+                "venue": r["venue"], "city": r["city"], "state": r["state"],
+                "home_conf": r.get("home_conf") or "", "away_conf": r.get("away_conf") or ""}
         if r["status"] == "final" and r["home_points"] != "":
             games.append({**base, "home_points": int(r["home_points"]), "away_points": int(r["away_points"])})
         elif r["status"] == "scheduled" and r["date"] >= today:

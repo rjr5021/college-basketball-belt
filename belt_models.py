@@ -275,3 +275,74 @@ def what_if(key, games, belt_games, reigns, tie_rule, recent, today, gap_days, s
                     "alt_reigns": len([r for r in after if not rejoin or r["start_date"] < rejoin]),
                     "path": [r["team"] for r in after[:12]]})
     return out
+
+
+# ------------------------------------------------------------ group belts --
+# A belt that only counts games inside a group: the American League belt
+# (AL vs. AL games), the AFC belt, a college conference's belt, and so on.
+
+_AL = {"BAL", "BOS", "NYY", "CWS", "CLE", "DET", "MIN", "KC", "LAA", "ATH", "SEA", "TEX", "TOR", "TB"}
+
+
+def _mlb_side(code, season):
+    if season < 1901:
+        return "NL"
+    if code == "HOU":
+        return "AL" if season >= 2013 else "NL"
+    if code == "MIL":
+        return "AL" if 1969 <= season <= 1997 else "NL"
+    return "AL" if code in _AL else "NL"
+
+
+_AFC = {"BAL", "BUF", "CIN", "CLE", "DEN", "HOU", "IND", "JAX", "KC", "LAC", "MIA", "NE", "NYJ", "OAK", "PIT", "TEN"}
+
+
+def _nfl_side(code, season):
+    if season < 1970:
+        return None
+    if code == "SEA":
+        return "AFC" if 1977 <= season <= 2001 else "NFC"
+    if code == "TB":
+        return "AFC" if season == 1976 else "NFC"
+    return "AFC" if code in _AFC else "NFC"
+
+
+def pro_groups(key):
+    """{group key: (label, predicate(game))} for a pro league."""
+    if key == "mlb":
+        return {g: (f"{'American' if g == 'AL' else 'National'} League", lambda x, g=g: _mlb_side(x["home"], x["season"]) == g == _mlb_side(x["away"], x["season"]))
+                for g in ("AL", "NL")}
+    if key == "nfl":
+        return {g: (g, lambda x, g=g: _nfl_side(x["home"], x["season"]) == g == _nfl_side(x["away"], x["season"])) for g in ("AFC", "NFC")}
+    return {}
+
+
+def group_belt(games, pred, tie_rule, recent, today, gap_days, upcoming=()):
+    gs = [g for g in games if pred(g)]
+    if len(gs) < 20:
+        return None
+    last = max(g["season"] for g in gs)
+    active = {t for g in gs if g["season"] >= last - 1 for t in (g["home"], g["away"])}   # still in the group
+    bgs, reigns, _ = belt_engine.resolve_vacancies(gs, tie_rule, None, None, active, today,
+                                                   gap_threshold_days=gap_days, first_game_date=gs[0]["date"])
+    if not reigns:
+        return None
+    from datetime import date as _d
+    for i, r in enumerate(reigns, 1):
+        r["index"] = i
+        r["days"] = max(0, (_d.fromisoformat(r.get("end_date") or today) - _d.fromisoformat(r["start_date"])).days)
+    days, n = Counter(), Counter()
+    for r in reigns:
+        days[r["team"]] += r["days"]
+        n[r["team"]] += 1
+    cur = reigns[-1]
+    nxt = next(([g["date"], g["home"], g["away"]] for g in upcoming if pred(g) and cur["team"] in (g["home"], g["away"])), None)
+    ch = [b for b in bgs if b["outcome"] == "changed"]
+    return {"current": {"team": cur["team"], "start": cur["start_date"], "defenses": cur.get("defenses", 0), "days": cur["days"],
+                        "won_from": cur.get("won_from"), "won_score": cur.get("won_score")},
+            "first": {"date": gs[0]["date"], "season": gs[0]["season"]}, "reigns_n": len(reigns), "games": len(bgs),
+            "most_days": days.most_common(8), "most_reigns": n.most_common(8), "next": nxt,
+            "longest": [[r["team"], r["start_date"], r.get("end_date"), r.get("defenses", 0), r["days"]]
+                        for r in sorted(reigns, key=lambda r: (-r.get("defenses", 0), -r["days"]))[:8]],
+            "recent": [[b["date"], b["holder"], b["new_holder"], b["score"], b["home"]] for b in ch[-12:]][::-1],
+            "reigns": [[r["index"], r["team"], r["start_date"], r.get("end_date"), r.get("defenses", 0), r["days"]] for r in reigns]}

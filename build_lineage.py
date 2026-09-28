@@ -24,6 +24,19 @@ def days_between(a, b):
     return (date.fromisoformat(b) - date.fromisoformat(a)).days
 
 
+def conference_belts(games, upcoming, recent, today):
+    """A belt for every conference playing today: conference games only."""
+    latest = max(g["season"] for g in games)
+    confs = sorted({g["home_conf"] for g in games if g["season"] >= latest - 1 and g["home_conf"] and g["home_conf"] == g["away_conf"]})
+    out = {}
+    for c in confs:
+        gb = M.group_belt(games, lambda g, c=c: g["home_conf"] == c and g["away_conf"] == c, "holder", recent, today,
+                          belt_engine.GAP_THRESHOLD_DAYS, upcoming)
+        if gb:
+            out[c] = {"label": c, **gb}
+    return out
+
+
 def main(today=None):
     today = today or date.today().isoformat()
     games, upcoming, names, teams, elig = D.load(today)
@@ -190,6 +203,7 @@ def main(today=None):
         "meet": {t: [g["date"], g["home"]] for g in reversed(fut) if holder in (g["home"], g["away"])
                  for t in [g["away"] if g["home"] == holder else g["home"]]},
         "what_if": M.what_if("cbb", games, belt_games, reigns, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS, start=start),
+        "groups": conference_belts(games, fut, recent, today),
         "losers": M.losers("cbb", games, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS),
     }
     extras["models"] = models
@@ -199,6 +213,7 @@ def main(today=None):
     everyone |= set(models["elo"]) | {models["losers"]["current"]["team"]}
     everyone |= {t for x in models["what_if"] for t in x["path"] + [x["today"], x["flip_winner"], x["flip_loser"]]}
     everyone |= {r[1] for r in models["losers"]["all"]}
+    everyone |= {r[1] for gb in models["groups"].values() for r in gb["reigns"]}
     for tid in everyone | ({next_game["challenger"]} if next_game else set()):
         p, s2 = D.colors(teams, tid)
         team_info[tid] = {"name": names.get(tid, tid), "primary": p, "secondary": s2,
