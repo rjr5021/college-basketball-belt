@@ -4,7 +4,7 @@ The deeper College Basketball Belt pages (ported from Belt Holders), built from 
     /<lg>/seasons/ and /<lg>/seasons/<year>/   the belt's path through every season
     /<lg>/reigns/<n>/                          notable reigns (5+ defenses, or current)
     /<lg>/rivalries/ and /<lg>/rivalries/<a>-vs-<b>/   every pair with 5+ belt meetings
-    /<lg>/compare/                             any two franchises (client-side)
+    /<lg>/compare/                             any two programs (client-side)
     /<lg>/next/                                preview of the next title defense
     /on-this-day/ and /on-this-day/<mm-dd>/    title changes on each calendar date
     /stories/ and /stories/<slug>/             data-driven long reads
@@ -148,7 +148,7 @@ def build_seasons(lg, d):
         next_s = seasons[i + 1] if i + 1 < len(seasons) else None
         n = lg["team_name"]
         summ = (f"{e(n(s['entering'], s['season']))} carried the belt into the {e(s['label'])} season. "
-                f"It changed hands {S.plural(s['changes'], 'time')} among {S.plural(s['distinct_holders'], 'franchise')}"
+                f"It changed hands {S.plural(s['changes'], 'time')} among {S.plural(s['distinct_holders'], 'program')}"
                 + (f", {s['postseason_changes']} of those in the playoffs" if s["postseason_changes"] else "")
                 + f", and {e(n(s['ending'], s['season']))} {'hold' if s['in_progress'] else 'finished the season with'} it.")
         if s["most_defenses"]["team"] and s["most_defenses"]["defenses"]:
@@ -191,7 +191,7 @@ def build_reigns(lg, d):
             last = bgs[-1] if bgs else None
             end = f"Lost it to {team_link(lg, r['lost_to'], r.get('end_season') or r['season'])}" + (f", {score_for(last, r['lost_to'])[0]}–{score_for(last, r['lost_to'])[1]}" if last and last['outcome'] == 'changed' else "") + f", on {S.d_long(r['end_date'])}."
         elif r.get("end_date"):
-            end = f"The reign ended on {S.d_long(r['end_date'])} when the franchise stopped playing."
+            end = f"The reign ended on {S.d_long(r['end_date'])} when the program left Division I."
         else:
             end = "Still holding."
         prev_r = reigns[i - 1] if i else None
@@ -204,7 +204,7 @@ def build_reigns(lg, d):
     <div class="kicker dot">{lg['long_name']} · reign {r['index']:,}</div>
     <h1 class="disp holder" style="{S.fit(r['name'])}">{e(r['name'])}</h1>
     <p class="lede">{start} {end}</p>
-    <div class="stats"><div><b class="disp">{r.get('defenses', 0)}</b><span class="mono">Defenses</span></div><div><b class="disp">{r['days']:,}</b><span class="mono">Days</span></div><div><b class="disp">{S.ordinal(r['reign_no'])}</b><span class="mono">Reign for the franchise</span></div></div>
+    <div class="stats"><div><b class="disp">{r.get('defenses', 0)}</b><span class="mono">Defenses</span></div><div><b class="disp">{r['days']:,}</b><span class="mono">Days</span></div><div><b class="disp">{S.ordinal(r['reign_no'])}</b><span class="mono">Reign for the program</span></div></div>
   </div>
 </section>
 <section class="wrap block"><div class="head"><h2 class="disp">Every game of the reign</h2></div>{games_table(lg, bgs, anchors=False)}{nav}</section>"""
@@ -311,7 +311,7 @@ fetch('/compare/data.json').then(function(r){{return r.json();}}).then(function(
 }})();
 </script>"""
     S.write(f"compare/index.html", S.page(f"Compare {lg['name']} teams: belt head-to-head", body, path=f"/compare/", active=key,
-                                                description=f"Pick any two {lg['name']} franchises and see every time they met with the lineal championship belt on the line."))
+                                                description=f"Pick any two {lg['name']} programs and see every time they met with the lineal championship belt on the line."))
 
 
 # ------------------------------------------------------------------ next --
@@ -347,7 +347,7 @@ def build_next(lg, d):
     bm_c = sum(1 for b in bm if b["new_holder"] == c and not b["outcome"].endswith("(tie)"))
     clr = pv.get("challenger_last_reign")
     ch_hist = (f"{e(n(c))} has held the belt {S.plural(pv['challenger_reigns'], 'time')}; the last reign began {S.d_long(clr['start'])}"
-               + (f" and ended {S.d_long(clr['end'])}." if clr.get("end") else ".") if clr else f"{e(n(c))} has never held the {lg['name']} belt. A win would be the first reign in franchise history.")
+               + (f" and ended {S.d_long(clr['end'])}." if clr.get("end") else ".") if clr else f"{e(n(c))} has never held the {lg['name']} belt. A win would be the first reign in program history.")
     stakes = (f"If {e(n(c))} wins, it takes the belt and start reign {cur['index'] + 1:,}. If {e(n(h))} wins, it's defense number {pv['holder_streak'] + 1} of this reign"
               + (" (a tie also counts as a defense)." if lg.get("tie_rule") == "holder" and key in ("nfl", "mlb") else "."))
     spread = ""
@@ -461,7 +461,7 @@ def stories_for(lg, d):
     # 2. droughts
     dr = rec.get("droughts", [])
     never = rec.get("never_held", [])
-    parts = [f"<p>Every active {lg['name']} franchise and how long it's been since it last held the belt. The belt moves constantly, so a long wait usually means a franchise keeps losing the one game that matters.</p>"]
+    parts = [f"<p>Every active Division I program and how long it's been since it last held the belt. The belt moves constantly, so a long wait usually means a program keeps losing the one game that matters.</p>"]
     if never and len(never) <= 40:
         parts.append(f"<h2 class=\"disp\">Never held it</h2><p>{', '.join(team_link(lg, t) for t in never)}.</p>")
     elif never:
@@ -469,14 +469,14 @@ def stories_for(lg, d):
     parts.append("<h2 class=\"disp\">The longest waits</h2><ol>" + "".join(
         f"<li>{team_link(lg, x['team'])}: last held it {S.d_long(x['last'])}, {S.plural(x['days'], 'day')} ago.</li>" for x in dr) + "</ol>")
     out.append(("droughts", f"Waiting for the {lg['name']} belt: the longest droughts",
-                "The active franchises that have gone longest without the belt, and the ones still waiting for their first reign.", "".join(parts)))
+                "The active programs that have gone longest without the belt, and the ones still waiting for their first reign.", "".join(parts)))
     # 3. busiest seasons
     ss = {s["season"]: s for s in d["seasons"]}
     parts = ["<p>Some seasons the belt barely moves. Others it gets passed around like a hot potato. Here are the seasons it changed hands most, and the ones where it hardly moved.</p><h2 class=\"disp\">Busiest seasons</h2><ol>"]
     for s, c in rec["busiest_seasons"][:5]:
         x = ss.get(s)
         if x:
-            parts.append(f"<li><a href=\"{season_url(lg, s)}\">{e(x['label'])}</a>: {S.plural(c, 'title change')} among {S.plural(x['distinct_holders'], 'franchise')}; {e(n(x['ending'], s))} finished with it.</li>")
+            parts.append(f"<li><a href=\"{season_url(lg, s)}\">{e(x['label'])}</a>: {S.plural(c, 'title change')} among {S.plural(x['distinct_holders'], 'program')}; {e(n(x['ending'], s))} finished with it.</li>")
     parts.append("</ol><h2 class=\"disp\">Quietest seasons</h2><ol>")
     for s, c in rec["quietest_seasons"][:5]:
         x = ss.get(s)
@@ -496,12 +496,12 @@ def stories_for(lg, d):
                 f"The last {len(ch)} title changes, in order, ending with the current holder.", "".join(parts)))
     # 5. rivalries
     rv = d["rivalries"][:5]
-    parts = [f"<p>No two franchises have fought over the {lg['name']} belt more often than these.</p>"]
+    parts = [f"<p>No two programs have fought over the {lg['name']} belt more often than these.</p>"]
     for i, p in enumerate(rv, 1):
         ties_txt = f", {p['ties']} ties" if p["ties"] else ""
         parts.append(f"<h2 class=\"disp\">{i}. {e(n(p['a']))} vs. {e(n(p['b']))}</h2><p>{p['meetings']} belt meetings between {p['first'][:4]} and {p['last'][:4]}, {S.plural(p['changes'], 'title change')}. Belt series: {e(lg['short_name'](p['a']))} {p['a_wins']}, {e(lg['short_name'](p['b']))} {p['b_wins']}{ties_txt}. <a href=\"/rivalries/{rivalry_slug(lg, p['a'], p['b'])}/\">Every meeting →</a></p>")
     out.append(("rivalries", f"The rivalries that decided the {lg['name']} belt",
-                "The five pairs of franchises that have met most often with the belt on the line.", "".join(parts)))
+                "The five pairs of programs that have met most often with the belt on the line.", "".join(parts)))
     return out
 
 
