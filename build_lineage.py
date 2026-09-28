@@ -16,6 +16,7 @@ from datetime import date
 
 import belt_engine
 import belt_extras as X
+import belt_models as M
 import cbb_data as D
 
 
@@ -167,8 +168,30 @@ def main(today=None):
               "rivalries": X.rivalries(lgx, belt_games),
               "preview": X.preview(lgx, games, belt_games, reigns, next_game, today)}
 
+    # models: Elo, chance to defend, belt tree, outlook, champions, Losers Belt
+    ratings, hfa = M.elo("cbb", games)
+    fut = [g for g in upcoming if g["date"] >= today]
+    reg = [g for g in fut if g.get("season_type", "regular") == "regular"]
+    if extras["preview"] and next_game:
+        g0 = next(g for g in fut if holder in (g["home"], g["away"]))
+        extras["preview"]["holder_win_prob"] = round(M.win_prob(ratings, hfa, g0["home"], g0["away"], g0.get("neutral"), holder=holder), 3)
+    elig_recent = {t for t in recent if t in names}
+    ncaa = [g for g in games if g.get("tournament") == "NCAA"]
+    models = {
+        "elo": {t: round(v) for t, v in ratings.items() if t in elig_recent},
+        "elo_rank": sorted(((t, round(v)) for t, v in ratings.items() if t in elig_recent), key=lambda x: -x[1]),
+        "hfa": hfa, "tree": M.belt_tree(holder, fut, ratings, hfa, 4, today) if fut else None,
+        "outlook": M.outlook(holder, reg, ratings, hfa, today=today) if reg else None,
+        "champions": M.champions(ncaa, reigns),
+        "meet": {t: [g["date"], g["home"]] for g in reversed(fut) if holder in (g["home"], g["away"])
+                 for t in [g["away"] if g["home"] == holder else g["home"]]},
+        "losers": M.losers("cbb", games, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS),
+    }
+    extras["models"] = models
+
     team_info = {}
     everyone = set(n_reigns) | {t for bg in belt_games for t in (bg.get("holder"), bg["opponent"]) if t}
+    everyone |= set(models["elo"]) | {models["losers"]["current"]["team"]}
     for tid in everyone | ({next_game["challenger"]} if next_game else set()):
         p, s2 = D.colors(teams, tid)
         team_info[tid] = {"name": names.get(tid, tid), "primary": p, "secondary": s2,

@@ -36,5 +36,7 @@ LEAGUE = {
     "key": "cbb", "name": "College Basketball", "long_name": "The College Basketball Belt", "first_season": 1950,
     "tie_rule": "holder", "sport": "Basketball", "team_name": team_name, "team_colors": team_colors,
     "short_name": team_name, "season_label": season_label,
+    "singular": True, "unit": "programs", "post_word": "postseason", "feed": False,
+    "champions_note": "Here the champion is the NCAA tournament winner.",
 }
 LIVE = [LEAGUE]

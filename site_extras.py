@@ -379,6 +379,11 @@ def build_next(lg, d):
   {games_table(lg, bm[-10:][::-1], anchors=False) if bm else ""}
   <p class="mono more"><a href="/compare/?a={h}&amp;b={c}">Full belt head-to-head →</a></p>
 </section>"""
+    import features as F
+    body = body.replace(S.subnav(lg, "next"), S.subnav(lg, "next") + F.live_box(lg, d), 1) + F.next_extras(lg, d)
+    if pv.get("holder_win_prob") is not None:
+        body = body.replace(f'<div><b class="disp">{pv["holder_streak"]}</b><span class="mono">Defenses this reign</span></div>',
+                            f'<div><b class="disp">{round(pv["holder_win_prob"] * 100)}%</b><span class="mono">Chance to defend (Elo)</span></div>', 1)
     ld = {"@context": "https://schema.org", "@type": "SportsEvent", "name": f"{n(h)} {where} {n(c)}",
           "startDate": ng["date"], "sport": lg.get("sport", ""),
           "competitor": [{"@type": "SportsTeam", "name": n(h)}, {"@type": "SportsTeam", "name": n(c)}]}
@@ -581,6 +586,8 @@ def team_extras(lg, d, team):
 # ------------------------------------------------------------------ main --
 
 def build_all(datas):
+    import features as F
+    F.init(S, lambda lg: "", "The College Basketball Belt")
     for lg in LIVE:
         d = datas[lg["key"]]
         d["_bg"] = {bg["n"]: bg for bg in d["belt_games"]}
@@ -589,6 +596,8 @@ def build_all(datas):
         build_rivalries(lg, d)
         build_compare(lg, d)
         build_next(lg, d)
+        F.build(lg, d)
+    F.build_embed([(lg, datas[lg["key"]]) for lg in LIVE])
     build_otd(datas)
     cards = build_stories(datas)
     build_search(datas)

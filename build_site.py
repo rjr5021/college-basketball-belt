@@ -22,7 +22,7 @@ DOMAIN = "collegebasketballbelt.com"
 OUT = "site"
 ADSENSE_PUBLISHER_ID = ""        # "pub-3317069252410560" once the site is approved in AdSense
 GOATCOUNTER_CODE = ""            # e.g. "collegebasketballbelt" once the GoatCounter site exists
-STYLES_VERSION = "2"
+STYLES_VERSION = "3"
 ORANGE = "#de762c"
 
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -126,10 +126,10 @@ def won_score_text(r):
     return score_text(r["won_score"]) if r.get("won_score") else ""
 
 
-SUBNAV = [("current", "/", "Current"), ("next", "/next/", "Next defense"), ("history", "/history/", "Full history"),
+SUBNAV = [("current", "/", "Current"), ("next", "/next/", "Next defense"), ("outlook", "/outlook/", "Outlook"), ("history", "/history/", "Full history"),
           ("seasons", "/seasons/", "Seasons"), ("records", "/records/", "Records"), ("teams", "/teams/", "Teams"),
           ("rivalries", "/rivalries/", "Rivalries"), ("compare", "/compare/", "Compare"), ("march", "/march/", "March"),
-          ("stories", "/stories/", "Stories")]
+          ("stories", "/stories/", "Stories"), ("more", "/more/", "More")]
 
 
 def subnav(lg=None, on=None):
@@ -214,6 +214,7 @@ def page(title, body, *, path, description, active=None, jsonld=None):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Spectral:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/styles.css?v={STYLES_VERSION}">
+<script>try{{var t=localStorage.getItem('belt-theme');if(t)document.documentElement.dataset.theme=t;}}catch(e){{}}</script>
 {ads}{goat}{ld}
 </head>
 <body>
@@ -221,7 +222,7 @@ def page(title, body, *, path, description, active=None, jsonld=None):
 <header class="top">
   <a class="brand" href="/">{LOGO}<span>The College Basketball Belt</span></a>
   <nav class="primary mono" aria-label="Sections">{nav}</nav>
-  <div class="topright"><a class="searchlink" href="/search/" aria-label="Search"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11 L15 15"/></svg></a><a class="pill mono" href="#alerts">Get belt alerts</a></div>
+  <div class="topright"><button class="themebtn" type="button" aria-label="Toggle dark mode" onclick="var r=document.documentElement,d=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches);r.dataset.theme=d?'light':'dark';try{{localStorage.setItem('belt-theme',r.dataset.theme);}}catch(e){{}}"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M13.5 9.5A5.5 5.5 0 0 1 6.5 2.5a5.5 5.5 0 1 0 7 7z"/></svg></button><a class="searchlink" href="/search/" aria-label="Search"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11 L15 15"/></svg></a><a class="pill mono" href="#alerts">Get belt alerts</a></div>
 </header>
 <main id="main">
 {body}
@@ -229,7 +230,7 @@ def page(title, body, *, path, description, active=None, jsonld=None):
 {alerts_block()}
 <footer class="foot mono">
   <div class="links"><a href="https://collegefootballbelt.com">collegefootballbelt.com</a><a href="https://beltholders.com">beltholders.com</a><a href="https://x.com/CollegeBBBelt">@CollegeBBBelt</a><a href="https://instagram.com/CollegeBBBelt">Instagram</a></div>
-  <div class="links"><a href="/privacy/">Privacy</a><a href="/about/">About</a><a href="mailto:hello@collegebasketballbelt.com">Contact</a><a href="/feed.xml">RSS</a><span>Not affiliated with the NCAA or any school.</span></div>
+  <div class="links"><a href="/privacy/">Privacy</a><a href="/about/">About</a><a href="mailto:hello@collegebasketballbelt.com">Contact</a><a href="/feed.xml">RSS</a><a href="/embed/">Embed a badge</a><span>Not affiliated with the NCAA or any school.</span></div>
 </footer>
 </body>
 </html>
@@ -272,6 +273,7 @@ def holder_plate(d):
     ng = d.get("next_game")
     box = ""
     if ng:
+        prob = (d.get("preview") or {}).get("holder_win_prob")
         first = "First defense" if cur.get("defenses", 0) == 0 else "Next defense"
         lede += f" {first} {weekday(ng['date'])}, {d_short(ng['date'])}."
         where = "vs." if ng["holder_home"] or ng["neutral"] else "at"
@@ -286,6 +288,7 @@ def holder_plate(d):
       </div>
       <div class="meta mono"><span>{weekday(ng['date'])} {d_short(ng['date'])} · {tip_12h(ng.get('kickoff'))}</span></div>
       {f'<div class="meta mono"><span>{e(place)}</span></div>' if place else ''}
+      {f'<div class="meta mono"><span>Chance to defend: {round(prob * 100)}%</span><a href="/outlook/">Belt tree →</a></div>' if prob is not None else ""}
       <a class="mono prevlink" href="/next/">Game preview →</a>
     </aside>"""
     days = cur["days"]
@@ -381,7 +384,9 @@ def build_home(d):
     <div class="hot"><span class="mono">Crowned in April</span><b class="disp">{e(last['champion'])}</b></div>
   </div>
 </section>"""
+    import features, cbb_league
     body = f"""{subnav(None, "current")}
+{features.live_box(cbb_league.LEAGUE, d)}
 {holder_plate(d)}
 <section class="wrap split">
   <div>
