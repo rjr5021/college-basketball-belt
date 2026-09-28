@@ -79,7 +79,10 @@ def main():
         return
     with open(os.path.join("data", "lineage.json")) as f:
         d = json.load(f)
-    games = box_store.load_all(LEAGUE)
+    # re-key what's on file by API game id: belt game numbers shift when older
+    # games are added to the lineage, and box scores no longer in it are dropped
+    by_gid = {str(bg["game_id"]): str(bg["n"]) for bg in d["belt_games"] if bg.get("game_id")}
+    games = {by_gid[str(g.get("gid"))]: g for g in box_store.load_all(LEAGUE).values() if str(g.get("gid")) in by_gid}
     meta = {}
     if os.path.exists(META):
         with open(META) as f:

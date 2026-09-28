@@ -1992,6 +1992,17 @@ def _box(lg):
     return out
 
 
+def _box_for(lg, d):
+    """Box scores keyed by this lineage's belt game numbers. College
+    basketball stores the API game id with each box score, so they're matched
+    by that id (belt game numbers shift when older games are added)."""
+    box = _box(lg)
+    if lg.get("key") != "cbb":
+        return box
+    by_gid = {str(bg.get("game_id")): bg["n"] for bg in d["belt_games"] if bg.get("game_id")}
+    return {str(by_gid[str(g.get("gid"))]): g for g in box.values() if str(g.get("gid")) in by_gid}
+
+
 def _stat_rows(lg, box):
     """Normalize to {n: [(pid, name, side, {stat: value or None})]} with era gaps blanked."""
     sc = BOX_SCHEMA[lg["key"]]
@@ -2009,7 +2020,7 @@ def build_players(lg, d):
     k = lg.get("key")
     if k not in BOX_SCHEMA:
         return
-    box = _box(lg)
+    box = _box_for(lg, d)
     if not box:
         return
     sc = BOX_SCHEMA[k]

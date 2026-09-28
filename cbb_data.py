@@ -35,10 +35,30 @@ def season_label(season):
     return f"{season - 1}–{str(season)[2:]}"
 
 
+# The API files some schools' older games under the wrong team id (checked
+# against the Trono archive): Penn as "Penn State (Beaver)", Maine as
+# "Maine-Farmington", UTSA as "Texas A&M-San Antonio". Through this season
+# those ids mean the real school.
+ID_FIX_THROUGH = 2002
+ID_FIX = {"1353": ("227", "Pennsylvania"), "1078": ("154", "Maine"), "583": ("328", "UTSA")}
+
+
+def _fix_ids(r):
+    if int(r["season"]) <= ID_FIX_THROUGH:
+        for side in ("home", "away"):
+            fix = ID_FIX.get(r[side + "_id"])
+            if fix:
+                r[side + "_id"], r[side] = fix
+    return r
+
+
 def _rows():
-    for p in sorted(glob.glob(os.path.join(DATA, "games", "*.csv"))):
+    # data/supplement/*.csv: games the API is missing, in the same columns
+    # (build_supplement.py adds 1950-2000 neutral-site games from the Trono archive)
+    for p in sorted(glob.glob(os.path.join(DATA, "games", "*.csv"))) + sorted(glob.glob(os.path.join(DATA, "supplement", "*.csv"))):
         with open(p, newline="", encoding="utf-8") as f:
-            yield from csv.DictReader(f)
+            for r in csv.DictReader(f):
+                yield _fix_ids(r)
 
 
 def load(today=None):

@@ -576,7 +576,7 @@ def build_static(d):
 <li><b>If a holder leaves Division I,</b> the belt goes back to the most recent earlier holder that is still playing, the same rule the College Football Belt uses. {"It hasn't happened yet." if not d["vacancies"] else f"It has happened {plural(len(d['vacancies']), 'time')}."}</li>
 </ol>
 <h2 class="disp">Sources</h2>
-<p>Results come from CollegeBasketballData.com and are updated automatically every few hours during the season. Spot a missing or wrong game? Email <a href="mailto:hello@collegebasketballbelt.com">hello@collegebasketballbelt.com</a>.</p>
+<p>Results come from CollegeBasketballData.com and are updated automatically every few hours during the season. For 1949–50 through 1999–2000, neutral-site games that data set is missing (holiday and conference tournaments) come from Prof. John Trono's <a href="https://academics.smcvt.edu/jtrono/BBallArchive.htm">NCAA Men's Basketball Scores Archive</a> at St. Michael's College. Spot a missing or wrong game? Email <a href="mailto:hello@collegebasketballbelt.com">hello@collegebasketballbelt.com</a>.</p>
 </section>"""
     write("rules/index.html", page("How the belt works", rules, path="/rules/", active="rules",
                                    description="The College Basketball Belt ruleset: where the lineal title starts, which games count, and what happens when a holder leaves Division I."))
