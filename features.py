@@ -2012,8 +2012,16 @@ def _stat_rows(lg, box):
     return sc, out
 
 
+def valid_player(pid, name):
+    """Box-score rows without a real player id or name (team-total rows such as nflverse's "Team") never become players (BH-5)."""
+    return str(pid) not in ("", "?", "0", "None") and (name or "").strip() not in ("", "?", "Team")
+
+
 def player_slug(name, pid):
-    return f"{S.slug(name)}-{pid}"
+    pid = re.sub(r"[^a-z0-9-]", "", str(pid).lower())
+    out = f"{S.slug(name)}-{pid}"
+    assert re.fullmatch(r"[a-z0-9-]+", out), out
+    return out
 
 
 def build_players(lg, d):
@@ -2049,6 +2057,8 @@ def build_players(lg, d):
         hp, ap = (int(x) for x in bg["score"].split("-"))
         for row in g["players"]:
             pid, name, side = str(row[0]), row[1], row[2]
+            if not valid_player(pid, name):
+                continue
             team = home if side == "h" else away
             opp = away if side == "h" else home
             stats = {c: val(row, c, s) for c in cols}
