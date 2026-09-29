@@ -354,3 +354,6 @@ tr.cur td{background:rgba(169,127,56,.14)}
 h2.kicker{margin:0 0 8px;font-weight:400;line-height:inherit}
 .prose p a,.intro a,.lede a,.feed div a,p.note a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
 .status.delayed{color:#b3261e}.status.delayed i{background:#b3261e}
+/* the belt network row (network-bar.js) */
+.belt-network{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--line)}.belt-network .nk{color:var(--muted);text-transform:uppercase;letter-spacing:.14em;font-size:11px;margin-right:4px}.belt-network a{white-space:nowrap}.belt-network a i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;vertical-align:middle}.belt-network a b{font-weight:500;color:var(--ink);margin-right:5px}.belt-network .all{font-weight:500}
+.school-belts{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px 28px}.school-belts .tag{margin-left:8px}

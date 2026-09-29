@@ -306,7 +306,8 @@ def page(title, body, *, path, description, active=None, jsonld=None, robots=Non
 </main>
 {alerts_block()}
 <footer class="foot mono">
-  <div class="links"><a href="https://collegefootballbelt.com">collegefootballbelt.com</a><a href="https://beltholders.com">beltholders.com</a><a href="https://x.com/CollegeBBBelt">@CollegeBBBelt</a><a href="https://instagram.com/CollegeBBBelt">Instagram</a></div>
+  <div class="belt-network" data-belt-network data-site="cbb"><span class="nk">The belt network</span><a href="__ROOT__/"><b>Men's college hoops</b></a><a href="__ROOT__/women/"><b>Women's college hoops</b></a><a href="https://collegefootballbelt.com/"><b>College football</b></a><a href="https://beltholders.com/"><b>Pro leagues</b></a><a class="all" href="https://beltholders.com/all/">Every belt →</a></div>
+  <div class="links"><a href="https://collegefootballbelt.com">collegefootballbelt.com</a><a href="https://beltholders.com">beltholders.com</a><a href="https://x.com/CollegeBBBelt">@CollegeBBBelt</a><a href="https://x.com/CollegeFBBelt">@CollegeFBBelt</a><a href="https://x.com/thebeltholders">@thebeltholders</a><a href="https://instagram.com/CollegeBBBelt">Instagram</a></div>
   <div class="links"><a href="/privacy/">Privacy</a><a href="/about/">About</a><a href="mailto:hello@collegebasketballbelt.com">Contact</a><a href="/feed.xml">RSS</a><a href="/embed/">Embed a badge</a><span>Not affiliated with the NCAA or any school.</span></div>
 </footer>
 <script src="/network-bar.js" defer></script>
