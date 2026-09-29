@@ -416,10 +416,13 @@ def holder_plate(d):
       <a class="mono prevlink" href="/next/">Game preview →</a>
     </aside>"""
     days = cur["days"]
+    h = d.get("_health") or {}
+    delayed = (f' · <span class="status delayed" title="{e(h.get("reason", ""))}"><i></i>Data delayed</span>'
+               if h and not h.get("ok", True) else "")
     return f"""<section class="plate" style="--top:{top};--bottom:{bottom};--ink:{ink};--accent:{accent}">
   <div class="plate-grid">
     <div class="plate-main">
-      <div class="kicker dot">{"Women's belt · " if P else ""}Current holder · {ordinal(cur['reign_no'])} reign</div>
+      <div class="kicker dot">{"Women's belt · " if P else ""}Current holder · {ordinal(cur['reign_no'])} reign{delayed}</div>
       <h1 class="disp holder" style="{fit(cur['name'])}">{e(cur['name'])}</h1>
       <p class="lede">{lede}</p>
       <div class="stats">
@@ -859,6 +862,7 @@ def build_api(d):
            "next_game": ({"team": cur["name"], "opponent": ng["challenger_name"], "is_home": ng["holder_home"],
                           "neutral": ng["neutral"], "date": ng["date"], "venue_name": ng.get("venue")} if ng else None),
            "state": features.belt_state(LG, d)["state"], "generated_at": d["generated"], "site": SITE_URL + P,
+           "data_ok": (d.get("_health") or {}).get("ok", True),
            # network field names (audit section 5.1), alongside the original ones
            "reign_no": cur["reign_no"], "holder_short": cur["name"], "next": features.next_payload(LG, d, SITE_URL),
            "reigns_url": f"{SITE_URL}{P}/api/reigns.json", "games_url": f"{SITE_URL}{P}/api/games.json"}
@@ -933,6 +937,18 @@ def build_sitemap():
         write("ads.txt", f"google.com, {ADSENSE_PUBLISHER_ID}, DIRECT, f08c47fec0942fa0\n")
 
 
+def _health():
+    """NET-2: data/health.json from check_freshness.py ({} when the check didn't run)."""
+    try:
+        with open(os.path.join("data", "health.json")) as f:
+            return json.load(f).get("leagues", {})
+    except (OSError, ValueError):
+        return {}
+
+
+HEALTH = _health()
+
+
 def _section(prefix, lg, sec, lineage_path):
     """Point the builders at one belt."""
     global P, LG
@@ -943,6 +959,8 @@ def _section(prefix, lg, sec, lineage_path):
     D.clear()
     with open(lineage_path) as f:
         D.update(json.load(f))
+    if HEALTH.get(lg["key"]):
+        D["_health"] = HEALTH[lg["key"]]
     site_extras.LIVE[:] = [lg]
     import features
     features.plan_game_pages(lg, D)      # which games get their own page (BH-2)
