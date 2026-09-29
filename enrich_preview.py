@@ -37,13 +37,19 @@ except ImportError:  # pragma: no cover
     ZoneInfo = None
 
 ESPN = {"nfl": "football/nfl", "nba": "basketball/nba", "nhl": "hockey/nhl", "mlb": "baseball/mlb",
-        "cbb": "basketball/mens-college-basketball"}
-OUTDOOR_SPORTS = ("nfl", "mlb")
+        "cbb": "basketball/mens-college-basketball", "wnba": "basketball/wnba", "mls": "soccer/usa.1",
+        "nwsl": "soccer/usa.nwsl", "epl": "soccer/eng.1", "laliga": "soccer/esp.1", "seriea": "soccer/ita.1",
+        "bundesliga": "soccer/ger.1", "ligue1": "soccer/fra.1", "eredivisie": "soccer/ned.1",
+        "wcbb": "basketball/womens-college-basketball", "women": "basketball/womens-college-basketball",
+        "intl": "soccer/fifa.friendly"}
+OUTDOOR_SPORTS = ("nfl", "mlb", "mls", "nwsl", "epl", "laliga", "seriea", "bundesliga", "ligue1", "eredivisie", "intl", "cfl")
 MODEL = "claude-sonnet-4-5"   # accurate with numbers; ~1-2 cents per preview
 MAX_TOKENS = 900
 SITE_BLURB = {
     "cbb": ("The College Basketball Belt", "a lineal championship belt that has passed from team to team on the court "
             "since the 1949 NCAA champion, Kentucky: beat the holder and it's yours"),
+    "women": ("The Women's College Basketball Belt", "a lineal championship belt that has passed from team to team on the court "
+              "since the 1986 NCAA champion, Texas: beat the holder and it's yours"),
 }
 DEFAULT_BLURB = ("Belt Holders", "a lineal championship belt for every pro league: the belt passes to whoever beats "
                  "the holder, game by game, going all the way back to the league's first game")
@@ -102,8 +108,12 @@ def targets():
         from leagues import LIVE
         return [(lg, os.path.join("data", lg["key"], "lineage.json"), os.path.join("data", lg["key"])) for lg in LIVE]
     except ImportError:
-        from cbb_league import LEAGUE
-        return [(LEAGUE, os.path.join("data", "lineage.json"), "data")]
+        import cbb_league
+        out = [(cbb_league.LEAGUE, os.path.join("data", "lineage.json"), "data")]
+        w = getattr(cbb_league, "WOMEN", None)
+        if w and os.path.exists(os.path.join("data", "women", "lineage.json")):
+            out.append((w, os.path.join("data", "women", "lineage.json"), os.path.join("data", "women")))
+        return out
 
 
 def game_key(ng):
@@ -145,7 +155,7 @@ def espn_game(lg, ng):
     if not path:
         return None
     url = f"https://site.api.espn.com/apis/site/v2/sports/{path}/scoreboard?dates={ng['date'].replace('-', '')}"
-    if lg.get("key") == "cbb":
+    if lg.get("key") in ("cbb", "wcbb", "women"):
         url += "&groups=50&limit=500"
     j = get_json(url)
     if not j:

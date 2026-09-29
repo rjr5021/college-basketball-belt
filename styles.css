@@ -215,11 +215,9 @@ a.tile{color:var(--ink)}
 @media (max-width:1100px){.storygrid{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}}
 @media (max-width:700px){.storygrid{grid-template-columns:1fr}.compare select{min-width:0;width:100%}.compare label{flex:1 1 100%}.history.games td:nth-child(4),.history.games th:nth-child(4){display:none}.sub{font-size:24px}.searchlink{display:none}}
 .history.games td:nth-child(2){font-size:13px;white-space:nowrap}
-.colleges{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-.college{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;background:var(--ink);color:var(--paper)}
-.college:hover{color:var(--paper);background:#000}.college .mono{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#e0b567}
-.college b{font-size:28px;font-weight:800;flex:1}.college .go{color:rgba(231,226,213,.7)}
-@media (max-width:1100px){.colleges{grid-template-columns:1fr}.college{flex-wrap:wrap}}
+.colleges{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.tile.college-tile{min-height:250px}.college-tile .name{--fit:10;font-size:min(56px,calc(100cqw / (var(--fit) * .52)))}
+@media (max-width:1100px){.colleges{grid-template-columns:1fr}}
 
 /* ---- features batch: outlook, tree, losers, timeline, games, dark mode ---- */
 .themebtn{background:none;border:0;color:var(--brass-text);cursor:pointer;padding:6px;display:flex;align-items:center}.themebtn:hover{color:var(--ink)}
@@ -337,6 +335,11 @@ tr.cur td{background:rgba(169,127,56,.14)}
 .wlinks line{stroke:var(--ink);stroke-opacity:.18}.wnode{cursor:pointer}.wnode circle{stroke:#fff;stroke-width:1.5}.wnode text{font:500 10px "IBM Plex Mono",monospace;text-anchor:middle;fill:var(--ink)}
 .gcard span.mono{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .mapnote{font-size:11px;fill:var(--muted);letter-spacing:.06em}
+
+.tiles.small{grid-template-columns:repeat(4,minmax(0,1fr))}.tile.small{min-height:250px;gap:14px;padding:20px}.tile.small .name{font-size:clamp(26px,2.6vw,40px)}
+.sub-head{margin-top:36px}.sub-head h2{font-size:28px}
+@media (max-width:1100px){.tiles.small{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.tiles.small{grid-template-columns:1fr}}
 .belts{display:flex;flex:none;border:1px solid var(--ink);border-radius:20px;overflow:hidden;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
 .brand span,.primary a{white-space:nowrap}
 @media (max-width:1400px){.primary{gap:20px}.topright{gap:10px}}

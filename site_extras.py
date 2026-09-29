@@ -1,10 +1,15 @@
 """
-The deeper College Basketball Belt pages (ported from Belt Holders), built from data/<league>/lineage.json:
+The deeper belt pages, built from each belt's lineage.json. SHARED FILE: it must stay
+byte-identical in rjr5021/belt-holders and rjr5021/college-basketball-belt (NET-1).
+Site differences come from the league dicts and from optional attributes on the
+build_site module (SITE_NAME, NETWORK, otd_description, search_description, P).
+Paths below are relative to each belt's base: /<lg> on Belt Holders, / or /women
+on the College Basketball Belt.
 
     /<lg>/seasons/ and /<lg>/seasons/<year>/   the belt's path through every season
     /<lg>/reigns/<n>/                          notable reigns (5+ defenses, or current)
     /<lg>/rivalries/ and /<lg>/rivalries/<a>-vs-<b>/   every pair with 5+ belt meetings
-    /<lg>/compare/                             any two programs (client-side)
+    /<lg>/compare/                             any two teams (client-side)
     /<lg>/next/                                preview of the next title defense
     /on-this-day/ and /on-this-day/<mm-dd>/    title changes on each calendar date
     /stories/ and /stories/<slug>/             data-driven long reads
@@ -18,14 +23,45 @@ from collections import Counter, defaultdict
 from datetime import date
 
 import build_site as S
-import cbb_league
 
-LIVE = list(cbb_league.LIVE)      # build_site points this at the belt being built
+try:                                  # Belt Holders: every league in the registry
+    from leagues import LIVE as _LIVE
+except ImportError:                   # College Basketball Belt: build_site points this at the belt being built
+    from cbb_league import LIVE as _LIVE
+LIVE = list(_LIVE)
 
 e = S.e
 REIGN_MIN_DEFENSES = 5
 RIVALRY_MIN = 5
 MONTHS_LONG = S.MONTHS_LONG
+
+
+def base(lg):
+    """URL prefix of a belt's pages: "/nfl" on Belt Holders, "" or "/women" on the CBB site."""
+    return lg["base"] if "base" in lg else "/" + lg["key"]
+
+
+def out(lg, rel):
+    pre = base(lg).strip("/")
+    return f"{pre}/{rel}" if pre else rel
+
+
+def unit1(lg):
+    """One team, in the belt's own word: franchise, club, program."""
+    return lg.get("unit_one", "franchise")
+
+
+def vb(lg, plural_form, singular_form):
+    """Verb agreement: college names are singular ("Michigan holds"), team nicknames plural ("the Bengals hold")."""
+    return singular_form if lg.get("singular") else plural_form
+
+
+def post_word(lg):
+    return lg.get("post_tag", "playoffs")
+
+
+def site_name():
+    return getattr(S, "SITE_NAME", "Belt Holders")
 
 
 # --------------------------------------------------------------- helpers --
@@ -36,7 +72,7 @@ def sl(lg, season):
 
 
 def season_url(lg, season, n=None):
-    return f"{lg.get('base', '')}/seasons/{season}/" + (f"#g{n}" if n else "")
+    return f"{base(lg)}/seasons/{season}/" + (f"#g{n}" if n else "")
 
 
 def notable(r, cur_index):
@@ -44,19 +80,19 @@ def notable(r, cur_index):
 
 
 def reign_url(lg, d, r):
-    base = lg.get("base", "")
+    b = base(lg)
     if notable(r, d["reigns"][-1]["index"]):
-        return f"{base}/reigns/{r['index']}/"
+        return f"{b}/reigns/{r['index']}/"
     first = r.get("opened_by") or (r["belt_games"][0] if r.get("belt_games") else None)
     if r.get("opened_by"):
-        return f"{base}/games/{r['opened_by']}/"
+        return f"{b}/games/{r['opened_by']}/"
     bg = d["_bg"].get(first) if first else None
-    return season_url(lg, bg["season"], bg["n"]) if bg else f"{base}/history/"
+    return season_url(lg, bg["season"], bg["n"]) if bg else f"{b}/history/"
 
 
 def team_link(lg, code, season=None):
     name = lg["team_name"](code, season) if season is not None else lg["team_name"](code)
-    return f'<a href="{lg.get("base", "")}/teams/{S.slug(lg["team_name"](code))}/">{e(name)}</a>'
+    return f'<a href="{base(lg)}/teams/{S.slug(lg["team_name"](code))}/">{e(name)}</a>'
 
 
 def rivalry_slug(lg, a, b):
@@ -102,7 +138,7 @@ def games_table(lg, bgs, anchors=True):
     rows = []
     for bg in bgs:
         p, _ = lg["team_colors"](bg["new_holder"])
-        post = ' <span class="tag post">Postseason</span>' if bg["season_type"] != "regular" else ""
+        post = f' <span class="tag post">{post_word(lg).capitalize()}</span>' if bg["season_type"] != "regular" else ""
         rows.append(f'<tr{(" id=g" + str(bg["n"])) if anchors else ""}><td class="mono n">{bg["n"]:,}</td>'
                     f'<td class="mono">{S.d_short(bg["date"], True)}</td>'
                     f'<td><i style="background:{p}"></i>{game_line(lg, bg)}{post}</td><td class="r">{tag(bg)}</td></tr>')
@@ -145,7 +181,7 @@ def build_seasons(lg, d):
   <div class="tablewrap"><table class="history"><thead><tr><th class="mono">Season</th><th class="mono">Entered with it</th><th class="mono">Finished with it</th><th class="mono r">Changes</th><th class="mono r">Belt games</th></tr></thead>
   <tbody>{"".join(rows)}</tbody></table></div>
 </section>"""
-    S.write(f"seasons/index.html", S.page(f"{lg['long_name']}: every season", body, path=f"/seasons/", active=key,
+    S.write(out(lg, "seasons/index.html"), S.page(f"{lg['long_name']}: every season", body, path=f"{base(lg)}/seasons/", active=key,
                                                  description=f"The lineal {lg['name']} championship belt season by season since {lg['first_season']}: who carried it in, who finished with it, and how often it moved."))
     for i, s in enumerate(seasons):
         bgs = bgs_by_season[s["season"]]
@@ -153,14 +189,14 @@ def build_seasons(lg, d):
         next_s = seasons[i + 1] if i + 1 < len(seasons) else None
         n = lg["team_name"]
         summ = (f"{e(n(s['entering'], s['season']))} carried the belt into the {e(s['label'])} season. "
-                f"It changed hands {S.plural(s['changes'], 'time')} among {S.plural(s['distinct_holders'], 'program')}"
+                f"It changed hands {S.plural(s['changes'], 'time')} among {S.plural(s['distinct_holders'], unit1(lg))}"
                 + (f", {s['postseason_changes']} of those in the playoffs" if s["postseason_changes"] else "")
                 + f", and {e(n(s['ending'], s['season']))} {'hold' if s['in_progress'] else 'finished the season with'} it.")
         if s["most_defenses"]["team"] and s["most_defenses"]["defenses"]:
             summ += f" Most defenses: {e(n(s['most_defenses']['team'], s['season']))}, {s['most_defenses']['defenses']}."
         prev_link = f'<a href="{season_url(lg, prev_s["season"])}">← {e(prev_s["label"])}</a>' if prev_s else "<span></span>"
         next_link = f'<a href="{season_url(lg, next_s["season"])}">{e(next_s["label"])} →</a>' if next_s else "<span></span>"
-        nav = f'<nav class="pager mono">{prev_link}<a href="/seasons/">All seasons</a>{next_link}</nav>'
+        nav = f'<nav class="pager mono">{prev_link}<a href="{base(lg)}/seasons/">All seasons</a>{next_link}</nav>'
         body = f"""{S.subnav(lg, "seasons")}
 <section class="wrap block">
   <div class="kicker">{lg['long_name']} · season</div>
@@ -172,8 +208,8 @@ def build_seasons(lg, d):
   {games_table(lg, bgs)}
   {nav}
 </section>"""
-        ld = crumbs([(lg["long_name"], f"/"), ("Seasons", f"/seasons/"), (s["label"], season_url(lg, s["season"]))])
-        S.write(f"seasons/{s['season']}/index.html",
+        ld = crumbs([(lg["long_name"], f"{base(lg)}/"), ("Seasons", f"{base(lg)}/seasons/"), (s["label"], season_url(lg, s["season"]))])
+        S.write(out(lg, f"seasons/{s['season']}/index.html"),
                 S.page(f"{s['label']} {lg['name']} season: the lineal championship belt", body, path=season_url(lg, s["season"]), active=key, jsonld=ld,
                        description=f"Every {lg['name']} belt game in {s['label']}: {n(s['entering'], s['season'])} carried it in, it changed hands {s['changes']} times, and {n(s['ending'], s['season'])} {'hold' if s['in_progress'] else 'finished with'} it."))
 
@@ -196,7 +232,7 @@ def build_reigns(lg, d):
             last = bgs[-1] if bgs else None
             end = f"Lost it to {team_link(lg, r['lost_to'], r.get('end_season') or r['season'])}" + (f", {score_for(last, r['lost_to'])[0]}–{score_for(last, r['lost_to'])[1]}" if last and last['outcome'] == 'changed' else "") + f", on {S.d_long(r['end_date'])}."
         elif r.get("end_date"):
-            end = f"The reign ended on {S.d_long(r['end_date'])} when the program left Division I."
+            end = f"The reign ended on {S.d_long(r['end_date'])} when {lg.get('leave_text', 'the franchise stopped playing')}."
         else:
             end = "Still holding."
         prev_r = reigns[i - 1] if i else None
@@ -209,14 +245,14 @@ def build_reigns(lg, d):
     <div class="kicker dot">{lg['long_name']} · reign {r['index']:,}</div>
     <h1 class="disp holder" style="{S.fit(r['name'])}">{e(r['name'])}</h1>
     <p class="lede">{start} {end}</p>
-    <div class="stats"><div><b class="disp">{r.get('defenses', 0)}</b><span class="mono">Defenses</span></div><div><b class="disp">{r['days']:,}</b><span class="mono">Days</span></div><div><b class="disp">{S.ordinal(r['reign_no'])}</b><span class="mono">Reign for the program</span></div></div>
+    <div class="stats"><div><b class="disp">{r.get('defenses', 0)}</b><span class="mono">Defenses</span></div><div><b class="disp">{r['days']:,}</b><span class="mono">Days</span></div><div><b class="disp">{S.ordinal(r['reign_no'])}</b><span class="mono">Reign for the {unit1(lg)}</span></div></div>
   </div>
 </section>
 <section class="wrap block"><div class="head"><h2 class="disp">Every game of the reign</h2></div>{games_table(lg, bgs, anchors=False)}{nav}</section>"""
-        ld = crumbs([(lg["long_name"], f"/"), ("History", f"/history/"), (f"{r['name']} reign", f"/reigns/{r['index']}/")])
+        ld = crumbs([(lg["long_name"], f"{base(lg)}/"), ("History", f"{base(lg)}/history/"), (f"{r['name']} reign", f"{base(lg)}/reigns/{r['index']}/")])
         yr = r["start_date"][:4]
-        S.write(f"reigns/{r['index']}/index.html",
-                S.page(f"{r['name']}' {r.get('defenses', 0)}-defense belt reign ({yr})", body, path=f"/reigns/{r['index']}/", active=key, jsonld=ld,
+        S.write(out(lg, f"reigns/{r['index']}/index.html"),
+                S.page(f"{r['name']}' {r.get('defenses', 0)}-defense belt reign ({yr})", body, path=f"{base(lg)}/reigns/{r['index']}/", active=key, jsonld=ld,
                        description=f"{r['name']} held the lineal {lg['name']} championship belt for {S.plural(r['days'], 'day')} and {S.plural(r.get('defenses', 0), 'defense')} starting {S.d_long(r['start_date'])}. Every game of the reign."))
 
 
@@ -228,7 +264,7 @@ def build_rivalries(lg, d):
     n = lg["team_name"]
     rows = []
     for p in rivals:
-        url = f"/rivalries/{rivalry_slug(lg, p['a'], p['b'])}/"
+        url = f"{base(lg)}/rivalries/{rivalry_slug(lg, p['a'], p['b'])}/"
         rows.append(f'<tr><td><a href="{url}">{e(n(p["a"]))} vs. {e(n(p["b"]))}</a></td><td class="mono r">{p["meetings"]}</td>'
                     f'<td class="mono r">{p["a_wins"]}–{p["b_wins"]}{("–" + str(p["ties"])) if p["ties"] else ""}</td><td class="mono r">{p["changes"]}</td>'
                     f'<td class="mono r">{p["last"][:4]}</td></tr>')
@@ -237,7 +273,7 @@ def build_rivalries(lg, d):
         lead = p["a"] if p["a_wins"] > p["b_wins"] else p["b"] if p["b_wins"] > p["a_wins"] else None
         intro = (f"{e(n(p['a']))} and {e(n(p['b']))} have met {S.plural(p['meetings'], 'time')} with the {lg['name']} belt on the line, "
                  f"from {S.d_long(p['first'])} to {S.d_long(p['last'])}. The belt changed hands in {S.plural(p['changes'], 'of those games', 'of those games')}. "
-                 + (f"{e(n(lead))} leads the belt series {max(p['a_wins'], p['b_wins'])}–{min(p['a_wins'], p['b_wins'])}" if lead else f"The belt series is level at {p['a_wins']}–{p['b_wins']}")
+                 + (f"{e(n(lead))} {vb(lg, 'lead', 'leads')} the belt series {max(p['a_wins'], p['b_wins'])}–{min(p['a_wins'], p['b_wins'])}" if lead else f"The belt series is level at {p['a_wins']}–{p['b_wins']}")
                  + (f", with {S.plural(p['ties'], 'tie')}." if p["ties"] else "."))
         body = f"""{S.subnav(lg, "rivalries")}
 <section class="wrap block">
@@ -251,20 +287,20 @@ def build_rivalries(lg, d):
   </div>
   <p class="intro">{intro}</p>
   {games_table(lg, bgs, anchors=False)}
-  <p class="mono more"><a href="/compare/?a={p['a']}&amp;b={p['b']}">Compare these two →</a> · <a href="/rivalries/">All rivalries →</a></p>
+  <p class="mono more"><a href="{base(lg)}/compare/?a={p['a']}&amp;b={p['b']}">Compare these two →</a> · <a href="{base(lg)}/rivalries/">All rivalries →</a></p>
 </section>"""
-        ld = crumbs([(lg["long_name"], f"/"), ("Rivalries", f"/rivalries/"), (f"{n(p['a'])} vs. {n(p['b'])}", url)])
-        S.write(f"rivalries/{rivalry_slug(lg, p['a'], p['b'])}/index.html",
+        ld = crumbs([(lg["long_name"], f"{base(lg)}/"), ("Rivalries", f"{base(lg)}/rivalries/"), (f"{n(p['a'])} vs. {n(p['b'])}", url)])
+        S.write(out(lg, f"rivalries/{rivalry_slug(lg, p['a'], p['b'])}/index.html"),
                 S.page(f"{n(p['a'])} vs. {n(p['b'])}: {lg['name']} belt rivalry", body, path=url, active=key, jsonld=ld,
                        description=f"{n(p['a'])} vs. {n(p['b'])} with the lineal {lg['name']} championship on the line: {p['meetings']} meetings, {p['changes']} title changes, every game."))
     body = f"""{S.subnav(lg, "rivalries")}
 <section class="wrap block">
   <div class="head"><h1 class="disp">{lg['name']} belt rivalries</h1><span class="mono note">{len(rivals)} pairs with {RIVALRY_MIN}+ belt meetings</span></div>
-  <p class="intro">The matchups that have decided the {lg['name']} belt most often. Want a pair that isn't here? <a href="/compare/">Compare any two teams</a>.</p>
+  <p class="intro">The matchups that have decided the {lg['name']} belt most often. Want a pair that isn't here? <a href="{base(lg)}/compare/">Compare any two teams</a>.</p>
   <div class="tablewrap"><table class="history"><thead><tr><th class="mono">Matchup</th><th class="mono r">Meetings</th><th class="mono r">Wins (W–L{'–T' if any(p['ties'] for p in rivals) else ''})</th><th class="mono r">Title changes</th><th class="mono r">Last</th></tr></thead>
   <tbody>{"".join(rows)}</tbody></table></div>
 </section>"""
-    S.write(f"rivalries/index.html", S.page(f"{lg['name']} belt rivalries", body, path=f"/rivalries/", active=key,
+    S.write(out(lg, "rivalries/index.html"), S.page(f"{lg['name']} belt rivalries", body, path=f"{base(lg)}/rivalries/", active=key,
                                                   description=f"The rivalries that decided the lineal {lg['name']} championship belt most often, with every belt meeting."))
 
 
@@ -279,7 +315,7 @@ def build_compare(lg, d):
              bg["season"], bg.get("note") or ""] for bg in d["belt_games"] if bg.get("holder")]
     data = {"teams": {t: lg["team_name"](t) for t in teams}, "slugs": {t: S.slug(lg["team_name"](t)) for t in teams},
             "games": rows, "rivalries": [rivalry_slug(lg, p["a"], p["b"]) for p in d["rivalries"] if p["meetings"] >= RIVALRY_MIN]}
-    S.write(f"compare/data.json", json.dumps(data, separators=(",", ":")))
+    S.write(out(lg, "compare/data.json"), json.dumps(data, separators=(",", ":")))
     opts = "".join(f'<option value="{t}">{e(lg["team_name"](t))}</option>' for t in teams)
     body = f"""{S.subnav(lg, "compare")}
 <section class="wrap block">
@@ -307,22 +343,22 @@ function render(){{
   var m=w?(D.teams[w]+' won '+Math.max(hs,as)+'–'+Math.min(hs,as)):('Tied '+hs+'–'+as);
   rows='<tr><td class="mono n">'+r[0].toLocaleString()+'</td><td class="mono">'+fd(r[1])+'</td><td>'+esc(D.teams[r[2]])+' held it. '+esc(m)+(r[8]?' ('+esc(r[8])+')':'')+'</td><td class="r"><span class="tag'+(r[6]==='c'?' chg':'')+'">'+(r[6]==='c'?'Title change':'Defense')+'</span></td></tr>'+rows;}});
  var slug=[D.slugs[a],D.slugs[b]].sort().join('-vs-');
- var link=D.rivalries.indexOf(slug)>=0?'<p class="mono more"><a href="/rivalries/'+slug+'/">Full rivalry page →</a></p>':'';
+ var link=D.rivalries.indexOf(slug)>=0?'<p class="mono more"><a href="{base(lg)}/rivalries/'+slug+'/">Full rivalry page →</a></p>':'';
  O.innerHTML=g.length?('<div class="numbers"><div><b class="disp">'+g.length+'</b><span class="mono">Belt meetings</span></div><div><b class="disp">'+wa+'</b><span class="mono">'+esc(D.teams[a])+' wins</span></div><div><b class="disp">'+wb+'</b><span class="mono">'+esc(D.teams[b])+' wins</span></div><div><b class="disp">'+ch+'</b><span class="mono">Title changes</span></div></div>'+link+'<div class="tablewrap"><table class="history games"><thead><tr><th class="mono">Belt game</th><th class="mono">Date</th><th class="mono">What happened</th><th></th></tr></thead><tbody>'+rows+'</tbody></table></div>'):'<p class="intro">'+esc(D.teams[a])+' and '+esc(D.teams[b])+' have never met with the belt on the line.</p>';
  history.replaceState(null,'','?a='+a+'&b='+b);
 }}
 A.onchange=B.onchange=render;
-fetch('/compare/data.json').then(function(r){{return r.json();}}).then(function(j){{D=j;render();}});
+fetch('{base(lg)}/compare/data.json').then(function(r){{return r.json();}}).then(function(j){{D=j;render();}});
 }})();
 </script>"""
-    S.write(f"compare/index.html", S.page(f"Compare {lg['name']} teams: belt head-to-head", body, path=f"/compare/", active=key,
-                                                description=f"Pick any two {lg['name']} programs and see every time they met with the lineal championship belt on the line."))
+    S.write(out(lg, "compare/index.html"), S.page(f"Compare {lg['name']} teams: belt head-to-head", body, path=f"{base(lg)}/compare/", active=key,
+                                                description=f"Pick any two {lg['name']} {unit1(lg)}s and see every time they met with the lineal championship belt on the line."))
 
 
 # ------------------------------------------------------------------ next --
 
 def form_table(lg, rows):
-    lis = "".join(f'<tr><td class="mono">{S.d_short(r["date"], True)}</td><td>{"vs." if r["home"] else "at"} {e(r["opp_name"])}{" · postseason" if r["postseason"] else ""}</td>'
+    lis = "".join(f'<tr><td class="mono">{S.d_short(r["date"], True)}</td><td>{"vs." if r["home"] else "at"} {e(r["opp_name"])}{" · " + post_word(lg) if r["postseason"] else ""}</td>'
                   f'<td class="mono r"><b class="res {r["result"]}">{r["result"]}</b> {e(r["score"])}{(" " + e(r["note"])) if r["note"] else ""}</td></tr>' for r in rows)
     return f'<table class="history form"><tbody>{lis}</tbody></table>'
 
@@ -334,9 +370,9 @@ def build_next(lg, d):
     if not (pv and ng):
         body = f"""{S.subnav(lg, "next")}
 <section class="wrap prose"><div class="kicker">Next title defense</div><h1 class="disp">No defense scheduled yet</h1>
-<p>{e(cur['name'])} holds the {lg['name']} belt. Their next game isn't on the schedule yet ({e(d['status'].lower())}); this page fills in as soon as it is.</p>
-<p><a href="/">Back to the {lg['name']} belt →</a></p></section>"""
-        S.write(f"next/index.html", S.page(f"Next {lg['name']} belt defense", body, path=f"/next/", active=key,
+<p>{e(cur['name'])} {vb(lg, 'hold', 'holds')} the {lg['name']} belt. Their next game isn't on the schedule yet ({e(d['status'].lower())}); this page fills in as soon as it is.</p>
+<p><a href="{base(lg)}/">Back to the {lg['name']} belt →</a></p></section>"""
+        S.write(out(lg, "next/index.html"), S.page(f"Next {lg['name']} belt defense", body, path=f"{base(lg)}/next/", active=key,
                                                  description=f"Preview of the next lineal {lg['name']} championship title defense."))
         return
     h, c = pv["holder"], pv["challenger"]
@@ -346,14 +382,14 @@ def build_next(lg, d):
     rec = lambda r: f"{r['W']}–{r['L']}" + (f"–{r['T']}" if r["T"] else "")
     h2h = pv["h2h"]
     lead = ("even" if h2h["holder_wins"] == h2h["challenger_wins"] else
-            f"{e(lg['short_name'](h))} leads" if h2h["holder_wins"] > h2h["challenger_wins"] else f"{e(lg['short_name'](c))} leads")
+            f"{e(lg['short_name'](h))} {vb(lg, 'lead', 'leads')}" if h2h["holder_wins"] > h2h["challenger_wins"] else f"{e(lg['short_name'](c))} {vb(lg, 'lead', 'leads')}")
     bm = [d["_bg"][x] for x in [b["n"] for b in d["belt_games"] if b.get("holder") and {b["holder"], b["opponent"]} == {h, c}]]
     bm_h = sum(1 for b in bm if b["new_holder"] == h and not b["outcome"].endswith("(tie)"))
     bm_c = sum(1 for b in bm if b["new_holder"] == c and not b["outcome"].endswith("(tie)"))
     clr = pv.get("challenger_last_reign")
-    ch_hist = (f"{e(n(c))} has held the belt {S.plural(pv['challenger_reigns'], 'time')}; the last reign began {S.d_long(clr['start'])}"
-               + (f" and ended {S.d_long(clr['end'])}." if clr.get("end") else ".") if clr else f"{e(n(c))} has never held the {lg['name']} belt. A win would be the first reign in program history.")
-    stakes = (f"If {e(n(c))} wins, it takes the belt and start reign {cur['index'] + 1:,}. If {e(n(h))} wins, it's defense number {pv['holder_streak'] + 1} of this reign"
+    ch_hist = (f"{e(n(c))} {vb(lg, 'have', 'has')} held the belt {S.plural(pv['challenger_reigns'], 'time')}; the last reign began {S.d_long(clr['start'])}"
+               + (f" and ended {S.d_long(clr['end'])}." if clr.get("end") else ".") if clr else f"{e(n(c))} {vb(lg, 'have', 'has')} never held the {lg['name']} belt. A win would be the first reign in {unit1(lg)} history.")
+    stakes = (f"If {e(n(c))} {vb(lg, 'win, they take', 'wins, it takes')} the belt and start reign {cur['index'] + 1:,}. If {e(n(h))} {vb(lg, 'win', 'wins')}, it's defense number {pv['holder_streak'] + 1} of this reign"
               + (" (a tie also counts as a defense)." if lg.get("tie_rule") == "holder" and key in ("nfl", "mlb") else "."))
     spread = ""
     if ng.get("spread") is not None:
@@ -375,14 +411,14 @@ def build_next(lg, d):
     <div><b class="disp">{pv['challenger_reigns']}</b><span class="mono">{e(lg['short_name'](c))} reigns all-time</span></div>
   </div>
   <div class="two">
-    <div><h2 class="disp sub">{e(n(h))} · recent games</h2><p class="mono note">{sl(lg, pv['record_season'])} record, postseason included: {rec(pv['holder_record'])}</p>{form_table(lg, pv['holder_form'])}</div>
-    <div><h2 class="disp sub">{e(n(c))} · recent games</h2><p class="mono note">{sl(lg, pv['record_season'])} record, postseason included: {rec(pv['challenger_record'])}</p>{form_table(lg, pv['challenger_form'])}</div>
+    <div><h2 class="disp sub">{e(n(h))} · recent games</h2><p class="mono note">{sl(lg, pv['record_season'])} record, {post_word(lg)} included: {rec(pv['holder_record'])}</p>{form_table(lg, pv['holder_form'])}</div>
+    <div><h2 class="disp sub">{e(n(c))} · recent games</h2><p class="mono note">{sl(lg, pv['record_season'])} record, {post_word(lg)} included: {rec(pv['challenger_record'])}</p>{form_table(lg, pv['challenger_form'])}</div>
   </div>
   <h2 class="disp sub">Head to head</h2>
   <p class="intro">All-time: {e(lg['short_name'](h))} {h2h['holder_wins']}, {e(lg['short_name'](c))} {h2h['challenger_wins']}{f", {h2h['ties']} ties" if h2h['ties'] else ""}{f" since {S.d_long(h2h['first'])}" if h2h['first'] else ""}.
   {f"With the belt on the line they've met {S.plural(len(bm), 'time')}: {e(lg['short_name'](h))} won {bm_h}, {e(lg['short_name'](c))} won {bm_c}." if bm else "They have never met with the belt on the line."} {ch_hist}</p>
   {games_table(lg, bm[-10:][::-1], anchors=False) if bm else ""}
-  <p class="mono more"><a href="/compare/?a={h}&amp;b={c}">Full belt head-to-head →</a></p>
+  <p class="mono more"><a href="{base(lg)}/compare/?a={h}&amp;b={c}">Full belt head-to-head →</a></p>
 </section>"""
     import features as F
     body = body.replace(S.subnav(lg, "next"), S.subnav(lg, "next") + F.live_box(lg, d), 1) + F.next_extras(lg, d)
@@ -392,8 +428,8 @@ def build_next(lg, d):
     ld = {"@context": "https://schema.org", "@type": "SportsEvent", "name": f"{n(h)} {where} {n(c)}",
           "startDate": ng["date"], "sport": lg.get("sport", ""),
           "competitor": [{"@type": "SportsTeam", "name": n(h)}, {"@type": "SportsTeam", "name": n(c)}]}
-    S.write(f"next/index.html", S.page(f"{lg['short_name'](h)} {where} {lg['short_name'](c)}: {lg['name']} belt title defense preview", body,
-                                             path=f"/next/", active=key, jsonld=ld,
+    S.write(out(lg, "next/index.html"), S.page(f"{lg['short_name'](h)} {where} {lg['short_name'](c)}: {lg['name']} belt title defense preview", body,
+                                             path=f"{base(lg)}/next/", active=key, jsonld=ld,
                                              description=f"{n(h)} defend the lineal {lg['name']} championship belt {where} {n(c)} on {S.d_long(ng['date'])}: recent form, head-to-head and what's at stake."))
 
 
@@ -444,10 +480,11 @@ def build_otd(datas):
   {nav}
 </section>"""
             html = S.page(f"On this day, {label}: belt title changes", body, path=f"/on-this-day/{k}/",
-                          description=f"Every College Basketball Belt title change on {label}, from 1949–50 to today.")
+                          description=(S.otd_description(label) if hasattr(S, "otd_description")
+                                       else f"Every lineal championship belt title change on {label}, in every league we track."))
             S.write(f"on-this-day/{k}/index.html", html)
             if (m, dd) == (today.month, today.day):
-                S.write("on-this-day/index.html", html.replace(f'href="{S.SITE_URL}{S.P}/on-this-day/{k}/"', f'href="{S.SITE_URL}{S.P}/on-this-day/"'))
+                S.write("on-this-day/index.html", html.replace(f'href="{S.SITE_URL}{getattr(S, "P", "")}/on-this-day/{k}/"', f'href="{S.SITE_URL}{getattr(S, "P", "")}/on-this-day/"'))
 
 
 # --------------------------------------------------------------- stories --
@@ -471,7 +508,7 @@ def stories_for(lg, d):
     # 2. droughts
     dr = rec.get("droughts", [])
     never = rec.get("never_held", [])
-    parts = [f"<p>Every active Division I program and how long it's been since it last held the belt. The belt moves constantly, so a long wait usually means a program keeps losing the one game that matters.</p>"]
+    parts = [f"<p>Every active {lg.get('active_label', lg['name'] + ' ' + unit1(lg))} and how long it's been since it last held the belt. The belt moves constantly, so a long wait usually means a {unit1(lg)} keeps losing the one game that matters.</p>"]
     if never and len(never) <= 40:
         parts.append(f"<h2 class=\"disp\">Never held it</h2><p>{', '.join(team_link(lg, t) for t in never)}.</p>")
     elif never:
@@ -479,14 +516,14 @@ def stories_for(lg, d):
     parts.append("<h2 class=\"disp\">The longest waits</h2><ol>" + "".join(
         f"<li>{team_link(lg, x['team'])}: last held it {S.d_long(x['last'])}, {S.plural(x['days'], 'day')} ago.</li>" for x in dr) + "</ol>")
     out.append(("droughts", f"Waiting for the {lg['name']} belt: the longest droughts",
-                "The active programs that have gone longest without the belt, and the ones still waiting for their first reign.", "".join(parts)))
+                f"The active {unit1(lg)}s that have gone longest without the belt, and the ones still waiting for their first reign.", "".join(parts)))
     # 3. busiest seasons
     ss = {s["season"]: s for s in d["seasons"]}
     parts = ["<p>Some seasons the belt barely moves. Others it gets passed around like a hot potato. Here are the seasons it changed hands most, and the ones where it hardly moved.</p><h2 class=\"disp\">Busiest seasons</h2><ol>"]
     for s, c in rec["busiest_seasons"][:5]:
         x = ss.get(s)
         if x:
-            parts.append(f"<li><a href=\"{season_url(lg, s)}\">{e(x['label'])}</a>: {S.plural(c, 'title change')} among {S.plural(x['distinct_holders'], 'program')}; {e(n(x['ending'], s))} finished with it.</li>")
+            parts.append(f"<li><a href=\"{season_url(lg, s)}\">{e(x['label'])}</a>: {S.plural(c, 'title change')} among {S.plural(x['distinct_holders'], unit1(lg))}; {e(n(x['ending'], s))} finished with it.</li>")
     parts.append("</ol><h2 class=\"disp\">Quietest seasons</h2><ol>")
     for s, c in rec["quietest_seasons"][:5]:
         x = ss.get(s)
@@ -498,7 +535,7 @@ def stories_for(lg, d):
     # 4. how it got here
     ch = [bg for bg in d["belt_games"] if bg["outcome"] == "changed"][-12:]
     cur = d["current"]
-    parts = [f"<p>{e(cur['name'])} holds the {lg['name']} belt today. Here's how it got to them: the last {len(ch)} times it changed hands.</p><ol>"]
+    parts = [f"<p>{e(cur['name'])} {vb(lg, 'hold', 'holds')} the {lg['name']} belt today. Here's how it got to them: the last {len(ch)} times it changed hands.</p><ol>"]
     for bg in ch:
         parts.append(f"<li>{S.d_long(bg['date'])}: {game_line(lg, bg)}. <a href=\"{season_url(lg, bg['season'], bg['n'])}\">Season page →</a></li>")
     parts.append("</ol>")
@@ -506,33 +543,51 @@ def stories_for(lg, d):
                 f"The last {len(ch)} title changes, in order, ending with the current holder.", "".join(parts)))
     # 5. rivalries
     rv = d["rivalries"][:5]
-    parts = [f"<p>No two programs have fought over the {lg['name']} belt more often than these.</p>"]
+    parts = [f"<p>No two {unit1(lg)}s have fought over the {lg['name']} belt more often than these.</p>"]
     for i, p in enumerate(rv, 1):
         ties_txt = f", {p['ties']} ties" if p["ties"] else ""
-        parts.append(f"<h2 class=\"disp\">{i}. {e(n(p['a']))} vs. {e(n(p['b']))}</h2><p>{p['meetings']} belt meetings between {p['first'][:4]} and {p['last'][:4]}, {S.plural(p['changes'], 'title change')}. Belt series: {e(lg['short_name'](p['a']))} {p['a_wins']}, {e(lg['short_name'](p['b']))} {p['b_wins']}{ties_txt}. <a href=\"/rivalries/{rivalry_slug(lg, p['a'], p['b'])}/\">Every meeting →</a></p>")
+        parts.append(f"<h2 class=\"disp\">{i}. {e(n(p['a']))} vs. {e(n(p['b']))}</h2><p>{p['meetings']} belt meetings between {p['first'][:4]} and {p['last'][:4]}, {S.plural(p['changes'], 'title change')}. Belt series: {e(lg['short_name'](p['a']))} {p['a_wins']}, {e(lg['short_name'](p['b']))} {p['b_wins']}{ties_txt}. <a href=\"{base(lg)}/rivalries/{rivalry_slug(lg, p['a'], p['b'])}/\">Every meeting →</a></p>")
     out.append(("rivalries", f"The rivalries that decided the {lg['name']} belt",
-                "The five pairs of programs that have met most often with the belt on the line.", "".join(parts)))
+                f"The five pairs of {unit1(lg)}s that have met most often with the belt on the line.", "".join(parts)))
     return out
 
 
 def build_stories(datas):
+    """Belt Holders (NETWORK): a stories index per league plus an all-league one at /stories/.
+    The CBB site: one index per belt at <base>/stories/."""
+    network = getattr(S, "NETWORK", True)
     cards = []
     for lg in LIVE:
         d = datas[lg["key"]]
+        key = lg["key"]
+        mine = []
         for sslug, title, dek, html in stories_for(lg, d):
-            url = f"/stories/{sslug}/"
+            url = f"{base(lg)}/stories/{sslug}/"
+            more = f"More {lg['name']} stories →" if network else "More stories →"
             body = f"""{S.subnav(lg, "stories")}
 <section class="wrap prose story"><div class="kicker">{lg['long_name']} · story</div><h1 class="disp">{e(title)}</h1><p class="dek">{e(dek)}</p>{html}
-<p class="mono more"><a href="/stories/">More stories →</a></p></section>"""
+<p class="mono more"><a href="{base(lg)}/stories/">{more}</a></p></section>"""
             ld = {"@context": "https://schema.org", "@type": "Article", "headline": title, "description": dek,
-                  "dateModified": d["generated"], "publisher": {"@type": "Organization", "name": "The College Basketball Belt"}}
-            S.write(url.strip("/") + "/index.html", S.page(title, body, path=url, jsonld=ld, description=dek))
-            cards.append((lg, title, dek, url))
+                  "dateModified": d["generated"], "publisher": {"@type": "Organization", "name": site_name()}}
+            S.write(url.strip("/") + "/index.html", S.page(title, body, path=url, active=key, jsonld=ld, description=dek))
+            mine.append((lg, title, dek, url))
+        if network:
+            lis = "".join(f'<a class="storycard" href="{u}"><b class="disp">{e(t)}</b><span>{e(dk)}</span></a>' for _, t, dk, u in mine)
+            body = f"""{S.subnav(lg, "stories")}
+<section class="wrap block"><div class="head"><h1 class="disp">{lg['name']} belt stories</h1><span class="mono note">Written from the data, updated with every game</span></div><div class="storygrid">{lis}</div></section>"""
+            S.write(out(lg, "stories/index.html"), S.page(f"{lg['name']} belt stories", body, path=f"{base(lg)}/stories/", active=key,
+                                                        description=f"Long reads on the lineal {lg['name']} championship belt: the longest reigns, the longest droughts, the wildest seasons and the rivalries that decided it."))
+        cards += mine
     lis = "".join(f'<a class="storycard" href="{u}"><span class="mono lg">{lg["name"]}</span><b class="disp">{e(t)}</b><span>{e(dk)}</span></a>' for lg, t, dk, u in cards)
-    body = f"""{S.subnav(lg, "stories")}
+    if network:
+        body = f"""<section class="wrap block"><div class="head"><h1 class="disp">Stories</h1><span class="mono note">Every league</span></div><div class="storygrid">{lis}</div></section>"""
+        S.write("stories/index.html", S.page("Stories", body, path="/stories/",
+                                             description="Long reads on the lineal championship belts: the longest reigns, the longest droughts, the wildest seasons and the rivalries that decided them."))
+    else:
+        body = f"""{S.subnav(lg, "stories")}
 <section class="wrap block"><div class="head"><h1 class="disp">Stories</h1><span class="mono note">Written from the data, updated with every game</span></div><div class="storygrid">{lis}</div></section>"""
-    S.write("stories/index.html", S.page("Stories", body, path="/stories/",
-                                         description="Long reads on the College Basketball Belt: the longest reigns, the longest droughts, the wildest seasons and the rivalries that decided it."))
+        S.write(out(lg, "stories/index.html"), S.page("Stories", body, path=f"{base(lg)}/stories/",
+                                                    description=f"Long reads on the {getattr(S, 'SEC', {}).get('short', site_name())}: the longest reigns, the longest droughts, the wildest seasons and the rivalries that decided it."))
     return cards
 
 
@@ -544,7 +599,7 @@ def build_search(datas):
         d = datas[lg["key"]]
         teams = {r["team"] for r in d["reigns"]}
         for t in teams:
-            idx.append([lg["team_name"](t), f"{lg['name']} team", f"{lg.get('base', '')}/teams/{S.slug(lg['team_name'](t))}/"])
+            idx.append([lg["team_name"](t), f"{lg['name']} team", f"{base(lg)}/teams/{S.slug(lg['team_name'](t))}/"])
         for s in d["seasons"]:
             idx.append([f"{lg['name']} {s['label']}", "Season", season_url(lg, s["season"])])
     S.write("search/index.json", json.dumps(idx, separators=(",", ":")))
@@ -561,7 +616,8 @@ q.addEventListener('input',run);
 var p=new URLSearchParams(location.search).get('q');if(p){q.value=p;}
 fetch('/search/index.json').then(function(r){return r.json();}).then(function(j){I=j;run();});})();
 </script>"""
-    S.write("search/index.html", S.page("Search", body, path="/search/", description=f"Find any team or season on the {S.SEC.get('short', 'College Basketball Belt')}."))
+    S.write("search/index.html", S.page("Search", body, path="/search/", description=(S.search_description() if hasattr(S, "search_description")
+                                                                                   else "Find any team or season on Belt Holders.")))
 
 
 # ----------------------------------------------------------------- teams --
@@ -579,7 +635,7 @@ def team_extras(lg, d, team):
         rec[opp][0 if mine > theirs else 1 if mine < theirs else 2] += 1
         if bg["new_holder"] == team or bg["holder"] == team:
             seasons.add(bg["season"])
-    rows = "".join(f'<tr><td>{team_link(lg, o)}</td><td class="mono r">{w}–{l}{f"–{t}" if t else ""}</td><td class="mono r"><a href="/compare/?a={team}&amp;b={o}">Games →</a></td></tr>'
+    rows = "".join(f'<tr><td>{team_link(lg, o)}</td><td class="mono r">{w}–{l}{f"–{t}" if t else ""}</td><td class="mono r"><a href="{base(lg)}/compare/?a={team}&amp;b={o}">Games →</a></td></tr>'
                    for o, (w, l, t) in sorted(rec.items(), key=lambda kv: -sum(kv[1]))[:15])
     chips = "".join(f'<a class="chip" style="--c:{lg["team_colors"](team)[0]}" href="{season_url(lg, s)}">{e(sl(lg, s))}</a>' for s in sorted(seasons, reverse=True))
     return f"""<section class="wrap block"><div class="two">
@@ -592,7 +648,7 @@ def team_extras(lg, d, team):
 
 def build_all(datas):
     import features as F
-    F.init(S, lambda lg: lg.get("base", ""), "The College Basketball Belt")
+    F.init(S, base, site_name())
     for lg in LIVE:
         d = datas[lg["key"]]
         d["_bg"] = {bg["n"]: bg for bg in d["belt_games"]}

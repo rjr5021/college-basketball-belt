@@ -88,6 +88,8 @@ LEAGUE = {
     "singular": True, "unit": "programs", "post_word": "postseason", "feed": False,
     "champions_note": "Here the champion is the NCAA tournament winner.",
     "base": "", "lineage": os.path.join("data", "lineage.json"),
+    "unit_one": "program", "post_tag": "postseason", "leave_text": "the program left Division I",
+    "active_label": "Division I program",
 }
 WOMEN = {
     "key": "women", "name": "Women's College Basketball", "long_name": "The Women's College Basketball Belt",
@@ -97,5 +99,7 @@ WOMEN = {
     "singular": True, "unit": "programs", "post_word": "postseason", "feed": False,
     "champions_note": "Here the champion is the NCAA tournament winner.",
     "base": "/women", "lineage": os.path.join("data", "women", "lineage.json"),
+    "unit_one": "program", "post_tag": "postseason", "leave_text": "the program left Division I",
+    "active_label": "Division I program",
 }
 LIVE = [LEAGUE]

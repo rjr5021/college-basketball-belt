@@ -20,6 +20,8 @@ from datetime import date, datetime
 SITE_URL = "https://collegebasketballbelt.com"
 DOMAIN = "collegebasketballbelt.com"
 OUT = "site"
+SITE_NAME = "The College Basketball Belt"
+NETWORK = False          # site_extras: one stories index per belt, no all-league index
 ADSENSE_PUBLISHER_ID = ""        # "pub-3317069252410560" once the site is approved in AdSense
 GOATCOUNTER_CODE = "collegebasketballbelt"
 STYLES_VERSION = "6"
@@ -52,6 +54,15 @@ GLOBAL_PATHS = ("styles.css", "favicon.png", "apple-touch-icon.png", "manifest.j
                 "og-holder.png", "tablekit.js", "privacy/", "about/", "women/")
 _REWRITE = re.compile(r'((?:href|src)=["\']|fetch\([\'"]|"(?:https://collegebasketballbelt\.com))/(?!(?:' +
                       "|".join(re.escape(x) for x in GLOBAL_PATHS) + r'))')
+
+
+def otd_description(label):
+    """site_extras hook: the on-this-day page description for the belt being built."""
+    return f"Every {SEC.get('short', 'College Basketball Belt')} title change on {label}, from {SEC.get('since', '1949–50')} to today."
+
+
+def search_description():
+    return f"Find any team or season on the {SEC.get('short', 'College Basketball Belt')}."
 
 
 def u(path):
