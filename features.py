@@ -280,7 +280,7 @@ def build_outlook(lg, d):
   <p class="intro">We played out the rest of the schedule on file ({S.d_long(look['through'])} is the last game) {look['sims']:,} times, passing the belt game by game with Elo win chances. {e(n(h))} {verb(lg, 'keep', 'keeps')} it to the end in {pct(odds.get(h, 0), 1)} of runs. {contenders} teams finish with it at least 1% of the time.</p>
   <div class="tablewrap"><table class="history odds"><thead><tr><th class="mono">#</th><th class="mono">Team</th><th></th><th class="mono r">Chance</th><th class="mono r">Elo</th></tr></thead><tbody>{rows}</tbody></table></div>"""
     else:
-        outlook_html = f"""<h2 class="disp sub">Season outlook</h2><p class="intro">There's no regular-season schedule left on file for {e(n(h))} ({e(d.get('status', '').lower())}). The outlook comes back as soon as the next schedule is out.</p>"""
+        outlook_html = f"""<h2 class="disp sub">Season outlook</h2><p class="intro">{e(belt_state(lg, d)['line'] or "There's no regular-season schedule left on file for " + n(h) + ".")} The outlook comes back as soon as the next schedule is out.</p>"""
     tree = m.get("tree")
     tree_html = (f'<h2 class="disp sub">The belt tree</h2><p class="intro">Every way the next four belt games can go.</p>{tree_columns(lg, tree)}'
                  if tree else "")

@@ -370,8 +370,8 @@ def build_next(lg, d):
     n = lg["team_name"]
     if not (pv and ng):
         body = f"""{S.subnav(lg, "next")}
-<section class="wrap prose"><div class="kicker">Next title defense</div><h1 class="disp">No defense scheduled yet</h1>
-<p>{e(cur['name'])} {vb(lg, 'hold', 'holds')} the {lg['name']} belt. Their next game isn't on the schedule yet ({e(d['status'].lower())}); this page fills in as soon as it is.</p>
+<section class="wrap prose"><div class="kicker">Next title defense</div><h1 class="disp">{"The belt is frozen" if F.belt_state(lg, d)["state"] == "postseason_holder_out" else "No defense scheduled yet"}</h1>
+<p>{e(F.belt_state(lg, d)["line"])} This page fills in as soon as the next game is on the schedule.</p>
 <p><a href="{base(lg)}/">Back to the {lg['name']} belt →</a></p></section>"""
         S.write(out(lg, "next/index.html"), S.page(f"Next {lg['name']} belt defense", body, path=f"{base(lg)}/next/", active=key,
                                                  description=f"Preview of the next lineal {lg['name']} championship title defense."))

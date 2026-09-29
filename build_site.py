@@ -731,12 +731,13 @@ def build_feed(d):
 
 
 def build_api(d):
+    import features
     cur, ng = d["current"], d.get("next_game")
     out = {"holder": cur["name"], "since": cur["start_date"], "days_held": cur["days"],
            "defenses": cur.get("defenses", 0), "team_reign_number": cur["reign_no"],
            "next_game": ({"team": cur["name"], "opponent": ng["challenger_name"], "is_home": ng["holder_home"],
                           "neutral": ng["neutral"], "date": ng["date"], "venue_name": ng.get("venue")} if ng else None),
-           "generated_at": d["generated"], "site": SITE_URL + P}
+           "state": features.belt_state(LG, d)["state"], "generated_at": d["generated"], "site": SITE_URL + P}
     write("api/current.json", json.dumps(out, indent=1))
 
 
