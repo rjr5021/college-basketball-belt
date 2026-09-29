@@ -896,7 +896,9 @@ def build_more(lg, d):
         ("defend-or-dethrone/", "Defend or dethrone", "Real belt games. Does the holder keep it? Build a streak."),
         ("heartbreak/", "Heartbreak list", "The closest calls, escapes and heartbreaks."),
         ("playoffs/", "The belt in the playoffs", "Every postseason belt game, season by season."),
-        ("splits/", "Home, road & overtime", "Road warriors, home fortresses and extra-time title changes."),
+        ("splits/", "Home, road & overtime" if any(bg.get("ot") for bg in d["belt_games"]) else "Home and road",
+         "Road warriors, home fortresses and extra-time title changes." if any(bg.get("ot") for bg in d["belt_games"])
+         else "Road warriors and home fortresses."),
         ("standings/", "Belt vs. the standings", "Did the holder have the best record?"),
         ("ap-poll/", "Belt vs. the AP poll", "Was the holder ranked? How often the belt and No. 1 lined up."),
         ("what-if/", "What if?", "Famous title changes flipped and replayed."),
@@ -1472,7 +1474,7 @@ def build_splits(lg, d):
             (home_take if bg["home"] == bg["opponent"] else road_take)[bg["opponent"]] += 1
         elif bg["outcome"].startswith("retained"):
             (home_def if bg["home"] == bg["holder"] else road_def)[bg["holder"]] += 1
-        if bg.get("note") and bg["outcome"] == "changed":
+        if bg.get("ot") and bg["outcome"] == "changed":
             ot.append(bg)
     tot_h = sum(1 for bg in d["belt_games"] if bg.get("holder") and bg["home"] == bg["holder"])
     def_h = sum(home_def.values())
@@ -1480,11 +1482,15 @@ def build_splits(lg, d):
     def_r = sum(road_def.values())
     tab = lambda c: "".join(f'<tr><td><i style="background:{lg["team_colors"](t)[0]}"></i>{tlink(lg, t)}</td><td class="mono r">{v}</td></tr>' for t, v in c.most_common(10))
     ot_rows = "".join(f'<tr><td class="mono">{S.d_short(bg["date"], True)}</td><td>{_gline(lg, bg)}</td></tr>' for bg in ot[-20:][::-1])
-    ot_word = {"nhl": "overtime and shootouts", "mlb": "extra innings", "nfl": "overtime", "nba": "overtime"}.get(lg.get("key"), "overtime")
+    ot_word = {"nhl": "overtime and shootouts", "pwhl": "overtime and shootouts", "mlb": "extra innings",
+               "mls": "extra time and penalties", "nwsl": "extra time and penalties"}.get(lg.get("key"), "overtime")
+    # show the extra-time figure only where the data records it (soccer league play, international
+    # matches and the CFL/NFL/MLB sources don't) (BH-7)
+    has_ot = any(bg.get("ot") for bg in d["belt_games"])
     body = f"""{S.subnav(lg, "more")}
 <section class="wrap block">
-  <div class="head"><h1 class="disp">Home, road and extra time</h1></div>
-  {numbers([(pct(def_h / tot_h) if tot_h else "—", "Holders defend at home"), (pct(def_r / tot_r) if tot_r else "—", "Holders defend on the road"), (f"{sum(road_take.values()):,}", "Title changes on the road"), (f"{len(ot):,}", f"Title changes in {ot_word}")])}
+  <div class="head"><h1 class="disp">Home, road{" and extra time" if has_ot else ""}</h1></div>
+  {numbers([(pct(def_h / tot_h) if tot_h else "—", "Holders defend at home"), (pct(def_r / tot_r) if tot_r else "—", "Holders defend on the road"), (f"{sum(road_take.values()):,}", "Title changes on the road")] + ([(f"{len(ot):,}", f"Title changes in {ot_word}")] if has_ot else []))}
   <div class="two">
     <div><h2 class="disp sub">Road warriors</h2><p class="mono note">Took the belt in the holder’s building</p><table class="history"><tbody>{tab(road_take)}</tbody></table></div>
     <div><h2 class="disp sub">Home fortresses</h2><p class="mono note">Most successful home defenses</p><table class="history"><tbody>{tab(home_def)}</tbody></table></div>
@@ -1495,8 +1501,9 @@ def build_splits(lg, d):
   </div>
   {f'<h2 class="disp sub">Title changes in {ot_word}</h2><div class="tablewrap"><table class="history"><tbody>{ot_rows}</tbody></table></div>' if ot_rows else ''}
 </section>"""
-    page(lg, f"{lg['name']} belt: home, road and extra time", body, "splits/",
-         f"How the lineal {lg['name']} belt moves at home and on the road: road warriors, home fortresses and title changes in {ot_word}.")
+    page(lg, f"{lg['name']} belt: home, road{' and extra time' if has_ot else ''}", body, "splits/",
+         f"How the lineal {lg['name']} belt moves at home and on the road: road warriors, home fortresses"
+         + (f" and title changes in {ot_word}." if has_ot else " and the holders who travel best."))
 
 
 def build_standings(lg, d):

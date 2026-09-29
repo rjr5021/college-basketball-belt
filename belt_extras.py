@@ -12,6 +12,7 @@ build from the full game list and the engine's output:
 Pure data; build_site.py turns it into pages.
 """
 
+import re
 from collections import Counter, defaultdict
 from datetime import date
 
@@ -46,6 +47,7 @@ def annotate(league, games, belt_games, reigns):
         s = bg["season"]
         g = by_id.get(str(bg.get("game_id")), {})
         bg["note"] = g.get("note") or ""
+        bg["ot"] = extra_time(g)
         holder = bg.get("holder")
         if holder:
             r = reign_for(holder, bg["date"])
@@ -69,6 +71,19 @@ def annotate(league, games, belt_games, reigns):
             nr = reign_for(bg["new_holder"], bg["date"])
             if nr and nr["start_date"] == bg["date"]:
                 nr.setdefault("opened_by", bg["n"])
+
+
+OT_NOTES = re.compile(r"^(\d*OT|SO|AET|pens?|extra time|shootout)$", re.I)
+
+
+def extra_time(g):
+    """Was this game decided beyond regulation? An adapter can say so with an explicit
+    "ot" field; otherwise only the adapters' extra-time markers count ("OT", "2OT", "SO",
+    "AET", "pens"). Other notes (competition names, "Grey Cup", "forfeit") are not
+    extra time (BH-7)."""
+    if "ot" in g:
+        return bool(g["ot"])
+    return bool(OT_NOTES.match((g.get("note") or "").strip()))
 
 
 def seasons(league, games, belt_games, reigns, today, upcoming=None):
