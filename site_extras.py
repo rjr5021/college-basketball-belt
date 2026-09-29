@@ -590,7 +590,36 @@ def stories_for(lg, d):
         parts.append(f"<h2 class=\"disp\">{i}. {e(n(p['a']))} vs. {e(n(p['b']))}</h2><p>{p['meetings']} belt meetings between {p['first'][:4]} and {p['last'][:4]}, {S.plural(p['changes'], 'title change')}. Belt series: {e(lg['short_name'](p['a']))} {p['a_wins']}, {e(lg['short_name'](p['b']))} {p['b_wins']}{ties_txt}. <a href=\"{base(lg)}/rivalries/{rivalry_slug(lg, p['a'], p['b'])}/\">Every meeting →</a></p>")
     out.append(("rivalries", f"The rivalries that decided the {lg['name']} belt",
                 f"The five pairs of {unit1(lg)}s that have met most often with the belt on the line.", "".join(parts)))
+    # 6. frozen (audit 7.18): seasons the holder missed the postseason and carried the belt over
+    fz = frozen_seasons(lg, d)
+    if fz:
+        st = F.belt_state(lg, d)
+        pw = post_word(lg)
+        now = (f"<p><b>Right now:</b> {e(st['line'])}</p>" if st["state"] == "postseason_holder_out" else "")
+        items = "".join(f"<li><a href=\"{season_url(lg, x['season'])}\">{e(x['label'])}</a>: {e(n(x['holder'], x['season']))} sat out the {e(pw)} with the belt"
+                        + (f" while {e(n(x['champion'], x['season']))} won the title" if x.get("champion") else "") + ".</li>" for x in fz[:30])
+        parts = [f"<p>The belt only moves when its holder plays. When the holder's season ends early, the belt freezes: the champions get crowned in the {e(pw)}, "
+                 f"and the belt waits for next season. It has happened {S.plural(len(fz), 'time')} in {lg['name']} belt history.</p>{now}<h2 class=\"disp\">Every frozen season, newest first</h2><ol>{items}</ol>"]
+        out.append(("frozen", f"Frozen: when the {lg['name']} belt sat out the {pw}",
+                    f"{S.plural(len(fz), 'season')} the belt holder missed the {pw} and carried the belt into the next season.", "".join(parts)))
     return out
+
+
+def frozen_seasons(lg, d):
+    """Seasons whose postseason was played without the belt: a champion was crowned, and no
+    postseason game that season was a belt game (the holder wasn't there)."""
+    if not F.caps(lg, d)["has_postseason"]:
+        return []
+    post = {bg["season"] for bg in d["belt_games"] if bg.get("season_type") != "regular"}
+    live = {x["season"] for x in d.get("seasons", []) if x.get("in_progress")}
+    ss = {x["season"]: x for x in d.get("seasons", [])}
+    out = []
+    for c in (d.get("models") or {}).get("champions") or []:
+        s = c.get("season")
+        if s in post or s in live or s not in ss or not c.get("champion"):
+            continue
+        out.append({"season": s, "label": ss[s]["label"], "holder": c.get("holder") or ss[s]["ending"], "champion": c.get("champion")})
+    return sorted(out, key=lambda x: -x["season"])
 
 
 def build_stories(datas):
