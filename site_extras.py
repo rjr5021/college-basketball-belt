@@ -248,7 +248,7 @@ def build_reigns(lg, d):
         ld = crumbs([(lg["long_name"], f"{base(lg)}/"), ("History", f"{base(lg)}/history/"), (f"{r['name']} reign", f"{base(lg)}/reigns/{r['index']}/")])
         yr = r["start_date"][:4]
         S.write(out(lg, f"reigns/{r['index']}/index.html"),
-                S.page(f"{r['name']}' {r.get('defenses', 0)}-defense belt reign ({yr})", body, path=f"{base(lg)}/reigns/{r['index']}/", active=key, jsonld=ld,
+                S.page(f"{F.poss(r['name'].split(' (')[0])} {r.get('defenses', 0)}-defense belt reign ({yr})", body, path=f"{base(lg)}/reigns/{r['index']}/", active=key, jsonld=ld,
                        description=f"{r['name']} held the lineal {lg['name']} championship belt for {S.plural(r['days'], 'day')} and {S.plural(r.get('defenses', 0), 'defense')} starting {S.d_long(r['start_date'])}. Every game of the reign."))
 
 
@@ -426,7 +426,7 @@ def build_next(lg, d):
           "competitor": [{"@type": "SportsTeam", "name": n(h)}, {"@type": "SportsTeam", "name": n(c)}]}
     S.write(out(lg, "next/index.html"), S.page(f"{lg['short_name'](h)} {where} {lg['short_name'](c)}: {lg['name']} belt title defense preview", body,
                                              path=f"{base(lg)}/next/", active=key, jsonld=ld,
-                                             description=f"{n(h)} defend the lineal {lg['name']} championship belt {where} {n(c)} on {S.d_long(ng['date'])}: recent form, head-to-head and what's at stake."))
+                                             description=f"{n(h)} {vb(lg, 'defend', 'defends')} the lineal {lg['name']} championship belt {where} {n(c)} on {S.d_long(ng['date'])}: recent form, head-to-head and what's at stake."))
 
 
 # ----------------------------------------------------------- on this day --

@@ -321,13 +321,21 @@ def holder_plate(d):
     top, bottom, ink, accent = plate(p, s)
     if cur.get("seed"):
         lede = SEC["plate_seed"]
+    opener = next((g for g in d["belt_games"] if g["date"] == cur["start_date"] and g.get("new_holder") == cur["team"]), None)
+    in_final = bool(opener and opener.get("round") == "Title game")
+    if cur.get("seed"):
+        pass
+    elif cur.get("won_from") and in_final:
+        lede = (f"Took the belt from {e(cur['won_from_name'])}, {score_text(cur['won_score'])}, "
+                f"in the {opener['season']} national championship game.")
     elif cur.get("won_from"):
         lede = (f"Took the belt from {e(cur['won_from_name'])}, {score_text(cur['won_score'])}, "
                 f"on {d_long(cur['start_date'])}.")
     else:
         lede = f"Holding since {d_long(cur['start_date'])}."
     last = d["march"][-1] if d["march"] else None
-    if last and last["champion_team"] == cur["team"] and last["end_holder"] == cur["name"] and cur["start_date"][:4] == str(last["season"]):
+    if (not in_final and last and last["champion_team"] == cur["team"] and last["end_holder"] == cur["name"]
+            and cur["start_date"][:4] == str(last["season"])):
         lede += f" Then won the {last['season']} national title with it."
     ng = d.get("next_game")
     box = ""
@@ -729,7 +737,7 @@ def build_api(d):
 def build_meta_files(d):
     cur = d["current"]
     lines = ["# The College Basketball Belt", "", "> Lineal championship belts for men's and women's college basketball: each passes to whoever beats the holder, game by game (men's since the 1949 NCAA champion, women's since the 1986 champion). Updated every three hours.", "",
-             f"- Current holder: {cur['name']} (since {cur['start_date']}, {cur.get('defenses', 0)} defenses)",
+             f"- Current holder: {cur['name']} (since {cur['start_date']}, {plural(cur.get('defenses', 0), 'defense')})",
              f"- [Current holder and next defense]({SITE_URL}/)", f"- [Every reign]({SITE_URL}/history/)", f"- [Records]({SITE_URL}/records/)",
              f"- [March: the belt in the NCAA tournament]({SITE_URL}/march/)",
              f"- [The women's belt (since 1986-87)]({SITE_URL}/women/)", f"- [Data downloads (CSV)]({SITE_URL}/data/)", f"- [Rules]({SITE_URL}/rules/)",

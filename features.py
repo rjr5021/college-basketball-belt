@@ -64,6 +64,64 @@ def verb(lg, plural_form, singular_form):
     return singular_form if lg.get("singular") else plural_form
 
 
+def poss(name):
+    """Possessive of a team name, as CFB's possessive(): Michigan’s, the Bengals’, Chicago White Sox’s."""
+    return name + ("’" if name.endswith(("s", "S")) else "’s")
+
+
+def belt_state(lg, d):
+    """BH-12: one state per belt, used by the tiles, the plate, /next/, /outlook/ and api/current.json.
+
+      in_season_next_game     the holder's next game is on the schedule
+      offseason_next_known    offseason, but the holder's first game of next season is already out
+      postseason_holder_out   the league is still playing (postseason) but the holder is done:
+                              the belt is frozen and carries over to next season
+      offseason_schedule_pending  offseason, no game for the holder on file yet
+    Returns {state, pill, foot, sub, line}; foot/sub fill the tile foot when there's no next game."""
+    st = _belt_state(lg, d)
+    h = d.get("_health")                     # NET-2: data/health.json from check_freshness.py
+    if h and not h.get("ok", True):
+        st.update(delayed=True, pill="Data delayed", reason=h.get("reason", ""))
+    return st
+
+
+def _belt_state(lg, d):
+    ng, status, cur = d.get("next_game"), d.get("status") or "", d["current"]
+    name = lg["team_name"](cur["team"])
+    last = (d.get("seasons") or [None])[-1]
+    nxt = None
+    if last and lg.get("unit") != "nations":
+        lab = str(last.get("label") or last["season"])
+        y = int(lab[:4]) + 1
+        nxt = f"{y}–{str(y + 1)[2:]}" if "–" in lab else str(y)
+    they = verb(lg, "their", "its")
+    again = lg["short_name"](cur["team"])
+    again = again if lg.get("singular") else f"the {again}"
+    if ng:
+        if status == "In season":
+            return {"state": "in_season_next_game", "pill": status, "foot": "", "sub": "", "line": ""}
+        return {"state": "offseason_next_known", "pill": status or "Offseason", "foot": "", "sub": "",
+                "line": f"{name} {verb(lg, 'hold', 'holds')} the belt through the offseason; the next defense is {S.d_long(ng['date'])}."}
+    if status == "In season":
+        into = f"into the {nxt} season" if nxt else "into next season"
+        return {"state": "postseason_holder_out", "pill": "Belt frozen", "foot": "Frozen", "sub": f"Until {nxt}" if nxt else "Until next season",
+                "line": (f"{name} {verb(lg, 'are', 'is')} done for the season while the rest of the league plays on, so the belt is frozen: "
+                         f"{verb(lg, 'they carry', 'it carries')} it {into}, and nobody can take it until {again} {verb(lg, 'play', 'plays')} again.")}
+    first = f"the first game on {poss(name)} {nxt} schedule" if nxt else f"{poss(name)} next game"
+    return {"state": "offseason_schedule_pending", "pill": status or "Offseason", "foot": "Offseason", "sub": "Schedule pending",
+            "line": f"{name} {verb(lg, 'hold', 'holds')} the belt through the offseason. The next defense is {first}, once {they} schedule is out."}
+
+
+def belt_tag(lg):
+    """How a short <title> names the belt: "Bundesliga belt"; single-sport sites set their own ("belt game")."""
+    return lg.get("title_belt", f"{lg['name']} belt")
+
+
+def unit_one(lg):
+    """One team, in the belt's own word: franchise, club, nation, program."""
+    return lg.get("unit_one", "franchise")
+
+
 def unit(lg):
     return lg.get("unit", "franchises")
 
@@ -242,7 +300,7 @@ def build_outlook(lg, d):
   </div>
 </section>"""
     page(lg, f"State of the {lg['name']} belt: odds, belt tree and outlook", body, "outlook/",
-         f"Who's likely to hold the lineal {lg['name']} championship belt next: {n(h)}'s chance to defend, the belt tree for the next four games, and season-end odds for every team.")
+         f"Who's likely to hold the lineal {lg['name']} championship belt next: {poss(n(h))} chance to defend, the belt tree for the next four games, and season-end odds for every team.")
 
 
 # =============================================================== champions ==
@@ -414,7 +472,7 @@ function go(){{
  if(o<0){{O.innerHTML='<p class="intro">The belt didn\\'t exist yet.</p>';return;}}
  var lo=0,hi=D.r.length-1;while(lo<hi){{var m=(lo+hi+1)>>1;if(D.r[m][0]<=o)lo=m;else hi=m-1;}}
  var r=D.r[lo],nm=D.names[r[2]],now=(r[1]>=Math.round((Date.parse(D.today+'T12:00:00Z')-Date.parse(D.first+'T12:00:00Z'))/864e5));
- O.innerHTML='<div class="ondate" style="--c:'+D.colors[r[2]]+'"><div class="kicker">'+fd(o)+'</div><b class="disp">'+nm+'</b><p>Reign '+r[4].toLocaleString()+' of the belt, and the '+ord(r[5])+' for the '+'{'team' if lg.get('singular') else 'franchise'}'+'. Held from '+fd(r[0])+(now?' and still going':' to '+fd(r[1]))+', with '+r[3]+' successful defense'+(r[3]===1?'':'s')+'.</p><p class="mono"><a href="'+D.urls[r[2]]+'">'+nm+' belt history →</a></p></div>';
+ O.innerHTML='<div class="ondate" style="--c:'+D.colors[r[2]]+'"><div class="kicker">'+fd(o)+'</div><b class="disp">'+nm+'</b><p>Reign '+r[4].toLocaleString()+' of the belt, and the '+ord(r[5])+' for the '+'{unit_one(lg)}'+'. Held from '+fd(r[0])+(now?' and still going':' to '+fd(r[1]))+', with '+r[3]+' successful defense'+(r[3]===1?'':'s')+'.</p><p class="mono"><a href="'+D.urls[r[2]]+'">'+nm+' belt history →</a></p></div>';
  history.replaceState(null,'','?d='+I.value);
 }}
 function ord(n){{var s=['th','st','nd','rd'],v=n%100;return n+(s[(v-20)%10]||s[v]||s[0]);}}
@@ -798,7 +856,7 @@ def build_ics(lg, d):
         else:
             st = f"DTSTART;VALUE=DATE:{ng['date'].replace('-', '')}"
             en = f"DTEND;VALUE=DATE:{(date.fromisoformat(ng['date']) + timedelta(days=1)).strftime('%Y%m%d')}"
-        desc = _ics_escape(f"{n(h)} defend the lineal {lg['name']} belt against {n(c)}. Preview: {S.SITE_URL}{b(lg)}/next/")
+        desc = _ics_escape(f"{n(h)} {verb(lg, 'defend', 'defends')} the lineal {lg['name']} belt against {n(c)}. Preview: {S.SITE_URL}{b(lg)}/next/")
         loc = _ics_escape(ng.get("stadium") or "")
         ev.append("\r\n".join(["BEGIN:VEVENT", f"UID:{lg.get('key', 'cbb')}-{ng['date']}-{h}-{c}@{S.SITE_URL.split('//')[1]}",
                                f"DTSTAMP:{stamp}", st, en, f"SUMMARY:{summary}", f"DESCRIPTION:{desc}",
@@ -1111,7 +1169,7 @@ def build_preview(lg, d):
     c_reign_no = pv["challenger_reigns"] + 1
     cells = [
         (f"If {sn(h)} {verb(lg, 'win', 'wins')}", f"{S.ordinal(next_def)} defense · reign reaches {reign_days:,} days"),
-        (f"If {sn(c)} {verb(lg, 'win', 'wins')}", "Belt changes hands · " + (f"{sn(c)}’s {S.ordinal(c_reign_no)} reign" if pv["challenger_reigns"] else f"first reign in {'program' if lg.get('singular') else 'franchise'} history")),
+        (f"If {sn(c)} {verb(lg, 'win', 'wins')}", "Belt changes hands · " + (f"{poss(sn(c))} {S.ordinal(c_reign_no)} reign" if pv["challenger_reigns"] else f"first reign in {unit_one(lg)} history")),
         ("Head to head, belt games", (f"Met {S.plural(len(bm), 'time')} · {sn(h)} {bm_h}, {sn(c)} {bm_c}" if bm else "First belt game between these two")),
     ]
     if wx and wx.get("temp_f") is not None:
@@ -1222,7 +1280,7 @@ show();
 
     # sidebar
     title = f"{lg['name']} belt: {sn(h)} {where} {sn(c)}"
-    gcal = _gcal(title, start, 3, f"{n(h)} defend the lineal {lg['name']} belt. {S.SITE_URL}{b(lg)}/next/", ", ".join(v for v in (vname, vcity) if v)) if start else None
+    gcal = _gcal(title, start, 3, f"{n(h)} {verb(lg, 'defend', 'defends')} the lineal {lg['name']} belt. {S.SITE_URL}{b(lg)}/next/", ", ".join(v for v in (vname, vcity) if v)) if start else None
     webcal = f"webcal://{S.SITE_URL.split('//')[1]}{b(lg)}/belt.ics"
     clr = pv.get("challenger_last_reign")
     last_held = (clr.get("end") or clr["start"])[:4] if clr else "Never"
@@ -1264,7 +1322,7 @@ el.textContent=d.toLocaleTimeString([],{{hour:'numeric',minute:'2-digit',timeZon
           "location": {"@type": "Place", "name": vname or "", "address": vcity or ""},
           "competitor": [{"@type": "SportsTeam", "name": n(h)}, {"@type": "SportsTeam", "name": n(c)}]}
     page(lg, f"{sn(h)} {where} {sn(c)} preview: {lg['name']} belt on the line {S.d_short(ng['date'])}", body, rel,
-         f"{n(h)} defend the lineal {lg['name']} championship belt {where} {n(c)} on {S.d_long(ng['date'])}: odds, the lean, recent form, head to head and what's at stake.",
+         f"{n(h)} {verb(lg, 'defend', 'defends')} the lineal {lg['name']} championship belt {where} {n(c)} on {S.d_long(ng['date'])}: odds, the lean, recent form, head to head and what's at stake.",
          jsonld=ld)
 
 
@@ -1365,13 +1423,13 @@ def build_schedule(lg, d):
              if rows else f'<p class="intro">{e(n(h))} {verb(lg, "have", "has")} no games on the schedule yet ({e((d.get("status") or "").lower())}).</p>')
     body = f"""{S.subnav(lg, "more")}
 <section class="wrap block">
-  <div class="head"><h1 class="disp">The belt schedule</h1><span class="mono note">{e(n(h))}’s next {len(sched)} games</span></div>
-  <p class="intro">Every game left on {e(n(h))}’s schedule is a belt game for as long as they keep winning. The last column is the chance {e(sn(h))} still {verb(lg, 'hold', 'holds')} the belt going into that game, so it's still for the title. Lose once and the schedule switches to the new holder’s.</p>
+  <div class="head"><h1 class="disp">The belt schedule</h1><span class="mono note">{e(poss(n(h)))} next {len(sched)} games</span></div>
+  <p class="intro">Every game left on {e(poss(n(h)))} schedule is a belt game for as long as {verb(lg, "they keep", "it keeps")} winning. The last column is the chance {e(sn(h))} still {verb(lg, 'hold', 'holds')} the belt going into that game, so it's still for the title. Lose once and the schedule switches to the new holder’s.</p>
   {table}
   <p class="mono more"><a href="{b(lg)}/outlook/">Every way it can go: the belt tree →</a></p>
 </section>"""
     page(lg, f"{lg['name']} belt schedule: every possible title defense", body, "schedule/",
-         f"{n(h)}'s upcoming {lg['name']} schedule: every game that could put the lineal belt on the line, with win chances.")
+         f"{poss(n(h))} upcoming {lg['name']} schedule: every game that could put the lineal belt on the line, with win chances.")
 
 
 def build_lean(lg, d):
@@ -1698,8 +1756,8 @@ def build_game_pages(lg, d):
 <section class="plate slim" style="--top:{top};--bottom:{bottom};--ink:{ink};--accent:{accent}">
   <div class="wrap-in">
     <div class="kicker dot">Belt game {bg['n']:,} · {S.d_long(bg['date'])}{' · ' + post_word(lg) if bg['season_type'] != 'regular' else ''}</div>
-    <h1 class="disp holder" style="--fit:{max(len(x) for x in n(w, s).split())}">{e(n(w, s))} take the belt</h1>
-    <p class="lede">{e(n(w, s))} beat {e(n(l, s))} {_winner_score(bg)}{(' (' + e(bg['note']) + ')') if bg.get('note') else ''} {where} to start reign {r['index']:,} of the {e(lg['name'])} belt, the {S.ordinal(r['reign_no'])} for the {'program' if lg.get('singular') else 'franchise'}.</p>
+    <h1 class="disp holder" style="--fit:{max(len(x) for x in n(w, s).split())}">{e(n(w, s))} {verb(lg, 'take', 'takes')} the belt</h1>
+    <p class="lede">{e(n(w, s))} beat {e(n(l, s))} {_winner_score(bg)}{(' (' + e(bg['note']) + ')') if bg.get('note') else ''} {where} to start reign {r['index']:,} of the {e(lg['name'])} belt, the {S.ordinal(r['reign_no'])} for the {unit_one(lg)}.</p>
   </div>
 </section>
 <section class="wrap block prose">
@@ -1736,7 +1794,7 @@ def build_defense_pages(lg, d):
 <section class="plate slim" style="--top:{top};--bottom:{bottom};--ink:{ink};--accent:{accent}">
   <div class="wrap-in">
     <div class="kicker dot">Belt game {bg['n']:,} · {S.d_long(bg['date'])}</div>
-    <h1 class="disp holder" style="--fit:{max(len(x) for x in n(h, s).split())}">{e(n(h, s))} keep the belt</h1>
+    <h1 class="disp holder" style="--fit:{max(len(x) for x in n(h, s).split())}">{e(n(h, s))} {verb(lg, 'keep', 'keeps')} the belt</h1>
     <p class="lede">{_gline(lg, bg)}.{(' Defense number ' + str(k + 1) + ' of reign ' + format(r['index'], ',') + '.') if k is not None and r else ''}</p>
   </div>
 </section>
@@ -2220,7 +2278,7 @@ def build_players(lg, d):
 </section>"""
         if has_page:
             page(lg, f"{p['name']} in {lg['name']} belt games", body, f"players/{slug}/",
-                 f"{p['name']}: {len(gs)} lineal {lg['name']} belt games, {w} wins, {took} title-winning games. Every belt-game stat line.")
+                 f"{p['name']}: {S.plural(len(gs), 'lineal ' + lg['name'] + ' belt game')}, {S.plural(w, 'win')}, {S.plural(took, 'title-winning game')}. Every belt-game stat line.")
         rows.append({"c": [f'<i style="background:{pp}"></i>{plink(p)}<small>{e(lg["short_name"](main_team))}</small>',
                            str(len(gs)), f"{w}–{len(gs) - w}", str(took)] + [f"{tot.get(c, 0):,}" for c in sc["totals"][:3]] + [f"{avg:.1f}"],
                      "t": (p["name"] + " " + " ".join(n(t) for t in p["teams"])).lower(),
