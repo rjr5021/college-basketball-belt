@@ -52,7 +52,8 @@ WOMEN = {"key": "women", "name": "The Women's College Basketball Belt", "short":
 # Paths shared by both belts (never prefixed with /women)
 GLOBAL_PATHS = ("styles.css", "favicon.png", "apple-touch-icon.png", "manifest.json", "icon-512.png", "og.png",
                 "og-holder.png", "tablekit.js", "privacy/", "about/", "women/")
-_REWRITE = re.compile(r'((?:href|src)=["\']|fetch\([\'"]|"(?:https://collegebasketballbelt\.com))/(?!(?:' +
+# Never rewrite protocol-relative URLs ("//gc.zgo.at/count.js"): the lookahead skips a second slash (CBB-1).
+_REWRITE = re.compile(r'((?:href|src)=["\']|fetch\([\'"]|"(?:https://collegebasketballbelt\.com))/(?!/|(?:' +
                       "|".join(re.escape(x) for x in GLOBAL_PATHS) + r'))')
 
 
