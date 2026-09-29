@@ -1,9 +1,11 @@
-# Player box scores for belt games from the CollegeBasketballData API
-# (fetch_boxscores.py). The first run backfills every belt game the API has
-# box scores for (~900 calls, once; CBB_BOX_MAX caps a single run). After
-# that each run costs a call per new belt-game date, and nothing when there
-# are none. Commits data/cbb/box; the next "Update and deploy" run builds
-# the player pages from it.
+# Player box scores for belt games: men's from the CollegeBasketballData API
+# (fetch_boxscores.py), women's from the sportsdataverse wehoop files
+# (fetch_women_box.py, no key; one small download per season, 2013-14 on).
+# The first CBBD run backfilled every belt game the API has box scores for
+# (~900 calls, once; CBB_BOX_MAX caps a single run). After that each run costs
+# a call per new belt-game date, and nothing when there are none. Commits
+# data/cbb/box and data/women/box; the next "Update and deploy" run builds
+# the player pages from them.
 name: Box scores
 
 on:
@@ -33,11 +35,15 @@ jobs:
         env:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
         run: python fetch_boxscores.py
+      - name: Fetch women's box scores
+        continue-on-error: true
+        run: pip install pyarrow && python fetch_women_box.py
       - name: Commit box scores
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/cbb/box
+          if [ -d data/women/box ]; then git add data/women/box; fi
           git diff --cached --quiet && echo "no box score changes" && exit 0
           git commit -m "Update box scores [skip ci]"
           for i in 1 2 3 4; do git pull --rebase -X theirs && git push && break; git rebase --abort 2>/dev/null; sleep $((i * 7)); done
