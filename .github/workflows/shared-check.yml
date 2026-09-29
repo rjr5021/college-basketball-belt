@@ -1,0 +1,28 @@
+# NET-1: the shared belt modules must stay byte-identical between rjr5021/belt-holders and
+# rjr5021/college-basketball-belt. This compares this repo's copies with the sister repo's
+# main branch and fails (red run + email) the moment they drift. Fix by making the same edit
+# in both repos. Runs daily and on demand, not on every push, so the minutes between the two
+# uploads of one change don't raise a false alarm.
+name: Shared modules in sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "11 9 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compare with belt-holders
+        run: |
+          bad=0
+          for f in features.py belt_models.py belt_engine.py belt_extras.py site_extras.py enrich_preview.py styles.css tablekit.js recaps.py box_store.py og_images.py; do
+            curl -fsSL "https://raw.githubusercontent.com/rjr5021/belt-holders/main/$f" -o "/tmp/$f" || { echo "::warning::couldn't fetch $f"; continue; }
+            if cmp -s "$f" "/tmp/$f"; then echo "same  $f"; else echo "::error file=$f::$f differs from rjr5021/belt-holders"; diff "$f" "/tmp/$f" | head -40; bad=1; fi
+          done
+          exit $bad
