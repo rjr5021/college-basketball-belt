@@ -1,0 +1,476 @@
+season,week,date,poll,team_id,team,rank,points,first
+2014,1,,AP Top 25,41,UConn,1,900,36
+2014,1,,AP Top 25,150,Duke,2,860,0
+2014,1,,AP Top 25,24,Stanford,3,799,0
+2014,1,,AP Top 25,2633,Tennessee,4,752,0
+2014,1,,AP Top 25,97,Louisville,5,714,0
+2014,1,,AP Top 25,87,Notre Dame,6,705,0
+2014,1,,AP Top 25,96,Kentucky,7,678,0
+2014,1,,AP Top 25,120,Maryland,8,668,0
+2014,1,,AP Top 25,25,California,9,662,0
+2014,1,,AP Top 25,239,Baylor,10,569,0
+2014,1,,AP Top 25,201,Oklahoma,11,461,0
+2014,1,,AP Top 25,153,North Carolina,12,452,0
+2014,1,,AP Top 25,213,Penn State,13,392,0
+2014,1,,AP Top 25,2168,Dayton,14,368,0
+2014,1,,AP Top 25,99,LSU,15,365,0
+2014,1,,AP Top 25,245,Texas A&M,16,363,0
+2014,1,,AP Top 25,158,Nebraska,17,340,0
+2014,1,,AP Top 25,2509,Purdue,18,225,0
+2014,1,,AP Top 25,38,Colorado,19,205,0
+2014,1,,AP Top 25,127,Michigan State,20,177,0
+2014,1,,AP Top 25,197,Oklahoma State,21,144,0
+2014,1,,AP Top 25,2579,South Carolina,22,143,0
+2014,1,,AP Top 25,66,Iowa State,23,126,0
+2014,1,,AP Top 25,61,Georgia,24,99,0
+2014,1,,AP Top 25,2250,Gonzaga,25,81,0
+2014,2,,AP Top 25,41,UConn,1,899,35
+2014,2,,AP Top 25,150,Duke,2,862,1
+2014,2,,AP Top 25,24,Stanford,3,804,0
+2014,2,,AP Top 25,2633,Tennessee,4,759,0
+2014,2,,AP Top 25,97,Louisville,5,732,0
+2014,2,,AP Top 25,87,Notre Dame,6,728,0
+2014,2,,AP Top 25,96,Kentucky,7,691,0
+2014,2,,AP Top 25,120,Maryland,8,676,0
+2014,2,,AP Top 25,239,Baylor,9,590,0
+2014,2,,AP Top 25,25,California,10,550,0
+2014,2,,AP Top 25,201,Oklahoma,11,492,0
+2014,2,,AP Top 25,153,North Carolina,12,476,0
+2014,2,,AP Top 25,213,Penn State,13,446,0
+2014,2,,AP Top 25,99,LSU,14,391,0
+2014,2,,AP Top 25,158,Nebraska,15,390,0
+2014,2,,AP Top 25,245,Texas A&M,16,366,0
+2014,2,,AP Top 25,38,Colorado,17,259,0
+2014,2,,AP Top 25,2509,Purdue,18,249,0
+2014,2,,AP Top 25,127,Michigan State,19,213,0
+2014,2,,AP Top 25,197,Oklahoma State,20,198,0
+2014,2,,AP Top 25,2579,South Carolina,21,190,0
+2014,2,,AP Top 25,66,Iowa State,22,124,0
+2014,2,,AP Top 25,2168,Dayton,23,104,0
+2014,2,,AP Top 25,61,Georgia,24,102,0
+2014,2,,AP Top 25,2250,Gonzaga,25,99,0
+2014,3,,AP Top 25,41,UConn,1,900,36
+2014,3,,AP Top 25,150,Duke,2,864,0
+2014,3,,AP Top 25,2633,Tennessee,3,796,0
+2014,3,,AP Top 25,97,Louisville,4,780,0
+2014,3,,AP Top 25,87,Notre Dame,5,740,0
+2014,3,,AP Top 25,24,Stanford,6,730,0
+2014,3,,AP Top 25,96,Kentucky,7,699,0
+2014,3,,AP Top 25,120,Maryland,8,630,0
+2014,3,,AP Top 25,239,Baylor,9,616,0
+2014,3,,AP Top 25,201,Oklahoma,10,515,0
+2014,3,,AP Top 25,158,Nebraska,11,472,0
+2014,3,,AP Top 25,153,North Carolina,12,457,0
+2014,3,,AP Top 25,245,Texas A&M,13,445,0
+2014,3,,AP Top 25,213,Penn State,14,428,0
+2014,3,,AP Top 25,99,LSU,15,331,0
+2014,3,,AP Top 25,38,Colorado,16,316,0
+2014,3,,AP Top 25,25,California,17,298,0
+2014,3,,AP Top 25,2509,Purdue,18,278,0
+2014,3,,AP Top 25,2579,South Carolina,19,252,0
+2014,3,,AP Top 25,197,Oklahoma State,20,239,0
+2014,3,,AP Top 25,127,Michigan State,21,214,0
+2014,3,,AP Top 25,66,Iowa State,22,171,0
+2014,3,,AP Top 25,61,Georgia,23,157,0
+2014,3,,AP Top 25,2250,Gonzaga,24,104,0
+2014,3,,AP Top 25,305,DePaul,25,76,0
+2014,4,,AP Top 25,41,UConn,1,900,36
+2014,4,,AP Top 25,150,Duke,2,864,0
+2014,4,,AP Top 25,2633,Tennessee,3,799,0
+2014,4,,AP Top 25,97,Louisville,4,779,0
+2014,4,,AP Top 25,87,Notre Dame,5,750,0
+2014,4,,AP Top 25,24,Stanford,6,719,0
+2014,4,,AP Top 25,96,Kentucky,7,701,0
+2014,4,,AP Top 25,120,Maryland,8,634,0
+2014,4,,AP Top 25,239,Baylor,9,630,0
+2014,4,,AP Top 25,158,Nebraska,10,511,0
+2014,4,,AP Top 25,153,North Carolina,11,476,0
+2014,4,,AP Top 25,245,Texas A&M,12,465,0
+2014,4,,AP Top 25,213,Penn State,13,458,0
+2014,4,,AP Top 25,38,Colorado,14,365,0
+2014,4,,AP Top 25,99,LSU,15,360,0
+2014,4,,AP Top 25,2509,Purdue,16,304,0
+2014,4,,AP Top 25,2579,South Carolina,17,294,0
+2014,4,,AP Top 25,201,Oklahoma,18,285,0
+2014,4,,AP Top 25,197,Oklahoma State,19,275,0
+2014,4,,AP Top 25,25,California,20,236,0
+2014,4,,AP Top 25,127,Michigan State,21,213,0
+2014,4,,AP Top 25,61,Georgia,22,192,0
+2014,4,,AP Top 25,66,Iowa State,23,190,0
+2014,4,,AP Top 25,2250,Gonzaga,24,105,0
+2014,4,,AP Top 25,305,DePaul,25,103,0
+2014,5,,AP Top 25,41,UConn,1,900,36
+2014,5,,AP Top 25,150,Duke,2,864,0
+2014,5,,AP Top 25,2633,Tennessee,3,807,0
+2014,5,,AP Top 25,87,Notre Dame,4,769,0
+2014,5,,AP Top 25,96,Kentucky,5,752,0
+2014,5,,AP Top 25,24,Stanford,6,737,0
+2014,5,,AP Top 25,97,Louisville,7,675,0
+2014,5,,AP Top 25,120,Maryland,8,650,0
+2014,5,,AP Top 25,239,Baylor,9,642,0
+2014,5,,AP Top 25,213,Penn State,10,528,0
+2014,5,,AP Top 25,38,Colorado,11,480,0
+2014,5,,AP Top 25,2579,South Carolina,12,442,0
+2014,5,,AP Top 25,99,LSU,13,441,0
+2014,5,,AP Top 25,197,Oklahoma State,14,370,0
+2014,5,,AP Top 25,158,Nebraska,15,330,0
+2014,5,,AP Top 25,2509,Purdue,16,293,0
+2014,5,,AP Top 25,201,Oklahoma,17,290,0
+2014,5,,AP Top 25,153,North Carolina,18,283,0
+2014,5,,AP Top 25,61,Georgia,19,280,0
+2014,5,,AP Top 25,66,Iowa State,20,249,0
+2014,5,,AP Top 25,25,California,21,216,0
+2014,5,,AP Top 25,183,Syracuse,22,132,0
+2014,5,,AP Top 25,245,Texas A&M,23,131,0
+2014,5,,AP Top 25,2250,Gonzaga,24,125,0
+2014,5,,AP Top 25,2294,Iowa,25,93,0
+2014,6,,AP Top 25,41,UConn,1,900,36
+2014,6,,AP Top 25,150,Duke,2,864,0
+2014,6,,AP Top 25,2633,Tennessee,3,804,0
+2014,6,,AP Top 25,87,Notre Dame,4,774,0
+2014,6,,AP Top 25,96,Kentucky,5,765,0
+2014,6,,AP Top 25,24,Stanford,6,728,0
+2014,6,,AP Top 25,97,Louisville,7,678,0
+2014,6,,AP Top 25,120,Maryland,8,646,0
+2014,6,,AP Top 25,239,Baylor,9,628,0
+2014,6,,AP Top 25,2579,South Carolina,10,507,0
+2014,6,,AP Top 25,38,Colorado,11,505,0
+2014,6,,AP Top 25,213,Penn State,12,496,0
+2014,6,,AP Top 25,99,LSU,13,459,0
+2014,6,,AP Top 25,197,Oklahoma State,14,395,0
+2014,6,,AP Top 25,153,North Carolina,15,360,0
+2014,6,,AP Top 25,61,Georgia,16,304,0
+2014,6,,AP Top 25,66,Iowa State,17,293,0
+2014,6,,AP Top 25,2509,Purdue,18,260,0
+2014,6,,AP Top 25,158,Nebraska,19,237,0
+2014,6,,AP Top 25,201,Oklahoma,20,211,0
+2014,6,,AP Top 25,2294,Iowa,21,189,0
+2014,6,,AP Top 25,25,California,22,187,0
+2014,6,,AP Top 25,2250,Gonzaga,23,141,0
+2014,6,,AP Top 25,245,Texas A&M,24,123,0
+2014,6,,AP Top 25,183,Syracuse,25,85,0
+2014,7,,AP Top 25,41,UConn,1,900,36
+2014,7,,AP Top 25,150,Duke,2,864,0
+2014,7,,AP Top 25,2633,Tennessee,3,804,0
+2014,7,,AP Top 25,87,Notre Dame,4,778,0
+2014,7,,AP Top 25,96,Kentucky,5,764,0
+2014,7,,AP Top 25,24,Stanford,6,728,0
+2014,7,,AP Top 25,97,Louisville,7,674,0
+2014,7,,AP Top 25,120,Maryland,8,650,0
+2014,7,,AP Top 25,239,Baylor,9,630,0
+2014,7,,AP Top 25,2579,South Carolina,10,530,0
+2014,7,,AP Top 25,38,Colorado,11,517,0
+2014,7,,AP Top 25,99,LSU,12,464,0
+2014,7,,AP Top 25,197,Oklahoma State,13,421,0
+2014,7,,AP Top 25,153,North Carolina,14,387,0
+2014,7,,AP Top 25,66,Iowa State,15,370,0
+2014,7,,AP Top 25,61,Georgia,16,342,0
+2014,7,,AP Top 25,213,Penn State,17,332,0
+2014,7,,AP Top 25,2509,Purdue,18,267,0
+2014,7,,AP Top 25,158,Nebraska,19,245,0
+2014,7,,AP Top 25,201,Oklahoma,20,231,0
+2014,7,,AP Top 25,25,California,21,198,0
+2014,7,,AP Top 25,2294,Iowa,22,133,0
+2014,7,,AP Top 25,183,Syracuse,23,120,0
+2014,7,,AP Top 25,52,Florida State,24,97,0
+2014,7,,AP Top 25,2250,Gonzaga,25,73,0
+2014,8,,AP Top 25,41,UConn,1,900,36
+2014,8,,AP Top 25,87,Notre Dame,2,840,0
+2014,8,,AP Top 25,150,Duke,3,827,0
+2014,8,,AP Top 25,24,Stanford,4,807,0
+2014,8,,AP Top 25,2633,Tennessee,5,734,0
+2014,8,,AP Top 25,96,Kentucky,6,719,0
+2014,8,,AP Top 25,97,Louisville,7,691,0
+2014,8,,AP Top 25,120,Maryland,8,651,0
+2014,8,,AP Top 25,239,Baylor,9,635,0
+2014,8,,AP Top 25,153,North Carolina,10,523,0
+2014,8,,AP Top 25,197,Oklahoma State,11,515,0
+2014,8,,AP Top 25,38,Colorado,12,467,0
+2014,8,,AP Top 25,2579,South Carolina,13,457,0
+2014,8,,AP Top 25,66,Iowa State,14,444,0
+2014,8,,AP Top 25,213,Penn State,15,350,0
+2014,8,,AP Top 25,99,LSU,16,309,0
+2014,8,,AP Top 25,2509,Purdue,17,288,0
+2014,8,,AP Top 25,158,Nebraska,18,276,0
+2014,8,,AP Top 25,61,Georgia,19,222,0
+2014,8,,AP Top 25,183,Syracuse,20,198,0
+2014,8,,AP Top 25,2294,Iowa,21,185,0
+2014,8,,AP Top 25,52,Florida State,22,182,0
+2014,8,,AP Top 25,25,California,23,103,0
+2014,8,,AP Top 25,2250,Gonzaga,24,89,0
+2014,8,,AP Top 25,201,Oklahoma,25,71,0
+2014,9,,AP Top 25,41,UConn,1,900,36
+2014,9,,AP Top 25,87,Notre Dame,2,841,0
+2014,9,,AP Top 25,150,Duke,3,822,0
+2014,9,,AP Top 25,24,Stanford,4,808,0
+2014,9,,AP Top 25,2633,Tennessee,5,736,0
+2014,9,,AP Top 25,96,Kentucky,6,717,0
+2014,9,,AP Top 25,97,Louisville,7,695,0
+2014,9,,AP Top 25,120,Maryland,8,648,0
+2014,9,,AP Top 25,239,Baylor,9,626,0
+2014,9,,AP Top 25,153,North Carolina,10,515,0
+2014,9,,AP Top 25,197,Oklahoma State,11,511,0
+2014,9,,AP Top 25,38,Colorado,12,472,0
+2014,9,,AP Top 25,2579,South Carolina,13,462,0
+2014,9,,AP Top 25,66,Iowa State,14,447,0
+2014,9,,AP Top 25,213,Penn State,15,341,0
+2014,9,,AP Top 25,99,LSU,16,308,0
+2014,9,,AP Top 25,2509,Purdue,17,299,0
+2014,9,,AP Top 25,158,Nebraska,18,278,0
+2014,9,,AP Top 25,61,Georgia,19,228,0
+2014,9,,AP Top 25,183,Syracuse,20,213,0
+2014,9,,AP Top 25,52,Florida State,21,187,0
+2014,9,,AP Top 25,2294,Iowa,22,180,0
+2014,9,,AP Top 25,25,California,23,116,0
+2014,9,,AP Top 25,9,Arizona State,24,91,0
+2014,9,,AP Top 25,201,Oklahoma,25,65,0
+2014,10,,AP Top 25,41,UConn,1,900,36
+2014,10,,AP Top 25,87,Notre Dame,2,842,0
+2014,10,,AP Top 25,150,Duke,3,826,0
+2014,10,,AP Top 25,24,Stanford,4,810,0
+2014,10,,AP Top 25,97,Louisville,5,737,0
+2014,10,,AP Top 25,120,Maryland,6,722,0
+2014,10,,AP Top 25,239,Baylor,7,671,0
+2014,10,,AP Top 25,2633,Tennessee,8,641,0
+2014,10,,AP Top 25,96,Kentucky,9,602,0
+2014,10,,AP Top 25,2579,South Carolina,10,538,0
+2014,10,,AP Top 25,66,Iowa State,11,525,0
+2014,10,,AP Top 25,99,LSU,12,505,0
+2014,10,,AP Top 25,153,North Carolina,13,464,0
+2014,10,,AP Top 25,213,Penn State,14,411,0
+2014,10,,AP Top 25,197,Oklahoma State,15,385,0
+2014,10,,AP Top 25,158,Nebraska,16,328,0
+2014,10,,AP Top 25,38,Colorado,17,307,0
+2014,10,,AP Top 25,52,Florida State,18,281,0
+2014,10,,AP Top 25,25,California,19,186,0
+2014,10,,AP Top 25,152,NC State,20,164,0
+2014,10,,AP Top 25,2509,Purdue,21,145,0
+2014,10,,AP Top 25,84,Indiana,22,140,0
+2014,10,,AP Top 25,9,Arizona State,23,103,0
+2014,10,,AP Top 25,301,San Diego,24,91,0
+2014,10,,AP Top 25,61,Georgia,25,88,0
+2014,11,,AP Top 25,41,UConn,1,900,36
+2014,11,,AP Top 25,87,Notre Dame,2,841,0
+2014,11,,AP Top 25,150,Duke,3,828,0
+2014,11,,AP Top 25,24,Stanford,4,811,0
+2014,11,,AP Top 25,97,Louisville,5,736,0
+2014,11,,AP Top 25,120,Maryland,6,723,0
+2014,11,,AP Top 25,239,Baylor,7,696,0
+2014,11,,AP Top 25,2579,South Carolina,8,647,0
+2014,11,,AP Top 25,153,North Carolina,9,571,0
+2014,11,,AP Top 25,96,Kentucky,10,540,0
+2014,11,,AP Top 25,197,Oklahoma State,11,539,0
+2014,11,,AP Top 25,2633,Tennessee,12,522,0
+2014,11,,AP Top 25,66,Iowa State,13,453,0
+2014,11,,AP Top 25,99,LSU,14,404,0
+2014,11,,AP Top 25,25,California,15,330,0
+2014,11,,AP Top 25,213,Penn State,16,302,0
+2014,11,,AP Top 25,52,Florida State,17,301,0
+2014,11,,AP Top 25,158,Nebraska,18,246,0
+2014,11,,AP Top 25,9,Arizona State,19,230,0
+2014,11,,AP Top 25,152,NC State,20,183,0
+2014,11,,AP Top 25,38,Colorado,21,179,0
+2014,11,,AP Top 25,2509,Purdue,22,172,0
+2014,11,,AP Top 25,164,Rutgers,23,101,0
+2014,11,,AP Top 25,238,Vanderbilt,24,96,0
+2014,11,,AP Top 25,245,Texas A&M,25,95,0
+2014,12,,AP Top 25,41,UConn,1,900,36
+2014,12,,AP Top 25,87,Notre Dame,2,847,0
+2014,12,,AP Top 25,150,Duke,3,824,0
+2014,12,,AP Top 25,24,Stanford,4,810,0
+2014,12,,AP Top 25,97,Louisville,5,742,0
+2014,12,,AP Top 25,120,Maryland,6,735,0
+2014,12,,AP Top 25,153,North Carolina,7,642,0
+2014,12,,AP Top 25,197,Oklahoma State,8,613,0
+2014,12,,AP Top 25,96,Kentucky,9,592,0
+2014,12,,AP Top 25,2579,South Carolina,10,567,0
+2014,12,,AP Top 25,2633,Tennessee,11,557,0
+2014,12,,AP Top 25,239,Baylor,12,551,0
+2014,12,,AP Top 25,213,Penn State,13,422,0
+2014,12,,AP Top 25,9,Arizona State,14,403,0
+2014,12,,AP Top 25,99,LSU,15,341,0
+2014,12,,AP Top 25,238,Vanderbilt,16,340,0
+2014,12,,AP Top 25,245,Texas A&M,17,306,0
+2014,12,,AP Top 25,277,West Virginia,18,255,0
+2014,12,,AP Top 25,25,California,19,244,0
+2014,12,,AP Top 25,66,Iowa State,20,190,0
+2014,12,,AP Top 25,158,Nebraska,21,170,0
+2014,12,,AP Top 25,2509,Purdue,22,166,0
+2014,12,,AP Top 25,152,NC State,23,161,0
+2014,12,,AP Top 25,52,Florida State,24,84,0
+2014,12,,AP Top 25,2250,Gonzaga,25,75,0
+2014,13,,AP Top 25,41,UConn,1,900,36
+2014,13,,AP Top 25,87,Notre Dame,2,852,0
+2014,13,,AP Top 25,150,Duke,3,819,0
+2014,13,,AP Top 25,24,Stanford,4,811,0
+2014,13,,AP Top 25,97,Louisville,5,758,0
+2014,13,,AP Top 25,153,North Carolina,6,688,0
+2014,13,,AP Top 25,2579,South Carolina,7,656,0
+2014,13,,AP Top 25,120,Maryland,8,638,0
+2014,13,,AP Top 25,239,Baylor,9,617,0
+2014,13,,AP Top 25,2633,Tennessee,10,565,0
+2014,13,,AP Top 25,197,Oklahoma State,11,550,0
+2014,13,,AP Top 25,213,Penn State,12,485,0
+2014,13,,AP Top 25,96,Kentucky,13,471,0
+2014,13,,AP Top 25,99,LSU,14,397,0
+2014,13,,AP Top 25,9,Arizona State,15,389,0
+2014,13,,AP Top 25,238,Vanderbilt,16,351,0
+2014,13,,AP Top 25,245,Texas A&M,17,302,0
+2014,13,,AP Top 25,152,NC State,18,261,0
+2014,13,,AP Top 25,2509,Purdue,19,234,0
+2014,13,,AP Top 25,277,West Virginia,20,219,0
+2014,13,,AP Top 25,25,California,21,140,0
+2014,13,,AP Top 25,2250,Gonzaga,22,123,0
+2014,13,,AP Top 25,66,Iowa State,23,102,0
+2014,13,,AP Top 25,52,Florida State,23,102,0
+2014,13,,AP Top 25,2393,Middle Tennessee,25,84,0
+2014,14,,AP Top 25,41,UConn,1,900,36
+2014,14,,AP Top 25,87,Notre Dame,2,863,0
+2014,14,,AP Top 25,24,Stanford,3,827,0
+2014,14,,AP Top 25,97,Louisville,4,775,0
+2014,14,,AP Top 25,150,Duke,5,766,0
+2014,14,,AP Top 25,2579,South Carolina,6,707,0
+2014,14,,AP Top 25,239,Baylor,7,680,0
+2014,14,,AP Top 25,2633,Tennessee,8,647,0
+2014,14,,AP Top 25,213,Penn State,9,595,0
+2014,14,,AP Top 25,120,Maryland,10,545,0
+2014,14,,AP Top 25,9,Arizona State,11,465,0
+2014,14,,AP Top 25,197,Oklahoma State,12,464,0
+2014,14,,AP Top 25,153,North Carolina,13,453,0
+2014,14,,AP Top 25,152,NC State,14,436,0
+2014,14,,AP Top 25,96,Kentucky,15,435,0
+2014,14,,AP Top 25,99,LSU,16,354,0
+2014,14,,AP Top 25,277,West Virginia,17,344,0
+2014,14,,AP Top 25,238,Vanderbilt,18,298,0
+2014,14,,AP Top 25,245,Texas A&M,19,243,0
+2014,14,,AP Top 25,2250,Gonzaga,20,194,0
+2014,14,,AP Top 25,2393,Middle Tennessee,21,134,0
+2014,14,,AP Top 25,158,Nebraska,22,102,0
+2014,14,,AP Top 25,25,California,23,93,0
+2014,14,,AP Top 25,127,Michigan State,24,88,0
+2014,14,,AP Top 25,2509,Purdue,25,85,0
+2014,15,,AP Top 25,41,UConn,1,900,36
+2014,15,,AP Top 25,87,Notre Dame,2,864,0
+2014,15,,AP Top 25,150,Duke,3,811,0
+2014,15,,AP Top 25,97,Louisville,4,758,0
+2014,15,,AP Top 25,2579,South Carolina,5,739,0
+2014,15,,AP Top 25,24,Stanford,6,737,0
+2014,15,,AP Top 25,239,Baylor,7,710,0
+2014,15,,AP Top 25,2633,Tennessee,8,659,0
+2014,15,,AP Top 25,120,Maryland,9,604,0
+2014,15,,AP Top 25,152,NC State,10,541,0
+2014,15,,AP Top 25,213,Penn State,11,525,0
+2014,15,,AP Top 25,197,Oklahoma State,12,452,0
+2014,15,,AP Top 25,277,West Virginia,13,448,0
+2014,15,,AP Top 25,245,Texas A&M,14,380,0
+2014,15,,AP Top 25,9,Arizona State,15,359,0
+2014,15,,AP Top 25,238,Vanderbilt,16,355,0
+2014,15,,AP Top 25,153,North Carolina,17,317,0
+2014,15,,AP Top 25,96,Kentucky,18,298,0
+2014,15,,AP Top 25,99,LSU,19,274,0
+2014,15,,AP Top 25,2250,Gonzaga,20,235,0
+2014,15,,AP Top 25,158,Nebraska,21,202,0
+2014,15,,AP Top 25,25,California,22,118,0
+2014,15,,AP Top 25,2509,Purdue,23,113,0
+2014,15,,AP Top 25,2599,St. John's,24,69,0
+2014,15,,AP Top 25,127,Michigan State,25,61,0
+2014,16,,AP Top 25,41,UConn,1,900,36
+2014,16,,AP Top 25,87,Notre Dame,2,864,0
+2014,16,,AP Top 25,97,Louisville,3,803,0
+2014,16,,AP Top 25,2579,South Carolina,4,764,0
+2014,16,,AP Top 25,24,Stanford,5,761,0
+2014,16,,AP Top 25,239,Baylor,6,733,0
+2014,16,,AP Top 25,150,Duke,7,696,0
+2014,16,,AP Top 25,120,Maryland,8,627,0
+2014,16,,AP Top 25,213,Penn State,9,563,0
+2014,16,,AP Top 25,2633,Tennessee,10,536,0
+2014,16,,AP Top 25,153,North Carolina,11,524,0
+2014,16,,AP Top 25,197,Oklahoma State,12,495,0
+2014,16,,AP Top 25,277,West Virginia,13,485,0
+2014,16,,AP Top 25,152,NC State,14,448,0
+2014,16,,AP Top 25,96,Kentucky,15,426,0
+2014,16,,AP Top 25,245,Texas A&M,16,410,0
+2014,16,,AP Top 25,158,Nebraska,17,277,0
+2014,16,,AP Top 25,25,California,18,238,0
+2014,16,,AP Top 25,99,LSU,19,222,0
+2014,16,,AP Top 25,9,Arizona State,20,187,0
+2014,16,,AP Top 25,2509,Purdue,21,172,0
+2014,16,,AP Top 25,2599,St. John's,22,132,0
+2014,16,,AP Top 25,127,Michigan State,23,114,0
+2014,16,,AP Top 25,2250,Gonzaga,24,87,0
+2014,16,,AP Top 25,164,Rutgers,25,69,0
+2014,17,,AP Top 25,41,UConn,1,900,36
+2014,17,,AP Top 25,87,Notre Dame,2,864,0
+2014,17,,AP Top 25,97,Louisville,3,804,0
+2014,17,,AP Top 25,2579,South Carolina,4,775,0
+2014,17,,AP Top 25,24,Stanford,5,764,0
+2014,17,,AP Top 25,239,Baylor,6,737,0
+2014,17,,AP Top 25,150,Duke,7,680,0
+2014,17,,AP Top 25,213,Penn State,8,615,0
+2014,17,,AP Top 25,120,Maryland,9,605,0
+2014,17,,AP Top 25,2633,Tennessee,10,585,0
+2014,17,,AP Top 25,277,West Virginia,11,555,0
+2014,17,,AP Top 25,96,Kentucky,12,444,0
+2014,17,,AP Top 25,152,NC State,13,423,0
+2014,17,,AP Top 25,153,North Carolina,14,412,0
+2014,17,,AP Top 25,197,Oklahoma State,15,408,0
+2014,17,,AP Top 25,158,Nebraska,16,367,0
+2014,17,,AP Top 25,245,Texas A&M,17,354,0
+2014,17,,AP Top 25,25,California,18,306,0
+2014,17,,AP Top 25,2509,Purdue,19,233,0
+2014,17,,AP Top 25,9,Arizona State,20,230,0
+2014,17,,AP Top 25,127,Michigan State,21,165,0
+2014,17,,AP Top 25,2250,Gonzaga,22,124,0
+2014,17,,AP Top 25,2393,Middle Tennessee,23,96,0
+2014,17,,AP Top 25,164,Rutgers,24,59,0
+2014,17,,AP Top 25,2294,Iowa,25,46,0
+2014,18,,AP Top 25,41,UConn,1,900,36
+2014,18,,AP Top 25,87,Notre Dame,2,864,0
+2014,18,,AP Top 25,97,Louisville,3,816,0
+2014,18,,AP Top 25,24,Stanford,4,802,0
+2014,18,,AP Top 25,2579,South Carolina,5,718,0
+2014,18,,AP Top 25,2633,Tennessee,6,679,0
+2014,18,,AP Top 25,277,West Virginia,7,668,0
+2014,18,,AP Top 25,120,Maryland,8,658,0
+2014,18,,AP Top 25,239,Baylor,9,650,0
+2014,18,,AP Top 25,150,Duke,10,562,0
+2014,18,,AP Top 25,213,Penn State,11,510,0
+2014,18,,AP Top 25,96,Kentucky,12,489,0
+2014,18,,AP Top 25,153,North Carolina,13,481,0
+2014,18,,AP Top 25,152,NC State,14,409,0
+2014,18,,AP Top 25,245,Texas A&M,15,396,0
+2014,18,,AP Top 25,158,Nebraska,16,352,0
+2014,18,,AP Top 25,2509,Purdue,17,343,0
+2014,18,,AP Top 25,197,Oklahoma State,18,299,0
+2014,18,,AP Top 25,127,Michigan State,19,242,0
+2014,18,,AP Top 25,25,California,20,190,0
+2014,18,,AP Top 25,2250,Gonzaga,21,186,0
+2014,18,,AP Top 25,2393,Middle Tennessee,22,142,0
+2014,18,,AP Top 25,2294,Iowa,23,102,0
+2014,18,,AP Top 25,164,Rutgers,24,49,0
+2014,18,,AP Top 25,305,DePaul,25,41,0
+2014,19,,AP Top 25,41,UConn,1,900,36
+2014,19,,AP Top 25,87,Notre Dame,2,864,0
+2014,19,,AP Top 25,97,Louisville,3,799,0
+2014,19,,AP Top 25,2633,Tennessee,4,784,0
+2014,19,,AP Top 25,277,West Virginia,5,719,0
+2014,19,,AP Top 25,24,Stanford,6,711,0
+2014,19,,AP Top 25,239,Baylor,7,698,0
+2014,19,,AP Top 25,2579,South Carolina,8,665,0
+2014,19,,AP Top 25,150,Duke,9,607,0
+2014,19,,AP Top 25,96,Kentucky,10,563,0
+2014,19,,AP Top 25,120,Maryland,11,537,0
+2014,19,,AP Top 25,153,North Carolina,12,504,0
+2014,19,,AP Top 25,158,Nebraska,13,464,0
+2014,19,,AP Top 25,213,Penn State,14,408,0
+2014,19,,AP Top 25,245,Texas A&M,15,402,0
+2014,19,,AP Top 25,152,NC State,16,374,0
+2014,19,,AP Top 25,2509,Purdue,17,247,0
+2014,19,,AP Top 25,2250,Gonzaga,18,229,0
+2014,19,,AP Top 25,2294,Iowa,19,226,0
+2014,19,,AP Top 25,127,Michigan State,20,210,0
+2014,19,,AP Top 25,197,Oklahoma State,21,203,0
+2014,19,,AP Top 25,2393,Middle Tennessee,22,180,0
+2014,19,,AP Top 25,305,DePaul,23,115,0
+2014,19,,AP Top 25,25,California,24,64,0
+2014,19,,AP Top 25,189,Bowling Green,25,49,0

@@ -1,0 +1,476 @@
+season,week,date,poll,team_id,team,rank,points,first
+2010,1,,AP Top 25,41,UConn,1,1000,40
+2010,1,,AP Top 25,24,Stanford,2,957,0
+2010,1,,AP Top 25,194,Ohio State,3,889,0
+2010,1,,AP Top 25,153,North Carolina,4,855,0
+2010,1,,AP Top 25,87,Notre Dame,5,844,0
+2010,1,,AP Top 25,2633,Tennessee,6,806,0
+2010,1,,AP Top 25,99,LSU,7,707,0
+2010,1,,AP Top 25,239,Baylor,8,650,0
+2010,1,,AP Top 25,2752,Xavier,9,584,0
+2010,1,,AP Top 25,251,Texas,10,575,0
+2010,1,,AP Top 25,150,Duke,11,536,0
+2010,1,,AP Top 25,258,Virginia,12,461,0
+2010,1,,AP Top 25,52,Florida State,13,438,0
+2010,1,,AP Top 25,9,Arizona State,14,409,0
+2010,1,,AP Top 25,245,Texas A&M,15,406,0
+2010,1,,AP Top 25,61,Georgia,16,400,0
+2010,1,,AP Top 25,305,DePaul,17,340,0
+2010,1,,AP Top 25,25,California,17,340,0
+2010,1,,AP Top 25,2305,Kansas,19,281,0
+2010,1,,AP Top 25,201,Oklahoma,20,277,0
+2010,1,,AP Top 25,127,Michigan State,21,227,0
+2010,1,,AP Top 25,238,Vanderbilt,22,181,0
+2010,1,,AP Top 25,97,Louisville,23,156,0
+2010,1,,AP Top 25,2393,Middle Tennessee,24,149,0
+2010,1,,AP Top 25,344,Mississippi State,25,113,0
+2010,2,,AP Top 25,41,UConn,1,1000,40
+2010,2,,AP Top 25,24,Stanford,2,957,0
+2010,2,,AP Top 25,194,Ohio State,3,889,0
+2010,2,,AP Top 25,153,North Carolina,4,855,0
+2010,2,,AP Top 25,87,Notre Dame,5,844,0
+2010,2,,AP Top 25,2633,Tennessee,6,806,0
+2010,2,,AP Top 25,99,LSU,7,707,0
+2010,2,,AP Top 25,239,Baylor,8,650,0
+2010,2,,AP Top 25,2752,Xavier,9,584,0
+2010,2,,AP Top 25,251,Texas,10,575,0
+2010,2,,AP Top 25,150,Duke,11,536,0
+2010,2,,AP Top 25,258,Virginia,12,461,0
+2010,2,,AP Top 25,52,Florida State,13,438,0
+2010,2,,AP Top 25,9,Arizona State,14,409,0
+2010,2,,AP Top 25,245,Texas A&M,15,406,0
+2010,2,,AP Top 25,61,Georgia,16,400,0
+2010,2,,AP Top 25,305,DePaul,17,340,0
+2010,2,,AP Top 25,25,California,17,340,0
+2010,2,,AP Top 25,2305,Kansas,19,281,0
+2010,2,,AP Top 25,201,Oklahoma,20,277,0
+2010,2,,AP Top 25,127,Michigan State,21,227,0
+2010,2,,AP Top 25,238,Vanderbilt,22,181,0
+2010,2,,AP Top 25,97,Louisville,23,156,0
+2010,2,,AP Top 25,2393,Middle Tennessee,24,149,0
+2010,2,,AP Top 25,344,Mississippi State,25,113,0
+2010,3,,AP Top 25,41,UConn,1,1000,40
+2010,3,,AP Top 25,24,Stanford,2,957,0
+2010,3,,AP Top 25,194,Ohio State,3,892,0
+2010,3,,AP Top 25,153,North Carolina,4,871,0
+2010,3,,AP Top 25,87,Notre Dame,5,833,0
+2010,3,,AP Top 25,2633,Tennessee,6,820,0
+2010,3,,AP Top 25,99,LSU,7,731,0
+2010,3,,AP Top 25,239,Baylor,8,679,0
+2010,3,,AP Top 25,2752,Xavier,9,659,0
+2010,3,,AP Top 25,150,Duke,10,561,0
+2010,3,,AP Top 25,245,Texas A&M,11,554,0
+2010,3,,AP Top 25,52,Florida State,12,515,0
+2010,3,,AP Top 25,251,Texas,13,473,0
+2010,3,,AP Top 25,61,Georgia,14,441,0
+2010,3,,AP Top 25,305,DePaul,15,390,0
+2010,3,,AP Top 25,258,Virginia,15,390,0
+2010,3,,AP Top 25,9,Arizona State,17,335,0
+2010,3,,AP Top 25,2305,Kansas,18,321,0
+2010,3,,AP Top 25,344,Mississippi State,19,277,0
+2010,3,,AP Top 25,201,Oklahoma,20,270,0
+2010,3,,AP Top 25,238,Vanderbilt,21,247,0
+2010,3,,AP Top 25,25,California,22,229,0
+2010,3,,AP Top 25,21,San Diego State,23,112,0
+2010,3,,AP Top 25,221,Pittsburgh,24,106,0
+2010,3,,AP Top 25,127,Michigan State,25,95,0
+2010,4,,AP Top 25,41,UConn,1,1000,40
+2010,4,,AP Top 25,24,Stanford,2,957,0
+2010,4,,AP Top 25,194,Ohio State,3,893,0
+2010,4,,AP Top 25,153,North Carolina,4,860,0
+2010,4,,AP Top 25,87,Notre Dame,5,850,0
+2010,4,,AP Top 25,2633,Tennessee,6,823,0
+2010,4,,AP Top 25,99,LSU,7,717,0
+2010,4,,AP Top 25,239,Baylor,8,691,0
+2010,4,,AP Top 25,2752,Xavier,9,685,0
+2010,4,,AP Top 25,245,Texas A&M,10,601,0
+2010,4,,AP Top 25,150,Duke,11,595,0
+2010,4,,AP Top 25,52,Florida State,12,561,0
+2010,4,,AP Top 25,61,Georgia,13,495,0
+2010,4,,AP Top 25,258,Virginia,14,437,0
+2010,4,,AP Top 25,9,Arizona State,15,398,0
+2010,4,,AP Top 25,238,Vanderbilt,16,386,0
+2010,4,,AP Top 25,251,Texas,17,367,0
+2010,4,,AP Top 25,201,Oklahoma,18,270,0
+2010,4,,AP Top 25,221,Pittsburgh,19,252,0
+2010,4,,AP Top 25,25,California,20,230,0
+2010,4,,AP Top 25,305,DePaul,21,216,0
+2010,4,,AP Top 25,127,Michigan State,22,155,0
+2010,4,,AP Top 25,59,Georgia Tech,23,92,0
+2010,4,,AP Top 25,2305,Kansas,24,81,0
+2010,4,,AP Top 25,2168,Dayton,25,80,0
+2010,5,,AP Top 25,41,UConn,1,1000,40
+2010,5,,AP Top 25,24,Stanford,2,957,0
+2010,5,,AP Top 25,87,Notre Dame,3,900,0
+2010,5,,AP Top 25,2633,Tennessee,4,895,0
+2010,5,,AP Top 25,99,LSU,5,770,0
+2010,5,,AP Top 25,239,Baylor,6,724,0
+2010,5,,AP Top 25,150,Duke,7,713,0
+2010,5,,AP Top 25,2752,Xavier,8,709,0
+2010,5,,AP Top 25,194,Ohio State,9,693,0
+2010,5,,AP Top 25,245,Texas A&M,10,663,0
+2010,5,,AP Top 25,153,North Carolina,11,645,0
+2010,5,,AP Top 25,52,Florida State,12,603,0
+2010,5,,AP Top 25,61,Georgia,13,559,0
+2010,5,,AP Top 25,9,Arizona State,14,468,0
+2010,5,,AP Top 25,221,Pittsburgh,15,377,0
+2010,5,,AP Top 25,201,Oklahoma,16,356,0
+2010,5,,AP Top 25,251,Texas,17,269,0
+2010,5,,AP Top 25,238,Vanderbilt,18,258,0
+2010,5,,AP Top 25,258,Virginia,19,254,0
+2010,5,,AP Top 25,2168,Dayton,20,175,0
+2010,5,,AP Top 25,127,Michigan State,21,143,0
+2010,5,,AP Top 25,25,California,22,142,0
+2010,5,,AP Top 25,2305,Kansas,23,141,0
+2010,5,,AP Top 25,158,Nebraska,24,131,0
+2010,5,,AP Top 25,120,Maryland,25,82,0
+2010,6,,AP Top 25,41,UConn,1,1000,40
+2010,6,,AP Top 25,24,Stanford,2,957,0
+2010,6,,AP Top 25,2633,Tennessee,3,901,0
+2010,6,,AP Top 25,87,Notre Dame,4,900,0
+2010,6,,AP Top 25,99,LSU,5,795,0
+2010,6,,AP Top 25,239,Baylor,6,762,0
+2010,6,,AP Top 25,150,Duke,7,752,0
+2010,6,,AP Top 25,194,Ohio State,8,698,0
+2010,6,,AP Top 25,153,North Carolina,9,663,0
+2010,6,,AP Top 25,52,Florida State,10,641,0
+2010,6,,AP Top 25,61,Georgia,11,624,0
+2010,6,,AP Top 25,2752,Xavier,12,575,0
+2010,6,,AP Top 25,245,Texas A&M,13,509,0
+2010,6,,AP Top 25,9,Arizona State,14,486,0
+2010,6,,AP Top 25,201,Oklahoma,15,395,0
+2010,6,,AP Top 25,127,Michigan State,16,293,0
+2010,6,,AP Top 25,251,Texas,17,282,0
+2010,6,,AP Top 25,238,Vanderbilt,18,270,0
+2010,6,,AP Top 25,258,Virginia,19,267,0
+2010,6,,AP Top 25,158,Nebraska,20,262,0
+2010,6,,AP Top 25,221,Pittsburgh,21,247,0
+2010,6,,AP Top 25,2305,Kansas,22,152,0
+2010,6,,AP Top 25,2739,Green Bay,23,94,0
+2010,6,,AP Top 25,256,James Madison,24,92,0
+2010,6,,AP Top 25,59,Georgia Tech,25,81,0
+2010,7,,AP Top 25,41,UConn,1,1000,40
+2010,7,,AP Top 25,24,Stanford,2,960,0
+2010,7,,AP Top 25,87,Notre Dame,3,913,0
+2010,7,,AP Top 25,2633,Tennessee,4,867,0
+2010,7,,AP Top 25,239,Baylor,5,821,0
+2010,7,,AP Top 25,194,Ohio State,6,749,0
+2010,7,,AP Top 25,153,North Carolina,7,724,0
+2010,7,,AP Top 25,150,Duke,8,717,0
+2010,7,,AP Top 25,61,Georgia,9,698,0
+2010,7,,AP Top 25,245,Texas A&M,10,632,0
+2010,7,,AP Top 25,99,LSU,11,619,0
+2010,7,,AP Top 25,52,Florida State,12,475,0
+2010,7,,AP Top 25,201,Oklahoma,13,460,0
+2010,7,,AP Top 25,158,Nebraska,14,455,0
+2010,7,,AP Top 25,2752,Xavier,15,411,0
+2010,7,,AP Top 25,127,Michigan State,16,377,0
+2010,7,,AP Top 25,251,Texas,17,334,0
+2010,7,,AP Top 25,9,Arizona State,18,314,0
+2010,7,,AP Top 25,238,Vanderbilt,19,307,0
+2010,7,,AP Top 25,221,Pittsburgh,20,217,0
+2010,7,,AP Top 25,2305,Kansas,21,180,0
+2010,7,,AP Top 25,2739,Green Bay,22,154,0
+2010,7,,AP Top 25,258,Virginia,23,138,0
+2010,7,,AP Top 25,59,Georgia Tech,24,119,0
+2010,7,,AP Top 25,256,James Madison,25,58,0
+2010,8,,AP Top 25,41,UConn,1,1000,40
+2010,8,,AP Top 25,24,Stanford,2,942,0
+2010,8,,AP Top 25,87,Notre Dame,3,923,0
+2010,8,,AP Top 25,2633,Tennessee,4,873,0
+2010,8,,AP Top 25,239,Baylor,5,819,0
+2010,8,,AP Top 25,194,Ohio State,6,752,0
+2010,8,,AP Top 25,153,North Carolina,7,725,0
+2010,8,,AP Top 25,150,Duke,8,716,0
+2010,8,,AP Top 25,61,Georgia,9,704,0
+2010,8,,AP Top 25,245,Texas A&M,10,636,0
+2010,8,,AP Top 25,99,LSU,11,613,0
+2010,8,,AP Top 25,52,Florida State,12,483,0
+2010,8,,AP Top 25,158,Nebraska,13,461,0
+2010,8,,AP Top 25,201,Oklahoma,14,458,0
+2010,8,,AP Top 25,2752,Xavier,15,411,0
+2010,8,,AP Top 25,127,Michigan State,16,372,0
+2010,8,,AP Top 25,251,Texas,17,331,0
+2010,8,,AP Top 25,238,Vanderbilt,18,308,0
+2010,8,,AP Top 25,9,Arizona State,19,300,0
+2010,8,,AP Top 25,221,Pittsburgh,20,222,0
+2010,8,,AP Top 25,2305,Kansas,21,185,0
+2010,8,,AP Top 25,2739,Green Bay,22,159,0
+2010,8,,AP Top 25,258,Virginia,23,138,0
+2010,8,,AP Top 25,59,Georgia Tech,24,122,0
+2010,8,,AP Top 25,256,James Madison,25,55,0
+2010,9,,AP Top 25,41,UConn,1,1000,40
+2010,9,,AP Top 25,24,Stanford,2,948,0
+2010,9,,AP Top 25,87,Notre Dame,3,918,0
+2010,9,,AP Top 25,2633,Tennessee,4,874,0
+2010,9,,AP Top 25,239,Baylor,5,819,0
+2010,9,,AP Top 25,194,Ohio State,6,759,0
+2010,9,,AP Top 25,153,North Carolina,7,733,0
+2010,9,,AP Top 25,61,Georgia,8,721,0
+2010,9,,AP Top 25,150,Duke,9,708,0
+2010,9,,AP Top 25,245,Texas A&M,10,647,0
+2010,9,,AP Top 25,99,LSU,11,630,0
+2010,9,,AP Top 25,158,Nebraska,12,545,0
+2010,9,,AP Top 25,52,Florida State,13,497,0
+2010,9,,AP Top 25,201,Oklahoma,14,437,0
+2010,9,,AP Top 25,251,Texas,15,432,0
+2010,9,,AP Top 25,2752,Xavier,16,364,0
+2010,9,,AP Top 25,238,Vanderbilt,17,333,0
+2010,9,,AP Top 25,2739,Green Bay,18,268,0
+2010,9,,AP Top 25,127,Michigan State,19,253,0
+2010,9,,AP Top 25,59,Georgia Tech,20,245,0
+2010,9,,AP Top 25,258,Virginia,21,228,0
+2010,9,,AP Top 25,277,West Virginia,22,159,0
+2010,9,,AP Top 25,197,Oklahoma State,23,157,0
+2010,9,,AP Top 25,2305,Kansas,24,82,0
+2010,9,,AP Top 25,2628,TCU,25,51,0
+2010,10,,AP Top 25,41,UConn,1,1000,40
+2010,10,,AP Top 25,24,Stanford,2,947,0
+2010,10,,AP Top 25,87,Notre Dame,3,923,0
+2010,10,,AP Top 25,2633,Tennessee,4,883,0
+2010,10,,AP Top 25,194,Ohio State,5,802,0
+2010,10,,AP Top 25,61,Georgia,6,779,0
+2010,10,,AP Top 25,150,Duke,7,752,0
+2010,10,,AP Top 25,245,Texas A&M,8,723,0
+2010,10,,AP Top 25,239,Baylor,9,684,0
+2010,10,,AP Top 25,153,North Carolina,10,639,0
+2010,10,,AP Top 25,158,Nebraska,11,612,0
+2010,10,,AP Top 25,99,LSU,12,527,0
+2010,10,,AP Top 25,201,Oklahoma,13,504,0
+2010,10,,AP Top 25,2752,Xavier,14,453,0
+2010,10,,AP Top 25,197,Oklahoma State,15,385,0
+2010,10,,AP Top 25,52,Florida State,16,380,0
+2010,10,,AP Top 25,2739,Green Bay,17,369,0
+2010,10,,AP Top 25,277,West Virginia,18,341,0
+2010,10,,AP Top 25,251,Texas,19,306,0
+2010,10,,AP Top 25,127,Michigan State,20,172,0
+2010,10,,AP Top 25,59,Georgia Tech,21,169,0
+2010,10,,AP Top 25,2628,TCU,22,140,0
+2010,10,,AP Top 25,258,Virginia,23,126,0
+2010,10,,AP Top 25,46,Georgetown,24,97,0
+2010,10,,AP Top 25,2390,Miami,25,75,0
+2010,11,,AP Top 25,41,UConn,1,1000,40
+2010,11,,AP Top 25,24,Stanford,2,960,0
+2010,11,,AP Top 25,2633,Tennessee,3,912,0
+2010,11,,AP Top 25,87,Notre Dame,4,852,0
+2010,11,,AP Top 25,194,Ohio State,5,836,0
+2010,11,,AP Top 25,150,Duke,6,794,0
+2010,11,,AP Top 25,158,Nebraska,7,784,0
+2010,11,,AP Top 25,61,Georgia,8,677,0
+2010,11,,AP Top 25,245,Texas A&M,9,639,0
+2010,11,,AP Top 25,239,Baylor,10,635,0
+2010,11,,AP Top 25,2752,Xavier,11,525,0
+2010,11,,AP Top 25,197,Oklahoma State,12,524,0
+2010,11,,AP Top 25,201,Oklahoma,13,511,0
+2010,11,,AP Top 25,153,North Carolina,14,472,0
+2010,11,,AP Top 25,52,Florida State,15,449,0
+2010,11,,AP Top 25,277,West Virginia,16,432,0
+2010,11,,AP Top 25,2739,Green Bay,17,416,0
+2010,11,,AP Top 25,99,LSU,18,398,0
+2010,11,,AP Top 25,46,Georgetown,19,248,0
+2010,11,,AP Top 25,251,Texas,20,234,0
+2010,11,,AP Top 25,238,Vanderbilt,21,133,0
+2010,11,,AP Top 25,59,Georgia Tech,22,126,0
+2010,11,,AP Top 25,2628,TCU,23,79,0
+2010,11,,AP Top 25,261,Vermont,24,59,0
+2010,11,,AP Top 25,258,Virginia,25,51,0
+2010,12,,AP Top 25,41,UConn,1,1000,40
+2010,12,,AP Top 25,24,Stanford,2,960,0
+2010,12,,AP Top 25,87,Notre Dame,3,890,0
+2010,12,,AP Top 25,194,Ohio State,4,854,0
+2010,12,,AP Top 25,2633,Tennessee,5,832,0
+2010,12,,AP Top 25,158,Nebraska,6,826,0
+2010,12,,AP Top 25,150,Duke,7,754,0
+2010,12,,AP Top 25,245,Texas A&M,8,694,0
+2010,12,,AP Top 25,61,Georgia,9,691,0
+2010,12,,AP Top 25,2752,Xavier,10,600,0
+2010,12,,AP Top 25,201,Oklahoma,11,569,0
+2010,12,,AP Top 25,153,North Carolina,12,527,0
+2010,12,,AP Top 25,52,Florida State,13,515,0
+2010,12,,AP Top 25,239,Baylor,14,480,0
+2010,12,,AP Top 25,197,Oklahoma State,15,458,0
+2010,12,,AP Top 25,277,West Virginia,16,441,0
+2010,12,,AP Top 25,46,Georgetown,17,369,0
+2010,12,,AP Top 25,99,LSU,18,348,0
+2010,12,,AP Top 25,251,Texas,19,184,0
+2010,12,,AP Top 25,2628,TCU,20,181,0
+2010,12,,AP Top 25,258,Virginia,21,169,0
+2010,12,,AP Top 25,66,Iowa State,22,94,0
+2010,12,,AP Top 25,213,Penn State,23,84,0
+2010,12,,AP Top 25,2739,Green Bay,24,81,0
+2010,12,,AP Top 25,59,Georgia Tech,25,77,0
+2010,13,,AP Top 25,41,UConn,1,1000,40
+2010,13,,AP Top 25,24,Stanford,2,960,0
+2010,13,,AP Top 25,87,Notre Dame,3,896,0
+2010,13,,AP Top 25,158,Nebraska,4,869,0
+2010,13,,AP Top 25,2633,Tennessee,5,858,0
+2010,13,,AP Top 25,150,Duke,6,809,0
+2010,13,,AP Top 25,2752,Xavier,7,721,0
+2010,13,,AP Top 25,194,Ohio State,8,665,0
+2010,13,,AP Top 25,153,North Carolina,9,655,0
+2010,13,,AP Top 25,197,Oklahoma State,10,632,0
+2010,13,,AP Top 25,277,West Virginia,11,593,0
+2010,13,,AP Top 25,245,Texas A&M,12,529,0
+2010,13,,AP Top 25,201,Oklahoma,13,493,0
+2010,13,,AP Top 25,61,Georgia,14,478,0
+2010,13,,AP Top 25,239,Baylor,15,431,0
+2010,13,,AP Top 25,52,Florida State,15,431,0
+2010,13,,AP Top 25,251,Texas,17,357,0
+2010,13,,AP Top 25,46,Georgetown,18,288,0
+2010,13,,AP Top 25,99,LSU,19,239,0
+2010,13,,AP Top 25,96,Kentucky,20,228,0
+2010,13,,AP Top 25,59,Georgia Tech,21,152,0
+2010,13,,AP Top 25,66,Iowa State,22,130,0
+2010,13,,AP Top 25,2739,Green Bay,23,126,0
+2010,13,,AP Top 25,2250,Gonzaga,24,83,0
+2010,13,,AP Top 25,2599,St. John's,25,78,0
+2010,14,,AP Top 25,41,UConn,1,1000,40
+2010,14,,AP Top 25,24,Stanford,2,959,0
+2010,14,,AP Top 25,158,Nebraska,3,896,0
+2010,14,,AP Top 25,87,Notre Dame,4,894,0
+2010,14,,AP Top 25,2633,Tennessee,5,850,0
+2010,14,,AP Top 25,2752,Xavier,6,775,0
+2010,14,,AP Top 25,194,Ohio State,7,740,0
+2010,14,,AP Top 25,150,Duke,8,709,0
+2010,14,,AP Top 25,277,West Virginia,9,627,0
+2010,14,,AP Top 25,52,Florida State,10,593,0
+2010,14,,AP Top 25,239,Baylor,11,537,0
+2010,14,,AP Top 25,201,Oklahoma,12,511,0
+2010,14,,AP Top 25,245,Texas A&M,13,510,0
+2010,14,,AP Top 25,251,Texas,14,475,0
+2010,14,,AP Top 25,197,Oklahoma State,15,436,0
+2010,14,,AP Top 25,46,Georgetown,16,402,0
+2010,14,,AP Top 25,96,Kentucky,17,372,0
+2010,14,,AP Top 25,153,North Carolina,18,358,0
+2010,14,,AP Top 25,61,Georgia,19,323,0
+2010,14,,AP Top 25,66,Iowa State,20,210,0
+2010,14,,AP Top 25,59,Georgia Tech,21,205,0
+2010,14,,AP Top 25,2250,Gonzaga,22,118,0
+2010,14,,AP Top 25,99,LSU,23,93,0
+2010,14,,AP Top 25,2628,TCU,24,70,0
+2010,14,,AP Top 25,2599,St. John's,25,68,0
+2010,15,,AP Top 25,41,UConn,1,1000,40
+2010,15,,AP Top 25,24,Stanford,2,959,0
+2010,15,,AP Top 25,158,Nebraska,3,901,0
+2010,15,,AP Top 25,87,Notre Dame,4,891,0
+2010,15,,AP Top 25,2633,Tennessee,5,848,0
+2010,15,,AP Top 25,2752,Xavier,6,773,0
+2010,15,,AP Top 25,194,Ohio State,7,746,0
+2010,15,,AP Top 25,150,Duke,8,726,0
+2010,15,,AP Top 25,277,West Virginia,9,666,0
+2010,15,,AP Top 25,52,Florida State,10,633,0
+2010,15,,AP Top 25,201,Oklahoma,11,600,0
+2010,15,,AP Top 25,251,Texas,12,568,0
+2010,15,,AP Top 25,66,Iowa State,13,437,0
+2010,15,,AP Top 25,46,Georgetown,14,385,0
+2010,15,,AP Top 25,245,Texas A&M,15,380,0
+2010,15,,AP Top 25,96,Kentucky,16,352,0
+2010,15,,AP Top 25,197,Oklahoma State,17,324,0
+2010,15,,AP Top 25,239,Baylor,18,308,0
+2010,15,,AP Top 25,59,Georgia Tech,19,263,0
+2010,15,,AP Top 25,61,Georgia,20,217,0
+2010,15,,AP Top 25,2250,Gonzaga,21,186,0
+2010,15,,AP Top 25,2599,St. John's,22,133,0
+2010,15,,AP Top 25,2628,TCU,23,128,0
+2010,15,,AP Top 25,99,LSU,23,128,0
+2010,15,,AP Top 25,238,Vanderbilt,25,117,0
+2010,16,,AP Top 25,41,UConn,1,1000,40
+2010,16,,AP Top 25,24,Stanford,2,959,0
+2010,16,,AP Top 25,158,Nebraska,3,918,0
+2010,16,,AP Top 25,2633,Tennessee,4,882,0
+2010,16,,AP Top 25,2752,Xavier,5,809,0
+2010,16,,AP Top 25,150,Duke,6,791,0
+2010,16,,AP Top 25,87,Notre Dame,7,724,0
+2010,16,,AP Top 25,277,West Virginia,8,706,0
+2010,16,,AP Top 25,52,Florida State,9,676,0
+2010,16,,AP Top 25,194,Ohio State,10,663,0
+2010,16,,AP Top 25,201,Oklahoma,11,592,0
+2010,16,,AP Top 25,245,Texas A&M,12,514,0
+2010,16,,AP Top 25,46,Georgetown,13,493,0
+2010,16,,AP Top 25,251,Texas,14,457,0
+2010,16,,AP Top 25,66,Iowa State,15,438,0
+2010,16,,AP Top 25,96,Kentucky,16,422,0
+2010,16,,AP Top 25,239,Baylor,17,372,0
+2010,16,,AP Top 25,2599,St. John's,18,309,0
+2010,16,,AP Top 25,2250,Gonzaga,19,236,0
+2010,16,,AP Top 25,99,LSU,20,185,0
+2010,16,,AP Top 25,258,Virginia,21,176,0
+2010,16,,AP Top 25,59,Georgia Tech,22,129,0
+2010,16,,AP Top 25,197,Oklahoma State,23,118,0
+2010,16,,AP Top 25,61,Georgia,24,114,0
+2010,16,,AP Top 25,42,Hartford,24,114,0
+2010,17,,AP Top 25,41,UConn,1,1000,40
+2010,17,,AP Top 25,24,Stanford,2,959,0
+2010,17,,AP Top 25,158,Nebraska,3,920,0
+2010,17,,AP Top 25,2633,Tennessee,4,880,0
+2010,17,,AP Top 25,2752,Xavier,5,822,0
+2010,17,,AP Top 25,87,Notre Dame,6,764,0
+2010,17,,AP Top 25,277,West Virginia,7,726,0
+2010,17,,AP Top 25,52,Florida State,8,708,0
+2010,17,,AP Top 25,150,Duke,9,692,0
+2010,17,,AP Top 25,194,Ohio State,10,683,0
+2010,17,,AP Top 25,201,Oklahoma,11,582,0
+2010,17,,AP Top 25,46,Georgetown,12,533,0
+2010,17,,AP Top 25,66,Iowa State,13,509,0
+2010,17,,AP Top 25,239,Baylor,14,494,0
+2010,17,,AP Top 25,245,Texas A&M,15,443,0
+2010,17,,AP Top 25,2599,St. John's,16,385,0
+2010,17,,AP Top 25,2250,Gonzaga,17,286,0
+2010,17,,AP Top 25,251,Texas,18,274,0
+2010,17,,AP Top 25,96,Kentucky,19,248,0
+2010,17,,AP Top 25,197,Oklahoma State,20,214,0
+2010,17,,AP Top 25,99,LSU,21,189,0
+2010,17,,AP Top 25,61,Georgia,22,174,0
+2010,17,,AP Top 25,42,Hartford,23,135,0
+2010,17,,AP Top 25,258,Virginia,24,96,0
+2010,17,,AP Top 25,127,Michigan State,25,77,0
+2010,18,,AP Top 25,41,UConn,1,1000,40
+2010,18,,AP Top 25,24,Stanford,2,959,0
+2010,18,,AP Top 25,158,Nebraska,3,920,0
+2010,18,,AP Top 25,2633,Tennessee,4,880,0
+2010,18,,AP Top 25,2752,Xavier,5,821,0
+2010,18,,AP Top 25,87,Notre Dame,6,770,0
+2010,18,,AP Top 25,150,Duke,7,764,0
+2010,18,,AP Top 25,194,Ohio State,8,734,0
+2010,18,,AP Top 25,277,West Virginia,9,669,0
+2010,18,,AP Top 25,52,Florida State,10,616,0
+2010,18,,AP Top 25,245,Texas A&M,11,588,0
+2010,18,,AP Top 25,201,Oklahoma,12,553,0
+2010,18,,AP Top 25,46,Georgetown,13,457,0
+2010,18,,AP Top 25,66,Iowa State,14,431,0
+2010,18,,AP Top 25,251,Texas,15,415,0
+2010,18,,AP Top 25,239,Baylor,16,382,0
+2010,18,,AP Top 25,2599,St. John's,17,373,0
+2010,18,,AP Top 25,2250,Gonzaga,18,346,0
+2010,18,,AP Top 25,96,Kentucky,19,324,0
+2010,18,,AP Top 25,197,Oklahoma State,20,203,0
+2010,18,,AP Top 25,42,Hartford,21,187,0
+2010,18,,AP Top 25,99,LSU,22,113,0
+2010,18,,AP Top 25,26,UCLA,23,107,0
+2010,18,,AP Top 25,61,Georgia,24,86,0
+2010,18,,AP Top 25,127,Michigan State,25,44,0
+2010,19,,AP Top 25,41,UConn,1,1000,40
+2010,19,,AP Top 25,24,Stanford,2,960,0
+2010,19,,AP Top 25,2633,Tennessee,3,911,0
+2010,19,,AP Top 25,158,Nebraska,4,880,0
+2010,19,,AP Top 25,2752,Xavier,5,807,0
+2010,19,,AP Top 25,150,Duke,6,775,0
+2010,19,,AP Top 25,87,Notre Dame,7,755,0
+2010,19,,AP Top 25,194,Ohio State,8,728,0
+2010,19,,AP Top 25,245,Texas A&M,9,704,0
+2010,19,,AP Top 25,277,West Virginia,10,639,0
+2010,19,,AP Top 25,52,Florida State,11,605,0
+2010,19,,AP Top 25,201,Oklahoma,12,565,0
+2010,19,,AP Top 25,46,Georgetown,13,466,0
+2010,19,,AP Top 25,239,Baylor,14,393,0
+2010,19,,AP Top 25,2599,St. John's,15,383,0
+2010,19,,AP Top 25,66,Iowa State,16,381,0
+2010,19,,AP Top 25,251,Texas,17,369,0
+2010,19,,AP Top 25,2250,Gonzaga,18,339,0
+2010,19,,AP Top 25,96,Kentucky,19,328,0
+2010,19,,AP Top 25,197,Oklahoma State,20,266,0
+2010,19,,AP Top 25,99,LSU,21,143,0
+2010,19,,AP Top 25,26,UCLA,22,126,0
+2010,19,,AP Top 25,61,Georgia,23,109,0
+2010,19,,AP Top 25,127,Michigan State,24,82,0
+2010,19,,AP Top 25,42,Hartford,25,60,0

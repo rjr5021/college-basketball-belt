@@ -1,0 +1,452 @@
+season,week,date,poll,team_id,team,rank,points,first
+2009,1,,AP Top 25,41,UConn,1,1124,44
+2009,1,,AP Top 25,24,Stanford,2,1018,1
+2009,1,,AP Top 25,120,Maryland,3,1005,0
+2009,1,,AP Top 25,201,Oklahoma,4,946,0
+2009,1,,AP Top 25,164,Rutgers,5,914,0
+2009,1,,AP Top 25,153,North Carolina,6,892,0
+2009,1,,AP Top 25,2633,Tennessee,7,857,0
+2009,1,,AP Top 25,150,Duke,8,815,0
+2009,1,,AP Top 25,25,California,9,769,0
+2009,1,,AP Top 25,97,Louisville,10,726,0
+2009,1,,AP Top 25,245,Texas A&M,11,624,0
+2009,1,,AP Top 25,238,Vanderbilt,12,546,0
+2009,1,,AP Top 25,251,Texas,13,501,0
+2009,1,,AP Top 25,197,Oklahoma State,14,442,0
+2009,1,,AP Top 25,258,Virginia,15,437,0
+2009,1,,AP Top 25,87,Notre Dame,16,374,0
+2009,1,,AP Top 25,9,Arizona State,17,364,0
+2009,1,,AP Top 25,194,Ohio State,18,359,0
+2009,1,,AP Top 25,239,Baylor,19,353,0
+2009,1,,AP Top 25,2,Auburn,20,239,0
+2009,1,,AP Top 25,52,Florida State,21,204,0
+2009,1,,AP Top 25,2752,Xavier,22,170,0
+2009,1,,AP Top 25,2509,Purdue,23,148,0
+2009,1,,AP Top 25,99,LSU,24,133,0
+2009,1,,AP Top 25,295,Old Dominion,25,124,0
+2009,2,,AP Top 25,41,UConn,1,1125,45
+2009,2,,AP Top 25,201,Oklahoma,2,1018,0
+2009,2,,AP Top 25,164,Rutgers,3,1010,0
+2009,2,,AP Top 25,153,North Carolina,4,963,0
+2009,2,,AP Top 25,2633,Tennessee,5,931,0
+2009,2,,AP Top 25,150,Duke,6,900,0
+2009,2,,AP Top 25,25,California,7,788,0
+2009,2,,AP Top 25,24,Stanford,8,764,0
+2009,2,,AP Top 25,97,Louisville,9,724,0
+2009,2,,AP Top 25,239,Baylor,10,698,0
+2009,2,,AP Top 25,120,Maryland,11,680,0
+2009,2,,AP Top 25,245,Texas A&M,12,658,0
+2009,2,,AP Top 25,238,Vanderbilt,13,603,0
+2009,2,,AP Top 25,251,Texas,14,519,0
+2009,2,,AP Top 25,87,Notre Dame,15,459,0
+2009,2,,AP Top 25,258,Virginia,16,440,0
+2009,2,,AP Top 25,194,Ohio State,17,361,0
+2009,2,,AP Top 25,9,Arizona State,18,345,0
+2009,2,,AP Top 25,197,Oklahoma State,19,291,0
+2009,2,,AP Top 25,2,Auburn,20,258,0
+2009,2,,AP Top 25,2509,Purdue,21,178,0
+2009,2,,AP Top 25,52,Florida State,22,173,0
+2009,2,,AP Top 25,2752,Xavier,23,152,0
+2009,2,,AP Top 25,2628,TCU,24,148,0
+2009,2,,AP Top 25,295,Old Dominion,25,106,0
+2009,3,,AP Top 25,41,UConn,1,1124,44
+2009,3,,AP Top 25,153,North Carolina,2,1070,1
+2009,3,,AP Top 25,25,California,3,971,0
+2009,3,,AP Top 25,201,Oklahoma,4,943,0
+2009,3,,AP Top 25,24,Stanford,5,925,0
+2009,3,,AP Top 25,239,Baylor,6,845,0
+2009,3,,AP Top 25,97,Louisville,7,836,0
+2009,3,,AP Top 25,245,Texas A&M,8,741,0
+2009,3,,AP Top 25,2633,Tennessee,9,716,0
+2009,3,,AP Top 25,120,Maryland,10,704,0
+2009,3,,AP Top 25,251,Texas,11,664,0
+2009,3,,AP Top 25,150,Duke,12,626,0
+2009,3,,AP Top 25,164,Rutgers,13,583,0
+2009,3,,AP Top 25,87,Notre Dame,14,579,0
+2009,3,,AP Top 25,2,Auburn,15,469,0
+2009,3,,AP Top 25,258,Virginia,16,444,0
+2009,3,,AP Top 25,238,Vanderbilt,17,352,0
+2009,3,,AP Top 25,197,Oklahoma State,18,318,0
+2009,3,,AP Top 25,2509,Purdue,19,303,0
+2009,3,,AP Top 25,194,Ohio State,20,258,0
+2009,3,,AP Top 25,9,Arizona State,21,257,0
+2009,3,,AP Top 25,2628,TCU,22,211,0
+2009,3,,AP Top 25,295,Old Dominion,23,186,0
+2009,3,,AP Top 25,127,Michigan State,24,79,0
+2009,3,,AP Top 25,2752,Xavier,25,67,0
+2009,3,,AP Top 25,66,Iowa State,25,67,0
+2009,4,,AP Top 25,41,UConn,1,1125,45
+2009,4,,AP Top 25,153,North Carolina,2,1073,0
+2009,4,,AP Top 25,25,California,3,1009,0
+2009,4,,AP Top 25,24,Stanford,4,973,0
+2009,4,,AP Top 25,245,Texas A&M,5,868,0
+2009,4,,AP Top 25,201,Oklahoma,6,845,0
+2009,4,,AP Top 25,2633,Tennessee,7,790,0
+2009,4,,AP Top 25,120,Maryland,8,781,0
+2009,4,,AP Top 25,251,Texas,9,748,0
+2009,4,,AP Top 25,239,Baylor,10,677,0
+2009,4,,AP Top 25,87,Notre Dame,11,669,0
+2009,4,,AP Top 25,150,Duke,12,652,0
+2009,4,,AP Top 25,97,Louisville,13,623,0
+2009,4,,AP Top 25,2,Auburn,14,576,0
+2009,4,,AP Top 25,164,Rutgers,15,536,0
+2009,4,,AP Top 25,238,Vanderbilt,16,397,0
+2009,4,,AP Top 25,2509,Purdue,17,363,0
+2009,4,,AP Top 25,194,Ohio State,18,353,0
+2009,4,,AP Top 25,197,Oklahoma State,19,351,0
+2009,4,,AP Top 25,258,Virginia,20,280,0
+2009,4,,AP Top 25,127,Michigan State,21,204,0
+2009,4,,AP Top 25,2628,TCU,22,129,0
+2009,4,,AP Top 25,2752,Xavier,23,128,0
+2009,4,,AP Top 25,221,Pittsburgh,24,94,0
+2009,4,,AP Top 25,9,Arizona State,25,68,0
+2009,5,,AP Top 25,41,UConn,1,1125,45
+2009,5,,AP Top 25,153,North Carolina,2,1076,0
+2009,5,,AP Top 25,24,Stanford,3,1010,0
+2009,5,,AP Top 25,245,Texas A&M,4,940,0
+2009,5,,AP Top 25,201,Oklahoma,5,878,0
+2009,5,,AP Top 25,251,Texas,6,846,0
+2009,5,,AP Top 25,2633,Tennessee,7,844,0
+2009,5,,AP Top 25,87,Notre Dame,8,784,0
+2009,5,,AP Top 25,25,California,9,763,0
+2009,5,,AP Top 25,239,Baylor,10,721,0
+2009,5,,AP Top 25,150,Duke,11,685,0
+2009,5,,AP Top 25,97,Louisville,12,645,0
+2009,5,,AP Top 25,2,Auburn,13,637,0
+2009,5,,AP Top 25,164,Rutgers,14,526,0
+2009,5,,AP Top 25,120,Maryland,15,514,0
+2009,5,,AP Top 25,221,Pittsburgh,16,419,0
+2009,5,,AP Top 25,258,Virginia,17,380,0
+2009,5,,AP Top 25,194,Ohio State,18,365,0
+2009,5,,AP Top 25,2628,TCU,19,317,0
+2009,5,,AP Top 25,238,Vanderbilt,20,202,0
+2009,5,,AP Top 25,2509,Purdue,21,164,0
+2009,5,,AP Top 25,9,Arizona State,22,161,0
+2009,5,,AP Top 25,57,Florida,23,138,0
+2009,5,,AP Top 25,197,Oklahoma State,24,91,0
+2009,5,,AP Top 25,2306,Kansas State,25,90,0
+2009,6,,AP Top 25,41,UConn,1,1125,45
+2009,6,,AP Top 25,153,North Carolina,2,1076,0
+2009,6,,AP Top 25,24,Stanford,3,1016,0
+2009,6,,AP Top 25,245,Texas A&M,4,963,0
+2009,6,,AP Top 25,251,Texas,5,928,0
+2009,6,,AP Top 25,201,Oklahoma,6,918,0
+2009,6,,AP Top 25,239,Baylor,7,797,0
+2009,6,,AP Top 25,150,Duke,8,732,0
+2009,6,,AP Top 25,97,Louisville,9,724,0
+2009,6,,AP Top 25,2,Auburn,10,701,0
+2009,6,,AP Top 25,2633,Tennessee,11,687,0
+2009,6,,AP Top 25,25,California,12,621,0
+2009,6,,AP Top 25,87,Notre Dame,13,598,0
+2009,6,,AP Top 25,164,Rutgers,14,559,0
+2009,6,,AP Top 25,120,Maryland,15,537,0
+2009,6,,AP Top 25,221,Pittsburgh,16,479,0
+2009,6,,AP Top 25,258,Virginia,17,401,0
+2009,6,,AP Top 25,194,Ohio State,18,370,0
+2009,6,,AP Top 25,238,Vanderbilt,19,211,0
+2009,6,,AP Top 25,57,Florida,20,194,0
+2009,6,,AP Top 25,9,Arizona State,21,182,0
+2009,6,,AP Top 25,197,Oklahoma State,22,164,0
+2009,6,,AP Top 25,2306,Kansas State,23,154,0
+2009,6,,AP Top 25,2628,TCU,24,120,0
+2009,6,,AP Top 25,59,Georgia Tech,25,110,0
+2009,7,,AP Top 25,41,UConn,1,1125,45
+2009,7,,AP Top 25,153,North Carolina,2,1078,0
+2009,7,,AP Top 25,245,Texas A&M,3,1001,0
+2009,7,,AP Top 25,251,Texas,4,976,0
+2009,7,,AP Top 25,201,Oklahoma,5,946,0
+2009,7,,AP Top 25,150,Duke,6,856,0
+2009,7,,AP Top 25,239,Baylor,7,819,0
+2009,7,,AP Top 25,2633,Tennessee,8,776,0
+2009,7,,AP Top 25,2,Auburn,9,732,0
+2009,7,,AP Top 25,97,Louisville,10,729,0
+2009,7,,AP Top 25,24,Stanford,11,707,0
+2009,7,,AP Top 25,87,Notre Dame,12,609,0
+2009,7,,AP Top 25,25,California,13,605,0
+2009,7,,AP Top 25,120,Maryland,14,541,0
+2009,7,,AP Top 25,164,Rutgers,15,538,0
+2009,7,,AP Top 25,258,Virginia,16,415,0
+2009,7,,AP Top 25,194,Ohio State,17,400,0
+2009,7,,AP Top 25,57,Florida,18,343,0
+2009,7,,AP Top 25,221,Pittsburgh,19,284,0
+2009,7,,AP Top 25,238,Vanderbilt,20,245,0
+2009,7,,AP Top 25,197,Oklahoma State,21,179,0
+2009,7,,AP Top 25,2306,Kansas State,22,168,0
+2009,7,,AP Top 25,59,Georgia Tech,23,128,0
+2009,7,,AP Top 25,9,Arizona State,24,118,0
+2009,7,,AP Top 25,2571,South Dakota State,25,112,0
+2009,8,,AP Top 25,41,UConn,1,1125,45
+2009,8,,AP Top 25,153,North Carolina,2,1078,0
+2009,8,,AP Top 25,245,Texas A&M,3,1002,0
+2009,8,,AP Top 25,251,Texas,4,976,0
+2009,8,,AP Top 25,201,Oklahoma,5,947,0
+2009,8,,AP Top 25,150,Duke,6,864,0
+2009,8,,AP Top 25,239,Baylor,7,823,0
+2009,8,,AP Top 25,2633,Tennessee,8,779,0
+2009,8,,AP Top 25,2,Auburn,9,741,0
+2009,8,,AP Top 25,97,Louisville,10,729,0
+2009,8,,AP Top 25,24,Stanford,11,701,0
+2009,8,,AP Top 25,87,Notre Dame,12,607,0
+2009,8,,AP Top 25,25,California,13,599,0
+2009,8,,AP Top 25,120,Maryland,14,543,0
+2009,8,,AP Top 25,164,Rutgers,15,538,0
+2009,8,,AP Top 25,258,Virginia,16,427,0
+2009,8,,AP Top 25,194,Ohio State,17,401,0
+2009,8,,AP Top 25,57,Florida,18,349,0
+2009,8,,AP Top 25,221,Pittsburgh,19,300,0
+2009,8,,AP Top 25,238,Vanderbilt,20,236,0
+2009,8,,AP Top 25,197,Oklahoma State,21,212,0
+2009,8,,AP Top 25,2306,Kansas State,22,200,0
+2009,8,,AP Top 25,59,Georgia Tech,23,159,0
+2009,8,,AP Top 25,2571,South Dakota State,24,146,0
+2009,8,,AP Top 25,167,New Mexico,25,31,0
+2009,9,,AP Top 25,41,UConn,1,1125,45
+2009,9,,AP Top 25,153,North Carolina,2,1079,0
+2009,9,,AP Top 25,245,Texas A&M,3,1021,0
+2009,9,,AP Top 25,201,Oklahoma,4,968,0
+2009,9,,AP Top 25,150,Duke,5,882,0
+2009,9,,AP Top 25,239,Baylor,6,855,0
+2009,9,,AP Top 25,2633,Tennessee,7,821,0
+2009,9,,AP Top 25,251,Texas,8,789,0
+2009,9,,AP Top 25,2,Auburn,9,765,0
+2009,9,,AP Top 25,97,Louisville,10,754,0
+2009,9,,AP Top 25,24,Stanford,11,705,0
+2009,9,,AP Top 25,87,Notre Dame,12,644,0
+2009,9,,AP Top 25,25,California,13,602,0
+2009,9,,AP Top 25,120,Maryland,14,552,0
+2009,9,,AP Top 25,258,Virginia,15,455,0
+2009,9,,AP Top 25,194,Ohio State,16,431,0
+2009,9,,AP Top 25,164,Rutgers,17,399,0
+2009,9,,AP Top 25,57,Florida,18,382,0
+2009,9,,AP Top 25,221,Pittsburgh,19,334,0
+2009,9,,AP Top 25,2306,Kansas State,20,239,0
+2009,9,,AP Top 25,197,Oklahoma State,21,236,0
+2009,9,,AP Top 25,59,Georgia Tech,22,203,0
+2009,9,,AP Top 25,2571,South Dakota State,23,186,0
+2009,9,,AP Top 25,238,Vanderbilt,24,53,0
+2009,9,,AP Top 25,2368,Marist,25,50,0
+2009,10,,AP Top 25,41,UConn,1,1125,45
+2009,10,,AP Top 25,153,North Carolina,2,1080,0
+2009,10,,AP Top 25,201,Oklahoma,3,1003,0
+2009,10,,AP Top 25,150,Duke,4,946,0
+2009,10,,AP Top 25,239,Baylor,5,921,0
+2009,10,,AP Top 25,2,Auburn,6,858,0
+2009,10,,AP Top 25,97,Louisville,7,827,0
+2009,10,,AP Top 25,245,Texas A&M,8,819,0
+2009,10,,AP Top 25,24,Stanford,9,776,0
+2009,10,,AP Top 25,87,Notre Dame,10,758,0
+2009,10,,AP Top 25,25,California,11,647,0
+2009,10,,AP Top 25,120,Maryland,12,630,0
+2009,10,,AP Top 25,2633,Tennessee,13,626,0
+2009,10,,AP Top 25,258,Virginia,14,512,0
+2009,10,,AP Top 25,194,Ohio State,15,501,0
+2009,10,,AP Top 25,251,Texas,16,498,0
+2009,10,,AP Top 25,2306,Kansas State,17,410,0
+2009,10,,AP Top 25,238,Vanderbilt,18,330,0
+2009,10,,AP Top 25,57,Florida,19,329,0
+2009,10,,AP Top 25,66,Iowa State,20,208,0
+2009,10,,AP Top 25,2368,Marist,21,157,0
+2009,10,,AP Top 25,197,Oklahoma State,22,139,0
+2009,10,,AP Top 25,164,Rutgers,23,115,0
+2009,10,,AP Top 25,59,Georgia Tech,24,86,0
+2009,10,,AP Top 25,167,New Mexico,25,62,0
+2009,11,,AP Top 25,41,UConn,1,1125,45
+2009,11,,AP Top 25,153,North Carolina,2,1080,0
+2009,11,,AP Top 25,201,Oklahoma,3,1018,0
+2009,11,,AP Top 25,150,Duke,4,958,0
+2009,11,,AP Top 25,239,Baylor,5,948,0
+2009,11,,AP Top 25,2,Auburn,6,895,0
+2009,11,,AP Top 25,97,Louisville,7,867,0
+2009,11,,AP Top 25,25,California,8,780,0
+2009,11,,AP Top 25,245,Texas A&M,9,745,0
+2009,11,,AP Top 25,2633,Tennessee,10,686,0
+2009,11,,AP Top 25,24,Stanford,11,673,0
+2009,11,,AP Top 25,120,Maryland,12,622,0
+2009,11,,AP Top 25,87,Notre Dame,13,601,0
+2009,11,,AP Top 25,251,Texas,14,553,0
+2009,11,,AP Top 25,57,Florida,15,445,0
+2009,11,,AP Top 25,258,Virginia,16,442,0
+2009,11,,AP Top 25,238,Vanderbilt,17,407,0
+2009,11,,AP Top 25,2306,Kansas State,18,366,0
+2009,11,,AP Top 25,194,Ohio State,19,361,0
+2009,11,,AP Top 25,2368,Marist,20,205,0
+2009,11,,AP Top 25,164,Rutgers,21,182,0
+2009,11,,AP Top 25,52,Florida State,22,143,0
+2009,11,,AP Top 25,167,New Mexico,23,106,0
+2009,11,,AP Top 25,197,Oklahoma State,24,101,0
+2009,11,,AP Top 25,221,Pittsburgh,25,75,0
+2009,12,,AP Top 25,41,UConn,1,1125,45
+2009,12,,AP Top 25,201,Oklahoma,2,1062,0
+2009,12,,AP Top 25,150,Duke,3,1002,0
+2009,12,,AP Top 25,239,Baylor,4,997,0
+2009,12,,AP Top 25,2,Auburn,5,959,0
+2009,12,,AP Top 25,97,Louisville,6,906,0
+2009,12,,AP Top 25,25,California,7,843,0
+2009,12,,AP Top 25,120,Maryland,8,773,0
+2009,12,,AP Top 25,24,Stanford,9,747,0
+2009,12,,AP Top 25,153,North Carolina,10,716,0
+2009,12,,AP Top 25,245,Texas A&M,11,697,0
+2009,12,,AP Top 25,57,Florida,12,595,0
+2009,12,,AP Top 25,2633,Tennessee,13,593,0
+2009,12,,AP Top 25,2306,Kansas State,14,490,0
+2009,12,,AP Top 25,194,Ohio State,15,466,0
+2009,12,,AP Top 25,251,Texas,16,448,0
+2009,12,,AP Top 25,87,Notre Dame,17,443,0
+2009,12,,AP Top 25,52,Florida State,18,347,0
+2009,12,,AP Top 25,258,Virginia,19,307,0
+2009,12,,AP Top 25,238,Vanderbilt,20,246,0
+2009,12,,AP Top 25,221,Pittsburgh,21,168,0
+2009,12,,AP Top 25,66,Iowa State,22,130,0
+2009,12,,AP Top 25,2752,Xavier,23,118,0
+2009,12,,AP Top 25,2571,South Dakota State,24,97,0
+2009,12,,AP Top 25,305,DePaul,25,86,0
+2009,13,,AP Top 25,41,UConn,1,1125,45
+2009,13,,AP Top 25,201,Oklahoma,2,1079,0
+2009,13,,AP Top 25,25,California,3,979,0
+2009,13,,AP Top 25,150,Duke,4,917,0
+2009,13,,AP Top 25,97,Louisville,5,873,0
+2009,13,,AP Top 25,2,Auburn,6,872,0
+2009,13,,AP Top 25,24,Stanford,7,852,0
+2009,13,,AP Top 25,239,Baylor,8,792,0
+2009,13,,AP Top 25,153,North Carolina,8,792,0
+2009,13,,AP Top 25,245,Texas A&M,10,790,0
+2009,13,,AP Top 25,57,Florida,11,660,0
+2009,13,,AP Top 25,2633,Tennessee,12,594,0
+2009,13,,AP Top 25,120,Maryland,13,586,0
+2009,13,,AP Top 25,194,Ohio State,14,514,0
+2009,13,,AP Top 25,52,Florida State,15,498,0
+2009,13,,AP Top 25,251,Texas,16,444,0
+2009,13,,AP Top 25,258,Virginia,17,435,0
+2009,13,,AP Top 25,2306,Kansas State,18,334,0
+2009,13,,AP Top 25,87,Notre Dame,19,261,0
+2009,13,,AP Top 25,238,Vanderbilt,20,260,0
+2009,13,,AP Top 25,66,Iowa State,21,247,0
+2009,13,,AP Top 25,221,Pittsburgh,22,215,0
+2009,13,,AP Top 25,2752,Xavier,23,135,0
+2009,13,,AP Top 25,2571,South Dakota State,24,102,0
+2009,13,,AP Top 25,305,DePaul,25,99,0
+2009,14,,AP Top 25,41,UConn,1,1125,45
+2009,14,,AP Top 25,201,Oklahoma,2,1080,0
+2009,14,,AP Top 25,25,California,3,1013,0
+2009,14,,AP Top 25,150,Duke,4,964,0
+2009,14,,AP Top 25,2,Auburn,5,924,0
+2009,14,,AP Top 25,24,Stanford,6,880,0
+2009,14,,AP Top 25,239,Baylor,7,855,0
+2009,14,,AP Top 25,153,North Carolina,8,831,0
+2009,14,,AP Top 25,57,Florida,9,759,0
+2009,14,,AP Top 25,97,Louisville,10,711,0
+2009,14,,AP Top 25,120,Maryland,11,700,0
+2009,14,,AP Top 25,245,Texas A&M,12,613,0
+2009,14,,AP Top 25,251,Texas,13,566,0
+2009,14,,AP Top 25,52,Florida State,14,490,0
+2009,14,,AP Top 25,2633,Tennessee,15,445,0
+2009,14,,AP Top 25,66,Iowa State,16,413,0
+2009,14,,AP Top 25,258,Virginia,17,385,0
+2009,14,,AP Top 25,194,Ohio State,18,371,0
+2009,14,,AP Top 25,221,Pittsburgh,19,356,0
+2009,14,,AP Top 25,2306,Kansas State,20,289,0
+2009,14,,AP Top 25,2752,Xavier,21,219,0
+2009,14,,AP Top 25,87,Notre Dame,22,205,0
+2009,14,,AP Top 25,2571,South Dakota State,23,150,0
+2009,14,,AP Top 25,238,Vanderbilt,24,132,0
+2009,14,,AP Top 25,305,DePaul,25,51,0
+2009,15,,AP Top 25,41,UConn,1,1125,45
+2009,15,,AP Top 25,201,Oklahoma,2,1080,0
+2009,15,,AP Top 25,2,Auburn,3,999,0
+2009,15,,AP Top 25,24,Stanford,4,979,0
+2009,15,,AP Top 25,239,Baylor,5,942,0
+2009,15,,AP Top 25,25,California,6,865,0
+2009,15,,AP Top 25,150,Duke,7,800,0
+2009,15,,AP Top 25,97,Louisville,8,794,0
+2009,15,,AP Top 25,120,Maryland,9,787,0
+2009,15,,AP Top 25,153,North Carolina,10,785,0
+2009,15,,AP Top 25,52,Florida State,11,665,0
+2009,15,,AP Top 25,251,Texas,12,652,0
+2009,15,,AP Top 25,2633,Tennessee,13,538,0
+2009,15,,AP Top 25,245,Texas A&M,14,505,0
+2009,15,,AP Top 25,57,Florida,15,497,0
+2009,15,,AP Top 25,2306,Kansas State,16,408,0
+2009,15,,AP Top 25,2752,Xavier,17,345,0
+2009,15,,AP Top 25,238,Vanderbilt,18,293,0
+2009,15,,AP Top 25,221,Pittsburgh,19,281,0
+2009,15,,AP Top 25,194,Ohio State,20,276,0
+2009,15,,AP Top 25,66,Iowa State,21,263,0
+2009,15,,AP Top 25,2571,South Dakota State,22,200,0
+2009,15,,AP Top 25,258,Virginia,23,169,0
+2009,15,,AP Top 25,87,Notre Dame,24,130,0
+2009,15,,AP Top 25,9,Arizona State,25,76,0
+2009,16,,AP Top 25,41,UConn,1,1100,44
+2009,16,,AP Top 25,201,Oklahoma,2,1056,0
+2009,16,,AP Top 25,24,Stanford,3,996,0
+2009,16,,AP Top 25,25,California,4,897,0
+2009,16,,AP Top 25,120,Maryland,5,877,0
+2009,16,,AP Top 25,239,Baylor,6,859,0
+2009,16,,AP Top 25,2,Auburn,7,848,0
+2009,16,,AP Top 25,97,Louisville,8,834,0
+2009,16,,AP Top 25,153,North Carolina,9,777,0
+2009,16,,AP Top 25,150,Duke,10,714,0
+2009,16,,AP Top 25,52,Florida State,11,681,0
+2009,16,,AP Top 25,245,Texas A&M,12,623,0
+2009,16,,AP Top 25,2752,Xavier,13,487,0
+2009,16,,AP Top 25,194,Ohio State,14,478,0
+2009,16,,AP Top 25,221,Pittsburgh,15,443,0
+2009,16,,AP Top 25,251,Texas,16,389,0
+2009,16,,AP Top 25,57,Florida,17,373,0
+2009,16,,AP Top 25,2633,Tennessee,18,301,0
+2009,16,,AP Top 25,238,Vanderbilt,19,297,0
+2009,16,,AP Top 25,2306,Kansas State,20,257,0
+2009,16,,AP Top 25,2571,South Dakota State,21,255,0
+2009,16,,AP Top 25,258,Virginia,22,223,0
+2009,16,,AP Top 25,87,Notre Dame,23,174,0
+2009,16,,AP Top 25,9,Arizona State,24,157,0
+2009,16,,AP Top 25,66,Iowa State,25,94,0
+2009,17,,AP Top 25,41,UConn,1,1125,45
+2009,17,,AP Top 25,24,Stanford,2,1043,0
+2009,17,,AP Top 25,201,Oklahoma,3,999,0
+2009,17,,AP Top 25,120,Maryland,4,971,0
+2009,17,,AP Top 25,239,Baylor,5,927,0
+2009,17,,AP Top 25,2,Auburn,6,915,0
+2009,17,,AP Top 25,97,Louisville,7,887,0
+2009,17,,AP Top 25,150,Duke,8,806,0
+2009,17,,AP Top 25,25,California,9,743,0
+2009,17,,AP Top 25,245,Texas A&M,10,731,0
+2009,17,,AP Top 25,153,North Carolina,11,710,0
+2009,17,,AP Top 25,194,Ohio State,12,603,0
+2009,17,,AP Top 25,52,Florida State,12,603,0
+2009,17,,AP Top 25,221,Pittsburgh,14,434,0
+2009,17,,AP Top 25,251,Texas,15,408,0
+2009,17,,AP Top 25,2752,Xavier,16,363,0
+2009,17,,AP Top 25,2571,South Dakota State,17,324,0
+2009,17,,AP Top 25,9,Arizona State,18,307,0
+2009,17,,AP Top 25,2633,Tennessee,19,302,0
+2009,17,,AP Top 25,87,Notre Dame,20,291,0
+2009,17,,AP Top 25,57,Florida,21,268,0
+2009,17,,AP Top 25,238,Vanderbilt,22,217,0
+2009,17,,AP Top 25,66,Iowa State,23,212,0
+2009,17,,AP Top 25,258,Virginia,24,194,0
+2009,17,,AP Top 25,189,Bowling Green,25,74,0
+2009,18,,AP Top 25,41,UConn,1,1125,45
+2009,18,,AP Top 25,24,Stanford,2,1062,0
+2009,18,,AP Top 25,120,Maryland,3,1039,0
+2009,18,,AP Top 25,201,Oklahoma,4,934,0
+2009,18,,AP Top 25,239,Baylor,5,928,0
+2009,18,,AP Top 25,150,Duke,6,891,0
+2009,18,,AP Top 25,97,Louisville,7,846,0
+2009,18,,AP Top 25,2,Auburn,8,827,0
+2009,18,,AP Top 25,245,Texas A&M,9,766,0
+2009,18,,AP Top 25,194,Ohio State,10,739,0
+2009,18,,AP Top 25,153,North Carolina,11,698,0
+2009,18,,AP Top 25,52,Florida State,12,592,0
+2009,18,,AP Top 25,25,California,13,541,0
+2009,18,,AP Top 25,238,Vanderbilt,14,522,0
+2009,18,,AP Top 25,221,Pittsburgh,15,492,0
+2009,18,,AP Top 25,2571,South Dakota State,16,386,0
+2009,18,,AP Top 25,66,Iowa State,17,370,0
+2009,18,,AP Top 25,2633,Tennessee,18,322,0
+2009,18,,AP Top 25,9,Arizona State,19,275,0
+2009,18,,AP Top 25,2752,Xavier,20,243,0
+2009,18,,AP Top 25,2306,Kansas State,21,227,0
+2009,18,,AP Top 25,57,Florida,22,191,0
+2009,18,,AP Top 25,87,Notre Dame,23,170,0
+2009,18,,AP Top 25,258,Virginia,24,163,0
+2009,18,,AP Top 25,251,Texas,25,113,0

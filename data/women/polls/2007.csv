@@ -1,0 +1,451 @@
+season,week,date,poll,team_id,team,rank,points,first
+2007,1,,AP Top 25,120,Maryland,1,1246,47
+2007,1,,AP Top 25,153,North Carolina,2,1161,1
+2007,1,,AP Top 25,201,Oklahoma,3,1148,2
+2007,1,,AP Top 25,24,Stanford,4,1079,0
+2007,1,,AP Top 25,2633,Tennessee,5,1072,0
+2007,1,,AP Top 25,150,Duke,6,975,0
+2007,1,,AP Top 25,194,Ohio State,7,956,0
+2007,1,,AP Top 25,41,UConn,8,922,0
+2007,1,,AP Top 25,61,Georgia,9,830,0
+2007,1,,AP Top 25,99,LSU,10,748,0
+2007,1,,AP Top 25,2509,Purdue,11,641,0
+2007,1,,AP Top 25,164,Rutgers,12,635,0
+2007,1,,AP Top 25,9,Arizona State,13,621,0
+2007,1,,AP Top 25,245,Texas A&M,14,618,0
+2007,1,,AP Top 25,96,Kentucky,15,501,0
+2007,1,,AP Top 25,238,Vanderbilt,16,479,0
+2007,1,,AP Top 25,127,Michigan State,17,280,0
+2007,1,,AP Top 25,167,New Mexico,18,278,0
+2007,1,,AP Top 25,239,Baylor,19,275,0
+2007,1,,AP Top 25,305,DePaul,20,258,0
+2007,1,,AP Top 25,25,California,21,256,0
+2007,1,,AP Top 25,30,USC,22,248,0
+2007,1,,AP Top 25,26,UCLA,23,127,0
+2007,1,,AP Top 25,252,BYU,24,126,0
+2007,1,,AP Top 25,251,Texas,25,113,0
+2007,2,,AP Top 25,120,Maryland,1,1245,46
+2007,2,,AP Top 25,153,North Carolina,2,1171,1
+2007,2,,AP Top 25,201,Oklahoma,3,1155,3
+2007,2,,AP Top 25,24,Stanford,4,1076,0
+2007,2,,AP Top 25,2633,Tennessee,5,1065,0
+2007,2,,AP Top 25,150,Duke,6,973,0
+2007,2,,AP Top 25,194,Ohio State,7,957,0
+2007,2,,AP Top 25,41,UConn,8,910,0
+2007,2,,AP Top 25,61,Georgia,9,856,0
+2007,2,,AP Top 25,99,LSU,10,784,0
+2007,2,,AP Top 25,9,Arizona State,11,706,0
+2007,2,,AP Top 25,2509,Purdue,12,669,0
+2007,2,,AP Top 25,245,Texas A&M,13,630,0
+2007,2,,AP Top 25,164,Rutgers,14,526,0
+2007,2,,AP Top 25,238,Vanderbilt,15,517,0
+2007,2,,AP Top 25,239,Baylor,16,400,0
+2007,2,,AP Top 25,127,Michigan State,17,378,0
+2007,2,,AP Top 25,25,California,18,317,0
+2007,2,,AP Top 25,30,USC,19,304,0
+2007,2,,AP Top 25,26,UCLA,20,211,0
+2007,2,,AP Top 25,96,Kentucky,21,190,0
+2007,2,,AP Top 25,252,BYU,22,187,0
+2007,2,,AP Top 25,305,DePaul,23,183,0
+2007,2,,AP Top 25,167,New Mexico,23,183,0
+2007,2,,AP Top 25,251,Texas,25,125,0
+2007,3,,AP Top 25,120,Maryland,1,1246,46
+2007,3,,AP Top 25,153,North Carolina,2,1175,1
+2007,3,,AP Top 25,201,Oklahoma,3,1162,3
+2007,3,,AP Top 25,2633,Tennessee,4,1104,0
+2007,3,,AP Top 25,150,Duke,5,1016,0
+2007,3,,AP Top 25,194,Ohio State,6,990,0
+2007,3,,AP Top 25,41,UConn,7,952,0
+2007,3,,AP Top 25,61,Georgia,8,871,0
+2007,3,,AP Top 25,99,LSU,9,836,0
+2007,3,,AP Top 25,2509,Purdue,10,805,0
+2007,3,,AP Top 25,24,Stanford,11,749,0
+2007,3,,AP Top 25,245,Texas A&M,12,660,0
+2007,3,,AP Top 25,9,Arizona State,13,649,0
+2007,3,,AP Top 25,238,Vanderbilt,14,572,0
+2007,3,,AP Top 25,239,Baylor,15,480,0
+2007,3,,AP Top 25,25,California,16,467,0
+2007,3,,AP Top 25,127,Michigan State,17,454,0
+2007,3,,AP Top 25,164,Rutgers,18,279,0
+2007,3,,AP Top 25,305,DePaul,19,256,0
+2007,3,,AP Top 25,96,Kentucky,20,214,0
+2007,3,,AP Top 25,26,UCLA,21,189,0
+2007,3,,AP Top 25,252,BYU,22,180,0
+2007,3,,AP Top 25,45,George Washington,23,141,0
+2007,3,,AP Top 25,97,Louisville,24,123,0
+2007,3,,AP Top 25,251,Texas,25,83,0
+2007,4,,AP Top 25,120,Maryland,1,1246,46
+2007,4,,AP Top 25,153,North Carolina,2,1176,1
+2007,4,,AP Top 25,201,Oklahoma,3,1154,3
+2007,4,,AP Top 25,2633,Tennessee,4,1111,0
+2007,4,,AP Top 25,150,Duke,5,1024,0
+2007,4,,AP Top 25,194,Ohio State,6,995,0
+2007,4,,AP Top 25,41,UConn,7,947,0
+2007,4,,AP Top 25,61,Georgia,8,911,0
+2007,4,,AP Top 25,2509,Purdue,9,852,0
+2007,4,,AP Top 25,245,Texas A&M,10,728,0
+2007,4,,AP Top 25,99,LSU,11,708,0
+2007,4,,AP Top 25,238,Vanderbilt,12,674,0
+2007,4,,AP Top 25,239,Baylor,13,660,0
+2007,4,,AP Top 25,9,Arizona State,14,643,0
+2007,4,,AP Top 25,24,Stanford,15,514,0
+2007,4,,AP Top 25,25,California,16,400,0
+2007,4,,AP Top 25,305,DePaul,17,363,0
+2007,4,,AP Top 25,164,Rutgers,18,334,0
+2007,4,,AP Top 25,97,Louisville,19,312,0
+2007,4,,AP Top 25,127,Michigan State,20,282,0
+2007,4,,AP Top 25,45,George Washington,21,254,0
+2007,4,,AP Top 25,251,Texas,22,186,0
+2007,4,,AP Top 25,252,BYU,23,180,0
+2007,4,,AP Top 25,96,Kentucky,24,82,0
+2007,4,,AP Top 25,2641,Texas Tech,25,77,0
+2007,5,,AP Top 25,120,Maryland,1,1246,46
+2007,5,,AP Top 25,153,North Carolina,2,1190,1
+2007,5,,AP Top 25,201,Oklahoma,3,1163,3
+2007,5,,AP Top 25,150,Duke,4,1057,0
+2007,5,,AP Top 25,194,Ohio State,5,1013,0
+2007,5,,AP Top 25,2633,Tennessee,6,1012,0
+2007,5,,AP Top 25,41,UConn,7,986,0
+2007,5,,AP Top 25,61,Georgia,8,921,0
+2007,5,,AP Top 25,99,LSU,9,775,0
+2007,5,,AP Top 25,2509,Purdue,10,754,0
+2007,5,,AP Top 25,238,Vanderbilt,11,731,0
+2007,5,,AP Top 25,239,Baylor,12,692,0
+2007,5,,AP Top 25,9,Arizona State,13,682,0
+2007,5,,AP Top 25,24,Stanford,14,544,0
+2007,5,,AP Top 25,245,Texas A&M,15,507,0
+2007,5,,AP Top 25,25,California,16,468,0
+2007,5,,AP Top 25,97,Louisville,17,417,0
+2007,5,,AP Top 25,305,DePaul,18,396,0
+2007,5,,AP Top 25,164,Rutgers,19,345,0
+2007,5,,AP Top 25,127,Michigan State,20,307,0
+2007,5,,AP Top 25,45,George Washington,21,306,0
+2007,5,,AP Top 25,251,Texas,22,207,0
+2007,5,,AP Top 25,167,New Mexico,23,70,0
+2007,5,,AP Top 25,269,Marquette,24,55,0
+2007,5,,AP Top 25,158,Nebraska,25,51,0
+2007,6,,AP Top 25,120,Maryland,1,1243,46
+2007,6,,AP Top 25,153,North Carolina,2,1188,1
+2007,6,,AP Top 25,201,Oklahoma,3,1149,2
+2007,6,,AP Top 25,150,Duke,4,1108,1
+2007,6,,AP Top 25,2633,Tennessee,5,1032,0
+2007,6,,AP Top 25,41,UConn,6,1019,0
+2007,6,,AP Top 25,99,LSU,7,938,0
+2007,6,,AP Top 25,194,Ohio State,8,832,0
+2007,6,,AP Top 25,239,Baylor,9,810,0
+2007,6,,AP Top 25,9,Arizona State,10,769,0
+2007,6,,AP Top 25,61,Georgia,11,748,0
+2007,6,,AP Top 25,238,Vanderbilt,12,648,0
+2007,6,,AP Top 25,2509,Purdue,13,639,0
+2007,6,,AP Top 25,24,Stanford,14,575,0
+2007,6,,AP Top 25,25,California,15,539,0
+2007,6,,AP Top 25,97,Louisville,16,530,0
+2007,6,,AP Top 25,305,DePaul,17,498,0
+2007,6,,AP Top 25,127,Michigan State,18,373,0
+2007,6,,AP Top 25,245,Texas A&M,19,330,0
+2007,6,,AP Top 25,45,George Washington,20,244,0
+2007,6,,AP Top 25,269,Marquette,21,187,0
+2007,6,,AP Top 25,167,New Mexico,22,168,0
+2007,6,,AP Top 25,251,Texas,23,133,0
+2007,6,,AP Top 25,221,Pittsburgh,24,118,0
+2007,6,,AP Top 25,8,Arkansas,25,82,0
+2007,7,,AP Top 25,120,Maryland,1,1243,46
+2007,7,,AP Top 25,153,North Carolina,2,1187,1
+2007,7,,AP Top 25,201,Oklahoma,3,1149,2
+2007,7,,AP Top 25,150,Duke,4,1110,1
+2007,7,,AP Top 25,2633,Tennessee,5,1039,0
+2007,7,,AP Top 25,41,UConn,6,1012,0
+2007,7,,AP Top 25,99,LSU,7,943,0
+2007,7,,AP Top 25,194,Ohio State,8,844,0
+2007,7,,AP Top 25,239,Baylor,9,834,0
+2007,7,,AP Top 25,9,Arizona State,10,775,0
+2007,7,,AP Top 25,61,Georgia,11,751,0
+2007,7,,AP Top 25,238,Vanderbilt,12,648,0
+2007,7,,AP Top 25,2509,Purdue,13,636,0
+2007,7,,AP Top 25,24,Stanford,14,560,0
+2007,7,,AP Top 25,25,California,15,537,0
+2007,7,,AP Top 25,97,Louisville,16,535,0
+2007,7,,AP Top 25,305,DePaul,17,501,0
+2007,7,,AP Top 25,245,Texas A&M,18,322,0
+2007,7,,AP Top 25,45,George Washington,19,292,0
+2007,7,,AP Top 25,127,Michigan State,20,286,0
+2007,7,,AP Top 25,269,Marquette,21,230,0
+2007,7,,AP Top 25,221,Pittsburgh,22,175,0
+2007,7,,AP Top 25,167,New Mexico,23,171,0
+2007,7,,AP Top 25,8,Arkansas,24,134,0
+2007,7,,AP Top 25,189,Bowling Green,25,73,0
+2007,8,,AP Top 25,120,Maryland,1,1246,47
+2007,8,,AP Top 25,153,North Carolina,2,1198,1
+2007,8,,AP Top 25,150,Duke,3,1145,2
+2007,8,,AP Top 25,2633,Tennessee,4,1080,0
+2007,8,,AP Top 25,41,UConn,5,1048,0
+2007,8,,AP Top 25,99,LSU,6,966,0
+2007,8,,AP Top 25,194,Ohio State,7,943,0
+2007,8,,AP Top 25,201,Oklahoma,8,929,0
+2007,8,,AP Top 25,239,Baylor,9,833,0
+2007,8,,AP Top 25,9,Arizona State,10,780,0
+2007,8,,AP Top 25,61,Georgia,11,754,0
+2007,8,,AP Top 25,238,Vanderbilt,12,676,0
+2007,8,,AP Top 25,2509,Purdue,13,641,0
+2007,8,,AP Top 25,24,Stanford,14,580,0
+2007,8,,AP Top 25,97,Louisville,15,579,0
+2007,8,,AP Top 25,245,Texas A&M,16,394,0
+2007,8,,AP Top 25,45,George Washington,17,356,0
+2007,8,,AP Top 25,25,California,18,355,0
+2007,8,,AP Top 25,305,DePaul,19,315,0
+2007,8,,AP Top 25,269,Marquette,20,301,0
+2007,8,,AP Top 25,127,Michigan State,21,283,0
+2007,8,,AP Top 25,167,New Mexico,22,187,0
+2007,8,,AP Top 25,8,Arkansas,23,169,0
+2007,8,,AP Top 25,221,Pittsburgh,24,155,0
+2007,8,,AP Top 25,189,Bowling Green,25,99,0
+2007,9,,AP Top 25,120,Maryland,1,1196,45
+2007,9,,AP Top 25,153,North Carolina,2,1150,1
+2007,9,,AP Top 25,150,Duke,3,1103,2
+2007,9,,AP Top 25,2633,Tennessee,4,1040,0
+2007,9,,AP Top 25,41,UConn,5,1014,0
+2007,9,,AP Top 25,99,LSU,6,931,0
+2007,9,,AP Top 25,194,Ohio State,7,917,0
+2007,9,,AP Top 25,201,Oklahoma,8,879,0
+2007,9,,AP Top 25,239,Baylor,9,821,0
+2007,9,,AP Top 25,2509,Purdue,10,681,0
+2007,9,,AP Top 25,238,Vanderbilt,11,677,0
+2007,9,,AP Top 25,24,Stanford,12,659,0
+2007,9,,AP Top 25,97,Louisville,13,591,0
+2007,9,,AP Top 25,9,Arizona State,13,591,0
+2007,9,,AP Top 25,61,Georgia,15,512,0
+2007,9,,AP Top 25,45,George Washington,16,505,0
+2007,9,,AP Top 25,245,Texas A&M,17,416,0
+2007,9,,AP Top 25,269,Marquette,18,338,0
+2007,9,,AP Top 25,127,Michigan State,19,331,0
+2007,9,,AP Top 25,8,Arkansas,20,234,0
+2007,9,,AP Top 25,25,California,21,224,0
+2007,9,,AP Top 25,221,Pittsburgh,22,166,0
+2007,9,,AP Top 25,305,DePaul,23,133,0
+2007,9,,AP Top 25,189,Bowling Green,24,129,0
+2007,9,,AP Top 25,167,New Mexico,25,81,0
+2007,10,,AP Top 25,120,Maryland,1,1247,47
+2007,10,,AP Top 25,153,North Carolina,2,1198,1
+2007,10,,AP Top 25,150,Duke,3,1149,2
+2007,10,,AP Top 25,2633,Tennessee,4,1102,0
+2007,10,,AP Top 25,99,LSU,5,1008,0
+2007,10,,AP Top 25,194,Ohio State,6,968,0
+2007,10,,AP Top 25,41,UConn,7,948,0
+2007,10,,AP Top 25,201,Oklahoma,8,935,0
+2007,10,,AP Top 25,239,Baylor,9,882,0
+2007,10,,AP Top 25,24,Stanford,10,778,0
+2007,10,,AP Top 25,9,Arizona State,11,708,0
+2007,10,,AP Top 25,45,George Washington,12,621,0
+2007,10,,AP Top 25,2509,Purdue,13,604,0
+2007,10,,AP Top 25,238,Vanderbilt,14,600,0
+2007,10,,AP Top 25,61,Georgia,15,558,0
+2007,10,,AP Top 25,269,Marquette,16,514,0
+2007,10,,AP Top 25,97,Louisville,17,485,0
+2007,10,,AP Top 25,189,Bowling Green,18,300,0
+2007,10,,AP Top 25,245,Texas A&M,19,284,0
+2007,10,,AP Top 25,127,Michigan State,20,255,0
+2007,10,,AP Top 25,2393,Middle Tennessee,21,200,0
+2007,10,,AP Top 25,25,California,22,161,0
+2007,10,,AP Top 25,251,Texas,23,119,0
+2007,10,,AP Top 25,305,DePaul,24,85,0
+2007,10,,AP Top 25,8,Arkansas,25,75,0
+2007,11,,AP Top 25,150,Duke,1,1235,37
+2007,11,,AP Top 25,153,North Carolina,2,1212,13
+2007,11,,AP Top 25,120,Maryland,3,1128,0
+2007,11,,AP Top 25,2633,Tennessee,4,1122,0
+2007,11,,AP Top 25,194,Ohio State,5,1005,0
+2007,11,,AP Top 25,41,UConn,6,1000,0
+2007,11,,AP Top 25,201,Oklahoma,7,972,0
+2007,11,,AP Top 25,99,LSU,8,873,0
+2007,11,,AP Top 25,24,Stanford,9,856,0
+2007,11,,AP Top 25,9,Arizona State,10,766,0
+2007,11,,AP Top 25,45,George Washington,11,673,0
+2007,11,,AP Top 25,2509,Purdue,12,671,0
+2007,11,,AP Top 25,239,Baylor,13,636,0
+2007,11,,AP Top 25,238,Vanderbilt,14,633,0
+2007,11,,AP Top 25,97,Louisville,15,503,0
+2007,11,,AP Top 25,61,Georgia,16,485,0
+2007,11,,AP Top 25,245,Texas A&M,17,444,0
+2007,11,,AP Top 25,189,Bowling Green,18,367,0
+2007,11,,AP Top 25,269,Marquette,19,359,0
+2007,11,,AP Top 25,2393,Middle Tennessee,20,268,0
+2007,11,,AP Top 25,25,California,21,210,0
+2007,11,,AP Top 25,251,Texas,22,177,0
+2007,11,,AP Top 25,127,Michigan State,23,159,0
+2007,11,,AP Top 25,145,Ole Miss,24,125,0
+2007,11,,AP Top 25,2306,Kansas State,25,74,0
+2007,12,,AP Top 25,150,Duke,1,1237,39
+2007,12,,AP Top 25,153,North Carolina,2,1210,11
+2007,12,,AP Top 25,120,Maryland,3,1131,0
+2007,12,,AP Top 25,2633,Tennessee,4,1119,0
+2007,12,,AP Top 25,194,Ohio State,5,1023,0
+2007,12,,AP Top 25,201,Oklahoma,6,984,0
+2007,12,,AP Top 25,41,UConn,7,951,0
+2007,12,,AP Top 25,99,LSU,8,888,0
+2007,12,,AP Top 25,24,Stanford,9,872,0
+2007,12,,AP Top 25,9,Arizona State,10,782,0
+2007,12,,AP Top 25,45,George Washington,11,715,0
+2007,12,,AP Top 25,2509,Purdue,12,700,0
+2007,12,,AP Top 25,239,Baylor,13,636,0
+2007,12,,AP Top 25,61,Georgia,14,585,0
+2007,12,,AP Top 25,238,Vanderbilt,15,503,0
+2007,12,,AP Top 25,189,Bowling Green,16,407,0
+2007,12,,AP Top 25,269,Marquette,17,398,0
+2007,12,,AP Top 25,97,Louisville,18,376,0
+2007,12,,AP Top 25,2393,Middle Tennessee,19,346,0
+2007,12,,AP Top 25,25,California,20,254,0
+2007,12,,AP Top 25,245,Texas A&M,21,241,0
+2007,12,,AP Top 25,145,Ole Miss,22,207,0
+2007,12,,AP Top 25,127,Michigan State,23,199,0
+2007,12,,AP Top 25,251,Texas,24,144,0
+2007,12,,AP Top 25,158,Nebraska,25,128,0
+2007,13,,AP Top 25,150,Duke,1,1241,41
+2007,13,,AP Top 25,153,North Carolina,2,1209,9
+2007,13,,AP Top 25,2633,Tennessee,3,1102,0
+2007,13,,AP Top 25,120,Maryland,4,1089,0
+2007,13,,AP Top 25,194,Ohio State,5,1066,0
+2007,13,,AP Top 25,41,UConn,6,987,0
+2007,13,,AP Top 25,99,LSU,7,939,0
+2007,13,,AP Top 25,24,Stanford,8,919,0
+2007,13,,AP Top 25,201,Oklahoma,9,862,0
+2007,13,,AP Top 25,2509,Purdue,10,739,0
+2007,13,,AP Top 25,45,George Washington,11,727,0
+2007,13,,AP Top 25,9,Arizona State,12,714,0
+2007,13,,AP Top 25,239,Baylor,13,671,0
+2007,13,,AP Top 25,61,Georgia,14,600,0
+2007,13,,AP Top 25,238,Vanderbilt,15,474,0
+2007,13,,AP Top 25,269,Marquette,16,448,0
+2007,13,,AP Top 25,189,Bowling Green,17,434,0
+2007,13,,AP Top 25,245,Texas A&M,18,425,0
+2007,13,,AP Top 25,97,Louisville,19,396,0
+2007,13,,AP Top 25,2393,Middle Tennessee,20,385,0
+2007,13,,AP Top 25,25,California,21,206,0
+2007,13,,AP Top 25,158,Nebraska,22,154,0
+2007,13,,AP Top 25,164,Rutgers,23,86,0
+2007,13,,AP Top 25,2739,Green Bay,24,74,0
+2007,13,,AP Top 25,256,James Madison,25,69,0
+2007,14,,AP Top 25,150,Duke,1,1242,42
+2007,14,,AP Top 25,153,North Carolina,2,1208,8
+2007,14,,AP Top 25,2633,Tennessee,3,1135,0
+2007,14,,AP Top 25,194,Ohio State,4,1098,0
+2007,14,,AP Top 25,41,UConn,5,1053,0
+2007,14,,AP Top 25,120,Maryland,6,986,0
+2007,14,,AP Top 25,99,LSU,7,894,0
+2007,14,,AP Top 25,45,George Washington,8,801,0
+2007,14,,AP Top 25,61,Georgia,9,783,0
+2007,14,,AP Top 25,9,Arizona State,10,765,0
+2007,14,,AP Top 25,24,Stanford,11,762,0
+2007,14,,AP Top 25,201,Oklahoma,12,753,0
+2007,14,,AP Top 25,2509,Purdue,13,689,0
+2007,14,,AP Top 25,238,Vanderbilt,14,540,0
+2007,14,,AP Top 25,239,Baylor,15,522,0
+2007,14,,AP Top 25,245,Texas A&M,16,455,0
+2007,14,,AP Top 25,97,Louisville,17,415,0
+2007,14,,AP Top 25,189,Bowling Green,18,379,0
+2007,14,,AP Top 25,2393,Middle Tennessee,19,375,0
+2007,14,,AP Top 25,25,California,20,348,0
+2007,14,,AP Top 25,158,Nebraska,21,311,0
+2007,14,,AP Top 25,164,Rutgers,22,222,0
+2007,14,,AP Top 25,269,Marquette,23,182,0
+2007,14,,AP Top 25,2739,Green Bay,24,92,0
+2007,14,,AP Top 25,256,James Madison,25,84,0
+2007,15,,AP Top 25,150,Duke,1,1225,49
+2007,15,,AP Top 25,153,North Carolina,2,1155,0
+2007,15,,AP Top 25,2633,Tennessee,3,1129,0
+2007,15,,AP Top 25,194,Ohio State,4,1064,0
+2007,15,,AP Top 25,41,UConn,5,1051,0
+2007,15,,AP Top 25,120,Maryland,6,984,0
+2007,15,,AP Top 25,99,LSU,7,852,0
+2007,15,,AP Top 25,45,George Washington,8,818,0
+2007,15,,AP Top 25,24,Stanford,9,795,0
+2007,15,,AP Top 25,9,Arizona State,10,788,0
+2007,15,,AP Top 25,61,Georgia,11,757,0
+2007,15,,AP Top 25,238,Vanderbilt,12,610,0
+2007,15,,AP Top 25,245,Texas A&M,13,607,0
+2007,15,,AP Top 25,201,Oklahoma,14,588,0
+2007,15,,AP Top 25,239,Baylor,15,562,0
+2007,15,,AP Top 25,2509,Purdue,16,500,0
+2007,15,,AP Top 25,2393,Middle Tennessee,17,428,0
+2007,15,,AP Top 25,189,Bowling Green,18,419,0
+2007,15,,AP Top 25,158,Nebraska,19,394,0
+2007,15,,AP Top 25,97,Louisville,20,280,0
+2007,15,,AP Top 25,269,Marquette,21,195,0
+2007,15,,AP Top 25,25,California,22,177,0
+2007,15,,AP Top 25,164,Rutgers,23,164,0
+2007,15,,AP Top 25,127,Michigan State,24,120,0
+2007,15,,AP Top 25,256,James Madison,25,99,0
+2007,16,,AP Top 25,150,Duke,1,1250,50
+2007,16,,AP Top 25,2633,Tennessee,2,1190,0
+2007,16,,AP Top 25,41,UConn,3,1129,0
+2007,16,,AP Top 25,153,North Carolina,4,1116,0
+2007,16,,AP Top 25,194,Ohio State,5,977,0
+2007,16,,AP Top 25,120,Maryland,6,957,0
+2007,16,,AP Top 25,99,LSU,7,947,0
+2007,16,,AP Top 25,24,Stanford,8,869,0
+2007,16,,AP Top 25,45,George Washington,9,846,0
+2007,16,,AP Top 25,9,Arizona State,10,829,0
+2007,16,,AP Top 25,61,Georgia,11,770,0
+2007,16,,AP Top 25,238,Vanderbilt,12,665,0
+2007,16,,AP Top 25,201,Oklahoma,13,629,0
+2007,16,,AP Top 25,239,Baylor,14,609,0
+2007,16,,AP Top 25,2509,Purdue,15,532,0
+2007,16,,AP Top 25,245,Texas A&M,16,498,0
+2007,16,,AP Top 25,2393,Middle Tennessee,17,465,0
+2007,16,,AP Top 25,189,Bowling Green,18,437,0
+2007,16,,AP Top 25,269,Marquette,19,304,0
+2007,16,,AP Top 25,127,Michigan State,20,300,0
+2007,16,,AP Top 25,164,Rutgers,21,256,0
+2007,16,,AP Top 25,256,James Madison,22,157,0
+2007,16,,AP Top 25,97,Louisville,23,107,0
+2007,16,,AP Top 25,2739,Green Bay,24,102,0
+2007,16,,AP Top 25,158,Nebraska,25,90,0
+2007,17,,AP Top 25,150,Duke,1,1249,49
+2007,17,,AP Top 25,2633,Tennessee,2,1200,1
+2007,17,,AP Top 25,41,UConn,3,1142,0
+2007,17,,AP Top 25,153,North Carolina,4,1085,0
+2007,17,,AP Top 25,194,Ohio State,5,1020,0
+2007,17,,AP Top 25,120,Maryland,6,993,0
+2007,17,,AP Top 25,24,Stanford,7,919,0
+2007,17,,AP Top 25,45,George Washington,8,852,0
+2007,17,,AP Top 25,9,Arizona State,9,849,0
+2007,17,,AP Top 25,61,Georgia,10,802,0
+2007,17,,AP Top 25,99,LSU,11,740,0
+2007,17,,AP Top 25,201,Oklahoma,12,697,0
+2007,17,,AP Top 25,238,Vanderbilt,13,670,0
+2007,17,,AP Top 25,245,Texas A&M,14,590,0
+2007,17,,AP Top 25,2509,Purdue,15,578,0
+2007,17,,AP Top 25,239,Baylor,16,498,0
+2007,17,,AP Top 25,2393,Middle Tennessee,17,494,0
+2007,17,,AP Top 25,164,Rutgers,18,367,0
+2007,17,,AP Top 25,189,Bowling Green,19,222,0
+2007,17,,AP Top 25,97,Louisville,20,218,0
+2007,17,,AP Top 25,2739,Green Bay,21,206,0
+2007,17,,AP Top 25,127,Michigan State,22,194,0
+2007,17,,AP Top 25,269,Marquette,23,191,0
+2007,17,,AP Top 25,152,NC State,24,183,0
+2007,17,,AP Top 25,25,California,25,87,0
+2007,18,,AP Top 25,150,Duke,1,1225,39
+2007,18,,AP Top 25,41,UConn,2,1177,7
+2007,18,,AP Top 25,153,North Carolina,3,1160,4
+2007,18,,AP Top 25,2633,Tennessee,4,1110,0
+2007,18,,AP Top 25,194,Ohio State,5,1022,0
+2007,18,,AP Top 25,24,Stanford,6,942,0
+2007,18,,AP Top 25,120,Maryland,7,936,0
+2007,18,,AP Top 25,9,Arizona State,8,887,0
+2007,18,,AP Top 25,238,Vanderbilt,9,849,0
+2007,18,,AP Top 25,99,LSU,10,785,0
+2007,18,,AP Top 25,201,Oklahoma,11,751,0
+2007,18,,AP Top 25,2509,Purdue,12,640,0
+2007,18,,AP Top 25,245,Texas A&M,13,638,0
+2007,18,,AP Top 25,61,Georgia,14,627,0
+2007,18,,AP Top 25,45,George Washington,15,611,0
+2007,18,,AP Top 25,2393,Middle Tennessee,16,488,0
+2007,18,,AP Top 25,152,NC State,17,429,0
+2007,18,,AP Top 25,239,Baylor,18,425,0
+2007,18,,AP Top 25,164,Rutgers,19,304,0
+2007,18,,AP Top 25,189,Bowling Green,20,258,0
+2007,18,,AP Top 25,269,Marquette,21,238,0
+2007,18,,AP Top 25,2739,Green Bay,22,217,0
+2007,18,,AP Top 25,97,Louisville,23,155,0
+2007,18,,AP Top 25,127,Michigan State,24,152,0
+2007,18,,AP Top 25,149,Montana,25,67,0

@@ -1,0 +1,451 @@
+season,week,date,poll,team_id,team,rank,points,first
+2016,1,,AP Top 25,41,UConn,1,800,32
+2016,1,,AP Top 25,2579,South Carolina,2,758,0
+2016,1,,AP Top 25,87,Notre Dame,3,714,0
+2016,1,,AP Top 25,2633,Tennessee,4,711,0
+2016,1,,AP Top 25,239,Baylor,5,672,0
+2016,1,,AP Top 25,194,Ohio State,6,570,0
+2016,1,,AP Top 25,52,Florida State,7,551,0
+2016,1,,AP Top 25,97,Louisville,8,541,0
+2016,1,,AP Top 25,120,Maryland,9,536,0
+2016,1,,AP Top 25,204,Oregon State,10,518,0
+2016,1,,AP Top 25,344,Mississippi State,11,465,0
+2016,1,,AP Top 25,251,Texas,12,459,0
+2016,1,,AP Top 25,245,Texas A&M,13,397,0
+2016,1,,AP Top 25,150,Duke,14,392,0
+2016,1,,AP Top 25,9,Arizona State,15,347,0
+2016,1,,AP Top 25,24,Stanford,16,338,0
+2016,1,,AP Top 25,201,Oklahoma,17,264,0
+2016,1,,AP Top 25,96,Kentucky,18,241,0
+2016,1,,AP Top 25,77,Northwestern,19,209,0
+2016,1,,AP Top 25,58,South Florida,20,202,0
+2016,1,,AP Top 25,45,George Washington,21,171,0
+2016,1,,AP Top 25,153,North Carolina,22,94,0
+2016,1,,AP Top 25,183,Syracuse,23,74,0
+2016,1,,AP Top 25,127,Michigan State,24,61,0
+2016,1,,AP Top 25,236,Chattanooga,25,60,0
+2016,2,,AP Top 25,41,UConn,1,799,31
+2016,2,,AP Top 25,2579,South Carolina,2,760,1
+2016,2,,AP Top 25,87,Notre Dame,3,716,0
+2016,2,,AP Top 25,2633,Tennessee,4,713,0
+2016,2,,AP Top 25,239,Baylor,5,676,0
+2016,2,,AP Top 25,52,Florida State,6,583,0
+2016,2,,AP Top 25,194,Ohio State,7,571,0
+2016,2,,AP Top 25,120,Maryland,8,562,0
+2016,2,,AP Top 25,204,Oregon State,9,544,0
+2016,2,,AP Top 25,344,Mississippi State,10,497,0
+2016,2,,AP Top 25,251,Texas,11,481,0
+2016,2,,AP Top 25,245,Texas A&M,12,417,0
+2016,2,,AP Top 25,96,Kentucky,13,373,0
+2016,2,,AP Top 25,150,Duke,14,366,0
+2016,2,,AP Top 25,24,Stanford,15,348,0
+2016,2,,AP Top 25,97,Louisville,16,344,0
+2016,2,,AP Top 25,201,Oklahoma,17,265,0
+2016,2,,AP Top 25,9,Arizona State,18,250,0
+2016,2,,AP Top 25,58,South Florida,19,225,0
+2016,2,,AP Top 25,77,Northwestern,20,211,0
+2016,2,,AP Top 25,25,California,21,168,0
+2016,2,,AP Top 25,45,George Washington,22,161,0
+2016,2,,AP Top 25,127,Michigan State,23,61,0
+2016,2,,AP Top 25,236,Chattanooga,24,57,0
+2016,2,,AP Top 25,183,Syracuse,25,55,0
+2016,3,,AP Top 25,41,UConn,1,800,32
+2016,3,,AP Top 25,2579,South Carolina,2,759,0
+2016,3,,AP Top 25,87,Notre Dame,3,722,0
+2016,3,,AP Top 25,2633,Tennessee,4,702,0
+2016,3,,AP Top 25,239,Baylor,5,685,0
+2016,3,,AP Top 25,120,Maryland,6,609,0
+2016,3,,AP Top 25,204,Oregon State,7,585,0
+2016,3,,AP Top 25,344,Mississippi State,8,527,0
+2016,3,,AP Top 25,251,Texas,8,527,0
+2016,3,,AP Top 25,245,Texas A&M,10,520,0
+2016,3,,AP Top 25,194,Ohio State,11,452,0
+2016,3,,AP Top 25,96,Kentucky,12,439,0
+2016,3,,AP Top 25,24,Stanford,13,433,0
+2016,3,,AP Top 25,52,Florida State,14,378,0
+2016,3,,AP Top 25,150,Duke,15,341,0
+2016,3,,AP Top 25,25,California,16,268,0
+2016,3,,AP Top 25,9,Arizona State,16,268,0
+2016,3,,AP Top 25,58,South Florida,18,257,0
+2016,3,,AP Top 25,77,Northwestern,19,251,0
+2016,3,,AP Top 25,127,Michigan State,20,164,0
+2016,3,,AP Top 25,201,Oklahoma,21,114,0
+2016,3,,AP Top 25,97,Louisville,22,108,0
+2016,3,,AP Top 25,183,Syracuse,23,103,0
+2016,3,,AP Top 25,45,George Washington,24,83,0
+2016,3,,AP Top 25,2294,Iowa,25,74,0
+2016,4,,AP Top 25,41,UConn,1,800,32
+2016,4,,AP Top 25,2579,South Carolina,2,760,0
+2016,4,,AP Top 25,87,Notre Dame,3,734,0
+2016,4,,AP Top 25,239,Baylor,4,707,0
+2016,4,,AP Top 25,120,Maryland,5,634,0
+2016,4,,AP Top 25,251,Texas,6,631,0
+2016,4,,AP Top 25,204,Oregon State,7,591,0
+2016,4,,AP Top 25,2633,Tennessee,8,556,0
+2016,4,,AP Top 25,344,Mississippi State,9,551,0
+2016,4,,AP Top 25,194,Ohio State,10,524,0
+2016,4,,AP Top 25,96,Kentucky,11,477,0
+2016,4,,AP Top 25,245,Texas A&M,12,463,0
+2016,4,,AP Top 25,52,Florida State,13,395,0
+2016,4,,AP Top 25,150,Duke,14,371,0
+2016,4,,AP Top 25,77,Northwestern,15,302,0
+2016,4,,AP Top 25,24,Stanford,16,294,0
+2016,4,,AP Top 25,9,Arizona State,17,280,0
+2016,4,,AP Top 25,25,California,18,240,0
+2016,4,,AP Top 25,127,Michigan State,19,195,0
+2016,4,,AP Top 25,183,Syracuse,20,153,0
+2016,4,,AP Top 25,201,Oklahoma,21,151,0
+2016,4,,AP Top 25,2550,Seton Hall,22,134,0
+2016,4,,AP Top 25,305,DePaul,23,97,0
+2016,4,,AP Top 25,58,South Florida,24,91,0
+2016,4,,AP Top 25,26,UCLA,24,91,0
+2016,5,,AP Top 25,41,UConn,1,800,32
+2016,5,,AP Top 25,2579,South Carolina,2,764,0
+2016,5,,AP Top 25,87,Notre Dame,3,717,0
+2016,5,,AP Top 25,239,Baylor,4,715,0
+2016,5,,AP Top 25,251,Texas,5,656,0
+2016,5,,AP Top 25,120,Maryland,5,656,0
+2016,5,,AP Top 25,204,Oregon State,7,598,0
+2016,5,,AP Top 25,96,Kentucky,8,533,0
+2016,5,,AP Top 25,344,Mississippi State,9,523,0
+2016,5,,AP Top 25,194,Ohio State,10,503,0
+2016,5,,AP Top 25,52,Florida State,11,480,0
+2016,5,,AP Top 25,77,Northwestern,12,418,0
+2016,5,,AP Top 25,150,Duke,13,386,0
+2016,5,,AP Top 25,24,Stanford,14,362,0
+2016,5,,AP Top 25,245,Texas A&M,15,356,0
+2016,5,,AP Top 25,2633,Tennessee,16,354,0
+2016,5,,AP Top 25,201,Oklahoma,17,264,0
+2016,5,,AP Top 25,305,DePaul,18,189,0
+2016,5,,AP Top 25,183,Syracuse,19,130,0
+2016,5,,AP Top 25,26,UCLA,20,121,0
+2016,5,,AP Top 25,58,South Florida,21,115,0
+2016,5,,AP Top 25,25,California,22,106,0
+2016,5,,AP Top 25,2294,Iowa,23,97,0
+2016,5,,AP Top 25,9,Arizona State,24,95,0
+2016,5,,AP Top 25,127,Michigan State,25,87,0
+2016,6,,AP Top 25,41,UConn,1,800,32
+2016,6,,AP Top 25,2579,South Carolina,2,763,0
+2016,6,,AP Top 25,87,Notre Dame,3,724,0
+2016,6,,AP Top 25,239,Baylor,4,711,0
+2016,6,,AP Top 25,251,Texas,5,659,0
+2016,6,,AP Top 25,120,Maryland,6,651,0
+2016,6,,AP Top 25,204,Oregon State,7,599,0
+2016,6,,AP Top 25,96,Kentucky,8,549,0
+2016,6,,AP Top 25,344,Mississippi State,9,535,0
+2016,6,,AP Top 25,194,Ohio State,10,507,0
+2016,6,,AP Top 25,52,Florida State,11,447,0
+2016,6,,AP Top 25,77,Northwestern,12,434,0
+2016,6,,AP Top 25,150,Duke,13,416,0
+2016,6,,AP Top 25,2633,Tennessee,14,342,0
+2016,6,,AP Top 25,24,Stanford,15,329,0
+2016,6,,AP Top 25,305,DePaul,16,302,0
+2016,6,,AP Top 25,201,Oklahoma,17,293,0
+2016,6,,AP Top 25,245,Texas A&M,18,245,0
+2016,6,,AP Top 25,26,UCLA,19,163,0
+2016,6,,AP Top 25,58,South Florida,20,145,0
+2016,6,,AP Top 25,25,California,21,125,0
+2016,6,,AP Top 25,9,Arizona State,21,125,0
+2016,6,,AP Top 25,2390,Miami,23,98,0
+2016,6,,AP Top 25,127,Michigan State,24,83,0
+2016,6,,AP Top 25,2599,St. John's,25,64,0
+2016,7,,AP Top 25,41,UConn,1,800,32
+2016,7,,AP Top 25,2579,South Carolina,2,763,0
+2016,7,,AP Top 25,87,Notre Dame,3,725,0
+2016,7,,AP Top 25,239,Baylor,4,712,0
+2016,7,,AP Top 25,251,Texas,5,662,0
+2016,7,,AP Top 25,120,Maryland,6,653,0
+2016,7,,AP Top 25,96,Kentucky,7,595,0
+2016,7,,AP Top 25,344,Mississippi State,8,560,0
+2016,7,,AP Top 25,194,Ohio State,9,531,0
+2016,7,,AP Top 25,52,Florida State,10,474,0
+2016,7,,AP Top 25,204,Oregon State,11,461,0
+2016,7,,AP Top 25,24,Stanford,12,442,0
+2016,7,,AP Top 25,150,Duke,13,386,0
+2016,7,,AP Top 25,2633,Tennessee,14,383,0
+2016,7,,AP Top 25,77,Northwestern,15,319,0
+2016,7,,AP Top 25,245,Texas A&M,16,312,0
+2016,7,,AP Top 25,305,DePaul,17,277,0
+2016,7,,AP Top 25,201,Oklahoma,18,211,0
+2016,7,,AP Top 25,26,UCLA,19,200,0
+2016,7,,AP Top 25,58,South Florida,20,163,0
+2016,7,,AP Top 25,25,California,21,140,0
+2016,7,,AP Top 25,9,Arizona State,22,133,0
+2016,7,,AP Top 25,2390,Miami,23,124,0
+2016,7,,AP Top 25,127,Michigan State,24,99,0
+2016,7,,AP Top 25,142,Missouri,25,79,0
+2016,8,,AP Top 25,41,UConn,1,800,32
+2016,8,,AP Top 25,2579,South Carolina,2,763,0
+2016,8,,AP Top 25,87,Notre Dame,3,725,0
+2016,8,,AP Top 25,239,Baylor,4,712,0
+2016,8,,AP Top 25,251,Texas,5,662,0
+2016,8,,AP Top 25,120,Maryland,6,654,0
+2016,8,,AP Top 25,96,Kentucky,7,597,0
+2016,8,,AP Top 25,344,Mississippi State,8,556,0
+2016,8,,AP Top 25,194,Ohio State,9,550,0
+2016,8,,AP Top 25,204,Oregon State,10,479,0
+2016,8,,AP Top 25,24,Stanford,11,472,0
+2016,8,,AP Top 25,150,Duke,12,402,0
+2016,8,,AP Top 25,2633,Tennessee,13,394,0
+2016,8,,AP Top 25,77,Northwestern,14,349,0
+2016,8,,AP Top 25,52,Florida State,15,345,0
+2016,8,,AP Top 25,245,Texas A&M,16,327,0
+2016,8,,AP Top 25,9,Arizona State,17,244,0
+2016,8,,AP Top 25,201,Oklahoma,18,239,0
+2016,8,,AP Top 25,25,California,19,224,0
+2016,8,,AP Top 25,58,South Florida,20,192,0
+2016,8,,AP Top 25,26,UCLA,21,137,0
+2016,8,,AP Top 25,2390,Miami,22,119,0
+2016,8,,AP Top 25,142,Missouri,23,101,0
+2016,8,,AP Top 25,127,Michigan State,24,99,0
+2016,8,,AP Top 25,305,DePaul,25,84,0
+2016,9,,AP Top 25,41,UConn,1,800,32
+2016,9,,AP Top 25,2579,South Carolina,2,765,0
+2016,9,,AP Top 25,87,Notre Dame,3,735,0
+2016,9,,AP Top 25,251,Texas,4,705,0
+2016,9,,AP Top 25,194,Ohio State,5,630,0
+2016,9,,AP Top 25,239,Baylor,6,627,0
+2016,9,,AP Top 25,344,Mississippi State,7,616,0
+2016,9,,AP Top 25,120,Maryland,8,580,0
+2016,9,,AP Top 25,24,Stanford,9,521,0
+2016,9,,AP Top 25,96,Kentucky,10,502,0
+2016,9,,AP Top 25,204,Oregon State,11,495,0
+2016,9,,AP Top 25,2633,Tennessee,12,460,0
+2016,9,,AP Top 25,245,Texas A&M,13,416,0
+2016,9,,AP Top 25,9,Arizona State,14,356,0
+2016,9,,AP Top 25,26,UCLA,15,243,0
+2016,9,,AP Top 25,77,Northwestern,16,235,0
+2016,9,,AP Top 25,201,Oklahoma,17,229,0
+2016,9,,AP Top 25,150,Duke,18,215,0
+2016,9,,AP Top 25,52,Florida State,19,202,0
+2016,9,,AP Top 25,142,Missouri,20,198,0
+2016,9,,AP Top 25,25,California,21,183,0
+2016,9,,AP Top 25,58,South Florida,22,168,0
+2016,9,,AP Top 25,127,Michigan State,23,109,0
+2016,9,,AP Top 25,305,DePaul,24,94,0
+2016,9,,AP Top 25,2550,Seton Hall,25,78,0
+2016,10,,AP Top 25,41,UConn,1,800,32
+2016,10,,AP Top 25,2579,South Carolina,2,765,0
+2016,10,,AP Top 25,87,Notre Dame,3,735,0
+2016,10,,AP Top 25,251,Texas,4,706,0
+2016,10,,AP Top 25,194,Ohio State,5,640,0
+2016,10,,AP Top 25,239,Baylor,6,632,0
+2016,10,,AP Top 25,344,Mississippi State,7,621,0
+2016,10,,AP Top 25,120,Maryland,8,592,0
+2016,10,,AP Top 25,96,Kentucky,9,543,0
+2016,10,,AP Top 25,9,Arizona State,10,502,0
+2016,10,,AP Top 25,24,Stanford,11,447,0
+2016,10,,AP Top 25,204,Oregon State,12,406,0
+2016,10,,AP Top 25,2633,Tennessee,13,371,0
+2016,10,,AP Top 25,201,Oklahoma,14,358,0
+2016,10,,AP Top 25,245,Texas A&M,15,301,0
+2016,10,,AP Top 25,52,Florida State,16,293,0
+2016,10,,AP Top 25,26,UCLA,17,287,0
+2016,10,,AP Top 25,127,Michigan State,18,265,0
+2016,10,,AP Top 25,58,South Florida,19,234,0
+2016,10,,AP Top 25,57,Florida,20,134,0
+2016,10,,AP Top 25,2390,Miami,21,121,0
+2016,10,,AP Top 25,150,Duke,22,116,0
+2016,10,,AP Top 25,97,Louisville,23,111,0
+2016,10,,AP Top 25,142,Missouri,24,99,0
+2016,10,,AP Top 25,30,USC,25,69,0
+2016,11,,AP Top 25,41,UConn,1,800,32
+2016,11,,AP Top 25,2579,South Carolina,2,766,0
+2016,11,,AP Top 25,87,Notre Dame,3,738,0
+2016,11,,AP Top 25,239,Baylor,4,700,0
+2016,11,,AP Top 25,120,Maryland,5,655,0
+2016,11,,AP Top 25,251,Texas,6,653,0
+2016,11,,AP Top 25,194,Ohio State,7,568,0
+2016,11,,AP Top 25,9,Arizona State,8,558,0
+2016,11,,AP Top 25,96,Kentucky,9,548,0
+2016,11,,AP Top 25,344,Mississippi State,10,530,0
+2016,11,,AP Top 25,204,Oregon State,11,493,0
+2016,11,,AP Top 25,24,Stanford,12,411,0
+2016,11,,AP Top 25,245,Texas A&M,13,399,0
+2016,11,,AP Top 25,52,Florida State,14,397,0
+2016,11,,AP Top 25,58,South Florida,15,326,0
+2016,11,,AP Top 25,2390,Miami,16,267,0
+2016,11,,AP Top 25,97,Louisville,17,254,0
+2016,11,,AP Top 25,2633,Tennessee,18,235,0
+2016,11,,AP Top 25,201,Oklahoma,19,191,0
+2016,11,,AP Top 25,26,UCLA,20,160,0
+2016,11,,AP Top 25,127,Michigan State,21,151,0
+2016,11,,AP Top 25,57,Florida,22,104,0
+2016,11,,AP Top 25,142,Missouri,23,103,0
+2016,11,,AP Top 25,305,DePaul,24,82,0
+2016,11,,AP Top 25,277,West Virginia,25,54,0
+2016,12,,AP Top 25,41,UConn,1,800,32
+2016,12,,AP Top 25,2579,South Carolina,2,765,0
+2016,12,,AP Top 25,87,Notre Dame,3,739,0
+2016,12,,AP Top 25,239,Baylor,4,700,0
+2016,12,,AP Top 25,120,Maryland,5,659,0
+2016,12,,AP Top 25,251,Texas,6,651,0
+2016,12,,AP Top 25,194,Ohio State,7,592,0
+2016,12,,AP Top 25,9,Arizona State,8,582,0
+2016,12,,AP Top 25,204,Oregon State,9,539,0
+2016,12,,AP Top 25,245,Texas A&M,10,473,0
+2016,12,,AP Top 25,52,Florida State,11,467,0
+2016,12,,AP Top 25,96,Kentucky,12,434,0
+2016,12,,AP Top 25,344,Mississippi State,13,408,0
+2016,12,,AP Top 25,97,Louisville,14,352,0
+2016,12,,AP Top 25,26,UCLA,15,317,0
+2016,12,,AP Top 25,24,Stanford,16,290,0
+2016,12,,AP Top 25,2390,Miami,17,240,0
+2016,12,,AP Top 25,127,Michigan State,18,219,0
+2016,12,,AP Top 25,2633,Tennessee,19,209,0
+2016,12,,AP Top 25,58,South Florida,20,193,0
+2016,12,,AP Top 25,201,Oklahoma,21,143,0
+2016,12,,AP Top 25,142,Missouri,22,140,0
+2016,12,,AP Top 25,305,DePaul,23,123,0
+2016,12,,AP Top 25,277,West Virginia,24,108,0
+2016,12,,AP Top 25,264,Washington,25,80,0
+2016,13,,AP Top 25,41,UConn,1,800,32
+2016,13,,AP Top 25,2579,South Carolina,2,765,0
+2016,13,,AP Top 25,87,Notre Dame,3,739,0
+2016,13,,AP Top 25,239,Baylor,4,700,0
+2016,13,,AP Top 25,120,Maryland,5,659,0
+2016,13,,AP Top 25,251,Texas,6,652,0
+2016,13,,AP Top 25,194,Ohio State,7,590,0
+2016,13,,AP Top 25,9,Arizona State,8,587,0
+2016,13,,AP Top 25,204,Oregon State,9,542,0
+2016,13,,AP Top 25,52,Florida State,10,500,0
+2016,13,,AP Top 25,344,Mississippi State,11,452,0
+2016,13,,AP Top 25,245,Texas A&M,12,443,0
+2016,13,,AP Top 25,97,Louisville,13,408,0
+2016,13,,AP Top 25,26,UCLA,14,372,0
+2016,13,,AP Top 25,24,Stanford,15,311,0
+2016,13,,AP Top 25,2390,Miami,16,292,0
+2016,13,,AP Top 25,127,Michigan State,17,273,0
+2016,13,,AP Top 25,96,Kentucky,18,248,0
+2016,13,,AP Top 25,58,South Florida,19,212,0
+2016,13,,AP Top 25,201,Oklahoma,20,195,0
+2016,13,,AP Top 25,142,Missouri,21,181,0
+2016,13,,AP Top 25,57,Florida,22,150,0
+2016,13,,AP Top 25,2633,Tennessee,23,60,0
+2016,13,,AP Top 25,264,Washington,24,47,0
+2016,13,,AP Top 25,197,Oklahoma State,25,45,0
+2016,14,,AP Top 25,41,UConn,1,800,32
+2016,14,,AP Top 25,2579,South Carolina,2,765,0
+2016,14,,AP Top 25,87,Notre Dame,3,739,0
+2016,14,,AP Top 25,239,Baylor,4,699,0
+2016,14,,AP Top 25,120,Maryland,5,660,0
+2016,14,,AP Top 25,251,Texas,6,653,0
+2016,14,,AP Top 25,194,Ohio State,7,599,0
+2016,14,,AP Top 25,204,Oregon State,8,580,0
+2016,14,,AP Top 25,9,Arizona State,9,518,0
+2016,14,,AP Top 25,52,Florida State,10,515,0
+2016,14,,AP Top 25,344,Mississippi State,11,485,0
+2016,14,,AP Top 25,97,Louisville,12,418,0
+2016,14,,AP Top 25,24,Stanford,13,389,0
+2016,14,,AP Top 25,26,UCLA,14,366,0
+2016,14,,AP Top 25,245,Texas A&M,15,354,0
+2016,14,,AP Top 25,57,Florida,16,305,0
+2016,14,,AP Top 25,127,Michigan State,17,286,0
+2016,14,,AP Top 25,96,Kentucky,18,231,0
+2016,14,,AP Top 25,2390,Miami,19,219,0
+2016,14,,AP Top 25,197,Oklahoma State,20,202,0
+2016,14,,AP Top 25,201,Oklahoma,21,132,0
+2016,14,,AP Top 25,58,South Florida,22,115,0
+2016,14,,AP Top 25,305,DePaul,23,84,0
+2016,14,,AP Top 25,277,West Virginia,24,80,0
+2016,14,,AP Top 25,2633,Tennessee,25,49,0
+2016,15,,AP Top 25,41,UConn,1,800,32
+2016,15,,AP Top 25,87,Notre Dame,2,755,0
+2016,15,,AP Top 25,2579,South Carolina,3,748,0
+2016,15,,AP Top 25,239,Baylor,4,703,0
+2016,15,,AP Top 25,194,Ohio State,5,662,0
+2016,15,,AP Top 25,120,Maryland,6,614,0
+2016,15,,AP Top 25,204,Oregon State,7,604,0
+2016,15,,AP Top 25,251,Texas,8,569,0
+2016,15,,AP Top 25,9,Arizona State,9,558,0
+2016,15,,AP Top 25,52,Florida State,10,532,0
+2016,15,,AP Top 25,97,Louisville,11,465,0
+2016,15,,AP Top 25,245,Texas A&M,12,416,0
+2016,15,,AP Top 25,26,UCLA,12,416,0
+2016,15,,AP Top 25,344,Mississippi State,14,398,0
+2016,15,,AP Top 25,24,Stanford,15,371,0
+2016,15,,AP Top 25,96,Kentucky,16,272,0
+2016,15,,AP Top 25,197,Oklahoma State,17,226,0
+2016,15,,AP Top 25,2390,Miami,18,215,0
+2016,15,,AP Top 25,58,South Florida,19,174,0
+2016,15,,AP Top 25,201,Oklahoma,20,173,0
+2016,15,,AP Top 25,305,DePaul,21,147,0
+2016,15,,AP Top 25,57,Florida,22,136,0
+2016,15,,AP Top 25,183,Syracuse,23,74,0
+2016,15,,AP Top 25,2633,Tennessee,24,63,0
+2016,15,,AP Top 25,127,Michigan State,25,58,0
+2016,16,,AP Top 25,41,UConn,1,800,32
+2016,16,,AP Top 25,87,Notre Dame,2,756,0
+2016,16,,AP Top 25,2579,South Carolina,3,746,0
+2016,16,,AP Top 25,239,Baylor,4,704,0
+2016,16,,AP Top 25,194,Ohio State,5,656,0
+2016,16,,AP Top 25,120,Maryland,6,623,0
+2016,16,,AP Top 25,204,Oregon State,7,608,0
+2016,16,,AP Top 25,251,Texas,8,581,0
+2016,16,,AP Top 25,9,Arizona State,9,563,0
+2016,16,,AP Top 25,97,Louisville,10,508,0
+2016,16,,AP Top 25,245,Texas A&M,11,463,0
+2016,16,,AP Top 25,52,Florida State,12,421,0
+2016,16,,AP Top 25,24,Stanford,13,409,0
+2016,16,,AP Top 25,26,UCLA,14,387,0
+2016,16,,AP Top 25,96,Kentucky,15,338,0
+2016,16,,AP Top 25,344,Mississippi State,16,319,0
+2016,16,,AP Top 25,2390,Miami,17,258,0
+2016,16,,AP Top 25,183,Syracuse,18,241,0
+2016,16,,AP Top 25,305,DePaul,19,221,0
+2016,16,,AP Top 25,127,Michigan State,20,134,0
+2016,16,,AP Top 25,58,South Florida,21,131,0
+2016,16,,AP Top 25,197,Oklahoma State,22,94,0
+2016,16,,AP Top 25,201,Oklahoma,23,91,0
+2016,16,,AP Top 25,142,Missouri,24,76,0
+2016,16,,AP Top 25,36,Colorado State,25,58,0
+2016,17,,AP Top 25,41,UConn,1,800,32
+2016,17,,AP Top 25,87,Notre Dame,2,756,0
+2016,17,,AP Top 25,2579,South Carolina,3,747,0
+2016,17,,AP Top 25,239,Baylor,4,704,0
+2016,17,,AP Top 25,120,Maryland,5,662,0
+2016,17,,AP Top 25,251,Texas,6,642,0
+2016,17,,AP Top 25,97,Louisville,7,578,0
+2016,17,,AP Top 25,204,Oregon State,8,550,0
+2016,17,,AP Top 25,194,Ohio State,9,549,0
+2016,17,,AP Top 25,9,Arizona State,10,499,0
+2016,17,,AP Top 25,24,Stanford,11,469,0
+2016,17,,AP Top 25,26,UCLA,12,437,0
+2016,17,,AP Top 25,96,Kentucky,13,415,0
+2016,17,,AP Top 25,52,Florida State,14,414,0
+2016,17,,AP Top 25,245,Texas A&M,15,356,0
+2016,17,,AP Top 25,344,Mississippi State,16,326,0
+2016,17,,AP Top 25,183,Syracuse,17,272,0
+2016,17,,AP Top 25,305,DePaul,18,236,0
+2016,17,,AP Top 25,127,Michigan State,19,233,0
+2016,17,,AP Top 25,58,South Florida,20,157,0
+2016,17,,AP Top 25,2390,Miami,21,150,0
+2016,17,,AP Top 25,277,West Virginia,22,96,0
+2016,17,,AP Top 25,36,Colorado State,22,96,0
+2016,17,,AP Top 25,201,Oklahoma,24,81,0
+2016,17,,AP Top 25,57,Florida,25,76,0
+2016,18,,AP Top 25,41,UConn,1,800,32
+2016,18,,AP Top 25,87,Notre Dame,2,753,0
+2016,18,,AP Top 25,2579,South Carolina,3,748,0
+2016,18,,AP Top 25,239,Baylor,4,706,0
+2016,18,,AP Top 25,120,Maryland,5,672,0
+2016,18,,AP Top 25,204,Oregon State,6,630,0
+2016,18,,AP Top 25,251,Texas,7,614,0
+2016,18,,AP Top 25,97,Louisville,8,557,0
+2016,18,,AP Top 25,194,Ohio State,9,498,0
+2016,18,,AP Top 25,26,UCLA,10,472,0
+2016,18,,AP Top 25,9,Arizona State,11,444,0
+2016,18,,AP Top 25,96,Kentucky,12,428,0
+2016,18,,AP Top 25,24,Stanford,13,390,0
+2016,18,,AP Top 25,183,Syracuse,14,386,0
+2016,18,,AP Top 25,344,Mississippi State,15,370,0
+2016,18,,AP Top 25,127,Michigan State,16,328,0
+2016,18,,AP Top 25,52,Florida State,17,303,0
+2016,18,,AP Top 25,305,DePaul,18,270,0
+2016,18,,AP Top 25,245,Texas A&M,19,254,0
+2016,18,,AP Top 25,2390,Miami,20,217,0
+2016,18,,AP Top 25,58,South Florida,21,165,0
+2016,18,,AP Top 25,36,Colorado State,22,119,0
+2016,18,,AP Top 25,277,West Virginia,23,100,0
+2016,18,,AP Top 25,201,Oklahoma,24,70,0
+2016,18,,AP Top 25,57,Florida,25,27,0
