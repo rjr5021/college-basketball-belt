@@ -1,0 +1,49 @@
+{
+ "key": "26|12|2026-11-12",
+ "updated": "2026-09-29T14:50Z",
+ "start_utc": "2026-11-12T05:00Z",
+ "espn": {
+  "event_id": "401913056",
+  "start_utc": "2026-11-12T05:00Z",
+  "state": "pre",
+  "tv": [],
+  "odds": null,
+  "teams": {
+   "26": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
+    "abbr": "UCLA",
+    "record": null,
+    "rank": null,
+    "home_away": "home"
+   },
+   "12": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+    "abbr": "ARIZ",
+    "record": null,
+    "rank": null,
+    "home_away": "away"
+   }
+  },
+  "venue": {
+   "name": "Pauley Pavilion",
+   "city": "Los Angeles",
+   "state": "CA",
+   "indoor": true
+  }
+ },
+ "weather": null,
+ "ai": {
+  "overview": "UCLA hosts Arizona with the Women's College Basketball Belt on the line for the first time in this matchup's history. The Bruins are fresh off a championship run and making their first belt defense, while Arizona limps in having dropped four of their last five games. With UCLA holding a 98% win probability and a dominant 37-1 record, the belt appears likely to stay in Westwood.",
+  "key_matchups": [
+   "Championship form vs. late-season struggle: UCLA's five straight playoff wins by an average of 24 points against Arizona's 2-game losing streak",
+   "Historical dominance: UCLA has won 4 of the last 5 meetings, including a 20-point victory in their most recent clash",
+   "First belt defense: Can Arizona capitalize on UCLA's inexperience defending the championship, having held it zero times so far this reign?"
+  ],
+  "betting_angles": "UCLA enters as overwhelming favorites with a 37-1 record and riding a 5-game winning streak that includes playoff victories over elite competition like South Carolina and Texas. Arizona's 12-18 mark and recent form (losing 4 of 5, including close losses to in-state rivals) suggests a significant talent gap. The Bruins have also dominated this series historically, winning 32 of 43 all-time meetings and covering comfortable margins in recent years, including a 61-41 drubbing in their last encounter.",
+  "predicted_winner": "UCLA",
+  "predicted_score": "UCLA 78, Arizona 56",
+  "prediction_writeup": "UCLA's championship pedigree and dominant recent form make this a straightforward call. The Bruins just rattled off five straight playoff wins against top-tier competition, winning by an average of 24 points and capping it with a 28-point demolition of South Carolina. Arizona, meanwhile, has lost four of five and sits at 12-18 on the season, clearly outmatched by a UCLA squad that went 37-1. The head-to-head history heavily favors the Bruins, and playing at home in their first belt defense should only add motivation. Expect UCLA to control this wire-to-wire and keep the belt firmly in Westwood.",
+  "written": "2026-09-29",
+  "model": "claude-sonnet-4-5"
+ }
+}
