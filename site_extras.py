@@ -492,6 +492,7 @@ def build_otd(datas):
                 continue
             k = f"{m:02d}-{dd:02d}"
             items = by.get(k, [])
+            extra = S.otd_extra(k) if hasattr(S, "otd_extra") else []      # the college belts, on beltholders.com
             prev_d = date.fromordinal(dt.toordinal() - 1)
             next_d = date.fromordinal(dt.toordinal() + 1)
             nav = (f'<nav class="pager mono"><a href="/on-this-day/{prev_d:%m-%d}/">← {MONTHS_LONG[prev_d.month - 1]} {prev_d.day}</a>'
@@ -502,12 +503,13 @@ def build_otd(datas):
   <div class="kicker">On this day</div>
   <div class="head"><h1 class="disp">{label} in belt history</h1><span class="mono note">{S.plural(len(items), 'title change')}{(' · ' + ', '.join(f'{v} {k}' for k, v in counts.most_common())) if items else ''}</span></div>
   {otd_list(items) if items else '<p class="intro">No belt has ever changed hands on this date.</p>'}
+  {('<h2 class="disp sub">The college belts on ' + label + '</h2><ol class="feed">' + "".join(x["html"] for x in extra) + '</ol>') if extra else ''}
   {nav}
 </section>"""
             html = S.page(f"On this day, {label}: belt title changes", body, path=f"/on-this-day/{k}/",
                           description=(S.otd_description(label) if hasattr(S, "otd_description")
                                        else f"Every lineal championship belt title change on {label}, in every league we track."),
-                          robots=None if len(items) >= OTD_INDEX_MIN else "noindex,follow")   # BH-9: a date with 0-1 changes is thin
+                          robots=None if len(items) + len(extra) >= OTD_INDEX_MIN else "noindex,follow")   # BH-9: a date with 0-1 changes is thin
             S.write(f"on-this-day/{k}/index.html", html)
             S.write(f"on-this-day/{k}/top.json", json.dumps({"label": label, "n": len(items),
                                                              "html": otd_list(items, OTD_HOME_LIMIT) if items else ""}, separators=(",", ":")))
@@ -617,9 +619,15 @@ def build_stories(datas):
             S.write(out(lg, "stories/index.html"), S.page(f"{lg['name']} belt stories", body, path=f"{base(lg)}/stories/", active=key,
                                                         description=f"Long reads on the lineal {lg['name']} championship belt: the longest reigns, the longest droughts, the wildest seasons and the rivalries that decided it."))
         cards += mine
+        if not network:      # machine-readable list for the network pages on beltholders.com
+            S.write(out(lg, "stories/index.json"), json.dumps([{"title": t, "dek": dk, "url": S.SITE_URL + u} for _, t, dk, u in mine], indent=0))
     lis = "".join(f'<a class="storycard" href="{u}"><span class="mono lg">{lg["name"]}</span><b class="disp">{e(t)}</b><span>{e(dk)}</span></a>' for lg, t, dk, u in cards)
     if network:
-        body = f"""<section class="wrap block"><div class="head"><h1 class="disp">Stories</h1><span class="mono note">Every league</span></div><div class="storygrid">{lis}</div></section>"""
+        S.write("stories/index.json", json.dumps([{"title": t, "dek": dk, "belt": lg["name"], "url": S.SITE_URL + u} for lg, t, dk, u in cards], indent=0))
+        others = S.network_stories() if hasattr(S, "network_stories") else []
+        net = "".join(f'<a class="storycard" href="{x["url"]}"><span class="mono lg">{e(x["belt"])}</span><b class="disp">{e(x["title"])}</b><span>{e(x.get("dek") or "")}</span></a>' for x in others)
+        body = f"""<section class="wrap block"><div class="head"><h1 class="disp">Stories</h1><span class="mono note">Every league</span></div><div class="storygrid">{lis}</div></section>""" + (
+            f"""<section class="wrap block"><div class="head"><h2 class="disp">From the college belts</h2><span class="mono note">collegefootballbelt.com · collegebasketballbelt.com</span></div><div class="storygrid">{net}</div></section>""" if net else "")
         S.write("stories/index.html", S.page("Stories", body, path="/stories/",
                                              description="Long reads on the lineal championship belts: the longest reigns, the longest droughts, the wildest seasons and the rivalries that decided them."))
     else:

@@ -331,6 +331,7 @@ def alerts_block():
     <input id="alert-email" type="email" name="btr_email" placeholder="you@example.com" required>
     <button type="submit" class="mono">Sign me up</button>
   </form>
+  <p class="mono note net-feed">Or follow every belt at once: <a href="https://beltholders.com/all/feed.xml">the belt network feed</a> (RSS).</p>
 </section>"""
 
 
