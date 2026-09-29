@@ -928,8 +928,9 @@ def build_sitemap():
             rel = os.path.relpath(root, OUT).replace(os.sep, "/")
             urls.append("/" if rel == "." else f"/{rel}/")
     urls.sort()
+    # no <lastmod> for pre-1970 dates: Google reports them as "Invalid date"
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-          + "".join(f"<url><loc>{escape(SITE_URL + u)}</loc>" + (f"<lastmod>{lm[u]}</lastmod>" if u in lm else "") + "</url>" for u in urls)
+          + "".join(f"<url><loc>{escape(SITE_URL + u)}</loc>" + (f"<lastmod>{lm[u]}</lastmod>" if lm.get(u, "") >= "1970" else "") + "</url>" for u in urls)
           + "</urlset>")
     write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n")
     write("CNAME", DOMAIN + "\n")
