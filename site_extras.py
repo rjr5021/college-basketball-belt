@@ -345,7 +345,7 @@ function render(){{
   rows='<tr><td class="mono n">'+r[0].toLocaleString()+'</td><td class="mono">'+fd(r[1])+'</td><td>'+esc(D.teams[r[2]])+' held it. '+esc(m)+(r[8]?' ('+esc(r[8])+')':'')+'</td><td class="r"><span class="tag'+(r[6]==='c'?' chg':'')+'">'+(r[6]==='c'?'Title change':'Defense')+'</span></td></tr>'+rows;}});
  var slug=[D.slugs[a],D.slugs[b]].sort().join('-vs-');
  var link=D.rivalries.indexOf(slug)>=0?'<p class="mono more"><a href="{base(lg)}/rivalries/'+slug+'/">Full rivalry page →</a></p>':'';
- O.innerHTML=g.length?('<div class="numbers"><div><b class="disp">'+g.length+'</b><span class="mono">Belt meetings</span></div><div><b class="disp">'+wa+'</b><span class="mono">'+esc(D.teams[a])+' wins</span></div><div><b class="disp">'+wb+'</b><span class="mono">'+esc(D.teams[b])+' wins</span></div><div><b class="disp">'+ch+'</b><span class="mono">Title changes</span></div></div>'+link+'<div class="tablewrap"><table class="history games"><thead><tr><th class="mono">Belt game</th><th class="mono">Date</th><th class="mono">What happened</th><th></th></tr></thead><tbody>'+rows+'</tbody></table></div>'):'<p class="intro">'+esc(D.teams[a])+' and '+esc(D.teams[b])+' have never met with the belt on the line.</p>';
+ O.innerHTML=g.length?('<div class="numbers"><div><b class="disp">'+g.length+'</b><span class="mono">Belt meetings</span></div><div><b class="disp">'+wa+'</b><span class="mono">'+esc(D.teams[a])+' wins</span></div><div><b class="disp">'+wb+'</b><span class="mono">'+esc(D.teams[b])+' wins</span></div><div><b class="disp">'+ch+'</b><span class="mono">Title changes</span></div></div>'+link+'<div class="tablewrap"><table class="history games"><thead><tr><th class="mono">Belt game</th><th class="mono">Date</th><th class="mono">What happened</th><th><span class="sr">Result</span></th></tr></thead><tbody>'+rows+'</tbody></table></div>'):'<p class="intro">'+esc(D.teams[a])+' and '+esc(D.teams[b])+' have never met with the belt on the line.</p>';
  history.replaceState(null,'','?a='+a+'&b='+b);
 }}
 A.onchange=B.onchange=render;
@@ -678,7 +678,7 @@ def team_extras(lg, d, team):
                    for o, (w, l, t) in sorted(rec.items(), key=lambda kv: -sum(kv[1]))[:15])
     chips = "".join(f'<a class="chip" style="--c:{lg["team_colors"](team)[0]}" href="{season_url(lg, s)}">{e(sl(lg, s))}</a>' for s in sorted(seasons, reverse=True))
     return f"""<section class="wrap block"><div class="two">
-  <div><h2 class="disp sub">Belt record by opponent</h2><table class="history"><thead><tr><th class="mono">Opponent</th><th class="mono r">W–L</th><th></th></tr></thead><tbody>{rows}</tbody></table></div>
+  <div><h2 class="disp sub">Belt record by opponent</h2><table class="history"><thead><tr><th class="mono">Opponent</th><th class="mono r">W–L</th><th><span class="sr">Share</span></th></tr></thead><tbody>{rows}</tbody></table></div>
   <div><h2 class="disp sub">Seasons with the belt</h2><div class="strip">{chips}</div></div>
 </div></section>"""
 

@@ -104,6 +104,7 @@ def icon(name, size, ss=4):
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     icon("favicon.png", 64)
+    Image.open(f"{OUT}/favicon.png").save(f"{OUT}/favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)])   # /favicon.ico (BH-16)
     icon("apple-touch-icon.png", 180)
     icon("icon-512.png", 512)
     og_card()

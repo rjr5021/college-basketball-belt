@@ -278,7 +278,7 @@ def build_outlook(lg, d):
             for i, (t, p) in enumerate(look["odds"][:25], 1))
         outlook_html = f"""<h2 class="disp sub">Who holds it when the regular season ends</h2>
   <p class="intro">We played out the rest of the schedule on file ({S.d_long(look['through'])} is the last game) {look['sims']:,} times, passing the belt game by game with Elo win chances. {e(n(h))} {verb(lg, 'keep', 'keeps')} it to the end in {pct(odds.get(h, 0), 1)} of runs. {contenders} teams finish with it at least 1% of the time.</p>
-  <div class="tablewrap"><table class="history odds"><thead><tr><th class="mono">#</th><th class="mono">Team</th><th></th><th class="mono r">Chance</th><th class="mono r">Elo</th></tr></thead><tbody>{rows}</tbody></table></div>"""
+  <div class="tablewrap"><table class="history odds"><thead><tr><th class="mono">#</th><th class="mono">Team</th><th><span class="sr">Share</span></th><th class="mono r">Chance</th><th class="mono r">Elo</th></tr></thead><tbody>{rows}</tbody></table></div>"""
     else:
         outlook_html = f"""<h2 class="disp sub">Season outlook</h2><p class="intro">{e(belt_state(lg, d)['line'] or "There's no regular-season schedule left on file for " + n(h) + ".")} The outlook comes back as soon as the next schedule is out.</p>"""
     tree = m.get("tree")
@@ -337,7 +337,7 @@ def build_champions(lg, d):
   <div class="head"><h1 class="disp">The belt vs. the champion</h1><span class="mono note">{len(rows_data)} seasons with a {post_word(lg)} final</span></div>
   <p class="intro">The belt doesn't care about brackets. But how often does it end the season in the same hands as the trophy? Here's the team that won each season's last {post_word(lg)} game next to the team holding the belt when the season's games ran out. {e(note)}</p>
   {numbers([(matched, "Seasons it matched"), (pct(matched / len(rows_data)), "Match rate"), (len(rows_data) - matched, "Seasons it didn't"), (streak, "Current matching streak")])}
-  <div class="tablewrap"><table class="history"><thead><tr><th class="mono">Season</th><th class="mono">Champion</th><th class="mono">Belt at season's end</th><th></th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>
+  <div class="tablewrap"><table class="history"><thead><tr><th class="mono">Season</th><th class="mono">Champion</th><th class="mono">Belt at season's end</th><th><span class="sr">Match</span></th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>
 </section>"""
     page(lg, f"{lg['name']} belt vs. the champion, every season", body, "champions/",
          f"Season by season: did the lineal {lg['name']} belt finish with the team that won the title? {matched} of {len(rows_data)} times it did.")
@@ -1733,7 +1733,7 @@ def recap_html(lg, rc):
         k = max(len(r["periods"]) for r in ls)
         head = "".join(f'<th class="mono r">{i + 1}</th>' for i in range(k))
         rows = "".join(f'<tr><td>{e(r.get("team") or "")}</td>' + "".join(f'<td class="mono r">{e(x)}</td>' for x in r["periods"]) + f'<td class="mono r"><b>{e(str(r.get("score") or ""))}</b></td></tr>' for r in sorted(ls, key=lambda r: r.get("home_away") != "away"))
-        lsh = f'<div class="tablewrap"><table class="history linescore"><thead><tr><th></th>{head}<th class="mono r">T</th></tr></thead><tbody>{rows}</tbody></table></div>'
+        lsh = f'<div class="tablewrap"><table class="history linescore"><thead><tr><th><span class="sr">Team</span></th>{head}<th class="mono r">T</th></tr></thead><tbody>{rows}</tbody></table></div>'
     return f"""<article class="pv-article recap">
   <div class="kicker">The recap · AI-written</div>
   <h2 class="disp">{e(rc.get('headline') or '')}</h2>
@@ -1910,10 +1910,10 @@ def paged_table(lg, rel, *, title, description, heading, note, intro, columns, r
   {intro if p == 1 else ''}
   {extra if p == 1 else ''}
   <div class="tk-bar"><input class="tk-q" type="search" placeholder="Filter by team…" aria-label="Filter by team" autocomplete="off">{sel}{seg}<span class="tk-info mono">{start:,}–{start + len(chunk) - 1:,} of {len(rows):,} · page {p} of {total}</span></div>
-  <nav class="tk-pager" aria-label="Pages">{pg}</nav>
+  <nav class="tk-pager" aria-label="Pages, top">{pg}</nav>
   <div class="tablewrap"><table class="history"><thead><tr>{head}</tr></thead><tbody>{body_rows}</tbody></table></div>
   <p class="tk-empty">{e(empty)}</p>
-  <nav class="tk-pager" aria-label="Pages">{pg}</nav>
+  <nav class="tk-pager" aria-label="Pages, bottom">{pg}</nav>
 </section>
 <script src="/tablekit.js" defer></script>"""
         page(lg, title + (f" (page {p})" if p > 1 else ""), body, rel if p == 1 else f"{rel}page/{p}/",
@@ -2385,7 +2385,7 @@ def box_html(lg, d, bg):
         trs = "".join(f'<tr><td>{plink(players[pid])}</td>' + "".join(f'<td class="mono r">{cell(st, c)}</td>' for c in sc["show"]) + "</tr>"
                       for pid, name, t, st in rows if pid in players)
         out.append(f'<h3 class="disp sub">{e(n(team, bg["season"]))}</h3><div class="tablewrap"><table class="history box"><thead><tr><th class="mono">Player</th>{head}</tr></thead><tbody>{trs}</tbody></table></div>')
-    return f'<section class="pv-sec"><div class="kicker">Box score</div>{"".join(out)}<p class="mono note">{sc["source"]}</p></section>'
+    return f'<section class="pv-sec"><h2 class="kicker">Box score</h2>{"".join(out)}<p class="mono note">{sc["source"]}</p></section>'
 
 
 # ================================================= map, journey, states, web ==
@@ -2439,7 +2439,7 @@ def build_states(lg, d):
 <section class="wrap block">
   <div class="head"><h1 class="disp">The {e(lg['name'])} belt by state</h1><span class="mono note">{len(days)} states and provinces have held it</span></div>
   <p class="intro">Days with the belt, by where the holder played. <a href="{b(lg)}/map/">See it on the map →</a></p>
-  <div class="tablewrap"><table class="history odds"><thead><tr><th class="mono">State / province</th><th></th><th class="mono r">Days</th><th class="mono r">Share</th><th class="mono r">Reigns</th><th class="mono">Teams</th></tr></thead><tbody>{rows}</tbody></table></div>
+  <div class="tablewrap"><table class="history odds"><thead><tr><th class="mono">State / province</th><th><span class="sr">Share</span></th><th class="mono r">Days</th><th class="mono r">Share</th><th class="mono r">Reigns</th><th class="mono">Teams</th></tr></thead><tbody>{rows}</tbody></table></div>
 </section>"""
     page(lg, f"The {lg['name']} belt by state", body, "states/", f"Which states and provinces have held the lineal {lg['name']} belt, and for how long.")
 
@@ -2727,7 +2727,7 @@ def build_relocations(lg, d):
                        for city, c in sorted(cs.items(), key=lambda kv: kv[1]["first"]))
         best = max(cs.items(), key=lambda kv: kv[1]["days"])[0]
         blocks.append(f'<h2 class="disp sub">{tlink(lg, t)}</h2><p class="mono note">Held it longest in {e(best)}</p>'
-                      f'<div class="tablewrap"><table class="history odds"><thead><tr><th class="mono">City</th><th class="mono">With the belt</th><th class="mono r">Reigns</th><th class="mono r">Days</th><th></th></tr></thead><tbody>{rows}</tbody></table></div>')
+                      f'<div class="tablewrap"><table class="history odds"><thead><tr><th class="mono">City</th><th class="mono">With the belt</th><th class="mono r">Reigns</th><th class="mono r">Days</th><th><span class="sr">Share</span></th></tr></thead><tbody>{rows}</tbody></table></div>')
     body = f"""{S.subnav(lg, "more")}
 <section class="wrap block">
   <div class="head"><h1 class="disp">The belt on the move</h1><span class="mono note">{len(movers)} {unit(lg)} that changed cities</span></div>

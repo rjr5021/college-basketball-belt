@@ -60,7 +60,7 @@ a.tile{color:var(--ink)}
 .rules-grid{display:grid;grid-template-columns:4fr 8fr;gap:32px}
 .rules-grid h2{margin:16px 0;font-size:56px;line-height:.9;font-weight:900}
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
-.steps>div{padding-top:18px;border-top:2px solid var(--ink)}.steps b{font-size:56px;color:var(--brass);line-height:1}.steps h3{font-size:26px;font-weight:800;margin:10px 0}.steps p{margin:0;color:var(--body)}
+.steps>div{padding-top:18px;border-top:2px solid var(--ink)}.steps b{font-size:56px;color:var(--brass-text);line-height:1}.steps h3{font-size:26px;font-weight:800;margin:10px 0}.steps p{margin:0;color:var(--body)}
 
 /* numbers */
 .numbers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);margin-bottom:28px}

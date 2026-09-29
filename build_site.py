@@ -50,7 +50,7 @@ WOMEN = {"key": "women", "name": "The Women's College Basketball Belt", "short":
          "nit": "If the holder misses the field, the belt can spend March at the WNIT or the WBIT.",
          "og": "/og.png"}
 # Paths shared by both belts (never prefixed with /women)
-GLOBAL_PATHS = ("styles.css", "favicon.png", "apple-touch-icon.png", "manifest.json", "icon-512.png", "og.png",
+GLOBAL_PATHS = ("styles.css", "favicon.png", "favicon.ico", "apple-touch-icon.png", "manifest.json", "icon-512.png", "og.png",
                 "og-holder.png", "tablekit.js", "privacy/", "about/", "women/")
 # Never rewrite protocol-relative URLs ("//gc.zgo.at/count.js"): the lookahead skips a second slash (CBB-1).
 _REWRITE = re.compile(r'((?:href|src)=["\']|fetch\([\'"]|"(?:https://collegebasketballbelt\.com))/(?!/|(?:' +
@@ -251,6 +251,16 @@ def page(title, body, *, path, description, active=None, jsonld=None, robots=Non
            if ADSENSE_PUBLISHER_ID else "")
     goat = (f'<script data-goatcounter="https://{GOATCOUNTER_CODE}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>'
             if GOATCOUNTER_CODE else "")
+    if path == "/" and not P:
+        # BH-16/CBB-8/NET-4: Organization + WebSite (with the site search) on the homepage, sameAs the network
+        site_ld = [{"@type": "Organization", "@id": SITE_URL + "/#org", "name": 'The College Basketball Belt', "url": SITE_URL + "/",
+                    "logo": SITE_URL + "/icon-512.png", "sameAs": ['https://x.com/CollegeBBBelt', 'https://www.instagram.com/CollegeBBBelt', 'https://beltholders.com', 'https://collegefootballbelt.com']},
+                   {"@type": "WebSite", "@id": SITE_URL + "/#site", "name": 'The College Basketball Belt', "url": SITE_URL + "/", "publisher": {"@id": SITE_URL + "/#org"},
+                    "potentialAction": {"@type": "SearchAction", "target": SITE_URL + "/search/?q={query}", "query-input": "required name=query"}}]
+        extra = [dict(x) for x in (jsonld if isinstance(jsonld, list) else [jsonld] if jsonld else [])]
+        for x in extra:
+            x.pop("@context", None)
+        jsonld = {"@context": "https://schema.org", "@graph": site_ld + extra}
     ld = f'<script type="application/ld+json">{json.dumps(jsonld)}</script>' if jsonld else ""
     full_title = og_title or (title if "College Basketball Belt" in title else f"{title} · {SEC.get('name', 'The College Basketball Belt')}")
     # CBB-5: short " | CBB Belt" suffix, dropped when the <title> would pass 65 characters. Women's pages keep
@@ -274,7 +284,7 @@ def page(title, body, *, path, description, active=None, jsonld=None, robots=Non
 <meta property="og:image" content="{SITE_URL}{SEC.get('og', '/og-holder.png')}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@CollegeBBBelt">
-<link rel="icon" href="/favicon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#211a12">
 <link rel="alternate" type="application/rss+xml" title="{SEC.get('short', 'College Basketball Belt')} — title changes" href="/feed.xml">
@@ -305,7 +315,7 @@ def page(title, body, *, path, description, active=None, jsonld=None, robots=Non
 
 
 def alerts_block():
-    return f"""<section id="alerts" class="alerts">
+    return f"""<section id="alerts" class="alerts" aria-label="Belt alerts">
   <div>
     <h2 class="disp">Get an email when the belt moves</h2>
     <p>One email per title change. Pairs with the football alerts, or on its own.</p>
@@ -851,7 +861,7 @@ def main():
         build_women_rules(D)
     _section("", cbb_league.LEAGUE, MEN, os.path.join("data", "lineage.json"))
     build_sitemap()
-    for f in ("styles.css", "favicon.png", "apple-touch-icon.png", "icon-512.png", "og.png", "tablekit.js"):
+    for f in ("styles.css", "favicon.png", "favicon.ico", "apple-touch-icon.png", "icon-512.png", "og.png", "tablekit.js"):
         if os.path.exists(f):
             shutil.copy(f, os.path.join(OUT, f))
     print(f"Built {sum(len(fs) for _, fs, _ in [(0, f, 0) for _, _, f in os.walk(OUT)])} files into {OUT}/")
