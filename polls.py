@@ -1,6 +1,7 @@
 """
-The belt against the AP poll: for every AP Top 25 (data/polls/*.csv, from
-fetch_polls.py), who held the belt that day and where the poll ranked them.
+The belt against the AP poll: for every AP Top 25 (data/polls/*.csv from
+fetch_polls.py for the men, data/women/polls/*.csv from fetch_women_polls.py
+for the women), who held the belt that day and where the poll ranked them.
 Returns None when there's no poll data yet.
 """
 
@@ -53,10 +54,10 @@ def _fix_dates(season, weeks, opening):
 _undated = {}
 
 
-def _polls(openings=None):
+def _polls(openings=None, folder=os.path.join("data", "polls")):
     openings = openings or {}
     raw = defaultdict(lambda: defaultdict(list))      # season -> (week, date) -> rows
-    for p in sorted(glob.glob(os.path.join("data", "polls", "*.csv"))):
+    for p in sorted(glob.glob(os.path.join(folder, "*.csv"))):
         with open(p, newline="", encoding="utf-8") as f:
             for r in csv.DictReader(f):
                 if not r.get("team_id") or not str(r.get("rank", "")).isdigit() or not str(r.get("week", "")).isdigit():
@@ -89,10 +90,10 @@ def _polls(openings=None):
     return sorted(by.items(), key=lambda kv: kv[0][1])
 
 
-def compute(reigns, openings=None):
+def compute(reigns, openings=None, folder=os.path.join("data", "polls")):
     """openings: {season: (first game date, first NCAA tournament game date)},
     for seasons whose polls have no dates."""
-    polls = _polls(openings)
+    polls = _polls(openings, folder)
     if not polls:
         return None
     starts = [r["start_date"] for r in reigns]

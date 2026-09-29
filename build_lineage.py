@@ -217,8 +217,9 @@ def main(today=None, D=D, key="cbb", out_path=os.path.join("data", "lineage.json
         "what_if": M.what_if(key, full, full_bg, reigns, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS, start=full_start),
         "groups": conference_belts(full, fut, recent, today),
         "losers": M.losers(key, full, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS),
-        "polls": None if key != "cbb" else PL.compute(reigns, {s_: (min(g["date"] for g in games if g["season"] == s_),
-                                           min((g["date"] for g in ncaa if g["season"] == s_), default=None)) for s_ in {g["season"] for g in games}}),
+        "polls": PL.compute(reigns, {s_: (min(g["date"] for g in games if g["season"] == s_),
+                                          min((g["date"] for g in ncaa if g["season"] == s_), default=None)) for s_ in {g["season"] for g in games}},
+                            folder=os.path.join(D.DATA, "polls")),
     }
     extras["models"] = models
 
