@@ -308,6 +308,8 @@ def build_outlook(lg, d):
 # =============================================================== champions ==
 
 def build_champions(lg, d):
+    if not caps(lg, d)["has_champions"]:
+        return
     rows_data = (d.get("models") or {}).get("champions") or []
     live = {s["season"] for s in d.get("seasons", []) if s.get("in_progress")}
     rows_data = [r for r in rows_data if r["season"] not in live]      # no champion until the season is over (BH-6)
@@ -1462,7 +1464,8 @@ def build_lean(lg, d):
   <p class="mono more"><a href="{b(lg)}/next/">This week’s lean →</a></p>
 </section>"""
     page(lg, f"The lean’s ledger: AI picks on {lg['name']} belt games", body, "lean/",
-         f"Every AI-written pick on a lineal {lg['name']} belt game, graded against the result.")
+         f"Every AI-written pick on a lineal {lg['name']} belt game, graded against the result.",
+         robots=None if w + l else "noindex,follow")     # BH-13: no graded pick yet, nothing to index
 
 
 def build_dod(lg, d):
@@ -1548,8 +1551,21 @@ def build_heartbreak(lg, d):
          f"Every lineal {lg['name']} belt game decided by {thr} {unit_word}{'s' if thr > 1 else ''} or less: the closest calls, the escapes and the heartbreaks.")
 
 
+def caps(lg, d):
+    """BH-13: what a league has, so pages that don't apply aren't built. A league dict can set any of
+    these explicitly; otherwise they come from the data. The More hub hides cards for pages not built."""
+    nations = lg.get("unit") == "nations"
+    post = any(bg["season_type"] != "regular" for bg in d["belt_games"])
+    return {
+        "has_postseason": lg.get("has_postseason", post and lg.get("key") not in (None, "cbb", "women")),
+        "has_standings": lg.get("has_standings", not nations),     # national teams have no table or regular season
+        "has_champions": lg.get("has_champions", not nations),
+        "has_ot": lg.get("has_ot", any(bg.get("ot") for bg in d["belt_games"])),
+    }
+
+
 def build_playoffs(lg, d):
-    if lg.get("key") in (None, "cbb", "women"):
+    if not caps(lg, d)["has_postseason"]:
         return
     post = [bg for bg in d["belt_games"] if bg["season_type"] != "regular"]
     by = defaultdict(list)
@@ -1626,6 +1642,8 @@ def build_splits(lg, d):
 
 
 def build_standings(lg, d):
+    if not caps(lg, d)["has_standings"]:
+        return
     st = (d.get("models") or {}).get("standings") or []
     # a season's regular season is complete once none of its regular-season games are left on the schedule (BH-6)
     live = {s["season"] for s in d.get("seasons", []) if s.get("regular_open", s.get("in_progress"))}

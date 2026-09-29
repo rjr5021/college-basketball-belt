@@ -374,7 +374,8 @@ def build_next(lg, d):
 <p>{e(F.belt_state(lg, d)["line"])} This page fills in as soon as the next game is on the schedule.</p>
 <p><a href="{base(lg)}/">Back to the {lg['name']} belt →</a></p></section>"""
         S.write(out(lg, "next/index.html"), S.page(f"Next {lg['name']} belt defense", body, path=f"{base(lg)}/next/", active=key,
-                                                 description=f"Preview of the next lineal {lg['name']} championship title defense."))
+                                                 description=f"Preview of the next lineal {lg['name']} championship title defense.",
+                                                 robots="noindex,follow"))      # BH-13: a stub until the next game is on file
         return
     h, c = pv["holder"], pv["challenger"]
     hp, hs = lg["team_colors"](h)
