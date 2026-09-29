@@ -237,6 +237,42 @@ NOINDEX = set()      # paths written with a noindex robots tag; build_sitemap le
 
 TITLE_MAX = 65
 
+# NET-6: a BreadcrumbList on every inner page, built from the path. A segment gets a crumb only when it
+# names the women's belt or one of these sections (each has its own index page; main() checks that they exist).
+CRUMB_SECTIONS = {"women": "Women's belt", "games": "Belt games", "players": "Players", "teams": "Teams", "reigns": "Reigns",
+                  "seasons": "Seasons", "rivalries": "Rivalries", "history": "History", "decades": "Decades",
+                  "losers-belt": "Losers belt", "conferences": "Conferences", "stories": "Stories", "on-this-day": "On this day",
+                  "march": "March"}
+CRUMB_REFS = set()
+
+
+def auto_crumbs(path, title):
+    segs = [x for x in path.strip("/").split("/") if x]
+    if not segs or path.endswith(".html"):
+        return None
+    items, acc = [(SITE_NAME, "__ROOT__/")], ""     # __ROOT__ keeps _sectionize from moving it under /women/
+    for sg in segs[:-1]:
+        acc += "/" + sg
+        if sg in CRUMB_SECTIONS:
+            items.append((CRUMB_SECTIONS[sg], acc + "/"))
+            CRUMB_REFS.add(acc + "/")
+    items.append((title, path))
+    return {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": SITE_URL + u}
+                                                           for i, (n, u) in enumerate(items)]}
+
+
+def ld_graph(jsonld, path, title, extra_top=()):
+    """All of a page's JSON-LD in one @graph, plus the automatic breadcrumbs when the page has none."""
+    items = [dict(x) for x in (jsonld if isinstance(jsonld, list) else [jsonld] if jsonld else [])]
+    for x in items:
+        x.pop("@context", None)
+    if path != "/" and not any(x.get("@type") == "BreadcrumbList" for x in items):
+        bc = auto_crumbs(path, title)
+        if bc:
+            items.append(bc)
+    items = list(extra_top) + items
+    return {"@context": "https://schema.org", "@graph": items} if items else None
+
 
 def page(title, body, *, path, description, active=None, jsonld=None, robots=None, og_title=None):
     path = u(path)
@@ -257,10 +293,9 @@ def page(title, body, *, path, description, active=None, jsonld=None, robots=Non
                     "logo": SITE_URL + "/icon-512.png", "sameAs": ['https://x.com/CollegeBBBelt', 'https://www.instagram.com/CollegeBBBelt', 'https://beltholders.com', 'https://collegefootballbelt.com']},
                    {"@type": "WebSite", "@id": SITE_URL + "/#site", "name": 'The College Basketball Belt', "url": SITE_URL + "/", "publisher": {"@id": SITE_URL + "/#org"},
                     "potentialAction": {"@type": "SearchAction", "target": SITE_URL + "/search/?q={query}", "query-input": "required name=query"}}]
-        extra = [dict(x) for x in (jsonld if isinstance(jsonld, list) else [jsonld] if jsonld else [])]
-        for x in extra:
-            x.pop("@context", None)
-        jsonld = {"@context": "https://schema.org", "@graph": site_ld + extra}
+    else:
+        site_ld = []
+    jsonld = ld_graph(jsonld, path, title, site_ld)
     ld = f'<script type="application/ld+json">{json.dumps(jsonld)}</script>' if jsonld else ""
     full_title = og_title or (title if "College Basketball Belt" in title else f"{title} · {SEC.get('name', 'The College Basketball Belt')}")
     # CBB-5: short " | CBB Belt" suffix, dropped when the <title> would pass 65 characters. Women's pages keep
@@ -950,6 +985,9 @@ def main():
         if os.path.exists(f):
             shutil.copy(f, os.path.join(OUT, f))
     print(f"Built {sum(len(fs) for _, fs, _ in [(0, f, 0) for _, _, f in os.walk(OUT)])} files into {OUT}/")
+    gone = sorted(x for x in CRUMB_REFS if not os.path.exists(os.path.join(OUT, x.strip("/"), "index.html")))
+    if gone:
+        print(f"WARNING: {len(gone)} breadcrumb targets have no page: {gone[:8]}")
     import indexnow
     indexnow.write(OUT)
 

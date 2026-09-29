@@ -24,6 +24,7 @@ prefix for a belt: "/nfl" on Belt Holders, "" on the College Basketball Belt.
 """
 
 import hashlib
+from html import unescape as _unescape
 import json
 import os
 import random
@@ -1383,6 +1384,18 @@ def _winner_score(bg):
     return f"{max(hp, ap)}–{min(hp, ap)}"
 
 
+def game_event_ld(lg, bg):
+    """NET-6: schema.org SportsEvent for a played belt game page."""
+    n = lg["team_name"]
+    s = bg["season"]
+    home = bg["home"]
+    away = bg["opponent"] if home == bg.get("holder") else (bg.get("holder") or bg["opponent"])
+    return {"@type": "SportsEvent", "name": f"{n(away, s)} at {n(home, s)}", "startDate": bg["date"],
+            "sport": lg.get("sport", ""), "eventStatus": "https://schema.org/EventCompleted",
+            "homeTeam": {"@type": "SportsTeam", "name": n(home, s)}, "awayTeam": {"@type": "SportsTeam", "name": n(away, s)},
+            "description": _unescape(re.sub(r"<[^>]+>", "", _gline(lg, bg))) + f". Lineal {lg['name']} championship belt game {bg['n']:,}."}
+
+
 def _gline(lg, bg):
     """'Cincinnati Bengals beat Jacksonville Jaguars 34–31' for a belt game."""
     n = lg["team_name"]
@@ -1743,8 +1756,16 @@ def build_data(lg, d):
   <h2 class="disp sub">Writing about the belt?</h2>
   <p>The rules are simple: the belt starts with the first game on record and passes to whoever beats the holder. Ties go to the holder. Scores come from public game records; see <a href="/rules/">the rules</a> for sources. Questions or corrections: <a href="mailto:{'hello@collegebasketballbelt.com' if lg.get('key') in ('cbb', 'women') else 'hello@beltholders.com'}">email us</a>.</p>
 </section>"""
+    base = S.SITE_URL + b(lg)
+    ld = {"@type": "Dataset", "name": f"Lineal {lg['name']} championship belt: reigns and belt games",
+          "description": f"Every lineal {lg['name']} belt reign ({len(d['reigns']):,}) and belt game ({len(d['belt_games']):,}) since the first game on record, with holders, dates, scores and outcomes.",
+          "url": f"{base}/data/", "isAccessibleForFree": True,
+          "creator": {"@type": "Organization", "name": getattr(S, "SITE_NAME", "") or S.SITE_URL.split("//")[-1]},
+          "temporalCoverage": f"{d['belt_games'][0]['date']}/{d['belt_games'][-1]['date']}" if d["belt_games"] else None,
+          "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": f"{base}/data/reigns.csv"},
+                           {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": f"{base}/data/belt-games.csv"}]}
     page(lg, f"{lg['name']} belt data: every reign and belt game (CSV)", body, "data/",
-         f"Download every lineal {lg['name']} belt reign and belt game as CSV, plus the JSON API and feeds.")
+         f"Download every lineal {lg['name']} belt reign and belt game as CSV, plus the JSON API and feeds.", jsonld=ld)
 
 
 def _recaps(lg):
@@ -1830,7 +1851,8 @@ def build_game_pages(lg, d):
         page(lg, f"{lg['short_name'](w)} {_winner_score(bg)} {lg['short_name'](l)}: {belt_tag(lg)}, {S.d_short(bg['date'], True)}", body,
              f"games/{bg['n']}/",
              f"{n(w, s)} beat {n(l, s)} {_winner_score(bg)} on {S.d_long(bg['date'])} to take the lineal {lg['name']} championship belt. Reign {r['index']:,}: {S.plural(r.get('defenses', 0), 'defense')}, {r['days']:,} days.",
-             og_title=f"{n(w, s)} beat {n(l, s)} {_winner_score(bg)} for the {lg['name']} belt ({S.d_short(bg['date'], True)})")
+             og_title=f"{n(w, s)} beat {n(l, s)} {_winner_score(bg)} for the {lg['name']} belt ({S.d_short(bg['date'], True)})",
+             jsonld=game_event_ld(lg, bg))
 
 
 def build_defense_pages(lg, d):
@@ -1863,7 +1885,8 @@ def build_defense_pages(lg, d):
   <p class="mono more"><a href="{b(lg)}/seasons/{s}/#g{bg['n']}">{e(sl(lg, s))} season →</a> · <a href="{team_url(lg, h)}">{e(n(h))} belt history →</a></p>
 </section>"""
         page(lg, f"{rc.get('headline') or n(h, s) + ' keep the ' + lg['name'] + ' belt'} ({S.d_short(bg['date'], True)})", body, f"games/{bg['n']}/",
-             f"{n(h, s)} defended the lineal {lg['name']} belt against {n(o, s)} on {S.d_long(bg['date'])}. Recap, line score and leaders.")
+             f"{n(h, s)} defended the lineal {lg['name']} belt against {n(o, s)} on {S.d_long(bg['date'])}. Recap, line score and leaders.",
+             jsonld=game_event_ld(lg, bg))
 
 
 def latest_recap_card(lg, d):
@@ -2337,7 +2360,9 @@ def build_players(lg, d):
 </section>"""
         if has_page:
             page(lg, f"{p['name']} in {lg['name']} belt games", body, f"players/{slug}/",
-                 f"{p['name']}: {S.plural(len(gs), 'lineal ' + lg['name'] + ' belt game')}, {S.plural(w, 'win')}, {S.plural(took, 'title-winning game')}. Every belt-game stat line.")
+                 f"{p['name']}: {S.plural(len(gs), 'lineal ' + lg['name'] + ' belt game')}, {S.plural(w, 'win')}, {S.plural(took, 'title-winning game')}. Every belt-game stat line.",
+                 jsonld={"@type": "Person", "name": p["name"], "url": S.SITE_URL + f"{b(lg)}/players/{slug}/",
+                         "memberOf": [{"@type": "SportsTeam", "name": n(t)} for t in p["teams"]][:6]})
         rows.append({"c": [f'<i style="background:{pp}"></i>{plink(p)}<small>{e(lg["short_name"](main_team))}</small>',
                            str(len(gs)), f"{w}–{len(gs) - w}", str(took)] + [f"{tot.get(c, 0):,}" for c in sc["totals"][:3]] + [f"{avg:.1f}"],
                      "t": (p["name"] + " " + " ".join(n(t) for t in p["teams"])).lower(),
