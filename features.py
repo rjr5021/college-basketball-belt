@@ -168,9 +168,11 @@ def sl(lg, s):
     return fn(s) if fn else str(s)
 
 
-def page(lg, title, body, rel, description, jsonld=None, robots=None):
+def page(lg, title, body, rel, description, jsonld=None, robots=None, og_title=None):
     path = f"{b(lg)}/{rel}" if rel else f"{b(lg)}/"
     kw = {"robots": robots} if robots else {}
+    if og_title:
+        kw["og_title"] = og_title
     S.write(out(lg, rel + "index.html" if rel else "index.html"),
             S.page(title, body, path=path, description=description, active=lg.get("key"), jsonld=jsonld, **kw))
 
@@ -1769,9 +1771,10 @@ def build_game_pages(lg, d):
   <p class="mono more"><a href="{team_url(lg, w)}">{e(n(w))} belt history →</a> · <a href="{b(lg)}/compare/?a={w}&amp;b={l}">{e(lg['short_name'](w))} vs. {e(lg['short_name'](l))} →</a></p>
   {nav}
 </section>"""
-        page(lg, f"{n(w, s)} beat {n(l, s)} {_winner_score(bg)} for the {lg['name']} belt ({S.d_short(bg['date'], True)})", body,
+        page(lg, f"{lg['short_name'](w)} {_winner_score(bg)} {lg['short_name'](l)}: {belt_tag(lg)}, {S.d_short(bg['date'], True)}", body,
              f"games/{bg['n']}/",
-             f"{n(w, s)} beat {n(l, s)} {_winner_score(bg)} on {S.d_long(bg['date'])} to take the lineal {lg['name']} championship belt. Reign {r['index']:,}: {r.get('defenses', 0)} defenses, {r['days']:,} days.")
+             f"{n(w, s)} beat {n(l, s)} {_winner_score(bg)} on {S.d_long(bg['date'])} to take the lineal {lg['name']} championship belt. Reign {r['index']:,}: {S.plural(r.get('defenses', 0), 'defense')}, {r['days']:,} days.",
+             og_title=f"{n(w, s)} beat {n(l, s)} {_winner_score(bg)} for the {lg['name']} belt ({S.d_short(bg['date'], True)})")
 
 
 def build_defense_pages(lg, d):

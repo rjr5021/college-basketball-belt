@@ -39,12 +39,12 @@ e = html.escape
 P = ""
 LG = None
 SEC = {}
-MEN = {"key": "cbb", "name": "The College Basketball Belt", "short": "College Basketball Belt", "who": "men's college basketball",
+MEN = {"key": "cbb", "name": "The College Basketball Belt", "short": "College Basketball Belt", "tag": "CBB Belt", "who": "men's college basketball",
        "since": "1949–50", "first_season": 1950, "seed_year": 1949, "first_march": 1950,
        "plate_seed": "Picked up the belt as the 1949 national champions.",
        "nit": "If the holder misses the field, the belt can spend March at the NIT.",
        "og": "/og-holder.png"}
-WOMEN = {"key": "women", "name": "The Women's College Basketball Belt", "short": "Women's College Basketball Belt",
+WOMEN = {"key": "women", "name": "The Women's College Basketball Belt", "short": "Women's College Basketball Belt", "tag": "Women's CBB Belt",
          "who": "women's college basketball", "since": "1986–87", "first_season": 1987, "seed_year": 1986, "first_march": 1987,
          "plate_seed": "Picked up the belt as the 1986 national champions.",
          "nit": "If the holder misses the field, the belt can spend March at the WNIT or the WBIT.",
@@ -235,7 +235,10 @@ NAV = [("belt", "/", "The Belt"), ("history", "/history/", "History"), ("records
 NOINDEX = set()      # paths written with a noindex robots tag; build_sitemap leaves them out (BH-1)
 
 
-def page(title, body, *, path, description, active=None, jsonld=None, robots=None):
+TITLE_MAX = 65
+
+
+def page(title, body, *, path, description, active=None, jsonld=None, robots=None, og_title=None):
     path = u(path)
     if robots and "noindex" in robots:
         NOINDEX.add(path)
@@ -249,13 +252,18 @@ def page(title, body, *, path, description, active=None, jsonld=None, robots=Non
     goat = (f'<script data-goatcounter="https://{GOATCOUNTER_CODE}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>'
             if GOATCOUNTER_CODE else "")
     ld = f'<script type="application/ld+json">{json.dumps(jsonld)}</script>' if jsonld else ""
-    full_title = title if "College Basketball Belt" in title else f"{title} · {SEC.get('name', 'The College Basketball Belt')}"
+    full_title = og_title or (title if "College Basketball Belt" in title else f"{title} · {SEC.get('name', 'The College Basketball Belt')}")
+    # CBB-5: short " | CBB Belt" suffix, dropped when the <title> would pass 65 characters. Women's pages keep
+    # their suffix when the title doesn't say "women" itself, so they never share a title with a men's page.
+    suffix = f" | {SEC.get('tag', 'CBB Belt')}"
+    keep = len(title) + len(suffix) <= TITLE_MAX or (P and "women" not in title.lower())
+    tag_title = title if "College Basketball Belt" in title and len(title) <= TITLE_MAX else (title + suffix if keep else title)
     return _sectionize(f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{e(full_title)}</title>
+<title>{e(tag_title)}</title>
 <meta name="description" content="{e(description)}">
 {f'<meta name="robots" content="{robots}">' + chr(10) if robots else ""}<link rel="canonical" href="{canonical}">
 <meta property="og:type" content="website">

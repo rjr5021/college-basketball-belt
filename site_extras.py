@@ -52,6 +52,11 @@ def unit1(lg):
     return lg.get("unit_one", "franchise")
 
 
+def _fit(long_title, short_title, limit=50):
+    """The long title when it leaves room for the site suffix, else the short-name version (BH-10)."""
+    return long_title if len(long_title) <= limit else short_title
+
+
 def vb(lg, plural_form, singular_form):
     """Verb agreement: college names are singular ("Michigan holds"), team nicknames plural ("the Bengals hold")."""
     return singular_form if lg.get("singular") else plural_form
@@ -206,7 +211,7 @@ def build_seasons(lg, d):
 </section>"""
         ld = crumbs([(lg["long_name"], f"{base(lg)}/"), ("Seasons", f"{base(lg)}/seasons/"), (s["label"], season_url(lg, s["season"]))])
         S.write(out(lg, f"seasons/{s['season']}/index.html"),
-                S.page(f"{s['label']} {lg['name']} season: the lineal championship belt", body, path=season_url(lg, s["season"]), active=key, jsonld=ld,
+                S.page(f"{s['label']} {lg['name']} belt season", body, og_title=f"{s['label']} {lg['name']} season: the lineal championship belt", path=season_url(lg, s["season"]), active=key, jsonld=ld,
                        description=f"Every {lg['name']} belt game in {s['label']}: {n(s['entering'], s['season'])} carried it in, it changed hands {s['changes']} times, and {n(s['ending'], s['season'])} {'hold' if s['in_progress'] else 'finished with'} it."))
 
 
@@ -287,7 +292,7 @@ def build_rivalries(lg, d):
 </section>"""
         ld = crumbs([(lg["long_name"], f"{base(lg)}/"), ("Rivalries", f"{base(lg)}/rivalries/"), (f"{n(p['a'])} vs. {n(p['b'])}", url)])
         S.write(out(lg, f"rivalries/{rivalry_slug(lg, p['a'], p['b'])}/index.html"),
-                S.page(f"{n(p['a'])} vs. {n(p['b'])}: {lg['name']} belt rivalry", body, path=url, active=key, jsonld=ld,
+                S.page(_fit(f"{n(p['a'])} vs. {n(p['b'])}: {F.belt_tag(lg)} rivalry", f"{lg['short_name'](p['a'])} vs. {lg['short_name'](p['b'])}: {F.belt_tag(lg)} rivalry"), body, og_title=f"{n(p['a'])} vs. {n(p['b'])}: {lg['name']} belt rivalry", path=url, active=key, jsonld=ld,
                        description=f"{n(p['a'])} vs. {n(p['b'])} with the lineal {lg['name']} championship on the line: {p['meetings']} meetings, {p['changes']} title changes, every game."))
     body = f"""{S.subnav(lg, "rivalries")}
 <section class="wrap block">
