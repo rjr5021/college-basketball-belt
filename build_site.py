@@ -517,9 +517,7 @@ def reign_link(r):
 def home_extras():
     import site_extras
     today = date.today()
-    items = site_extras.otd_items({LG["key"]: D}).get(f"{today:%m-%d}", [])
-    otd = (f'<section class="wrap block"><div class="head"><h2 class="disp">Today in belt history</h2><a class="mono more" href="/on-this-day/">All of {MONTHS_LONG[today.month - 1]} {today.day} →</a></div>'
-           f'{site_extras.otd_list(items, 6)}</section>') if items else ""
+    otd = site_extras.otd_home(site_extras.otd_items({LG["key"]: D}), today)
     cards = "".join(f'<a class="storycard" href="/stories/{sl_}/"><b class="disp">{e(t)}</b></a>' for sl_, t in [
         ("longest-reigns", "The longest reigns"), ("droughts", "The longest droughts"),
         ("wildest-seasons", "The wildest seasons"), ("rivalries", "The rivalries that decided it")])

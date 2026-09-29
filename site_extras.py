@@ -457,6 +457,29 @@ def otd_list(items, limit=None):
     return f'<ol class="feed">{"".join(lis)}</ol>'
 
 
+OTD_HOME_LIMIT = 6
+OTD_INDEX_MIN = 2         # dated on-this-day pages with fewer title changes are noindex
+
+
+def otd_home(by, today=None):
+    """Homepage "Today in belt history" (BH-11/CFB-3): rendered for the build day, then swapped in the
+    browser for today's date in US Eastern time from /on-this-day/<mm-dd>/top.json, so a build that ran
+    yesterday never shows yesterday. Hidden when the date has no title changes."""
+    today = today or date.today()
+    k = f"{today:%m-%d}"
+    items = by.get(k, [])
+    label = f"{MONTHS_LONG[today.month - 1]} {today.day}"
+    js = ('<script>(function(){var s=document.getElementById("otd-home");if(!s||!window.fetch)return;try{'
+          'var p=new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",month:"2-digit",day:"2-digit"}).formatToParts(new Date()),o={};'
+          'p.forEach(function(x){o[x.type]=x.value;});var k=o.month+"-"+o.day;if(k===s.dataset.k)return;'
+          "fetch('/on-this-day/'+k+'/top.json').then(function(r){return r.json();}).then(function(j){"
+          's.querySelector(".otd-list").innerHTML=j.html;var a=s.querySelector("a.more");a.textContent="All of "+j.label+" \u2192";'
+          'a.setAttribute("href",a.getAttribute("href").replace(s.dataset.k,k));s.dataset.k=k;s.hidden=!j.n;}).catch(function(){});}catch(e){}})();</script>')
+    return (f'<section class="wrap block" id="otd-home" data-k="{k}"{"" if items else " hidden"}><div class="head"><h2 class="disp">Today in belt history</h2>'
+            f'<a class="mono more" href="/on-this-day/{k}/">All of {label} →</a></div>'
+            f'<div class="otd-list">{otd_list(items, OTD_HOME_LIMIT) if items else ""}</div></section>{js}')
+
+
 def build_otd(datas):
     by = otd_items(datas)
     today = date.today()
@@ -484,8 +507,21 @@ def build_otd(datas):
                           description=(S.otd_description(label) if hasattr(S, "otd_description")
                                        else f"Every lineal championship belt title change on {label}, in every league we track."))
             S.write(f"on-this-day/{k}/index.html", html)
+            S.write(f"on-this-day/{k}/top.json", json.dumps({"label": label, "n": len(items),
+                                                             "html": otd_list(items, OTD_HOME_LIMIT) if items else ""}, separators=(",", ":")))
             if (m, dd) == (today.month, today.day):
-                S.write("on-this-day/index.html", html.replace(f'href="{S.SITE_URL}{getattr(S, "P", "")}/on-this-day/{k}/"', f'href="{S.SITE_URL}{getattr(S, "P", "")}/on-this-day/"'))
+                # BH-11/CBB-6: /on-this-day/ is not a page of its own. It sends the reader to today's dated
+                # page (today in US Eastern time, worked out in the browser, so it's right whatever day the
+                # build ran), is noindex, and canonicalizes to the dated page. Without JS it shows the build day.
+                pre = getattr(S, "P", "")
+                go = ('<script>(function(){try{var p=new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",month:"2-digit",day:"2-digit"}).formatToParts(new Date()),'
+                      'o={};p.forEach(function(x){o[x.type]=x.value;});location.replace("' + pre + '/on-this-day/"+o.month+"-"+o.day+"/");}catch(e){}})();</script>')
+                idx = S.page(f"On this day, {label}: belt title changes", body.replace("<section", go + "<section", 1), path=f"/on-this-day/{k}/",
+                             description=(S.otd_description(label) if hasattr(S, "otd_description")
+                                          else f"Every lineal championship belt title change on {label}, in every league we track."),
+                             robots="noindex,follow")
+                getattr(S, "NOINDEX", set()).discard(f"/on-this-day/{k}/")     # the dated page itself stays indexable
+                S.write("on-this-day/index.html", idx)
 
 
 # --------------------------------------------------------------- stories --
