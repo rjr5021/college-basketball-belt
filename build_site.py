@@ -50,7 +50,7 @@ WOMEN = {"key": "women", "name": "The Women's College Basketball Belt", "short":
          "nit": "If the holder misses the field, the belt can spend March at the WNIT or the WBIT.",
          "og": "/og.png"}
 # Paths shared by both belts (never prefixed with /women)
-GLOBAL_PATHS = ("styles.css", "favicon.png", "favicon.ico", "apple-touch-icon.png", "manifest.json", "icon-512.png", "og.png",
+GLOBAL_PATHS = ("styles.css", "network-bar.js", "sw.js", "offline.html", "favicon.png", "favicon.ico", "apple-touch-icon.png", "manifest.json", "icon-512.png", "og.png",
                 "og-holder.png", "tablekit.js", "privacy/", "about/", "women/")
 # Never rewrite protocol-relative URLs ("//gc.zgo.at/count.js"): the lookahead skips a second slash (CBB-1).
 _REWRITE = re.compile(r'((?:href|src)=["\']|fetch\([\'"]|"(?:https://collegebasketballbelt\.com))/(?!/|(?:' +
@@ -309,6 +309,8 @@ def page(title, body, *, path, description, active=None, jsonld=None, robots=Non
   <div class="links"><a href="https://collegefootballbelt.com">collegefootballbelt.com</a><a href="https://beltholders.com">beltholders.com</a><a href="https://x.com/CollegeBBBelt">@CollegeBBBelt</a><a href="https://instagram.com/CollegeBBBelt">Instagram</a></div>
   <div class="links"><a href="/privacy/">Privacy</a><a href="/about/">About</a><a href="mailto:hello@collegebasketballbelt.com">Contact</a><a href="/feed.xml">RSS</a><a href="/embed/">Embed a badge</a><span>Not affiliated with the NCAA or any school.</span></div>
 </footer>
+<script src="/network-bar.js" defer></script>
+<script>if("serviceWorker" in navigator)addEventListener("load",function(e){{navigator.serviceWorker.register("/sw.js").catch(Boolean);}});</script>
 </body>
 </html>
 """)
@@ -861,10 +863,12 @@ def main():
         build_women_rules(D)
     _section("", cbb_league.LEAGUE, MEN, os.path.join("data", "lineage.json"))
     build_sitemap()
-    for f in ("styles.css", "favicon.png", "favicon.ico", "apple-touch-icon.png", "icon-512.png", "og.png", "tablekit.js"):
+    for f in ("styles.css", "network-bar.js", "sw.js", "favicon.png", "favicon.ico", "apple-touch-icon.png", "icon-512.png", "og.png", "tablekit.js"):
         if os.path.exists(f):
             shutil.copy(f, os.path.join(OUT, f))
     print(f"Built {sum(len(fs) for _, fs, _ in [(0, f, 0) for _, _, f in os.walk(OUT)])} files into {OUT}/")
+    import indexnow
+    indexnow.write(OUT)
 
 
 if __name__ == "__main__":
