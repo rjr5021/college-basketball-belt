@@ -68,10 +68,24 @@ jobs:
         continue-on-error: true
       - name: Commit preview data
         run: |
-          git add -A data
-          git diff --cached --quiet && echo "no preview changes" && exit 0
+          # BH-16: commit a preview file only when its game or AI preview changed (that part costs an API
+          # call to redo); the odds, weather and timestamps are refreshed every run and stay uncommitted.
+          python3 - <<'PY' > /tmp/keep.txt
+          import glob, json, subprocess
+          for p in sorted(glob.glob("data/**/preview_extra.json", recursive=True)):
+              old = subprocess.run(["git", "show", "HEAD:" + p], capture_output=True, text=True).stdout
+              try:
+                  old = json.loads(old) if old else {}
+                  new = json.load(open(p))
+              except ValueError:
+                  print(p); continue
+              if (old.get("key"), old.get("ai")) != (new.get("key"), new.get("ai")):
+                  print(p)
+          PY
+          git add -- $(cat /tmp/keep.txt) $(git ls-files -m -o --exclude-standard data | grep lean_ledger.json || true)
+          git diff --cached --quiet && echo "no new previews or picks" && exit 0
           git commit -m "Update preview data [skip ci]"
-          for i in 1 2 3 4; do git pull --rebase -X theirs && git push && break; git rebase --abort 2>/dev/null; sleep $((i * 7)); done
+          for i in 1 2 3 4; do git pull --rebase --autostash -X theirs && git push && break; git rebase --abort 2>/dev/null; sleep $((i * 7)); done
         continue-on-error: true
       - name: Build site
         run: python build_site.py
