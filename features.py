@@ -2194,6 +2194,9 @@ BOX_SCHEMA = {
             "leaders": [("G", "Goals"), ("A", "Assists"), ("PTS", "Points"), ("SV", "Saves"), ("HIT", "Hits"), ("PIM", "Penalty minutes")],
             "source": 'Box scores: the NHL\'s own game center.'},
 }
+BOX_SCHEMA["women"] = dict(BOX_SCHEMA["cbb"], source=(
+    'Player box scores: ESPN, via the <a href="https://github.com/sportsdataverse/sportsdataverse-data">sportsdataverse</a> '
+    'wehoop project (CC BY 4.0), 2013–14 on.'))
 
 
 # Page budget (BH-2): box scores older than this season don't become player or game pages.
@@ -2225,7 +2228,7 @@ def _box_for(lg, d):
     basketball stores the API game id with each box score, so they're matched
     by that id (belt game numbers shift when older games are added)."""
     box = _box(lg)
-    if lg.get("key") != "cbb":
+    if lg.get("key") not in ("cbb", "women"):
         return box
     by_gid = {str(bg.get("game_id")): bg["n"] for bg in d["belt_games"] if bg.get("game_id")}
     return {str(by_gid[str(g.get("gid"))]): g for g in box.values() if str(g.get("gid")) in by_gid}
