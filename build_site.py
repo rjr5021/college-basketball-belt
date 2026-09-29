@@ -690,7 +690,7 @@ def build_static(d):
 </section>"""
     write("privacy/index.html", page("Privacy", privacy, path="/privacy/", description="College Basketball Belt privacy policy."))
     write("404.html", page("Page not found", """<section class="wrap prose"><div class="kicker">404</div><h1 class="disp">That page lost the belt</h1><p>It's not here anymore. Try the <a href="/">current holder</a> or the <a href="/history/">full history</a>.</p></section>""",
-                           path="/404.html", description="Page not found."))
+                           path="/404.html", description="Page not found.", robots="noindex"))
 
 
 def build_women_rules(d):

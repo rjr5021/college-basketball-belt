@@ -506,7 +506,8 @@ def build_otd(datas):
 </section>"""
             html = S.page(f"On this day, {label}: belt title changes", body, path=f"/on-this-day/{k}/",
                           description=(S.otd_description(label) if hasattr(S, "otd_description")
-                                       else f"Every lineal championship belt title change on {label}, in every league we track."))
+                                       else f"Every lineal championship belt title change on {label}, in every league we track."),
+                          robots=None if len(items) >= OTD_INDEX_MIN else "noindex,follow")   # BH-9: a date with 0-1 changes is thin
             S.write(f"on-this-day/{k}/index.html", html)
             S.write(f"on-this-day/{k}/top.json", json.dumps({"label": label, "n": len(items),
                                                              "html": otd_list(items, OTD_HOME_LIMIT) if items else ""}, separators=(",", ":")))
