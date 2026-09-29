@@ -1,0 +1,515 @@
+id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,home_points,away_points,neutral,home_conf,away_conf,home_seed,away_seed,venue,city,state,notes
+900000001,1986-11-28,,1987,regular,,final,Texas,Long Beach State,251,299,100,86,1,,,,,,,,USC Classic
+900000002,1986-11-29,,1987,regular,,final,USC,Texas,30,251,69,89,,,,,,,,,USC Classic
+900000003,1986-12-01,,1987,regular,,final,Idaho,Texas,70,251,44,87,,,,,,,,,
+900000004,1986-12-05,,1987,regular,,final,Texas,Notre Dame,251,87,84,59,,,,,,,,,Dr. Pepper Classic
+900000005,1986-12-06,,1987,regular,,final,Texas,Ohio State,251,194,99,78,,,,,,,,,Dr. Pepper Classic
+900000006,1986-12-09,,1987,regular,,final,UL Monroe,Texas,2433,251,60,85,,,,,,,,,
+900000007,1986-12-14,,1987,regular,,final,Texas,Tennessee,251,2633,78,85,,,,,,,,,
+900000008,1986-12-20,,1987,regular,,final,Tennessee,UCLA,2633,26,81,58,,,,,,,,,
+900000009,1986-12-27,,1987,regular,,final,Tennessee,Saint Joseph's,2633,2603,76,66,1,,,,,,,,Orange Bowl Classic
+900000010,1986-12-28,,1987,regular,,final,Tennessee,USC,2633,30,89,75,1,,,,,,,,Orange Bowl Classic
+900000011,1986-12-29,,1987,regular,,final,Tennessee,Texas,2633,251,74,88,1,,,,,,,,Orange Bowl Classic
+900000012,1987-01-03,,1987,regular,,final,Texas,Rice,251,242,85,53,,,,,,,,,
+900000013,1987-01-06,,1987,regular,,final,Arkansas,Texas,8,251,56,59,,,,,,,,,
+900000014,1987-01-10,,1987,regular,,final,Baylor,Texas,239,251,58,88,,,,,,,,,
+900000015,1987-01-14,,1987,regular,,final,Texas A&M,Texas,245,251,60,94,,,,,,,,,
+900000016,1987-01-17,,1987,regular,,final,Texas,SMU,251,2567,93,57,,,,,,,,,
+900000017,1987-01-19,,1987,regular,,final,TCU,Texas,2628,251,67,99,,,,,,,,,
+900000018,1987-01-21,,1987,regular,,final,Texas,Western Kentucky,251,98,63,41,,,,,,,,,
+900000019,1987-01-24,,1987,regular,,final,Texas,Texas Tech,251,2641,74,52,,,,,,,,,
+900000020,1987-01-28,,1987,regular,,final,Houston,Texas,248,251,73,79,,,,,,,,,
+900000021,1987-01-31,,1987,regular,,final,Rice,Texas,242,251,63,96,,,,,,,,,
+900000022,1987-02-03,,1987,regular,,final,Texas,Arkansas,251,8,91,65,,,,,,,,,
+900000023,1987-02-07,,1987,regular,,final,Texas,Baylor,251,239,92,41,,,,,,,,,
+900000024,1987-02-10,,1987,regular,,final,Texas,Texas A&M,251,245,96,50,,,,,,,,,
+900000025,1987-02-14,,1987,regular,,final,SMU,Texas,2567,251,57,93,,,,,,,,,
+900000026,1987-02-17,,1987,regular,,final,Texas,TCU,251,2628,110,65,,,,,,,,,
+900000027,1987-02-24,,1987,regular,,final,Texas Tech,Texas,2641,251,52,74,,,,,,,,,
+900000028,1987-03-01,,1987,regular,,final,Texas,Houston,251,248,60,55,,,,,,,,,
+900000029,1987-03-05,,1987,regular,,final,Texas,Texas Tech,251,2641,73,49,1,,,,,,,,SWC Tournament - Semifinal
+900000030,1987-03-07,,1987,regular,,final,Texas,Arkansas,251,8,72,70,1,,,,,,,,SWC Tournament - Final
+900000031,1987-03-15,,1987,postseason,NCAA,final,Texas,Saint Joseph's,251,2603,86,56,,,,,,,,,NCAA Tournament - Second Round
+900000032,1987-03-19,,1987,postseason,NCAA,final,Texas,James Madison,251,256,91,57,1,,,,,,,,NCAA Tournament - Regional Semifinal
+900000033,1987-03-21,,1987,postseason,NCAA,final,Texas,Rutgers,251,164,85,77,1,,,,,,,,NCAA Tournament - Regional Final
+900000034,1987-03-27,,1987,postseason,NCAA,final,Texas,Louisiana Tech,251,2348,75,79,1,,,,,,,,NCAA Tournament - National Semifinal
+900000035,1987-03-29,,1987,postseason,NCAA,final,Louisiana Tech,Tennessee,2348,2633,44,67,1,,,,,,,,NCAA Tournament - National Championship
+900000036,1987-11-27,,1988,regular,,final,Tennessee,Indiana,2633,84,91,52,1,,,,,,,,Communiplex Classic (Cincinnati)
+900000037,1987-11-28,,1988,regular,,final,Tennessee,Old Dominion,2633,295,83,52,1,,,,,,,,Communiplex Classic (Cincinnati)
+900000038,1987-12-03,,1988,regular,,final,Tennessee,Stetson,2633,56,102,59,,,,,,,,,
+900000039,1987-12-09,,1988,regular,,final,Tennessee,Texas,2633,251,78,97,,,,,,,,,
+900000040,1987-12-18,,1988,regular,,final,Texas,Long Beach State,251,299,99,85,,,,,,,,,
+900000041,1987-12-28,,1988,regular,,final,Texas,Illinois,251,356,90,75,1,,,,,,,,Orange Bowl/Burger King Classic (Miami)
+900000042,1987-12-29,,1988,regular,,final,Texas,Rutgers,251,164,86,75,1,,,,,,,,Orange Bowl/Burger King Classic (Miami)
+900000043,1987-12-30,,1988,regular,,final,Texas,Iowa,251,2294,65,75,1,,,,,,,,Orange Bowl/Burger King Classic (Miami)
+900000044,1988-01-08,,1988,regular,,final,Wisconsin,Iowa,275,2294,59,79,,,,,,,,,
+900000045,1988-01-10,,1988,regular,,final,Iowa,Northwestern,2294,77,81,43,,,,,,,,,
+900000046,1988-01-15,,1988,regular,,final,Minnesota,Iowa,135,2294,41,84,,,,,,,,,
+900000047,1988-01-22,,1988,regular,,final,Illinois,Iowa,356,2294,63,90,,,,,,,,,
+900000048,1988-01-24,,1988,regular,,final,Purdue,Iowa,2509,2294,57,67,,,,,,,,,
+900000049,1988-01-29,,1988,regular,,final,Iowa,Indiana,2294,84,72,48,,,,,,,,,
+900000050,1988-01-31,,1988,regular,,final,Iowa,Ohio State,2294,194,75,64,,,,,,,,,
+900000051,1988-02-02,,1988,regular,,final,Michigan State,Iowa,127,2294,52,77,,,,,,,,,
+900000052,1988-02-05,,1988,regular,,final,Michigan,Iowa,130,2294,54,89,,,,,,,,,
+900000053,1988-02-12,,1988,regular,,final,Iowa,Minnesota,2294,135,100,51,,,,,,,,,
+900000054,1988-02-16,,1988,regular,,final,Iowa,Drake,2294,2181,74,38,,,,,,,,,
+900000055,1988-02-19,,1988,regular,,final,Iowa,Purdue,2294,2509,66,52,,,,,,,,,
+900000056,1988-02-21,,1988,regular,,final,Iowa,Illinois,2294,356,87,36,,,,,,,,,
+900000057,1988-02-26,,1988,regular,,final,Ohio State,Iowa,194,2294,58,54,,,,,,,,,
+900000058,1988-02-28,,1988,regular,,final,Ohio State,Minnesota,194,135,88,48,,,,,,,,,
+900000059,1988-03-04,,1988,regular,,final,Illinois,Ohio State,356,194,62,78,,,,,,,,,
+900000060,1988-03-06,,1988,regular,,final,Purdue,Ohio State,2509,194,59,70,,,,,,,,,
+900000061,1988-03-10,,1988,regular,,final,Indiana,Ohio State,84,194,49,68,,,,,,,,,
+900000062,1988-03-20,,1988,postseason,NCAA,final,Ohio State,Syracuse,194,183,116,75,,,,,,,,,NCAA Tournament - Second Round
+900000063,1988-03-24,,1988,postseason,NCAA,final,Ohio State,Maryland,194,120,66,81,1,,,,,,,,NCAA Tournament - Mideast Regional Semifinal
+900000064,1988-03-26,,1988,postseason,NCAA,final,Maryland,Auburn,120,2,74,103,1,,,,,,,,NCAA Tournament - Mideast Regional Final
+900000065,1988-04-01,,1988,postseason,NCAA,final,Auburn,Long Beach State,2,299,68,55,1,,,,,,,,NCAA Tournament - National Semifinal
+900000066,1988-04-03,,1988,postseason,NCAA,final,Auburn,Louisiana Tech,2,2348,54,56,1,,,,,,,,NCAA Tournament - National Championship
+900000067,1988-11-25,,1989,regular,,final,Hawai'i,Louisiana Tech,62,2348,52,71,,,,,,,,,Hawaii Wahine Classic - first round
+900000068,1988-11-26,,1989,regular,,final,Louisiana Tech,Iowa,2348,2294,62,58,1,,,,,,,,Hawaii Wahine Classic - semifinal
+900000069,1988-11-27,,1989,regular,,final,Louisiana Tech,Tennessee,2348,2633,74,76,1,,,,,,,,Hawaii Wahine Classic - final (OT)
+900000070,1988-12-17,,1989,regular,,final,Tennessee,Stanford,2633,24,83,60,,,,,,,,,
+900000071,1989-01-04,,1989,regular,,final,Old Dominion,Tennessee,295,2633,58,93,,,,,,,,,
+900000072,1989-01-06,,1989,regular,,final,Auburn,Tennessee,2,2633,67,59,,,,,,,,,
+900000073,1989-01-11,,1989,regular,,final,Auburn,Mississippi State,2,344,77,35,,,,,,,,,
+900000074,1989-01-14,,1989,regular,,final,LSU,Auburn,99,2,43,57,,,,,,,,,
+900000075,1989-01-28,,1989,regular,,final,Florida,Auburn,57,2,58,87,,,,,,,,,
+900000076,1989-02-22,,1989,regular,,final,Auburn,Alabama,2,333,89,44,,,,,,,,,
+900000077,1989-02-25,,1989,regular,,final,Kentucky,Auburn,96,2,70,89,,,,,,,,,
+900000078,1989-02-28,,1989,regular,,final,Georgia,Auburn,61,2,76,86,,,,,,,,,
+900000079,1989-03-04,,1989,regular,,final,Auburn,Florida,2,57,72,61,1,,,,,,,,SEC Tournament - Quarterfinal
+900000080,1989-03-05,,1989,regular,,final,Auburn,LSU,2,99,75,65,1,,,,,,,,SEC Tournament - Semifinal
+900000081,1989-03-06,,1989,regular,,final,Auburn,Tennessee,2,2633,51,66,1,,,,,,,,SEC Tournament - Championship
+900000082,1989-03-18,,1989,postseason,NCAA,final,Tennessee,La Salle,2633,2325,91,61,,,,,,,,,NCAA Tournament - Second Round
+900000083,1989-03-23,,1989,postseason,NCAA,final,Tennessee,Virginia,2633,258,80,47,1,,,,,,,,NCAA Tournament - Sweet 16
+900000084,1989-03-25,,1989,postseason,NCAA,final,Tennessee,Long Beach State,2633,299,94,80,1,,,,,,,,NCAA Tournament - Elite Eight
+900000085,1989-03-31,,1989,postseason,NCAA,final,Tennessee,Maryland,2633,120,77,65,1,,,,,,,,NCAA Tournament - Final Four (semifinal)
+900000086,1989-04-02,,1989,postseason,NCAA,final,Tennessee,Auburn,2633,2,76,60,1,,,,,,,,NCAA Tournament - National Championship
+900000087,1989-11-26,,1990,regular,,final,Tennessee,Stetson,2633,56,112,39,,,,,,,,,
+900000088,1989-11-28,,1990,regular,,final,Tennessee,Virginia Tech,2633,259,81,55,,,,,,,,,
+900000089,1989-12-01,,1990,regular,,final,Western Michigan,Tennessee,2711,2633,57,98,,,,,,,,,
+900000090,1989-12-03,,1990,regular,,final,Notre Dame,Tennessee,87,2633,54,77,,,,,,,,,
+900000091,1989-12-06,,1990,regular,,final,Maryland,Tennessee,120,2633,69,77,,,,,,,,,
+900000092,1989-12-09,,1990,regular,,final,Tennessee,Louisiana Tech,2633,2348,58,59,,,,,,,,,
+900000093,1990-01-06,,1990,regular,,final,Louisiana Tech,Kansas State,2348,2306,100,54,,,,,,,,,
+900000094,1990-01-14,,1990,regular,,final,Old Dominion,Louisiana Tech,295,2348,65,79,,,,,,,,,
+900000095,1990-01-18,,1990,regular,,final,Louisiana Tech,UT Rio Grande Valley,2348,292,98,35,,,,,,,,,
+900000096,1990-01-20,,1990,regular,,final,Louisiana Tech,Lamar,2348,2320,85,55,,,,,,,,,
+900000097,1990-01-23,,1990,regular,,final,Stephen F. Austin,Louisiana Tech,2617,2348,56,69,,,,,,,,,
+900000098,1990-01-29,,1990,regular,,final,Alabama,Louisiana Tech,333,2348,49,66,,,,,,,,,
+900000099,1990-02-08,,1990,regular,,final,UT Rio Grande Valley,Louisiana Tech,292,2348,48,90,,,,,,,,,
+900000100,1990-02-10,,1990,regular,,final,Lamar,Louisiana Tech,2320,2348,42,81,,,,,,,,,
+900000101,1990-02-20,,1990,regular,,final,Louisiana Tech,New Orleans,2348,2443,98,60,,,,,,,,,
+900000102,1990-02-22,,1990,regular,,final,Louisiana Tech,Louisiana,2348,309,101,52,,,,,,,,,
+900000103,1990-02-24,,1990,regular,,final,Stetson,Louisiana Tech,56,2348,46,88,,,,,,,,,
+900000104,1990-02-26,,1990,regular,,final,UCF,Louisiana Tech,2116,2348,57,121,,,,,,,,,
+900000105,1990-03-09,,1990,regular,,final,Louisiana Tech,Louisiana,2348,309,124,51,,,,,,,,,American South Conference Tournament
+900000106,1990-03-10,,1990,regular,,final,Louisiana Tech,Lamar,2348,2320,79,58,,,,,,,,,American South Conference Tournament - Final
+900000107,1990-03-17,,1990,postseason,NCAA,final,Louisiana Tech,Southern Miss,2348,2572,89,70,,,,,,,,,NCAA Tournament - Second Round
+900000108,1990-03-22,,1990,postseason,NCAA,final,Louisiana Tech,Purdue,2348,2509,91,47,1,,,,,,,,NCAA Tournament - Midwest Regional Semifinal
+900000109,1990-03-24,,1990,postseason,NCAA,final,Texas,Louisiana Tech,251,2348,57,71,,,,,,,,,NCAA Tournament - Midwest Regional Final
+900000110,1990-03-30,,1990,postseason,NCAA,final,Louisiana Tech,Auburn,2348,2,69,81,1,,,,,,,,NCAA Tournament - National Semifinal
+900000111,1990-04-01,,1990,postseason,NCAA,final,Auburn,Stanford,2,24,81,88,1,,,,,,,,NCAA Tournament - National Championship
+900000112,1990-11-24,,1991,regular,,final,Tennessee,Stanford,2633,24,95,80,,,,,,,,,
+900000113,1990-12-01,,1991,regular,,final,NC State,Tennessee,152,2633,90,77,,,,,,,,,
+900000114,1990-12-05,,1991,regular,,final,NC State,North Carolina A&T,152,2448,84,67,,,,,,,,,
+900000115,1990-12-08,,1991,regular,,final,Western Carolina,NC State,2717,152,65,137,,,,,,,,,
+900000116,1990-12-28,,1991,regular,,final,NC State,Central Connecticut,152,2115,110,74,1,,,,,,,,Wildcat-Havoline Holiday tournament (at Villanova)
+900000117,1990-12-29,,1991,regular,,final,Villanova,NC State,222,152,60,87,,,,,,,,,Wildcat-Havoline Holiday tournament
+900000118,1990-12-31,,1991,regular,,final,NC State,Holy Cross,152,107,97,81,,,,,,,,,
+900000119,1991-01-02,,1991,regular,,final,Clemson,NC State,228,152,82,73,,,,,,,,,
+900000120,1991-01-05,,1991,regular,,final,Clemson,BYU,228,252,81,59,,,,,,,,,"Civic Center of Anderson, Anderson, SC"
+900000121,1991-01-09,,1991,regular,,final,Clemson,Virginia,228,258,75,81,,,,,,,,,
+900000122,1991-01-12,,1991,regular,,final,NC State,Virginia,152,258,120,123,,,,,,,,,3OT
+900000123,1991-01-16,,1991,regular,,final,Virginia,Maryland,258,120,76,59,,,,,,,,,
+900000124,1991-01-19,,1991,regular,,final,Georgia Tech,Virginia,59,258,72,98,,,,,,,,,
+900000125,1991-01-24,,1991,regular,,final,Wake Forest,Virginia,154,258,70,87,,,,,,,,,
+900000126,1991-01-26,,1991,regular,,final,Virginia,St. John's,258,2599,90,51,,,,,,,,,
+900000127,1991-01-29,,1991,regular,,final,North Carolina,Virginia,153,258,67,92,,,,,,,,,
+900000128,1991-02-02,,1991,regular,,final,Virginia,Georgia Tech,258,59,98,94,,,,,,,,,
+900000129,1991-02-06,,1991,regular,,final,Virginia,North Carolina,258,153,97,60,,,,,,,,,
+900000130,1991-02-09,,1991,regular,,final,Virginia,Duke,258,150,86,61,,,,,,,,,
+900000131,1991-02-14,,1991,regular,,final,Virginia,Wake Forest,258,154,98,66,,,,,,,,,
+900000132,1991-02-16,,1991,regular,,final,Virginia,Clemson,258,228,89,62,,,,,,,,,
+900000133,1991-02-20,,1991,regular,,final,Maryland,Virginia,120,258,74,111,,,,,,,,,
+900000134,1991-02-23,,1991,regular,,final,Virginia,NC State,258,152,95,78,,,,,,,,,
+900000135,1991-03-02,,1991,regular,,final,Virginia,North Carolina,258,153,90,69,1,,,,,,,,ACC Tournament - Quarterfinal
+900000136,1991-03-03,,1991,regular,,final,Virginia,Clemson,258,228,62,65,1,,,,,,,,ACC Tournament - Semifinal
+900000137,1991-03-04,,1991,regular,,final,Clemson,NC State,228,152,61,84,1,,,,,,,,ACC Tournament - Final
+900000138,1991-03-16,,1991,postseason,NCAA,final,NC State,George Washington,152,45,94,83,,,,,,,,,NCAA Tournament - Second Round
+900000139,1991-03-21,,1991,postseason,NCAA,final,NC State,UConn,152,41,71,82,1,,,,,,,,NCAA Tournament - Regional Semifinal
+900000140,1991-03-23,,1991,postseason,NCAA,final,UConn,Clemson,41,228,60,57,1,,,,,,,,NCAA Tournament - Regional Final
+900000141,1991-03-30,,1991,postseason,NCAA,final,UConn,Virginia,41,258,55,61,1,,,,,,,,NCAA Tournament - National Semifinal
+900000142,1991-03-31,,1991,postseason,NCAA,final,Virginia,Tennessee,258,2633,67,70,1,,,,,,,,NCAA Tournament - National Championship (OT)
+900000143,1991-11-22,,1992,regular,,final,Tennessee,Louisiana Tech,2633,2348,90,70,,,,,,,,,
+900000144,1991-11-24,,1992,regular,,final,Tennessee,Maine,2633,311,86,71,,,,,,,,,
+900000145,1991-12-02,,1992,regular,,final,Charlotte,Tennessee,2429,2633,56,79,,,,,,,,,
+900000146,1991-12-14,,1992,regular,,final,Stanford,Tennessee,24,2633,96,95,,,,,,,,,OT
+900000147,1991-12-19,,1992,regular,,final,Stanford,Oral Roberts,24,198,112,74,,,,,,,,,Cardinal Classic
+900000148,1991-12-20,,1992,regular,,final,Stanford,Southern Illinois,24,79,82,63,,,,,,,,,Cardinal Classic (final)
+900000149,1991-12-28,,1992,regular,,final,Stanford,San Diego,24,301,103,68,,,,,,,,,
+900000150,1992-01-03,,1992,regular,,final,Stanford,Santa Clara,24,2541,86,71,,,,,,,,,
+900000151,1992-01-10,,1992,regular,,final,California,Stanford,25,24,74,65,,,,,,,,,
+900000152,1992-01-16,,1992,regular,,final,California,UCLA,25,26,74,71,,,,,,,,,
+900000153,1992-01-18,,1992,regular,,final,California,USC,25,30,77,70,,,,,,,,,
+900000154,1992-01-23,,1992,regular,,final,Washington,California,264,25,66,67,,,,,,,,,OT
+900000155,1992-01-25,,1992,regular,,final,Washington State,California,265,25,83,76,,,,,,,,,
+900000156,1992-01-31,,1992,regular,,final,USC,Washington State,30,265,71,65,,,,,,,,,OT
+900000157,1992-02-02,,1992,regular,,final,USC,Washington,30,264,74,67,,,,,,,,,
+900000158,1992-02-06,,1992,regular,,final,Arizona,USC,12,30,60,80,,,,,,,,,
+900000159,1992-02-08,,1992,regular,,final,Arizona State,USC,9,30,63,62,,,,,,,,,
+900000160,1992-02-14,,1992,regular,,final,Arizona,Arizona State,12,9,82,84,,,,,,,,,"single rivalry game, weekend of Feb 13-16"
+900000161,1992-02-27,,1992,regular,,final,Arizona State,Stanford,9,24,77,65,,,,,,,,,
+900000162,1992-02-29,,1992,regular,,final,Arizona State,California,9,25,63,52,,,,,,,,,
+900000163,1992-03-06,,1992,regular,,final,USC,Arizona State,30,9,98,65,,,,,,,,,
+900000164,1992-03-08,,1992,regular,,final,USC,Arizona,30,12,71,68,,,,,,,,,
+900000165,1992-03-12,,1992,regular,,final,Oregon,USC,2483,30,76,81,,,,,,,,,
+900000166,1992-03-14,,1992,regular,,final,Oregon State,USC,204,30,66,78,,,,,,,,,
+900000167,1992-03-22,,1992,postseason,NCAA,final,USC,Montana,30,149,71,59,,,,,,,,,NCAA Tournament - Second Round
+900000168,1992-03-26,,1992,postseason,NCAA,final,USC,Stephen F. Austin,30,2617,61,57,1,,,,,,,,NCAA Tournament - West Regional semifinal (Seattle)
+900000169,1992-03-28,,1992,postseason,NCAA,final,USC,Stanford,30,24,62,82,1,,,,,,,,NCAA Tournament - West Regional final (Seattle)
+900000170,1992-04-04,,1992,postseason,NCAA,final,Stanford,Virginia,24,258,66,65,1,,,,,,,,NCAA Tournament - National Semifinal (Los Angeles)
+900000171,1992-04-05,,1992,postseason,NCAA,final,Stanford,Western Kentucky,24,98,78,62,1,,,,,,,,NCAA Tournament - National Championship (Los Angeles)
+900000172,1992-12-01,,1993,regular,,final,Stanford,Texas Tech,24,2641,75,67,,,,,,,,,
+900000173,1992-12-04,,1993,regular,,final,Stanford,Illinois State,24,2287,72,56,1,,,,,,,,Wahine Classic (Honolulu)
+900000174,1992-12-05,,1993,regular,,final,Hawai'i,Stanford,62,24,56,85,,,,,,,,,Wahine Classic (Honolulu)
+900000175,1992-12-06,,1993,regular,,final,Stanford,Tennessee,24,2633,73,74,1,,,,,,,,Wahine Classic final (Honolulu) (OT)
+900000176,1992-12-09,,1993,regular,,final,Tennessee,Charlotte,2633,2429,89,45,,,,,,,,,
+900000177,1992-12-18,,1993,regular,,final,Louisiana Tech,Tennessee,2348,2633,76,83,,,,,,,,,
+900000178,1992-12-21,,1993,regular,,final,Tennessee,Stanford,2633,24,84,79,,,,,,,,,
+900000179,1992-12-29,,1993,regular,,final,Tennessee,George Washington,2633,45,73,53,1,,,,,,,,Maryland Invitational (College Park)
+900000180,1992-12-30,,1993,regular,,final,Maryland,Tennessee,120,2633,77,72,,,,,,,,,Maryland Invitational final
+900000181,1993-01-02,,1993,regular,,final,Maryland,Purdue,120,2509,73,69,1,,,,,,,,"ACC/Big Ten Challenge (Columbus, OH)"
+900000182,1993-01-06,,1993,regular,,final,Clemson,Maryland,228,120,60,64,,,,,,,,,
+900000183,1993-01-12,,1993,regular,,final,Florida State,Maryland,52,120,68,61,,,,,,,,,
+900000184,1993-01-16,,1993,regular,,final,Wake Forest,Florida State,154,52,57,53,,,,,,,,,
+900000185,1993-01-18,,1993,regular,,final,Wake Forest,Clemson,154,228,51,71,,,,,,,,,
+900000186,1993-01-24,,1993,regular,,final,NC State,Clemson,152,228,79,71,,,,,,,,,
+900000187,1993-01-27,,1993,regular,,final,North Carolina,NC State,153,152,71,47,,,,,,,,,
+900000188,1993-01-31,,1993,regular,,final,North Carolina,Georgia Tech,153,59,72,68,,,,,,,,,OT
+900000189,1993-02-03,,1993,regular,,final,North Carolina,Virginia,153,258,72,65,,,,,,,,,
+900000190,1993-02-06,,1993,regular,,final,Wake Forest,North Carolina,154,153,69,77,,,,,,,,,
+900000191,1993-02-09,,1993,regular,,final,Virginia,North Carolina,258,153,73,67,,,,,,,,,
+900000192,1993-02-13,,1993,regular,,final,Duke,Virginia,150,258,61,97,,,,,,,,,
+900000193,1993-02-17,,1993,regular,,final,Virginia,Wake Forest,258,154,87,67,,,,,,,,,
+900000194,1993-02-23,,1993,regular,,final,Virginia,Maryland,258,120,87,73,,,,,,,,,
+900000195,1993-02-27,,1993,regular,,final,NC State,Virginia,152,258,75,76,,,,,,,,,
+900000196,1993-03-06,,1993,regular,,final,Virginia,Wake Forest,258,154,74,46,1,,,,,,,,"ACC Tournament - Quarterfinal (Rock Hill, SC)"
+900000197,1993-03-07,,1993,regular,,final,Virginia,Clemson,258,228,79,71,1,,,,,,,,"ACC Tournament - Semifinal (Rock Hill, SC)"
+900000198,1993-03-08,,1993,regular,,final,Virginia,Maryland,258,120,106,103,1,,,,,,,,"ACC Tournament - Final (Rock Hill, SC) (3OT)"
+900000199,1993-03-19,,1993,postseason,NCAA,final,Virginia,Florida,258,57,69,55,,,,,,,,,NCAA Tournament - Second Round
+900000200,1993-03-25,,1993,postseason,NCAA,final,Virginia,Georgetown,258,46,77,57,1,,,,,,,,NCAA Tournament - East Regional semifinal (Richmond)
+900000201,1993-03-27,,1993,postseason,NCAA,final,Virginia,Ohio State,258,194,73,75,1,,,,,,,,NCAA Tournament - East Regional final (Richmond)
+900000202,1993-04-03,,1993,postseason,NCAA,final,Ohio State,Iowa,194,2294,73,72,1,,,,,,,,NCAA Tournament - National Semifinal (Atlanta) (OT)
+900000203,1993-04-04,,1993,postseason,NCAA,final,Ohio State,Texas Tech,194,2641,82,84,1,,,,,,,,NCAA Tournament - National Championship (Atlanta)
+900000204,1993-11-20,,1994,regular,,final,Texas Tech,Vanderbilt,2641,238,74,67,1,,,,,,,,"Hall of Fame Classic (Jackson, TN)"
+900000205,1993-11-27,,1994,regular,,final,Texas Tech,Stanford,2641,24,72,68,,,,,,,,,
+900000206,1993-12-04,,1994,regular,,final,Texas Tech,Alcorn State,2641,2016,97,69,,,,,,,,,Lady Raider Classic (Lubbock)
+900000207,1993-12-05,,1994,regular,,final,Texas Tech,Florida International,2641,2229,89,59,,,,,,,,,Lady Raider Classic (Lubbock) - final
+900000208,1993-12-07,,1994,regular,,final,Texas Tech,UTEP,2641,2638,73,43,,,,,,,,,
+900000209,1993-12-18,,1994,regular,,final,Texas Tech,Minnesota,2641,135,82,92,1,,,,,,,,"Pizza Hut Shocker Shootout (Wichita, KS)"
+900000210,1993-12-19,,1994,regular,,final,Wichita State,Minnesota,2724,135,75,70,,,,,,,,,"Pizza Hut Shocker Shootout (Wichita, KS)"
+900000211,1993-12-28,,1994,regular,,final,Iowa State,Wichita State,66,2724,44,62,,,,,,,,,
+900000212,1994-01-04,,1994,regular,,final,Wichita State,Missouri State,2724,2623,69,74,,,,,,,,,MVC
+900000213,1994-01-06,,1994,regular,,final,Missouri State,Bradley,2623,71,92,53,,,,,,,,,MVC
+900000214,1994-01-09,,1994,regular,,final,Northern Iowa,Missouri State,2460,2623,46,80,,,,,,,,,MVC
+900000215,1994-01-15,,1994,regular,,final,Missouri State,Illinois State,2623,2287,70,44,,,,,,,,,MVC
+900000216,1994-01-21,,1994,regular,,final,Drake,Missouri State,2181,2623,66,79,,,,,,,,,MVC
+900000217,1994-01-23,,1994,regular,,final,Creighton,Missouri State,156,2623,69,56,,,,,,,,,MVC
+900000218,1994-02-02,,1994,regular,,final,Creighton,Oklahoma State,156,197,54,57,,,,,,,,,
+900000219,1994-02-04,,1994,regular,,final,Iowa State,Oklahoma State,66,197,61,55,,,,,,,,,Big Eight
+900000220,1994-02-06,,1994,regular,,final,Iowa State,Oklahoma,66,201,45,65,,,,,,,,,Big Eight
+900000221,1994-02-10,,1994,regular,,final,Oklahoma,Oral Roberts,201,198,99,48,,,,,,,,,
+900000222,1994-02-13,,1994,regular,,final,Oklahoma State,Oklahoma,197,201,77,68,,,,,,,,,Big Eight
+900000223,1994-02-18,,1994,regular,,final,Oklahoma State,Kansas,197,2305,60,58,,,,,,,,,Big Eight
+900000224,1994-02-20,,1994,regular,,final,Oklahoma State,Kansas State,197,2306,55,43,,,,,,,,,Big Eight
+900000225,1994-02-25,,1994,regular,,final,Colorado,Oklahoma State,38,197,69,59,,,,,,,,,Big Eight
+900000226,1994-02-27,,1994,regular,,final,Colorado,Oklahoma,38,201,89,79,,,,,,,,,Big Eight
+900000227,1994-03-05,,1994,regular,,final,Colorado,Iowa State,38,66,66,55,1,,,,,,,,"Big Eight Tournament (Salina, KS) - quarterfinal"
+900000228,1994-03-06,,1994,regular,,final,Colorado,Nebraska,38,158,77,67,1,,,,,,,,"Big Eight Tournament (Salina, KS) - semifinal"
+900000229,1994-03-07,,1994,regular,,final,Colorado,Missouri,38,142,71,79,1,,,,,,,,"Big Eight Tournament (Salina, KS) - final"
+900000230,1994-03-16,,1994,postseason,NCAA,final,Texas Tech,Missouri,2641,142,75,61,,,,,,,,,NCAA Tournament - First Round (Lubbock)
+900000231,1994-03-19,,1994,postseason,NCAA,final,Texas Tech,Creighton,2641,156,75,64,,,,,,,,,NCAA Tournament - Second Round (Lubbock)
+900000232,1994-03-24,,1994,postseason,NCAA,final,Texas Tech,Alabama,2641,333,68,73,1,,,,,,,,"NCAA Tournament - Midwest Regional semifinal (Austin, TX)"
+900000233,1994-03-26,,1994,postseason,NCAA,final,Alabama,Penn State,333,213,96,82,1,,,,,,,,"NCAA Tournament - Midwest Regional final (Austin, TX)"
+900000234,1994-04-02,,1994,postseason,NCAA,final,Alabama,Louisiana Tech,333,2348,66,69,1,,,,,,,,"NCAA Tournament - National semifinal (Richmond, VA)"
+900000235,1994-04-03,,1994,postseason,NCAA,final,Louisiana Tech,North Carolina,2348,153,59,60,1,,,,,,,,"NCAA Tournament - National championship (Richmond, VA)"
+900000236,1994-11-25,,1995,regular,,final,North Carolina,Tennessee Tech,153,2635,79,52,1,,,,,,,,Rainbow Wahine Classic (Honolulu)
+900000237,1994-11-26,,1995,regular,,final,Hawai'i,North Carolina,62,153,51,83,,,,,,,,,Rainbow Wahine Classic (Honolulu)
+900000238,1994-11-27,,1995,regular,,final,North Carolina,Florida,153,57,79,72,1,,,,,,,,Rainbow Wahine Classic (Honolulu)
+900000239,1994-12-03,,1995,regular,,final,North Carolina,Robert Morris,153,2523,87,50,,,,,,,,,
+900000240,1994-12-04,,1995,regular,,final,North Carolina,North Carolina A&T,153,2448,113,58,,,,,,,,,
+900000241,1994-12-07,,1995,regular,,final,North Carolina,Loyola Maryland,153,2352,102,38,,,,,,,,,
+900000242,1994-12-10,,1995,regular,,final,North Carolina,East Carolina,153,151,92,36,,,,,,,,,
+900000243,1994-12-19,,1995,regular,,final,North Carolina,Morehead State,153,2413,92,43,1,,,,,,,,Carolinas Holiday Beach Classic (Myrtle Beach)
+900000244,1994-12-20,,1995,regular,,final,North Carolina,Charleston,153,232,81,36,1,,,,,,,,Carolinas Holiday Beach Classic (Myrtle Beach)
+900000245,1994-12-21,,1995,regular,,final,North Carolina,East Tennessee State,153,2193,106,72,1,,,,,,,,Carolinas Holiday Beach Classic (Myrtle Beach)
+900000246,1994-12-29,,1995,regular,,final,North Carolina,Rhode Island,153,227,80,68,1,,,,,,,,Diamond Club Classic (Blacksburg)
+900000247,1994-12-30,,1995,regular,,final,Virginia Tech,North Carolina,259,153,52,57,,,,,,,,,Diamond Club Classic (Blacksburg)
+900000248,1995-01-04,,1995,regular,,final,Florida State,North Carolina,52,153,52,77,,,,,,,,,
+900000249,1995-01-07,,1995,regular,,final,North Carolina,Georgia Tech,153,59,74,62,,,,,,,,,
+900000250,1995-01-09,,1995,regular,,final,North Carolina,Wake Forest,153,154,82,67,,,,,,,,,
+900000251,1995-01-14,,1995,regular,,final,Clemson,North Carolina,228,153,73,77,,,,,,,,,
+900000252,1995-01-18,,1995,regular,,final,North Carolina,NC State,153,152,71,62,,,,,,,,,
+900000253,1995-01-22,,1995,regular,,final,North Carolina,Maryland,153,120,88,67,,,,,,,,,
+900000254,1995-01-25,,1995,regular,,final,Duke,North Carolina,150,153,74,72,,,,,,,,,
+900000255,1995-01-28,,1995,regular,,final,Florida State,Duke,52,150,71,75,,,,,,,,,
+900000256,1995-02-01,,1995,regular,,final,Clemson,Duke,228,150,78,64,,,,,,,,,
+900000257,1995-02-06,,1995,regular,,final,Florida State,Clemson,52,228,64,67,,,,,,,,,
+900000258,1995-02-11,,1995,regular,,final,Clemson,Maryland,228,120,74,56,,,,,,,,,
+900000259,1995-02-15,,1995,regular,,final,North Carolina,Clemson,153,228,82,69,,,,,,,,,
+900000260,1995-02-19,,1995,regular,,final,NC State,North Carolina,152,153,88,86,,,,,,,,,2OT
+900000261,1995-02-23,,1995,regular,,final,Clemson,NC State,228,152,55,68,,,,,,,,,
+900000262,1995-02-26,,1995,regular,,final,Wake Forest,NC State,154,152,63,86,,,,,,,,,
+900000263,1995-03-03,,1995,regular,,final,NC State,Georgia Tech,152,59,88,70,1,,,,,,,,"ACC Tournament - Quarterfinal (Rock Hill, S.C.)"
+900000264,1995-03-04,,1995,regular,,final,NC State,North Carolina,152,153,71,90,1,,,,,,,,"ACC Tournament - Semifinal (Rock Hill, S.C.)"
+900000265,1995-03-05,,1995,regular,,final,North Carolina,Duke,153,150,95,70,1,,,,,,,,"ACC Tournament - Final (Rock Hill, S.C.)"
+900000266,1995-03-16,,1995,postseason,NCAA,final,North Carolina,Western Illinois,153,2710,89,48,,,,,,,,,NCAA Tournament - First Round
+900000267,1995-03-18,,1995,postseason,NCAA,final,North Carolina,Seton Hall,153,2550,59,45,,,,,,,,,NCAA Tournament - Second Round
+900000268,1995-03-23,,1995,postseason,NCAA,final,North Carolina,Stanford,153,24,71,81,1,,,,,,,,NCAA Tournament - West Regional Semifinal (Los Angeles)
+900000269,1995-03-25,,1995,postseason,NCAA,final,Stanford,Purdue,24,2509,69,58,1,,,,,,,,NCAA Tournament - West Regional Final (Los Angeles)
+900000270,1995-04-01,,1995,postseason,NCAA,final,Stanford,UConn,24,41,60,87,1,,,,,,,,NCAA Tournament - National Semifinal (Minneapolis)
+900000271,1995-04-02,,1995,postseason,NCAA,final,UConn,Tennessee,41,2633,70,64,1,,,,,,,,NCAA Tournament - National Championship (Minneapolis)
+900000272,1995-11-19,,1996,regular,,final,UConn,Louisiana Tech,41,2348,81,83,1,,,,,,,,"at Knoxville, TN; OT"
+900000273,1995-11-24,,1996,regular,,final,Louisiana Tech,Fresno State,2348,278,77,59,1,,,,,,,,"Rocky Mountain Hoops Classic (Coors Classic), Boulder - first round"
+900000274,1995-11-25,,1996,regular,,final,Colorado,Louisiana Tech,38,2348,61,65,,,,,,,,,Rocky Mountain Hoops Classic (Coors Classic) - championship
+900000275,1996-01-04,,1996,regular,,final,Louisiana Tech,Lamar,2348,2320,97,57,,,,,,,,,Sun Belt
+900000276,1996-01-13,,1996,regular,,final,Lamar,Louisiana Tech,2320,2348,52,79,,,,,,,,,Sun Belt
+900000277,1996-01-15,,1996,regular,,final,UT Rio Grande Valley,Louisiana Tech,292,2348,51,89,,,,,,,,,Sun Belt
+900000278,1996-01-22,,1996,regular,,final,Tennessee,Louisiana Tech,2633,2348,77,72,,,,,,,,,
+900000279,1996-01-28,,1996,regular,,final,Tennessee,Alabama,2633,333,81,69,,,,,,,,,SEC
+900000280,1996-02-04,,1996,regular,,final,Ole Miss,Tennessee,145,2633,78,72,,,,,,,,,SEC
+900000281,1996-02-07,,1996,regular,,final,Ole Miss,Georgia,145,61,85,90,,,,,,,,,SEC
+900000282,1996-02-11,,1996,regular,,final,Georgia,South Carolina,61,2579,79,61,,,,,,,,,SEC
+900000283,1996-02-13,,1996,regular,,final,Georgia,Kentucky,61,96,75,55,,,,,,,,,SEC
+900000284,1996-02-16,,1996,regular,,final,Vanderbilt,Georgia,238,61,71,66,,,,,,,,,SEC
+900000285,1996-02-19,,1996,regular,,final,Vanderbilt,Alabama,238,333,73,59,,,,,,,,,SEC
+900000286,1996-02-23,,1996,regular,,final,Vanderbilt,Texas A&M,238,245,97,78,,,,,,,,,
+900000287,1996-02-25,,1996,regular,,final,Vanderbilt,Tennessee,238,2633,71,79,,,,,,,,,SEC
+900000288,1996-03-02,,1996,regular,,final,Tennessee,Ole Miss,2633,145,73,51,1,,,,,,,,SEC Tournament - Quarterfinal (Chattanooga)
+900000289,1996-03-03,,1996,regular,,final,Tennessee,Florida,2633,57,74,63,1,,,,,,,,SEC Tournament - Semifinal (Chattanooga)
+900000290,1996-03-04,,1996,regular,,final,Tennessee,Alabama,2633,333,64,60,1,,,,,,,,SEC Tournament - Championship (Chattanooga)
+900000291,1996-03-16,,1996,postseason,NCAA,final,Tennessee,Radford,2633,2515,97,56,,,,,,,,,NCAA Tournament - First Round
+900000292,1996-03-18,,1996,postseason,NCAA,final,Tennessee,Ohio State,2633,194,97,65,,,,,,,,,NCAA Tournament - Second Round
+900000293,1996-03-23,,1996,postseason,NCAA,final,Tennessee,Kansas,2633,2305,92,71,1,,,,,,,,NCAA Tournament - Regional Semifinal (Charlottesville)
+900000294,1996-03-25,,1996,postseason,NCAA,final,Virginia,Tennessee,258,2633,46,52,,,,,,,,,NCAA Tournament - Regional Final (Charlottesville)
+900000295,1996-03-29,,1996,postseason,NCAA,final,Tennessee,UConn,2633,41,88,83,1,,,,,,,,NCAA Tournament - National Semifinal (Charlotte; OT)
+900000296,1996-03-31,,1996,postseason,NCAA,final,Tennessee,Georgia,2633,61,83,65,1,,,,,,,,NCAA Tournament - National Championship (Charlotte)
+900000297,1996-11-15,,1997,regular,,final,Tennessee,Austin Peay,2633,2046,80,59,,,,,,,,,
+900000298,1996-11-17,,1997,regular,,final,Tennessee,Kansas,2633,2305,79,60,,,,,,,,,
+900000299,1996-11-19,,1997,regular,,final,Tennessee,Notre Dame,2633,87,72,59,1,,,,,,,,"Preseason WNIT - semifinal (Ruston, LA)"
+900000300,1996-11-20,,1997,regular,,final,Louisiana Tech,Tennessee,2348,2633,66,64,,,,,,,,,"Preseason WNIT - final (Ruston, LA)"
+900000301,1996-11-24,,1997,regular,,final,Washington,Louisiana Tech,264,2348,70,73,,,,,,,,,
+900000302,1996-12-14,,1997,regular,,final,DePaul,Louisiana Tech,305,2348,70,67,,,,,,,,,
+900000303,1996-12-18,,1997,regular,,final,DePaul,Auburn,305,2,60,63,,,,,,,,,
+900000304,1996-12-20,,1997,regular,,final,Northern Illinois,Auburn,2459,2,77,96,,,,,,,,,
+900000305,1996-12-27,,1997,regular,,final,Auburn,Providence,2,2507,85,51,1,,,,,,,,holiday tournament
+900000306,1996-12-28,,1997,regular,,final,Auburn,Northwestern State,2,2466,80,57,1,,,,,,,,holiday tournament
+900000307,1996-12-29,,1997,regular,,final,Auburn,George Mason,2,2244,55,58,1,,,,,,,,holiday tournament (OT)
+900000308,1997-01-05,,1997,regular,,final,William & Mary,George Mason,2729,2244,58,60,,,,,,,,,CAA regular season
+900000309,1997-01-10,,1997,regular,,final,James Madison,George Mason,256,2244,68,60,,,,,,,,,CAA regular season
+900000310,1997-01-17,,1997,regular,,final,James Madison,Old Dominion,256,295,53,78,,,,,,,,,CAA regular season
+900000311,1997-01-21,,1997,regular,,final,Old Dominion,UNC Wilmington,295,350,89,51,,,,,,,,,CAA regular season
+900000312,1997-01-24,,1997,regular,,final,American University,Old Dominion,44,295,59,104,,,,,,,,,CAA regular season
+900000313,1997-01-26,,1997,regular,,final,Old Dominion,George Mason,295,2244,107,62,,,,,,,,,CAA regular season
+900000314,1997-01-31,,1997,regular,,final,Old Dominion,VCU,295,2670,93,35,,,,,,,,,CAA regular season
+900000315,1997-02-02,,1997,regular,,final,Richmond,Old Dominion,257,295,65,88,,,,,,,,,CAA regular season
+900000316,1997-02-07,,1997,regular,,final,Old Dominion,James Madison,295,256,77,49,,,,,,,,,CAA regular season
+900000317,1997-02-09,,1997,regular,,final,Old Dominion,American University,295,44,94,57,,,,,,,,,CAA regular season
+900000318,1997-02-11,,1997,regular,,final,UNC Wilmington,Old Dominion,350,295,58,97,,,,,,,,,CAA regular season
+900000319,1997-02-16,,1997,regular,,final,William & Mary,Old Dominion,2729,295,36,96,,,,,,,,,CAA regular season
+900000320,1997-02-18,,1997,regular,,final,Old Dominion,East Carolina,295,151,88,43,,,,,,,,,CAA regular season
+900000321,1997-02-21,,1997,regular,,final,VCU,Old Dominion,2670,295,47,94,,,,,,,,,CAA regular season
+900000322,1997-02-23,,1997,regular,,final,George Mason,Old Dominion,2244,295,46,102,,,,,,,,,CAA regular season
+900000323,1997-02-27,,1997,regular,,final,Old Dominion,William & Mary,295,2729,101,35,1,,,,,,,,CAA Tournament - quarterfinal (Richmond)
+900000324,1997-02-28,,1997,regular,,final,Old Dominion,James Madison,295,256,86,48,1,,,,,,,,CAA Tournament - semifinal (Richmond)
+900000325,1997-03-02,,1997,regular,,final,Old Dominion,East Carolina,295,151,83,46,1,,,,,,,,CAA Tournament - final (Richmond)
+900000326,1997-03-14,,1997,postseason,NCAA,final,Old Dominion,Liberty,295,2335,102,52,,,,,,,,,NCAA Tournament - First Round (Norfolk)
+900000327,1997-03-16,,1997,postseason,NCAA,final,Old Dominion,Purdue,295,2509,69,65,,,,,,,,,"NCAA Tournament - Second Round (Norfolk, OT)"
+900000328,1997-03-22,,1997,postseason,NCAA,final,Old Dominion,LSU,295,99,62,49,1,,,,,,,,NCAA Tournament - Regional Semifinal (West Lafayette)
+900000329,1997-03-24,,1997,postseason,NCAA,final,Old Dominion,Florida,295,57,53,51,1,,,,,,,,NCAA Tournament - Regional Final (West Lafayette)
+900000330,1997-03-28,,1997,postseason,NCAA,final,Old Dominion,Stanford,295,24,83,82,1,,,,,,,,"NCAA Tournament - National Semifinal (Cincinnati, OT)"
+900000331,1997-03-30,,1997,postseason,NCAA,final,Old Dominion,Tennessee,295,2633,59,68,1,,,,,,,,NCAA Tournament - National Championship (Cincinnati)
+900000332,1997-11-18,,1998,regular,,final,Tennessee,Ole Miss,2633,145,92,54,,,,,,,,,
+900000333,1997-11-21,,1998,regular,,final,Tennessee,Louisiana Tech,2633,2348,75,61,,,,,,,,,
+900000334,1997-11-23,,1998,regular,,final,UT Martin,Tennessee,2630,2633,32,73,,,,,,,,,
+900000335,1997-11-25,,1998,regular,,final,Tennessee,Vermont,2633,261,92,52,,,,,,,,,
+900000336,1997-11-29,,1998,regular,,final,Tennessee,Stanford,2633,24,88,70,1,,,,,,,,Bravo Card Classic (San Jose Arena)
+900000337,1997-11-30,,1998,regular,,final,Portland,Tennessee,2501,2633,51,74,,,,,,,,,
+900000338,1997-12-03,,1998,regular,,final,Tennessee,Texas,2633,251,98,64,,,,,,,,,
+900000339,1997-12-06,,1998,regular,,final,Tennessee,George Mason,2633,2244,93,61,1,,,,,,,,"Big Apple Classic (Riverdale, NY)"
+900000340,1997-12-07,,1998,regular,,final,Manhattan,Tennessee,2363,2633,28,78,,,,,,,,,"Big Apple Classic (Riverdale, NY)"
+900000341,1997-12-12,,1998,regular,,final,Tennessee,Illinois,2633,356,78,68,,,,,,,,,
+900000342,1997-12-18,,1998,regular,,final,Tennessee,Akron,2633,2006,98,63,1,,,,,,,,"Northern Lights Invitational (Anchorage, AK)"
+900000343,1997-12-19,,1998,regular,,final,Tennessee,Texas A&M,2633,245,105,81,1,,,,,,,,"Northern Lights Invitational (Anchorage, AK)"
+900000344,1997-12-20,,1998,regular,,final,Tennessee,Wisconsin,2633,275,87,66,1,,,,,,,,"Northern Lights Invitational (Anchorage, AK)"
+900000345,1998-01-01,,1998,regular,,final,Tennessee,Arkansas,2633,8,88,58,,,,,,,,,
+900000346,1998-01-03,,1998,regular,,final,Tennessee,UConn,2633,41,84,69,,,,,,,,,
+900000347,1998-01-06,,1998,regular,,final,South Carolina,Tennessee,2579,2633,52,94,,,,,,,,,
+900000348,1998-01-10,,1998,regular,,final,Tennessee,Florida,2633,57,99,60,,,,,,,,,
+900000349,1998-01-14,,1998,regular,,final,Georgia,Tennessee,61,2633,71,96,,,,,,,,,
+900000350,1998-01-18,,1998,regular,,final,Kentucky,Tennessee,96,2633,65,93,,,,,,,,,
+900000351,1998-01-20,,1998,regular,,final,DePaul,Tennessee,305,2633,46,125,,,,,,,,,
+900000352,1998-01-25,,1998,regular,,final,Tennessee,Vanderbilt,2633,238,86,54,,,,,,,,,
+900000353,1998-01-28,,1998,regular,,final,Tennessee,Georgia,2633,61,102,43,,,,,,,,,
+900000354,1998-02-01,,1998,regular,,final,Tennessee,Alabama,2633,333,73,66,,,,,,,,,
+900000355,1998-02-04,,1998,regular,,final,Ole Miss,Tennessee,145,2633,45,91,,,,,,,,,
+900000356,1998-02-07,,1998,regular,,final,Tennessee,Old Dominion,2633,295,85,61,,,,,,,,,
+900000357,1998-02-09,,1998,regular,,final,Mississippi State,Tennessee,344,2633,52,74,,,,,,,,,
+900000358,1998-02-12,,1998,regular,,final,Memphis,Tennessee,235,2633,65,91,,,,,,,,,
+900000359,1998-02-14,,1998,regular,,final,Tennessee,Auburn,2633,2,79,63,,,,,,,,,
+900000360,1998-02-16,,1998,regular,,final,Vanderbilt,Tennessee,238,2633,60,91,,,,,,,,,
+900000361,1998-02-22,,1998,regular,,final,Tennessee,LSU,2633,99,90,58,,,,,,,,,
+900000362,1998-02-27,,1998,regular,,final,Tennessee,Mississippi State,2633,344,88,60,1,,,,,,,,SEC Tournament - Quarterfinal
+900000363,1998-02-28,,1998,regular,,final,Tennessee,Vanderbilt,2633,238,106,45,1,,,,,,,,SEC Tournament - Semifinal
+900000364,1998-03-01,,1998,regular,,final,Tennessee,Alabama,2633,333,67,63,1,,,,,,,,SEC Tournament - Final
+900000365,1998-03-14,,1998,postseason,NCAA,final,Tennessee,Liberty,2633,2335,102,58,,,,,,,,,NCAA Tournament - First Round
+900000366,1998-03-16,,1998,postseason,NCAA,final,Tennessee,Western Kentucky,2633,98,82,62,,,,,,,,,NCAA Tournament - Second Round
+900000367,1998-03-21,,1998,postseason,NCAA,final,Tennessee,Rutgers,2633,164,92,60,1,,,,,,,,NCAA Tournament - Mideast Regional Semifinal (Nashville)
+900000368,1998-03-23,,1998,postseason,NCAA,final,Tennessee,North Carolina,2633,153,76,70,1,,,,,,,,NCAA Tournament - Mideast Regional Final (Nashville)
+900000369,1998-03-27,,1998,postseason,NCAA,final,Tennessee,Arkansas,2633,8,86,58,1,,,,,,,,NCAA Tournament - National Semifinal (Kansas City)
+900000370,1998-03-29,,1998,postseason,NCAA,final,Tennessee,Louisiana Tech,2633,2348,93,75,1,,,,,,,,NCAA Tournament - National Championship (Kansas City)
+900000371,1998-11-13,,1999,regular,,final,Tennessee,Portland,2633,2501,94,57,,,,,,,,,
+900000372,1998-11-15,,1999,regular,,final,Purdue,Tennessee,2509,2633,78,68,,,,,,,,,State Farm Tip-Off Classic
+900000373,1998-11-19,,1999,regular,,final,Arizona,Purdue,12,2509,58,65,,,,,,,,,
+900000374,1998-11-22,,1999,regular,,final,Stanford,Purdue,24,2509,73,72,,,,,,,,,
+900000375,1998-11-27,,1999,regular,,final,Stanford,Texas Tech,24,2641,69,75,,,,,,,,,
+900000376,1998-12-02,,1999,regular,,final,Texas Tech,UTSA,2641,2636,96,39,,,,,,,,,
+900000377,1998-12-05,,1999,regular,,final,Texas Tech,Wisconsin,2641,275,84,70,1,,,,,,,,Gene Hackerman Rice Invitational
+900000378,1998-12-06,,1999,regular,,final,Rice,Texas Tech,242,2641,57,79,,,,,,,,,Gene Hackerman Rice Invitational
+900000379,1998-12-09,,1999,regular,,final,Texas Tech,TCU,2641,2628,82,62,,,,,,,,,
+900000380,1998-12-21,,1999,regular,,final,Texas Tech,James Madison,2641,256,71,38,1,,,,,,,,Hawaii tournament (Honolulu)
+900000381,1998-12-22,,1999,regular,,final,Texas Tech,Loyola Marymount,2641,2351,82,59,1,,,,,,,,Hawaii tournament (Honolulu)
+900000382,1998-12-23,,1999,regular,,final,Hawai'i,Texas Tech,62,2641,63,67,,,,,,,,,Hawaii tournament (Honolulu)
+900000383,1998-12-29,,1999,regular,,final,Texas Tech,New Mexico,2641,167,87,46,,,,,,,,,
+900000384,1999-01-02,,1999,regular,,final,Baylor,Texas Tech,239,2641,49,51,,,,,,,,,
+900000385,1999-01-06,,1999,regular,,final,Texas Tech,Oklahoma,2641,201,93,69,,,,,,,,,
+900000386,1999-01-09,,1999,regular,,final,Texas Tech,Kansas State,2641,2306,73,60,,,,,,,,,
+900000387,1999-01-13,,1999,regular,,final,Texas A&M,Texas Tech,245,2641,65,68,,,,,,,,,
+900000388,1999-01-16,,1999,regular,,final,Oklahoma State,Texas Tech,197,2641,68,79,,,,,,,,,
+900000389,1999-01-20,,1999,regular,,final,Texas Tech,Iowa State,2641,66,71,47,,,,,,,,,
+900000390,1999-01-23,,1999,regular,,final,Kansas,Texas Tech,2305,2641,55,45,,,,,,,,,
+900000391,1999-01-27,,1999,regular,,final,Texas,Kansas,251,2305,54,56,,,,,,,,,
+900000392,1999-01-31,,1999,regular,,final,Kansas,Kansas State,2305,2306,66,45,,,,,,,,,
+900000393,1999-02-03,,1999,regular,,final,Kansas,Colorado,2305,38,65,57,,,,,,,,,
+900000394,1999-02-07,,1999,regular,,final,Missouri,Kansas,142,2305,37,48,,,,,,,,,
+900000395,1999-02-13,,1999,regular,,final,Kansas,Nebraska,2305,158,63,58,,,,,,,,,
+900000396,1999-02-16,,1999,regular,,final,Kansas,Iowa State,2305,66,53,55,,,,,,,,,
+900000397,1999-02-20,,1999,regular,,final,Iowa State,Kansas State,66,2306,86,53,,,,,,,,,
+900000398,1999-02-23,,1999,regular,,final,Iowa State,Missouri,66,142,84,58,,,,,,,,,
+900000399,1999-02-27,,1999,regular,,final,Baylor,Iowa State,239,66,70,68,,,,,,,,,
+900000400,1999-03-02,,1999,regular,,final,Baylor,Missouri,239,142,55,60,1,,,,,,,,Big 12 Tournament - First Round
+900000401,1999-03-03,,1999,regular,,final,Missouri,Iowa State,142,66,44,63,1,,,,,,,,Big 12 Tournament - Quarterfinal
+900000402,1999-03-04,,1999,regular,,final,Iowa State,Kansas,66,2305,79,64,1,,,,,,,,Big 12 Tournament - Semifinal
+900000403,1999-03-06,,1999,regular,,final,Iowa State,Texas Tech,66,2641,59,73,1,,,,,,,,Big 12 Tournament - Final
+900000404,1999-03-13,,1999,postseason,NCAA,final,Texas Tech,Stephen F. Austin,2641,2617,80,54,,,,,,,,,NCAA Tournament - First Round
+900000405,1999-03-15,,1999,postseason,NCAA,final,Texas Tech,NC State,2641,152,85,78,,,,,,,,,NCAA Tournament - Second Round
+900000406,1999-03-20,,1999,postseason,NCAA,final,Texas Tech,Rutgers,2641,164,42,53,1,,,,,,,,NCAA Tournament - Regional Semifinal
+900000407,1999-03-22,,1999,postseason,NCAA,final,Rutgers,Purdue,164,2509,62,75,1,,,,,,,,NCAA Tournament - Regional Final
+900000408,1999-03-26,,1999,postseason,NCAA,final,Purdue,Louisiana Tech,2509,2348,77,63,1,,,,,,,,NCAA Tournament - Final Four (National Semifinal)
+900000409,1999-03-28,,1999,postseason,NCAA,final,Purdue,Duke,2509,150,62,45,1,,,,,,,,NCAA Tournament - National Championship
+900000410,1999-11-19,,2000,regular,,final,Dayton,Purdue,2168,2509,58,60,,,,,,,,,
+900000411,1999-11-21,,2000,regular,,final,Purdue,Vanderbilt,2509,238,63,51,,,,,,,,,
+900000412,1999-11-23,,2000,regular,,final,Purdue,Valparaiso,2509,2674,63,42,,,,,,,,,
+900000413,1999-11-26,,2000,regular,,final,Purdue,Florida,2509,57,90,50,,,,,,,,,
+900000414,1999-12-02,,2000,regular,,final,Tennessee,Purdue,2633,2509,72,66,,,,,,,,,
+900000415,1999-12-05,,2000,regular,,final,Wisconsin,Tennessee,275,2633,62,85,,,,,,,,,
+900000416,1999-12-07,,2000,regular,,final,Memphis,Tennessee,235,2633,69,92,,,,,,,,,
+900000417,1999-12-17,,2000,regular,,final,DePaul,Tennessee,305,2633,66,100,,,,,,,,,
+900000418,1999-12-19,,2000,regular,,final,Saint Joseph's,Tennessee,2603,2633,59,82,,,,,,,,,
+900000419,1999-12-30,,2000,regular,,final,Tennessee,Texas,2633,251,106,76,,,,,,,,,
+900000420,2000-01-03,,2000,regular,,final,Tennessee,Old Dominion,2633,295,113,55,,,,,,,,,
+900000421,2000-01-06,,2000,regular,,final,LSU,Tennessee,99,2633,50,86,,,,,,,,,
+900000422,2000-01-08,,2000,regular,,final,Tennessee,UConn,2633,41,67,74,,,,,,,,,
+900000423,2000-01-12,,2000,regular,,final,UConn,West Virginia,41,277,75,35,,,,,,,,,
+900000424,2000-01-15,,2000,regular,,final,UConn,Pittsburgh,41,221,88,36,,,,,,,,,
+900000425,2000-01-17,,2000,regular,,final,UConn,Rutgers,41,164,65,50,,,,,,,,,
+900000426,2000-01-20,,2000,regular,,final,Holy Cross,UConn,107,41,51,89,,,,,,,,,
+900000427,2000-01-22,,2000,regular,,final,Villanova,UConn,222,41,46,79,,,,,,,,,
+900000428,2000-01-26,,2000,regular,,final,UConn,Boston College,41,103,84,77,,,,,,,,,
+900000429,2000-01-29,,2000,regular,,final,Miami,UConn,2390,41,36,84,,,,,,,,,
+900000430,2000-02-02,,2000,regular,,final,UConn,Tennessee,41,2633,71,72,,,,,,,,,
+900000431,2000-02-04,,2000,regular,,final,Tennessee,Vanderbilt,2633,238,78,52,,,,,,,,,
+900000432,2000-02-06,,2000,regular,,final,Tennessee,Alabama,2633,333,65,47,,,,,,,,,
+900000433,2000-02-10,,2000,regular,,final,Ole Miss,Tennessee,145,2633,49,70,,,,,,,,,
+900000434,2000-02-13,,2000,regular,,final,Tennessee,Florida,2633,57,97,78,,,,,,,,,
+900000435,2000-02-17,,2000,regular,,final,Mississippi State,Tennessee,344,2633,75,79,,,,,,,,,
+900000436,2000-02-20,,2000,regular,,final,Tennessee,LSU,2633,99,80,48,,,,,,,,,
+900000437,2000-02-24,,2000,regular,,final,Vanderbilt,Tennessee,238,2633,57,59,,,,,,,,,
+900000438,2000-02-27,,2000,regular,,final,Tennessee,Auburn,2633,2,76,61,,,,,,,,,
+900000439,2000-03-03,,2000,regular,,final,Tennessee,Florida,2633,57,91,79,1,,,,,,,,SEC Tournament - Quarterfinal
+900000440,2000-03-04,,2000,regular,,final,Tennessee,Vanderbilt,2633,238,61,53,1,,,,,,,,SEC Tournament - Semifinal
+900000441,2000-03-05,,2000,regular,,final,Tennessee,Mississippi State,2633,344,70,67,1,,,,,,,,SEC Tournament - Final
+900000442,2000-03-18,,2000,postseason,NCAA,final,Tennessee,Furman,2633,231,90,38,,,,,,,,,NCAA Tournament - First Round
+900000443,2000-03-20,,2000,postseason,NCAA,final,Tennessee,Arizona,2633,12,75,60,,,,,,,,,NCAA Tournament - Second Round
+900000444,2000-03-25,,2000,postseason,NCAA,final,Tennessee,Virginia,2633,258,77,56,1,,,,,,,,NCAA Tournament - Regional Semifinal
+900000445,2000-03-27,,2000,postseason,NCAA,final,Tennessee,Texas Tech,2633,2641,57,44,1,,,,,,,,NCAA Tournament - Regional Final
+900000446,2000-03-31,,2000,postseason,NCAA,final,Tennessee,Rutgers,2633,164,64,54,1,,,,,,,,NCAA Tournament - National Semifinal
+900000447,2000-04-02,,2000,postseason,NCAA,final,Tennessee,UConn,2633,41,52,71,1,,,,,,,,NCAA Tournament - National Championship
+900000448,2000-11-12,,2001,regular,,final,UConn,Georgia,41,61,99,70,,,,,,,,,State Farm Tip-Off Classic
+900000449,2000-11-21,,2001,regular,,final,Pepperdine,UConn,2492,41,63,98,,,,,,,,,
+900000450,2000-11-24,,2001,regular,,final,Washington,UConn,264,41,54,100,,,,,,,,,
+900000451,2000-11-29,,2001,regular,,final,UConn,George Washington,41,45,90,63,,,,,,,,,
+900000452,2000-12-05,,2001,regular,,final,Miami,UConn,2390,41,53,77,,,,,,,,,
+900000453,2000-12-07,,2001,regular,,final,UConn,Holy Cross,41,107,92,32,,,,,,,,,
+900000454,2000-12-10,,2001,regular,,final,Illinois,UConn,356,41,55,97,,,,,,,,,
+900000455,2000-12-22,,2001,regular,,final,UConn,Wake Forest,41,154,107,52,,,,,,,,,
+900000456,2000-12-30,,2001,regular,,final,UConn,Tennessee,41,2633,81,76,,,,,,,,,
+900000457,2001-01-02,,2001,regular,,final,UConn,Georgetown,41,46,107,45,,,,,,,,,
+900000458,2001-01-07,,2001,regular,,final,Louisiana Tech,UConn,2348,41,55,71,,,,,,,,,
+900000459,2001-01-09,,2001,regular,,final,Syracuse,UConn,183,41,63,76,,,,,,,,,
+900000460,2001-01-13,,2001,regular,,final,UConn,Providence,41,2507,104,49,,,,,,,,,
+900000461,2001-01-15,,2001,regular,,final,Notre Dame,UConn,87,41,92,76,,,,,,,,,
+900000462,2001-01-21,,2001,regular,,final,Seton Hall,Notre Dame,2550,87,47,72,,,,,,,,,
+900000463,2001-01-24,,2001,regular,,final,West Virginia,Notre Dame,277,87,64,87,,,,,,,,,
+900000464,2001-01-31,,2001,regular,,final,Notre Dame,Providence,87,2507,64,44,,,,,,,,,
+900000465,2001-02-03,,2001,regular,,final,Boston College,Notre Dame,103,87,65,81,,,,,,,,,
+900000466,2001-02-07,,2001,regular,,final,Notre Dame,Pittsburgh,87,221,72,58,,,,,,,,,
+900000467,2001-02-14,,2001,regular,,final,Syracuse,Notre Dame,183,87,61,75,,,,,,,,,
+900000468,2001-02-17,,2001,regular,,final,Rutgers,Notre Dame,164,87,54,53,,,,,,,,,
+900000469,2001-02-20,,2001,regular,,final,Rutgers,Seton Hall,164,2550,61,45,,,,,,,,,
+900000470,2001-02-24,,2001,regular,,final,West Virginia,Rutgers,277,164,53,67,,,,,,,,,
+900000471,2001-02-27,,2001,regular,,final,Georgetown,Rutgers,46,164,48,65,,,,,,,,,
+900000472,2001-03-04,,2001,regular,,final,Rutgers,Providence,164,2507,69,58,1,,,,,,,,Big East Tournament - Quarterfinal
+900000473,2001-03-05,,2001,regular,,final,UConn,Rutgers,41,164,94,66,,,,,,,,,Big East Tournament - Semifinal
+900000474,2001-03-06,,2001,regular,,final,UConn,Notre Dame,41,87,78,76,,,,,,,,,Big East Tournament - Final
+900000475,2001-03-17,,2001,postseason,NCAA,final,UConn,Long Island University,41,112358,101,29,,,,,,,,,NCAA Tournament - First Round
+900000476,2001-03-19,,2001,postseason,NCAA,final,UConn,Colorado State,41,36,89,44,,,,,,,,,NCAA Tournament - Second Round
+900000477,2001-03-24,,2001,postseason,NCAA,final,UConn,NC State,41,152,72,58,1,,,,,,,,NCAA Tournament - Regional Semifinal
+900000478,2001-03-26,,2001,postseason,NCAA,final,UConn,Louisiana Tech,41,2348,67,48,1,,,,,,,,NCAA Tournament - Regional Final
+900000479,2001-03-30,,2001,postseason,NCAA,final,UConn,Notre Dame,41,87,75,90,1,,,,,,,,NCAA Tournament - National Semifinal
+900000480,2001-04-01,,2001,postseason,NCAA,final,Notre Dame,Purdue,87,2509,68,66,1,,,,,,,,NCAA Tournament - National Championship
+900000481,2001-11-18,,2002,regular,,final,Notre Dame,Valparaiso,87,2674,42,35,,,,,,,,,
+900000482,2001-11-21,,2002,regular,,final,Colorado State,Notre Dame,36,87,72,66,,,,,,,,,
+900000483,2001-11-23,,2002,regular,,final,Colorado State,West Virginia,36,277,85,74,,,,,,,,,Coors Classic
+900000484,2001-11-24,,2002,regular,,final,Colorado State,Evansville,36,339,82,53,,,,,,,,,Coors Classic
+900000485,2001-11-28,,2002,regular,,final,Colorado State,Colorado,36,38,81,69,,,,,,,,,
+900000486,2001-12-03,,2002,regular,,final,Colorado State,Nevada,36,2440,84,57,,,,,,,,,
+900000487,2001-12-09,,2002,regular,,final,Florida International,Colorado State,2229,36,75,72,,,,,,,,,Orange Bowl Classic
+900000488,2001-12-18,,2002,regular,,final,Florida Atlantic,Florida International,2226,2229,64,91,,,,,,,,,
+900000489,2001-12-20,,2002,regular,,final,Virginia,Florida International,258,2229,78,65,,,,,,,,,
+900000490,2001-12-28,,2002,regular,,final,Virginia,Long Island University,258,112358,73,40,1,,,,,,,,DoubleTree Classic (New Orleans)
+900000491,2001-12-29,,2002,regular,,final,Tulane,Virginia,2655,258,74,63,,,,,,,,,DoubleTree Classic (New Orleans) - final
+900000492,2002-01-02,,2002,regular,,final,Boston University,Tulane,104,2655,63,78,,,,,,,,,
+900000493,2002-01-05,,2002,regular,,final,Tulane,Southern Miss,2655,2572,69,68,,,,,,,,,
+900000494,2002-01-07,,2002,regular,,final,New Orleans,Tulane,2443,2655,76,69,,,,,,,,,
+900000495,2002-01-12,,2002,regular,,final,Little Rock,New Orleans,2031,2443,54,55,,,,,,,,,
+900000496,2002-01-17,,2002,regular,,final,New Orleans,South Alabama,2443,6,62,58,,,,,,,,,
+900000497,2002-01-20,,2002,regular,,final,New Orleans,Arkansas State,2443,2032,70,69,,,,,,,,,
+900000498,2002-01-26,,2002,regular,,final,New Orleans,Florida International,2443,2229,63,79,,,,,,,,,
+900000499,2002-01-30,,2002,regular,,final,Florida International,Western Kentucky,2229,98,72,58,,,,,,,,,
+900000500,2002-02-02,,2002,regular,,final,Florida International,Middle Tennessee,2229,2393,71,55,,,,,,,,,
+900000501,2002-02-06,,2002,regular,,final,Florida International,New Mexico State,2229,166,76,52,,,,,,,,,
+900000502,2002-02-09,,2002,regular,,final,Louisiana,Florida International,309,2229,50,85,,,,,,,,,
+900000503,2002-02-16,,2002,regular,,final,Miami,Florida International,2390,2229,65,71,,,,,,,,,
+900000504,2002-02-20,,2002,regular,,final,Florida International,Arkansas State,2229,2032,73,61,,,,,,,,,
+900000505,2002-02-23,,2002,regular,,final,Little Rock,Florida International,2031,2229,55,70,,,,,,,,,
+900000506,2002-03-02,,2002,regular,,final,Florida International,New Mexico State,2229,166,88,57,1,,,,,,,,Sun Belt Conference Tournament
+900000507,2002-03-04,,2002,regular,,final,Florida International,Denver,2229,2172,80,65,1,,,,,,,,Sun Belt Conference Tournament
+900000508,2002-03-05,,2002,regular,,final,Florida International,North Texas,2229,249,66,49,1,,,,,,,,Sun Belt Conference Tournament - final
+900000509,2002-03-15,,2002,postseason,NCAA,final,Florida International,Creighton,2229,156,73,58,1,,,,,,,,NCAA Tournament - First Round
+900000510,2002-03-17,,2002,postseason,NCAA,final,Penn State,Florida International,213,2229,96,79,,,,,,,,,NCAA Tournament - Second Round
+900000511,2002-03-23,,2002,postseason,NCAA,final,Penn State,UConn,213,41,64,82,1,,,,,,,,NCAA Tournament - Regional Semifinal
+900000512,2002-03-25,,2002,postseason,NCAA,final,UConn,Old Dominion,41,295,85,64,1,,,,,,,,NCAA Tournament - Regional Final
+900000513,2002-03-29,,2002,postseason,NCAA,final,UConn,Tennessee,41,2633,79,56,1,,,,,,,,NCAA Tournament - National Semifinal
+900000514,2002-03-31,,2002,postseason,NCAA,final,UConn,Oklahoma,41,201,82,70,1,,,,,,,,NCAA Tournament - National Championship
