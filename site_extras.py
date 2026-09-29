@@ -23,6 +23,7 @@ from collections import Counter, defaultdict
 from datetime import date
 
 import build_site as S
+import features as F
 
 try:                                  # Belt Holders: every league in the registry
     from leagues import LIVE as _LIVE
@@ -80,14 +81,7 @@ def notable(r, cur_index):
 
 
 def reign_url(lg, d, r):
-    b = base(lg)
-    if notable(r, d["reigns"][-1]["index"]):
-        return f"{b}/reigns/{r['index']}/"
-    first = r.get("opened_by") or (r["belt_games"][0] if r.get("belt_games") else None)
-    if r.get("opened_by"):
-        return f"{b}/games/{r['opened_by']}/"
-    bg = d["_bg"].get(first) if first else None
-    return season_url(lg, bg["season"], bg["n"]) if bg else f"{b}/history/"
+    return F.reign_link(lg, d, r)
 
 
 def team_link(lg, code, season=None):

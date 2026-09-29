@@ -760,6 +760,8 @@ def _section(prefix, lg, sec, lineage_path):
     with open(lineage_path) as f:
         D.update(json.load(f))
     site_extras.LIVE[:] = [lg]
+    import features
+    features.plan_game_pages(lg, D)      # which games get their own page (BH-2)
 
 
 def build_belt():

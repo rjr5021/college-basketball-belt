@@ -1285,8 +1285,52 @@ def _gline(lg, bg):
     return f"{tlink(lg, w, s)} beat {tlink(lg, l, s)} {_winner_score(bg)}{note}"
 
 
+GAME_PAGES = {}      # league key -> belt game numbers that get a page of their own (BH-2)
+REIGN_PAGE_DEFENSES = 5
+
+
+def plan_game_pages(lg, d):
+    """Decide which belt games get their own page: a title change that opened a reign of
+    5+ defenses, the current reign or the first game on record; any game with a recap;
+    any game with a box score. Every other game lives only as its anchor on the season
+    page (seasons/<year>/#g<n>). Call once per belt before building pages."""
+    keep = set()
+    by_open = {r.get("opened_by"): r for r in d["reigns"] if r.get("opened_by")}
+    cur = d["reigns"][-1] if d["reigns"] else None
+    boxed = {int(k) for k in _box_for(lg, d)} if lg.get("key") in BOX_SCHEMA else set()
+    for n_, r in by_open.items():       # title changes (build_game_pages)
+        if r.get("defenses", 0) >= REIGN_PAGE_DEFENSES or r is cur or r["index"] == 1 or n_ in boxed:
+            keep.add(n_)
+    rcs = _recaps(lg)                   # any game with a recap (title change or defense)
+    for bg in d["belt_games"]:
+        if rcs.get(f"{bg.get('holder')}|{bg['opponent']}|{bg['date']}"):
+            keep.add(bg["n"])
+    GAME_PAGES[lg["key"]] = keep
+    return keep
+
+
+def reign_link(lg, d, r):
+    """Where a reign links: its own page when notable (5+ defenses or current), else the
+    game that opened it, else its first belt game on the season page."""
+    if r.get("defenses", 0) >= 5 or r["index"] == d["reigns"][-1]["index"]:
+        return f"{b(lg)}/reigns/{r['index']}/"
+    by_n = d.get("_bg") or {bg["n"]: bg for bg in d["belt_games"]}
+    first = r.get("opened_by") or (r["belt_games"][0] if r.get("belt_games") else None)
+    bg = by_n.get(first) if first else None
+    if not bg:
+        return f"{b(lg)}/history/"
+    return game_url(lg, bg) if r.get("opened_by") else f"{b(lg)}/seasons/{bg['season']}/#g{bg['n']}"
+
+
+def game_has_page(lg, n_):
+    pages = GAME_PAGES.get(lg["key"])
+    return True if pages is None else n_ in pages
+
+
 def game_url(lg, bg):
-    return f"{b(lg)}/games/{bg['n']}/"
+    if game_has_page(lg, bg["n"]):
+        return f"{b(lg)}/games/{bg['n']}/"
+    return f"{b(lg)}/seasons/{bg['season']}/#g{bg['n']}"
 
 
 def build_schedule(lg, d):
@@ -1517,7 +1561,11 @@ def build_standings(lg, d):
     m = sum(1 for x in st if x["match"])
     top3 = sum(1 for x in st if x["holder_rank"] <= 3)
     avg = sum(x["holder_rank"] for x in st) / len(st)
-    rows = "".join(f'<tr><td class="mono"><a href="{b(lg)}/seasons/{x["season"]}/">{e(sl(lg, x["season"]))}</a></td>'
+    have = {x["season"] for x in d.get("seasons", [])}      # seasons with belt games have a page
+
+    def slink(s_):
+        return f'<a href="{b(lg)}/seasons/{s_}/">{e(sl(lg, s_))}</a>' if s_ in have else e(sl(lg, s_))
+    rows = "".join(f'<tr><td class="mono">{slink(x["season"])}</td>'
                    f'<td>{tlink(lg, x["best"], x["season"])} <small>{rec(x["best_rec"])}</small></td>'
                    f'<td>{tlink(lg, x["holder"], x["season"]) if x["holder"] else "—"} <small>{rec(x["holder_rec"])}</small></td>'
                    f'<td class="mono r">{S.ordinal(x["holder_rank"])} of {x["teams"]}{SAME_SHORT if x["match"] else ""}</td></tr>' for x in reversed(st))
@@ -1613,7 +1661,7 @@ def build_game_pages(lg, d):
     changes = [bg for bg in bgs if bg["outcome"] in ("changed", "established")]
     for i, bg in enumerate(changes):
         r = reign_by_open.get(bg["n"])
-        if not r:
+        if not r or not game_has_page(lg, bg["n"]):
             continue
         s = bg["season"]
         w, l = bg["new_holder"], bg.get("holder") or bg["opponent"]
@@ -1784,6 +1832,7 @@ def _decade_opts(years):
 
 def build_history_table(lg, d):
     n = lg["team_name"]
+    by_n = {bg["n"]: bg for bg in d["belt_games"]}
     cur_i = d["reigns"][-1]["index"]
     rows = []
     for r in reversed(d["reigns"]):
@@ -1791,7 +1840,7 @@ def build_history_table(lg, d):
         s = r.get("season") or int(r["start_date"][:4])
         how = (f"beat {e(n(r['won_from'], s))} {S.won_score_text(r)}" if r.get("won_from")
                else "reclaimed (previous holder left)" if r.get("reclaimed_after") else "first game" if not r.get("seed") else "starting holder")
-        url = (f"{b(lg)}/games/{r['opened_by']}/" if r.get("opened_by") else f"{b(lg)}/reigns/{r['index']}/")
+        url = reign_link(lg, d, r)
         yr = int(r["start_date"][:4])
         rows.append({
             "c": [f'<a href="{url}">{r["index"]:,}</a>',
@@ -1987,12 +2036,21 @@ BOX_SCHEMA = {
 }
 
 
+# Page budget (BH-2): box scores older than this season don't become player or game pages.
+# MLB's backfill reaches back to 1901; every season of box scores adds hundreds of pages,
+# and GitHub Pages caps a published site at 1 GB. Raise the floor only with the size guard green.
+BOX_PAGES_FROM = {"mlb": 1988}
+
+
 def _box(lg):
     import glob
     out = {}
+    floor = BOX_PAGES_FROM.get(lg.get("key"))
     for p in sorted(glob.glob(os.path.join("data", lg.get("key", "_"), "box", "*.json"))):
         name = os.path.basename(p)
         if not (name[:4].isdigit() or name == "belt_box.json"):
+            continue
+        if floor and name[:4].isdigit() and int(name[:4]) < floor:
             continue
         try:
             with open(p) as f:
@@ -2020,6 +2078,14 @@ def _stat_rows(lg, box):
     for n_, g in box.items():
         out[int(n_)] = g["players"]
     return sc, out
+
+
+MIN_PLAYER_GAMES = 3      # players with fewer belt games are rows in the tables, not pages (BH-2)
+
+
+def plink(p):
+    """A player's name, linked when the player has a page."""
+    return f'<a href="{p["url"]}">{e(p["name"])}</a>' if p.get("url") else e(p["name"])
 
 
 def valid_player(pid, name):
@@ -2093,7 +2159,8 @@ def build_players(lg, d):
     for pid, p in players.items():
         gs = sorted(p["games"], key=lambda x: x[0]["n"])
         slug = player_slug(p["name"], pid)
-        url = f"{b(lg)}/players/{slug}/"
+        has_page = len(gs) >= MIN_PLAYER_GAMES
+        url = f"{b(lg)}/players/{slug}/" if has_page else None
         p["url"] = url
         w = sum(1 for x in gs if x[3])
         took = sum(1 for x in gs if x[4] == "took")
@@ -2136,9 +2203,10 @@ def build_players(lg, d):
   <p class="mono note">{sc['source']} Stats a season didn't track show as —.</p>
   <p class="mono more"><a href="{b(lg)}/players/">All players →</a> · <a href="{b(lg)}/leaders/">Belt-game leaders →</a></p>
 </section>"""
-        page(lg, f"{p['name']} in {lg['name']} belt games", body, f"players/{slug}/",
-             f"{p['name']}: {len(gs)} lineal {lg['name']} belt games, {w} wins, {took} title-winning games. Every belt-game stat line.")
-        rows.append({"c": [f'<i style="background:{pp}"></i><a href="{url}">{e(p["name"])}</a><small>{e(lg["short_name"](main_team))}</small>',
+        if has_page:
+            page(lg, f"{p['name']} in {lg['name']} belt games", body, f"players/{slug}/",
+                 f"{p['name']}: {len(gs)} lineal {lg['name']} belt games, {w} wins, {took} title-winning games. Every belt-game stat line.")
+        rows.append({"c": [f'<i style="background:{pp}"></i>{plink(p)}<small>{e(lg["short_name"](main_team))}</small>',
                            str(len(gs)), f"{w}–{len(gs) - w}", str(took)] + [f"{tot.get(c, 0):,}" for c in sc["totals"][:3]] + [f"{avg:.1f}"],
                      "t": (p["name"] + " " + " ".join(n(t) for t in p["teams"])).lower(),
                      "k": [p["name"].split()[-1] + " " + p["name"], len(gs), w, took] + [tot.get(c, 0) for c in sc["totals"][:3]] + [round(avg, 2)],
@@ -2156,7 +2224,7 @@ def build_players(lg, d):
     plist = list(players.items())
 
     def lead_table(title, items):
-        trs = "".join(f'<tr><td class="mono n">{i}</td><td><a href="{p["url"]}">{e(p["name"])}</a><small>{e(lg["short_name"](p["main"]))}</small></td><td class="mono r">{v}</td></tr>'
+        trs = "".join(f'<tr><td class="mono n">{i}</td><td>{plink(p)}<small>{e(lg["short_name"](p["main"]))}</small></td><td class="mono r">{v}</td></tr>'
                       for i, (p, v) in enumerate(items, 1))
         return f'<div><h2 class="disp sub">{e(title)}</h2><table class="history"><tbody>{trs}</tbody></table></div>'
 
@@ -2176,7 +2244,7 @@ def build_players(lg, d):
                 if st.get(c) is not None:
                     best.append((st[c], p, bg, opp))
         best.sort(key=lambda x: -x[0])
-        trs = "".join(f'<tr><td class="mono">{v}</td><td><a href="{p["url"]}">{e(p["name"])}</a><small>vs. {e(n(opp, bg["season"]))} · {S.d_short(bg["date"], True)}</small></td></tr>'
+        trs = "".join(f'<tr><td class="mono">{v}</td><td>{plink(p)}<small>vs. {e(n(opp, bg["season"]))} · {S.d_short(bg["date"], True)}</small></td></tr>'
                       for v, p, bg, opp in best[:10])
         singles.append(f'<div><h2 class="disp sub">Most {lab.lower()} in one belt game</h2><table class="history"><tbody>{trs}</tbody></table></div>')
     body = f"""{S.subnav(lg, "more")}
@@ -2220,7 +2288,7 @@ def box_html(lg, d, bg):
     head = "".join(f'<th class="mono r">{e(c if isinstance(c, str) else c[0])}</th>' for c in sc["show"])
     for team in teams:
         rows = sorted([x for x in lines if x[2] == team], key=lambda x: -(x[3].get(sc["key"]) or 0))
-        trs = "".join(f'<tr><td><a href="{players[pid]["url"]}">{e(name)}</a></td>' + "".join(f'<td class="mono r">{cell(st, c)}</td>' for c in sc["show"]) + "</tr>"
+        trs = "".join(f'<tr><td>{plink(players[pid])}</td>' + "".join(f'<td class="mono r">{cell(st, c)}</td>' for c in sc["show"]) + "</tr>"
                       for pid, name, t, st in rows if pid in players)
         out.append(f'<h3 class="disp sub">{e(n(team, bg["season"]))}</h3><div class="tablewrap"><table class="history box"><thead><tr><th class="mono">Player</th>{head}</tr></thead><tbody>{trs}</tbody></table></div>')
     return f'<section class="pv-sec"><div class="kicker">Box score</div>{"".join(out)}<p class="mono note">{sc["source"]}</p></section>'
