@@ -357,3 +357,4 @@ h2.kicker{margin:0 0 8px;font-weight:400;line-height:inherit}
 /* the belt network row (network-bar.js) */
 .belt-network{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--line)}.belt-network .nk{color:var(--muted);text-transform:uppercase;letter-spacing:.14em;font-size:11px;margin-right:4px}.belt-network a{white-space:nowrap}.belt-network a i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;vertical-align:middle}.belt-network a b{font-weight:500;color:var(--ink);margin-right:5px}.belt-network .all{font-weight:500}
 .school-belts{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px 28px}.school-belts .tag{margin-left:8px}
+.livescore{margin-left:8px;color:var(--muted)}tr.islive .livescore{color:#b3261e;font-weight:500}.three .lb li{font-size:16px}.three .lb li span{min-width:0}
