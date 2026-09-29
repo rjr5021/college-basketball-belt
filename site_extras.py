@@ -18,7 +18,9 @@ from collections import Counter, defaultdict
 from datetime import date
 
 import build_site as S
-from cbb_league import LIVE
+import cbb_league
+
+LIVE = list(cbb_league.LIVE)      # build_site points this at the belt being built
 
 e = S.e
 REIGN_MIN_DEFENSES = 5
@@ -34,7 +36,7 @@ def sl(lg, season):
 
 
 def season_url(lg, season, n=None):
-    return f"/seasons/{season}/" + (f"#g{n}" if n else "")
+    return f"{lg.get('base', '')}/seasons/{season}/" + (f"#g{n}" if n else "")
 
 
 def notable(r, cur_index):
@@ -42,18 +44,19 @@ def notable(r, cur_index):
 
 
 def reign_url(lg, d, r):
+    base = lg.get("base", "")
     if notable(r, d["reigns"][-1]["index"]):
-        return f"/reigns/{r['index']}/"
+        return f"{base}/reigns/{r['index']}/"
     first = r.get("opened_by") or (r["belt_games"][0] if r.get("belt_games") else None)
     if r.get("opened_by"):
-        return f"/games/{r['opened_by']}/"
+        return f"{base}/games/{r['opened_by']}/"
     bg = d["_bg"].get(first) if first else None
-    return season_url(lg, bg["season"], bg["n"]) if bg else f"/history/"
+    return season_url(lg, bg["season"], bg["n"]) if bg else f"{base}/history/"
 
 
 def team_link(lg, code, season=None):
     name = lg["team_name"](code, season) if season is not None else lg["team_name"](code)
-    return f'<a href="/teams/{S.slug(lg["team_name"](code))}/">{e(name)}</a>'
+    return f'<a href="{lg.get("base", "")}/teams/{S.slug(lg["team_name"](code))}/">{e(name)}</a>'
 
 
 def rivalry_slug(lg, a, b):
@@ -444,7 +447,7 @@ def build_otd(datas):
                           description=f"Every College Basketball Belt title change on {label}, from 1949–50 to today.")
             S.write(f"on-this-day/{k}/index.html", html)
             if (m, dd) == (today.month, today.day):
-                S.write("on-this-day/index.html", html.replace(f'href="{S.SITE_URL}/on-this-day/{k}/"', f'href="{S.SITE_URL}/on-this-day/"'))
+                S.write("on-this-day/index.html", html.replace(f'href="{S.SITE_URL}{S.P}/on-this-day/{k}/"', f'href="{S.SITE_URL}{S.P}/on-this-day/"'))
 
 
 # --------------------------------------------------------------- stories --
@@ -541,7 +544,7 @@ def build_search(datas):
         d = datas[lg["key"]]
         teams = {r["team"] for r in d["reigns"]}
         for t in teams:
-            idx.append([lg["team_name"](t), f"{lg['name']} team", f"/teams/{S.slug(lg['team_name'](t))}/"])
+            idx.append([lg["team_name"](t), f"{lg['name']} team", f"{lg.get('base', '')}/teams/{S.slug(lg['team_name'](t))}/"])
         for s in d["seasons"]:
             idx.append([f"{lg['name']} {s['label']}", "Season", season_url(lg, s["season"])])
     S.write("search/index.json", json.dumps(idx, separators=(",", ":")))
@@ -558,7 +561,7 @@ q.addEventListener('input',run);
 var p=new URLSearchParams(location.search).get('q');if(p){q.value=p;}
 fetch('/search/index.json').then(function(r){return r.json();}).then(function(j){I=j;run();});})();
 </script>"""
-    S.write("search/index.html", S.page("Search", body, path="/search/", description="Find any team or season on the College Basketball Belt."))
+    S.write("search/index.html", S.page("Search", body, path="/search/", description=f"Find any team or season on the {S.SEC.get('short', 'College Basketball Belt')}."))
 
 
 # ----------------------------------------------------------------- teams --
@@ -589,7 +592,7 @@ def team_extras(lg, d, team):
 
 def build_all(datas):
     import features as F
-    F.init(S, lambda lg: "", "The College Basketball Belt")
+    F.init(S, lambda lg: lg.get("base", ""), "The College Basketball Belt")
     for lg in LIVE:
         d = datas[lg["key"]]
         d["_bg"] = {bg["n"]: bg for bg in d["belt_games"]}

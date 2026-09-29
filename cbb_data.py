@@ -25,7 +25,8 @@ MIN_GAMES = 12
 # reigning national champion: Kentucky, 46-36 over Oklahoma A&M in the 1949
 # NCAA final (March 26, 1949).
 SEED = {"team_name": "Kentucky", "opponent_name": "Oklahoma State", "date": "1949-03-26",
-        "score": "46-36", "note": "1949 NCAA final"}
+        "score": "46-36", "note": "1949 NCAA final", "season": 1949,
+        "short": "1949 NCAA champion", "long": "Won the 1949 NCAA final over Oklahoma A&M, 46–36"}
 
 DEFUNCT_COLORS = ("#5b5140", "#cfc4ad")
 

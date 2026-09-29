@@ -21,8 +21,8 @@ SITE_URL = "https://collegebasketballbelt.com"
 DOMAIN = "collegebasketballbelt.com"
 OUT = "site"
 ADSENSE_PUBLISHER_ID = ""        # "pub-3317069252410560" once the site is approved in AdSense
-GOATCOUNTER_CODE = ""            # e.g. "collegebasketballbelt" once the GoatCounter site exists
-STYLES_VERSION = "5"
+GOATCOUNTER_CODE = "collegebasketballbelt"
+STYLES_VERSION = "6"
 ORANGE = "#de762c"
 
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -30,6 +30,41 @@ MONTHS_LONG = ["January", "February", "March", "April", "May", "June", "July", "
                "September", "October", "November", "December"]
 WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 e = html.escape
+
+# The site has two belts: the men's at the root and the women's under /women/.
+# build_site runs every page builder once per belt; P is the current belt's URL
+# prefix ("" or "/women"), LG its league dict and SEC its wording.
+P = ""
+LG = None
+SEC = {}
+MEN = {"key": "cbb", "name": "The College Basketball Belt", "short": "College Basketball Belt", "who": "men's college basketball",
+       "since": "1949–50", "first_season": 1950, "seed_year": 1949, "first_march": 1950,
+       "plate_seed": "Picked up the belt as the 1949 national champions.",
+       "nit": "If the holder misses the field, the belt can spend March at the NIT.",
+       "og": "/og-holder.png"}
+WOMEN = {"key": "women", "name": "The Women's College Basketball Belt", "short": "Women's College Basketball Belt",
+         "who": "women's college basketball", "since": "1986–87", "first_season": 1987, "seed_year": 1986, "first_march": 1987,
+         "plate_seed": "Picked up the belt as the 1986 national champions.",
+         "nit": "If the holder misses the field, the belt can spend March at the WNIT or the WBIT.",
+         "og": "/og.png"}
+# Paths shared by both belts (never prefixed with /women)
+GLOBAL_PATHS = ("styles.css", "favicon.png", "apple-touch-icon.png", "manifest.json", "icon-512.png", "og.png",
+                "og-holder.png", "tablekit.js", "privacy/", "about/", "women/")
+_REWRITE = re.compile(r'((?:href|src)=["\']|fetch\([\'"]|"(?:https://collegebasketballbelt\.com))/(?!(?:' +
+                      "|".join(re.escape(x) for x in GLOBAL_PATHS) + r'))')
+
+
+def u(path):
+    """A path in the current belt's section."""
+    if not P or not path.startswith("/") or path.startswith(P + "/") or path.lstrip("/").startswith(GLOBAL_PATHS):
+        return path
+    return P + path
+
+
+def _sectionize(html_text):
+    if P:
+        html_text = _REWRITE.sub(lambda m: m.group(1) + P + "/", html_text)
+    return html_text.replace("__ROOT__/", "/")
 
 
 # ------------------------------------------------------------- helpers ---
@@ -108,6 +143,8 @@ def plate(primary, secondary):
 
 
 def write(path, text):
+    if P and not path.startswith(P.strip("/") + "/"):
+        path = P.strip("/") + "/" + path
     full = os.path.join(OUT, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, "w", encoding="utf-8") as f:
@@ -133,7 +170,7 @@ SUBNAV = [("current", "/", "Current"), ("next", "/next/", "Next defense"), ("out
 
 
 def subnav(lg=None, on=None):
-    links = "".join(f'<a href="{h}"{" class=on" if k == on else ""}>{t}</a>' for k, h, t in SUBNAV)
+    links = "".join(f'<a href="{u(h)}"{" class=on" if k == on else ""}>{t}</a>' for k, h, t in SUBNAV)
     return f'<nav class="subnav mono" aria-label="Belt sections">{links}</nav>'
 
 
@@ -156,12 +193,13 @@ def tcolor(tid):
 
 
 def team_url(tid):
-    return f"/teams/{slug(tname(tid))}/"
+    return u(f"/teams/{slug(tname(tid))}/")
 
 
 def how_won(r, short=False):
     if r.get("seed"):
-        return "1949 NCAA champion" if short else "Won the 1949 NCAA final over Oklahoma A&M, 46–36"
+        seed = D.get("seed") or {}
+        return seed.get("short", "1949 NCAA champion") if short else seed.get("long", "Won the 1949 NCAA final over Oklahoma A&M, 46–36")
     if r.get("won_from"):
         return f"Beat {e(r.get('won_from_name') or tname(r['won_from']))} {score_text(r['won_score'])}"
     if r.get("reclaimed_after"):
@@ -183,7 +221,10 @@ NAV = [("belt", "/", "The Belt"), ("history", "/history/", "History"), ("records
 
 
 def page(title, body, *, path, description, active=None, jsonld=None):
-    nav = "".join(f'<a href="{h}"{" class=on" if k == active else ""}>{t}</a>' for k, h, t in NAV)
+    path = u(path)
+    nav = "".join(f'<a href="{u(h)}"{" class=on" if k == active else ""}>{t}</a>' for k, h, t in NAV)
+    switch = (f'<nav class="belts mono" aria-label="Men\'s or women\'s belt"><a href="__ROOT__/"{" class=on" if not P else ""}>Men</a>'
+              f'<a href="__ROOT__/women/"{" class=on" if P else ""}>Women</a></nav>')
     canonical = SITE_URL + path
     ads = (f'<meta name="google-adsense-account" content="ca-{ADSENSE_PUBLISHER_ID}">'
            f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-{ADSENSE_PUBLISHER_ID}" crossorigin="anonymous"></script>'
@@ -191,8 +232,8 @@ def page(title, body, *, path, description, active=None, jsonld=None):
     goat = (f'<script data-goatcounter="https://{GOATCOUNTER_CODE}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>'
             if GOATCOUNTER_CODE else "")
     ld = f'<script type="application/ld+json">{json.dumps(jsonld)}</script>' if jsonld else ""
-    full_title = title if "College Basketball Belt" in title else f"{title} · The College Basketball Belt"
-    return f"""<!doctype html>
+    full_title = title if "College Basketball Belt" in title else f"{title} · {SEC.get('name', 'The College Basketball Belt')}"
+    return _sectionize(f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -205,13 +246,13 @@ def page(title, body, *, path, description, active=None, jsonld=None):
 <meta property="og:title" content="{e(full_title)}">
 <meta property="og:description" content="{e(description)}">
 <meta property="og:url" content="{canonical}">
-<meta property="og:image" content="{SITE_URL}/og-holder.png">
+<meta property="og:image" content="{SITE_URL}{SEC.get('og', '/og-holder.png')}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@CollegeBBBelt">
 <link rel="icon" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#211a12">
-<link rel="alternate" type="application/rss+xml" title="College Basketball Belt — title changes" href="/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="{SEC.get('short', 'College Basketball Belt')} — title changes" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Spectral:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/styles.css?v={STYLES_VERSION}">
@@ -221,9 +262,9 @@ def page(title, body, *, path, description, active=None, jsonld=None):
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
-  <a class="brand" href="/">{LOGO}<span>The College Basketball Belt</span></a>
+  <a class="brand" href="__ROOT__/">{LOGO}<span>The College Basketball Belt</span></a>
   <nav class="primary mono" aria-label="Sections">{nav}</nav>
-  <div class="topright"><button class="themebtn" type="button" aria-label="Toggle dark mode" onclick="var r=document.documentElement,d=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches);r.dataset.theme=d?'light':'dark';try{{localStorage.setItem('belt-theme',r.dataset.theme);}}catch(e){{}}"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M13.5 9.5A5.5 5.5 0 0 1 6.5 2.5a5.5 5.5 0 1 0 7 7z"/></svg></button><a class="searchlink" href="/search/" aria-label="Search"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11 L15 15"/></svg></a><a class="pill mono" href="#alerts">Get belt alerts</a></div>
+  <div class="topright">{switch}<button class="themebtn" type="button" aria-label="Toggle dark mode" onclick="var r=document.documentElement,d=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches);r.dataset.theme=d?'light':'dark';try{{localStorage.setItem('belt-theme',r.dataset.theme);}}catch(e){{}}"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M13.5 9.5A5.5 5.5 0 0 1 6.5 2.5a5.5 5.5 0 1 0 7 7z"/></svg></button><a class="searchlink" href="/search/" aria-label="Search"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11 L15 15"/></svg></a><a class="pill mono" href="#alerts">Get belt alerts</a></div>
 </header>
 <main id="main">
 {body}
@@ -235,7 +276,7 @@ def page(title, body, *, path, description, active=None, jsonld=None):
 </footer>
 </body>
 </html>
-"""
+""")
 
 
 def alerts_block():
@@ -246,7 +287,7 @@ def alerts_block():
   </div>
   <form class="alert-form" action="https://blogtrottr.com" method="post" target="_blank">
     <input type="hidden" name="lang" value="en_US">
-    <input type="hidden" name="btr_url" value="{SITE_URL}/feed.xml">
+    <input type="hidden" name="btr_url" value="{SITE_URL}{P}/feed.xml">
     <input type="hidden" name="schedule_type" value="0">
     <label for="alert-email" class="sr">Email address</label>
     <input id="alert-email" type="email" name="btr_email" placeholder="you@example.com" required>
@@ -262,7 +303,7 @@ def holder_plate(d):
     p, s = tcolor(cur["team"])
     top, bottom, ink, accent = plate(p, s)
     if cur.get("seed"):
-        lede = "Picked up the belt as the 1949 national champions."
+        lede = SEC["plate_seed"]
     elif cur.get("won_from"):
         lede = (f"Took the belt from {e(cur['won_from_name'])}, {score_text(cur['won_score'])}, "
                 f"on {d_long(cur['start_date'])}.")
@@ -296,7 +337,7 @@ def holder_plate(d):
     return f"""<section class="plate" style="--top:{top};--bottom:{bottom};--ink:{ink};--accent:{accent}">
   <div class="plate-grid">
     <div class="plate-main">
-      <div class="kicker dot">Current holder · {ordinal(cur['reign_no'])} reign</div>
+      <div class="kicker dot">{"Women's belt · " if P else ""}Current holder · {ordinal(cur['reign_no'])} reign</div>
       <h1 class="disp holder" style="{fit(cur['name'])}">{e(cur['name'])}</h1>
       <p class="lede">{lede}</p>
       <div class="stats">
@@ -375,8 +416,8 @@ def build_home(d):
   <div>
     <div class="kicker">March</div>
     <h2 class="disp">The belt versus the bracket</h2>
-    <p>If the holder makes the NCAA tournament, the belt is guaranteed to finish with the national champion: whoever takes it keeps playing until someone knocks them out, and only the champion is never knocked out. If the holder misses the field, the belt can spend March at the NIT.</p>
-    <a class="mono more" href="/march/">Every March since 1950 →</a>
+    <p>If the holder makes the NCAA tournament, the belt is guaranteed to finish with the national champion: whoever takes it keeps playing until someone knocks them out, and only the champion is never knocked out. {SEC["nit"]}</p>
+    <a class="mono more" href="/march/">Every March since {SEC["first_march"]} →</a>
   </div>
   <div class="bgrid">
     <div><span class="mono">Entered March {last['season']} with it</span><b class="disp">{e(last['entering'] or '—')}</b></div>
@@ -386,12 +427,12 @@ def build_home(d):
   </div>
 </section>"""
     import sys
-    import features, cbb_league
-    features.init(sys.modules[__name__], lambda x: "", "The College Basketball Belt")
+    import features
+    features.init(sys.modules[__name__], lambda x: x.get("base", ""), "The College Basketball Belt")
     body = f"""{subnav(None, "current")}
-{features.live_box(cbb_league.LEAGUE, d)}
+{features.live_box(LG, d)}
 {holder_plate(d)}
-{features.latest_recap_card(cbb_league.LEAGUE, d)}
+{features.latest_recap_card(LG, d)}
 <section class="wrap split">
   <div>
     <div class="head"><h2 class="disp">Chain of custody</h2><a class="mono more" href="/history/">All {len(d['reigns']):,} reigns →</a></div>
@@ -409,30 +450,41 @@ def build_home(d):
 {bracket}
 <section class="wrap block three">
   {record_card("Most reigns", [(tname(t), v) for t, v in rec['most_reigns'][:3]])}
-  {record_card("Most defenses in one reign", [(f"{r['name']}, {season_label(r['season']) if r['season'] > 1949 else '1949'}", f"{r['defenses']} def.") for r in rec['longest_reigns'][:3]])}
-  {football_card()}
+  {record_card("Most defenses in one reign", [(f"{r['name']}, {season_label(r['season']) if r['season'] > SEC['seed_year'] else SEC['seed_year']}", f"{r['defenses']} def.") for r in rec['longest_reigns'][:3]])}
+  {football_card() if not P else mens_card()}
 </section>
 {home_extras()}"""
     cur = d["current"]
     ld = {"@context": "https://schema.org", "@type": "SportsTeam", "name": cur["name"], "sport": "Basketball",
-          "award": f"The College Basketball Belt (lineal), {ordinal(cur['reign_no'])} reign since {cur['start_date']}"}
-    write("index.html", page(f"The College Basketball Belt: {cur['name']} holds it", body, path="/", active="belt",
-                             description=f"{cur['name']} holds the College Basketball Belt, the lineal championship of men's college basketball: beat the holder, take the belt. Every game since 1949–50.",
+          "award": f"{SEC['name']} (lineal), {ordinal(cur['reign_no'])} reign since {cur['start_date']}"}
+    write("index.html", page(f"{SEC['name']}: {cur['name']} holds it", body, path="/", active="belt",
+                             description=f"{cur['name']} holds the {SEC['short']}, the lineal championship of {SEC['who']}: beat the holder, take the belt. Every game since {SEC['since']}.",
                              jsonld=ld))
+
+
+def mens_card():
+    """On the women's pages: the men's belt, from the men's lineage."""
+    try:
+        with open(os.path.join("data", "lineage.json")) as f:
+            m = json.load(f)
+        cur = m["current"]
+        return (f'<a class="card sister" href="__ROOT__/"><div class="kicker">Sister belt · men\'s</div>'
+                f'<div class="disp big">{e(cur["name"])} holds the men\'s belt</div><p>Since {d_long(cur["start_date"])}. The men\'s belt →</p></a>')
+    except Exception:
+        return ('<a class="card sister" href="__ROOT__/"><div class="kicker">Sister belt · men\'s</div>'
+                '<div class="disp big">The men\'s College Basketball Belt</div><p>The same idea, since 1949. →</p></a>')
 
 
 def reign_link(r):
     import site_extras
-    from cbb_league import LEAGUE
     D.setdefault("_bg", {bg["n"]: bg for bg in D["belt_games"]})
-    return site_extras.reign_url(LEAGUE, D, r)
+    return site_extras.reign_url(LG, D, r)
 
 
 def home_extras():
     import site_extras
-    from cbb_league import LEAGUE
     today = date.today()
-    items = site_extras.otd_items({"cbb": D}).get(f"{today:%m-%d}", [])
+    items = site_extras.otd_items({LG["key"]: D}).get(f"{today:%m-%d}", [])
     otd = (f'<section class="wrap block"><div class="head"><h2 class="disp">Today in belt history</h2><a class="mono more" href="/on-this-day/">All of {MONTHS_LONG[today.month - 1]} {today.day} →</a></div>'
            f'{site_extras.otd_list(items, 6)}</section>') if items else ""
     cards = "".join(f'<a class="storycard" href="/stories/{sl_}/"><b class="disp">{e(t)}</b></a>' for sl_, t in [
@@ -454,15 +506,15 @@ def build_history(d):
     decades = sorted({int(r["start_date"][:3] + "0") for r in d["reigns"]}, reverse=True)
     body = f"""{subnav(None, "history")}
 <section class="wrap block">
-  <div class="head"><h1 class="disp">Every reign</h1><span class="mono note">{len(d['reigns']):,} reigns · {d['records']['belt_games']:,} belt games since 1949–50</span></div>
+  <div class="head"><h1 class="disp">Every reign</h1><span class="mono note">{len(d['reigns']):,} reigns · {d['records']['belt_games']:,} belt games since {SEC['since']}</span></div>
   <nav class="jump mono" aria-label="Jump to decade">{"".join(f'<a href="#d{x}">{x}s</a>' for x in decades)}</nav>
   <div class="tablewrap"><table class="history">
     <thead><tr><th class="mono">#</th><th class="mono">Holder</th><th class="mono">Won</th><th class="mono">Lost</th><th class="mono r">Def. · days</th></tr></thead>
     <tbody>{"".join(rows)}</tbody>
   </table></div>
 </section>"""
-    write("history/index.html", page("Every College Basketball Belt reign since 1949–50", body, path="/history/", active="history",
-                                     description=f"The complete lineal college basketball championship: all {len(d['reigns']):,} reigns since the 1949–50 season."))
+    write("history/index.html", page(f"Every {SEC['short']} reign since {SEC['since']}", body, path="/history/", active="history",
+                                     description=f"The complete lineal {SEC['who']} championship: all {len(d['reigns']):,} reigns since the {SEC['since']} season."))
 
 
 def build_records(d):
@@ -470,7 +522,7 @@ def build_records(d):
     cards = "".join([
         record_card("Most days holding the belt (all reigns)", [(tname(t), f"{v:,}") for t, v in rec["most_days"]]),
         record_card("Most reigns", [(tname(t), v) for t, v in rec["most_reigns"]]),
-        record_card("Most defenses in one reign", [(f"{r['name']}, {season_label(r['season']) if r['season'] > 1949 else '1949'}", r["defenses"]) for r in rec["longest_reigns"]]),
+        record_card("Most defenses in one reign", [(f"{r['name']}, {season_label(r['season']) if r['season'] > SEC['seed_year'] else SEC['seed_year']}", r["defenses"]) for r in rec["longest_reigns"]]),
         record_card("Most successful defenses (all reigns)", [(tname(t), v) for t, v in rec["most_defenses_total"]]),
         record_card("Most defenses in one season", [(f"{tname(x['team'])}, {season_label(x['season'])}", x["defenses"]) for x in rec.get("most_defenses_season", [])]),
         record_card("Most belt games played", [(tname(t), f"{v:,}") for t, v in rec.get("most_belt_games", [])]),
@@ -490,8 +542,8 @@ def build_records(d):
   <p class="intro">{len(rec.get("never_held", []))} current Division I programs have never held the belt.</p>
   <div class="cards4">{cards}</div>
 </section>"""
-    write("records/index.html", page("College Basketball Belt records", body, path="/records/", active="records",
-                                     description="Lineal college basketball championship records: most days held, most reigns, longest reigns."))
+    write("records/index.html", page(f"{SEC['short']} records", body, path="/records/", active="records",
+                                     description=f"Lineal {SEC['who']} championship records: most days held, most reigns, longest reigns."))
 
 
 def build_teams(d):
@@ -509,8 +561,8 @@ def build_teams(d):
   <div class="head"><h1 class="disp">Every program that has held the belt</h1><span class="mono note">{len(by)} programs · sorted by days held</span></div>
   <div class="teamgrid">{"".join(cards)}</div>
 </section>"""
-    write("teams/index.html", page("Every team that has held the College Basketball Belt", body, path="/teams/", active="teams",
-                                   description="Every program that has held the lineal college basketball championship belt since 1949–50."))
+    write("teams/index.html", page(f"Every team that has held the {SEC['short']}", body, path="/teams/", active="teams",
+                                   description=f"Every program that has held the lineal {SEC['who']} championship belt since {SEC['since']}."))
 
 
 def build_team(d, tid, rs):
@@ -525,22 +577,21 @@ def build_team(d, tid, rs):
         for r in reversed(rs))
     body = f"""<section class="plate slim" style="--top:{top};--bottom:{bottom};--ink:{ink};--accent:{accent}">
   <div class="wrap-in">
-    <div class="kicker dot">{'Current holder' if holding else 'The College Basketball Belt'}</div>
+    <div class="kicker dot">{'Current holder' if holding else SEC['name']}</div>
     <h1 class="disp holder" style="{fit(name)}">{e(name)}</h1>
     <div class="stats"><div><b class="disp">{len(rs)}</b><span class="mono">Reigns</span></div><div><b class="disp">{days:,}</b><span class="mono">Days held</span></div><div><b class="disp">{defs}</b><span class="mono">Defenses</span></div><div><b class="disp">{rs[0]['start_date'][:4]}</b><span class="mono">First reign</span></div></div>
   </div>
 </section>
 <section class="wrap block"><div class="head"><h2 class="disp">Every reign</h2></div><ol class="chain">{rows}</ol></section>
 {team_extras_html(tid)}"""
-    write(f"teams/{slug(name)}/index.html", page(f"{name} and the College Basketball Belt", body, path=team_url(tid), active="teams",
-                                                  description=f"{name}: {plural(len(rs), 'reign')} with the lineal college basketball championship belt, {days:,} days held."))
+    write(f"teams/{slug(name)}/index.html", page(f"{name} and the {SEC['short']}", body, path=team_url(tid), active="teams",
+                                                  description=f"{name}: {plural(len(rs), 'reign')} with the lineal {SEC['who']} championship belt, {days:,} days held."))
 
 
 def team_extras_html(tid):
     import site_extras
-    from cbb_league import LEAGUE
     D.setdefault("_bg", {bg["n"]: bg for bg in D["belt_games"]})
-    return site_extras.team_extras(LEAGUE, D, tid)
+    return site_extras.team_extras(LG, D, tid)
 
 
 def build_march(d):
@@ -551,15 +602,15 @@ def build_march(d):
     missed = sum(1 for m in d["march"] if m["entering"] and not m["in_field"])
     body = f"""{subnav(None, "march")}
 <section class="wrap block">
-  <div class="head"><h1 class="disp">The belt versus the bracket</h1><span class="mono note">Every NCAA tournament since 1950</span></div>
+  <div class="head"><h1 class="disp">The belt versus the bracket</h1><span class="mono note">Every NCAA tournament since {SEC['first_march']}</span></div>
   <p class="intro">Who carried the belt into each NCAA tournament, and how it ended. {plural(kept, 'holder')} took the belt into March and kept it all the way to the title; {plural(missed, 'time')} the holder wasn't in the NCAA field at all.</p>
   <div class="tablewrap"><table class="history march">
     <thead><tr><th class="mono">Season</th><th class="mono">Entered March with it</th><th class="mono">What happened</th><th class="mono">NCAA champion</th><th class="mono r">Changes</th></tr></thead>
     <tbody>{"".join(rows)}</tbody>
   </table></div>
 </section>"""
-    write("march/index.html", page("The belt versus the bracket: every March since 1950", body, path="/march/", active="march",
-                                   description="Who carried the College Basketball Belt into every NCAA tournament since 1950, and whether it survived March."))
+    write("march/index.html", page(f"The belt versus the bracket: every March since {SEC['first_march']}", body, path="/march/", active="march",
+                                   description=f"Who carried the {SEC['short']} into every NCAA tournament since {SEC['first_march']}, and whether it survived March."))
 
 
 def build_static(d):
@@ -583,11 +634,11 @@ def build_static(d):
     about = """<section class="wrap prose">
 <div class="kicker">About</div>
 <h1 class="disp">About the College Basketball Belt</h1>
-<p>The College Basketball Belt tracks the lineal championship of men's college basketball: one title, passed from team to team only by beating whoever holds it. It's the sister site of the <a href="https://collegefootballbelt.com">College Football Belt</a>, which has tracked the same idea in college football since 1869, and part of the <a href="https://beltholders.com">Belt Holders</a> network, which does it for the NFL, NBA, NHL and MLB.</p>
+<p>The College Basketball Belt tracks the lineal championship of college basketball: one title, passed from team to team only by beating whoever holds it. There are two belts, <a href="/">the men's</a> (since 1949–50) and <a href="/women/">the women's</a> (since 1986–87). It's the sister site of the <a href="https://collegefootballbelt.com">College Football Belt</a>, which has tracked the same idea in college football since 1869, and part of the <a href="https://beltholders.com">Belt Holders</a> network, which does it for the NFL, NBA, NHL and MLB.</p>
 <p>The site is independent and fan-run. It isn't affiliated with the NCAA, any conference or any school. School names are used only to identify the teams.</p>
 <p>Find us at <a href="https://x.com/CollegeBBBelt">@CollegeBBBelt</a> or email <a href="mailto:hello@collegebasketballbelt.com">hello@collegebasketballbelt.com</a>.</p>
 </section>"""
-    write("about/index.html", page("About", about, path="/about/", description="About the College Basketball Belt, the lineal championship tracker for men's college basketball."))
+    write("about/index.html", page("About", about, path="/about/", description="About the College Basketball Belt, the lineal championship tracker for men's and women's college basketball."))
     ads_text = ("<p>This site shows ads served by Google AdSense. Google and its partners use cookies to serve ads based on your visits to this and other sites. "
                 "You can opt out of personalized advertising at <a href=\"https://adssettings.google.com\">Google's Ad Settings</a>. Visitors in the EEA and UK are asked for consent first.</p>"
                 if ADSENSE_PUBLISHER_ID else "<p>This site doesn't show ads yet. If that changes, this section will describe what the ad provider collects and how to opt out.</p>")
@@ -609,17 +660,39 @@ def build_static(d):
                            path="/404.html", description="Page not found."))
 
 
+def build_women_rules(d):
+    rules = f"""<section class="wrap prose">
+<div class="kicker">The ruleset</div>
+<h1 class="disp">How the women's belt works</h1>
+<p>A lineal championship works like a boxing title: to become the champion, you have to beat the champion. The Women's College Basketball Belt is one title, passed from team to team, game by game, since 1986.</p>
+<h2 class="disp">The rules</h2>
+<ol>
+<li><b>Where it starts.</b> The belt starts with the reigning national champion going into the 1986–87 season: Texas, which finished 34–0 by beating USC 97–81 in the 1986 NCAA final.</li>
+<li><b>Beat the holder, take the belt.</b> Every game counts: regular season, conference tournaments, the NCAA tournament, the WNIT and the WBIT. Home, away or neutral.</li>
+<li><b>Division I only.</b> Both teams have to be in Division I that season. A holder that loses to a non-Division I team keeps the belt, and those games aren't title defenses.</li>
+<li><b>No ties.</b> Basketball plays overtime until someone wins, so every belt game has a winner.</li>
+<li><b>If a holder leaves Division I,</b> the belt goes back to the most recent earlier holder that is still playing, the same rule the men's belt and the College Football Belt use. {"It hasn't happened yet." if not d["vacancies"] else f"It has happened {plural(len(d['vacancies']), 'time')}."}</li>
+</ol>
+<h2 class="disp">Sources</h2>
+<p>From 2002–03 on, results come from ESPN via the <a href="https://github.com/sportsdataverse/wehoop">wehoop</a> project (sportsdataverse, CC BY 4.0), updated automatically every few hours during the season.</p>
+<p>The line from 1986–87 through the 2002 final (UConn 82, Oklahoma 70) was traced game by game from schools' published media guides, record books and box scores (Louisiana Tech, Tennessee, Virginia, USC, North Carolina, Stanford and many more), The Stanford Daily archives and other student newspapers, and Wikipedia season pages. For those years the data lists every game the belt holder played rather than full schedules, so season-long features like Elo ratings and conference belts start in 2002–03. Four wins by a holder whose scores haven't turned up (Arizona State over Oregon and Oregon State in February 1992; Creighton over Bradley and Northern Iowa in January 1994) are left out, which doesn't change who held the belt.</p>
+<p>Spot a missing or wrong game? Email <a href="mailto:hello@collegebasketballbelt.com">hello@collegebasketballbelt.com</a>.</p>
+</section>"""
+    write("rules/index.html", page("How the women's belt works", rules, path="/rules/", active="rules",
+                                   description="The Women's College Basketball Belt ruleset: where the lineal title starts, which games count, and where the results come from."))
+
+
 def build_feed(d):
     items = []
     for r in d["reigns"][-40:]:
         if not r.get("won_from") or r.get("seed"):
             continue
-        title = f"{r['name']} beat {r['won_from_name']} {score_text(r['won_score'])} and take the College Basketball Belt"
+        title = f"{r['name']} beat {r['won_from_name']} {score_text(r['won_score'])} and take the {SEC['short']}"
         dt = datetime.fromisoformat(r["start_date"] + "T23:30:00")
-        items.append((dt, f"""<item><title>{e(title)}</title><link>{SITE_URL}/</link><guid isPermaLink="false">cbb-{r['index']}-{r['start_date']}</guid><pubDate>{dt.strftime('%a, %d %b %Y %H:%M:%S')} -0500</pubDate><description>{e(title)}. {ordinal(r['reign_no'])} reign for {e(r['name'])}.</description></item>"""))
+        items.append((dt, f"""<item><title>{e(title)}</title><link>{SITE_URL}{P}/</link><guid isPermaLink="false">{SEC['key']}-{r['index']}-{r['start_date']}</guid><pubDate>{dt.strftime('%a, %d %b %Y %H:%M:%S')} -0500</pubDate><description>{e(title)}. {ordinal(r['reign_no'])} reign for {e(r['name'])}.</description></item>"""))
     items.sort(key=lambda x: x[0], reverse=True)
     write("feed.xml", f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"><channel><title>The College Basketball Belt — title changes</title><link>{SITE_URL}/</link><description>Every time the College Basketball Belt changes hands.</description><language>en-us</language>
+<rss version="2.0"><channel><title>{SEC['name']} — title changes</title><link>{SITE_URL}{P}/</link><description>Every time the {SEC['short']} changes hands.</description><language>en-us</language>
 {"".join(x for _, x in items)}
 </channel></rss>""")
 
@@ -630,16 +703,17 @@ def build_api(d):
            "defenses": cur.get("defenses", 0), "team_reign_number": cur["reign_no"],
            "next_game": ({"team": cur["name"], "opponent": ng["challenger_name"], "is_home": ng["holder_home"],
                           "neutral": ng["neutral"], "date": ng["date"], "venue_name": ng.get("venue")} if ng else None),
-           "generated_at": d["generated"], "site": SITE_URL}
+           "generated_at": d["generated"], "site": SITE_URL + P}
     write("api/current.json", json.dumps(out, indent=1))
 
 
 def build_meta_files(d):
     cur = d["current"]
-    lines = ["# The College Basketball Belt", "", "> A lineal championship belt for men's college basketball: it passes to whoever beats the holder, game by game, since the 1949 NCAA champion. Updated every three hours.", "",
+    lines = ["# The College Basketball Belt", "", "> Lineal championship belts for men's and women's college basketball: each passes to whoever beats the holder, game by game (men's since the 1949 NCAA champion, women's since the 1986 champion). Updated every three hours.", "",
              f"- Current holder: {cur['name']} (since {cur['start_date']}, {cur.get('defenses', 0)} defenses)",
              f"- [Current holder and next defense]({SITE_URL}/)", f"- [Every reign]({SITE_URL}/history/)", f"- [Records]({SITE_URL}/records/)",
-             f"- [March: the belt in the NCAA tournament]({SITE_URL}/march/)", f"- [Data downloads (CSV)]({SITE_URL}/data/)", f"- [Rules]({SITE_URL}/rules/)",
+             f"- [March: the belt in the NCAA tournament]({SITE_URL}/march/)",
+             f"- [The women's belt (since 1986-87)]({SITE_URL}/women/)", f"- [Data downloads (CSV)]({SITE_URL}/data/)", f"- [Rules]({SITE_URL}/rules/)",
              f"- [JSON API]({SITE_URL}/api/current.json)", "- Sister sites: https://collegefootballbelt.com, https://beltholders.com"]
     write("llms.txt", "\n".join(lines) + "\n")
     write("manifest.json", json.dumps({"name": "The College Basketball Belt", "short_name": "CBB Belt", "start_url": "/", "display": "standalone",
@@ -663,23 +737,46 @@ def build_sitemap():
         write("ads.txt", f"google.com, {ADSENSE_PUBLISHER_ID}, DIRECT, f08c47fec0942fa0\n")
 
 
-def main():
-    if os.path.exists(OUT):
-        shutil.rmtree(OUT)
-    os.makedirs(OUT)
-    with open(os.path.join("data", "lineage.json")) as f:
+def _section(prefix, lg, sec, lineage_path):
+    """Point the builders at one belt."""
+    global P, LG
+    import site_extras
+    P, LG = prefix, lg
+    SEC.clear()
+    SEC.update(sec)
+    D.clear()
+    with open(lineage_path) as f:
         D.update(json.load(f))
+    site_extras.LIVE[:] = [lg]
+
+
+def build_belt():
+    import site_extras
     build_home(D)
     build_history(D)
     build_records(D)
     build_teams(D)
     build_march(D)
-    import site_extras
-    site_extras.build_all({"cbb": D})
-    build_static(D)
+    site_extras.build_all({LG["key"]: D})
     build_feed(D)
     build_api(D)
+
+
+def main():
+    import cbb_league
+    if os.path.exists(OUT):
+        shutil.rmtree(OUT)
+    os.makedirs(OUT)
+    _section("", cbb_league.LEAGUE, MEN, os.path.join("data", "lineage.json"))
+    build_belt()
+    build_static(D)
     build_meta_files(D)
+    wpath = os.path.join("data", "women", "lineage.json")
+    if os.path.exists(wpath):
+        _section("/women", cbb_league.WOMEN, WOMEN, wpath)
+        build_belt()
+        build_women_rules(D)
+    _section("", cbb_league.LEAGUE, MEN, os.path.join("data", "lineage.json"))
     build_sitemap()
     for f in ("styles.css", "favicon.png", "apple-touch-icon.png", "icon-512.png", "og.png", "tablekit.js"):
         if os.path.exists(f):
@@ -688,4 +785,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import build_site          # one module instance, shared with site_extras and features
+    build_site.main()

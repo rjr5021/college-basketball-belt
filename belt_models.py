@@ -22,7 +22,7 @@ from collections import Counter, defaultdict
 import belt_engine
 
 PARAMS = {  # K, home edge (Elo points), share of the gap to 1500 kept between seasons
-    "nfl": (20, 48, 0.67), "nba": (16, 70, 0.7), "nhl": (8, 35, 0.7), "mlb": (4, 24, 0.67), "cbb": (22, 90, 0.7),
+    "nfl": (20, 48, 0.67), "nba": (16, 70, 0.7), "nhl": (8, 35, 0.7), "mlb": (4, 24, 0.67), "cbb": (22, 90, 0.7), "women": (22, 80, 0.7),
 }
 
 
@@ -42,7 +42,7 @@ def elo(key, games):
         hp, ap = g["home_points"], g["away_points"]
         res = 1.0 if hp > ap else 0.0 if hp < ap else 0.5
         margin = abs(hp - ap)
-        mult = 1.0 if key in ("mlb", "nhl") else (1 + min(margin, 30) / (60 if key in ("nba", "cbb") else 30))
+        mult = 1.0 if key in ("mlb", "nhl") else (1 + min(margin, 30) / (60 if key in ("nba", "cbb", "women") else 30))
         delta = k * mult * (res - exp_h)
         r[h] += delta
         r[a] -= delta

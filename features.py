@@ -839,7 +839,7 @@ def build_embed(leagues_datas):
 # ================================================================ live box ==
 
 ESPN = {"nfl": "football/nfl", "nba": "basketball/nba", "nhl": "hockey/nhl", "mlb": "baseball/mlb",
-        "cbb": "basketball/mens-college-basketball"}
+        "cbb": "basketball/mens-college-basketball", "women": "basketball/womens-college-basketball"}
 
 
 def live_box(lg, d):
@@ -911,7 +911,7 @@ def build_more(lg, d):
         ("feed.xml", "RSS feed", f"Every {lg['name']} title change, as it happens."),
         ("belt.ics", "Calendar", "Subscribe and the next title defense lands on your calendar."),
     ]
-    if lg.get("key") in (None, "cbb"):
+    if lg.get("key") in (None, "cbb", "women"):
         cards = [c for c in cards if c[0] != "playoffs/"]
     root = getattr(S, "OUT", "site")
 
@@ -1252,7 +1252,7 @@ el.textContent=d.toLocaleTimeString([],{{hour:'numeric',minute:'2-digit',timeZon
 
 # ============================================================ batch: more ==
 
-MARGIN = {"nfl": 3, "nba": 3, "cbb": 3, "nhl": 1, "mlb": 1}
+MARGIN = {"nfl": 3, "nba": 3, "cbb": 3, "women": 3, "nhl": 1, "mlb": 1}
 
 
 def _score(bg):
@@ -1426,7 +1426,7 @@ def build_heartbreak(lg, d):
 
 
 def build_playoffs(lg, d):
-    if lg.get("key") in (None, "cbb"):
+    if lg.get("key") in (None, "cbb", "women"):
         return
     post = [bg for bg in d["belt_games"] if bg["season_type"] != "regular"]
     by = defaultdict(list)
@@ -1552,7 +1552,7 @@ def build_data(lg, d):
     <li><a href="/embed/">Badges</a> for your site</li>
   </ul>
   <h2 class="disp sub">Writing about the belt?</h2>
-  <p>The rules are simple: the belt starts with the first game on record and passes to whoever beats the holder. Ties go to the holder. Scores come from public game records; see <a href="/rules/">the rules</a> for sources. Questions or corrections: <a href="mailto:{'hello@collegebasketballbelt.com' if lg.get('key') == 'cbb' else 'hello@beltholders.com'}">email us</a>.</p>
+  <p>The rules are simple: the belt starts with the first game on record and passes to whoever beats the holder. Ties go to the holder. Scores come from public game records; see <a href="/rules/">the rules</a> for sources. Questions or corrections: <a href="mailto:{'hello@collegebasketballbelt.com' if lg.get('key') in ('cbb', 'women') else 'hello@beltholders.com'}">email us</a>.</p>
 </section>"""
     page(lg, f"{lg['name']} belt data: every reign and belt game (CSV)", body, "data/",
          f"Download every lineal {lg['name']} belt reign and belt game as CSV, plus the JSON API and feeds.")
@@ -2393,7 +2393,7 @@ def build_geo(lg, d):
 # ============================================================= group belts ==
 
 GROUP_HUB = {"mlb": ("leagues/", "The AL and NL belts", "league"), "nfl": ("conferences/", "The AFC and NFC belts", "conference"),
-             "cbb": ("conferences/", "Conference belts", "conference")}
+             "cbb": ("conferences/", "Conference belts", "conference"), "women": ("conferences/", "Conference belts", "conference")}
 
 
 def build_groups(lg, d):

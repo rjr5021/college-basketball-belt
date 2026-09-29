@@ -38,7 +38,8 @@ def conference_belts(games, upcoming, recent, today):
     return out
 
 
-def main(today=None):
+def main(today=None, D=D, key="cbb", out_path=os.path.join("data", "lineage.json")):
+    """Build one belt's lineage. D is the data module: cbb_data (men) or women_data."""
     today = today or date.today().isoformat()
     games, upcoming, names, teams, elig = D.load(today)
     inv = {v: k for k, v in names.items()}
@@ -67,7 +68,7 @@ def main(today=None):
         r["reign_no"] = counts[r["team"]]
         r["index"] = i + 1
         r["days"] = max(0, days_between(r["start_date"], r.get("end_date") or today))
-        r["season"] = season_at(r["start_date"]) if not r.get("seed") else 1949
+        r["season"] = season_at(r["start_date"]) if not r.get("seed") else D.SEED.get("season", 1949)
         r["name"] = names.get(r["team"], r["team"])
         if r.get("won_from"):
             r["won_from_name"] = names.get(r["won_from"], r["won_from"])
@@ -171,7 +172,7 @@ def main(today=None):
             by_month[int(bg["date"][5:7])] += 1
     months = [(m, by_month.get(m, 0)) for m in (11, 12, 1, 2, 3, 4)]
 
-    lgx = {"key": "cbb", "name": "College Basketball", "season_label": D.season_label,
+    lgx = {"key": key, "name": "College Basketball", "season_label": D.season_label,
            "team_name": lambda code, season=None: names.get(code, code)}
     if next_game:
         next_game["season"] = cur_season = max(g["season"] for g in upcoming if holder in (g["home"], g["away"]))
@@ -183,7 +184,17 @@ def main(today=None):
               "preview": X.preview(lgx, games, belt_games, reigns, next_game, today)}
 
     # models: Elo, chance to defend, belt tree, outlook, champions, Losers Belt
-    ratings, hfa = M.elo("cbb", games)
+    # Before FULL_FROM (the women's hand-built years) only the holder's games are in the data:
+    # the models that need every team's games start there.
+    full_from = getattr(D, "FULL_FROM", 0)
+    full = [g for g in games if g["season"] >= full_from]
+    full_start = start
+    if full_from and full:
+        r0 = next((r for r in reversed(reigns) if r["start_date"] <= full[0]["date"]), reigns[0])
+        full_start = {"team": r0["team"], "start_date": r0["start_date"], "won_from": r0.get("won_from"),
+                      "won_score": r0.get("won_score"), "defenses": 0, "last_game_date": r0["start_date"]}
+    full_bg = [bg for bg in belt_games if bg["date"] >= (full[0]["date"] if full else "")]
+    ratings, hfa = M.elo(key, full)
     fut = [g for g in upcoming if g["date"] >= today]
     reg = [g for g in fut if g.get("season_type", "regular") == "regular"]
     if extras["preview"] and next_game:
@@ -196,17 +207,17 @@ def main(today=None):
         "elo_rank": sorted(((t, round(v)) for t, v in ratings.items() if t in elig_recent), key=lambda x: -x[1]),
         "hfa": hfa, "tree": M.belt_tree(holder, fut, ratings, hfa, 4, today) if fut else None,
         "outlook": M.outlook(holder, reg, ratings, hfa, today=today) if reg else None,
-        "standings": M.standings(games, reigns),
+        "standings": M.standings(full, reigns),
         "champions": M.champions(ncaa, reigns),
         "schedule": [[g["date"], g["home"], g["away"], g.get("kickoff") or g.get("start_et"), g.get("season_type", "regular"),
                       round(M.win_prob(ratings, hfa, g["home"], g["away"], g.get("neutral"), holder=holder), 3)]
                      for g in fut if holder in (g["home"], g["away"])][:40],
         "meet": {t: [g["date"], g["home"]] for g in reversed(fut) if holder in (g["home"], g["away"])
                  for t in [g["away"] if g["home"] == holder else g["home"]]},
-        "what_if": M.what_if("cbb", games, belt_games, reigns, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS, start=start),
-        "groups": conference_belts(games, fut, recent, today),
-        "losers": M.losers("cbb", games, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS),
-        "polls": PL.compute(reigns, {s_: (min(g["date"] for g in games if g["season"] == s_),
+        "what_if": M.what_if(key, full, full_bg, reigns, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS, start=full_start),
+        "groups": conference_belts(full, fut, recent, today),
+        "losers": M.losers(key, full, "holder", recent, today, belt_engine.GAP_THRESHOLD_DAYS),
+        "polls": None if key != "cbb" else PL.compute(reigns, {s_: (min(g["date"] for g in games if g["season"] == s_),
                                            min((g["date"] for g in ncaa if g["season"] == s_), default=None)) for s_ in {g["season"] for g in games}}),
     }
     extras["models"] = models
@@ -229,8 +240,8 @@ def main(today=None):
         "last_season": last_done, "last_season_label": D.season_label(last_done), "months": months,
         "teams": team_info, "first_season": D.FIRST_SEASON, "seed": D.SEED, **extras,
     }
-    os.makedirs("data", exist_ok=True)
-    with open(os.path.join("data", "lineage.json"), "w") as f:
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    with open(out_path, "w") as f:
         json.dump(out, f, indent=1, default=str)
     print(f"{len(reigns)} reigns, {len(belt_games)} belt games, {len(vacancies)} vacancies; "
           f"holder {current['name']} since {current['start_date']}"
@@ -239,4 +250,9 @@ def main(today=None):
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    if "--women-only" not in sys.argv:
+        main()
+    if os.path.isdir(os.path.join("data", "women", "games")):
+        import women_data
+        main(D=women_data, key="women", out_path=os.path.join("data", "women", "lineage.json"))
