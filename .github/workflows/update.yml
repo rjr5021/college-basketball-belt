@@ -52,6 +52,10 @@ jobs:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
         run: python fetch_polls.py
         continue-on-error: true
+      - name: Fetch women's AP polls (ESPN, no key)
+        if: github.event_name != 'push'
+        run: python fetch_women_polls.py
+        continue-on-error: true
       - name: Commit data
         run: |
           git config user.name "github-actions[bot]"
