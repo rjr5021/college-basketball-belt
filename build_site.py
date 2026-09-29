@@ -741,15 +741,52 @@ def build_meta_files(d):
                                                  {"src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"}]}, indent=1))
 
 
+def _lastmods():
+    """URL -> date from both belts' data (games, reigns, seasons, teams), like beltholders.com."""
+    import cbb_league
+    out = {}
+    for pre, lg in (("", cbb_league.LEAGUE), ("/women", cbb_league.WOMEN)):
+        path = lg["lineage"]
+        if not os.path.exists(path):
+            continue
+        with open(path) as f:
+            d = json.load(f)
+        gen = d.get("generated") or date.today().isoformat()
+        out[f"{pre}/"] = gen
+        last_season, last_team = {}, {}
+        for bg in d["belt_games"]:
+            out[f"{pre}/games/{bg['n']}/"] = bg["date"]
+            last_season[bg["season"]] = bg["date"]
+            for t in (bg.get("holder"), bg["opponent"]):
+                if t:
+                    last_team[t] = bg["date"]
+        for sn, dt in last_season.items():
+            out[f"{pre}/seasons/{sn}/"] = dt
+        for r in d["reigns"]:
+            out[f"{pre}/reigns/{r['index']}/"] = r.get("end_date") or gen
+        cur = d["reigns"][-1]["team"] if d["reigns"] else None
+        names = {k: v.get("name", k) for k, v in d.get("teams", {}).items()}
+        for t, dt in last_team.items():
+            out[f"{pre}/teams/{slug(names.get(str(t), str(t)))}/"] = gen if t == cur else dt
+    return out
+
+
 def build_sitemap():
+    """Every indexable page (noindex pages stay out) with <lastmod> from the data (BH-1/CBB-4)."""
+    from xml.sax.saxutils import escape
+    lm = _lastmods()
     urls = []
     for root, _, files in os.walk(OUT):
         if "index.html" in files:
+            with open(os.path.join(root, "index.html"), encoding="utf-8") as f:
+                if 'name="robots" content="noindex' in f.read(4000):
+                    continue
             rel = os.path.relpath(root, OUT).replace(os.sep, "/")
             urls.append("/" if rel == "." else f"/{rel}/")
     urls.sort()
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-          + "".join(f"<url><loc>{SITE_URL}{u}</loc></url>" for u in urls) + "</urlset>")
+          + "".join(f"<url><loc>{escape(SITE_URL + u)}</loc>" + (f"<lastmod>{lm[u]}</lastmod>" if u in lm else "") + "</url>" for u in urls)
+          + "</urlset>")
     write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n")
     write("CNAME", DOMAIN + "\n")
     if ADSENSE_PUBLISHER_ID:
