@@ -951,7 +951,11 @@ def build_embed(leagues_datas):
 # ================================================================ live box ==
 
 ESPN = {"nfl": "football/nfl", "nba": "basketball/nba", "nhl": "hockey/nhl", "mlb": "baseball/mlb",
-        "cbb": "basketball/mens-college-basketball", "women": "basketball/womens-college-basketball"}
+        "cbb": "basketball/mens-college-basketball", "women": "basketball/womens-college-basketball",
+        # the leagues added in October 2026 (live score box on game day)
+        "wnba": "basketball/wnba", "mls": "soccer/usa.1", "nwsl": "soccer/usa.nwsl", "epl": "soccer/eng.1",
+        "laliga": "soccer/esp.1", "seriea": "soccer/ita.1", "bundesliga": "soccer/ger.1", "ligue1": "soccer/fra.1",
+        "eredivisie": "soccer/ned.1"}
 
 
 def live_box(lg, d):
