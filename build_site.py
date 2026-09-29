@@ -749,7 +749,10 @@ def build_api(d):
            "defenses": cur.get("defenses", 0), "team_reign_number": cur["reign_no"],
            "next_game": ({"team": cur["name"], "opponent": ng["challenger_name"], "is_home": ng["holder_home"],
                           "neutral": ng["neutral"], "date": ng["date"], "venue_name": ng.get("venue")} if ng else None),
-           "state": features.belt_state(LG, d)["state"], "generated_at": d["generated"], "site": SITE_URL + P}
+           "state": features.belt_state(LG, d)["state"], "generated_at": d["generated"], "site": SITE_URL + P,
+           # network field names (audit section 5.1), alongside the original ones
+           "reign_no": cur["reign_no"], "holder_short": cur["name"], "next": features.next_payload(LG, d, SITE_URL),
+           "reigns_url": f"{SITE_URL}{P}/api/reigns.json", "games_url": f"{SITE_URL}{P}/api/games.json"}
     write("api/current.json", json.dumps(out, indent=1))
 
 
@@ -760,7 +763,8 @@ def build_meta_files(d):
              f"- [Current holder and next defense]({SITE_URL}/)", f"- [Every reign]({SITE_URL}/history/)", f"- [Records]({SITE_URL}/records/)",
              f"- [March: the belt in the NCAA tournament]({SITE_URL}/march/)",
              f"- [The women's belt (since 1986-87)]({SITE_URL}/women/)", f"- [Data downloads (CSV)]({SITE_URL}/data/)", f"- [Rules]({SITE_URL}/rules/)",
-             f"- [JSON API]({SITE_URL}/api/current.json)", "- Sister sites: https://collegefootballbelt.com, https://beltholders.com"]
+             f"- [JSON API]({SITE_URL}/api/current.json)", f"- [Every reign (JSON)]({SITE_URL}/api/reigns.json)", f"- [Every belt game (JSON)]({SITE_URL}/api/games.json)",
+             "- [Every belt on all three sites (JSON)](https://beltholders.com/api/network.json)", "- Sister sites: https://collegefootballbelt.com, https://beltholders.com"]
     write("llms.txt", "\n".join(lines) + "\n")
     write("manifest.json", json.dumps({"name": "The College Basketball Belt", "short_name": "CBB Belt", "start_url": "/", "display": "standalone",
                                        "background_color": "#e7e2d5", "theme_color": "#211a12",

@@ -789,6 +789,7 @@ def build_all(datas):
         F.build_preview(lg, d)
         F.build_batch2(lg, d)
         F.build_tables(lg, d)
+        F.build_api_dumps(lg, d)
     F.build_embed([(lg, datas[lg["key"]]) for lg in LIVE])
     build_otd(datas)
     cards = build_stories(datas)

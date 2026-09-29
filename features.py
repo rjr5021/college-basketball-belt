@@ -112,6 +112,40 @@ def _belt_state(lg, d):
             "line": f"{name} {verb(lg, 'hold', 'holds')} the belt through the offseason. The next defense is {first}, once {they} schedule is out."}
 
 
+def next_payload(lg, d, site_url):
+    """The next belt game in the network's shape (api/current.json "next", api/network.json)."""
+    ng = d.get("next_game")
+    if not ng:
+        return None
+    ex, _ = _extra(lg)
+    espn = (ex or {}).get("espn") or {}
+    return {"date": ng["date"], "time_et": ng.get("kickoff") or ng.get("start_et"),
+            "opponent": lg["team_name"](ng["challenger"]), "opponent_short": lg["short_name"](ng["challenger"]),
+            "home": bool(ng["holder_home"]), "neutral": bool(ng.get("neutral")), "venue": ng.get("stadium") or ng.get("venue"),
+            "tv": espn.get("tv") if isinstance(espn.get("tv"), str) else None,
+            "win_prob": (d.get("preview") or {}).get("holder_win_prob"), "url": f"{site_url}{b(lg)}/next/"}
+
+
+def build_api_dumps(lg, d):
+    """CBB-7: api/reigns.json and api/games.json, the same two files the College Football Belt
+    publishes: every reign and every belt game, with team names, straight from the lineage."""
+    n = lg["team_name"]
+    gen = d.get("generated")
+    reigns = [{"index": r["index"], "team": r["team"], "name": r["name"], "reign_no": r.get("reign_no"),
+               "start_date": r["start_date"], "end_date": r.get("end_date"), "days": r.get("days"),
+               "defenses": r.get("defenses", 0), "won_from": r.get("won_from"),
+               "won_from_name": n(r["won_from"]) if r.get("won_from") else None, "opened_by": r.get("opened_by")}
+              for r in d["reigns"]]
+    games = [{"n": g["n"], "date": g["date"], "season": g["season"], "season_type": g.get("season_type"),
+              "holder": g.get("holder"), "holder_name": n(g["holder"], g["season"]) if g.get("holder") else None,
+              "opponent": g["opponent"], "opponent_name": n(g["opponent"], g["season"]), "home": g.get("home"),
+              "neutral": bool(g.get("neutral")), "score": g.get("score"), "outcome": g["outcome"],
+              "new_holder": g.get("new_holder"), "new_holder_name": n(g["new_holder"], g["season"]) if g.get("new_holder") else None,
+              "ot": bool(g.get("ot"))} for g in d["belt_games"]]
+    S.write(out(lg, "api/reigns.json"), json.dumps({"belt": lg["name"], "reigns": reigns, "generated_at": gen}, separators=(",", ":")))
+    S.write(out(lg, "api/games.json"), json.dumps({"belt": lg["name"], "belt_games": games, "generated_at": gen}, separators=(",", ":")))
+
+
 def belt_tag(lg):
     """How a short <title> names the belt: "Bundesliga belt"; single-sport sites set their own ("belt game")."""
     return lg.get("title_belt", f"{lg['name']} belt")
