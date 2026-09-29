@@ -179,7 +179,7 @@ def main(today=None, D=D, key="cbb", out_path=os.path.join("data", "lineage.json
         next_game["stadium"] = ", ".join(x for x in (next_game.get("venue"), next_game.get("city")) if x) or None
     X.annotate(lgx, games, belt_games, reigns)
     records.update(X.extra_records(lgx, belt_games, reigns, recent, today))
-    extras = {"seasons": X.seasons(lgx, games, belt_games, reigns, today),
+    extras = {"seasons": X.seasons(lgx, games, belt_games, reigns, today, upcoming),
               "rivalries": X.rivalries(lgx, belt_games),
               "preview": X.preview(lgx, games, belt_games, reigns, next_game, today)}
 

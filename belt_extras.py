@@ -71,8 +71,14 @@ def annotate(league, games, belt_games, reigns):
                 nr.setdefault("opened_by", bg["n"])
 
 
-def seasons(league, games, belt_games, reigns, today):
+def seasons(league, games, belt_games, reigns, today, upcoming=None):
+    """Season summaries. A season is in progress while games for it are still on the
+    schedule (upcoming), not just when a game happens to be dated today (BH-6);
+    `regular_open` says its regular season still has games to play."""
     label = league.get("season_label") or str
+    ahead = [u for u in (upcoming or []) if (u.get("date") or "") >= today]
+    up_seasons = {u.get("season") for u in ahead}
+    up_regular = {u.get("season") for u in ahead if (u.get("season_type") or "regular") == "regular"}
     out = []
     by_season = defaultdict(list)
     for bg in belt_games:
@@ -99,8 +105,9 @@ def seasons(league, games, belt_games, reigns, today):
             "games": len(bgs), "changes": len(changes), "postseason_changes": len(post),
             "holders": holders, "distinct_holders": len(set(holders)),
             "most_defenses": {"team": best[0], "defenses": best[1]},
-            "first_n": bgs[0]["n"], "last_n": bgs[-1]["n"], "in_progress": s == all_seasons[-1] and any(
-                g["season"] == s and g["date"] >= today for g in games),
+            "first_n": bgs[0]["n"], "last_n": bgs[-1]["n"],
+            "in_progress": s == all_seasons[-1] and (s in up_seasons or any(g["season"] == s and g["date"] >= today for g in games)),
+            "regular_open": s == all_seasons[-1] and s in up_regular,
         })
     return out
 

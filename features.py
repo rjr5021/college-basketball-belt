@@ -235,6 +235,8 @@ def build_outlook(lg, d):
 
 def build_champions(lg, d):
     rows_data = (d.get("models") or {}).get("champions") or []
+    live = {s["season"] for s in d.get("seasons", []) if s.get("in_progress")}
+    rows_data = [r for r in rows_data if r["season"] not in live]      # no champion until the season is over (BH-6)
     if not rows_data:
         return
     n = lg["team_name"]
@@ -1499,7 +1501,8 @@ def build_splits(lg, d):
 
 def build_standings(lg, d):
     st = (d.get("models") or {}).get("standings") or []
-    live = {s["season"] for s in d.get("seasons", []) if s.get("in_progress")}
+    # a season's regular season is complete once none of its regular-season games are left on the schedule (BH-6)
+    live = {s["season"] for s in d.get("seasons", []) if s.get("regular_open", s.get("in_progress"))}
     st = [x for x in st if x["season"] not in live]
     if not st:
         return
