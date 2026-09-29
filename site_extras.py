@@ -754,7 +754,7 @@ def build_challenger(lg, d, team):
 <section class="wrap block"><div class="two">
   <div><h2 class="disp sub">The closest calls</h2><table class="history"><thead><tr><th class="mono">Date</th><th class="mono">Game</th><th class="mono r">Margin</th></tr></thead><tbody>{close}</tbody></table></div>
   <div><h2 class="disp sub">Every belt game</h2><div class="tablewrap"><table class="history"><thead><tr><th class="mono">Belt game</th><th class="mono">Date</th><th class="mono">Result</th></tr></thead><tbody>{rows}</tbody></table></div></div>
-</div></section>"""
+</div></section>{S.school_box(name) if hasattr(S, "school_box") else ""}"""
     url = f"{base(lg)}/teams/{S.slug(name)}/"
     thin = len(games) < CHALLENGER_INDEX_MIN
     kw = {"robots": "noindex,follow"} if thin else {}

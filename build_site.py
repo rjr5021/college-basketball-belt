@@ -630,9 +630,81 @@ def build_team(d, tid, rs):
   </div>
 </section>
 <section class="wrap block"><div class="head"><h2 class="disp">Every reign</h2></div><ol class="chain">{rows}</ol></section>
+{school_box(name)}
 {team_extras_html(tid)}"""
     write(f"teams/{slug(name)}/index.html", page(f"{name} and the {SEC['short']}", body, path=team_url(tid), active="teams",
                                                   description=f"{name}: {plural(len(rs), 'reign')} with the lineal {SEC['who']} championship belt, {days:,} days held."))
+
+
+# ------------------------------------------------------- the school map --
+# Audit 5.3: one school, every belt. SCHOOLS maps a school name to its page on each belt:
+# the men's and women's pages here (holders and challengers) and the football page on
+# collegefootballbelt.com (from its search index). Published as /network/schools.json
+# for the other sites; each team page here gets a "Same school, other belts" box.
+SCHOOLS = {}
+HOLDERS = {}
+CFB_ALIASES = {"Miami": "Miami", "Ole Miss": "Ole Miss", "Pitt": "Pittsburgh", "UConn": "UConn", "Hawai'i": "Hawaii",
+               "San José State": "San Jose State", "App State": "Appalachian State", "UL Monroe": "Louisiana Monroe",
+               "Southern Miss": "Southern Mississippi", "UMass": "Massachusetts", "Sam Houston": "Sam Houston State"}
+
+
+def _fetch_json(url):
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "collegebasketballbelt.com build"}), timeout=10) as r:
+            return json.loads(r.read().decode("utf-8"))
+    except Exception:  # noqa: BLE001 -- the football site being down only drops the football links
+        return None
+
+
+def plan_schools(cbb_league):
+    import features
+    norm = lambda n: slug(CFB_ALIASES.get(n, n))
+    for key, lg, path, pre in (("cbb", cbb_league.LEAGUE, os.path.join("data", "lineage.json"), ""),
+                               ("wcbb", cbb_league.WOMEN, os.path.join("data", "women", "lineage.json"), "/women")):
+        if not os.path.exists(path):
+            continue
+        with open(path) as f:
+            d = json.load(f)
+        features.plan_game_pages(lg, d)
+        HOLDERS[key] = lg["team_name"](d["current"]["team"])
+        for code in features.TEAM_PAGES.get(lg["key"], ()):
+            nm = lg["team_name"](code)
+            SCHOOLS.setdefault(norm(nm), {"name": nm})[key] = f"{SITE_URL}{pre}/teams/{slug(nm)}/"
+    idx = _fetch_json("https://collegefootballbelt.com/search-index.json") or []
+    for x in idx:
+        if x.get("t") == "Team" and x.get("u", "").startswith("teams/"):
+            k = norm(x["n"])
+            if k in SCHOOLS:
+                SCHOOLS[k]["cfb"] = "https://collegefootballbelt.com/" + x["u"]
+    cur = _fetch_json("https://collegefootballbelt.com/api/current.json") or {}
+    if cur.get("holder"):
+        HOLDERS["cfb"] = cur["holder"]
+
+
+def school_box(name):
+    """Links to the same school's page on the other belts, with who holds each belt now."""
+    sch = SCHOOLS.get(slug(CFB_ALIASES.get(name, name)))
+    if not sch:
+        return ""
+    here = "wcbb" if P else "cbb"
+    labels = {"cfb": "Football belt", "cbb": "Men's basketball belt", "wcbb": "Women's basketball belt"}
+    items = []
+    for k in ("cfb", "cbb", "wcbb"):
+        if k == here or not sch.get(k):
+            continue
+        holds = HOLDERS.get(k) == sch["name"] or (k == "cfb" and slug(HOLDERS.get("cfb", "")) == slug(CFB_ALIASES.get(sch["name"], sch["name"])))
+        url = sch[k].replace(SITE_URL, "__ROOT__") if sch[k].startswith(SITE_URL) else sch[k]
+        now = ' <b class="tag chg">Holds it now</b>' if holds else ""
+        items.append(f'<li><a href="{url}">{labels[k]} →</a>{now}</li>')
+    if not items:
+        return ""
+    return (f'<section class="wrap block"><div class="head"><h2 class="disp sub">Same school, other belts</h2></div>'
+            f'<ul class="mono school-belts">{"".join(items)}</ul></section>')
+
+
+def build_schools():
+    write("network/schools.json", json.dumps({"schools": sorted(SCHOOLS.values(), key=lambda x: x["name"]),
+                                              "holders": HOLDERS, "about": "One school, every lineal belt: college football, men's and women's college basketball."}, indent=0))
 
 
 def team_extras_html(tid):
@@ -858,6 +930,7 @@ def main():
     if os.path.exists(OUT):
         shutil.rmtree(OUT)
     os.makedirs(OUT)
+    plan_schools(cbb_league)
     _section("", cbb_league.LEAGUE, MEN, os.path.join("data", "lineage.json"))
     build_belt()
     build_static(D)
@@ -868,6 +941,10 @@ def main():
         build_belt()
         build_women_rules(D)
     _section("", cbb_league.LEAGUE, MEN, os.path.join("data", "lineage.json"))
+    build_schools()
+    write("offline.html", page("You're offline", """<section class="wrap prose"><div class="kicker">Offline</div><h1 class="disp">No connection</h1>
+<p>You're offline, and this page isn't saved on this device yet. Pages you've already opened still work; the belt will be back when you are.</p>
+<p><a href="/">Back to the belt →</a></p></section>""", path="/offline.html", description="You're offline.", robots="noindex"))
     build_sitemap()
     for f in ("styles.css", "network-bar.js", "sw.js", "favicon.png", "favicon.ico", "apple-touch-icon.png", "icon-512.png", "og.png", "tablekit.js"):
         if os.path.exists(f):
