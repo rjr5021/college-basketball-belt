@@ -606,7 +606,7 @@ def build_daily(lg, d):
     if len(changes) > 400:
         modern = changes[len(changes) // 2:]
         old = changes[:len(changes) // 2]
-        pick = rng.sample(modern, 250) + rng.sample(old, 150)
+        pick = rng.sample(modern, min(250, len(modern))) + rng.sample(old, min(150, len(old)))
     else:
         pick = list(changes)
     rng.shuffle(pick)
