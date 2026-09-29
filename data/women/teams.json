@@ -1,0 +1,7647 @@
+[
+{
+"id": "-1",
+"mascot": "TBD",
+"school": "TBD"
+},
+{
+"id": "-2",
+"mascot": "TBD",
+"school": "TBD"
+},
+{
+"id": "1",
+"mascot": "Seawolves",
+"primaryColor": "000000",
+"school": "Alaska Anchorage",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2",
+"mascot": "Tigers",
+"primaryColor": "002b5c",
+"school": "Auburn",
+"secondaryColor": "f26522"
+},
+{
+"id": "3",
+"mascot": "Panthers",
+"primaryColor": "000000",
+"school": "Birmingham-Southern",
+"secondaryColor": "ffffff"
+},
+{
+"id": "5",
+"mascot": "Blazers",
+"primaryColor": "1a5632",
+"school": "UAB",
+"secondaryColor": "fdb913"
+},
+{
+"id": "6",
+"mascot": "Jaguars",
+"primaryColor": "00205b",
+"school": "South Alabama",
+"secondaryColor": "bf0d3e"
+},
+{
+"id": "8",
+"mascot": "Razorbacks",
+"primaryColor": "a32136",
+"school": "Arkansas",
+"secondaryColor": "ffffff"
+},
+{
+"id": "9",
+"mascot": "Sun Devils",
+"primaryColor": "ffc627",
+"school": "Arizona State",
+"secondaryColor": "8c1d40"
+},
+{
+"id": "11",
+"mascot": "Mavericks",
+"primaryColor": "000000",
+"school": "Mesa College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "12",
+"mascot": "Wildcats",
+"primaryColor": "cc0033",
+"school": "Arizona",
+"secondaryColor": "003366"
+},
+{
+"id": "13",
+"mascot": "Mustangs",
+"primaryColor": "1e4d2b",
+"school": "Cal Poly",
+"secondaryColor": "eed897"
+},
+{
+"id": "14",
+"mascot": "Wildcats",
+"primaryColor": "000000",
+"school": "Chico State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "16",
+"mascot": "Hornets",
+"primaryColor": "00573c",
+"school": "Sacramento State",
+"secondaryColor": "cdb97d"
+},
+{
+"id": "18",
+"mascot": "Bears",
+"primaryColor": "bf2f38",
+"school": "Bridgewater State",
+"secondaryColor": "000000"
+},
+{
+"id": "21",
+"mascot": "Aztecs",
+"primaryColor": "a6192e",
+"school": "San Diego State",
+"secondaryColor": "000000"
+},
+{
+"id": "22",
+"mascot": "Gators",
+"primaryColor": "000000",
+"school": "San Francisco State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "23",
+"mascot": "Spartans",
+"primaryColor": "0038a8",
+"school": "San Jos\u00e9 State",
+"secondaryColor": "ffb81a"
+},
+{
+"id": "24",
+"mascot": "Cardinal",
+"primaryColor": "8c1515",
+"school": "Stanford",
+"secondaryColor": "ffffff"
+},
+{
+"id": "25",
+"mascot": "Golden Bears",
+"primaryColor": "041e42",
+"school": "California",
+"secondaryColor": "ffc72c"
+},
+{
+"id": "26",
+"mascot": "Bruins",
+"primaryColor": "2774ae",
+"school": "UCLA",
+"secondaryColor": "f2a900"
+},
+{
+"id": "27",
+"mascot": "Highlanders",
+"primaryColor": "14234f",
+"school": "UC Riverside",
+"secondaryColor": "ffffff"
+},
+{
+"id": "28",
+"mascot": "Tritons",
+"primaryColor": "000000",
+"school": "UC San Diego",
+"secondaryColor": "ffcd00"
+},
+{
+"id": "30",
+"mascot": "Trojans",
+"primaryColor": "9d2235",
+"school": "USC",
+"secondaryColor": "ffc72c"
+},
+{
+"id": "33",
+"mascot": "Mules",
+"primaryColor": "012778",
+"school": "Colby",
+"secondaryColor": "ffffff"
+},
+{
+"id": "36",
+"mascot": "Rams",
+"primaryColor": "004c23",
+"school": "Colorado State",
+"secondaryColor": "c8c372"
+},
+{
+"id": "37",
+"mascot": "Clippers",
+"primaryColor": "000000",
+"school": "Concordia College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "38",
+"mascot": "Buffaloes",
+"primaryColor": "cfb87c",
+"school": "Colorado",
+"secondaryColor": "000000"
+},
+{
+"id": "39",
+"mascot": "Camels",
+"primaryColor": "000000",
+"school": "Connecticut College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "41",
+"mascot": "Huskies",
+"primaryColor": "0c2340",
+"school": "UConn",
+"secondaryColor": "a2aaad"
+},
+{
+"id": "42",
+"mascot": "Hawks",
+"primaryColor": "d60008",
+"school": "Hartford",
+"secondaryColor": "000000"
+},
+{
+"id": "43",
+"mascot": "Bulldogs",
+"primaryColor": "004a81",
+"school": "Yale",
+"secondaryColor": "286dc0"
+},
+{
+"id": "44",
+"mascot": "Eagles",
+"primaryColor": "c41130",
+"school": "American University",
+"secondaryColor": "c8102e"
+},
+{
+"id": "45",
+"mascot": "Revolutionaries",
+"primaryColor": "002843",
+"school": "George Washington",
+"secondaryColor": "e8d2a1"
+},
+{
+"id": "46",
+"mascot": "Hoyas",
+"primaryColor": "110e42",
+"school": "Georgetown",
+"secondaryColor": "001c58"
+},
+{
+"id": "47",
+"mascot": "Bison",
+"primaryColor": "003a63",
+"school": "Howard",
+"secondaryColor": "e51937"
+},
+{
+"id": "48",
+"mascot": "Blue Hens",
+"primaryColor": "00539f",
+"school": "Delaware",
+"secondaryColor": "ffd200"
+},
+{
+"id": "50",
+"mascot": "Rattlers",
+"primaryColor": "f89728",
+"school": "Florida A&M",
+"secondaryColor": "00843d"
+},
+{
+"id": "52",
+"mascot": "Seminoles",
+"primaryColor": "782f40",
+"school": "Florida State",
+"secondaryColor": "ceb888"
+},
+{
+"id": "53",
+"mascot": "Panthers",
+"primaryColor": "000000",
+"school": "Florida Tech",
+"secondaryColor": "ffffff"
+},
+{
+"id": "55",
+"mascot": "Gamecocks",
+"primaryColor": "cc0000",
+"school": "Jacksonville State",
+"secondaryColor": "000000"
+},
+{
+"id": "56",
+"mascot": "Hatters",
+"primaryColor": "0a5640",
+"school": "Stetson",
+"secondaryColor": "56854e"
+},
+{
+"id": "57",
+"mascot": "Gators",
+"primaryColor": "0021a5",
+"school": "Florida",
+"secondaryColor": "fa4616"
+},
+{
+"id": "58",
+"mascot": "Bulls",
+"primaryColor": "006747",
+"school": "South Florida",
+"secondaryColor": "cfc493"
+},
+{
+"id": "59",
+"mascot": "Yellow Jackets",
+"primaryColor": "b3a369",
+"school": "Georgia Tech",
+"secondaryColor": "ffffff"
+},
+{
+"id": "61",
+"mascot": "Lady Bulldogs",
+"primaryColor": "ba0c2f",
+"school": "Georgia",
+"secondaryColor": "2c2a29"
+},
+{
+"id": "62",
+"mascot": "Rainbow Warriors",
+"primaryColor": "005737",
+"school": "Hawai'i",
+"secondaryColor": "000000"
+},
+{
+"id": "63",
+"mascot": "Beavers",
+"primaryColor": "feba12",
+"school": "Buena Vista",
+"secondaryColor": "001440"
+},
+{
+"id": "66",
+"mascot": "Cyclones",
+"primaryColor": "ae192d",
+"school": "Iowa State",
+"secondaryColor": "ffc72a"
+},
+{
+"id": "68",
+"mascot": "Broncos",
+"primaryColor": "0033a0",
+"school": "Boise State",
+"secondaryColor": "d64309"
+},
+{
+"id": "70",
+"mascot": "Vandals",
+"primaryColor": "000000",
+"school": "Idaho",
+"secondaryColor": "8c6e4a"
+},
+{
+"id": "71",
+"mascot": "Braves",
+"primaryColor": "b70002",
+"school": "Bradley",
+"secondaryColor": "c0c0c0"
+},
+{
+"id": "73",
+"mascot": "Scarlet Hawks",
+"primaryColor": "000000",
+"school": "Illinois Tech",
+"secondaryColor": "ffffff"
+},
+{
+"id": "74",
+"mascot": "Big Blue",
+"primaryColor": "000000",
+"school": "Millikin",
+"secondaryColor": "ffffff"
+},
+{
+"id": "77",
+"mascot": "Wildcats",
+"primaryColor": "492f92",
+"school": "Northwestern",
+"secondaryColor": "ffffff"
+},
+{
+"id": "79",
+"mascot": "Salukis",
+"primaryColor": "85283d",
+"school": "Southern Illinois",
+"secondaryColor": "c2c3c0"
+},
+{
+"id": "82",
+"mascot": "Flames",
+"primaryColor": "001e62",
+"school": "UIC",
+"secondaryColor": "d50032"
+},
+{
+"id": "84",
+"mascot": "Hoosiers",
+"primaryColor": "970310",
+"school": "Indiana",
+"secondaryColor": "ffffff"
+},
+{
+"id": "85",
+"mascot": "Jaguars",
+"primaryColor": "a81f30",
+"school": "IU Indianapolis",
+"secondaryColor": "d59f0f"
+},
+{
+"id": "87",
+"mascot": "Fighting Irish",
+"primaryColor": "062340",
+"school": "Notre Dame",
+"secondaryColor": "c99700"
+},
+{
+"id": "88",
+"mascot": "Screaming Eagles",
+"primaryColor": "000000",
+"school": "Southern Indiana",
+"secondaryColor": "ffffff"
+},
+{
+"id": "90",
+"mascot": "Gorillas",
+"primaryColor": "000000",
+"school": "Pittsburg State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "91",
+"mascot": "Knights",
+"primaryColor": "000000",
+"school": "Bellarmine",
+"secondaryColor": "ffffff"
+},
+{
+"id": "93",
+"mascot": "Racers",
+"primaryColor": "002148",
+"school": "Murray State",
+"secondaryColor": "000e00"
+},
+{
+"id": "94",
+"mascot": "Norse",
+"primaryColor": "ffc82e",
+"school": "Northern Kentucky",
+"secondaryColor": "000000"
+},
+{
+"id": "95",
+"mascot": "Bears",
+"primaryColor": "000000",
+"school": "Pikeville",
+"secondaryColor": "ffffff"
+},
+{
+"id": "96",
+"mascot": "Wildcats",
+"primaryColor": "0033a0",
+"school": "Kentucky",
+"secondaryColor": "ffffff"
+},
+{
+"id": "97",
+"mascot": "Cardinals",
+"primaryColor": "c9001f",
+"school": "Louisville",
+"secondaryColor": "ffffff"
+},
+{
+"id": "98",
+"mascot": "Lady Toppers",
+"primaryColor": "e13a3e",
+"school": "Western Kentucky",
+"secondaryColor": "ffffff"
+},
+{
+"id": "99",
+"mascot": "Tigers",
+"primaryColor": "461d76",
+"school": "LSU",
+"secondaryColor": "fdd023"
+},
+{
+"id": "100",
+"mascot": "Wolfpack",
+"primaryColor": "000000",
+"school": "Loyola New Orleans",
+"secondaryColor": "ffffff"
+},
+{
+"id": "101",
+"mascot": "Red Devils",
+"primaryColor": "960a2c",
+"school": "Eureka",
+"secondaryColor": "c09a05"
+},
+{
+"id": "103",
+"mascot": "Eagles",
+"primaryColor": "8c2232",
+"school": "Boston College",
+"secondaryColor": "dbcca6"
+},
+{
+"id": "104",
+"mascot": "Terriers",
+"primaryColor": "cc0000",
+"school": "Boston University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "107",
+"mascot": "Crusaders",
+"primaryColor": "582c83",
+"school": "Holy Cross",
+"secondaryColor": "ffffff"
+},
+{
+"id": "108",
+"mascot": "Crimson",
+"primaryColor": "990000",
+"school": "Harvard",
+"secondaryColor": "dbdbdb"
+},
+{
+"id": "109",
+"mascot": "Engineers",
+"primaryColor": "000000",
+"school": "MIT",
+"secondaryColor": "ffffff"
+},
+{
+"id": "111",
+"mascot": "Huskies",
+"primaryColor": "cc0001",
+"school": "Northeastern",
+"secondaryColor": "c2c3c0"
+},
+{
+"id": "113",
+"mascot": "Minutewomen",
+"primaryColor": "881c1c",
+"school": "Massachusetts",
+"secondaryColor": "ffffff"
+},
+{
+"id": "116",
+"mascot": "Mountaineers",
+"primaryColor": "005596",
+"school": "Mount St. Mary's",
+"secondaryColor": "ebebeb"
+},
+{
+"id": "117",
+"mascot": "Seahawks",
+"primaryColor": "000000",
+"school": "St. Mary's (MD)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "118",
+"mascot": "Blue Jays",
+"primaryColor": "000000",
+"school": "Johns Hopkins University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "119",
+"mascot": "Tigers",
+"primaryColor": "ffc229",
+"school": "Towson",
+"secondaryColor": "ffffff"
+},
+{
+"id": "120",
+"mascot": "Terrapins",
+"primaryColor": "ce1126",
+"school": "Maryland",
+"secondaryColor": "ffffff"
+},
+{
+"id": "123",
+"mascot": "Saints",
+"primaryColor": "000000",
+"school": "Aquinas",
+"secondaryColor": "ffffff"
+},
+{
+"id": "125",
+"mascot": "Lakers",
+"primaryColor": "000000",
+"school": "Grand Valley State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "126",
+"mascot": "Hornets",
+"primaryColor": "000000",
+"school": "Kalamazoo",
+"secondaryColor": "ffffff"
+},
+{
+"id": "127",
+"mascot": "Spartans",
+"primaryColor": "173f35",
+"school": "Michigan State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "128",
+"mascot": "Wildcats",
+"primaryColor": "000000",
+"school": "Northern Michigan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "129",
+"mascot": "Cardinals",
+"primaryColor": "000000",
+"school": "Saginaw Valley State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "130",
+"mascot": "Wolverines",
+"primaryColor": "00274c",
+"school": "Michigan",
+"secondaryColor": "ffcb05"
+},
+{
+"id": "131",
+"mascot": "Warriors",
+"primaryColor": "000000",
+"school": "Wayne State (MI)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "132",
+"mascot": "Beavers",
+"primaryColor": "000000",
+"school": "Bemidji State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "134",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Minnesota Duluth",
+"secondaryColor": "ffffff"
+},
+{
+"id": "135",
+"mascot": "Golden Gophers",
+"primaryColor": "5e0a2f",
+"school": "Minnesota",
+"secondaryColor": "fab41c"
+},
+{
+"id": "136",
+"mascot": "Vikings",
+"primaryColor": "000000",
+"school": "Missouri Valley",
+"secondaryColor": "ffffff"
+},
+{
+"id": "137",
+"mascot": "Griffons",
+"primaryColor": "000000",
+"school": "Missouri Western State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "138",
+"mascot": "Bearcats",
+"primaryColor": "000000",
+"school": "NW Missouri State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "139",
+"mascot": "Billikens",
+"primaryColor": "00539c",
+"school": "Saint Louis",
+"secondaryColor": "ebebeb"
+},
+{
+"id": "140",
+"mascot": "Roos",
+"primaryColor": "004b87",
+"school": "Kansas City",
+"secondaryColor": "ffc72c"
+},
+{
+"id": "141",
+"mascot": "Rivermen",
+"primaryColor": "000000",
+"school": "Missouri-St. Louis",
+"secondaryColor": "ffffff"
+},
+{
+"id": "142",
+"mascot": "Tigers",
+"primaryColor": "f1b82d",
+"school": "Missouri",
+"secondaryColor": "000000"
+},
+{
+"id": "144",
+"mascot": "Ravens",
+"school": "Franklin Pierce"
+},
+{
+"id": "145",
+"mascot": "Rebels",
+"primaryColor": "13294b",
+"school": "Ole Miss",
+"secondaryColor": "cf142b"
+},
+{
+"id": "147",
+"mascot": "Bobcats",
+"primaryColor": "00205c",
+"school": "Montana State",
+"secondaryColor": "bc955c"
+},
+{
+"id": "148",
+"mascot": "Orediggers",
+"primaryColor": "000000",
+"school": "Montana Tech",
+"secondaryColor": "ffffff"
+},
+{
+"id": "149",
+"mascot": "Lady Griz",
+"primaryColor": "751d4a",
+"school": "Montana",
+"secondaryColor": "666666"
+},
+{
+"id": "150",
+"mascot": "Blue Devils",
+"primaryColor": "00539b",
+"school": "Duke",
+"secondaryColor": "ffffff"
+},
+{
+"id": "151",
+"mascot": "Pirates",
+"primaryColor": "582c83",
+"school": "East Carolina",
+"secondaryColor": "ffc72c"
+},
+{
+"id": "152",
+"mascot": "Wolfpack",
+"primaryColor": "cc0000",
+"school": "NC State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "153",
+"mascot": "Tar Heels",
+"primaryColor": "7bafd4",
+"school": "North Carolina",
+"secondaryColor": "13294b"
+},
+{
+"id": "154",
+"mascot": "Demon Deacons",
+"primaryColor": "ceb888",
+"school": "Wake Forest",
+"secondaryColor": "2c2a29"
+},
+{
+"id": "155",
+"mascot": "Fighting Hawks",
+"primaryColor": "00a26b",
+"school": "North Dakota",
+"secondaryColor": "c2c3c0"
+},
+{
+"id": "156",
+"mascot": "Bluejays",
+"primaryColor": "005ca9",
+"school": "Creighton",
+"secondaryColor": "6cadde"
+},
+{
+"id": "157",
+"mascot": "PrairieWolves",
+"primaryColor": "aa985d",
+"school": "Nebraska Wesleyan",
+"secondaryColor": "000000"
+},
+{
+"id": "158",
+"mascot": "Cornhuskers",
+"primaryColor": "e31937",
+"school": "Nebraska",
+"secondaryColor": "ffffff"
+},
+{
+"id": "159",
+"mascot": "Big Green",
+"primaryColor": "005730",
+"school": "Dartmouth",
+"secondaryColor": "000000"
+},
+{
+"id": "160",
+"mascot": "Wildcats",
+"primaryColor": "004990",
+"school": "New Hampshire",
+"secondaryColor": "c3c4c6"
+},
+{
+"id": "161",
+"mascot": "Knights",
+"primaryColor": "72293c",
+"school": "Fairleigh Dickinson",
+"secondaryColor": "28334a"
+},
+{
+"id": "163",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Princeton",
+"secondaryColor": "ff6000"
+},
+{
+"id": "164",
+"mascot": "Scarlet Knights",
+"primaryColor": "ce0e2d",
+"school": "Rutgers",
+"secondaryColor": "ffffff"
+},
+{
+"id": "166",
+"mascot": "Aggies",
+"primaryColor": "7e141b",
+"school": "New Mexico State",
+"secondaryColor": "231f20"
+},
+{
+"id": "167",
+"mascot": "Lobos",
+"primaryColor": "ba0c2f",
+"school": "New Mexico",
+"secondaryColor": "a7a8aa"
+},
+{
+"id": "171",
+"mascot": "Lions",
+"primaryColor": "7ba4db",
+"school": "Columbia",
+"secondaryColor": "183863"
+},
+{
+"id": "172",
+"mascot": "Big Red",
+"primaryColor": "b31b1b",
+"school": "Cornell",
+"secondaryColor": "ffffff"
+},
+{
+"id": "175",
+"mascot": "Bombers",
+"primaryColor": "000000",
+"school": "Ithaca",
+"secondaryColor": "ffffff"
+},
+{
+"id": "179",
+"mascot": "Bonnies",
+"primaryColor": "70261d",
+"school": "St. Bonaventure",
+"secondaryColor": "ffffff"
+},
+{
+"id": "183",
+"mascot": "Orange",
+"primaryColor": "000e54",
+"school": "Syracuse",
+"secondaryColor": "ff431b"
+},
+{
+"id": "184",
+"mascot": "Yellow Jackets",
+"primaryColor": "000000",
+"school": "Rochester",
+"secondaryColor": "ffffff"
+},
+{
+"id": "189",
+"mascot": "Falcons",
+"primaryColor": "fd5000",
+"school": "Bowling Green",
+"secondaryColor": "4f2c1d"
+},
+{
+"id": "190",
+"mascot": "Yellow Jackets",
+"primaryColor": "4e2d8a",
+"school": "Defiance",
+"secondaryColor": "ded27c"
+},
+{
+"id": "191",
+"mascot": "Student Princes",
+"primaryColor": "000000",
+"school": "Heidelberg",
+"secondaryColor": "ffffff"
+},
+{
+"id": "193",
+"mascot": "RedHawks",
+"primaryColor": "c41230",
+"school": "Miami (OH)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "194",
+"mascot": "Buckeyes",
+"primaryColor": "ba0c2f",
+"school": "Ohio State",
+"secondaryColor": "a8adb4"
+},
+{
+"id": "195",
+"mascot": "Bobcats",
+"primaryColor": "154734",
+"school": "Ohio",
+"secondaryColor": "ffffff"
+},
+{
+"id": "196",
+"mascot": "RiverHawks",
+"primaryColor": "000000",
+"school": "Northeastern State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "197",
+"mascot": "Cowgirls",
+"primaryColor": "fe5c00",
+"school": "Oklahoma State",
+"secondaryColor": "000000"
+},
+{
+"id": "198",
+"mascot": "Golden Eagles",
+"primaryColor": "002462",
+"school": "Oral Roberts",
+"secondaryColor": "dac792"
+},
+{
+"id": "201",
+"mascot": "Sooners",
+"primaryColor": "990000",
+"school": "Oklahoma",
+"secondaryColor": "ffffff"
+},
+{
+"id": "202",
+"mascot": "Golden Hurricane",
+"primaryColor": "003595",
+"school": "Tulsa",
+"secondaryColor": "d0b787"
+},
+{
+"id": "204",
+"mascot": "Beavers",
+"primaryColor": "dc4405",
+"school": "Oregon State",
+"secondaryColor": "000000"
+},
+{
+"id": "209",
+"mascot": "Bald Eagles",
+"primaryColor": "000000",
+"school": "Lock Haven",
+"secondaryColor": "ffffff"
+},
+{
+"id": "210",
+"mascot": "Marauders",
+"primaryColor": "000000",
+"school": "Millersville",
+"secondaryColor": "ffffff"
+},
+{
+"id": "213",
+"mascot": "Lady Lions",
+"primaryColor": "061440",
+"school": "Penn State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "214",
+"mascot": "Pioneers",
+"primaryColor": "000000",
+"school": "Point Park",
+"secondaryColor": "ffffff"
+},
+{
+"id": "215",
+"mascot": "The Rock",
+"primaryColor": "000000",
+"school": "Slippery Rock",
+"secondaryColor": "ffffff"
+},
+{
+"id": "216",
+"mascot": "River Hawks",
+"primaryColor": "6b1a31",
+"school": "Susquehanna",
+"secondaryColor": "fd6b0d"
+},
+{
+"id": "218",
+"mascot": "Owls",
+"primaryColor": "a41e35",
+"school": "Temple",
+"secondaryColor": "ffffff"
+},
+{
+"id": "219",
+"mascot": "Quakers",
+"primaryColor": "082a74",
+"school": "Pennsylvania",
+"secondaryColor": "a6163d"
+},
+{
+"id": "221",
+"mascot": "Panthers",
+"primaryColor": "003594",
+"school": "Pittsburgh",
+"secondaryColor": "ffb81c"
+},
+{
+"id": "222",
+"mascot": "Wildcats",
+"primaryColor": "00205b",
+"school": "Villanova",
+"secondaryColor": "13b5ea"
+},
+{
+"id": "223",
+"mascot": "Golden Rams",
+"primaryColor": "000000",
+"school": "West Chester",
+"secondaryColor": "ffffff"
+},
+{
+"id": "224",
+"mascot": "Griffins",
+"primaryColor": "000000",
+"school": "Westminster (UT)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "225",
+"mascot": "Bears",
+"primaryColor": "411e09",
+"school": "Brown",
+"secondaryColor": "949300"
+},
+{
+"id": "226",
+"mascot": "Anchormen",
+"primaryColor": "000000",
+"school": "Rhode Island College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "227",
+"mascot": "Rams",
+"primaryColor": "091f3f",
+"school": "Rhode Island",
+"secondaryColor": "5ab3e8"
+},
+{
+"id": "228",
+"mascot": "Tigers",
+"primaryColor": "f56600",
+"school": "Clemson",
+"secondaryColor": "ffffff"
+},
+{
+"id": "229",
+"mascot": "Cobras",
+"primaryColor": "000000",
+"school": "Coker",
+"secondaryColor": "ffffff"
+},
+{
+"id": "230",
+"mascot": "Patriots",
+"primaryColor": "000000",
+"school": "Francis Marion",
+"secondaryColor": "ffffff"
+},
+{
+"id": "231",
+"mascot": "Paladins",
+"primaryColor": "582c83",
+"school": "Furman",
+"secondaryColor": "ffffff"
+},
+{
+"id": "232",
+"mascot": "Cougars",
+"primaryColor": "7a2531",
+"school": "Charleston",
+"secondaryColor": "9e8959"
+},
+{
+"id": "233",
+"mascot": "Coyotes",
+"primaryColor": "cd1241",
+"school": "South Dakota",
+"secondaryColor": "f0f0f0"
+},
+{
+"id": "235",
+"mascot": "Tigers",
+"primaryColor": "004991",
+"school": "Memphis",
+"secondaryColor": "8e908f"
+},
+{
+"id": "236",
+"mascot": "Mocs",
+"primaryColor": "00386b",
+"school": "Chattanooga",
+"secondaryColor": "dca71d"
+},
+{
+"id": "237",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Union (TN)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "238",
+"mascot": "Commodores",
+"primaryColor": "000000",
+"school": "Vanderbilt",
+"secondaryColor": "cfae70"
+},
+{
+"id": "239",
+"mascot": "Bears",
+"primaryColor": "154734",
+"school": "Baylor",
+"secondaryColor": "ffb81c"
+},
+{
+"id": "241",
+"mascot": "War Hawks",
+"primaryColor": "98002e",
+"school": "McMurry",
+"secondaryColor": "000000"
+},
+{
+"id": "242",
+"mascot": "Owls",
+"primaryColor": "00205b",
+"school": "Rice",
+"secondaryColor": "c1c6c8"
+},
+{
+"id": "244",
+"mascot": "Hilltoppers",
+"primaryColor": "000000",
+"school": "St. Edward's",
+"secondaryColor": "ffffff"
+},
+{
+"id": "245",
+"mascot": "Aggies",
+"primaryColor": "500000",
+"school": "Texas A&M",
+"secondaryColor": "ffffff"
+},
+{
+"id": "247",
+"mascot": "Monarchs",
+"primaryColor": "c41230",
+"school": "King's",
+"secondaryColor": "000000"
+},
+{
+"id": "248",
+"mascot": "Cougars",
+"primaryColor": "c8102e",
+"school": "Houston",
+"secondaryColor": "ffffff"
+},
+{
+"id": "249",
+"mascot": "Mean Green",
+"primaryColor": "068f33",
+"school": "North Texas",
+"secondaryColor": "ffffff"
+},
+{
+"id": "250",
+"mascot": "Mavericks",
+"primaryColor": "004b7c",
+"school": "UT Arlington",
+"secondaryColor": "f58024"
+},
+{
+"id": "251",
+"mascot": "Longhorns",
+"primaryColor": "af5c37",
+"school": "Texas",
+"secondaryColor": "ffffff"
+},
+{
+"id": "252",
+"mascot": "Cougars",
+"primaryColor": "0047ba",
+"school": "BYU",
+"secondaryColor": "002e5d"
+},
+{
+"id": "253",
+"mascot": "Thunderbirds",
+"primaryColor": "c72026",
+"school": "Southern Utah",
+"secondaryColor": "000000"
+},
+{
+"id": "254",
+"mascot": "Utes",
+"primaryColor": "be0000",
+"school": "Utah",
+"secondaryColor": "ffffff"
+},
+{
+"id": "255",
+"mascot": "Prairie Fire",
+"primaryColor": "000000",
+"school": "Knox",
+"secondaryColor": "ffffff"
+},
+{
+"id": "256",
+"mascot": "Dukes",
+"primaryColor": "450084",
+"school": "James Madison",
+"secondaryColor": "cbb677"
+},
+{
+"id": "257",
+"mascot": "Spiders",
+"primaryColor": "9e0712",
+"school": "Richmond",
+"secondaryColor": "b90b2e"
+},
+{
+"id": "258",
+"mascot": "Cavaliers",
+"primaryColor": "232d4b",
+"school": "Virginia",
+"secondaryColor": "f84c1e"
+},
+{
+"id": "259",
+"mascot": "Hokies",
+"primaryColor": "6a2c3e",
+"school": "Virginia Tech",
+"secondaryColor": "cf4520"
+},
+{
+"id": "260",
+"mascot": "Purple Knights",
+"primaryColor": "000000",
+"school": "Saint Michael's",
+"secondaryColor": "ffffff"
+},
+{
+"id": "261",
+"mascot": "Catamounts",
+"primaryColor": "154734",
+"school": "Vermont",
+"secondaryColor": "ffc72c"
+},
+{
+"id": "262",
+"mascot": "Foresters",
+"primaryColor": "000000",
+"school": "Lake Forest College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "264",
+"mascot": "Huskies",
+"primaryColor": "33006f",
+"school": "Washington",
+"secondaryColor": "e8d3a2"
+},
+{
+"id": "265",
+"mascot": "Cougars",
+"primaryColor": "a60f2d",
+"school": "Washington State",
+"secondaryColor": "4d4d4d"
+},
+{
+"id": "269",
+"mascot": "Golden Eagles",
+"primaryColor": "003366",
+"school": "Marquette",
+"secondaryColor": "ffcc00"
+},
+{
+"id": "270",
+"mascot": "Panthers",
+"primaryColor": "000000",
+"school": "Milwaukee",
+"secondaryColor": "ffc20e"
+},
+{
+"id": "273",
+"mascot": "Highlanders",
+"primaryColor": "000000",
+"school": "MacMurray College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "274",
+"mascot": "Mariners",
+"primaryColor": "000000",
+"school": "Maine Maritime Acade",
+"secondaryColor": "ffffff"
+},
+{
+"id": "275",
+"mascot": "Badgers",
+"primaryColor": "a00000",
+"school": "Wisconsin",
+"secondaryColor": "ffffff"
+},
+{
+"id": "276",
+"mascot": "Thundering Herd",
+"primaryColor": "00b140",
+"school": "Marshall",
+"secondaryColor": "000000"
+},
+{
+"id": "277",
+"mascot": "Mountaineers",
+"primaryColor": "eaaa00",
+"school": "West Virginia",
+"secondaryColor": "002855"
+},
+{
+"id": "278",
+"mascot": "Bulldogs",
+"primaryColor": "b1102b",
+"school": "Fresno State",
+"secondaryColor": "13284c"
+},
+{
+"id": "279",
+"mascot": "Tigers",
+"primaryColor": "f47820",
+"school": "Pacific",
+"secondaryColor": "c2c3c0"
+},
+{
+"id": "282",
+"mascot": "Sycamores",
+"primaryColor": "00669a",
+"school": "Indiana State",
+"secondaryColor": "f0f0f0"
+},
+{
+"id": "284",
+"mascot": "Skyhawks",
+"primaryColor": "000000",
+"school": "Stonehill",
+"secondaryColor": "ffffff"
+},
+{
+"id": "286",
+"mascot": "Battling Bishops",
+"primaryColor": "000000",
+"school": "North Carolina Wesleyan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "288",
+"mascot": "Bisons",
+"primaryColor": "20366c",
+"school": "Lipscomb",
+"secondaryColor": "f6b734"
+},
+{
+"id": "289",
+"mascot": "Knights",
+"primaryColor": "000000",
+"school": "Mount Saint Mary (NY)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "290",
+"mascot": "Eagles",
+"primaryColor": "041e42",
+"school": "Georgia Southern",
+"secondaryColor": "a3aaae"
+},
+{
+"id": "292",
+"mascot": "Vaqueros",
+"primaryColor": "dc6000",
+"school": "UT Rio Grande Valley",
+"secondaryColor": "e1732d"
+},
+{
+"id": "294",
+"mascot": "Dolphins",
+"primaryColor": "00523e",
+"school": "Jacksonville",
+"secondaryColor": "ffffff"
+},
+{
+"id": "295",
+"mascot": "Monarchs",
+"primaryColor": "003768",
+"school": "Old Dominion",
+"secondaryColor": "a1d2f1"
+},
+{
+"id": "298",
+"mascot": "Nanooks",
+"primaryColor": "000000",
+"school": "Alaska",
+"secondaryColor": "ffffff"
+},
+{
+"id": "299",
+"mascot": "Beach",
+"primaryColor": "000000",
+"school": "Long Beach State",
+"secondaryColor": "f1f2f3"
+},
+{
+"id": "300",
+"mascot": "Anteaters",
+"primaryColor": "002b5c",
+"school": "UC Irvine",
+"secondaryColor": "fec52e"
+},
+{
+"id": "301",
+"mascot": "Toreros",
+"primaryColor": "2f99d4",
+"school": "San Diego",
+"secondaryColor": "2f99d4"
+},
+{
+"id": "302",
+"mascot": "Aggies",
+"primaryColor": "002855",
+"school": "UC Davis",
+"secondaryColor": "c3c4c6"
+},
+{
+"id": "304",
+"mascot": "Bengals",
+"primaryColor": "ef8c00",
+"school": "Idaho State",
+"secondaryColor": "e9a126"
+},
+{
+"id": "305",
+"mascot": "Blue Demons",
+"primaryColor": "2d649c",
+"school": "DePaul",
+"secondaryColor": "ce1125"
+},
+{
+"id": "309",
+"mascot": "Ragin' Cajuns",
+"primaryColor": "ce181e",
+"school": "Louisiana",
+"secondaryColor": "000000"
+},
+{
+"id": "310",
+"mascot": "Saints",
+"school": "Maryville University"
+},
+{
+"id": "311",
+"mascot": "Black Bears",
+"primaryColor": "127dbe",
+"school": "Maine",
+"secondaryColor": "ffffff"
+},
+{
+"id": "313",
+"mascot": "Owls",
+"primaryColor": "000000",
+"school": "Keene State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "314",
+"mascot": "Gaels",
+"primaryColor": "6f2c3e",
+"school": "Iona",
+"secondaryColor": "f0ab00"
+},
+{
+"id": "315",
+"mascot": "Purple Eagles",
+"primaryColor": "69207e",
+"school": "Niagara",
+"secondaryColor": "f0f0f0"
+},
+{
+"id": "316",
+"mascot": "Blue Hawks",
+"primaryColor": "000000",
+"school": "Dickinson State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "322",
+"mascot": "Leopards",
+"primaryColor": "790000",
+"school": "Lafayette",
+"secondaryColor": "a59474"
+},
+{
+"id": "324",
+"mascot": "Chanticleers",
+"primaryColor": "006f71",
+"school": "Coastal Carolina",
+"secondaryColor": "a27752"
+},
+{
+"id": "325",
+"mascot": "Vikings",
+"primaryColor": "006633",
+"school": "Cleveland State",
+"secondaryColor": "231f20"
+},
+{
+"id": "326",
+"mascot": "Bobcats",
+"primaryColor": "501214",
+"school": "Texas State",
+"secondaryColor": "6a5638"
+},
+{
+"id": "328",
+"mascot": "Aggies",
+"primaryColor": "0f2439",
+"school": "Utah State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "330",
+"mascot": "Trojans",
+"primaryColor": "000000",
+"school": "Virginia St",
+"secondaryColor": "ffffff"
+},
+{
+"id": "331",
+"mascot": "Eagles",
+"primaryColor": "a10022",
+"school": "Eastern Washington",
+"secondaryColor": "abb4bc"
+},
+{
+"id": "332",
+"mascot": "Muskies",
+"primaryColor": "000000",
+"school": "Muskingum",
+"secondaryColor": "ffffff"
+},
+{
+"id": "333",
+"mascot": "Crimson Tide",
+"primaryColor": "9e1b32",
+"school": "Alabama",
+"secondaryColor": "ffffff"
+},
+{
+"id": "338",
+"mascot": "Owls",
+"primaryColor": "fdbb30",
+"school": "Kennesaw State",
+"secondaryColor": "0b1315"
+},
+{
+"id": "339",
+"mascot": "Purple Aces",
+"primaryColor": "663399",
+"school": "Evansville",
+"secondaryColor": "ef6f00"
+},
+{
+"id": "344",
+"mascot": "Bulldogs",
+"primaryColor": "5d1725",
+"school": "Mississippi State",
+"secondaryColor": "c1c6c8"
+},
+{
+"id": "349",
+"mascot": "Black Knights",
+"primaryColor": "000000",
+"school": "Army",
+"secondaryColor": "d3bc8d"
+},
+{
+"id": "350",
+"mascot": "Seahawks",
+"primaryColor": "00665e",
+"school": "UNC Wilmington",
+"secondaryColor": "ffda00"
+},
+{
+"id": "351",
+"mascot": "Bulldogs",
+"primaryColor": "182441",
+"school": "Wingate",
+"secondaryColor": "c1b585"
+},
+{
+"id": "353",
+"mascot": "Griffins",
+"primaryColor": "000000",
+"school": "Johnson and Wales",
+"secondaryColor": "ffffff"
+},
+{
+"id": "354",
+"mascot": "Comets",
+"primaryColor": "000000",
+"school": "Olivet College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "356",
+"mascot": "Fighting Illini",
+"primaryColor": "ff5f05",
+"school": "Illinois",
+"secondaryColor": "13294b"
+},
+{
+"id": "357",
+"mascot": "Islanders",
+"primaryColor": "0067c5",
+"school": "Texas A&M-Corpus Christi",
+"secondaryColor": "007f3e"
+},
+{
+"id": "359",
+"mascot": "Cardinals",
+"primaryColor": "000000",
+"school": "Otterbein",
+"secondaryColor": "ffffff"
+},
+{
+"id": "366",
+"mascot": "Panthers",
+"primaryColor": "000000",
+"school": "Ferrum",
+"secondaryColor": "c0a656"
+},
+{
+"id": "368",
+"mascot": "Pride",
+"primaryColor": "000000",
+"school": "Purdue Northwest",
+"secondaryColor": "ffffff"
+},
+{
+"id": "371",
+"mascot": "Scarlet Raiders",
+"primaryColor": "000000",
+"school": "Rutgers-Newark",
+"secondaryColor": "ffffff"
+},
+{
+"id": "380",
+"mascot": "Trojans",
+"primaryColor": "000000",
+"school": "Anderson (SC)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "381",
+"mascot": "Pirates ",
+"primaryColor": "000000",
+"school": "Armstrong Atl St",
+"secondaryColor": "ffffff"
+},
+{
+"id": "386",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Trinity (TX)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "387",
+"mascot": "Grenadiers",
+"primaryColor": "000000",
+"school": "IU Southeast",
+"secondaryColor": "ffffff"
+},
+{
+"id": "388",
+"mascot": "Flying Dutchmen",
+"primaryColor": "003767",
+"school": "Lebanon Valley",
+"secondaryColor": "ffffff"
+},
+{
+"id": "389",
+"mascot": "Peacocks",
+"primaryColor": "000000",
+"school": "Upper Iowa University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "391",
+"mascot": "Yeomen",
+"primaryColor": "000000",
+"school": "Oberlin College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "395",
+"mascot": "Falcons",
+"primaryColor": "000000",
+"school": "Saint Augustine's",
+"secondaryColor": "ffffff"
+},
+{
+"id": "399",
+"mascot": "Great Danes",
+"primaryColor": "3d2777",
+"school": "UAlbany",
+"secondaryColor": "ffffff"
+},
+{
+"id": "402",
+"mascot": "Lancers",
+"primaryColor": "004b8e",
+"school": "Worcester State",
+"secondaryColor": "ffc629"
+},
+{
+"id": "408",
+"mascot": "Shock",
+"primaryColor": "000000",
+"school": "Washington Adventist",
+"secondaryColor": "ffffff"
+},
+{
+"id": "411",
+"mascot": "Panthers",
+"primaryColor": "ab1d38",
+"school": "Chapman",
+"secondaryColor": "000000"
+},
+{
+"id": "415",
+"mascot": "Bruins",
+"primaryColor": "002d62",
+"school": "George Fox University",
+"secondaryColor": "c2a303"
+},
+{
+"id": "417",
+"mascot": "Bison",
+"primaryColor": "000000",
+"school": "Gallaudet University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "418",
+"mascot": "Warriors",
+"school": "Hendrix"
+},
+{
+"id": "419",
+"mascot": "Pioneers",
+"primaryColor": "000000",
+"school": "MidAm Nazarene",
+"secondaryColor": "ffffff"
+},
+{
+"id": "425",
+"mascot": "Wolves",
+"primaryColor": "000000",
+"school": "Northern State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "435",
+"mascot": "Jerezanas",
+"school": "University of Puerto Rico - Rio Piedras"
+},
+{
+"id": "437",
+"mascot": "Storm",
+"primaryColor": "000000",
+"school": "Lake Erie",
+"secondaryColor": "ffffff"
+},
+{
+"id": "451",
+"mascot": "CONVERSE",
+"primaryColor": "000000",
+"school": "Converse",
+"secondaryColor": "ffffff"
+},
+{
+"id": "455",
+"mascot": "Bobcats",
+"primaryColor": "000000",
+"school": "West Virginia Wesleyan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "458",
+"mascot": "AGNES SCOTT",
+"primaryColor": "000000",
+"school": "Agnes Scott",
+"secondaryColor": "ffffff"
+},
+{
+"id": "463",
+"mascot": "Wolves",
+"school": "Wesleyan College (GA)"
+},
+{
+"id": "464",
+"mascot": "Belles",
+"school": "Bennett College"
+},
+{
+"id": "476",
+"mascot": "Mavericks",
+"school": "Medaille"
+},
+{
+"id": "481",
+"mascot": "Mustangs",
+"primaryColor": "000000",
+"school": "Mount Ida College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "484",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Alice Lloyd College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "487",
+"mascot": "Warriors",
+"school": "Bacone College"
+},
+{
+"id": "489",
+"mascot": "Tigers",
+"school": "Barber-Scotia College"
+},
+{
+"id": "491",
+"mascot": "Ravens",
+"primaryColor": "ba0c2f",
+"school": "Benedictine",
+"secondaryColor": "ffffff"
+},
+{
+"id": "492",
+"mascot": "BETHANY (KS)",
+"primaryColor": "000000",
+"school": "Bethany (KS)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "495",
+"mascot": "Ramblin' Rams",
+"primaryColor": "000000",
+"school": "Bluefield",
+"secondaryColor": "ffffff"
+},
+{
+"id": "498",
+"mascot": "Banana Slugs",
+"school": "UC Santa Cruz"
+},
+{
+"id": "499",
+"mascot": "Pioneers",
+"school": "Cal State East Bay"
+},
+{
+"id": "500",
+"mascot": "Keelhaulers",
+"school": "Cal Maritime"
+},
+{
+"id": "502",
+"mascot": "Crimson Wave",
+"primaryColor": "000000",
+"school": "Calumet St. Joseph",
+"secondaryColor": "ffffff"
+},
+{
+"id": "504",
+"mascot": "Rams",
+"primaryColor": "000000",
+"school": "Columbia International University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "506",
+"mascot": "Eagles              ",
+"school": "Concordia University (CA)"
+},
+{
+"id": "507",
+"mascot": "Bulldogs",
+"school": "Concordia Nebraska"
+},
+{
+"id": "509",
+"mascot": "Storm",
+"primaryColor": "5c2f92",
+"school": "Crown",
+"secondaryColor": "ffffff"
+},
+{
+"id": "510",
+"mascot": "Wildcats",
+"primaryColor": "000000",
+"school": "Culver-Stockton",
+"secondaryColor": "ffffff"
+},
+{
+"id": "511",
+"mascot": "Patriots",
+"primaryColor": "000000",
+"school": "Cumberlands",
+"secondaryColor": "ffffff"
+},
+{
+"id": "512",
+"mascot": "Trojans",
+"primaryColor": "000000",
+"school": "Dakota State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "513",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Dakota Wesleyan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "526",
+"mascot": "Eagles",
+"primaryColor": "00885a",
+"school": "Florida Gulf Coast",
+"secondaryColor": "076c3b"
+},
+{
+"id": "530",
+"mascot": "Yellowjackets",
+"primaryColor": "000000",
+"school": "Graceland University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "531",
+"mascot": "Argonauts",
+"primaryColor": "000000",
+"school": "ProvidenceMT",
+"secondaryColor": "ffffff"
+},
+{
+"id": "533",
+"mascot": "Trojans",
+"primaryColor": "000000",
+"school": "Hannibal-LaGrange College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "534",
+"mascot": "Hornets",
+"primaryColor": "000000",
+"school": "Harris Stowe State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "536",
+"mascot": "Broncos",
+"primaryColor": "000000",
+"school": "Hastings",
+"secondaryColor": "ffffff"
+},
+{
+"id": "542",
+"mascot": "Prairie Stars",
+"primaryColor": "000000",
+"school": "Illinois-Springfield",
+"secondaryColor": "ffffff"
+},
+{
+"id": "546",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Judson",
+"secondaryColor": "ffffff"
+},
+{
+"id": "547",
+"mascot": "Coyotes",
+"primaryColor": "000000",
+"school": "Kansas Wesleyan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "548",
+"mascot": "Panthers",
+"primaryColor": "000000",
+"school": "LaGrange",
+"secondaryColor": "ffffff"
+},
+{
+"id": "552",
+"mascot": "Crusaders",
+"school": "Madonna"
+},
+{
+"id": "556",
+"mascot": "Pioneers",
+"primaryColor": "000000",
+"school": "Malone University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "559",
+"mascot": "Marauders",
+"primaryColor": "000000",
+"school": "Mary (ND)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "561",
+"mascot": "Comets",
+"primaryColor": "000000",
+"school": "Mayville State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "564",
+"mascot": "Cougars",
+"primaryColor": "000000",
+"school": "Mid-Continent University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "565",
+"mascot": "Warriors",
+"primaryColor": "000000",
+"school": "Midland University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "568",
+"mascot": "Beavers",
+"primaryColor": "000000",
+"school": "Minot State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "569",
+"mascot": "Lights",
+"primaryColor": "000000",
+"school": "Montana State-Northern",
+"secondaryColor": "ffffff"
+},
+{
+"id": "571",
+"mascot": "MORRIS",
+"primaryColor": "000000",
+"school": "Morris",
+"secondaryColor": "ffffff"
+},
+{
+"id": "573",
+"mascot": "Lancers",
+"school": "Mount Marty College"
+},
+{
+"id": "574",
+"mascot": "Mustangs",
+"school": "Mount Mercy College"
+},
+{
+"id": "580",
+"mascot": "Jets",
+"school": "Newman"
+},
+{
+"id": "587",
+"mascot": "Falcons",
+"primaryColor": "000000",
+"school": "Notre Dame College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "589",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Oklahoma Christian",
+"secondaryColor": "ffffff"
+},
+{
+"id": "590",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Oklahoma Wesleyan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "596",
+"mascot": "Bobcat",
+"primaryColor": "000000",
+"school": "Peru State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "599",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Robert Morris Col.",
+"secondaryColor": "ffffff"
+},
+{
+"id": "600",
+"mascot": "Redhawks",
+"school": "Roberts Wesleyan Col"
+},
+{
+"id": "606",
+"mascot": "Bobcats",
+"primaryColor": "000000",
+"school": "St. Thomas (FL)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "608",
+"mascot": "Devils",
+"school": "University of Sciences"
+},
+{
+"id": "611",
+"mascot": "Griffins",
+"primaryColor": "000000",
+"school": "Seton Hill College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "613",
+"mascot": "Hardrockers",
+"primaryColor": "000000",
+"school": "South Dakota Mines",
+"secondaryColor": "ffffff"
+},
+{
+"id": "614",
+"mascot": "Hornets",
+"primaryColor": "000000",
+"school": "Southern Polytechnic",
+"secondaryColor": "ffffff"
+},
+{
+"id": "619",
+"mascot": "Bluejays",
+"primaryColor": "000000",
+"school": "Tabor",
+"secondaryColor": "ffffff"
+},
+{
+"id": "620",
+"mascot": "Trojans",
+"primaryColor": "000000",
+"school": "Taylor University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "627",
+"mascot": "Arrows",
+"school": "Ursuline College"
+},
+{
+"id": "628",
+"mascot": "Vikings",
+"primaryColor": "000000",
+"school": "Valley City State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "630",
+"mascot": "Pioneers",
+"primaryColor": "000000",
+"school": "Wayland Baptist University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2000",
+"mascot": "Wildcats",
+"primaryColor": "592d82",
+"school": "Abilene Christian",
+"secondaryColor": "b1b3b3"
+},
+{
+"id": "2001",
+"mascot": "Grizzlies",
+"primaryColor": "000000",
+"school": "Adams State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2002",
+"mascot": "Panthers",
+"primaryColor": "000000",
+"school": "Adelphi",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2005",
+"mascot": "Falcons",
+"primaryColor": "003594",
+"school": "Air Force",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2006",
+"mascot": "Zips",
+"primaryColor": "041e42",
+"school": "Akron",
+"secondaryColor": "c5b783"
+},
+{
+"id": "2008",
+"mascot": "Chargers",
+"primaryColor": "000000",
+"school": "Alabama-Huntsville",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2010",
+"mascot": "Bulldogs",
+"primaryColor": "790000",
+"school": "Alabama A&M",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2011",
+"mascot": "Lady Hornets",
+"primaryColor": "e9a900",
+"school": "Alabama State",
+"secondaryColor": "0a0a0a"
+},
+{
+"id": "2013",
+"mascot": "Golden Rams",
+"primaryColor": "000000",
+"school": "Albany State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2016",
+"mascot": "Lady Braves",
+"primaryColor": "4b0058",
+"school": "Alcorn State",
+"secondaryColor": "46166a"
+},
+{
+"id": "2017",
+"mascot": "Battlers",
+"primaryColor": "000000",
+"school": "Alderson-Broaddus",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2018",
+"mascot": "Gators",
+"primaryColor": "000000",
+"school": "Allegheny",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2019",
+"mascot": "Yellow Jackets",
+"primaryColor": "000000",
+"school": "Allen",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2022",
+"mascot": "Yellow Jackets",
+"primaryColor": "000000",
+"school": "American International",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2023",
+"mascot": "Ravens",
+"primaryColor": "000000",
+"school": "Anderson (IN)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2025",
+"mascot": "Rams",
+"primaryColor": "000000",
+"school": "Angelo State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2026",
+"mascot": "Mountaineers",
+"primaryColor": "000000",
+"school": "App State",
+"secondaryColor": "ffcd00"
+},
+{
+"id": "2027",
+"mascot": "Buffaloes",
+"primaryColor": "000000",
+"school": "Arkansas Baptist",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2028",
+"mascot": "Weevils",
+"primaryColor": "000000",
+"school": "Ark Monticello",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2029",
+"mascot": "Golden Lions",
+"primaryColor": "e0aa0f",
+"school": "Arkansas-Pine Bluff",
+"secondaryColor": "eaaa00"
+},
+{
+"id": "2031",
+"mascot": "Trojans",
+"primaryColor": "ad0000",
+"school": "Little Rock",
+"secondaryColor": "898d8f"
+},
+{
+"id": "2032",
+"mascot": "Red Wolves",
+"primaryColor": "cc092f",
+"school": "Arkansas State",
+"secondaryColor": "000000"
+},
+{
+"id": "2033",
+"mascot": "Golden Suns",
+"primaryColor": "000000",
+"school": "Arkansas Tech",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2036",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Asbury",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2040",
+"mascot": "Senators",
+"primaryColor": "000000",
+"school": "Auburn Montgomery",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2041",
+"mascot": "Jaguars",
+"primaryColor": "000000",
+"school": "Augusta",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2046",
+"mascot": "Governors",
+"primaryColor": "8e0b0b",
+"school": "Austin Peay",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2047",
+"mascot": "Cougars",
+"primaryColor": "012853",
+"school": "Averett",
+"secondaryColor": "fdbb30"
+},
+{
+"id": "2049",
+"mascot": "Cougars",
+"primaryColor": "000000",
+"school": "Azusa Pacific",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2050",
+"mascot": "Cardinals",
+"primaryColor": "ba0c2f",
+"school": "Ball State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2053",
+"mascot": "Buccaneers",
+"primaryColor": "000000",
+"school": "Barry",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2054",
+"mascot": "Bulldogs",
+"primaryColor": "004684",
+"school": "Barton",
+"secondaryColor": "000000"
+},
+{
+"id": "2056",
+"mascot": "Blazers",
+"primaryColor": "215732",
+"school": "Belhaven",
+"secondaryColor": "f2a900"
+},
+{
+"id": "2057",
+"mascot": "Bruins",
+"primaryColor": "182142",
+"school": "Belmont",
+"secondaryColor": "c9262d"
+},
+{
+"id": "2058",
+"mascot": "Crusaders",
+"primaryColor": "000000",
+"school": "Belmont Abbey",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2059",
+"mascot": "Ravens",
+"primaryColor": "000000",
+"school": "Benedict",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2061",
+"mascot": "Berea",
+"primaryColor": "000000",
+"school": "Berea",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2063",
+"mascot": "Threshers",
+"primaryColor": "000000",
+"school": "Bethel (KS)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2064",
+"mascot": "Wildcats",
+"primaryColor": "000000",
+"school": "Bethel (TN)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2065",
+"mascot": "Wildcats",
+"primaryColor": "7b1831",
+"school": "Bethune-Cookman",
+"secondaryColor": "e9aa12"
+},
+{
+"id": "2066",
+"mascot": "Bearcats",
+"primaryColor": "00614a",
+"school": "Binghamton",
+"secondaryColor": "f0f0f0"
+},
+{
+"id": "2067",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Biola",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2069",
+"mascot": "Yellow Jackets",
+"primaryColor": "000000",
+"school": "Black Hills State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2070",
+"mascot": "Beavers",
+"primaryColor": "000000",
+"school": "Blackburn",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2071",
+"mascot": "Huskies",
+"primaryColor": "000000",
+"school": "Bloomsburg",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2073",
+"mascot": "Big Blues",
+"primaryColor": "000000",
+"school": "Bluefield State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2075",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Bowie State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2077",
+"mascot": "Wildcats",
+"primaryColor": "000000",
+"school": "Brewton Parker",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2078",
+"mascot": "Purple Knights",
+"primaryColor": "000000",
+"school": "Bridgeport",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2081",
+"mascot": "Lions",
+"primaryColor": "000000",
+"school": "Bryan (TN)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2083",
+"mascot": "Bison",
+"primaryColor": "000060",
+"school": "Bucknell",
+"secondaryColor": "00316e"
+},
+{
+"id": "2084",
+"mascot": "Bulls",
+"primaryColor": "005bbb",
+"school": "Buffalo",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2085",
+"mascot": "Bengals",
+"primaryColor": "000000",
+"school": "Buffalo State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2086",
+"mascot": "Bulldogs",
+"primaryColor": "0d1361",
+"school": "Butler",
+"secondaryColor": "00a3e0"
+},
+{
+"id": "2088",
+"mascot": "Seasiders",
+"primaryColor": "000000",
+"school": "BYU Hawaii",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2092",
+"mascot": "Toros",
+"primaryColor": "000000",
+"school": "CSU Dominguez Hills",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2093",
+"mascot": "Pioneers",
+"primaryColor": "000000",
+"school": "Cal State East Bay",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2094",
+"mascot": "Kingsmen",
+"primaryColor": "3b2361",
+"school": "Cal Lutheran",
+"secondaryColor": "fec223"
+},
+{
+"id": "2096",
+"mascot": "Aggies",
+"primaryColor": "000000",
+"school": "Cameron",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2097",
+"mascot": "Fighting Camels",
+"primaryColor": "000000",
+"school": "Campbell",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2099",
+"mascot": "Golden Griffins",
+"primaryColor": "004a81",
+"school": "Canisius",
+"secondaryColor": "dda50f"
+},
+{
+"id": "2100",
+"mascot": "Crusaders",
+"primaryColor": "000000",
+"school": "Cardinal Stritch",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2102",
+"mascot": "Tartans",
+"primaryColor": "000000",
+"school": "Carnegie Mellon",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2104",
+"mascot": "Fighting Saints",
+"primaryColor": "000000",
+"school": "Carroll (MT)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2105",
+"mascot": "Eagles",
+"primaryColor": "f2682a",
+"school": "Carson Newman",
+"secondaryColor": "0c233f"
+},
+{
+"id": "2107",
+"mascot": "Indians",
+"primaryColor": "0c233f",
+"school": "Catawba",
+"secondaryColor": "cb152f"
+},
+{
+"id": "2108",
+"mascot": "Cardinals",
+"primaryColor": "000000",
+"school": "Catholic University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2109",
+"mascot": "Yellow Jackets",
+"primaryColor": "000000",
+"school": "Cedarville",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2110",
+"mascot": "Bears",
+"primaryColor": "a7a9ac",
+"school": "Central Arkansas",
+"secondaryColor": "8e959a"
+},
+{
+"id": "2113",
+"mascot": "Gentlemen",
+"primaryColor": "a20b36",
+"school": "Centenary (LA)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2114",
+"mascot": "Cyclones",
+"primaryColor": "000000",
+"school": "Centenary NJ",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2115",
+"mascot": "Blue Devils",
+"primaryColor": "1b49a2",
+"school": "Central Connecticut",
+"secondaryColor": "d1d5d8"
+},
+{
+"id": "2116",
+"mascot": "Knights",
+"primaryColor": "000000",
+"school": "UCF",
+"secondaryColor": "b4a169"
+},
+{
+"id": "2117",
+"mascot": "Chippewas",
+"primaryColor": "4c0027",
+"school": "Central Michigan",
+"secondaryColor": "fbab18"
+},
+{
+"id": "2118",
+"mascot": "Mules",
+"primaryColor": "000000",
+"school": "Central Missouri State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2119",
+"mascot": "Marauders",
+"primaryColor": "000000",
+"school": "Central State (OH)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2120",
+"mascot": "Wildcats",
+"primaryColor": "000000",
+"school": "Central Washington",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2123",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Chadron State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2124",
+"mascot": "Silverswords",
+"primaryColor": "000000",
+"school": "Chaminade",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2127",
+"mascot": "Buccaneers",
+"primaryColor": "2e3192",
+"school": "Charleston Southern",
+"secondaryColor": "ded090"
+},
+{
+"id": "2128",
+"mascot": "Golden Eagles",
+"primaryColor": "000000",
+"school": "Charleston (WV)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2129",
+"mascot": "Wolves",
+"primaryColor": "000000",
+"school": "Cheyney (PA)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2130",
+"mascot": "Cougars",
+"primaryColor": "006700",
+"school": "Chicago State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2131",
+"mascot": "Buccaneers",
+"primaryColor": "000000",
+"school": "Christian Brothers",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2132",
+"mascot": "Bearcats",
+"primaryColor": "000000",
+"school": "Cincinnati",
+"secondaryColor": "e00122"
+},
+{
+"id": "2133",
+"mascot": "Panthers",
+"primaryColor": "000000",
+"school": "Claflin",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2134",
+"mascot": "Golden Eagles",
+"primaryColor": "000000",
+"school": "Clarion",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2142",
+"mascot": "Raiders",
+"primaryColor": "821019",
+"school": "Colgate",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2144",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Colorado College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2145",
+"mascot": "Mountain Lions",
+"primaryColor": "000000",
+"school": "Colorado-Colorado Springs",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2146",
+"mascot": "Orediggers",
+"primaryColor": "000000",
+"school": "Colorado Mines",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2148",
+"mascot": "Mountain Lions",
+"primaryColor": "000000",
+"school": "Concord",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2150",
+"mascot": "Cavaliers",
+"primaryColor": "000000",
+"school": "Concordia Oregon",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2151",
+"mascot": "Cougars",
+"primaryColor": "572a31",
+"school": "Concordia-Chicago",
+"secondaryColor": "ffc72e"
+},
+{
+"id": "2152",
+"mascot": "Cobbers",
+"primaryColor": "701d45",
+"school": "Concordia (MN)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2153",
+"mascot": "Tornados",
+"primaryColor": "000000",
+"school": "Concordia (TX)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2154",
+"mascot": "Eagles",
+"primaryColor": "2e3192",
+"school": "Coppin State",
+"secondaryColor": "ffd204"
+},
+{
+"id": "2155",
+"mascot": "Rams",
+"primaryColor": "000000",
+"school": "Cornell College (IA)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2156",
+"mascot": "Blaze",
+"primaryColor": "000000",
+"school": "Cortland St",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2157",
+"mascot": "Fighting Scots",
+"primaryColor": "000000",
+"school": "Covenant",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2161",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Cumberland (TN)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2162",
+"mascot": "Wildcats",
+"primaryColor": "000000",
+"school": "Daemen",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2163",
+"mascot": "Crusaders",
+"primaryColor": "000000",
+"school": "Dallas",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2166",
+"mascot": "Wildcats",
+"primaryColor": "000000",
+"school": "Davidson",
+"secondaryColor": "e51837"
+},
+{
+"id": "2167",
+"mascot": "Senators",
+"primaryColor": "000000",
+"school": "Davis & Elkins",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2168",
+"mascot": "Flyers",
+"primaryColor": "004b8d",
+"school": "Dayton",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2169",
+"mascot": "Hornets",
+"primaryColor": "009cdb",
+"school": "Delaware State",
+"secondaryColor": "d51c28"
+},
+{
+"id": "2170",
+"mascot": "Statesmen",
+"primaryColor": "00753e",
+"school": "Delta State",
+"secondaryColor": "000000"
+},
+{
+"id": "2172",
+"mascot": "Pioneers",
+"primaryColor": "98002e",
+"school": "Denver",
+"secondaryColor": "a8996e"
+},
+{
+"id": "2174",
+"mascot": "Titans",
+"primaryColor": "165b9e",
+"school": "Detroit Mercy",
+"secondaryColor": "d31733"
+},
+{
+"id": "2176",
+"mascot": "Blue Devils",
+"primaryColor": "000000",
+"school": "Dillard",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2177",
+"mascot": "DISTRICT OF COLUMBIA",
+"primaryColor": "000000",
+"school": "District of Columbia",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2178",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Doane",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2179",
+"mascot": "Chargers",
+"primaryColor": "000000",
+"school": "Dominican (NY)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2181",
+"mascot": "Bulldogs",
+"primaryColor": "005596",
+"school": "Drake",
+"secondaryColor": "bec0c2"
+},
+{
+"id": "2182",
+"mascot": "Dragons",
+"primaryColor": "020260",
+"school": "Drexel",
+"secondaryColor": "ffd65a"
+},
+{
+"id": "2183",
+"mascot": "Panthers",
+"primaryColor": "000000",
+"school": "Drury (MO)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2184",
+"mascot": "Dukes",
+"primaryColor": "002d62",
+"school": "Duquesne",
+"secondaryColor": "b90b2e"
+},
+{
+"id": "2188",
+"mascot": "Warriors",
+"primaryColor": "000000",
+"school": "East Stroudsburg University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2192",
+"mascot": "Royals",
+"primaryColor": "000000",
+"school": "Eastern Mennonite",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2193",
+"mascot": "Bucs",
+"primaryColor": "002d61",
+"school": "East Tennessee State",
+"secondaryColor": "ffc423"
+},
+{
+"id": "2194",
+"mascot": "Tigers",
+"primaryColor": "002b44",
+"school": "East Texas Baptist",
+"secondaryColor": "e0ad13"
+},
+{
+"id": "2196",
+"mascot": "Eagles",
+"school": "Eastern University"
+},
+{
+"id": "2197",
+"mascot": "Panthers",
+"primaryColor": "000000",
+"school": "Eastern Illinois",
+"secondaryColor": "bebab9"
+},
+{
+"id": "2198",
+"mascot": "Colonels",
+"primaryColor": "660819",
+"school": "Eastern Kentucky",
+"secondaryColor": "f0f0f0"
+},
+{
+"id": "2199",
+"mascot": "Eagles",
+"primaryColor": "006938",
+"school": "Eastern Michigan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2201",
+"mascot": "Greyhounds",
+"primaryColor": "000000",
+"school": "Eastern New Mexico",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2202",
+"mascot": "Mountaineers",
+"primaryColor": "000000",
+"school": "Eastern Oregon",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2206",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Edward Waters",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2207",
+"mascot": "Vikings",
+"primaryColor": "000000",
+"school": "Elizabeth City State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2210",
+"mascot": "Phoenix",
+"primaryColor": "020303",
+"school": "Elon",
+"secondaryColor": "b59a57"
+},
+{
+"id": "2211",
+"mascot": "Lions",
+"primaryColor": "000000",
+"school": "Emmanuel (MA)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2212",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Emory",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2213",
+"mascot": "Wasps",
+"primaryColor": "1e376d",
+"school": "Emory & Henry",
+"secondaryColor": "daad27"
+},
+{
+"id": "2214",
+"mascot": "Hornets",
+"primaryColor": "000000",
+"school": "Emporia State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2215",
+"mascot": "Flying Fleet",
+"primaryColor": "701931",
+"school": "Erskine",
+"secondaryColor": "000000"
+},
+{
+"id": "2217",
+"mascot": "Stags",
+"primaryColor": "000000",
+"school": "Fairfield",
+"secondaryColor": "ebebeb"
+},
+{
+"id": "2219",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Faulkner",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2220",
+"mascot": "Broncos",
+"primaryColor": "000000",
+"school": "Fayetteville State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2221",
+"mascot": "Devils",
+"primaryColor": "003f87",
+"school": "FDU-Florham",
+"secondaryColor": "a32638"
+},
+{
+"id": "2222",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Ferris State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2224",
+"mascot": "Oilers",
+"primaryColor": "000000",
+"school": "Findlay",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2225",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Fisk",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2226",
+"mascot": "Owls",
+"primaryColor": "003366",
+"school": "Florida Atlantic",
+"secondaryColor": "cc0000"
+},
+{
+"id": "2227",
+"mascot": "FLORIDA MEMORIAL",
+"primaryColor": "000000",
+"school": "Florida Memorial",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2228",
+"mascot": "Saints",
+"primaryColor": "000000",
+"school": "Flagler",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2229",
+"mascot": "Panthers",
+"primaryColor": "091f3f",
+"school": "Florida International",
+"secondaryColor": "c3993f"
+},
+{
+"id": "2230",
+"mascot": "Rams",
+"primaryColor": "830032",
+"school": "Fordham",
+"secondaryColor": "909090"
+},
+{
+"id": "2232",
+"mascot": "Wildcats",
+"primaryColor": "000000",
+"school": "Fort Valley State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2233",
+"mascot": "Grizzlies",
+"primaryColor": "1b295b",
+"school": "Franklin",
+"secondaryColor": "fdd106"
+},
+{
+"id": "2235",
+"mascot": "Sunbirds",
+"primaryColor": "000000",
+"school": "Fresno Pacific",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2237",
+"mascot": "Skyhawks",
+"primaryColor": "000000",
+"school": "Ft. Lewis",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2239",
+"mascot": "Titans",
+"primaryColor": "003767",
+"school": "Cal State Fullerton",
+"secondaryColor": "ff8300"
+},
+{
+"id": "2241",
+"mascot": "Runnin' Bulldogs",
+"primaryColor": "c12535",
+"school": "Gardner-Webb",
+"secondaryColor": "909090"
+},
+{
+"id": "2242",
+"mascot": "Golden Tornadoes",
+"primaryColor": "000000",
+"school": "Geneva",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2244",
+"mascot": "Patriots",
+"primaryColor": "016600",
+"school": "George Mason",
+"secondaryColor": "ecb010"
+},
+{
+"id": "2245",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Georgetown (KY)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2246",
+"mascot": "Bobcats",
+"primaryColor": "000000",
+"school": "Georgia College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2247",
+"mascot": "Panthers",
+"primaryColor": "0039a6",
+"school": "Georgia State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2248",
+"mascot": "Bullets",
+"primaryColor": "000000",
+"school": "Gettysburg",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2249",
+"mascot": "Pioneers",
+"primaryColor": "000000",
+"school": "Glenville State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2250",
+"mascot": "Bulldogs",
+"primaryColor": "041e42",
+"school": "Gonzaga",
+"secondaryColor": "c8102e"
+},
+{
+"id": "2251",
+"mascot": "Gophers",
+"primaryColor": "000000",
+"school": "Goucher",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2252",
+"mascot": "Lancers",
+"primaryColor": "000000",
+"school": "Grace College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2253",
+"mascot": "Lopes",
+"primaryColor": "522398",
+"school": "Grand Canyon",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2256",
+"mascot": "Pride",
+"primaryColor": "000000",
+"school": "Greensboro College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2257",
+"mascot": "Panthers",
+"primaryColor": "f36917",
+"school": "Greenville",
+"secondaryColor": "000000"
+},
+{
+"id": "2258",
+"mascot": "Quakers",
+"primaryColor": "910028",
+"school": "Guilford",
+"secondaryColor": "dcddde"
+},
+{
+"id": "2261",
+"mascot": "Lady Pirates",
+"primaryColor": "0067ac",
+"school": "Hampton",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2262",
+"mascot": "Panthers",
+"primaryColor": "0b486d",
+"school": "Hanover",
+"secondaryColor": "990000"
+},
+{
+"id": "2264",
+"mascot": "Bison",
+"primaryColor": "000000",
+"school": "Harding",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2265",
+"mascot": "Fords",
+"primaryColor": "000000",
+"school": "Haverford",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2267",
+"mascot": "Vulcans",
+"primaryColor": "000000",
+"school": "Hawai\u02bbi Hilo",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2269",
+"mascot": "Sea Warriors",
+"primaryColor": "000000",
+"school": "Hawaii Pacific",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2271",
+"mascot": "Reddies",
+"primaryColor": "000000",
+"school": "Henderson State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2272",
+"mascot": "Panthers",
+"primaryColor": "330072",
+"school": "High Point",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2273",
+"mascot": "Chargers",
+"primaryColor": "000000",
+"school": "Hillsdale",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2274",
+"mascot": "Terriers",
+"primaryColor": "000000",
+"school": "Hiram",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2275",
+"mascot": "Pride",
+"primaryColor": "003594",
+"school": "Hofstra",
+"secondaryColor": "ffc72c"
+},
+{
+"id": "2277",
+"mascot": "Huskies",
+"primaryColor": "00539c",
+"school": "Houston Christian",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2279",
+"mascot": "Foresters",
+"primaryColor": "000000",
+"school": "Huntington College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2280",
+"mascot": "Braves",
+"primaryColor": "004b44",
+"school": "Husson",
+"secondaryColor": "b09a5f"
+},
+{
+"id": "2281",
+"mascot": "Rams",
+"primaryColor": "000000",
+"school": "Huston Tillotson",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2286",
+"mascot": "Lady Blues",
+"primaryColor": "000000",
+"school": "Illinois College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2287",
+"mascot": "Redbirds",
+"primaryColor": "ce1126",
+"school": "Illinois State",
+"secondaryColor": "ffe716"
+},
+{
+"id": "2288",
+"mascot": "Titans",
+"primaryColor": "000000",
+"school": "IND South Bend",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2290",
+"mascot": "Wildcats",
+"primaryColor": "000000",
+"school": "IND Wesleyan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2292",
+"mascot": "Greyhounds",
+"primaryColor": "000000",
+"school": "Indianapolis",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2294",
+"mascot": "Hawkeyes",
+"primaryColor": "231f20",
+"school": "Iowa",
+"secondaryColor": "fcd116"
+},
+{
+"id": "2295",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Iowa Wesleyan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2296",
+"mascot": "Lady Tigers",
+"primaryColor": "123297",
+"school": "Jackson State",
+"secondaryColor": "b5b7ba"
+},
+{
+"id": "2299",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Jarvis Christian",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2302",
+"mascot": "Blue Streaks",
+"primaryColor": "000000",
+"school": "John Carroll",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2304",
+"mascot": "Golden Bulls",
+"primaryColor": "000000",
+"school": "Johnson C. Smith",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2305",
+"mascot": "Jayhawks",
+"primaryColor": "0051ba",
+"school": "Kansas",
+"secondaryColor": "e8000d"
+},
+{
+"id": "2306",
+"mascot": "Wildcats",
+"primaryColor": "330a57",
+"school": "Kansas State",
+"secondaryColor": "e2e3e4"
+},
+{
+"id": "2309",
+"mascot": "Golden Flashes",
+"primaryColor": "002664",
+"school": "Kent State",
+"secondaryColor": "eaab00"
+},
+{
+"id": "2310",
+"mascot": "Thorobreds",
+"primaryColor": "000000",
+"school": "Kentucky State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2312",
+"mascot": "Tornado",
+"primaryColor": "000000",
+"school": "King (TN)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2315",
+"mascot": "Golden Bears",
+"primaryColor": "000000",
+"school": "Kutztown",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2316",
+"mascot": "Panthers",
+"primaryColor": "000000",
+"school": "Kentucky Wesleyan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2318",
+"mascot": "Leopards",
+"primaryColor": "004812",
+"school": "La Verne",
+"secondaryColor": "f89828"
+},
+{
+"id": "2320",
+"mascot": "Cardinals",
+"primaryColor": "000000",
+"school": "Lamar",
+"secondaryColor": "ebebeb"
+},
+{
+"id": "2321",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Lambuth",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2322",
+"mascot": "Bearcats",
+"primaryColor": "000000",
+"school": "Lander",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2323",
+"mascot": "Dragons",
+"primaryColor": "000000",
+"school": "Lane College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2324",
+"mascot": "Lions",
+"primaryColor": "000000",
+"school": "Langston",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2325",
+"mascot": "Explorers",
+"primaryColor": "003356",
+"school": "La Salle",
+"secondaryColor": "ffce00"
+},
+{
+"id": "2326",
+"mascot": "Yellow Jackets",
+"primaryColor": "000000",
+"school": "LeTourneau",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2327",
+"mascot": "Bobcats",
+"primaryColor": "000000",
+"school": "Lees McRae",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2329",
+"mascot": "Mountain Hawks",
+"primaryColor": "6c2b2a",
+"school": "Lehigh",
+"secondaryColor": "b69e70"
+},
+{
+"id": "2330",
+"mascot": "Dolphins",
+"primaryColor": "000000",
+"school": "Le Moyne",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2331",
+"mascot": "Bears",
+"primaryColor": "000000",
+"school": "Lenoir-Rhyne College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2332",
+"mascot": "Flyers",
+"primaryColor": "000000",
+"school": "Lewis",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2333",
+"mascot": "River Otters",
+"primaryColor": "f37737",
+"school": "Lewis & Clark",
+"secondaryColor": "000000"
+},
+{
+"id": "2334",
+"mascot": "Warriors",
+"primaryColor": "000000",
+"school": "Lewis Clark State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2335",
+"mascot": "Flames",
+"primaryColor": "0a254e",
+"school": "Liberty",
+"secondaryColor": "b72025"
+},
+{
+"id": "2336",
+"mascot": "Saints",
+"primaryColor": "19468d",
+"school": "Limestone",
+"secondaryColor": "fff607"
+},
+{
+"id": "2337",
+"mascot": "Railsplitters",
+"primaryColor": "000000",
+"school": "Lincoln Memorial",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2339",
+"mascot": "Lions",
+"primaryColor": "000000",
+"school": "Lincoln (PA)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2341",
+"mascot": "Blackbirds",
+"primaryColor": "000000",
+"school": "LIU Brooklyn",
+"secondaryColor": "f0f0f0"
+},
+{
+"id": "2344",
+"mascot": "Lancers",
+"primaryColor": "003273",
+"school": "Longwood",
+"secondaryColor": "9ea2a3"
+},
+{
+"id": "2345",
+"mascot": "Golden Eagles",
+"primaryColor": "000000",
+"school": "Cal State Los Angeles",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2347",
+"mascot": "Wildcats",
+"primaryColor": "000000",
+"school": "Louisiana Christian",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2348",
+"mascot": "Lady Techsters",
+"primaryColor": "003087",
+"school": "Louisiana Tech",
+"secondaryColor": "cb333b"
+},
+{
+"id": "2349",
+"mascot": "River Hawks",
+"primaryColor": "000000",
+"school": "UMass Lowell",
+"secondaryColor": "cf1f2f"
+},
+{
+"id": "2350",
+"mascot": "Ramblers",
+"primaryColor": "9d1244",
+"school": "Loyola Chicago",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2351",
+"mascot": "Lions",
+"primaryColor": "880029",
+"school": "Loyola Marymount",
+"secondaryColor": "00345b"
+},
+{
+"id": "2352",
+"mascot": "Greyhounds",
+"primaryColor": "76a7a0",
+"school": "Loyola Maryland",
+"secondaryColor": "c9cbca"
+},
+{
+"id": "2353",
+"mascot": "Pilots",
+"primaryColor": "000000",
+"school": "LSU Shreveport",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2354",
+"mascot": "Warriors",
+"primaryColor": "15283f",
+"school": "Lycoming",
+"secondaryColor": "eaa22e"
+},
+{
+"id": "2355",
+"mascot": "Hornets",
+"primaryColor": "000000",
+"school": "Lynchburg",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2357",
+"mascot": "Fighting Knights",
+"primaryColor": "000000",
+"school": "Lynn University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2358",
+"mascot": "Scots",
+"primaryColor": "000000",
+"school": "Lyon",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2359",
+"mascot": "Scots",
+"primaryColor": "000000",
+"school": "Macalester",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2362",
+"mascot": "Spartans",
+"primaryColor": "ddac14",
+"school": "Manchester",
+"secondaryColor": "000000"
+},
+{
+"id": "2363",
+"mascot": "Jaspers",
+"primaryColor": "4f8537",
+"school": "Manhattan",
+"secondaryColor": "b5b7ba"
+},
+{
+"id": "2365",
+"mascot": "Mountaineers",
+"primaryColor": "000000",
+"school": "Mansfield",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2366",
+"mascot": "Knights",
+"primaryColor": "000000",
+"school": "Marian",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2368",
+"mascot": "Red Foxes",
+"primaryColor": "e53730",
+"school": "Marist",
+"secondaryColor": "f0f0f0"
+},
+{
+"id": "2369",
+"mascot": "Mountain Lions",
+"primaryColor": "004b8d",
+"school": "Mars Hill",
+"secondaryColor": "efc814"
+},
+{
+"id": "2370",
+"mascot": "Firehawks",
+"primaryColor": "000000",
+"school": "Tennessee Southern",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2371",
+"mascot": "Crusaders",
+"primaryColor": "492f92",
+"school": "Mary Hardn Bylr",
+"secondaryColor": "fece1c"
+},
+{
+"id": "2373",
+"mascot": "Fighting Scots",
+"primaryColor": "000000",
+"school": "Maryville College (TN)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2374",
+"mascot": "Pacers",
+"primaryColor": "000000",
+"school": "Marywood",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2375",
+"mascot": "Mustangs",
+"primaryColor": "000000",
+"school": "Master's University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2377",
+"mascot": "Cowgirls",
+"primaryColor": "00529c",
+"school": "McNeese",
+"secondaryColor": "ffd204"
+},
+{
+"id": "2378",
+"mascot": "Retrievers",
+"primaryColor": "000000",
+"school": "UMBC",
+"secondaryColor": "ad860a"
+},
+{
+"id": "2379",
+"mascot": "Hawks",
+"primaryColor": "5c2301",
+"school": "Maryland Eastern Shore",
+"secondaryColor": "b5b7ba"
+},
+{
+"id": "2381",
+"mascot": "Oaks",
+"primaryColor": "000000",
+"school": "Menlo",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2382",
+"mascot": "Bears",
+"primaryColor": "ff7f29",
+"school": "Mercer",
+"secondaryColor": "080808"
+},
+{
+"id": "2383",
+"mascot": "Mariners",
+"primaryColor": "000000",
+"school": "US Merchant Marine",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2384",
+"mascot": "Mavericks",
+"primaryColor": "000000",
+"school": "Mercy",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2385",
+"mascot": "Lakers",
+"primaryColor": "000000",
+"school": "Mercyhurst",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2389",
+"mascot": "Roadrunners",
+"primaryColor": "000000",
+"school": "MSU Denver",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2390",
+"mascot": "Hurricanes",
+"primaryColor": "f47423",
+"school": "Miami",
+"secondaryColor": "035131"
+},
+{
+"id": "2391",
+"mascot": "Wolves",
+"primaryColor": "000000",
+"school": "Michigan Dearborn",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2393",
+"mascot": "Blue Raiders",
+"primaryColor": "036eb7",
+"school": "Middle Tennessee",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2395",
+"mascot": "Mustangs",
+"primaryColor": "000000",
+"school": "Midwestern State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2396",
+"mascot": "Golden Bears",
+"primaryColor": "000000",
+"school": "Miles",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2397",
+"mascot": "Buffaloes",
+"primaryColor": "000000",
+"school": "Milligan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2398",
+"mascot": "Majors",
+"primaryColor": "000000",
+"school": "Millsaps",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2399",
+"mascot": "Cougars",
+"primaryColor": "8d191b",
+"school": "Minnesota-Morris",
+"secondaryColor": "e19c25"
+},
+{
+"id": "2400",
+"mascot": "Devilettes",
+"primaryColor": "005328",
+"school": "Mississippi Valley State",
+"secondaryColor": "cf2d34"
+},
+{
+"id": "2401",
+"mascot": "Choctaws",
+"primaryColor": "0c2240",
+"school": "Mississippi College",
+"secondaryColor": "c89700"
+},
+{
+"id": "2404",
+"mascot": "Lions",
+"primaryColor": "000000",
+"school": "Molloy",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2405",
+"mascot": "Hawks",
+"primaryColor": "051844",
+"school": "Monmouth",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2407",
+"mascot": "Yellowjackets",
+"primaryColor": "000000",
+"school": "Mont St Billings",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2409",
+"mascot": "Falcons",
+"primaryColor": "000000",
+"school": "Montevallo",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2410",
+"mascot": "Cavaliers",
+"primaryColor": "000000",
+"school": "Montreat",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2413",
+"mascot": "Eagles",
+"primaryColor": "094fa3",
+"school": "Morehead State",
+"secondaryColor": "fed91a"
+},
+{
+"id": "2415",
+"mascot": "Lady Bears",
+"primaryColor": "014786",
+"school": "Morgan State",
+"secondaryColor": "f47937"
+},
+{
+"id": "2417",
+"mascot": "Wolverines",
+"primaryColor": "000000",
+"school": "Morris Brown",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2418",
+"mascot": "Trojans",
+"primaryColor": "000000",
+"school": "Mount Olive",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2419",
+"mascot": "Lions",
+"primaryColor": "002d5d",
+"school": "Mount St. Joseph",
+"secondaryColor": "f5ce3e"
+},
+{
+"id": "2421",
+"mascot": "Cougars",
+"primaryColor": "000000",
+"school": "Mount Vernon Nazarene (OH)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2424",
+"mascot": "Cowboys",
+"primaryColor": "000000",
+"school": "New Mexico Highlands",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2426",
+"mascot": "Midshipmen",
+"primaryColor": "00225b",
+"school": "Navy",
+"secondaryColor": "b5a67c"
+},
+{
+"id": "2427",
+"mascot": "Bulldogs",
+"primaryColor": "003da5",
+"school": "UNC Asheville",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2428",
+"mascot": "Eagles",
+"primaryColor": "880023",
+"school": "North Carolina Central",
+"secondaryColor": "c2c3c0"
+},
+{
+"id": "2429",
+"mascot": "49ers",
+"primaryColor": "005035",
+"school": "Charlotte",
+"secondaryColor": "a49665"
+},
+{
+"id": "2430",
+"mascot": "Spartans",
+"primaryColor": "003559",
+"school": "UNC Greensboro",
+"secondaryColor": "ffd90a"
+},
+{
+"id": "2433",
+"mascot": "Warhawks",
+"primaryColor": "840029",
+"school": "UL Monroe",
+"secondaryColor": "fdb913"
+},
+{
+"id": "2437",
+"mascot": "Mavericks",
+"primaryColor": "e3193e",
+"school": "Omaha",
+"secondaryColor": "474648"
+},
+{
+"id": "2438",
+"mascot": "Lopers",
+"primaryColor": "000000",
+"school": "Nebraska Kearney",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2439",
+"mascot": "Lady Rebels",
+"primaryColor": "cf0a2c",
+"school": "UNLV",
+"secondaryColor": "cac8c8"
+},
+{
+"id": "2440",
+"mascot": "Wolf Pack",
+"primaryColor": "041e42",
+"school": "Nevada",
+"secondaryColor": "8a8d8f"
+},
+{
+"id": "2441",
+"mascot": "Chargers",
+"primaryColor": "041e42",
+"school": "New Haven",
+"secondaryColor": "ffc425"
+},
+{
+"id": "2443",
+"mascot": "Privateers",
+"primaryColor": "461d7c",
+"school": "LSU New Orleans",
+"secondaryColor": "fdd023"
+},
+{
+"id": "2444",
+"mascot": "Wolves",
+"primaryColor": "d02030",
+"school": "Newberry",
+"secondaryColor": "8a8c8f"
+},
+{
+"id": "2447",
+"mascot": "Colonels",
+"primaryColor": "c41230",
+"school": "Nicholls",
+"secondaryColor": "f0f0f0"
+},
+{
+"id": "2448",
+"mascot": "Aggies",
+"primaryColor": "0505aa",
+"school": "North Carolina A&T",
+"secondaryColor": "004684"
+},
+{
+"id": "2449",
+"mascot": "Bison",
+"primaryColor": "01402a",
+"school": "North Dakota State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2450",
+"mascot": "Spartans",
+"primaryColor": "0c8968",
+"school": "Norfolk State",
+"secondaryColor": "fdb813"
+},
+{
+"id": "2453",
+"mascot": "Lions",
+"primaryColor": "000000",
+"school": "North Alabama",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2454",
+"mascot": "Ospreys",
+"primaryColor": "004b8d",
+"school": "North Florida",
+"secondaryColor": "babcbe"
+},
+{
+"id": "2458",
+"mascot": "Bears",
+"primaryColor": "13558d",
+"school": "Northern Colorado",
+"secondaryColor": "ffc533"
+},
+{
+"id": "2459",
+"mascot": "Huskies",
+"primaryColor": "c8102e",
+"school": "Northern Illinois",
+"secondaryColor": "000000"
+},
+{
+"id": "2460",
+"mascot": "Panthers",
+"primaryColor": "473282",
+"school": "Northern Iowa",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2462",
+"mascot": "Lumberjacks",
+"primaryColor": "000000",
+"school": "Northland",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2463",
+"mascot": "Matadors",
+"primaryColor": "b50000",
+"school": "Cal State Northridge",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2464",
+"mascot": "Lumberjacks",
+"primaryColor": "003976",
+"school": "Northern Arizona",
+"secondaryColor": "1b3069"
+},
+{
+"id": "2465",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Northwest University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2466",
+"mascot": "Lady Demons",
+"primaryColor": "492f91",
+"school": "Northwestern State",
+"secondaryColor": "ed6118"
+},
+{
+"id": "2467",
+"mascot": "Cadets",
+"primaryColor": "000000",
+"school": "Norwich",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2468",
+"mascot": "Argonauts",
+"primaryColor": "000000",
+"school": "Notre Dame CA",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2471",
+"mascot": "Red Raiders",
+"primaryColor": "000000",
+"school": "Northwestern College (Iowa)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2473",
+"mascot": "Golden Grizzlies",
+"primaryColor": "04091c",
+"school": "Oakland",
+"secondaryColor": "bc955c"
+},
+{
+"id": "2474",
+"mascot": "Mighty Oaks",
+"primaryColor": "000000",
+"school": "Oakland City",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2475",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Occidental",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2476",
+"mascot": "Stormy Petrels",
+"primaryColor": "000000",
+"school": "Oglethorpe",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2477",
+"mascot": "Panthers",
+"primaryColor": "000000",
+"school": "Ohio Dominican",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2479",
+"mascot": "Fighting Scots",
+"primaryColor": "000000",
+"school": "Ohio Valley",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2483",
+"mascot": "Ducks",
+"primaryColor": "00934b",
+"school": "Oregon",
+"secondaryColor": "fff41b"
+},
+{
+"id": "2484",
+"mascot": "Hustlin' Owls",
+"primaryColor": "000000",
+"school": "Oregon Tech",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2485",
+"mascot": "Bobcats",
+"primaryColor": "000000",
+"school": "College of Ozarks",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2486",
+"mascot": "Lutes",
+"primaryColor": "ffc423",
+"school": "Pacific Lutheran",
+"secondaryColor": "000000"
+},
+{
+"id": "2487",
+"mascot": "Setters",
+"primaryColor": "000000",
+"school": "Pace",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2488",
+"mascot": "Lions",
+"primaryColor": "000000",
+"school": "Paine",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2489",
+"mascot": "Sailfish",
+"primaryColor": "000000",
+"school": "Palm Beach Atlantic",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2491",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Paul Quinn",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2492",
+"mascot": "Waves",
+"primaryColor": "003a72",
+"school": "Pepperdine",
+"secondaryColor": "dc762f"
+},
+{
+"id": "2494",
+"mascot": "Panthers",
+"primaryColor": "000000",
+"school": "Philander Smith",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2496",
+"mascot": "Lions",
+"primaryColor": "000000",
+"school": "Piedmont",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2498",
+"mascot": "Mountain Cats",
+"primaryColor": "000000",
+"school": "Pittsburgh-Johnstown",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2500",
+"mascot": "Sea Lions",
+"primaryColor": "000000",
+"school": "Point Loma",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2501",
+"mascot": "Pilots",
+"primaryColor": "330072",
+"school": "Portland",
+"secondaryColor": "a8b3ba"
+},
+{
+"id": "2502",
+"mascot": "Vikings",
+"primaryColor": "00311e",
+"school": "Portland State",
+"secondaryColor": "ebebeb"
+},
+{
+"id": "2503",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Puerto Rico-Mayaguez",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2504",
+"mascot": "Lady Panthers",
+"primaryColor": "582c83",
+"school": "Prairie View A&M",
+"secondaryColor": "eaaa00"
+},
+{
+"id": "2506",
+"mascot": "Blue Hose",
+"primaryColor": "194896",
+"school": "Presbyterian",
+"secondaryColor": "990134"
+},
+{
+"id": "2507",
+"mascot": "Friars",
+"primaryColor": "000000",
+"school": "Providence",
+"secondaryColor": "a3a19e"
+},
+{
+"id": "2509",
+"mascot": "Boilermakers",
+"primaryColor": "ceb888",
+"school": "Purdue",
+"secondaryColor": "000000"
+},
+{
+"id": "2511",
+"mascot": "Royals",
+"primaryColor": "192c66",
+"school": "Queens University",
+"secondaryColor": "857040"
+},
+{
+"id": "2512",
+"mascot": "Knights",
+"primaryColor": "000000",
+"school": "Queens College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2514",
+"mascot": "Bobcats",
+"primaryColor": "041b43",
+"school": "Quinnipiac",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2515",
+"mascot": "Highlanders",
+"primaryColor": "bc1515",
+"school": "Radford",
+"secondaryColor": "c2c3c0"
+},
+{
+"id": "2517",
+"mascot": "Rangers",
+"primaryColor": "000000",
+"school": "Regis",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2518",
+"mascot": "REGIS UNIVERSITY",
+"primaryColor": "000000",
+"school": "Regis University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2519",
+"mascot": "Lynx",
+"primaryColor": "000000",
+"school": "Rhodes College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2520",
+"mascot": "Broncs",
+"primaryColor": "a80532",
+"school": "Rider",
+"secondaryColor": "ebebeb"
+},
+{
+"id": "2523",
+"mascot": "Colonials",
+"primaryColor": "00214d",
+"school": "Robert Morris",
+"secondaryColor": "a21d2b"
+},
+{
+"id": "2524",
+"mascot": "Regents",
+"primaryColor": "5a3f99",
+"school": "Rockford",
+"secondaryColor": "c4c6c8"
+},
+{
+"id": "2525",
+"mascot": "Hawks",
+"primaryColor": "000000",
+"school": "Rockhurst",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2528",
+"mascot": "Engineers",
+"primaryColor": "000000",
+"school": "Rensselaer",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2529",
+"mascot": "Pioneers",
+"primaryColor": "a40012",
+"school": "Sacred Heart",
+"secondaryColor": "c29472"
+},
+{
+"id": "2534",
+"mascot": "Bearkats",
+"primaryColor": "f56423",
+"school": "Sam Houston",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2535",
+"mascot": "Bulldogs",
+"primaryColor": "005485",
+"school": "Samford",
+"secondaryColor": "bc0023"
+},
+{
+"id": "2536",
+"mascot": "Coyotes",
+"primaryColor": "000000",
+"school": "CSU San Bernardino",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2539",
+"mascot": "Dons",
+"primaryColor": "005a36",
+"school": "San Francisco",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2540",
+"mascot": "Gauchos",
+"primaryColor": "1e1840",
+"school": "UC Santa Barbara",
+"secondaryColor": "febc11"
+},
+{
+"id": "2541",
+"mascot": "Broncos",
+"primaryColor": "690b0b",
+"school": "Santa Clara",
+"secondaryColor": "101010"
+},
+{
+"id": "2542",
+"mascot": "Tigers",
+"primaryColor": "280298",
+"school": "Savannah State",
+"secondaryColor": "f78f1e"
+},
+{
+"id": "2543",
+"mascot": "Pacers",
+"primaryColor": "000000",
+"school": "SC Aiken",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2544",
+"mascot": "Mountaineers",
+"primaryColor": "000000",
+"school": "Schreiner",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2545",
+"mascot": "Lady Lions",
+"primaryColor": "215732",
+"school": "SE Louisiana",
+"secondaryColor": "ffc72c"
+},
+{
+"id": "2546",
+"mascot": "Redhawks",
+"primaryColor": "c8102e",
+"school": "Southeast Missouri State",
+"secondaryColor": "000000"
+},
+{
+"id": "2547",
+"mascot": "Redhawks",
+"primaryColor": "bf2e1a",
+"school": "Seattle U",
+"secondaryColor": "c2c3c0"
+},
+{
+"id": "2548",
+"mascot": "Falcons",
+"primaryColor": "000000",
+"school": "Seattle Pacific",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2550",
+"mascot": "Pirates",
+"primaryColor": "0857b1",
+"school": "Seton Hall",
+"secondaryColor": "8a8d8f"
+},
+{
+"id": "2551",
+"mascot": "Bears",
+"primaryColor": "000000",
+"school": "Shaw",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2553",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Sewanee",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2557",
+"mascot": "Cadets",
+"primaryColor": "000000",
+"school": "US Coast Guard",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2559",
+"mascot": "Raiders",
+"primaryColor": "000000",
+"school": "Shippensburg",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2560",
+"mascot": "Hawks",
+"primaryColor": "000000",
+"school": "Shorter",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2561",
+"mascot": "Saints",
+"primaryColor": "037961",
+"school": "Siena",
+"secondaryColor": "eea60f"
+},
+{
+"id": "2562",
+"mascot": "Saints",
+"primaryColor": "000000",
+"school": "Siena Heights",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2564",
+"mascot": "Storm",
+"primaryColor": "b20838",
+"school": "Simpson College",
+"secondaryColor": "f0b310"
+},
+{
+"id": "2565",
+"mascot": "Cougars",
+"primaryColor": "eb1c23",
+"school": "SIU Edwardsville",
+"secondaryColor": "080808"
+},
+{
+"id": "2567",
+"mascot": "Mustangs",
+"primaryColor": "a80000",
+"school": "SMU",
+"secondaryColor": "0033a1"
+},
+{
+"id": "2568",
+"mascot": "Muleriders",
+"primaryColor": "000000",
+"school": "Southern Arkansas",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2569",
+"mascot": "Lady Bulldogs",
+"primaryColor": "7d1315",
+"school": "South Carolina State",
+"secondaryColor": "104897"
+},
+{
+"id": "2571",
+"mascot": "Jackrabbits",
+"primaryColor": "0033a0",
+"school": "South Dakota State",
+"secondaryColor": "ffd100"
+},
+{
+"id": "2572",
+"mascot": "Lady Eagles",
+"primaryColor": "ffc72c",
+"school": "Southern Miss",
+"secondaryColor": "231f20"
+},
+{
+"id": "2573",
+"mascot": "Knights",
+"primaryColor": "000000",
+"school": "Southern New Orleans",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2574",
+"mascot": "Seawolves",
+"primaryColor": "000000",
+"school": "Sonoma State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2576",
+"mascot": "Warriors",
+"primaryColor": "000000",
+"school": "Southern Wesleyan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2579",
+"mascot": "Gamecocks",
+"primaryColor": "73000a",
+"school": "South Carolina",
+"secondaryColor": "000000"
+},
+{
+"id": "2582",
+"mascot": "Jaguars",
+"primaryColor": "004b97",
+"school": "Southern",
+"secondaryColor": "ffc82d"
+},
+{
+"id": "2583",
+"mascot": "Owls",
+"primaryColor": "000000",
+"school": "Southern Connecticut State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2584",
+"mascot": "Raiders",
+"primaryColor": "000000",
+"school": "Southern Oregon",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2586",
+"mascot": "Bearcats",
+"primaryColor": "000000",
+"school": "Southwest Baptist",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2587",
+"mascot": "Golden Mustangs",
+"primaryColor": "000000",
+"school": "Southwest Minnesota State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2588",
+"mascot": "Pirates",
+"primaryColor": "000000",
+"school": "Southwestern University",
+"secondaryColor": "ffcd00"
+},
+{
+"id": "2589",
+"mascot": "Pelicans",
+"primaryColor": "000000",
+"school": "Spalding",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2590",
+"mascot": "Badgers",
+"primaryColor": "000000",
+"school": "Spring Hill",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2592",
+"mascot": "Knights",
+"primaryColor": "000000",
+"school": "St. Andrews",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2594",
+"mascot": "Huskies",
+"primaryColor": "000000",
+"school": "St. Cloud State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2595",
+"mascot": "Fighting Saints",
+"primaryColor": "000000",
+"school": "St. Francis (IL)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2597",
+"mascot": "Terriers",
+"primaryColor": "113682",
+"school": "St. Francis Brooklyn",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2598",
+"mascot": "Red Wolves",
+"primaryColor": "a20012",
+"school": "Saint Francis",
+"secondaryColor": "000000"
+},
+{
+"id": "2599",
+"mascot": "Red Storm",
+"primaryColor": "d10000",
+"school": "St. John's",
+"secondaryColor": "101010"
+},
+{
+"id": "2601",
+"mascot": "Pumas",
+"primaryColor": "000000",
+"school": "St. Josephs (IND)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2603",
+"mascot": "Hawks",
+"primaryColor": "9e1b32",
+"school": "Saint Joseph's",
+"secondaryColor": "6c6f70"
+},
+{
+"id": "2604",
+"mascot": "Saints",
+"primaryColor": "000000",
+"school": "St. Joseph (VT)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2605",
+"mascot": "Lions",
+"primaryColor": "000000",
+"school": "Saint Leo",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2606",
+"mascot": "Saints",
+"primaryColor": "000000",
+"school": "Saint Martin's",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2608",
+"mascot": "Gaels",
+"primaryColor": "d80024",
+"school": "Saint Mary's",
+"secondaryColor": "003057"
+},
+{
+"id": "2610",
+"mascot": "Rattlers",
+"primaryColor": "000000",
+"school": "St. Mary's (TX)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2611",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "St. Pauls College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2612",
+"mascot": "Peacocks",
+"primaryColor": "004cc2",
+"school": "Saint Peter's",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2615",
+"mascot": "Cougars",
+"primaryColor": "000000",
+"school": "St. Xavier",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2616",
+"mascot": "Warriors",
+"primaryColor": "000000",
+"school": "Stanislaus State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2617",
+"mascot": "Ladyjacks",
+"primaryColor": "393996",
+"school": "Stephen F. Austin",
+"secondaryColor": "bec0c2"
+},
+{
+"id": "2618",
+"mascot": "Ducks",
+"primaryColor": "000000",
+"school": "Stevens Tech",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2619",
+"mascot": "Seawolves",
+"primaryColor": "990000",
+"school": "Stony Brook",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2623",
+"mascot": "Lady Bears",
+"primaryColor": "5e0009",
+"school": "Missouri State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2625",
+"mascot": "Tornadoes",
+"primaryColor": "000000",
+"school": "Talladega",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2627",
+"mascot": "Texans",
+"primaryColor": "000000",
+"school": "Tarleton State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2628",
+"mascot": "Horned Frogs",
+"primaryColor": "4d1979",
+"school": "TCU",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2630",
+"mascot": "Skyhawks",
+"primaryColor": "ff6700",
+"school": "UT Martin",
+"secondaryColor": "102a5c"
+},
+{
+"id": "2631",
+"mascot": "Crusaders",
+"primaryColor": "000000",
+"school": "Tennessee Temple",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2632",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Tennessee Wesleyan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2633",
+"mascot": "Lady Volunteers",
+"primaryColor": "ff8200",
+"school": "Tennessee",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2634",
+"mascot": "Lady Tigers",
+"primaryColor": "171796",
+"school": "Tennessee State",
+"secondaryColor": "f0f0f0"
+},
+{
+"id": "2635",
+"mascot": "Golden Eagles",
+"primaryColor": "5a4099",
+"school": "Tennessee Tech",
+"secondaryColor": "ffde00"
+},
+{
+"id": "2636",
+"mascot": "Roadrunners",
+"primaryColor": "0c2340",
+"school": "UTSA",
+"secondaryColor": "f15a22"
+},
+{
+"id": "2637",
+"mascot": "Steers",
+"primaryColor": "000000",
+"school": "Texas College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2638",
+"mascot": "Miners",
+"primaryColor": "ff8200",
+"school": "UTEP",
+"secondaryColor": "041e42"
+},
+{
+"id": "2639",
+"mascot": "Bulldogs",
+"primaryColor": "fdbe10",
+"school": "Texas Lutheran",
+"secondaryColor": "000000"
+},
+{
+"id": "2640",
+"mascot": "Tigers",
+"primaryColor": "860038",
+"school": "Texas Southern",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2641",
+"mascot": "Lady Raiders",
+"primaryColor": "da291c",
+"school": "Texas Tech",
+"secondaryColor": "000000"
+},
+{
+"id": "2642",
+"mascot": "Rams",
+"primaryColor": "000000",
+"school": "Texas Wesleyan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2644",
+"mascot": "Tomcats",
+"primaryColor": "000000",
+"school": "Thiel",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2645",
+"mascot": "Night Hawks",
+"primaryColor": "000000",
+"school": "Thomas (GA)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2649",
+"mascot": "Rockets",
+"primaryColor": "0b2240",
+"school": "Toledo",
+"secondaryColor": "ffcd00"
+},
+{
+"id": "2650",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Tougaloo",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2651",
+"mascot": "Trine",
+"primaryColor": "000000",
+"school": "Trine University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2652",
+"mascot": "Trolls",
+"primaryColor": "000000",
+"school": "Trinity Christian (IL)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2653",
+"mascot": "Trojans",
+"primaryColor": "862633",
+"school": "Troy",
+"secondaryColor": "b1b1b1"
+},
+{
+"id": "2654",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Truman State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2655",
+"mascot": "Green Wave",
+"primaryColor": "006747",
+"school": "Tulane",
+"secondaryColor": "418fde"
+},
+{
+"id": "2657",
+"mascot": "Golden Tigers",
+"primaryColor": "000000",
+"school": "Tuskegee",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2658",
+"mascot": "Javelinas",
+"primaryColor": "000000",
+"school": "Texas A&M-Kingsville",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2660",
+"mascot": "UMASS BOSTON",
+"primaryColor": "000000",
+"school": "UMass Boston",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2666",
+"mascot": "Blue Knights",
+"primaryColor": "000000",
+"school": "Urbana",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2667",
+"mascot": "Bears",
+"primaryColor": "98012e",
+"school": "Ursinus",
+"secondaryColor": "fcb034"
+},
+{
+"id": "2670",
+"mascot": "Rams",
+"primaryColor": "ffaf00",
+"school": "VCU",
+"secondaryColor": "000000"
+},
+{
+"id": "2671",
+"mascot": "Cobras",
+"primaryColor": "000000",
+"school": "VA Intermont",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2673",
+"mascot": "Blazers",
+"primaryColor": "dd1a32",
+"school": "Valdosta State",
+"secondaryColor": "000000"
+},
+{
+"id": "2674",
+"mascot": "Beacons",
+"primaryColor": "794500",
+"school": "Valparaiso",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2676",
+"mascot": "Panthers",
+"primaryColor": "000000",
+"school": "Virginia Union",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2677",
+"mascot": "V-Hawks",
+"primaryColor": "000000",
+"school": "Viterbo",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2679",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Voorhees",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2681",
+"mascot": "Seahawks",
+"primaryColor": "00483a",
+"school": "Wagner",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2682",
+"mascot": "Cavaliers",
+"primaryColor": "000000",
+"school": "Walsh",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2683",
+"mascot": "Royals",
+"primaryColor": "000000",
+"school": "Warner University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2684",
+"mascot": "Owls",
+"primaryColor": "000000",
+"school": "Warren Wilson",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2687",
+"mascot": "Ichabods",
+"primaryColor": "000000",
+"school": "Washburn",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2691",
+"mascot": "Warriors",
+"primaryColor": "000000",
+"school": "Webber International",
+"secondaryColor": "909090"
+},
+{
+"id": "2692",
+"mascot": "Wildcats",
+"primaryColor": "18005a",
+"school": "Weber State",
+"secondaryColor": "ebebeb"
+},
+{
+"id": "2695",
+"mascot": "Tigers",
+"primaryColor": "d31d33",
+"school": "West Alabama",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2697",
+"mascot": "Argonauts",
+"primaryColor": "087dc2",
+"school": "West Florida",
+"secondaryColor": "03b186"
+},
+{
+"id": "2698",
+"mascot": "Wolves",
+"primaryColor": "0033a1",
+"school": "West Georgia",
+"secondaryColor": "db1a21"
+},
+{
+"id": "2699",
+"mascot": "Hilltoppers",
+"primaryColor": "000000",
+"school": "West Liberty",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2701",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Montana Western",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2703",
+"mascot": "Mustangs",
+"primaryColor": "000000",
+"school": "Western New Mexico",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2704",
+"mascot": "Buffaloes",
+"primaryColor": "000000",
+"school": "West Texas A&M",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2706",
+"mascot": "Golden Bears",
+"primaryColor": "000000",
+"school": "W. Virginia Tech",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2707",
+"mascot": "Yellow Jackets",
+"primaryColor": "000000",
+"school": "West Virginia State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2710",
+"mascot": "Leathernecks",
+"primaryColor": "4e1e8a",
+"school": "Western Illinois",
+"secondaryColor": "ffc90a"
+},
+{
+"id": "2711",
+"mascot": "Broncos",
+"primaryColor": "532e1f",
+"school": "Western Michigan",
+"secondaryColor": "f1c500"
+},
+{
+"id": "2714",
+"mascot": "Mountaineers",
+"primaryColor": "000000",
+"school": "Western Colorado",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2716",
+"mascot": "Warriors",
+"primaryColor": "000000",
+"school": "Westmont",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2717",
+"mascot": "Catamounts",
+"primaryColor": "492f91",
+"school": "Western Carolina",
+"secondaryColor": "bf9e70"
+},
+{
+"id": "2719",
+"mascot": "Cardinals",
+"primaryColor": "000000",
+"school": "Wheeling",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2720",
+"mascot": "Missionaries",
+"primaryColor": "000000",
+"school": "Whitman",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2721",
+"mascot": "Pirates",
+"primaryColor": "930036",
+"school": "Whitworth",
+"secondaryColor": "000000"
+},
+{
+"id": "2723",
+"mascot": "Falcons",
+"primaryColor": "000000",
+"school": "University of Wisconsin River Falls",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2724",
+"mascot": "Shockers",
+"primaryColor": "ffcd00",
+"school": "Wichita State",
+"secondaryColor": "27251f"
+},
+{
+"id": "2726",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Wilberforce",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2728",
+"mascot": "Wildcats",
+"primaryColor": "000000",
+"school": "Wiley",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2729",
+"mascot": "Tribe",
+"primaryColor": "115740",
+"school": "William & Mary",
+"secondaryColor": "f0b323"
+},
+{
+"id": "2730",
+"mascot": "Crusaders",
+"primaryColor": "000000",
+"school": "William Carey",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2732",
+"mascot": "Wildcats",
+"primaryColor": "000000",
+"school": "Wilmington DE",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2733",
+"mascot": "Quakers",
+"primaryColor": "000000",
+"school": "Wilmington (OH)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2736",
+"mascot": "Rams",
+"primaryColor": "bb0100",
+"school": "Winston-Salem",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2737",
+"mascot": "Eagles",
+"primaryColor": "9e0b0e",
+"school": "Winthrop",
+"secondaryColor": "fdb41e"
+},
+{
+"id": "2738",
+"mascot": "Blugolds",
+"primaryColor": "000000",
+"school": "Wisconsin-Eau Claire",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2739",
+"mascot": "Phoenix",
+"primaryColor": "006633",
+"school": "Green Bay",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2740",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Wisconsin-La Crosse",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2741",
+"mascot": "Warriors",
+"primaryColor": "006241",
+"school": "Wisconsin Lutheran",
+"secondaryColor": "000000"
+},
+{
+"id": "2742",
+"mascot": "Rangers",
+"primaryColor": "000000",
+"school": "UW-Parkside",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2743",
+"mascot": "Pointers",
+"primaryColor": "000000",
+"school": "Wisconsin Stevens Point",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2744",
+"mascot": "Blue Devils",
+"primaryColor": "000000",
+"school": "Wisconsin Stout",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2747",
+"mascot": "Terriers",
+"primaryColor": "533b24",
+"school": "Wofford",
+"secondaryColor": "f0f0f0"
+},
+{
+"id": "2750",
+"mascot": "Raiders",
+"primaryColor": "cba052",
+"school": "Wright State",
+"secondaryColor": "cba052"
+},
+{
+"id": "2751",
+"mascot": "Cowgirls",
+"primaryColor": "492f24",
+"school": "Wyoming",
+"secondaryColor": "ffc425"
+},
+{
+"id": "2752",
+"mascot": "Musketeers",
+"primaryColor": "21304e",
+"school": "Xavier",
+"secondaryColor": "a5a7a8"
+},
+{
+"id": "2753",
+"mascot": "Gold Rush",
+"primaryColor": "000000",
+"school": "Xavier (LA)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2754",
+"mascot": "Penguins",
+"primaryColor": "e51937",
+"school": "Youngstown State",
+"secondaryColor": "690717"
+},
+{
+"id": "2755",
+"mascot": "Lady Tigers",
+"primaryColor": "ee8601",
+"school": "Grambling",
+"secondaryColor": "ffd10a"
+},
+{
+"id": "2757",
+"mascot": "Vikings",
+"primaryColor": "00205b",
+"school": "Berry",
+"secondaryColor": "a2aaad"
+},
+{
+"id": "2758",
+"mascot": "Yellow Jackets",
+"primaryColor": "02215b",
+"school": "Howard Payne",
+"secondaryColor": "b5985b"
+},
+{
+"id": "2771",
+"mascot": "Warriors",
+"primaryColor": "2f4f93",
+"school": "Merrimack",
+"secondaryColor": "e8c535"
+},
+{
+"id": "2772",
+"mascot": "Golden Eagles",
+"primaryColor": "000000",
+"school": "Minn Crookston",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2778",
+"mascot": "Royals",
+"primaryColor": "000000",
+"school": "Scranton",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2783",
+"mascot": "Knights",
+"primaryColor": "000000",
+"school": "SUNY Geneseo",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2785",
+"mascot": "Garnet Chargers",
+"primaryColor": "762334",
+"school": "Union",
+"secondaryColor": "000000"
+},
+{
+"id": "2789",
+"mascot": "YORK (NE)",
+"primaryColor": "000000",
+"school": "York College Nebraska",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2802",
+"mascot": "Royals",
+"primaryColor": "002d62",
+"school": "Bethel (MN)",
+"secondaryColor": "b59859"
+},
+{
+"id": "2803",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Bryant",
+"secondaryColor": "9f8343"
+},
+{
+"id": "2804",
+"mascot": "Hawks",
+"primaryColor": "000000",
+"school": "Chowan",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2805",
+"mascot": "Panthers",
+"primaryColor": "000000",
+"school": "Clark Atlanta",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2812",
+"mascot": "Flying Dutchmen",
+"primaryColor": "000000",
+"school": "Hope",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2815",
+"mascot": "Lions",
+"primaryColor": "000000",
+"school": "Lindenwood",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2816",
+"mascot": "Bearcats",
+"primaryColor": "000000",
+"school": "McKendree",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2817",
+"mascot": "Mavericks",
+"primaryColor": "000000",
+"school": "Minnesota State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2820",
+"mascot": "NEW JERSEY CITY",
+"primaryColor": "000000",
+"school": "New Jersey City",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2822",
+"mascot": "Crusaders",
+"primaryColor": "d91e39",
+"school": "North Greenville",
+"secondaryColor": "000000"
+},
+{
+"id": "2824",
+"mascot": "Aggies",
+"primaryColor": "000000",
+"school": "Panhandle State (OK)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2825",
+"mascot": "Hawks",
+"primaryColor": "000000",
+"school": "Quincy",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2826",
+"mascot": "Bears",
+"primaryColor": "000000",
+"school": "Rocky Mountain",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2830",
+"mascot": "Hawks",
+"primaryColor": "000000",
+"school": "Saint Anselm",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2831",
+"mascot": "Cougars",
+"primaryColor": "000000",
+"school": "St. Francis (IN)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2834",
+"mascot": "Lobos",
+"primaryColor": "000000",
+"school": "Sul Ross State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2837",
+"mascot": "Lions",
+"primaryColor": "000000",
+"school": "East Texas A&M",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2838",
+"mascot": "Dragons",
+"primaryColor": "000000",
+"school": "Tiffin",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2839",
+"mascot": "Pioneers",
+"primaryColor": "f2682a",
+"school": "Tusculum",
+"secondaryColor": "000000"
+},
+{
+"id": "2841",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Union (KY)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2842",
+"mascot": "Cavaliers",
+"primaryColor": "e30000",
+"school": "UVA Wise",
+"secondaryColor": "000000"
+},
+{
+"id": "2843",
+"mascot": "Colonials",
+"primaryColor": "002857",
+"school": "Western Connecticut State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2844",
+"mascot": "Wildcats",
+"primaryColor": "000000",
+"school": "Wayne State (NE)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2845",
+"mascot": "Jackets",
+"primaryColor": "000000",
+"school": "Waynesburg College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2846",
+"mascot": "Wolverines",
+"primaryColor": "000000",
+"school": "Wesley",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2847",
+"mascot": "Vikings",
+"primaryColor": "000000",
+"school": "West. Washington",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2848",
+"mascot": "Wolves",
+"primaryColor": "000000",
+"school": "Western Oregon",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2854",
+"mascot": "Deacons",
+"primaryColor": "000000",
+"school": "Bloomfield",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2855",
+"mascot": "Bearcats",
+"primaryColor": "000000",
+"school": "Brescia",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2856",
+"mascot": "Lancers",
+"primaryColor": "000000",
+"school": "California Baptist",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2857",
+"mascot": "Cougars",
+"primaryColor": "000000",
+"school": "Caldwell University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2858",
+"mascot": "Vulcans",
+"primaryColor": "000000",
+"school": "California PA",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2859",
+"mascot": "Thunderbirds",
+"primaryColor": "000000",
+"school": "Cascade",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2860",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Central Methodist",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2862",
+"mascot": "Cougars",
+"primaryColor": "000000",
+"school": "Colorado Christian",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2863",
+"mascot": "Otters",
+"primaryColor": "000000",
+"school": "Cal State Monterey Bay",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2865",
+"mascot": "Crusaders",
+"primaryColor": "000000",
+"school": "Evangel",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2866",
+"mascot": "Geoducks",
+"primaryColor": "000000",
+"school": "Evergreen State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2868",
+"mascot": "Hawks",
+"primaryColor": "000000",
+"school": "Holy Names College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2870",
+"mascot": "Mastodons",
+"primaryColor": "cfb991",
+"school": "Purdue Fort Wayne",
+"secondaryColor": "000000"
+},
+{
+"id": "2871",
+"mascot": "Cougars",
+"primaryColor": "092f56",
+"school": "Kean",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2873",
+"mascot": "Storm",
+"primaryColor": "000000",
+"school": "Keuka",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2874",
+"mascot": "Redhawks",
+"primaryColor": "000000",
+"school": "La Roche",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2875",
+"mascot": "Flames",
+"primaryColor": "000000",
+"school": "Lee University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2876",
+"mascot": "Blue Tigers",
+"primaryColor": "000000",
+"school": "Lincoln (MO)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2877",
+"mascot": "LINDSEY WILSON",
+"primaryColor": "000000",
+"school": "Lindsey Wilson",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2879",
+"mascot": "Valiants",
+"primaryColor": "000000",
+"school": "Manhattanville",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2880",
+"mascot": "Spartans",
+"primaryColor": "000000",
+"school": "Missouri Baptist",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2882",
+"mascot": "Braves",
+"primaryColor": "000000",
+"school": "UNC Pembroke",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2884",
+"mascot": "Bison",
+"primaryColor": "007b5f",
+"school": "Nichols",
+"secondaryColor": "000000"
+},
+{
+"id": "2885",
+"mascot": "Highlanders",
+"primaryColor": "ee3024",
+"school": "NJIT",
+"secondaryColor": "df3e2e"
+},
+{
+"id": "2886",
+"mascot": "Timberwolves",
+"primaryColor": "000000",
+"school": "Northwood",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2887",
+"mascot": "Nighthawks",
+"primaryColor": "000000",
+"school": "Northwest Nazarene",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2888",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Ouachita Baptist",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2889",
+"mascot": "Pirates",
+"primaryColor": "000000",
+"school": "Puerto Rico-Bayamon",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2890",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Reinhardt",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2891",
+"mascot": "Red Hawks",
+"primaryColor": "000000",
+"school": "Ripon",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2892",
+"mascot": "Bearcats",
+"primaryColor": "000000",
+"school": "Rust",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2894",
+"mascot": "Cougars",
+"primaryColor": "000000",
+"school": "Sioux Falls",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2896",
+"mascot": "Knights",
+"primaryColor": "000000",
+"school": "Southern Virginia",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2900",
+"mascot": "Tommies",
+"primaryColor": "000000",
+"school": "St. Thomas",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2901",
+"mascot": "Dolphins",
+"primaryColor": "000000",
+"school": "Staten Island",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2904",
+"mascot": "Lions",
+"primaryColor": "000000",
+"school": "Nelson (TX)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2905",
+"mascot": "Comets",
+"primaryColor": "000000",
+"school": "UT Dallas",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2906",
+"mascot": "Trojans",
+"primaryColor": "000000",
+"school": "Trevecca Nazarene",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2908",
+"mascot": "Spartans",
+"primaryColor": "008545",
+"school": "South Carolina Upstate",
+"secondaryColor": "000000"
+},
+{
+"id": "2911",
+"mascot": "Cardinals",
+"primaryColor": "000000",
+"school": "William Jewell",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2912",
+"mascot": "Statesmen",
+"primaryColor": "000000",
+"school": "William Penn",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2913",
+"mascot": "Tornados",
+"primaryColor": "000000",
+"school": "Brevard",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2914",
+"mascot": "Broncos",
+"primaryColor": "000000",
+"school": "Cal Poly Pomona",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2915",
+"mascot": "Lions",
+"primaryColor": "000000",
+"school": "Freed-Hardeman",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2916",
+"mascot": "Cardinals",
+"primaryColor": "000000",
+"school": "Incarnate Word",
+"secondaryColor": "080808"
+},
+{
+"id": "2917",
+"mascot": "Magicians",
+"primaryColor": "000000",
+"school": "LeMoyne-Owen",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2919",
+"mascot": "Fighting Scots",
+"primaryColor": "000000",
+"school": "Monmouth ILL",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2920",
+"mascot": "Rams",
+"primaryColor": "000000",
+"school": "Mobile",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2922",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Olivet Nazarene",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2927",
+"mascot": "Bulldogs",
+"primaryColor": "000000",
+"school": "Southwestern Oklahoma State",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2928",
+"mascot": "Pioneers",
+"primaryColor": "000000",
+"school": "TX Woman's Univ",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2930",
+"mascot": "Bearcats",
+"primaryColor": "960a2c",
+"school": "Willamette",
+"secondaryColor": "ab9e76"
+},
+{
+"id": "2931",
+"mascot": "Owls",
+"primaryColor": "000000",
+"school": "William Woods",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2934",
+"mascot": "Roadrunners",
+"primaryColor": "003bab",
+"school": "Cal State Bakersfield",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2937",
+"mascot": "Crusaders",
+"primaryColor": "000000",
+"school": "Dallas Christian",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2939",
+"mascot": "Jimmies",
+"primaryColor": "000000",
+"school": "Jamestown",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2940",
+"mascot": "Blue Bears",
+"primaryColor": "000000",
+"school": "Livingstone",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2942",
+"mascot": "Eagles",
+"primaryColor": "000000",
+"school": "Mary Washington",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2943",
+"mascot": "Pilgrims",
+"primaryColor": "000000",
+"school": "New England College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2945",
+"mascot": "Falcons",
+"primaryColor": "000000",
+"school": "Pfeiffer",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2947",
+"mascot": "Warriors",
+"primaryColor": "000000",
+"school": "Rochester Christian",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2948",
+"mascot": "Tigers",
+"primaryColor": "000000",
+"school": "Stillman",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2949",
+"mascot": "Cavaliers",
+"primaryColor": "000000",
+"school": "St Gregory's",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2952",
+"mascot": "Knights",
+"primaryColor": "000000",
+"school": "Warner Pacific",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2957",
+"mascot": "Penguins",
+"primaryColor": "000000",
+"school": "Dominican (CA)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2959",
+"mascot": "Bearcats",
+"school": "Baruch College"
+},
+{
+"id": "2965",
+"mascot": "Pride",
+"primaryColor": "000000",
+"school": "Clarke University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2973",
+"mascot": "Roadrunners",
+"school": "Ramapo College"
+},
+{
+"id": "2974",
+"mascot": "Rams",
+"primaryColor": "000000",
+"school": "Shepherd",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2982",
+"mascot": "Bruins",
+"primaryColor": "000000",
+"school": "Bethany (CA)",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2985",
+"mascot": "Cardinals",
+"primaryColor": "000000",
+"school": "Concordia-Ann Arbor",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2986",
+"mascot": "Falcons",
+"primaryColor": "000000",
+"school": "Fairmont St",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3065",
+"mascot": "Chargers",
+"primaryColor": "000000",
+"school": "Briar Cliff",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3066",
+"mascot": "Golden Bears",
+"primaryColor": "000000",
+"school": "Concordia-St. Paul",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3067",
+"mascot": "Maple Leafs",
+"primaryColor": "000000",
+"school": "Goshen",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3069",
+"mascot": "Warriors",
+"primaryColor": "000000",
+"school": "INDIANA TECH",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3071",
+"mascot": "Cardinals",
+"primaryColor": "000000",
+"school": "North Central College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3077",
+"mascot": "Knights",
+"primaryColor": "000000",
+"school": "Kentucky Christian",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3078",
+"mascot": "Warriors",
+"primaryColor": "000000",
+"school": "Jessup",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3079",
+"mascot": "Mustangs",
+"primaryColor": "000000",
+"school": "Central Baptist",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3081",
+"mascot": "Falcons",
+"primaryColor": "000000",
+"school": "Texas Permian Basin",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3082",
+"mascot": "Dustdevils",
+"primaryColor": "000000",
+"school": "Texas A&M International",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3083",
+"mascot": "Ambassadors",
+"school": "Oakwood"
+},
+{
+"id": "3084",
+"mascot": "Wolverines",
+"primaryColor": "004812",
+"school": "Utah Valley",
+"secondaryColor": "e1c736"
+},
+{
+"id": "3086",
+"mascot": "Patriots",
+"school": "Texas-Tyler"
+},
+{
+"id": "3088",
+"mascot": "Redhawks",
+"school": "Indiana-Northwest"
+},
+{
+"id": "3091",
+"mascot": "Royals",
+"school": "Hope International"
+},
+{
+"id": "3092",
+"mascot": "Panthers",
+"school": "Davenport"
+},
+{
+"id": "3094",
+"mascot": "Wildcats",
+"school": "Johnson and Wales"
+},
+{
+"id": "3096",
+"mascot": "Hawks",
+"school": "San Diego Christian"
+},
+{
+"id": "3098",
+"mascot": "Mustangs",
+"primaryColor": "000000",
+"school": "Marygrove College",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3099",
+"mascot": "Hornets",
+"school": "Concordia College (AL)"
+},
+{
+"id": "3101",
+"mascot": "Trailblazers",
+"primaryColor": "000000",
+"school": "Utah Tech",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3105",
+"mascot": "Fires",
+"school": "Southeastern"
+},
+{
+"id": "3106",
+"mascot": "Warriors",
+"primaryColor": "000000",
+"school": "Corban",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3111",
+"mascot": "Builders",
+"primaryColor": "000000",
+"school": "Apprentice School",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3120",
+"mascot": "Royals",
+"school": "Ecclesia"
+},
+{
+"id": "3125",
+"mascot": "Rams",
+"primaryColor": "000000",
+"school": "Temple Baptist",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3136",
+"mascot": "Urban Knights",
+"school": "Academy of Art"
+},
+{
+"id": "3140",
+"mascot": "Patriots",
+"school": "St. Catharine"
+},
+{
+"id": "3141",
+"mascot": "Eagles",
+"school": "Northern New Mexico"
+},
+{
+"id": "3148",
+"mascot": "Flames",
+"school": "College of Saint Mary"
+},
+{
+"id": "3149",
+"mascot": "Rams",
+"school": "Farmingdale State"
+},
+{
+"id": "3152",
+"mascot": "Wolves",
+"school": "Walla Walla"
+},
+{
+"id": "3154",
+"mascot": "Mustangs",
+"school": "Southwest"
+},
+{
+"id": "3158",
+"mascot": "Saints",
+"school": "Our Lady Of The Lake"
+},
+{
+"id": "3159",
+"mascot": "Yotes",
+"school": "College of Idaho"
+},
+{
+"id": "3160",
+"mascot": "Eagles",
+"school": "Robert Morris (IL-Sp"
+},
+{
+"id": "3163",
+"mascot": "Lakers",
+"school": "Roosevelt"
+},
+{
+"id": "3166",
+"mascot": "Patriots",
+"school": "Arlington Baptist"
+},
+{
+"id": "3172",
+"mascot": "Riverhawks",
+"school": "Northeastern Oklahom"
+},
+{
+"id": "3174",
+"mascot": "Eagles",
+"school": "Trinity Baptist"
+},
+{
+"id": "3178",
+"mascot": "Gyrenes",
+"primaryColor": "000000",
+"school": "Ave Maria",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3182",
+"mascot": "Cougars",
+"school": "Cal State San Marcos"
+},
+{
+"id": "3185",
+"mascot": "Bobcats",
+"school": "UC Merced"
+},
+{
+"id": "3188",
+"mascot": "Firestorm",
+"school": "Arizona Christian"
+},
+{
+"id": "3195",
+"mascot": "Celts",
+"school": "St. Thomas (TX)"
+},
+{
+"id": "3229",
+"mascot": "Dragons",
+"school": "Virginia Lynchburg"
+},
+{
+"id": "3232",
+"mascot": "Lions",
+"primaryColor": "000000",
+"school": "Indiana Dabney University",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3233",
+"mascot": "LOURDES",
+"primaryColor": "000000",
+"school": "Lourdes",
+"secondaryColor": "ffffff"
+},
+{
+"id": "3245",
+"mascot": "Bears",
+"school": "Truett-McConnell"
+},
+{
+"id": "3251",
+"mascot": "Blue Devils",
+"school": "Lawrence Tech"
+},
+{
+"id": "5793",
+"mascot": "Yellow Jackets",
+"school": "Defiance"
+},
+{
+"id": "7052",
+"mascot": "OTTAWA (KS)",
+"school": "Ottawa (KS)"
+},
+{
+"id": "7859",
+"mascot": "Shoremen",
+"school": "Washington College (MD)"
+},
+{
+"id": "7994",
+"mascot": "Wildcats",
+"school": "Wilmington (DE)"
+},
+{
+"id": "14314",
+"mascot": "Wildcats",
+"school": "Louisiana Christian University"
+},
+{
+"id": "15252",
+"mascot": "Cougars",
+"school": "Columbia (MO)"
+},
+{
+"id": "66784",
+"mascot": "Mighty Macs",
+"school": "Immaculata"
+},
+{
+"id": "86697",
+"mascot": "Tigers",
+"school": "Grace Bible College"
+},
+{
+"id": "86802",
+"mascot": "Lakers",
+"school": "Oswego St"
+},
+{
+"id": "100277",
+"mascot": "Eagles",
+"school": "Pensacola Christian"
+},
+{
+"id": "105890",
+"mascot": "Tigers",
+"school": "Barber-Scotia"
+},
+{
+"id": "106392",
+"mascot": "Knights",
+"school": "Warner Pacific"
+},
+{
+"id": "107590",
+"mascot": "Hardrockers",
+"primaryColor": "000000",
+"school": "South Dakota School of Mines",
+"secondaryColor": "ffffff"
+},
+{
+"id": "107599",
+"mascot": "Drovers",
+"school": "Science & Arts (OK)"
+},
+{
+"id": "107607",
+"mascot": "Skyhawks",
+"school": "Point"
+},
+{
+"id": "107722",
+"mascot": "Knights",
+"school": "Northwood University"
+},
+{
+"id": "108784",
+"mascot": "SOUTHWESTERN CHRISTIAN U",
+"school": "Southwestern Christian U"
+},
+{
+"id": "108785",
+"mascot": "Cougars",
+"school": "Indiana University Kokomo"
+},
+{
+"id": "108788",
+"mascot": "Spires",
+"school": "Saint Mary (KS)"
+},
+{
+"id": "108810",
+"mascot": "Tigers",
+"school": "Salem University"
+},
+{
+"id": "108823",
+"mascot": "Generals",
+"school": "LSU Alexandria"
+},
+{
+"id": "108824",
+"mascot": "Falcons",
+"school": "Crowleys Ridge"
+},
+{
+"id": "108825",
+"mascot": "Sw Christian",
+"school": "Terrell"
+},
+{
+"id": "108826",
+"mascot": "Eagles",
+"school": "Williams Baptist"
+},
+{
+"id": "108827",
+"mascot": "Toppers",
+"school": "Blue Mountain Christian"
+},
+{
+"id": "108832",
+"mascot": "Golden Flashes",
+"school": "Kent St Tuscarawas"
+},
+{
+"id": "108833",
+"mascot": "Eagles",
+"school": "Cincinnati Christian"
+},
+{
+"id": "108834",
+"mascot": "Trailblazers",
+"school": "Ohio Christian"
+},
+{
+"id": "108846",
+"mascot": "Lions",
+"school": "Multnomah"
+},
+{
+"id": "108847",
+"mascot": "Spartans",
+"school": "St. Thomas Aquinas"
+},
+{
+"id": "108866",
+"mascot": "Tigers",
+"school": "Trinity (FL)"
+},
+{
+"id": "108867",
+"mascot": "Griffins",
+"school": "Gwynedd Mercy"
+},
+{
+"id": "108878",
+"mascot": "Flames",
+"school": "Bethesda"
+},
+{
+"id": "108879",
+"mascot": "Daniel Webster",
+"school": "Nashua"
+},
+{
+"id": "108883",
+"mascot": "Cougars",
+"school": "Clearwater"
+},
+{
+"id": "108884",
+"mascot": "Eagles",
+"school": "Toccoa Falls"
+},
+{
+"id": "108885",
+"mascot": "Bears",
+"school": "St. Joseph's Long Island"
+},
+{
+"id": "108887",
+"mascot": "Bayhawks",
+"school": "Bristol Community College"
+},
+{
+"id": "108890",
+"mascot": "Shock",
+"school": "Washington Adventist"
+},
+{
+"id": "109019",
+"mascot": "Wildcats",
+"school": "Johnson & Wales-Charlotte"
+},
+{
+"id": "109206",
+"mascot": "Wildcats",
+"school": "Baker University"
+},
+{
+"id": "109246",
+"mascot": "Gryphons",
+"school": "Sarah Lawrence"
+},
+{
+"id": "109466",
+"mascot": "Jayhawks",
+"school": "Haskell"
+},
+{
+"id": "109502",
+"mascot": "Seahawks",
+"school": "Keiser University"
+},
+{
+"id": "109514",
+"mascot": "Cedar Crest",
+"school": "Allentown"
+},
+{
+"id": "109515",
+"mascot": "Warriors",
+"school": "Nyack College"
+},
+{
+"id": "109516",
+"mascot": "Cougars",
+"school": "Misericordia"
+},
+{
+"id": "109542",
+"mascot": "Chargers",
+"school": "Colby Sawyer"
+},
+{
+"id": "109546",
+"mascot": "Bruins",
+"school": "Bob Jones"
+},
+{
+"id": "109600",
+"mascot": "Falcons",
+"school": "Albertus Magnus"
+},
+{
+"id": "109604",
+"mascot": "Red Hawks",
+"school": "Simpson (CA)"
+},
+{
+"id": "109616",
+"mascot": "Warriors",
+"school": "Waldorf College"
+},
+{
+"id": "109644",
+"mascot": "Saints",
+"school": "Ashford University"
+},
+{
+"id": "109672",
+"mascot": "Beacons",
+"school": "Bushnell"
+},
+{
+"id": "109676",
+"mascot": "Lions",
+"school": "Emerson College"
+},
+{
+"id": "109680",
+"mascot": "STEPHENS",
+"school": "Stephens"
+},
+{
+"id": "109681",
+"mascot": "Lions",
+"school": "Mount St. Joseph"
+},
+{
+"id": "109685",
+"mascot": "Knights",
+"school": "Central Penn"
+},
+{
+"id": "109688",
+"mascot": "COLUMBIA INTERNATIONAL",
+"school": "Columbia International"
+},
+{
+"id": "109689",
+"mascot": "Mustangs",
+"school": "Mid-Atlantic Christian"
+},
+{
+"id": "109704",
+"mascot": "Mariner",
+"school": "Coastal Georgia"
+},
+{
+"id": "109716",
+"mascot": "Gators",
+"school": "Notre Dame (MD)"
+},
+{
+"id": "109754",
+"mascot": "Mountain Lions",
+"school": "Young Harris College"
+},
+{
+"id": "110394",
+"mascot": "Poets",
+"school": "Whittier"
+},
+{
+"id": "110395",
+"mascot": "Antelope Valley",
+"school": "Antelope Valley"
+},
+{
+"id": "110398",
+"mascot": "Bengals",
+"school": "Maine Fort Kent"
+},
+{
+"id": "110400",
+"mascot": "Pioneers",
+"school": "Pacific Union"
+},
+{
+"id": "110402",
+"mascot": "Tigers",
+"school": "Central Christian College"
+},
+{
+"id": "110406",
+"mascot": "Wildcats",
+"school": "Johnson & Wales Florida"
+},
+{
+"id": "110419",
+"mascot": "Lions",
+"school": "Georgian Court"
+},
+{
+"id": "110442",
+"mascot": "IU EAST",
+"school": "IU East"
+},
+{
+"id": "110466",
+"mascot": "Evangels",
+"school": "Mid-America Christian"
+},
+{
+"id": "110467",
+"mascot": "Eagles",
+"school": "Post University"
+},
+{
+"id": "111194",
+"mascot": "Griffins",
+"school": "Johnson & Wales (RI)"
+},
+{
+"id": "111195",
+"mascot": "Eagles",
+"school": "Fisher College"
+},
+{
+"id": "111196",
+"mascot": "Knights",
+"school": "Middle Georgia State"
+},
+{
+"id": "111197",
+"mascot": "Valkyries",
+"school": "Converse"
+},
+{
+"id": "111198",
+"mascot": "Thunderwolves",
+"school": "Colorado State-Pueblo"
+},
+{
+"id": "111200",
+"mascot": "Bruins",
+"school": "Bellevue University"
+},
+{
+"id": "111202",
+"mascot": "Miners",
+"school": "Missouri S&T"
+},
+{
+"id": "111203",
+"mascot": "Hurricanes",
+"school": "Georgia Southwestern"
+},
+{
+"id": "111204",
+"mascot": "Patriots",
+"school": "UVF"
+},
+{
+"id": "111205",
+"mascot": "Pacers",
+"school": "William Peace"
+},
+{
+"id": "111206",
+"mascot": "Pilots",
+"school": "Bethel College Indiana"
+},
+{
+"id": "111207",
+"mascot": "Racers",
+"school": "University of Northwestern Ohio"
+},
+{
+"id": "111208",
+"mascot": "Penn State - Beaver",
+"school": "Penn State (Beaver)"
+},
+{
+"id": "111214",
+"mascot": "Blue Jays",
+"school": "Westminster (MO)"
+},
+{
+"id": "111228",
+"mascot": "Eagles",
+"school": "Embry Riddle (AZ)"
+},
+{
+"id": "111911",
+"mascot": "Pride",
+"school": "Purdue Northwest"
+},
+{
+"id": "111954",
+"mascot": "Nor'easters",
+"school": "University Of New England"
+},
+{
+"id": "111956",
+"mascot": "Avenging Angels",
+"school": "Meredith College"
+},
+{
+"id": "111957",
+"mascot": "Royals",
+"school": "Regent University"
+},
+{
+"id": "111958",
+"mascot": "Cougars",
+"school": "Carver College"
+},
+{
+"id": "111959",
+"mascot": "Celtics",
+"school": "Carlow"
+},
+{
+"id": "111960",
+"mascot": "Golden Eagles",
+"school": "La Sierra"
+},
+{
+"id": "111961",
+"mascot": "Warriors",
+"school": "Westcliff"
+},
+{
+"id": "111967",
+"mascot": "Linchr",
+"school": "Lincoln"
+},
+{
+"id": "111990",
+"mascot": "Spirit",
+"school": "Ottawa (AZ)"
+},
+{
+"id": "111994",
+"mascot": "Warriors",
+"school": "Life Pacific"
+},
+{
+"id": "111998",
+"mascot": "Hawks",
+"school": "SUNY New Paltz"
+},
+{
+"id": "112102",
+"mascot": "Koalas",
+"school": "Columbia (SC)"
+},
+{
+"id": "112358",
+"mascot": "Sharks",
+"primaryColor": "50c9f7",
+"school": "Long Island University",
+"secondaryColor": "ffbf00"
+},
+{
+"id": "112702",
+"mascot": "Bobcats",
+"school": "Frostburg State"
+},
+{
+"id": "112703",
+"mascot": "Lions",
+"school": "East Nazarene"
+},
+{
+"id": "112704",
+"mascot": "Mustangs",
+"school": "Stevenson"
+},
+{
+"id": "116335",
+"mascot": "Running Eagles",
+"school": "Life University"
+},
+{
+"id": "116420",
+"mascot": "Buccaneers",
+"school": "Park University Gilbert"
+},
+{
+"id": "121584",
+"mascot": "Buccaneers",
+"school": "VIRGINISL"
+},
+{
+"id": "121690",
+"mascot": "Lyons",
+"school": "Wheaton College (MA)"
+},
+{
+"id": "121694",
+"mascot": "Suns",
+"school": "Johnson University (FL)"
+},
+{
+"id": "121697",
+"mascot": "Conquistadors",
+"school": "Florida National"
+},
+{
+"id": "121698",
+"mascot": "Griffins",
+"school": "Chestnut Hill"
+},
+{
+"id": "121702",
+"mascot": "Eagles",
+"school": "Midway"
+},
+{
+"id": "121715",
+"mascot": "Hillcats",
+"school": "Rogers State University"
+},
+{
+"id": "122210",
+"mascot": "Eagles",
+"school": "Texas A&M-Texarkana"
+},
+{
+"id": "123308",
+"mascot": "Salem College",
+"school": "Salem College"
+},
+{
+"id": "123309",
+"mascot": "Eutectics",
+"school": "Health Sciences & Pharmacy"
+},
+{
+"id": "123310",
+"mascot": "Stallions",
+"school": "North American"
+},
+{
+"id": "123311",
+"mascot": "Tigers",
+"school": "Champion Christian"
+},
+{
+"id": "123358",
+"mascot": "Pioneers",
+"school": "Transylvania"
+},
+{
+"id": "123387",
+"mascot": "Redhawks",
+"school": "Benedictine Mesa"
+},
+{
+"id": "123546",
+"mascot": "Trailblazers",
+"school": "UNT Dallas"
+},
+{
+"id": "124682",
+"mascot": "Lions",
+"school": "Nelson"
+},
+{
+"id": "124760",
+"mascot": "Drovers",
+"school": "University of Science and Arts"
+},
+{
+"id": "124761",
+"mascot": "Tigers",
+"school": "Grace Christian"
+},
+{
+"id": "124762",
+"mascot": "Lions",
+"school": "Bryn Athyn"
+},
+{
+"id": "124763",
+"mascot": "Lancaster Bible College",
+"school": "Lancaster Bible College"
+},
+{
+"id": "124765",
+"mascot": "Beacons",
+"school": "Bushnell"
+},
+{
+"id": "124954",
+"mascot": "Wildcats",
+"school": "Randolph"
+},
+{
+"id": "125218",
+"mascot": "Pioneers",
+"school": "Campbellsville-Harrodsburg"
+},
+{
+"id": "125763",
+"mascot": "Defenders",
+"school": "Dordt"
+},
+{
+"id": "126755",
+"mascot": "Panthers",
+"school": "Old Westbury"
+},
+{
+"id": "126756",
+"mascot": "Bruins",
+"school": "Carolina University"
+},
+{
+"id": "126757",
+"mascot": "Falcons",
+"school": "Simmons (KY)"
+},
+{
+"id": "126798",
+"mascot": "Harriers",
+"school": "Miami (OH)-Hamilton"
+},
+{
+"id": "126799",
+"mascot": "Mitchell",
+"school": "Mitchell College"
+},
+{
+"id": "126823",
+"mascot": "Pomeroys",
+"school": "Saint Mary of the Woods"
+},
+{
+"id": "126834",
+"mascot": "Oaklanders",
+"school": "Lincoln (CA)"
+},
+{
+"id": "126864",
+"mascot": "Eagles",
+"school": "Fort Lauderdale"
+},
+{
+"id": "126911",
+"mascot": "Yellow Jackets",
+"school": "Wisconsin-Superior"
+},
+{
+"id": "126973",
+"mascot": "Badgers",
+"school": "Vermont State Johnson"
+},
+{
+"id": "126974",
+"mascot": "Vikings",
+"school": "Villa Maria"
+},
+{
+"id": "128307",
+"mascot": "Lightning",
+"school": "Lehman"
+},
+{
+"id": "128409",
+"mascot": "Beavers",
+"school": "Caltech"
+},
+{
+"id": "128442",
+"mascot": "Saints",
+"school": "D'Youville"
+},
+{
+"id": "128450",
+"mascot": "Falcons",
+"school": "Kansas Christian"
+},
+{
+"id": "128451",
+"mascot": "Falcons",
+"school": "Friends"
+},
+{
+"id": "128455",
+"mascot": "Eagles",
+"school": "Saint Elizabeth"
+},
+{
+"id": "128456",
+"mascot": "Crusaders",
+"school": "Great Lakes Christian"
+},
+{
+"id": "128474",
+"mascot": "Royals",
+"school": "Johnson"
+},
+{
+"id": "128475",
+"mascot": "Golden Knights",
+"school": "Saint Rose"
+},
+{
+"id": "128478",
+"mascot": "Hornets",
+"school": "Vtsu Lyndon"
+},
+{
+"id": "128502",
+"mascot": "Eagles",
+"school": "Edgewood"
+},
+{
+"id": "128537",
+"mascot": "Cougars",
+"school": "Kuyper"
+},
+{
+"id": "128567",
+"mascot": "Knights",
+"school": "Arcadia"
+},
+{
+"id": "128568",
+"mascot": "Cougars",
+"school": "Cleary University"
+},
+{
+"id": "128602",
+"mascot": "Sound",
+"school": "Five Towns College"
+},
+{
+"id": "128658",
+"mascot": "Ambassadors",
+"school": "College of Biblical Studies"
+},
+{
+"id": "128733",
+"mascot": "Bobcats",
+"school": "Bryant & Stratton"
+},
+{
+"id": "128905",
+"mascot": "Bold",
+"school": "Toronto Metropolitan"
+},
+{
+"id": "130110",
+"mascot": "Bobcats",
+"school": "Bates College"
+},
+{
+"id": "130113",
+"mascot": "Blaze",
+"school": "Hood College"
+},
+{
+"id": "130129",
+"mascot": "Golden Bears",
+"school": "Clinton"
+},
+{
+"id": "130132",
+"mascot": "Captains",
+"school": "Christopher Newport"
+},
+{
+"id": "130137",
+"mascot": "Crimson Pride",
+"school": "IU Columbus"
+},
+{
+"id": "130174",
+"mascot": "Jaguars",
+"school": "Texas A&M-San Antonio"
+},
+{
+"id": "130205",
+"mascot": "Golden Tigers",
+"school": "Brenau University"
+},
+{
+"id": "130215",
+"mascot": "Elks",
+"school": "Stanton"
+},
+{
+"id": "130229",
+"mascot": "Mighty Banyans",
+"school": "New College (FL)"
+},
+{
+"id": "130263",
+"mascot": "Owls",
+"school": "Mississippi U for Women"
+},
+{
+"id": "130380",
+"mascot": "Chargers",
+"school": "Southeastern Baptist College"
+},
+{
+"id": "131604",
+"mascot": "Broncos",
+"school": "SUNY Delhi"
+},
+{
+"id": "131653",
+"mascot": "Vulcans",
+"school": "California (PA)"
+},
+{
+"id": "131664",
+"mascot": "Eagles",
+"school": "Bard"
+},
+{
+"id": "131667",
+"mascot": "Knights",
+"school": "Berkeley"
+},
+{
+"id": "131682",
+"mascot": "Bulldogs",
+"school": "Dean"
+},
+{
+"id": "131686",
+"mascot": "Blazers",
+"school": "Elms"
+},
+{
+"id": "131690",
+"mascot": "Golden Falcons",
+"school": "Felician"
+},
+{
+"id": "131695",
+"mascot": "Blue Devils",
+"school": "SUNY Fredonia"
+},
+{
+"id": "131731",
+"mascot": "Panthers",
+"school": "Purchase"
+},
+{
+"id": "131773",
+"mascot": "Cardinals",
+"school": "Saint Mary's (MN)"
+},
+{
+"id": "131775",
+"mascot": "Bears",
+"school": "St. Joseph's Brooklyn"
+},
+{
+"id": "131817",
+"mascot": "Warriors",
+"school": "Nelson American Indian"
+},
+{
+"id": "131832",
+"mascot": "Mystics",
+"school": "Bismarck State"
+},
+{
+"id": "131833",
+"mascot": "Larks",
+"school": "Hesston"
+},
+{
+"id": "134332",
+"mascot": "Mustangs",
+"school": "Monroe (NY)"
+}
+]
