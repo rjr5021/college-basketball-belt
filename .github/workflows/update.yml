@@ -1,5 +1,6 @@
-# Refresh data/games/*.csv from the CollegeBasketballData API, commit it,
-# rebuild collegebasketballbelt.com and deploy it to GitHub Pages.
+# Refresh data/games/*.csv from the CollegeBasketballData API and the women's
+# files (data/women/) from ESPN, commit them, rebuild collegebasketballbelt.com
+# (men's belt at /, women's at /women/) and deploy it to GitHub Pages.
 # The first run with no data backfills every season; later runs make one or
 # two API calls each. Run by hand with "full" ticked to redo the backfill.
 name: Update and deploy
@@ -39,6 +40,10 @@ jobs:
         env:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
         run: python fetch_games.py ${{ inputs.full && '--full' || '' }}
+        continue-on-error: true
+      - name: Fetch women's games (ESPN via wehoop + ESPN scoreboard, no key)
+        if: github.event_name != 'push'
+        run: python fetch_women.py
         continue-on-error: true
       - name: Fetch AP polls
         if: github.event_name != 'push'
