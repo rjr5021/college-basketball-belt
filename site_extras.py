@@ -638,7 +638,7 @@ def build_stories(datas):
 <section class="wrap prose story"><div class="kicker">{lg['long_name']} · story</div><h1 class="disp">{e(title)}</h1><p class="dek">{e(dek)}</p>{html}
 <p class="mono more"><a href="{base(lg)}/stories/">{more}</a></p></section>"""
             ld = {"@context": "https://schema.org", "@type": "Article", "headline": title, "description": dek,
-                  "dateModified": d["generated"], "publisher": {"@type": "Organization", "name": site_name()}}
+                  "dateModified": d["generated"], "publisher": {"@type": "Organization", "name": F.OWNER}}
             S.write(url.strip("/") + "/index.html", S.page(title, body, path=url, active=key, jsonld=ld, description=dek))
             mine.append((lg, title, dek, url))
         if network:

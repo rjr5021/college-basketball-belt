@@ -36,6 +36,7 @@ from datetime import date, datetime, timedelta
 S = None
 BASE = None
 SITE_NAME = "Belt Holders"
+OWNER = "R&O Holdings LLC"     # owns and operates every site in the belt network (publisher / creator in JSON-LD)
 HOLDER_TAG = ' <span class="tag chg">Holder</span>'
 SAME_TAG = '<span class="tag chg">Same team</span>'
 CHG_TAG = '<span class="tag chg">Title change</span>'
@@ -1765,7 +1766,7 @@ def build_data(lg, d):
     ld = {"@type": "Dataset", "name": f"Lineal {lg['name']} championship belt: reigns and belt games",
           "description": f"Every lineal {lg['name']} belt reign ({len(d['reigns']):,}) and belt game ({len(d['belt_games']):,}) since the first game on record, with holders, dates, scores and outcomes.",
           "url": f"{base}/data/", "isAccessibleForFree": True,
-          "creator": {"@type": "Organization", "name": SITE_NAME},
+          "creator": {"@type": "Organization", "name": OWNER},
           "temporalCoverage": f"{d['belt_games'][0]['date']}/{d['belt_games'][-1]['date']}" if d["belt_games"] else None,
           "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": f"{base}/data/reigns.csv"},
                            {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": f"{base}/data/belt-games.csv"}]}

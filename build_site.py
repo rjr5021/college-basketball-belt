@@ -22,6 +22,7 @@ DOMAIN = "collegebasketballbelt.com"
 OUT = "site"
 SITE_NAME = "The College Basketball Belt"
 NETWORK = False          # site_extras: one stories index per belt, no all-league index
+OWNER = "R&O Holdings LLC"      # the company that owns and operates the site (formed 2026-09-29)
 ADSENSE_PUBLISHER_ID = ""        # "pub-3317069252410560" once the site is approved in AdSense
 GOATCOUNTER_CODE = "collegebasketballbelt"
 STYLES_VERSION = "6"
@@ -289,7 +290,7 @@ def page(title, body, *, path, description, active=None, jsonld=None, robots=Non
             if GOATCOUNTER_CODE else "")
     if path == "/" and not P:
         # BH-16/CBB-8/NET-4: Organization + WebSite (with the site search) on the homepage, sameAs the network
-        site_ld = [{"@type": "Organization", "@id": SITE_URL + "/#org", "name": 'The College Basketball Belt', "url": SITE_URL + "/",
+        site_ld = [{"@type": "Organization", "@id": SITE_URL + "/#org", "name": OWNER, "alternateName": 'The College Basketball Belt', "url": SITE_URL + "/",
                     "logo": SITE_URL + "/icon-512.png", "sameAs": ['https://x.com/CollegeBBBelt', 'https://www.instagram.com/CollegeBBBelt', 'https://beltholders.com', 'https://collegefootballbelt.com']},
                    {"@type": "WebSite", "@id": SITE_URL + "/#site", "name": 'The College Basketball Belt', "url": SITE_URL + "/", "publisher": {"@id": SITE_URL + "/#org"},
                     "potentialAction": {"@type": "SearchAction", "target": SITE_URL + "/search/?q={query}", "query-input": "required name=query"}}]
@@ -344,6 +345,7 @@ def page(title, body, *, path, description, active=None, jsonld=None, robots=Non
   <div class="belt-network" data-belt-network data-site="cbb"><span class="nk">The belt network</span><a href="__ROOT__/"><b>Men's college hoops</b></a><a href="__ROOT__/women/"><b>Women's college hoops</b></a><a href="https://collegefootballbelt.com/"><b>College football</b></a><a href="https://beltholders.com/"><b>Pro leagues</b></a><a class="all" href="https://beltholders.com/all/">Every belt →</a></div>
   <div class="links"><a href="https://collegefootballbelt.com">collegefootballbelt.com</a><a href="https://beltholders.com">beltholders.com</a><a href="https://x.com/CollegeBBBelt">@CollegeBBBelt</a><a href="https://x.com/CollegeFBBelt">@CollegeFBBelt</a><a href="https://x.com/thebeltholders">@thebeltholders</a><a href="https://instagram.com/CollegeBBBelt">Instagram</a></div>
   <div class="links"><a href="/privacy/">Privacy</a><a href="/about/">About</a><a href="mailto:hello@collegebasketballbelt.com">Contact</a><a href="/feed.xml">RSS</a><a href="/embed/">Embed a badge</a><span>Not affiliated with the NCAA or any school.</span></div>
+  <div class="links"><span>&copy; {date.today().year} R&amp;O Holdings LLC. All rights reserved.</span></div>
 </footer>
 <script src="/network-bar.js" defer></script>
 <script>if("serviceWorker" in navigator)addEventListener("load",function(e){{navigator.serviceWorker.register("/sw.js").catch(Boolean);}});</script>
@@ -792,7 +794,7 @@ def build_static(d):
 <div class="kicker">About</div>
 <h1 class="disp">About the College Basketball Belt</h1>
 <p>The College Basketball Belt tracks the lineal championship of college basketball: one title, passed from team to team only by beating whoever holds it. There are two belts, <a href="/">the men's</a> (since 1949–50) and <a href="/women/">the women's</a> (since 1986–87). It's the sister site of the <a href="https://collegefootballbelt.com">College Football Belt</a>, which has tracked the same idea in college football since 1869, and part of the <a href="https://beltholders.com">Belt Holders</a> network, which does it for the NFL, NBA, NHL and MLB.</p>
-<p>The site is independent and fan-run. It isn't affiliated with the NCAA, any conference or any school. School names are used only to identify the teams.</p>
+<p>collegebasketballbelt.com is operated by R&amp;O Holdings LLC. The site is independent and fan-run. It isn't affiliated with the NCAA, any conference or any school. School names are used only to identify the teams.</p>
 <p>Find us at <a href="https://x.com/CollegeBBBelt">@CollegeBBBelt</a> or email <a href="mailto:hello@collegebasketballbelt.com">hello@collegebasketballbelt.com</a>.</p>
 </section>"""
     write("about/index.html", page("About", about, path="/about/", description="About the College Basketball Belt, the lineal championship tracker for men's and women's college basketball."))
@@ -810,7 +812,7 @@ def build_static(d):
 <h2 class="disp">Advertising</h2>
 {ads_text}
 <h2 class="disp">Contact</h2>
-<p><a href="mailto:hello@collegebasketballbelt.com">hello@collegebasketballbelt.com</a></p>
+<p>collegebasketballbelt.com is operated by {e(OWNER)}. Questions about this policy: <a href="mailto:hello@collegebasketballbelt.com">hello@collegebasketballbelt.com</a></p>
 </section>"""
     write("privacy/index.html", page("Privacy", privacy, path="/privacy/", description="College Basketball Belt privacy policy."))
     write("404.html", page("Page not found", """<section class="wrap prose"><div class="kicker">404</div><h1 class="disp">That page lost the belt</h1><p>It's not here anymore. Try the <a href="/">current holder</a> or the <a href="/history/">full history</a>.</p></section>""",
