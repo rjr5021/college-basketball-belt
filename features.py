@@ -46,6 +46,11 @@ SAME_SHORT = ' <span class="tag chg">Same</span>'
 def init(site_module, base, site_name="Belt Holders"):
     global S, BASE, SITE_NAME
     S, BASE, SITE_NAME = site_module, base, site_name
+    SEARCH_PLAYERS.clear()
+
+
+SEARCH_PLAYERS = []      # [name, label, url, belt games] for players with SEARCH_MIN_GAMES+; site_extras.build_search reads it
+SEARCH_MIN_GAMES = 5
 
 
 def e(x):
@@ -1760,7 +1765,7 @@ def build_data(lg, d):
     ld = {"@type": "Dataset", "name": f"Lineal {lg['name']} championship belt: reigns and belt games",
           "description": f"Every lineal {lg['name']} belt reign ({len(d['reigns']):,}) and belt game ({len(d['belt_games']):,}) since the first game on record, with holders, dates, scores and outcomes.",
           "url": f"{base}/data/", "isAccessibleForFree": True,
-          "creator": {"@type": "Organization", "name": getattr(S, "SITE_NAME", "") or S.SITE_URL.split("//")[-1]},
+          "creator": {"@type": "Organization", "name": SITE_NAME},
           "temporalCoverage": f"{d['belt_games'][0]['date']}/{d['belt_games'][-1]['date']}" if d["belt_games"] else None,
           "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": f"{base}/data/reigns.csv"},
                            {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": f"{base}/data/belt-games.csv"}]}
@@ -2317,6 +2322,8 @@ def build_players(lg, d):
         has_page = len(gs) >= MIN_PLAYER_GAMES
         url = f"{b(lg)}/players/{slug}/" if has_page else None
         p["url"] = url
+        if has_page and len(gs) >= SEARCH_MIN_GAMES:
+            SEARCH_PLAYERS.append([p["name"], f"{lg['name']} player", url, len(gs)])
         w = sum(1 for x in gs if x[3])
         took = sum(1 for x in gs if x[4] == "took")
         tot = {c: sum((x[5].get(c) or 0) for x in gs) for c in sc["totals"]}

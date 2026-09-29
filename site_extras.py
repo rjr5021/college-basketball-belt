@@ -669,31 +669,48 @@ def build_stories(datas):
 
 # ---------------------------------------------------------------- search --
 
-def build_search(datas):
+def build_search(datas, cards=()):
+    """NET-6: search/index.json holds teams, seasons, notable reigns and stories; search/players.json the
+    players with F.SEARCH_MIN_GAMES+ belt games (fetched alongside it). Rows are [name, label, url, weight]."""
     idx = []
     for lg in LIVE:
         d = datas[lg["key"]]
         teams = {r["team"] for r in d["reigns"]}
         for t in teams:
-            idx.append([lg["team_name"](t), f"{lg['name']} team", f"{base(lg)}/teams/{S.slug(lg['team_name'](t))}/"])
+            idx.append([lg["team_name"](t), f"{lg['name']} team", f"{base(lg)}/teams/{S.slug(lg['team_name'](t))}/", 9999])
         for s in d["seasons"]:
-            idx.append([f"{lg['name']} {s['label']}", "Season", season_url(lg, s["season"])])
-    S.write("search/index.json", json.dumps(idx, separators=(",", ":")))
+            idx.append([f"{lg['name']} {s['label']}", "Season", season_url(lg, s["season"]), 500])
+        cur = d["reigns"][-1]["index"] if d["reigns"] else None
+        for r in d["reigns"]:
+            if notable(r, cur) and r.get("defenses", 0) >= REIGN_MIN_DEFENSES:
+                yr = r["start_date"][:4]
+                idx.append([f"{lg['team_name'](r['team'], r.get('season'))} {yr}", f"{lg['name']} reign · {S.plural(r['defenses'], 'defense')}",
+                            f"{base(lg)}/reigns/{r['index']}/", r["defenses"]])
+    for c in cards:
+        lg, t, _dk, u = c
+        idx.append([t, f"{lg['name']} story", u, 1])
+    S.write("search/index.json", json.dumps(idx, separators=(",", ":"), ensure_ascii=False))
+    S.write("search/players.json", json.dumps(sorted(F.SEARCH_PLAYERS, key=lambda x: -x[3]), separators=(",", ":"), ensure_ascii=False))
     body = """<section class="wrap block"><div class="head"><h1 class="disp">Search</h1></div>
-<input id="q" class="searchbox mono" type="search" placeholder="A team, a city, or a season like 1985" autofocus>
+<input id="q" class="searchbox mono" type="search" placeholder="A team, a player, a city, or a season like 1985" autofocus>
 <ol id="res" class="results"></ol></section>
 <script>
 (function(){var I=[],q=document.getElementById('q'),o=document.getElementById('res');
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-function run(){var v=q.value.trim().toLowerCase();if(!v){o.innerHTML='';return;}
-var r=I.filter(function(x){return x[0].toLowerCase().indexOf(v)>=0;}).slice(0,40);
-o.innerHTML=r.length?r.map(function(x){return '<li><a href="'+x[2]+'">'+esc(x[0])+'</a><span class="mono">'+esc(x[1])+'</span></li>';}).join(''):'<li>No matches.</li>';}
+function fold(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+function run(){var v=fold(q.value.trim());if(!v){o.innerHTML='';return;}
+var r=[];I.forEach(function(x){var n=x.f||(x.f=fold(x[0])),i=n.indexOf(v);if(i<0)return;
+r.push([i===0||n.charAt(i-1)===' '?0:1,-(x[3]||0),x]);});
+r.sort(function(a,b){return a[0]-b[0]||a[1]-b[1];});r=r.slice(0,40);
+o.innerHTML=r.length?r.map(function(y){var x=y[2];return '<li><a href="'+x[2]+'">'+esc(x[0])+'</a><span class="mono">'+esc(x[1])+'</span></li>';}).join(''):'<li>No matches.</li>';}
 q.addEventListener('input',run);
 var p=new URLSearchParams(location.search).get('q');if(p){q.value=p;}
-fetch('/search/index.json').then(function(r){return r.json();}).then(function(j){I=j;run();});})();
+function add(j){I=I.concat(j);run();}
+fetch('/search/index.json').then(function(r){return r.json();}).then(add);
+fetch('/search/players.json').then(function(r){return r.ok?r.json():[];}).then(add).catch(Boolean);})();
 </script>"""
     S.write("search/index.html", S.page("Search", body, path="/search/", description=(S.search_description() if hasattr(S, "search_description")
-                                                                                   else "Find any team or season on Belt Holders.")))
+                                                                                   else "Find any team, player, reign or season on Belt Holders.")))
 
 
 # ----------------------------------------------------------------- teams --
@@ -830,5 +847,5 @@ def build_all(datas):
     F.build_embed([(lg, datas[lg["key"]]) for lg in LIVE])
     build_otd(datas)
     cards = build_stories(datas)
-    build_search(datas)
+    build_search(datas, cards)
     return cards
