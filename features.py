@@ -72,13 +72,26 @@ def post_word(lg):
     return lg.get("post_word", "playoffs")
 
 
+TEAM_PAGES = {}      # league key -> team codes with a page: holders and every challenger (BH-4)
+
+
+def has_team_page(lg, code):
+    pages = TEAM_PAGES.get(lg["key"])
+    return True if pages is None else code in pages
+
+
 def team_url(lg, code):
     return f"{b(lg)}/teams/{S.slug(lg['team_name'](code))}/"
 
 
+def team_href(lg, code):
+    """The team's page, or None when it has none (it never played a belt game)."""
+    return team_url(lg, code) if has_team_page(lg, code) else None
+
+
 def tlink(lg, code, season=None):
     nm = lg["team_name"](code, season) if season is not None else lg["team_name"](code)
-    return f'<a href="{team_url(lg, code)}">{e(nm)}</a>'
+    return f'<a href="{team_url(lg, code)}">{e(nm)}</a>' if has_team_page(lg, code) else e(nm)
 
 
 def pct(p, digits=0):
@@ -97,10 +110,11 @@ def sl(lg, s):
     return fn(s) if fn else str(s)
 
 
-def page(lg, title, body, rel, description, jsonld=None):
+def page(lg, title, body, rel, description, jsonld=None, robots=None):
     path = f"{b(lg)}/{rel}" if rel else f"{b(lg)}/"
+    kw = {"robots": robots} if robots else {}
     S.write(out(lg, rel + "index.html" if rel else "index.html"),
-            S.page(title, body, path=path, description=description, active=lg.get("key"), jsonld=jsonld))
+            S.page(title, body, path=path, description=description, active=lg.get("key"), jsonld=jsonld, **kw))
 
 
 def numbers(items):
@@ -543,7 +557,7 @@ def build_my_team(lg, d):
         last = rs[-1] if rs else None
         meet = (m.get("meet") or {}).get(t)
         data[t] = {
-            "name": lg["team_name"](t), "short": lg["short_name"](t), "color": lg["team_colors"](t)[0], "url": team_url(lg, t),
+            "name": lg["team_name"](t), "short": lg["short_name"](t), "color": lg["team_colors"](t)[0], "url": team_href(lg, t),
             "reigns": len(rs), "days": sum(r["days"] for r in rs), "defenses": sum(r.get("defenses", 0) for r in rs),
             "best": max((r.get("defenses", 0) for r in rs), default=0),
             "last": [last["start_date"], last.get("end_date")] if last else None,
@@ -576,7 +590,7 @@ function go(){{
  if(x.losers)s.push('They also hold the <a href="{b(lg)}/losers-belt/">Losers Belt</a>. Ouch.');
  O.innerHTML='<div class="ondate" style="--c:'+x.color+'"><div class="kicker">'+(x.rank?'Elo #'+x.rank+' · '+x.elo:'')+'</div><b class="disp">'+x.name+'</b><p>'+s.join(' ')+'</p>'+
  '<div class="numbers"><div><b class="disp">'+x.reigns+'</b><span class="mono">Reigns</span></div><div><b class="disp">'+x.days.toLocaleString()+'</b><span class="mono">Days held</span></div><div><b class="disp">'+x.defenses+'</b><span class="mono">Defenses</span></div><div><b class="disp">'+x.best+'</b><span class="mono">Best reign (defenses)</span></div></div>'+
- '<p>'+(x.last?(x.last[1]?'Last held it '+fd(x.last[0])+' – '+fd(x.last[1])+'.':'Holding it since '+fd(x.last[0])+'.'):'Never held the belt.')+'</p><p class="mono"><a href="'+x.url+'">Full team belt history →</a> · <a href="{b(lg)}/compare/?a='+t+'&b={cur["team"]}">vs. the holder →</a></p></div>';
+ '<p>'+(x.last?(x.last[1]?'Last held it '+fd(x.last[0])+' – '+fd(x.last[1])+'.':'Holding it since '+fd(x.last[0])+'.'):'Never held the belt.')+'</p><p class="mono">'+(x.url?'<a href="'+x.url+'">Full team belt history →</a> · ':'')+'<a href="{b(lg)}/compare/?a='+t+'&b={cur["team"]}">vs. the holder →</a></p></div>';
 }}
 S.onchange=go;
 try{{var v=localStorage.getItem(K);if(v)S.value=v;}}catch(e){{}}
@@ -1229,7 +1243,7 @@ show();
   <div class="acard"><div class="kicker">Belt history between these two</div><p>{bm_line}</p><a class="mono more" href="{b(lg)}/compare/?a={h}&amp;b={c}">Full comparison →</a></div>
   <div class="acard"><div class="kicker">{e(n(c))} &amp; the belt</div>
     <div class="anums"><div><b class="disp">{pv['challenger_reigns']}</b><span class="mono">Reigns</span></div><div><b class="disp">{c_days:,}</b><span class="mono">Days held</span></div><div><b class="disp">{last_held}</b><span class="mono">Last held</span></div></div>
-    <p>{c_sent}</p><a class="mono more" href="{team_url(lg, c)}">Team page →</a></div>
+    <p>{c_sent}</p>{f'<a class="mono more" href="{team_url(lg, c)}">Team page →</a>' if has_team_page(lg, c) else ''}</div>
 </aside>"""
     crumbs_html = f'<nav class="crumbs mono wrap"><a href="{b(lg)}/">{e(lg["name"])} belt</a> / <a href="{b(lg)}/seasons/">{e(sl(lg, ng.get("season") or pv.get("record_season")))}</a> / Up next</nav>'
     body = f"""{S.subnav(lg, "next")}
@@ -1306,6 +1320,7 @@ def plan_game_pages(lg, d):
         if rcs.get(f"{bg.get('holder')}|{bg['opponent']}|{bg['date']}"):
             keep.add(bg["n"])
     GAME_PAGES[lg["key"]] = keep
+    TEAM_PAGES[lg["key"]] = {r["team"] for r in d["reigns"]} | {t for bg in d["belt_games"] for t in (bg.get("holder"), bg["opponent"]) if t}
     return keep
 
 
@@ -1940,7 +1955,7 @@ def build_losers_table(lg, d):
     n = lg["team_name"]
     rows = []
     for i, r in enumerate(reversed(reigns)):
-        rows.append({"c": [f'{r[0]:,}', f'<i style="background:{lg["team_colors"](r[1])[0]}"></i><a href="{team_url(lg, r[1])}">{e(n(r[1]))}</a>',
+        rows.append({"c": [f'{r[0]:,}', f'<i style="background:{lg["team_colors"](r[1])[0]}"></i>{tlink(lg, r[1])}',
                            S.d_short(r[2], True), S.d_short(r[3], True) if r[3] else "Holding", str(r[4]), f"{r[5]:,}"],
                      "t": n(r[1]).lower(), "k": [r[0], n(r[1]), r[2], r[3] or "9999", r[4], r[5]],
                      "f": {"decade": int(r[2][:4]) // 10 * 10}, "cur": i == 0})
@@ -2436,7 +2451,7 @@ def build_web(lg, d, max_nodes=60):
         a, bb = bg["holder"], bg["new_holder"]
         if a in keep and bb in keep:
             pairs[(a, bb)] += 1
-    nodes = [{"id": t, "n": lg["team_name"](t), "s": lg["short_name"](t), "c": lg["team_colors"](t)[0], "d": days[t], "u": team_url(lg, t)} for t in keep]
+    nodes = [{"id": t, "n": lg["team_name"](t), "s": lg["short_name"](t), "c": lg["team_colors"](t)[0], "d": days[t], "u": team_href(lg, t)} for t in keep]
     links = [{"source": a, "target": bb, "w": w} for (a, bb), w in pairs.items()]
     S.write(out(lg, "web/data.json"), json.dumps({"nodes": nodes, "links": links}, separators=(",", ":")))
     body = f"""{S.subnav(lg, "more")}
@@ -2459,7 +2474,7 @@ fetch('{b(lg)}/web/data.json').then(function(r){{return r.json();}}).then(functi
  var node=svg.append('g').selectAll('g').data(D.nodes).join('g').attr('class','wnode').call(d3.drag().on('start',function(ev,n){{if(!ev.active)sim.alphaTarget(.3).restart();n.fx=n.x;n.fy=n.y;}}).on('drag',function(ev,n){{n.fx=ev.x;n.fy=ev.y;}}).on('end',function(ev,n){{if(!ev.active)sim.alphaTarget(0);n.fx=null;n.fy=null;}}));
  node.append('circle').attr('r',function(n){{return r(n.d);}}).attr('fill',function(n){{return n.c;}});
  node.append('text').text(function(n){{return n.s;}}).attr('dy',function(n){{return r(n.d)+12;}});
- node.on('click',function(ev,n){{location.href=n.u;}}).on('mousemove',function(ev,n){{
+ node.on('click',function(ev,n){{if(n.u)location.href=n.u;}}).on('mousemove',function(ev,n){{
   var out=D.links.filter(function(l){{return l.source.id===n.id||l.target.id===n.id;}}).sort(function(a,b){{return b.w-a.w;}}).slice(0,4)
    .map(function(l){{return l.source.id===n.id?('lost it to '+l.target.s+' ×'+l.w):('took it from '+l.source.s+' ×'+l.w);}});
   tip.style('display','block').style('left',(ev.offsetX+12)+'px').style('top',(ev.offsetY+12)+'px').html('<b>'+n.n+'</b><br>'+n.d.toLocaleString()+' days<br><small>'+out.join('<br>')+'</small>');}})

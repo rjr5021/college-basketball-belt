@@ -86,6 +86,8 @@ def reign_url(lg, d, r):
 
 def team_link(lg, code, season=None):
     name = lg["team_name"](code, season) if season is not None else lg["team_name"](code)
+    if not F.has_team_page(lg, code):
+        return e(name)
     return f'<a href="{base(lg)}/teams/{S.slug(lg["team_name"](code))}/">{e(name)}</a>'
 
 
@@ -636,6 +638,96 @@ def team_extras(lg, d, team):
   <div><h2 class="disp sub">Belt record by opponent</h2><table class="history"><thead><tr><th class="mono">Opponent</th><th class="mono r">W–L</th><th></th></tr></thead><tbody>{rows}</tbody></table></div>
   <div><h2 class="disp sub">Seasons with the belt</h2><div class="strip">{chips}</div></div>
 </div></section>"""
+
+
+# ------------------------------------------------------------ challengers --
+
+CHALLENGER_INDEX_MIN = 3      # challenger pages with fewer belt games are noindex (thin)
+
+
+def challengers(lg, d):
+    """Teams that played belt games but never held the belt: {code: belt games}."""
+    held = {r["team"] for r in d["reigns"]}
+    c = Counter()
+    for bg in d["belt_games"]:
+        for t in (bg.get("holder"), bg["opponent"]):
+            if t and t not in held:
+                c[t] += 1
+    return c
+
+
+def build_challenger(lg, d, team):
+    """"<Team> vs. the belt": a page for every team that has challenged for the belt and
+    never won it (BH-4/CBB-2), so every team link resolves. Returns (url, games)."""
+    n, sn = lg["team_name"], lg["short_name"]
+    name = n(team)
+    games = [bg for bg in d["belt_games"] if team in (bg.get("holder"), bg["opponent"])]
+    if not games:
+        return None
+    losses, ties, closest, holders = 0, 0, [], Counter()
+    for bg in games:
+        mine, theirs = score_for(bg, team)
+        holders[bg.get("holder") or bg["new_holder"]] += 1
+        if mine == theirs:
+            ties += 1
+        else:
+            losses += 1
+            closest.append((theirs - mine, bg))
+    closest.sort(key=lambda x: (x[0], x[1]["date"]))
+    first, last = games[0], games[-1]
+    nxt = d.get("next_game") or {}
+    next_line = ""
+    if nxt and team in (nxt.get("challenger"), nxt.get("away"), nxt.get("home")) and nxt.get("date"):
+        next_line = (f" Next shot: {S.d_long(nxt['date'])} against {e(n(d['current']['team']))}, the current holder.")
+    p, s2 = lg["team_colors"](team)
+    top, bottom, ink, accent = S.plate(p, s2)
+    rec = f"0–{losses}" + (f"–{ties}" if ties else "")
+    lede = (f"{e(name)} {vb(lg, 'have', 'has')} played {S.plural(len(games), 'belt game')} and never taken the {e(lg['name'])} belt: "
+            f"the first chance came on {S.d_long(first['date'])}, the latest on {S.d_long(last['date'])}.{next_line}")
+    if ties:
+        lede += f" {S.plural(ties, 'game')} ended level, which leaves the belt with the holder."
+    faced = ", ".join(f"{team_link(lg, h)} ({x})" for h, x in holders.most_common(6))
+    close = "".join(f'<tr><td class="mono">{S.d_short(bg["date"], True)}</td><td>{game_line(lg, bg)}</td><td class="mono r">{m_}</td></tr>'
+                    for m_, bg in closest[:8])
+    rows = "".join(f'<tr id="g{bg["n"]}"><td class="mono"><a href="{season_url(lg, bg["season"], bg["n"])}">{bg["n"]:,}</a></td>'
+                   f'<td class="mono">{S.d_short(bg["date"], True)}</td><td>{game_line(lg, bg)}</td></tr>' for bg in reversed(games))
+    body = f"""{S.subnav(lg, "teams")}
+<section class="plate slim" style="--top:{top};--bottom:{bottom};--ink:{ink};--accent:{accent}">
+  <div class="wrap-in">
+    <div class="kicker dot">{e(lg['long_name'])} · still waiting</div>
+    <h1 class="disp holder" style="--fit:{max(len(x) for x in name.split())}">{e(name)} vs. the belt</h1>
+    <div class="stats"><div><b class="disp">{len(games)}</b><span class="mono">Belt games</span></div><div><b class="disp">{rec}</b><span class="mono">Record vs. holders</span></div><div><b class="disp">{first['date'][:4]}</b><span class="mono">First shot</span></div><div><b class="disp">{last['date'][:4]}</b><span class="mono">Latest shot</span></div></div>
+  </div>
+</section>
+<section class="wrap block prose"><p>{lede}</p><p>Holders faced most often: {faced}.</p></section>
+<section class="wrap block"><div class="two">
+  <div><h2 class="disp sub">The closest calls</h2><table class="history"><thead><tr><th class="mono">Date</th><th class="mono">Game</th><th class="mono r">Margin</th></tr></thead><tbody>{close}</tbody></table></div>
+  <div><h2 class="disp sub">Every belt game</h2><div class="tablewrap"><table class="history"><thead><tr><th class="mono">Belt game</th><th class="mono">Date</th><th class="mono">Result</th></tr></thead><tbody>{rows}</tbody></table></div></div>
+</div></section>"""
+    url = f"{base(lg)}/teams/{S.slug(name)}/"
+    thin = len(games) < CHALLENGER_INDEX_MIN
+    kw = {"robots": "noindex,follow"} if thin else {}
+    S.write(out(lg, f"teams/{S.slug(name)}/index.html"),
+            S.page(f"{name} vs. the {lg['name']} belt", body, path=url, active=lg["key"],
+                   description=f"{name} {vb(lg, 'have', 'has')} played {S.plural(len(games), 'lineal ' + lg['name'] + ' belt game')} "
+                               f"({rec} against the holder) and {vb(lg, 'are', 'is')} still waiting for a first reign.", **kw))
+    return url, len(games)
+
+
+def challengers_section(lg, d):
+    """Cards for the teams index: every challenger, most belt games first. Builds their pages."""
+    cards = []
+    for t, k in sorted(challengers(lg, d).items(), key=lambda kv: (-kv[1], lg["team_name"](kv[0]))):
+        built = build_challenger(lg, d, t)
+        if not built:
+            continue
+        p, _ = lg["team_colors"](t)
+        cards.append(f'<a class="teamcard" href="{built[0]}"><i style="background:{p}"></i><b class="disp">{e(lg["team_name"](t))}</b>'
+                     f'<span class="mono">{S.plural(k, "belt game")} · never held it</span></a>')
+    if not cards:
+        return ""
+    return (f'<section class="wrap block"><div class="head"><h2 class="disp">Still waiting</h2><span class="mono note">{len(cards)} '
+            f'{unit1(lg)}s have played for the belt and never taken it</span></div><div class="teamgrid">{"".join(cards)}</div></section>')
 
 
 # ------------------------------------------------------------------ main --

@@ -232,8 +232,13 @@ NAV = [("belt", "/", "The Belt"), ("history", "/history/", "History"), ("records
        ("teams", "/teams/", "Teams"), ("march", "/march/", "March"), ("rules", "/rules/", "Rules")]
 
 
-def page(title, body, *, path, description, active=None, jsonld=None):
+NOINDEX = set()      # paths written with a noindex robots tag; build_sitemap leaves them out (BH-1)
+
+
+def page(title, body, *, path, description, active=None, jsonld=None, robots=None):
     path = u(path)
+    if robots and "noindex" in robots:
+        NOINDEX.add(path)
     nav = "".join(f'<a href="{u(h)}"{" class=on" if k == active else ""}>{t}</a>' for k, h, t in NAV)
     switch = (f'<nav class="belts mono" aria-label="Men\'s or women\'s belt"><a href="__ROOT__/"{" class=on" if not P else ""}>Men</a>'
               f'<a href="__ROOT__/women/"{" class=on" if P else ""}>Women</a></nav>')
@@ -252,7 +257,7 @@ def page(title, body, *, path, description, active=None, jsonld=None):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(full_title)}</title>
 <meta name="description" content="{e(description)}">
-<link rel="canonical" href="{canonical}">
+{f'<meta name="robots" content="{robots}">' + chr(10) if robots else ""}<link rel="canonical" href="{canonical}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The College Basketball Belt">
 <meta property="og:title" content="{e(full_title)}">
@@ -559,6 +564,7 @@ def build_records(d):
 
 
 def build_teams(d):
+    import site_extras
     by = {}
     for r in d["reigns"]:
         by.setdefault(r["team"], []).append(r)
@@ -572,9 +578,10 @@ def build_teams(d):
 <section class="wrap block">
   <div class="head"><h1 class="disp">Every program that has held the belt</h1><span class="mono note">{len(by)} programs · sorted by days held</span></div>
   <div class="teamgrid">{"".join(cards)}</div>
-</section>"""
+</section>
+{site_extras.challengers_section(LG, d)}"""
     write("teams/index.html", page(f"Every team that has held the {SEC['short']}", body, path="/teams/", active="teams",
-                                   description=f"Every program that has held the lineal {SEC['who']} championship belt since {SEC['since']}."))
+                                   description=f"Every program that has held the lineal {SEC['who']} championship belt since {SEC['since']}, and every one still waiting."))
 
 
 def build_team(d, tid, rs):
