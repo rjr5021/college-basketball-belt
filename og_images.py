@@ -33,7 +33,7 @@ def lum(c):
     return 0.2126 * r + 0.7152 * g + 0.0722 * b
 
 
-def card(path, league, holder, since, defenses, primary, secondary, site):
+def card(path, league, holder, since, defenses, primary, secondary, site, kicker="CURRENT HOLDER"):
     W, H = 1200, 630
     top = rgb(primary)
     bot = tuple(int(x * 0.62) for x in top)
@@ -45,7 +45,7 @@ def card(path, league, holder, since, defenses, primary, secondary, site):
     ink = (246, 241, 230) if lum(top) < 0.45 else (33, 26, 18)
     acc = rgb(secondary) if secondary else (214, 176, 106)
     d.rectangle([0, 0, 18, H], fill=acc)
-    d.text((70, 70), f"{league.upper()} BELT · CURRENT HOLDER", font=font(MONO, 30), fill=ink)
+    d.text((70, 70), f"{league.upper()} BELT · {kicker}", font=font(MONO, 30), fill=ink)
     size = 150
     f = font(FONTS, size)
     words, lines = holder.upper().split(), []
