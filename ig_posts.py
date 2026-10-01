@@ -1292,11 +1292,34 @@ def pending_record(lg, belt):
             "game_no": game_no, "belt_name": belt.get("name")}
 
 
+def remote_state(st):
+    """Merge in what's already recorded on main. A second run (a manual one, or a
+    scheduled one that checked out an older commit) must never post the same
+    preview or result again -- this is the last check before anything goes out.
+    (2026-10-01: a manual run started while a scheduled one was posting the
+    first NHL preview, and posted it a second time.)"""
+    if not LIVE:
+        return st
+    try:
+        branch = os.environ.get("GITHUB_REF_NAME") or "main"
+        cur = gh_api("GET", f"/repos/{gh_repo()}/contents/{STATE_REL}?ref={branch}")
+        if cur and cur.get("content"):
+            remote = json.loads(base64.b64decode(cur["content"]).decode())
+            for k in ("previews", "results"):
+                st[k] = list(dict.fromkeys((remote.get(k) or []) + st.get(k, [])))
+            for k, v in (remote.get("pending") or {}).items():
+                st["pending"].setdefault(k, v)
+            st["log"] = list(dict.fromkeys((remote.get("log") or []) + st.get("log", [])))
+    except Exception as e:  # noqa: BLE001
+        print(f"  (couldn't read the state on main: {e})")
+    return st
+
+
 def one_pass(workdir):
     if not LIVE and not DRY:
         print("Instagram: IG secrets not set (or IG_LIVE=0) -- nothing to do. Run with IG_DRY_RUN=1 to test.")
         return
-    st = load_state()
+    st = remote_state(load_state())
     n = now_et()
     today = n.date()
     for lg in LEAGUES:
@@ -1323,7 +1346,11 @@ def one_pass(workdir):
             if due and key not in st["previews"]:
                 try:
                     built = build_preview(lg, belt, workdir)
-                    res = do_post(f"{lg} preview", built)
+                    if key in remote_state(st)["previews"]:
+                        print(f"{key}: preview already posted by another run -- skipping.")
+                        res = None
+                    else:
+                        res = do_post(f"{lg} preview", built)
                     if LIVE and res:
                         st["previews"].append(key)
                         st["log"].append(f"{n:%Y-%m-%d %H:%M} preview {key} {res}")
@@ -1348,6 +1375,10 @@ def one_pass(workdir):
                     print(f"{key}: not final yet ({typ.get('detail')})")
                     continue
                 built = build_result(p, workdir, summ)
+                if key in remote_state(st)["results"]:
+                    print(f"{key}: result already posted by another run -- skipping.")
+                    st["pending"].pop(key, None)
+                    continue
                 res = do_post(f"{lg} result", built)
                 if LIVE and res:
                     st["results"].append(key)
