@@ -173,7 +173,14 @@ def clock(dt_utc):
     return f"{h} {ap}" if m == "00" else f"{h}:{m} {ap}"
 
 
-def day_part(dt_utc):
+def time_known(dt_utc, flag=True):
+    """ESPN parks games with no start time yet at midnight ET (or flags them)."""
+    return flag is not False and dt_utc.astimezone(ET).strftime("%H:%M") != "00:00"
+
+
+def day_part(dt_utc, known=True):
+    if not known:
+        return dt_utc.astimezone(ET).strftime("%A")
     t = dt_utc.astimezone(ET)
     wd = t.strftime("%A")
     if t.hour < 12:
@@ -510,6 +517,7 @@ def next_game_after(lg, team_id, after):
         if not me or not opp:
             continue
         return {"date": when.astimezone(ET).date(), "dt": when, "home": me.get("homeAway") == "home",
+                "known": time_known(when, c.get("timeValid", ev.get("timeValid", True))),
                 "opp": opp["team"].get("displayName") or opp["team"].get("location"),
                 "opp_short": opp["team"].get("shortDisplayName") or opp["team"].get("name") or "",
                 "opp_abbr": opp["team"].get("abbreviation", ""),
@@ -738,6 +746,7 @@ Rules:
 - Hashtags: start with {SITE_CFG.get('tags', '#BeltHolders')} and #{facts.get('league_tag')}Belt, then both teams' common tags (e.g. #FlaPanthers style only if you're sure; otherwise the plain team names), #{facts.get('league_tag')} and an ABBRvsABBR tag.
 - These are pro (or college) teams: say "franchise" or "club" for pros, never "program" unless it's a college team.
 - The italic note and the caption must not misstate when or where anything happened: a preview is about an upcoming game (the holder won the belt earlier, in the game in the facts), never "begins its reign tonight".
+- Never state a year, count or name that isn't in the facts (e.g. how far back the belt goes: use belt_history_starts or leave it out). If the start time is "TBA", say the time is still to be announced.
 - No @mentions, no links, no hype exclamation marks. En dash in scores (4–2).
 - Under 1,500 characters.
 - Also a two-line italic note for the bottom of the card: a bold first sentence of at most 45 characters, then at most 115 more characters.
@@ -836,6 +845,8 @@ def build_preview(lg, belt, workdir):
     hs, os_ = side(summ, holder), side(summ, opp)
     ht, ot = hs["team"], os_["team"]
     kick = espn_dt(comp.get("date") or ev.get("date"))
+    known = bool(nx.get("time_et")) or time_known(kick, comp.get("timeValid", True))
+    tstr = (clock(kick) + " ET") if known else "Time TBA"
     venue, _city = venue_of(summ)
     nets = national_tv(summ)
     games, reigns = site_games(lg), site_reigns(lg)
@@ -857,7 +868,7 @@ def build_preview(lg, belt, workdir):
     tiles.append((f"{o_n}", f"{oshort} reigns all-time"))
     tiles.append((f"{len(met)}", "Belt games, this matchup"))
     when = '<span class="sep">·</span>'.join(
-        [f"<b>{esc(short_date(gday))}</b>", f"<b>{esc(clock(kick) + ' ET')}</b>"]
+        [f"<b>{esc(short_date(gday))}</b>", f"<b>{esc(tstr)}</b>"]
         + ([esc(" + ".join(nets[:2]))] if nets else []) + ([esc(venue)] if venue else []))
     role_r = f"Challenger · last held {o_last}" if o_last else "Challenger · never held it"
     stat_r = (f"<b>{o_n}</b> {'reign' if o_n == 1 else 'reigns'} · <b>{o_days:,}</b> days all-time" if o_n
@@ -873,19 +884,19 @@ def build_preview(lg, belt, workdir):
         "challenger_last_held_year": o_last, "previous_belt_games_between_them": len(met),
         "last_belt_meetings": [{"date": g["date"], "holder": g.get("holder_name"), "score_home_away": g.get("score"),
                                 "home": g.get("home"), "outcome": g.get("outcome")} for g in met[-3:]],
-        "start": f"{kick.astimezone(ET):%a} {clock(kick)} ET", "day_part": day_part(kick),
+        "start": f"{kick.astimezone(ET):%a} {tstr}", "day_part": day_part(kick, known),
         "national_tv": " + ".join(nets) or None, "arena": venue, "holder_is_home": bool(nx.get("home")),
         "holder_win_probability": f"{round(pct * 100)}%" if pct is not None else None,
-        "belt_history_starts": EST.get(lg),
+        "belt_history_starts": data.get("est") or EST.get(lg),
         "hashtag_suggestion": hashtags(lg, hshort, ht.get("abbreviation"), oshort, ot.get("abbreviation")),
     }
     cap = claude_caption("preview", facts, lg) or {
         "caption": (f"{days_held:,} {'day' if days_held == 1 else 'days'}. {defenses} "
-                    f"{'defense' if defenses == 1 else 'defenses'}. One belt. {cap1(the(lg, oshort))} {vb(lg, 'get their', 'gets its')} shot {day_part(kick)}. 🏆\n\n"
+                    f"{'defense' if defenses == 1 else 'defenses'}. One belt. {cap1(the(lg, oshort))} {vb(lg, 'get their', 'gets its')} shot {day_part(kick, known)}. 🏆\n\n"
                     f"{cap1(the(lg, holder))} {vb(lg, 'hold', 'holds')} {belt.get('name')}" + (f", taken from {the(lg, won_from)} on {since:%b} {since.day}" if won_from else "")
                     + f" — the {unit(lg)}'s {ordinal(reign_no)} reign." + (f" Belt game No. {game_no:,}." if game_no else "") + "\n\n"
                     "No committee, no poll — beat the holder, take the belt.\n\n"
-                    f"{EMOJI.get(SPORT.get(lg), '⚽')} {kick.astimezone(ET):%a} · {clock(kick)} ET" + (f" · {' + '.join(nets[:2])}" if nets else "")
+                    f"{EMOJI.get(SPORT.get(lg), '⚽')} {kick.astimezone(ET):%a} · {tstr}" + (f" · {' + '.join(nets[:2])}" if nets else "")
                     + (f" · {venue}" if venue else "") + "\n🔗 Preview and the full chain of custody → link in bio\n\n"
                     + facts["hashtag_suggestion"]), "note_bold": "", "note_rest": ""}
     nb = cap.get("note_bold") or (f"{len(met)} belt games between these two." if met else "First belt game between these two.")
@@ -896,7 +907,7 @@ def build_preview(lg, belt, workdir):
     cl = panel_colors(lp, la)
     cr = panel_colors(distinct_right(cl[0], rp, ra), [])
     body = f"""{header(lg, belt.get('name') or lg.upper(), data.get('est'), data.get('header'))}
-<div class="mono kicker"><span class="dot"></span>{('Belt game No. ' + f'{game_no:,}' + ' · ') if game_no else ''}{esc(day_part(kick))}</div>
+<div class="mono kicker"><span class="dot"></span>{('Belt game No. ' + f'{game_no:,}' + ' · ') if game_no else ''}{esc(day_part(kick, known))}</div>
 <div class="disp h1">Belt on <span class="thin">the line</span></div>
 <div class="mono when">{when}</div>
 <div class="card">
@@ -923,7 +934,7 @@ def build_preview(lg, belt, workdir):
     return {"kind": "preview", "image": out, "caption": cap["caption"], "fit_problems": bad,
             "user_tags": tags_for(data, holder, opp, nets), "location_id": location(data, venue), "venue": venue,
             "alt_text": (f"{belt.get('name')}: belt on the line. {holder} ({days_held} days, {defenses} defenses) vs. {opp}, "
-                         f"{short_date(gday)}, {clock(kick)} ET, {venue}."),
+                         f"{short_date(gday)}, {tstr}, {venue}."),
             "pending": {"lg": lg, "date": gday.isoformat(), "holder": holder, "holder_short": hshort, "opponent": opp,
                         "opponent_short": oshort, "espn_id": ev["id"], "since": belt["since"], "defenses": defenses,
                         "reign_no": reign_no, "game_no": game_no, "belt_name": belt.get("name")}}
@@ -998,7 +1009,7 @@ def build_result(p, workdir, summ=None):
     if nxt:
         where = "vs" if nxt["home"] else "at"
         opp_lab = nxt["opp_short"] if len(nxt["opp_short"] or "") <= 10 else nxt["opp_abbr"]
-        tiles.append((tile_date(nxt["date"]), f"Next · {where} {opp_lab}, {clock(nxt['dt'])}"))
+        tiles.append((tile_date(nxt["date"]), f"Next · {where} {opp_lab}, {clock(nxt['dt']) if nxt['known'] else 'TBA'}"))
     elif game_no:
         tiles.append((f"{game_no:,}", "Belt game No."))
 
@@ -1013,7 +1024,7 @@ def build_result(p, workdir, summ=None):
         "this_was_defense_number": None if changed else defense_no,
         "winner_new_reign_number_for_team": ordinal(o_n + 1) if changed else None,
         "challenger_last_held_year_before_today": o_last,
-        "where_the_belt_goes": city,
+        "where_the_belt_goes": city, "belt_history_starts": data.get("est") or EST.get(lg),
         "period_by_period": {c["team"].get("abbreviation"): [x.get("displayValue") for x in (c.get("linescores") or [])]
                              for c in comp["competitors"]},
         "scoring": scoring_plays(summ) if SPORT.get(lg) in ("hockey", "football", "soccer", None) else [],
@@ -1022,7 +1033,7 @@ def build_result(p, workdir, summ=None):
         "winner_goalie": dict(zip(("name", "saves", "goals_against"), goalie_line(summ, wt["id"]) or ())) or None,
         "shots": {wshort: team_stat(summ, wt["id"], "shotsTotal"), lshort: team_stat(summ, lt["id"], "shotsTotal")},
         "next_game_for_belt_holder": ({"date": f"{nxt['date']:%a} {nxt['date']:%b} {nxt['date'].day}", "opponent": nxt["opp"],
-                                       "home": nxt["home"], "start_et": clock(nxt["dt"]) + " ET",
+                                       "home": nxt["home"], "start_et": (clock(nxt["dt"]) + " ET") if nxt["known"] else "time TBA",
                                        "national_tv": " + ".join(x for x in nxt["tv"] if x) or None} if nxt else None),
         "hashtag_suggestion": hashtags(lg, wshort, wt.get("abbreviation"), lshort, lt.get("abbreviation")),
         "must_mention": [str(w_pts), str(l_pts)],
@@ -1032,7 +1043,8 @@ def build_result(p, workdir, summ=None):
         nl = ""
         if nxt:
             nl = (f"Next up: {'vs.' if nxt['home'] else 'at'} {the(lg, nxt['opp_short'] or nxt['opp'])}, "
-                  f"{nxt['date']:%a} {nxt['date']:%b} {nxt['date'].day}, {clock(nxt['dt'])} ET. Beat the holder, take the belt.\n\n")
+                  f"{nxt['date']:%a} {nxt['date']:%b} {nxt['date'].day}" + (f", {clock(nxt['dt'])} ET" if nxt["known"] else "")
+                  + ". Beat the holder, take the belt.\n\n")
         lead = (f"{p.get('belt_name')} has a new home. 🏆\n\n{winner} {w_pts}, {loser} {l_pts}{(' (' + extra + ')') if extra else ''}. "
                 f"{cap1(the(lg, wshort))} {vb(lg, 'take', 'takes')} the belt and {vb(lg, 'end', 'ends')} {poss(the(lg, lshort))} run at {days_held:,} {'day' if days_held == 1 else 'days'}.\n\n") if changed else \
                (f"The belt stays with {the(lg, wshort)}. 🏆\n\n{winner} {w_pts}, {loser} {l_pts}{(' (' + extra + ')') if extra else ''}. "
