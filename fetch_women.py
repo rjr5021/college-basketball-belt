@@ -2,7 +2,7 @@
 """
 Keep the women's game files current: data/women/games/<season>.csv.
 
-    python3 fetch_women.py           # incremental: this season's results + the next month's schedule
+    python3 fetch_women.py           # incremental: this season's results + the next month's schedule (75 days in Aug-Oct)
     python3 fetch_women.py --full    # rebuild every season from 2002-03 on
 
 Sources (no API key needed):
@@ -228,8 +228,13 @@ def main():
         for s in ("home", "away"):
             if r.get(f"{s}_conf"):
                 conf_of[r[f"{s}_id"]] = r[f"{s}_conf"]
-    if today.month in (8, 9, 10) and not read(cur):
-        span = [today + timedelta(days=i) for i in range(0, 75)]      # preseason: find opening night
+    if today.month in (8, 9, 10):
+        # Preseason: look 75 days ahead so opening week is on file well before it
+        # starts. The wehoop season file lags behind ESPN's schedule (2026-10-01:
+        # UCLA's Nov 2 opener vs Lehigh, Nov 5 vs UC Irvine and Nov 19 vs Cal Poly
+        # were on ESPN but not on file, so the site showed Nov 12 vs Arizona as the
+        # next belt game). Before, the long look-ahead only ran on an empty file.
+        span = [today + timedelta(days=i) for i in range(-3, 75)]
     else:
         span = [today + timedelta(days=i) for i in range(-3, 31)]
     by_season = {}
