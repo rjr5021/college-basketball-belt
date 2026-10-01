@@ -1,0 +1,46 @@
+# Instagram posts for @collegebbbelt (ig_posts.py -- the same file as the belt-holders
+# repo, configured by this repo's ig_data.json): "Belt on the Line" on game day from
+# 10 AM ET and "Belt Defended" / "New Champion" within ~15 minutes of the final, for
+# the men's (cbb) and women's (wcbb) belts. Does nothing until the IG_ACCESS_TOKEN and
+# IG_BUSINESS_ACCOUNT_ID secrets exist, and nothing in the offseason.
+# Variables (optional): IG_LEAGUES (default from ig_data.json), IG_LIVE (0 = print only).
+# Run it by hand with check=1 to test the token and make sample cards (data/ig/check/).
+name: Instagram posts (@collegebbbelt)
+
+on:
+  workflow_dispatch:
+    inputs:
+      check:
+        description: "Only check the token and make sample cards (1)"
+        required: false
+        default: "0"
+  schedule:
+    - cron: "*/15 13-23 * * *"
+    - cron: "*/15 0-7 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ig-posts
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install pillow
+      - name: Instagram
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_BUSINESS_ACCOUNT_ID: ${{ secrets.IG_BUSINESS_ACCOUNT_ID }}
+          IG_LIVE: ${{ vars.IG_LIVE || '1' }}
+          IG_LEAGUES: ${{ vars.IG_LEAGUES || '' }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -u ig_posts.py ${{ github.event.inputs.check == '1' && '--check' || '' }}
