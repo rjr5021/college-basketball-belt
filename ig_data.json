@@ -1,0 +1,60 @@
+{
+  "_about": "Instagram data for ig_posts.py (@collegebbbelt) -- the same ig_posts.py as the belt-holders repo; this file says which account and belts it serves. team_handles: official team accounts (verified on Instagram) tagged on the photo; network_handles: the national TV network's account; locations: Instagram/Facebook place IDs per ESPN arena name. Anything missing is left off the post and noted in the run summary. Checked 2026-10-01; add the holders' opponents as the season goes.",
+  "_site": {
+    "brand": "The College Basketball Belt",
+    "handle": "@collegebbbelt",
+    "domain": "collegebasketballbelt.com",
+    "about": "collegebasketballbelt.com, which tracks the lineal men's and women's college basketball championship belts",
+    "network": "https://beltholders.com/api/network.json",
+    "leagues": "cbb wcbb",
+    "tags": "#CollegeBasketballBelt"
+  },
+  "_all": {
+    "network_handles": {
+      "ESPN": "espn",
+      "ESPN2": "espn",
+      "ESPNU": "espn",
+      "ABC": "espn",
+      "ESPN+": "espn",
+      "CBS": "cbssports",
+      "FOX": "foxsports",
+      "FS1": "foxsports",
+      "TNT": "bleacherreport",
+      "Peacock": "peacock",
+      "NBC": "nbcsports",
+      "BTN": "bigtennetwork",
+      "ACCN": "accnetwork",
+      "SECN": "secnetwork"
+    },
+    "locations": {
+      "Crisler Center": "213437955421408",
+      "Pauley Pavilion": "120576928000703"
+    }
+  },
+  "cbb": {
+    "est": 1950,
+    "team_handles": {
+      "Michigan": "umichbball",
+      "Michigan Wolverines": "umichbball",
+      "Oakland": "oaklandmbb",
+      "Oakland Golden Grizzlies": "oaklandmbb"
+    },
+    "cities": {
+      "Michigan": "Ann Arbor"
+    },
+    "header": "Men's belt · Est. 1950"
+  },
+  "wcbb": {
+    "est": 1987,
+    "team_handles": {
+      "UCLA": "uclawbb",
+      "UCLA Bruins": "uclawbb",
+      "Arizona": "arizonawbb",
+      "Arizona Wildcats": "arizonawbb"
+    },
+    "cities": {
+      "UCLA": "Los Angeles"
+    },
+    "header": "Women's belt · Est. 1987"
+  }
+}
