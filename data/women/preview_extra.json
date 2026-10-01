@@ -1,10 +1,10 @@
 {
- "key": "26|12|2026-11-12",
- "updated": "2026-09-29T17:09Z",
- "start_utc": "2026-11-12T05:00Z",
+ "key": "26|2329|2026-11-02",
+ "updated": "2026-10-01T15:59Z",
+ "start_utc": "2026-11-02T05:00Z",
  "espn": {
-  "event_id": "401913056",
-  "start_utc": "2026-11-12T05:00Z",
+  "event_id": "401918896",
+  "start_utc": "2026-11-02T05:00Z",
   "state": "pre",
   "tv": [],
   "odds": null,
@@ -16,9 +16,9 @@
     "rank": null,
     "home_away": "home"
    },
-   "12": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
-    "abbr": "ARIZ",
+   "2329": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2329.png",
+    "abbr": "LEH",
     "record": null,
     "rank": null,
     "home_away": "away"
@@ -33,17 +33,17 @@
  },
  "weather": null,
  "ai": {
-  "overview": "UCLA hosts Arizona with the Women's College Basketball Belt on the line for the first time in this matchup's history. The Bruins are fresh off a championship run and making their first belt defense, while Arizona limps in having dropped four of their last five games. With UCLA holding a 98% win probability and a dominant 37-1 record, the belt appears likely to stay in Westwood.",
+  "overview": "UCLA brings the Women's College Basketball Belt home to face Lehigh in what appears to be a significant mismatch on paper. The Bruins are riding a five-game winning streak that includes a national championship run, while Lehigh limps in having dropped their last two contests. This marks Lehigh's first-ever opportunity to claim the belt, though they'll need to pull off a monumental upset against a UCLA squad that finished 37-1.",
   "key_matchups": [
-   "Championship form vs. late-season struggle: UCLA's five straight playoff wins by an average of 24 points against Arizona's 2-game losing streak",
-   "Historical dominance: UCLA has won 4 of the last 5 meetings, including a 20-point victory in their most recent clash",
-   "First belt defense: Can Arizona capitalize on UCLA's inexperience defending the championship, having held it zero times so far this reign?"
+   "UCLA's dominant playoff form (five straight wins, including a 28-point demolition of South Carolina) versus Lehigh's struggles down the stretch",
+   "The Bruins' defense that held Texas to 44 points in the playoffs against a Lehigh offense that managed just 62 in their last outing",
+   "Can Lehigh (17-16) find any answers against a UCLA team that hasn't lost since finishing 37-1 and beat elite competition by double digits throughout their championship run?"
   ],
-  "betting_angles": "UCLA enters as overwhelming favorites with a 37-1 record and riding a 5-game winning streak that includes playoff victories over elite competition like South Carolina and Texas. Arizona's 12-18 mark and recent form (losing 4 of 5, including close losses to in-state rivals) suggests a significant talent gap. The Bruins have also dominated this series historically, winning 32 of 43 all-time meetings and covering comfortable margins in recent years, including a 61-41 drubbing in their last encounter.",
+  "betting_angles": "The Elo model's 97% confidence in UCLA reflects the vast gulf between these programs, with the Bruins coming off five straight wins by an average margin of over 20 points per game. Lehigh's 17-16 record and current two-game skid suggest they lack the firepower to challenge a team that just dominated South Carolina by 28. UCLA's smallest margin of victory in their last five was seven points against Texas, while Lehigh has been on the wrong end of double-digit defeats in both recent losses.",
   "predicted_winner": "UCLA",
-  "predicted_score": "UCLA 78, Arizona 56",
-  "prediction_writeup": "UCLA's championship pedigree and dominant recent form make this a straightforward call. The Bruins just rattled off five straight playoff wins against top-tier competition, winning by an average of 24 points and capping it with a 28-point demolition of South Carolina. Arizona, meanwhile, has lost four of five and sits at 12-18 on the season, clearly outmatched by a UCLA squad that went 37-1. The head-to-head history heavily favors the Bruins, and playing at home in their first belt defense should only add motivation. Expect UCLA to control this wire-to-wire and keep the belt firmly in Westwood.",
-  "written": "2026-09-29",
+  "predicted_score": "UCLA 84, Lehigh 56",
+  "prediction_writeup": "UCLA should handle this belt defense comfortably given their championship form and Lehigh's mediocre season. The Bruins have won five straight by an average of nearly 21 points per game, including dominant victories over elite opponents like South Carolina and Texas. Lehigh has dropped two straight and sits at 17-16, lacking the profile to seriously threaten a team that went 37-1. The Elo model's 97% projection feels appropriate for a matchup between a national champion and a sub-.500 squad struggling to find consistency.",
+  "written": "2026-10-01",
   "model": "claude-sonnet-4-5"
  }
 }
