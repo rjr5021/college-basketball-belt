@@ -129,7 +129,7 @@ a.tile{color:var(--ink)}
 .alerts{margin:40px var(--pad) 0;padding:44px 48px;background:var(--ink);color:var(--paper);display:flex;justify-content:space-between;align-items:center;gap:40px}
 .alerts h2{margin:0;font-size:40px;font-weight:900;line-height:.95}.alerts p{margin:10px 0 0;color:rgba(231,226,213,.78)}
 .alert-form{display:flex;gap:10px;flex-shrink:0}
-.alert-form input[type=email]{width:280px;height:48px;padding:0 16px;border:1px solid rgba(231,226,213,.35);background:transparent;color:var(--paper);font-family:"IBM Plex Mono",monospace;font-size:14px}
+.alert-form input[type=email],.alert-form select{width:280px;height:48px;padding:0 16px;border:1px solid rgba(231,226,213,.35);background:transparent;color:var(--paper);font-family:"IBM Plex Mono",monospace;font-size:14px}.alert-form select{width:auto;padding:0 12px;background:var(--ink);cursor:pointer}.alert-form select option{color:var(--paper);background:var(--ink)}
 .alert-form button{height:48px;padding:0 22px;background:var(--brass);color:var(--ink);border:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
 .foot{margin-top:40px;padding:32px var(--pad);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px}
 .foot .links{display:flex;gap:22px;flex-wrap:wrap;align-items:center}.foot span{color:var(--muted)}
@@ -174,7 +174,7 @@ a.tile{color:var(--ink)}
   .history.keep3 td:nth-child(3),.history.keep3 th:nth-child(3){display:table-cell}
   .prose h1{font-size:48px}
   .alerts{flex-direction:column;align-items:stretch;padding:24px 18px;margin:28px var(--pad) 0}.alerts h2{font-size:28px}
-  .alert-form{flex-direction:column}.alert-form input[type=email]{width:100%}
+  .alert-form{flex-direction:column}.alert-form input[type=email],.alert-form select{width:100%}
 }
 
 /* ---- College Basketball Belt additions ---- */
@@ -273,8 +273,8 @@ ol.degrees{list-style:none;padding:0;margin:0;border-top:1px solid var(--line2)}
 :root[data-theme=dark]{--paper:#15120e;--paper2:#1e1a14;--card:#221d16;--ink:#efe8da;--body:#d8cfbd;--muted:#a89d89;--brass:#c49a52;--brass-text:#d6b06a;--line:rgba(239,232,218,.13);--line2:rgba(239,232,218,.24)}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--paper:#15120e;--paper2:#1e1a14;--card:#221d16;--ink:#efe8da;--body:#d8cfbd;--muted:#a89d89;--brass:#c49a52;--brass-text:#d6b06a;--line:rgba(239,232,218,.13);--line2:rgba(239,232,218,.24)}}
 :root[data-theme=dark] .btn{border-color:rgba(239,232,218,.3)}
-:root[data-theme=dark] .alerts{background:#0b0906;color:#efe8da;border:1px solid var(--line2)}:root[data-theme=dark] .alert-form input[type=email]{color:#efe8da}:root[data-theme=dark] .alert-form button{color:#211a12}:root[data-theme=dark] .pill{background:#efe8da;color:#15120e}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .alerts{background:#0b0906;color:#efe8da;border:1px solid var(--line2)}:root:not([data-theme=light]) .alert-form input[type=email]{color:#efe8da}:root:not([data-theme=light]) .alert-form button{color:#211a12}:root:not([data-theme=light]) .pill{background:#efe8da;color:#15120e}}
+:root[data-theme=dark] .alerts{background:#0b0906;color:#efe8da;border:1px solid var(--line2)}:root[data-theme=dark] .alert-form input[type=email]{color:#efe8da}:root[data-theme=dark] .alert-form select,:root[data-theme=dark] .alert-form select option{color:#efe8da;background:#0b0906}:root[data-theme=dark] .alert-form button{color:#211a12}:root[data-theme=dark] .pill{background:#efe8da;color:#15120e}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .alerts{background:#0b0906;color:#efe8da;border:1px solid var(--line2)}:root:not([data-theme=light]) .alert-form input[type=email]{color:#efe8da}:root:not([data-theme=light]) .alert-form select,:root:not([data-theme=light]) .alert-form select option{color:#efe8da;background:#0b0906}:root:not([data-theme=light]) .alert-form button{color:#211a12}:root:not([data-theme=light]) .pill{background:#efe8da;color:#15120e}}
 :root[data-theme=dark] .tile.soon{border-color:rgba(239,232,218,.3)}
 :root[data-theme=dark] .pill:hover{background:#fff}
 .treetab td,.treetab td:nth-child(2){font-size:14px;font-family:inherit}.treetab td.mono{font-family:"IBM Plex Mono",monospace;font-size:13px}
