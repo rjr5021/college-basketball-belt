@@ -243,6 +243,21 @@ def main(today=None, D=D, key="cbb", out_path=os.path.join("data", "lineage.json
         "teams": team_info, "first_season": D.FIRST_SEASON, "seed": D.SEED, **extras,
     }
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    # Feature 7.7 (audit #2): one belt power-ranking snapshot per ISO week in data/<key>/rankings/
+    # (update.yml commits data/), rendered by features.build_rankings as dated pages.
+    look = models.get("outlook")
+    if look and look.get("odds"):
+        from datetime import date as _date
+        iso = _date.fromisoformat(today).isocalendar()
+        wk_dir = os.path.join("data", key, "rankings")
+        wk_path = os.path.join(wk_dir, f"{iso[0]}-W{iso[1]:02d}.json")
+        if not os.path.exists(wk_path):
+            os.makedirs(wk_dir, exist_ok=True)
+            with open(wk_path, "w") as f:
+                json.dump({"week": f"{iso[0]}-W{iso[1]:02d}", "date": today, "holder": holder, "holder_since": current["start_date"],
+                           "defenses": current.get("defenses", 0), "through": look.get("through"), "sims": look.get("sims"),
+                           "odds": look["odds"][:30], "elo": models["elo_rank"][:30],
+                           "next": [next_game["date"], next_game["challenger"], next_game.get("holder_home")] if next_game else None}, f, separators=(",", ":"))
     with open(out_path, "w") as f:
         json.dump(out, f, indent=1, default=str)
     print(f"{len(reigns)} reigns, {len(belt_games)} belt games, {len(vacancies)} vacancies; "

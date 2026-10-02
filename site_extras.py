@@ -211,6 +211,9 @@ def build_seasons(lg, d):
                 + f", and {e(n(s['ending'], s['season']))} {'hold' if s['in_progress'] else 'finished the season with'} it.")
         if s["most_defenses"]["team"] and s["most_defenses"]["defenses"]:
             summ += f" Most defenses: {e(n(s['most_defenses']['team'], s['season']))}, {s['most_defenses']['defenses']}."
+        mvp = (d.get("_season_leaders") or {}).get(s["season"])
+        if mvp:      # 7.5: the season's Belt MVP, linked to the full leaderboard
+            summ += f' Belt MVP: <a href="{base(lg)}/leaders/{s["season"]}/">{e(mvp[0])}</a> ({e(n(mvp[1], s["season"]))}).'
         prev_link = f'<a href="{season_url(lg, prev_s["season"])}">← {e(prev_s["label"])}</a>' if prev_s else "<span></span>"
         next_link = f'<a href="{season_url(lg, next_s["season"])}">{e(next_s["label"])} →</a>' if next_s else "<span></span>"
         nav = f'<nav class="pager mono">{prev_link}<a href="{base(lg)}/seasons/">All seasons</a>{next_link}</nav>'
@@ -815,6 +818,17 @@ def build_stories(datas):
         if not network:      # machine-readable list for the network pages on beltholders.com
             S.write(out(lg, "stories/index.json"), json.dumps([{"title": t, "dek": dk, "url": S.SITE_URL + u} for _, t, dk, u in mine], indent=0))
     lis = "".join(f'<a class="storycard" href="{u}"><span class="mono lg">{lg["name"]}</span><b class="disp">{e(t)}</b><span>{e(dk)}</span></a>' for lg, t, dk, u in cards)
+    if network and hasattr(S, "cross_stories"):      # 6.3 (audit #2): stories across leagues, listed first
+        xs = ""
+        for sslug, title, dek, html in S.cross_stories(datas):
+            url = f"/stories/{sslug}/"
+            body = f"""<section class="wrap prose story"><div class="kicker">Every league · story</div><h1 class="disp">{e(title)}</h1><p class="dek">{e(dek)}</p>{html}
+<p class="mono more"><a href="/stories/">More stories →</a></p></section>"""
+            ld = {"@context": "https://schema.org", "@type": "Article", "headline": title, "description": dek,
+                  "dateModified": date.today().isoformat(), "publisher": {"@type": "Organization", "name": F.OWNER}}
+            S.write(f"stories/{sslug}/index.html", S.page(title, body, path=url, jsonld=ld, description=dek))
+            xs += f'<a class="storycard" href="{url}"><span class="mono lg">Every league</span><b class="disp">{e(title)}</b><span>{e(dek)}</span></a>'
+        lis = xs + lis
     if network:
         S.write("stories/index.json", json.dumps([{"title": t, "dek": dk, "belt": lg["name"], "url": S.SITE_URL + u} for lg, t, dk, u in cards], indent=0))
         others = S.network_stories() if hasattr(S, "network_stories") else []
@@ -1124,13 +1138,13 @@ def build_all(datas):
     for lg in LIVE:
         d = datas[lg["key"]]
         d["_bg"] = {bg["n"]: bg for bg in d["belt_games"]}
-        build_seasons(lg, d)
         build_rivalries(lg, d)
         build_compare(lg, d)
         F.build(lg, d)
         F.build_preview(lg, d)
         F.build_batch2(lg, d)
         build_reigns(lg, d)              # after build_players: reign leaders come from d["_game_lines"] (audit #2, 6.1)
+        build_seasons(lg, d)             # after build_season_leaders: season pages name the Belt MVP (7.5)
         F.build_tables(lg, d)
         F.build_api_dumps(lg, d)
     F.build_embed([(lg, datas[lg["key"]]) for lg in LIVE])

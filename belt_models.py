@@ -277,6 +277,67 @@ def what_if(key, games, belt_games, reigns, tie_rule, recent, today, gap_days, s
     return out
 
 
+# ------------------------------------------------------ alternate starts --
+# Feature 7.3 (audit #2): the same belt started at a later era boundary (the NFL since the 1970
+# merger, the NHL since 1967 expansion, the Premier League since 1992). The winner of the era's
+# first game takes it; the walk is otherwise identical. Each entry records who holds it today,
+# a compact reign list, and the day (if any) it rejoined the original belt -- the first game
+# after which the two lines never differ again.
+
+def alt_starts(league, games, belt_games, reigns, tie_rule, recent, today, gap_days):
+    out = []
+    from datetime import date as _d
+    real_tail = [(str(b.get("game_id")), b["new_holder"]) for b in belt_games]
+    for spec in league.get("alt_starts") or []:
+        season = spec["season"]
+        sub = [g for g in games if g["date"] >= spec["start_date"]] if spec.get("start_date") else [g for g in games if g["season"] >= season]
+        if len(sub) < 10:
+            continue
+        try:
+            abgs, areigns, _ = belt_engine.resolve_vacancies(sub, tie_rule, None, None, recent, today,
+                                                            gap_threshold_days=gap_days, first_game_date=sub[0]["date"])
+        except SystemExit:
+            continue
+        if not areigns:
+            continue
+        alt = [(str(b.get("game_id")), b["new_holder"]) for b in abgs]
+        k = 0
+        while k < min(len(alt), len(real_tail)) and alt[-1 - k] == real_tail[-1 - k]:
+            k += 1
+        rejoin = abgs[len(alt) - k]["date"] if k and k < len(alt) else (abgs[0]["date"] if k == len(alt) and abgs else None)
+        counts, days = Counter(), Counter()
+        for i, r in enumerate(areigns, 1):
+            counts[r["team"]] += 1
+            r["reign_no"] = counts[r["team"]]
+            r["index"] = i
+            r["days"] = max(0, (_d.fromisoformat(r.get("end_date") or today) - _d.fromisoformat(r["start_date"])).days)
+            days[r["team"]] += r["days"]
+        changes = [b for b in abgs if b["outcome"] == "changed"]
+        cur = areigns[-1]
+        # the era's own records, on the real belt: every reign that started in the era
+        era = [r for r in reigns if r["start_date"] >= sub[0]["date"]]
+        e_days, e_n, e_def = Counter(), Counter(), Counter()
+        for r in era:
+            e_days[r["team"]] += r["days"]
+            e_n[r["team"]] += 1
+            e_def[r["team"]] += r.get("defenses", 0)
+        e_changes = [b for b in belt_games if b["outcome"] == "changed" and b["date"] >= sub[0]["date"]]
+        # the alternate line, only while it differed from the real one (plus the reign that rejoined)
+        apart = [r for r in areigns if not rejoin or r["start_date"] <= rejoin]
+        out.append({
+            "key": spec.get("key") or f"since-{season}", "season": season, "label": spec["label"], "why": spec.get("why", ""),
+            "first": {"date": abgs[0]["date"], "team": abgs[0]["new_holder"], "opp": abgs[0]["opponent"], "score": abgs[0]["score"]} if abgs else None,
+            "holder": cur["team"], "holder_since": cur["start_date"], "holder_defenses": cur.get("defenses", 0),
+            "alt_reigns": len(areigns), "alt_changes": len(changes), "games": len(abgs), "rejoin": rejoin,
+            "apart": [[r["index"], r["team"], r["start_date"], r.get("end_date"), r.get("defenses", 0), r["days"], r.get("won_from"), r.get("won_score")] for r in apart[:40]],
+            "era": {"reigns": len(era), "changes": len(e_changes), "teams": len(e_n), "first_date": sub[0]["date"],
+                    "most_days": e_days.most_common(10), "most_reigns": e_n.most_common(10), "most_defenses": e_def.most_common(10),
+                    "longest": [{"team": r["team"], "index": r["index"], "start": r["start_date"], "end": r.get("end_date"), "defenses": r.get("defenses", 0), "days": r["days"]}
+                                for r in sorted(era, key=lambda r: (-r.get("defenses", 0), -r["days"]))[:10]]},
+        })
+    return out
+
+
 # ------------------------------------------------------------ group belts --
 # A belt that only counts games inside a group: the American League belt
 # (AL vs. AL games), the AFC belt, a college conference's belt, and so on.

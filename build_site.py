@@ -25,7 +25,7 @@ NETWORK = False          # site_extras: one stories index per belt, no all-leagu
 OWNER = "R&O Holdings LLC"      # the company that owns and operates the site (formed 2026-09-29)
 ADSENSE_PUBLISHER_ID = ""        # "pub-3317069252410560" once the site is approved in AdSense
 GOATCOUNTER_CODE = "collegebasketballbelt"
-STYLES_VERSION = "8"
+STYLES_VERSION = "9"
 ORANGE = "#de762c"
 
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
