@@ -782,7 +782,7 @@ def build_daily(lg, d):
   <div id="dq" class="quiz"></div>
   <p class="plain">How it works: one puzzle a day, the same for everyone. It's a real {e(lg['name'])} belt game in which the holder lost the belt, with the date, the season and the final score; four possible winners, one guess, and the answer links to that season's page. There are {len(items):,} title changes in the rotation, from {min(x[0] for x in items)[:4]} to {max(x[0] for x in items)[:4]}, and your played, won and streak counts stay on this device.</p>
   <p class="mono note" id="ds"></p>
-  <p class="mono more"><a href="{b(lg)}/trivia/">Play {e(lg['name'])} belt trivia →</a></p>
+  <p class="mono more"><a href="{b(lg)}/trivia/">Play {e(lg['name'])} belt trivia →</a> · <a href="https://beltholders.com/daily/">The network edition: five belts a day →</a></p>
 </section>
 <script>
 (function(){{
