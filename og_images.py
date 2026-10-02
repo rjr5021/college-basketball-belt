@@ -33,7 +33,7 @@ def lum(c):
     return 0.2126 * r + 0.7152 * g + 0.0722 * b
 
 
-def card(path, league, holder, since, defenses, primary, secondary, site, kicker="CURRENT HOLDER"):
+def card(path, league, holder, since, defenses, primary, secondary, site, kicker="CURRENT HOLDER", line=None):
     W, H = 1200, 630
     top = rgb(primary)
     bot = tuple(int(x * 0.62) for x in top)
@@ -67,7 +67,7 @@ def card(path, league, holder, since, defenses, primary, secondary, site, kicker
     for l in lines:
         d.text((66, y), l, font=f, fill=ink)
         y += int(size * 1.02)
-    d.text((70, H - 110), f"Since {since} · {defenses} defense{'s' if defenses != 1 else ''}", font=font(MONO, 32), fill=ink)
+    d.text((70, H - 110), line or f"Since {since} · {defenses} defense{'s' if defenses != 1 else ''}", font=font(MONO, 32), fill=ink)
     d.text((70, H - 62), site, font=font(MONO, 26), fill=ink)
     im.save(path, optimize=True)
 
@@ -81,6 +81,7 @@ def main():
         from cbb_league import LEAGUE
         targets = [(LEAGUE, os.path.join("data", "lineage.json"), os.path.join(site, "og-holder.png"), "collegebasketballbelt.com")]
     from datetime import date
+    host = targets[0][3] if targets else "beltholders.com"
     for lg, lp, outp, host in targets:
         with open(lp) as fh:
             d = json.load(fh)
@@ -90,6 +91,28 @@ def main():
         os.makedirs(os.path.dirname(outp), exist_ok=True)
         card(outp, lg["name"], lg["team_name"](cur["team"]), f"{dt:%b} {dt.day}, {dt.year}", cur.get("defenses", 0), p, s, host)
         print("wrote", outp)
+    # Feature 7.2 (audit #2): a share card per belt-news article, from the cards.json each
+    # build writes next to its news index (features.build_news); newest NEWS_CARDS per belt.
+    import glob
+    n = 0
+    for cj in glob.glob(os.path.join(site, "**", "news", "cards.json"), recursive=True):
+        try:
+            with open(cj) as fh:
+                cards = json.load(fh)
+        except ValueError:
+            continue
+        for c in cards:
+            outp = os.path.join(site, c["path"])
+            if os.path.exists(outp):
+                continue
+            os.makedirs(os.path.dirname(outp), exist_ok=True)
+            try:
+                card(outp, c["league"], c["holder"], c["since"], c.get("defenses", 0), c["primary"], c.get("secondary"), host, kicker=c.get("kicker", "NEW HOLDER"), line=c.get("line"))
+                n += 1
+            except Exception as ex:      # one bad color never stops the rest
+                print("skip", outp, ex)
+    if n:
+        print("wrote", n, "news cards")
 
 
 if __name__ == "__main__":

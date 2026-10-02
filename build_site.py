@@ -25,7 +25,7 @@ NETWORK = False          # site_extras: one stories index per belt, no all-leagu
 OWNER = "R&O Holdings LLC"      # the company that owns and operates the site (formed 2026-09-29)
 ADSENSE_PUBLISHER_ID = ""        # "pub-3317069252410560" once the site is approved in AdSense
 GOATCOUNTER_CODE = "collegebasketballbelt"
-STYLES_VERSION = "7"
+STYLES_VERSION = "8"
 ORANGE = "#de762c"
 
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -187,7 +187,7 @@ def won_score_text(r):
 
 
 SUBNAV = [("current", "/", "Current"), ("next", "/next/", "Next defense"), ("outlook", "/outlook/", "Outlook"), ("history", "/history/", "Full history"),
-          ("seasons", "/seasons/", "Seasons"), ("records", "/records/", "Records"), ("teams", "/teams/", "Teams"),
+          ("news", "/news/", "News"), ("seasons", "/seasons/", "Seasons"), ("records", "/records/", "Records"), ("teams", "/teams/", "Teams"),
           ("rivalries", "/rivalries/", "Rivalries"), ("compare", "/compare/", "Compare"), ("march", "/march/", "March"),
           ("stories", "/stories/", "Stories"), ("more", "/more/", "More")]
 
@@ -285,7 +285,7 @@ def ld_graph(jsonld, path, title, extra_top=()):
     return {"@context": "https://schema.org", "@graph": items} if items else None
 
 
-def page(title, body, *, path, description, active=None, jsonld=None, robots=None, og_title=None):
+def page(title, body, *, path, description, active=None, jsonld=None, robots=None, og_title=None, og_image=None):
     path = u(path)
     if robots and "noindex" in robots:
         NOINDEX.add(path)
@@ -327,7 +327,7 @@ def page(title, body, *, path, description, active=None, jsonld=None, robots=Non
 <meta property="og:title" content="{e(full_title)}">
 <meta property="og:description" content="{e(description)}">
 <meta property="og:url" content="{canonical}">
-<meta property="og:image" content="{SITE_URL}{SEC.get('og', '/og-holder.png')}">
+<meta property="og:image" content="{SITE_URL}{og_image or SEC.get('og', '/og-holder.png')}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@CollegeBBBelt">
 <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.png" type="image/png">
@@ -690,7 +690,7 @@ def build_teams(d):
     for tid, rs in sorted(by.items(), key=lambda kv: -sum(r["days"] for r in kv[1])):
         p, _ = tcolor(tid)
         days = sum(r["days"] for r in rs)
-        cards.append(f'<a class="teamcard" href="{team_url(tid)}"><i style="background:{p}"></i><b class="disp">{e(tname(tid))}</b><span class="mono">{plural(len(rs), "reign")} · {days:,} days · last {rs[-1]["start_date"][:4]}</span></a>')
+        cards.append(f'<a class="teamcard" href="{team_url(tid)}"><i style="background:{p}"></i><b class="disp">{e(tname(tid))}</b><span class="mono">{plural(len(rs), "reign")} · {plural(days, "day")} · last {rs[-1]["start_date"][:4]}</span></a>')
         build_team(d, tid, rs)
     body = f"""{subnav(None, "teams")}
 <section class="wrap block">
@@ -723,7 +723,7 @@ def build_team(d, tid, rs):
 {school_box(name)}
 {team_extras_html(tid)}"""
     write(f"teams/{slug(name)}/index.html", page(f"{name} and the {SEC['short']}", body, path=team_url(tid), active="teams",
-                                                  description=f"{name}: {plural(len(rs), 'reign')} with the lineal {SEC['who']} championship belt, {days:,} days held."))
+                                                  description=f"{name}: {plural(len(rs), 'reign')} with the lineal {SEC['who']} championship belt, {plural(days, 'day')} held."))
 
 
 # ------------------------------------------------------- the school map --
@@ -835,6 +835,7 @@ def build_static(d):
 <li><b>No ties.</b> Basketball plays overtime until someone wins, so every belt game has a winner.</li>
 <li><b>If a holder leaves Division I,</b> the belt goes back to the most recent earlier holder that is still playing, the same rule the College Football Belt uses. {"It hasn't happened yet." if not d["vacancies"] else f"It has happened {plural(len(d['vacancies']), 'time')}."}</li>
 </ol>
+{__import__("site_extras").rulesets_html("cbb")}
 <h2 class="disp">Sources</h2>
 <p>Results come from CollegeBasketballData.com and are updated automatically every few hours during the season. For 1949–50 through 1999–2000, neutral-site games that data set is missing (holiday and conference tournaments) come from Prof. John Trono's <a href="https://academics.smcvt.edu/jtrono/BBallArchive.htm">NCAA Men's Basketball Scores Archive</a> at St. Michael's College. Spot a missing or wrong game? Email <a href="mailto:hello@collegebasketballbelt.com">hello@collegebasketballbelt.com</a>.</p>
 </section>"""
@@ -882,6 +883,7 @@ def build_women_rules(d):
 <li><b>No ties.</b> Basketball plays overtime until someone wins, so every belt game has a winner.</li>
 <li><b>If a holder leaves Division I,</b> the belt goes back to the most recent earlier holder that is still playing, the same rule the men's belt and the College Football Belt use. {"It hasn't happened yet." if not d["vacancies"] else f"It has happened {plural(len(d['vacancies']), 'time')}."}</li>
 </ol>
+{__import__("site_extras").rulesets_html("cbb")}
 <h2 class="disp">Sources</h2>
 <p>From 2002–03 on, results come from ESPN via the <a href="https://github.com/sportsdataverse/wehoop">wehoop</a> project (sportsdataverse, CC BY 4.0), updated automatically every few hours during the season.</p>
 <p>The line from 1986–87 through the 2002 final (UConn 82, Oklahoma 70) was traced game by game from schools' published media guides, record books and box scores (Louisiana Tech, Tennessee, Virginia, USC, North Carolina, Stanford and many more), The Stanford Daily archives and other student newspapers, and Wikipedia season pages. For those years the data lists every game the belt holder played rather than full schedules, so season-long features like Elo ratings and conference belts start in 2002–03. Four wins by a holder whose scores haven't turned up (Arizona State over Oregon and Oregon State in February 1992; Creighton over Bradley and Northern Iowa in January 1994) are left out, which doesn't change who held the belt.</p>
@@ -1024,9 +1026,9 @@ def build_belt():
     build_home(D)
     build_history(D)
     build_records(D)
-    build_teams(D)
     build_march(D)
     site_extras.build_all({LG["key"]: D})
+    build_teams(D)                      # after build_all: team pages list players from D["_players"] (audit #2, 6.2)
     build_feed(D)
     build_api(D)
 

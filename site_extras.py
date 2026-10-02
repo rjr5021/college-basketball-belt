@@ -135,16 +135,32 @@ def tag(bg):
     return '<span class="tag">Defense</span>'
 
 
-def games_table(lg, bgs, anchors=True):
+def margin_text(bg, team):
+    """The margin from one team's side: "+7", "−3", "0 (tie)", with the overtime note (audit #2, 6.1)."""
+    try:
+        m, t = score_for(bg, team)
+    except (KeyError, ValueError):
+        return ""
+    diff = m - t
+    s = "0" if diff == 0 else (f"+{diff}" if diff > 0 else f"−{-diff}")
+    return s + (" OT" if bg.get("ot") else "")
+
+
+def games_table(lg, bgs, anchors=True, margins_for=None):
+    """Belt games, oldest first. With margins_for=<team code> a Margin column shows each
+    game from that team's side (reign pages, audit #2 6.1)."""
     rows = []
     for bg in bgs:
         p, _ = lg["team_colors"](bg["new_holder"])
         post = f' <span class="tag post">{post_word(lg).capitalize()}</span>' if bg["season_type"] != "regular" else ""
+        link = f' <a class="mono" href="{F.game_url(lg, bg)}">Game →</a>' if margins_for and F.game_has_page(lg, bg["n"]) else ""
+        mcol = f'<td class="mono r">{margin_text(bg, margins_for)}</td>' if margins_for else ""
         rows.append(f'<tr{(" id=g" + str(bg["n"])) if anchors else ""}><td class="mono n">{bg["n"]:,}</td>'
                     f'<td class="mono">{S.d_short(bg["date"], True)}</td>'
-                    f'<td><i style="background:{p}"></i>{game_line(lg, bg)}{post}</td><td class="r">{tag(bg)}</td></tr>')
+                    f'<td><i style="background:{p}"></i>{game_line(lg, bg)}{post}{link}</td>{mcol}<td class="r">{tag(bg)}</td></tr>')
+    mhead = '<th class="mono r">Margin</th>' if margins_for else ""
     return ('<div class="tablewrap"><table class="history games"><thead><tr><th class="mono">Belt game</th>'
-            '<th class="mono">Date</th><th class="mono">Result</th><th class="mono r"></th></tr></thead>'
+            f'<th class="mono">Date</th><th class="mono">Result</th>{mhead}<th class="mono r"></th></tr></thead>'
             f'<tbody>{"".join(rows)}</tbody></table></div>')
 
 
@@ -217,6 +233,149 @@ def build_seasons(lg, d):
 
 # ---------------------------------------------------------------- reigns --
 
+KEY_STAT_WORD = {"PTS": "points", "H": "hits", "YDS": "yards", "G": "goals"}
+TITLE_NAMES = {"nhl": "Stanley Cup", "nba": "NBA title", "mlb": "World Series", "nfl": "NFL title", "mls": "MLS Cup", "nwsl": "NWSL Championship",
+               "wnba": "WNBA title", "cfl": "Grey Cup", "pwhl": "Walter Cup", "epl": "Premier League title", "laliga": "La Liga title",
+               "seriea": "Serie A title", "bundesliga": "Bundesliga title", "ligue1": "Ligue 1 title", "eredivisie": "Eredivisie title",
+               "cbb": "national title", "women": "national title"}
+
+
+def title_name(lg, season):
+    """What the season's champion won, by league and era: the 1924–25 Canadiens won the NHL title but
+    lost the Stanley Cup final to Victoria, so the Cup is only named from 1926–27 on."""
+    k = lg.get("key")
+    if lg.get("title_name"):
+        return lg["title_name"]
+    if k == "nhl" and season < 1926:
+        return "NHL title"
+    if k == "nba" and season < 1949:
+        return "league title"
+    return TITLE_NAMES.get(k, f"{lg['name']} title")
+
+
+def era_chip_name(lg, code, season):
+    """The short name for a chip, era-correct: "Whalers" stays "Hartford Whalers" in 1980 rather than "Hurricanes"."""
+    now, then = lg["team_name"](code), lg["team_name"](code, season)
+    return lg["short_name"](code) if then == now else then
+
+
+def _recap_card(lg, bg, kicker, line, rcs):
+    """One "How it started" / "How it ended" card: the sentence, the game link and the recap's opening when one exists."""
+    rc = rcs.get(f"{bg.get('holder')}|{bg['opponent']}|{bg['date']}") if bg else None
+    link = f'<p class="mono more"><a href="{F.game_url(lg, bg)}">The game →</a></p>' if bg and F.game_has_page(lg, bg["n"]) else ""
+    recap = ""
+    if rc and (rc.get("recap") or rc.get("headline")):
+        first = (rc.get("recap") or [""])[0]
+        if len(first) > 320:
+            first = first[:300].rsplit(" ", 1)[0] + "…"
+        recap = f'<p><b>{e(rc.get("headline") or "")}</b> {e(first)}</p>'
+    return f'<div class="faq"><div class="kicker">{kicker}</div><p>{line}</p>{recap}{link}</div>'
+
+
+def reign_depth(lg, d, r, bgs, start, end):
+    """Audit #2, 6.1: what a reign page said nothing about -- the closest call and average margin,
+    where the reign ranks, how it started and ended (with the AI recaps when the games have them),
+    who the holder beat, the seasons it spanned, and the reign's leading players from the box scores.
+    Returns (numbers_html, sections_html)."""
+    n = lg["team_name"]
+    team = r["team"]
+    reigns = d["reigns"]
+    by_n = d["_bg"]
+    opened = by_n.get(r["opened_by"]) if r.get("opened_by") else None
+    games = [bg for bg in bgs if bg.get("holder") == team]                 # the games played as holder
+    defenses = [bg for bg in games if bg["outcome"] != "changed"]
+    wins = [bg for bg in defenses if not bg["outcome"].endswith("(tie)")]
+    closer = games[-1] if games and games[-1]["outcome"] == "changed" else None
+    nums = []
+    if wins:
+        closest = min(wins, key=lambda bg: ((bg.get("margin") if bg.get("margin") is not None else score_for(bg, team)[0] - score_for(bg, team)[1]), -bg["n"]))
+        cm = margin_text(closest, team)
+        nums.append((f'<a href="{F.game_url(lg, closest)}">{e(cm)}</a>', f"Closest call · {S.d_short(closest['date'], True)}"))
+        avg = sum(score_for(bg, team)[0] - score_for(bg, team)[1] for bg in wins) / len(wins)
+        nums.append((f"{avg:.1f}", "Average winning margin"))
+    rank_days = 1 + sum(1 for x in reigns if x["days"] > r["days"])
+    rank_def = 1 + sum(1 for x in reigns if x.get("defenses", 0) > r.get("defenses", 0))
+    top = max(100, len(reigns) // 10)                      # a rank is worth printing when it's near the top
+    if rank_days <= top:
+        nums.append((f"{S.ordinal(rank_days)}", f"Longest of {len(reigns):,} reigns, by days"))
+    if rank_def <= top:
+        nums.append((f"{S.ordinal(rank_def)}", f"Most defenses of {len(reigns):,} reigns"))
+    numbers_html = F.numbers(nums) if nums else ""
+
+    sections = []
+    # ---- how it started / how it ended
+    rcs = F._recaps(lg)
+    cards = [_recap_card(lg, opened, "How it started", start, rcs)]
+    if closer or r.get("end_date"):
+        cards.append(_recap_card(lg, closer, "How it ended", end, rcs))
+    elif games:
+        last = games[-1]
+        cards.append(_recap_card(lg, last, "The latest defense", f"{game_line(lg, last)} on {S.d_long(last['date'])}.", rcs))
+    sections.append(f'<div class="faqgrid">{"".join(cards)}</div>')
+    # ---- who they beat
+    beaten = Counter(bg["opponent"] for bg in defenses)
+    if beaten:
+        last_season = {bg["opponent"]: bg["season"] for bg in defenses}
+        chips = "".join(f'<span class="chip" style="--c:{lg["team_colors"](c)[0]}">{e(era_chip_name(lg, c, last_season[c]))}{(" ×" + str(k)) if k > 1 else ""}</span>'
+                        for c, k in beaten.most_common())
+        word = "Defended against" if len(defenses) > 1 else "Defended once, against"
+        sections.append(f'<h2 class="disp sub">{word}</h2><div class="strip">{chips}</div>')
+    # ---- the seasons it spanned
+    seasons = sorted({bg["season"] for bg in games} | {r["season"]} | ({r["end_season"]} if r.get("end_season") else set()))
+    s_by = {s["season"]: s for s in d.get("seasons", [])}
+    champs = {c["season"]: c for c in (d.get("models") or {}).get("champions") or []}
+    stand = {s["season"]: s for s in (d.get("models") or {}).get("standings") or []}
+    lines = []
+    for s in seasons:
+        se = s_by.get(s)
+        if not se:
+            continue
+        bits = []
+        st = stand.get(s) if not se.get("in_progress") else None
+        if st and st.get("holder") == team and st.get("holder_rec"):
+            rec = "–".join(str(x) for x in st["holder_rec"] if x is not None)
+            bits.append(f"{e(n(team, s))} finished {rec}" + (f", {S.ordinal(st['holder_rank'])} of {st['teams']} by record" if st.get("holder_rank") else ""))
+        elif st and st.get("best") and st.get("best_rec"):
+            rec = "–".join(str(x) for x in st["best_rec"] if x is not None)
+            bits.append(("they had" if st["best"] == team else f"{e(n(st['best'], s))} had") + f" the best record ({rec})")
+        ch = champs.get(s)
+        if ch and ch.get("champion") and not se.get("in_progress"):
+            bits.append(("they" if ch["champion"] == team else e(n(ch["champion"], s))) + f" won the {title_name(lg, s)}"
+                        + (" while holding the belt" if ch["champion"] == team and ch.get("holder") == team else ""))
+        in_s = sum(1 for bg in bgs if bg["season"] == s)
+        bits.append(f"{S.plural(in_s, 'belt game')} of this reign"
+                    + ((f"; the belt has changed hands {S.plural(se['changes'], 'time')} this season" if se.get("in_progress") else
+                        f"; the belt changed hands {S.plural(se['changes'], 'time')} that season") if se.get("changes") else ""))
+        lines.append(f'<li><a href="{season_url(lg, s)}">{e(se["label"])}</a>: ' + "; ".join(bits) + ".</li>")
+    if lines:
+        sections.append(f'<h2 class="disp sub">{"The season" if len(lines) == 1 else "The seasons"}</h2><ul class="plain">{"".join(lines)}</ul>')
+    # ---- reign leaders from the box scores
+    sc = F.BOX_SCHEMA.get(lg.get("key"))
+    gl = d.get("_game_lines") or {}
+    if sc and gl:
+        key = sc["key"]
+        tot, cnt, names = Counter(), Counter(), {}
+        for bg in bgs:
+            for pid, name, t, stats in gl.get(bg["n"], []):
+                v = stats.get(key)
+                if t != team or v is None:
+                    continue
+                tot[pid] += v
+                cnt[pid] += 1
+                names[pid] = name
+        top5 = [(pid, v) for pid, v in tot.most_common(5) if v > 0]
+        if top5:
+            players = d.get("_players") or {}
+            word = KEY_STAT_WORD.get(key, key.lower())
+            rows = "".join(f'<tr><td class="mono n">{i}</td><td>{F.plink({"name": names[pid], "url": (players.get(pid) or {}).get("url")})}</td>'
+                           f'<td class="mono r">{v:,}</td><td class="mono r">{cnt[pid]}</td></tr>'
+                           for i, (pid, v) in enumerate(top5, 1))
+            with_box = sum(1 for bg in bgs if gl.get(bg["n"]))
+            sections.append(f'<h2 class="disp sub">Reign leaders</h2><p class="intro">Most {word} for {e(n(team, r["season"]))} across the {S.plural(with_box, "belt game")} of this reign with a box score.</p>'
+                            f'<div class="tablewrap"><table class="history keep3"><thead><tr><th></th><th class="mono">Player</th><th class="mono r">{e(key)}</th><th class="mono r">Games</th></tr></thead><tbody>{rows}</tbody></table></div>')
+    return numbers_html, "".join(sections)
+
+
 def build_reigns(lg, d):
     key = lg["key"]
     reigns = d["reigns"]
@@ -240,16 +399,21 @@ def build_reigns(lg, d):
         next_r = reigns[i + 1] if i + 1 < len(reigns) else None
         nav = '<nav class="pager mono">' + (f'<a href="{reign_url(lg, d, prev_r)}">← Previous reign: {e(prev_r["name"])}</a>' if prev_r else "<span></span>") + \
               (f'<a href="{reign_url(lg, d, next_r)}">Next reign: {e(next_r["name"])} →</a>' if next_r else "<span></span>") + "</nav>"
+        nums, depth = reign_depth(lg, d, r, bgs, start, end)
         body = f"""{S.subnav(lg, "history")}
 <section class="plate slim" style="--top:{top};--bottom:{bottom};--ink:{ink};--accent:{accent}">
   <div class="wrap-in">
     <div class="kicker dot">{lg['long_name']} · reign {r['index']:,}</div>
     <h1 class="disp holder" style="{S.fit(r['name'])}">{e(r['name'])}</h1>
     <p class="lede">{start} {end}</p>
-    <div class="stats"><div><b class="disp">{r.get('defenses', 0)}</b><span class="mono">Defenses</span></div><div><b class="disp">{r['days']:,}</b><span class="mono">Days</span></div><div><b class="disp">{S.ordinal(r['reign_no'])}</b><span class="mono">Reign for the {unit1(lg)}</span></div></div>
+    <div class="stats"><div><b class="disp">{r.get('defenses', 0)}</b><span class="mono">{'Defense' if r.get('defenses', 0) == 1 else 'Defenses'}</span></div><div><b class="disp">{r['days']:,}</b><span class="mono">{'Day' if r['days'] == 1 else 'Days'}</span></div><div><b class="disp">{S.ordinal(r['reign_no'])}</b><span class="mono">Reign for the {unit1(lg)}</span></div></div>
   </div>
 </section>
-<section class="wrap block"><div class="head"><h2 class="disp">Every game of the reign</h2></div>{games_table(lg, bgs, anchors=False)}{nav}</section>"""
+<section class="wrap block">
+  {nums}
+  {depth}
+</section>
+<section class="wrap block"><div class="head"><h2 class="disp">Every game of the reign</h2><span class="mono note">margins from {e(F.poss(r['name'].split(' (')[0]))} side</span></div>{games_table(lg, bgs, anchors=False, margins_for=r['team'])}{nav}</section>"""
         ld = crumbs([(lg["long_name"], f"{base(lg)}/"), ("History", f"{base(lg)}/history/"), (f"{r['name']} reign", f"{base(lg)}/reigns/{r['index']}/")])
         yr = r["start_date"][:4]
         S.write(out(lg, f"reigns/{r['index']}/index.html"),
@@ -717,26 +881,149 @@ fetch('/search/players.json').then(function(r){return r.ok?r.json():[];}).then(a
 
 # ----------------------------------------------------------------- teams --
 
+def _wl(w, l, t):
+    return f"{w}–{l}" + (f"–{t}" if t else "")
+
+
+def team_next_card(lg, d, team):
+    """The holder's next defense on its team page (audit #2, 6.2): opponent, date, time, TV, venue, the odds."""
+    ng = d.get("next_game")
+    if not ng or (d.get("current") or {}).get("team") != team or ng.get("holder") != team:
+        return ""
+    np_ = F.next_payload(lg, d, S.SITE_URL) or {}
+    n = lg["team_name"]
+    where = "at" if not ng.get("holder_home") else ("vs." if not ng.get("neutral") else "vs.")
+    when = f"{S.weekday(ng['date'])} {S.d_long(ng['date'])}" + (f" · {S.kickoff_12h(np_['time_et'])}" if np_.get("time_et") else " · time TBA")
+    bits = [when]
+    if np_.get("tv"):
+        bits.append(f"TV: {np_['tv']}")
+    if np_.get("venue"):
+        bits.append(np_["venue"] + (f", {np_['city']}" if np_.get("city") and np_["city"] not in np_["venue"] else ""))
+    wp = np_.get("win_prob")
+    odds = f" {e(n(team))} {vb(lg, 'are', 'is')} given a {F.pct(wp)} chance to keep it." if isinstance(wp, (int, float)) else ""
+    return f"""<section class="wrap block"><div class="faq"><div class="kicker">Next defense</div>
+  <p><b class="disp">{where} {e(n(ng['challenger']))}</b> · {" · ".join(e(x) for x in bits)}.{odds}</p>
+  <p class="mono more"><a href="{base(lg)}/next/">The preview →</a> · <a href="{base(lg)}/belt.ics">Calendar feed</a></p></div></section>"""
+
+
 def team_extras(lg, d, team):
-    """Extra sections for a team page: belt record by opponent + seasons with the belt."""
+    """Extra sections for a team page: the next defense (holder only), belt record by opponent and by
+    season, the waits between reigns, the players with the most belt games for the team, and the
+    seasons with the belt (audit #2, 6.2 added the season table, waits, players and next-game card)."""
     n = lg["team_name"]
     rec = defaultdict(lambda: [0, 0, 0])
+    by_season = {}
     seasons = set()
     for bg in d["belt_games"]:
         if not bg.get("holder") or team not in (bg["holder"], bg["opponent"]):
             continue
         opp = bg["opponent"] if bg["holder"] == team else bg["holder"]
         mine, theirs = score_for(bg, team)
-        rec[opp][0 if mine > theirs else 1 if mine < theirs else 2] += 1
+        res = 0 if mine > theirs else 1 if mine < theirs else 2
+        rec[opp][res] += 1
+        srow = by_season.setdefault(bg["season"], [0, 0, 0, 0, 0])      # W, L, T, took, lost
+        srow[res] += 1
+        if bg["outcome"] == "changed":
+            srow[3 if bg["new_holder"] == team else 4] += 1
         if bg["new_holder"] == team or bg["holder"] == team:
             seasons.add(bg["season"])
-    rows = "".join(f'<tr><td>{team_link(lg, o)}</td><td class="mono r">{w}–{l}{f"–{t}" if t else ""}</td><td class="mono r"><a href="{base(lg)}/compare/?a={team}&amp;b={o}">Games →</a></td></tr>'
-                   for o, (w, l, t) in sorted(rec.items(), key=lambda kv: -sum(kv[1]))[:15])
+    rows = "".join(f'<tr><td>{team_link(lg, o)}</td><td class="mono r">{_wl(*wlt)}</td><td class="mono r"><a href="{base(lg)}/compare/?a={team}&amp;b={o}">Games →</a></td></tr>'
+                   for o, wlt in sorted(rec.items(), key=lambda kv: -sum(kv[1]))[:15])
     chips = "".join(f'<a class="chip" style="--c:{lg["team_colors"](team)[0]}" href="{season_url(lg, s)}">{e(sl(lg, s))}</a>' for s in sorted(seasons, reverse=True))
-    return f"""<section class="wrap block"><div class="two">
+    # ---- by season (audit #2, 6.2)
+    srows = "".join(f'<tr><td class="mono"><a href="{season_url(lg, s_)}">{e(sl(lg, s_))}</a></td><td class="mono r">{sum(v[:3])}</td><td class="mono r">{_wl(*v[:3])}</td>'
+                    f'<td class="mono r">{v[3] or ""}</td><td class="mono r">{v[4] or ""}</td></tr>'
+                    for s_, v in sorted(by_season.items(), reverse=True))
+    best = max(by_season.items(), key=lambda kv: (kv[1][0] - kv[1][1], kv[1][0])) if by_season else None
+    season_html = (f'<h2 class="disp sub">Belt games by season</h2>'
+                   f'<div class="tablewrap"><table class="history keep3"><thead><tr><th class="mono">Season</th><th class="mono r">Games</th><th class="mono r">W–L</th><th class="mono r">Took it</th><th class="mono r">Lost it</th></tr></thead><tbody>{srows}</tbody></table></div>'
+                   if srows else "")
+    # ---- the waits between reigns
+    rs = [r for r in d["reigns"] if r["team"] == team]
+    gaps = []
+    for a, b_ in zip(rs, rs[1:]):
+        if a.get("end_date"):
+            gaps.append(((date.fromisoformat(b_["start_date"]) - date.fromisoformat(a["end_date"])).days, a, b_))
+    nums = []
+    if gaps:
+        g, a, b_ = max(gaps, key=lambda x: x[0])
+        nums.append((f"{g:,}", f"Longest wait between reigns, days ({a['end_date'][:4]}–{b_['start_date'][:4]})"))
+        if len(gaps) > 1:
+            nums.append((f"{sum(x[0] for x in gaps) / len(gaps):,.0f}", "Average wait, days"))
+    holding = rs and rs[-1] is d["reigns"][-1] and not rs[-1].get("end_date")
+    if rs and not holding and rs[-1].get("end_date"):
+        today = date.fromisoformat(d["generated"][:10]) if d.get("generated") else date.today()
+        nums.append((f"{(today - date.fromisoformat(rs[-1]['end_date'])).days:,}", f"Days since the last reign ended ({rs[-1]['end_date'][:4]})"))
+    if best:
+        nums.append((f"{_wl(*best[1][:3])}", f"Best belt season ({sl(lg, best[0])})"))
+    nums_html = F.numbers(nums) if nums else ""
+    # ---- players with the most belt games for the team (box-score leagues)
+    players_html = ""
+    pl = d.get("_players") or {}
+    sc = F.BOX_SCHEMA.get(lg.get("key"))
+    if pl and sc:
+        key = sc["key"]
+        mine = []
+        for pid, p in pl.items():
+            gs = [g for g in p["games"] if g[1] == team]
+            if len(gs) >= 2:
+                mine.append((len(gs), sum(1 for g in gs if g[3]), sum((g[5].get(key) or 0) for g in gs), p))
+        mine.sort(key=lambda x: (-x[0], -x[2]))
+        if mine:
+            prow = "".join(f'<tr><td class="mono n">{i}</td><td>{F.plink(p)}</td><td class="mono r">{g}</td><td class="mono r">{w}</td><td class="mono r">{v:,}</td></tr>'
+                           for i, (g, w, v, p) in enumerate(mine[:10], 1))
+            players_html = (f'<h2 class="disp sub">Most belt games for the {e(unit1(lg))}</h2>'
+                            f'<div class="tablewrap"><table class="history keep3"><thead><tr><th></th><th class="mono">Player</th><th class="mono r">Games</th><th class="mono r">Wins</th><th class="mono r">{e(key)}</th></tr></thead><tbody>{prow}</tbody></table></div>'
+                            f'<p class="mono more"><a href="{base(lg)}/players/">Every player →</a></p>')
+    return f"""{team_next_card(lg, d, team)}<section class="wrap block">{nums_html}<div class="two">
   <div><h2 class="disp sub">Belt record by opponent</h2><table class="history"><thead><tr><th class="mono">Opponent</th><th class="mono r">W–L</th><th><span class="sr">Share</span></th></tr></thead><tbody>{rows}</tbody></table></div>
-  <div><h2 class="disp sub">Seasons with the belt</h2><div class="strip">{chips}</div></div>
-</div></section>"""
+  <div><h2 class="disp sub">Seasons with the belt</h2><div class="strip">{chips}</div>{players_html}</div>
+</div>{season_html}</section>"""
+
+
+# ------------------------------------------------------- the three rulesets --
+
+RULESET_SITES = [("cfb", "College Football Belt", "https://collegefootballbelt.com/ruleset.html"),
+                 ("cbb", "College Basketball Belt", "https://collegebasketballbelt.com/rules/"),
+                 ("pro", "Belt Holders (pro leagues)", "https://beltholders.com/rules/")]
+RULESET_ROWS = [
+    ("Where it starts",
+     "College football's first game: Rutgers over Princeton, 6–4, on November 6, 1869.",
+     "The reigning national champion when the game-by-game record begins: Kentucky for 1949–50; Texas for the women's belt in 1986–87.",
+     "Each league's first game on record, from the NHL's first night in 1917 to the Premier League's 1888 start."),
+    ("Which games count",
+     "Every game, bowls and the playoff included. From 1978 on, only games between two Division I teams.",
+     "Every Division I game: regular season, conference tournaments, the NCAA tournament and the other postseason events. A loss to a non-Division I team doesn't move it.",
+     "Regular season and playoffs. Preseason, exhibitions and cup competitions don't count."),
+    ("Ties and draws",
+     "A tie kept the belt with the holder (there hasn't been one since overtime arrived in 1996).",
+     "No ties: basketball plays overtime until someone wins.",
+     "A tie or a draw is a successful defense. Overtime and shootout wins are wins; a penalty shootout decides a knockout game."),
+    ("When the holder doesn't play",
+     "The belt waits: a bye, an opted-out bowl or a canceled season leaves it where it is, offseason included.",
+     "The belt waits through the offseason with the holder.",
+     "The belt is frozen until the holder plays again, even when it missed the playoffs."),
+    ("When the holder stops playing",
+     "If a holder drops football or leaves Division I, the belt goes back to the most recent earlier holder still playing.",
+     "If a holder leaves Division I, the belt goes back to the most recent earlier holder still playing.",
+     "A folded franchise, or a club relegated out of the league, vacates the belt to the most recent earlier holder still in the league."),
+    ("Moves and renames",
+     "Programs don't move; a rename is the same program.",
+     "Same: a rename is the same program.",
+     "The belt follows the franchise through relocations and renames (the Rams from Cleveland to St. Louis to Los Angeles)."),
+]
+
+
+def rulesets_html(this):
+    """Audit #2, 6.8: the three rulesets side by side, with the sister sites' rules pages linked.
+    `this` is "cfb", "cbb" or "pro" (the column this site is)."""
+    head = "".join(f'<th{" class=on" if k == this else ""}>{"<b>" + e(name) + "</b> · this site" if k == this else f"<a href={url}>{e(name)}</a>"}</th>'
+                   for k, name, url in RULESET_SITES)
+    rows = "".join(f'<tr><th class="mono">{e(label)}</th>' + "".join(f'<td{" class=on" if k == this else ""}>{e(txt)}</td>'
+                   for (k, _, _), txt in zip(RULESET_SITES, cells)) + "</tr>" for label, *cells in RULESET_ROWS)
+    return f"""<h2 class="disp">The three rulesets, side by side</h2>
+<p>The College Football Belt, the College Basketball Belt and the pro-league belts on Belt Holders run on the same idea and differ only where the sports do: ties, draws and shootouts, who counts as a league member, and what happens when a holder stops playing.</p>
+<div class="tablewrap"><table class="history keep3 rulesets"><thead><tr><th></th>{head}</tr></thead><tbody>{rows}</tbody></table></div>"""
 
 
 # ------------------------------------------------------------ challengers --
@@ -838,12 +1125,12 @@ def build_all(datas):
         d = datas[lg["key"]]
         d["_bg"] = {bg["n"]: bg for bg in d["belt_games"]}
         build_seasons(lg, d)
-        build_reigns(lg, d)
         build_rivalries(lg, d)
         build_compare(lg, d)
         F.build(lg, d)
         F.build_preview(lg, d)
         F.build_batch2(lg, d)
+        build_reigns(lg, d)              # after build_players: reign leaders come from d["_game_lines"] (audit #2, 6.1)
         F.build_tables(lg, d)
         F.build_api_dumps(lg, d)
     F.build_embed([(lg, datas[lg["key"]]) for lg in LIVE])
