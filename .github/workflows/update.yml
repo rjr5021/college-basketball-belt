@@ -97,6 +97,8 @@ jobs:
         continue-on-error: true
       - name: Build site
         run: python build_site.py
+      - name: Site audit (audit #2, 6.10 -- broken links, sitemap, template leftovers)
+        run: pip install lxml -q && python audit_site.py site collegebasketballbelt.com /tmp/audit --ci
       - name: Share image
         run: pip install pillow && python og_images.py || cp site/og.png site/og-holder.png
         continue-on-error: true
