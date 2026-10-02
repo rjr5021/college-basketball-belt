@@ -1098,6 +1098,7 @@ def build_more(lg, d):
         ("trivia/", "Trivia", "Questions from the record book."),
         ("schedule/", "Belt schedule", "Every game left on the holder's schedule, with win chances."),
         ("lean/", "The lean’s ledger", "Every AI pick on a belt game, graded."),
+        ("leaderboard/", "Beat the lean: leaderboard", "Everyone's calls on belt games, graded. Make yours on the next game."),
         ("defend-or-dethrone/", "Defend or dethrone", "Real belt games. Does the holder keep it? Build a streak."),
         ("heartbreak/", "Heartbreak list", "The closest calls, escapes and heartbreaks."),
         ("droughts/", "Drought clocks", "Days since every team last held the belt, ticking live."),
@@ -1407,18 +1408,25 @@ def build_preview(lg, d):
   <div class="kicker">Beat the lean</div>
   <div class="leanbtns"><button class="mono" data-p="{h}">{e(sn(h))} {verb(lg, 'keep', 'keeps')} it</button><button class="mono" data-p="{c}">{e(sn(c))} {verb(lg, 'take', 'takes')} it</button></div>
   <p class="note" id="leannote">Pick before {start_word(lg)}. We grade it after the game.{lean_pick}{lean_rec}</p>
+  {f'<p class="note lbline"><label>Name on the leaderboard <input id="leanname" class="mono" maxlength="24" placeholder="optional"></label> <span id="lbnote"></span> <a href="{b(lg)}/leaderboard/">Leaderboard →</a></p>' if picks_api() else ''}
 </div></section>
 <script>
 (function(){{
 var K='belt-picks-{lk}',G={json.dumps(key)},R={json.dumps(results, separators=(",", ":"))},N={json.dumps({h: sn(h), c: sn(c)})};
+var API={json.dumps(picks_api())},PS={json.dumps(picks_site(lg)[0])},PL={json.dumps(picks_site(lg)[1])};
 var P={{}};try{{P=JSON.parse(localStorage.getItem(K)||'{{}}');}}catch(e){{}}
-var btns=document.querySelectorAll('.leanbtns button'),note=document.getElementById('leannote'),base=note.innerHTML;
+var btns=document.querySelectorAll('.leanbtns button'),note=document.getElementById('leannote'),base=note.innerHTML,lbn=document.getElementById('lbnote'),nm=document.getElementById('leanname');
+function uid(){{var u='';try{{u=localStorage.getItem('belt-uid')||'';if(!u){{u=Array.from(crypto.getRandomValues(new Uint8Array(8))).map(function(x){{return x.toString(16).padStart(2,'0');}}).join('');localStorage.setItem('belt-uid',u);}}}}catch(e){{}}return u;}}
+function send(){{if(!API||!P[G]||!lbn)return;lbn.textContent='Saving…';
+ fetch(API+'/pick',{{method:'POST',headers:{{'content-type':'application/json'}},body:JSON.stringify({{site:PS,league:PL,key:G,pick:P[G],uid:uid(),name:(nm&&nm.value)||''}})}})
+ .then(function(r){{return r.json();}}).then(function(j){{lbn.textContent=j.ok?'On the leaderboard.':(j.error==='locked at kickoff'?'Locked: the game has started.':'Not saved to the leaderboard ('+(j.error||'error')+').');}}).catch(function(){{lbn.textContent='Saved here; the leaderboard is unreachable right now.';}});}}
 function show(){{
  btns.forEach(function(b){{b.classList.toggle('on',P[G]===b.dataset.p);}});
  var w=0,l=0;Object.keys(P).forEach(function(k){{if(R[k]){{if(R[k]===P[k])w++;else l++;}}}});
  note.innerHTML=(P[G]?'Your pick: <b>'+N[P[G]]+'</b>. You can change it until the game starts. ':'')+base+(w+l?' Your record: <b>'+w+'–'+l+'</b>.':'');
 }}
-btns.forEach(function(b){{b.onclick=function(){{P[G]=b.dataset.p;try{{localStorage.setItem(K,JSON.stringify(P));}}catch(e){{}}show();}};}});
+btns.forEach(function(b){{b.onclick=function(){{P[G]=b.dataset.p;try{{localStorage.setItem(K,JSON.stringify(P));}}catch(e){{}}show();send();}};}});
+if(nm){{try{{nm.value=localStorage.getItem('belt-name')||'';}}catch(e){{}}nm.onchange=function(){{try{{localStorage.setItem('belt-name',nm.value.trim());}}catch(e){{}}send();}};}}
 show();
 }})();
 </script>"""
@@ -2527,7 +2535,84 @@ def latest_recap_card(lg, d):
             f'<p>{e((rc.get("recap") or [""])[0])}</p></a></section>')
 
 
+# ============================================ picks API + leaderboard (7.15) ==
+# The "Beat the lean" picks go to a Cloudflare Worker (belt-picks) when the site sets PICKS_API; the
+# Worker validates each pick against api/picks.json (the open game) and grades with its results.
+
+def picks_api():
+    api = getattr(S, "PICKS_API", "") or ""
+    return "" if "PLACEHOLDER" in api else api.rstrip("/")
+
+
+def picks_site(lg):
+    """(site, league) as the Worker names them: ("bh", "nhl"), ("cbb", "cbb"), ("wcbb", "wcbb")."""
+    ps = getattr(S, "PICKS_SITE", None) or {}
+    site = ps.get(lg.get("key")) or ps.get("*") or "bh"
+    return site, (lg["key"] if site == "bh" else site)
+
+
+def build_picks_api(lg, d):
+    from datetime import timezone
+    from zoneinfo import ZoneInfo
+    n = lg["team_name"]
+    ng = d.get("next_game")
+    x, _ = _extra(lg)
+    site, league = picks_site(lg)
+    open_ = None
+    if ng:
+        key = f"{ng['holder']}|{ng['challenger']}|{ng['date']}"
+        start = x.get("start_utc") if x.get("key") == key else None
+        if not start:
+            ko = ng.get("kickoff") or ng.get("start_et")
+            hhmm = ko if ko and ko != "00:00" else "12:00"       # TBA: lock at noon ET on game day
+            try:
+                start = datetime.fromisoformat(f"{ng['date']}T{hhmm}").replace(tzinfo=ZoneInfo("America/New_York")).astimezone(timezone.utc).isoformat()
+            except ValueError:
+                start = None
+        open_ = {"key": key, "holder": ng["holder"], "challenger": ng["challenger"], "date": ng["date"], "kickoff_utc": start,
+                 "names": {ng["holder"]: n(ng["holder"]), ng["challenger"]: n(ng["challenger"])}}
+    results = {f"{bg['holder']}|{bg['opponent']}|{bg['date']}": bg["new_holder"] for bg in d["belt_games"][-300:] if bg.get("holder")}
+    S.write(out(lg, "api/picks.json"), json.dumps({"site": site, "league": league, "open": open_, "results": results,
+                                                    "generated": d.get("generated")}, separators=(",", ":")))
+
+
+def build_leaderboard(lg, d):
+    """/<lg>/leaderboard/: everyone's graded calls on this belt's games, from the Worker (only when PICKS_API is set)."""
+    api = picks_api()
+    if not api:
+        return
+    site, league = picks_site(lg)
+    net = ' · <a href="https://beltholders.com/leaderboard/">Every belt, one table →</a>'
+    body = f"""{S.subnav(lg, "more")}
+<section class="wrap block">
+  <div class="kicker">Beat the lean · {e(lg['name'])} belt</div>
+  <div class="head"><h1 class="disp">The leaderboard</h1><span class="mono note" id="lbmeta"></span></div>
+  <p class="intro">Everyone's calls on {e(lg['name'])} belt games, graded against the results: a win is calling the holder's defense, or the challenger's upset, right. Make yours on <a href="{b(lg)}/next/">the next belt game</a>; the name you enter there is the one shown here.</p>
+  <p class="plain" id="lbyou"></p>
+  <div class="tablewrap"><table class="history keep3"><thead><tr><th class="mono">#</th><th class="mono">Name</th><th class="mono r">W</th><th class="mono r">L</th><th class="mono r">Open</th></tr></thead><tbody id="lbrows"><tr><td colspan="5">Loading the standings…</td></tr></tbody></table></div>
+  <p class="mono more"><a href="{b(lg)}/next/">Make your call →</a> · <a href="{b(lg)}/lean/">The lean's ledger →</a>{net}</p>
+  <p class="plain">How it works: one call per belt game, locked at {start_word(lg)}, graded as soon as the result is in. Standings count wins first, then fewer losses; "open" is a call on a game not yet played. Nothing identifies you but the name you choose; the ranking refreshes every ten minutes.</p>
+</section>
+<script>
+(function(){{
+var API={json.dumps(api)},u='';try{{u=localStorage.getItem('belt-uid')||'';}}catch(e){{}}
+function esc(s){{return String(s).replace(/[&<>]/g,function(c){{return {{'&':'&amp;','<':'&lt;','>':'&gt;'}}[c];}});}}
+fetch(API+'/standings?site={site}&league={league}'+(u?'&uid='+u:'')).then(function(r){{return r.json();}}).then(function(j){{
+ document.getElementById('lbmeta').textContent=(j.players||0)+' player'+(j.players===1?'':'s');
+ var rows=(j.top||[]).map(function(p){{return '<tr'+(j.you&&p.rank===j.you.rank&&p.name===j.you.name?' class="me"':'')+'><td class="mono">'+p.rank+'</td><td>'+esc(p.name)+'</td><td class="mono r">'+p.w+'</td><td class="mono r">'+p.l+'</td><td class="mono r">'+p.pending+'</td></tr>';}}).join('');
+ document.getElementById('lbrows').innerHTML=rows||'<tr><td colspan="5">No calls yet. Be the first.</td></tr>';
+ if(j.you)document.getElementById('lbyou').innerHTML='You: <b>'+esc(j.you.name)+'</b>, '+j.you.w+'–'+j.you.l+(j.you.pending?' with '+j.you.pending+' open':'')+', ranked '+j.you.rank+' of '+j.players+'.';
+}}).catch(function(){{document.getElementById('lbrows').innerHTML='<tr><td colspan="5">The leaderboard did not load; try again in a minute.</td></tr>';}});
+}})();
+</script>"""
+    page(lg, f"{lg['name']} belt leaderboard: Beat the lean", body, "leaderboard/",
+         f"Everyone's calls on {lg['name']} belt games, graded against the results. Make yours on the next belt game and climb the table.",
+         robots="noindex,follow")   # the table is fetched; nothing to index
+
+
 def build_batch2(lg, d):
+    build_picks_api(lg, d)
+    build_leaderboard(lg, d)
     build_players(lg, d)
     build_schedule(lg, d)
     build_lean(lg, d)

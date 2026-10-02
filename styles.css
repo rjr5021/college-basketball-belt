@@ -262,6 +262,8 @@ ol.degrees{list-style:none;padding:0;margin:0;border-top:1px solid var(--line2)}
 .opts button{font-size:14px;padding:14px 16px;text-align:left;background:var(--card);color:var(--ink);border:1px solid var(--line2);cursor:pointer}
 .opts button:hover:not(:disabled){border-color:var(--brass)}.opts button.right{background:#2f6b3a;color:#fff;border-color:#2f6b3a}.opts button.wrong{background:#8a2d22;color:#fff;border-color:#8a2d22}
 .reveal{margin-top:14px}
+.alerts .pushbtn{margin-left:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;background:transparent;color:inherit;border:1px solid rgba(231,226,213,.5);cursor:pointer}
+.lbline input{width:160px;max-width:100%;padding:6px 8px;border:1px solid var(--line2);background:var(--card);color:var(--ink);font-size:13px}.history tr.me td{font-weight:700}
 .dres{margin:22px 0 8px;padding:20px 22px;border:1px solid var(--line2);background:var(--card)}.dres .grid{font-size:36px;letter-spacing:6px;margin:4px 0 10px;line-height:1.2}.dres .big{margin:0 0 6px}
 .dres button,.mapbar button{font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:9px 14px;background:var(--ink);color:var(--paper);border:0;cursor:pointer;margin-right:8px}
 .embeds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.embed img{max-width:100%;height:auto;display:block;margin-bottom:10px}

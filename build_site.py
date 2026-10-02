@@ -25,7 +25,10 @@ NETWORK = False          # site_extras: one stories index per belt, no all-leagu
 OWNER = "R&O Holdings LLC"      # the company that owns and operates the site (formed 2026-09-29)
 ADSENSE_PUBLISHER_ID = ""        # "pub-3317069252410560" once the site is approved in AdSense
 GOATCOUNTER_CODE = "collegebasketballbelt"
-STYLES_VERSION = "10"
+STYLES_VERSION = "11"
+# 7.15: the belt-picks Cloudflare Worker (global Beat-the-lean leaderboard); empty = off. Men's belt = "cbb", women's = "wcbb".
+PICKS_API = os.environ.get("PICKS_API", "https://belt-picks.rjr5021.workers.dev")
+PICKS_SITE = {"cbb": "cbb", "women": "wcbb"}
 ORANGE = "#de762c"
 
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]

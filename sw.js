@@ -40,3 +40,17 @@ self.addEventListener("fetch", function (e) {
     }));
   }
 });
+
+/* 7.14: web push (subscriptions live in the belt-picks Worker; one notification per title change) */
+self.addEventListener("push", function (e) {
+  var d = {};
+  try { d = e.data ? e.data.json() : {}; } catch (x) {}
+  e.waitUntil(self.registration.showNotification(d.title || "A belt changed hands", {
+    body: d.body || "", icon: "/icon-512.png", badge: "/favicon.png", tag: d.tag || "belt", data: { url: d.url || "/" }
+  }));
+});
+self.addEventListener("notificationclick", function (e) {
+  e.notification.close();
+  var u = (e.notification.data && e.notification.data.url) || "/";
+  e.waitUntil(self.clients.openWindow(u));
+});
