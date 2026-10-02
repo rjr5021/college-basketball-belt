@@ -25,7 +25,7 @@ NETWORK = False          # site_extras: one stories index per belt, no all-leagu
 OWNER = "R&O Holdings LLC"      # the company that owns and operates the site (formed 2026-09-29)
 ADSENSE_PUBLISHER_ID = ""        # "pub-3317069252410560" once the site is approved in AdSense
 GOATCOUNTER_CODE = "collegebasketballbelt"
-STYLES_VERSION = "6"
+STYLES_VERSION = "7"
 ORANGE = "#de762c"
 
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -52,7 +52,7 @@ WOMEN = {"key": "women", "name": "The Women's College Basketball Belt", "short":
          "og": "/og.png"}
 # Paths shared by both belts (never prefixed with /women)
 GLOBAL_PATHS = ("styles.css", "network-bar.js", "sw.js", "offline.html", "favicon.png", "favicon.ico", "apple-touch-icon.png", "manifest.json", "icon-512.png", "og.png",
-                "og-holder.png", "tablekit.js", "privacy/", "about/", "women/")
+                "og-holder.png", "tablekit.js", "fonts/", "privacy/", "about/", "women/")
 # Never rewrite protocol-relative URLs ("//gc.zgo.at/count.js"): the lookahead skips a second slash (CBB-1).
 _REWRITE = re.compile(r'((?:href|src)=["\']|fetch\([\'"]|"(?:https://collegebasketballbelt\.com))/(?!/|(?:' +
                       "|".join(re.escape(x) for x in GLOBAL_PATHS) + r'))')
@@ -102,7 +102,7 @@ def weekday(iso):
 
 
 def tip_12h(hhmm):
-    if not hhmm:
+    if not hhmm or hhmm == "00:00":      # N-2: the midnight placeholder means the time isn't set
         return "Time TBA"
     h, m = (int(x) for x in hhmm.split(":")[:2])
     return f"{(h % 12) or 12}:{m:02d} {'AM' if h < 12 else 'PM'} ET"
@@ -110,6 +110,16 @@ def tip_12h(hhmm):
 
 def season_label(s):
     return f"{s - 1}–{str(s)[2:]}"
+
+
+def reign_span(r):
+    """'1970–71' for a reign inside one season, '1971–74' for one that crossed seasons (audit #2, C-2)."""
+    s = r["season"]
+    first = season_label(s) if s > SEC["seed_year"] else str(SEC["seed_year"])
+    end = r.get("end_season")
+    if end and end > s and s > SEC["seed_year"]:
+        return f"{s - 1}–{str(end)[2:]}"
+    return first
 
 
 def fit(name):
@@ -324,8 +334,8 @@ def page(title, body, *, path, description, active=None, jsonld=None, robots=Non
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#211a12">
 <link rel="alternate" type="application/rss+xml" title="{SEC.get('short', 'College Basketball Belt')} — title changes" href="/feed.xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Spectral:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preconnect" href="https://a.espncdn.com">
+<link rel="preload" href="/fonts/big-shoulders-display-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/spectral-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/ibm-plex-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v={STYLES_VERSION}">
 <script>try{{var t=localStorage.getItem('belt-theme');if(t)document.documentElement.dataset.theme=t;}}catch(e){{}}</script>
 {ads}{goat}{ld}
@@ -488,7 +498,46 @@ def football_card():
 
 # ------------------------------------------------------------- pages -----
 
+def home_faq(d):
+    """Audit #2 (6.9): the plain-language answers Google shows as a rich result (the football site has had
+    one since September). Visible on the page, and the same text in FAQPage JSON-LD."""
+    cur, rec, ng = d["current"], d["records"], d.get("next_game")
+    today = date.today()
+    days = (today - date.fromisoformat(cur["start_date"])).days
+    name = cur["name"]
+    q = []
+    q.append((f"Who holds the {SEC['short']}?",
+              f"{name} holds the {SEC['short']}. {name} took it from {cur.get('won_from_name') or 'the previous holder'}, {won_score_text(cur)}, on {d_long(cur['start_date'])}"
+              f" and has defended it {plural(cur.get('defenses', 0), 'time')} since ({plural(days, 'day')} and counting). It is {name}'s {ordinal(cur['reign_no'])} reign."))
+    if ng:
+        where = "hosts" if ng["holder_home"] else ("faces" if ng.get("neutral") else "visits")
+        q.append(("When is the next belt game?",
+                  f"The next belt game is {name} {where} {ng.get('challenger_name') or tname(ng['challenger'])} on {weekday(ng['date'])}, {d_long(ng['date'])}"
+                  f"{' at ' + ng['venue'] if ng.get('venue') else ''}. If {ng.get('challenger_name') or tname(ng['challenger'])} wins, the belt changes hands; if {name} wins, it stays put."))
+    q.append((f"What is the {SEC['short']}?",
+              f"The {SEC['short']} is {SEC['who']}'s lineal championship: one title, held by one program, that can only be taken by beating the holder on the court, "
+              f"the same idea as boxing's lineal champion. It starts with the {d['seed']['short']}, {d['seed']['team_name']}, and has passed through {len(d['reigns']):,} reigns across "
+              f"{len(d['belt_games']):,} belt games since. Nothing is voted on."))
+    q.append(("How does the belt change hands?",
+              "Beat the holder and the belt is yours; every other result leaves it where it is. Regular season, conference tournament and NCAA tournament games all count. "
+              "If the holder is idle, the belt waits for its next game, and a holder whose season ends keeps it into the next season."))
+    if rec.get("longest_reigns") and rec.get("most_reigns") and rec.get("most_days"):
+        lr = rec["longest_reigns"][0]
+        mr, md = rec["most_reigns"][0], rec["most_days"][0]
+        q.append(("Who has held the belt the longest?",
+                  f"The most defenses in one reign is {lr['name']}'s, {reign_span(lr)}, with {plural(lr['defenses'], 'defense')}. {tname(mr[0])} has had the most reigns ({mr[1]}), "
+                  f"and {tname(md[0])} has held it for the most days in total ({md[1]:,})."))
+    q.append((f"Is the {SEC['short']} official?",
+              "No. It is an independent fan project; no school, conference or the NCAA has anything to do with it, and it awards nothing but bragging rights. "
+              "The lineage is rebuilt automatically from the game results every few hours during the season, and the whole thing is free to download."))
+    items = "".join(f'<div class="faq"><h3 class="disp">{e(qq)}</h3><p>{e(a)}</p></div>' for qq, a in q)
+    html = f'<section class="wrap block"><div class="head"><div class="kicker">Straight answers</div><h2 class="disp">Belt FAQ</h2></div><div class="faqgrid">{items}</div></section>'
+    ld = {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": qq, "acceptedAnswer": {"@type": "Answer", "text": a}} for qq, a in q]}
+    return html, ld
+
+
 def build_home(d):
+    faq_html, faq_ld = home_faq(d)
     rec = d["records"]
     months = d["months"]
     peak = max((n for _, n in months), default=0) or 1
@@ -537,13 +586,14 @@ def build_home(d):
 {bracket}
 <section class="wrap block three">
   {record_card("Most reigns", [(tname(t), v) for t, v in rec['most_reigns'][:3]])}
-  {record_card("Most defenses in one reign", [(f"{r['name']}, {season_label(r['season']) if r['season'] > SEC['seed_year'] else SEC['seed_year']}", f"{r['defenses']} def.") for r in rec['longest_reigns'][:3]])}
+  {record_card("Most defenses in one reign", [(f"{r['name']}, {reign_span(r)}", f"{r['defenses']} def.") for r in rec['longest_reigns'][:3]])}
   {football_card() if not P else mens_card()}
 </section>
-{home_extras()}"""
+{home_extras()}
+{faq_html}"""
     cur = d["current"]
-    ld = {"@context": "https://schema.org", "@type": "SportsTeam", "name": cur["name"], "sport": "Basketball",
-          "award": f"{SEC['name']} (lineal), {ordinal(cur['reign_no'])} reign since {cur['start_date']}"}
+    ld = [{"@context": "https://schema.org", "@type": "SportsTeam", "name": cur["name"], "sport": "Basketball",
+           "award": f"{SEC['name']} (lineal), {ordinal(cur['reign_no'])} reign since {cur['start_date']}"}, faq_ld]
     write("index.html", page(f"{SEC['name']}: {cur['name']} holds it", body, path="/", active="belt",
                              description=f"{cur['name']} holds the {SEC['short']}, the lineal championship of {SEC['who']}: beat the holder, take the belt. Every game since {SEC['since']}.",
                              jsonld=ld))
@@ -607,7 +657,7 @@ def build_records(d):
     cards = "".join([
         record_card("Most days holding the belt (all reigns)", [(tname(t), f"{v:,}") for t, v in rec["most_days"]]),
         record_card("Most reigns", [(tname(t), v) for t, v in rec["most_reigns"]]),
-        record_card("Most defenses in one reign", [(f"{r['name']}, {season_label(r['season']) if r['season'] > SEC['seed_year'] else SEC['seed_year']}", r["defenses"]) for r in rec["longest_reigns"]]),
+        record_card("Most defenses in one reign", [(f"{r['name']}, {reign_span(r)}", r["defenses"]) for r in rec["longest_reigns"]]),
         record_card("Most successful defenses (all reigns)", [(tname(t), v) for t, v in rec["most_defenses_total"]]),
         record_card("Most defenses in one season", [(f"{tname(x['team'])}, {season_label(x['season'])}", x["defenses"]) for x in rec.get("most_defenses_season", [])]),
         record_card("Most belt games played", [(tname(t), f"{v:,}") for t, v in rec.get("most_belt_games", [])]),
@@ -666,7 +716,7 @@ def build_team(d, tid, rs):
   <div class="wrap-in">
     <div class="kicker dot">{'Current holder' if holding else SEC['name']}</div>
     <h1 class="disp holder" style="{fit(name)}">{e(name)}</h1>
-    <div class="stats"><div><b class="disp">{len(rs)}</b><span class="mono">Reigns</span></div><div><b class="disp">{days:,}</b><span class="mono">Days held</span></div><div><b class="disp">{defs}</b><span class="mono">Defenses</span></div><div><b class="disp">{rs[0]['start_date'][:4]}</b><span class="mono">First reign</span></div></div>
+    <div class="stats"><div><b class="disp">{len(rs)}</b><span class="mono">{'Reign' if len(rs) == 1 else 'Reigns'}</span></div><div><b class="disp">{days:,}</b><span class="mono">Days held</span></div><div><b class="disp">{defs}</b><span class="mono">{'Defense' if defs == 1 else 'Defenses'}</span></div><div><b class="disp">{rs[0]['start_date'][:4]}</b><span class="mono">First reign</span></div></div>
   </div>
 </section>
 <section class="wrap block"><div class="head"><h2 class="disp">Every reign</h2></div><ol class="chain">{rows}</ol></section>
@@ -1005,6 +1055,11 @@ def main():
     for f in ("styles.css", "network-bar.js", "sw.js", "favicon.png", "favicon.ico", "apple-touch-icon.png", "icon-512.png", "og.png", "tablekit.js"):
         if os.path.exists(f):
             shutil.copy(f, os.path.join(OUT, f))
+    # N-6 (audit #2): the site serves its own fonts (the files the Instagram cards already use)
+    os.makedirs(os.path.join(OUT, "fonts"), exist_ok=True)
+    for f in os.listdir(os.path.join("ig_templates", "fonts")):
+        if f.endswith(".woff2") or f == "OFL.txt":
+            shutil.copy(os.path.join("ig_templates", "fonts", f), os.path.join(OUT, "fonts", f))
     print(f"Built {sum(len(fs) for _, fs, _ in [(0, f, 0) for _, _, f in os.walk(OUT)])} files into {OUT}/")
     gone = sorted(x for x in CRUMB_REFS if not os.path.exists(os.path.join(OUT, x.strip("/"), "index.html")))
     if gone:

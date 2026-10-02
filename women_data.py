@@ -104,7 +104,7 @@ def load(today=None):
         if r["status"] == "final" and r["home_points"] != "":
             games.append({**base, "home_points": int(float(r["home_points"])), "away_points": int(float(r["away_points"]))})
         elif r["status"] == "scheduled" and r["date"] >= today:
-            upcoming.append({**base, "kickoff": r["start_et"] or None})
+            upcoming.append({**base, "kickoff": (r["start_et"] if r["start_et"] and r["start_et"] != "00:00" else None)})
     _label_rounds(games)
     games.sort(key=lambda g: (g["date"], g["season_type"] != "regular", g["id"]))
     upcoming.sort(key=lambda g: (g["date"], g.get("kickoff") or "", g["id"]))

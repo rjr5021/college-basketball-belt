@@ -41,7 +41,7 @@ ESPN = {"nfl": "football/nfl", "nba": "basketball/nba", "nhl": "hockey/nhl", "ml
         "nwsl": "soccer/usa.nwsl", "epl": "soccer/eng.1", "laliga": "soccer/esp.1", "seriea": "soccer/ita.1",
         "bundesliga": "soccer/ger.1", "ligue1": "soccer/fra.1", "eredivisie": "soccer/ned.1",
         "wcbb": "basketball/womens-college-basketball", "women": "basketball/womens-college-basketball",
-        "intl": "soccer/fifa.friendly"}
+        "intl": "soccer/fifa.friendly", "cfl": "football/cfl"}
 OUTDOOR_SPORTS = ("nfl", "mlb", "mls", "nwsl", "epl", "laliga", "seriea", "bundesliga", "ligue1", "eredivisie", "intl", "cfl")
 MODEL = "claude-sonnet-4-5"   # accurate with numbers; ~1-2 cents per preview
 MAX_TOKENS = 900
@@ -217,7 +217,11 @@ def espn_game(lg, ng):
 def weather(lg, ng, espn):
     if lg.get("key") not in OUTDOOR_SPORTS or not espn:
         return None
-    venue = espn.get("venue") or {}
+    venue = dict(espn.get("venue") or {})
+    if not venue.get("city") and not ng.get("neutral"):      # B-7: the home club's ground (European leagues)
+        hv = (lg.get("home_venues") or {}).get(ng["holder"] if ng["holder_home"] else ng["challenger"])
+        if hv:
+            venue.update({"name": venue.get("name") or hv[0], "city": hv[1], "indoor": False})
     if venue.get("indoor") is not False or not venue.get("city"):
         return None
     start = espn.get("start_utc")
@@ -230,8 +234,10 @@ def weather(lg, ng, espn):
                    + urllib.parse.urlencode({"name": venue["city"], "count": 10, "language": "en", "format": "json"}))
     want = STATES.get((venue.get("state") or "").upper(), venue.get("state") or "")
     place = None
+    euro = lg.get("key") in ("epl", "laliga", "seriea", "bundesliga", "ligue1", "eredivisie", "intl")
     for r in (geo or {}).get("results") or []:
-        if r.get("country_code") in ("US", "CA", "MX", "GB", "DE") and (not want or r.get("admin1") == want):
+        # B-7: European leagues and national teams play anywhere; the North American leagues keep the country filter
+        if (euro or r.get("country_code") in ("US", "CA", "MX", "GB", "DE")) and (not want or r.get("admin1") == want):
             place = r
             break
     if not place:
@@ -304,24 +310,25 @@ def build_prompt(lg, d, ng, espn, wx):
     lines.append(f"{c} have held the belt {pv.get('challenger_reigns', 0)} times before." if pv.get("challenger_reigns")
                  else f"{c} have never held the belt.")
     if pv.get("holder_win_prob") is not None:
-        lines.append(f"Our Elo model gives {h} a {round(pv['holder_win_prob'] * 100)}% chance to win.")
-    if espn and espn.get("odds") and espn["odds"].get("details"):
-        lines.append(f"Betting line: {espn['odds']['details']}" + (f", over/under {espn['odds']['over_under']}" if espn["odds"].get("over_under") else "") + ".")
-    if wx and wx.get("temp_f") is not None:
-        lines.append(f"Forecast at the start: {wx['temp_f']}°F, {(wx.get('condition') or '').lower()}, wind {wx.get('wind_mph')} mph, "
-                     f"{wx.get('precip_chance')}% chance of precipitation.")
+        # N-3: words, not the percentage -- the number moves between runs while the cached text doesn't
+        wp = pv["holder_win_prob"]
+        edge = ("a clear favorite" if wp >= 0.65 else "the favorite" if wp >= 0.55 else "in a toss-up" if wp >= 0.45
+                else "the underdog" if wp >= 0.35 else "a clear underdog")
+        lines.append(f"Our Elo model makes {h} {edge} in this game.")
+    # N-3: no betting line and no forecast in the prompt -- both are shown live on the page and change
+    # every run, and the cached text used to contradict them.
     stats = "\n".join(lines)
     return f'''You are writing a short preview for "{site}," a site that tracks {blurb}. No committee or poll is involved. The belt is on the line in this {lg['name']} game.
 
 Upcoming game: {h} (current belt holder) {side} {c} on {ng['date']}.
 
-Stats (this is everything you know -- do NOT invent player names, injuries, coaches, trades or any fact not listed here; every claim you make about form, streaks, margins or history must be checkable against these lines, so re-read them before writing):
+Stats (this is everything you know -- do NOT invent player names, injuries, coaches, trades or any fact not listed here; every claim you make about form, streaks, margins or history must be checkable against these lines, so re-read them before writing. Every number you write must appear verbatim in these lines: do not add up goals or points across games, do not count streaks or margins yourself, and never mention betting lines, odds, over/unders or the weather -- those are shown separately on the page):
 {stats}
 
 Write a JSON object with exactly these keys and nothing else:
   "overview": 2-3 sentences on the game and what's at stake for the belt. Plain prose, no markdown.
   "key_matchups": a list of 2-3 short strings, each a storyline worth watching that follows from the stats above.
-  "betting_angles": 2-3 sentences on what the numbers suggest (form, head to head, the line). Analysis only -- never tell the reader what to bet.
+  "betting_angles": 2-3 sentences on what the numbers suggest (form, head to head, the Elo edge). Analysis only -- never tell the reader what to bet, and no odds or lines.
   "predicted_winner": exactly "{h}" or "{c}", nothing else.
   "predicted_score": your predicted final score as "{h} X, {c} Y" with realistic {lg['name']} numbers.
   "prediction_writeup": 3-5 sentences explaining the pick from the stats above. Plain prose. A for-fun editorial call, not betting advice.
@@ -373,6 +380,69 @@ def parse(text):
             "prediction_writeup": (j.get("prediction_writeup") or "").strip()}
 
 
+# ------------------------------------------------------- fact check (N-3) --
+# The model only knows the stats in the prompt, but it still invented totals, streak lengths and
+# margins ("three blowouts by 40+"), and it used to quote odds and forecasts that the page refreshes
+# every run while the cached text didn't. Now: every number in the output must appear verbatim in
+# the prompt (plus 0-10 and the two-digit forms of years, for "2025-26"); a first miss gets one
+# rewrite with the offending numbers named; a second miss drops the sentences that carry them.
+
+_NUM_RX = re.compile(r"(?<![\w.])\d+(?:,\d{3})*(?:\.\d+)?(?![\w.])")
+
+
+def _nums(text):
+    return {m.group(0).replace(",", "") for m in _NUM_RX.finditer(text or "")}
+
+
+def allowed_numbers(prompt):
+    nums = _nums(prompt)
+    out = set(nums) | {str(i) for i in range(0, 11)}
+    for n in nums:
+        if re.fullmatch(r"(19|20)\d\d", n):
+            out.add(n[2:])
+    return out
+
+
+_AI_TEXT_KEYS = ("overview", "betting_angles", "prediction_writeup")
+
+
+def unknown_numbers(ai, allowed):
+    found = set()
+    for k in _AI_TEXT_KEYS:
+        found |= _nums(ai.get(k)) - allowed
+    for item in ai.get("key_matchups") or []:
+        found |= _nums(item) - allowed
+    return found
+
+
+def scrub_numbers(ai, allowed):
+    """Drop every sentence or bullet that still quotes a number the stats don't contain."""
+    dropped = set()
+
+    def keep_sentences(text):
+        kept = []
+        for sent in re.split(r"(?<=[.!?])\s+", (text or "").strip()):
+            unk = _nums(sent) - allowed
+            if unk:
+                dropped.update(unk)
+            elif sent:
+                kept.append(sent)
+        return " ".join(kept)
+
+    out = dict(ai)
+    for k in _AI_TEXT_KEYS:
+        out[k] = keep_sentences(ai.get(k))
+    out["key_matchups"] = [x for x in (ai.get("key_matchups") or []) if not (_nums(x) - allowed)]
+    return out, dropped
+
+
+def retry_prompt(prompt, unknown):
+    return (prompt + "\n\nYour previous draft cited numbers that do not appear in the stats above: "
+            + ", ".join(sorted(unknown, key=lambda x: (len(x), x)))
+            + ". Rewrite it using only numbers that appear verbatim in the stats. Do not add up points or goals across games, "
+              "do not count streaks or margins yourself, and do not quote odds, lines or forecasts.")
+
+
 def record_pick(ledger_path, key, lg, ng, ai, espn):
     ledger = load(ledger_path, [])
     if any(x.get("key") == key for x in ledger) or not ai.get("predicted_winner"):
@@ -408,10 +478,29 @@ def enrich(lg, lineage_path, out_dir, api_key):
     if not ai and api_key:
         try:
             log(f"[{k}] writing the AI preview for {key} ({MODEL})")
-            ai = parse(call_claude(build_prompt(lg, d, ng, espn, wx), api_key))
+            prompt = build_prompt(lg, d, ng, espn, wx)
+            allowed = allowed_numbers(prompt)
+            ai = parse(call_claude(prompt, api_key))
+            attempts, dropped = 1, set()
+            if ai:
+                unk = unknown_numbers(ai, allowed)
+                if unk:
+                    log(f"[{k}] fact check: {sorted(unk)} not in the stats; rewriting once")
+                    again = parse(call_claude(retry_prompt(prompt, unk), api_key))
+                    attempts = 2
+                    if again:
+                        ai = again
+                    unk = unknown_numbers(ai, allowed)
+                    if unk:
+                        ai, dropped = scrub_numbers(ai, allowed)
+                        log(f"[{k}] fact check: dropped sentences citing {sorted(dropped)}")
+                if not (ai.get("overview") and ai.get("prediction_writeup")):
+                    log(f"[{k}] fact check left too little text; the page builds without the AI preview")
+                    ai = None
             if ai:
                 ai["written"] = date.today().isoformat()
                 ai["model"] = MODEL
+                ai["factcheck"] = {"attempts": attempts, "dropped": sorted(dropped)}
         except Exception as e:  # noqa: BLE001
             log(f"[{k}] AI preview failed ({e}); the page builds without it")
             ai = None

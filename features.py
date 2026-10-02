@@ -67,6 +67,19 @@ def out(lg, rel):
     return f"{pre}/{rel}" if pre else rel
 
 
+def start_word(lg):
+    """What a game starts with, by sport (B-3: it used to say "tipoff" for soccer, football and hockey)."""
+    sport = (lg.get("sport") or "").lower()
+    k = lg.get("key") or ""
+    if "hockey" in sport or k in ("nhl", "pwhl"):
+        return "puck drop"
+    if "baseball" in sport or k == "mlb":
+        return "first pitch"
+    if "basketball" in sport or k in ("nba", "wnba", "cbb", "women", "wcbb"):
+        return "tipoff"
+    return "kickoff"
+
+
 def verb(lg, plural_form, singular_form):
     return singular_form if lg.get("singular") else plural_form
 
@@ -126,10 +139,22 @@ def next_payload(lg, d, site_url):
         return None
     ex, _ = _extra(lg)
     espn = (ex or {}).get("espn") or {}
-    return {"date": ng["date"], "time_et": ng.get("kickoff") or ng.get("start_et"),
+    ko = ng.get("kickoff") or ng.get("start_et")
+    # N-7: ESPN's tv is a list and its venue is a dict -- both used to be dropped (tv was compared to str)
+    tv = espn.get("tv")
+    tv = " · ".join(x for x in tv if x) if isinstance(tv, list) else (tv if isinstance(tv, str) else None)
+    ev = espn.get("venue") if isinstance(espn.get("venue"), dict) else {}
+    venue = ng.get("stadium") or ng.get("venue") or ev.get("name")
+    city = ", ".join(x for x in (ev.get("city"), ev.get("state")) if x) or ng.get("city")
+    if not venue and not ng.get("neutral"):      # B-7: the home club's ground, for leagues whose fixtures carry none
+        home_team = ng["holder"] if ng["holder_home"] else ng["challenger"]
+        hv = (lg.get("home_venues") or {}).get(home_team)
+        if hv:
+            venue, city = hv[0], city or hv[1]
+    return {"date": ng["date"], "time_et": ko if ko and ko != "00:00" else None,
             "opponent": lg["team_name"](ng["challenger"]), "opponent_short": lg["short_name"](ng["challenger"]),
-            "home": bool(ng["holder_home"]), "neutral": bool(ng.get("neutral")), "venue": ng.get("stadium") or ng.get("venue"),
-            "tv": espn.get("tv") if isinstance(espn.get("tv"), str) else None,
+            "home": bool(ng["holder_home"]), "neutral": bool(ng.get("neutral")), "venue": venue or None, "city": city or None,
+            "tv": tv or None,
             "win_prob": (d.get("preview") or {}).get("holder_win_prob"), "url": f"{site_url}{b(lg)}/next/"}
 
 
@@ -536,6 +561,10 @@ def build_decades(lg, d):
     first_y = int(d["reigns"][0]["start_date"][:4])
     last_y = int(d["generated"][:4])
     decs = list(range(first_y // 10 * 10, last_y // 10 * 10 + 1, 10))
+    if last_y - first_y < 20:
+        # B-8 (audit #2): a league with fewer than two decades of belt history gets a 90-word
+        # "decades" page that says nothing; the More hub hides the card when the page isn't built.
+        return
     n = lg["team_name"]
     cards = []
     for dec in decs:
@@ -893,6 +922,8 @@ def build_ics(lg, d):
         where = "vs." if ng["holder_home"] else "at"
         summary = _ics_escape(f"{lg['name']} belt: {lg['short_name'](h)} {where} {lg['short_name'](c)}")
         ko = ng.get("kickoff")
+        if ko == "00:00":          # N-2: time not set yet -> all-day event
+            ko = None
         if ko:
             st = f"DTSTART;TZID=America/New_York:{ng['date'].replace('-', '')}T{ko.replace(':', '')}00"
             hrs = 3 if lg.get("key") in ("nfl", "mlb") else 2.5
@@ -901,11 +932,15 @@ def build_ics(lg, d):
         else:
             st = f"DTSTART;VALUE=DATE:{ng['date'].replace('-', '')}"
             en = f"DTEND;VALUE=DATE:{(date.fromisoformat(ng['date']) + timedelta(days=1)).strftime('%Y%m%d')}"
-        desc = _ics_escape(f"{n(h)} {verb(lg, 'defend', 'defends')} the lineal {lg['name']} belt against {n(c)}. Preview: {S.SITE_URL}{b(lg)}/next/")
-        loc = _ics_escape(ng.get("stadium") or "")
+        # Enhancement 6.4: venue and TV in the event, plus a one-hour reminder
+        np_ = next_payload(lg, d, S.SITE_URL) or {}
+        tv_bit = f" TV: {np_['tv']}." if np_.get("tv") else ""
+        desc = _ics_escape(f"{n(h)} {verb(lg, 'defend', 'defends')} the lineal {lg['name']} belt against {n(c)}.{tv_bit} Preview: {S.SITE_URL}{b(lg)}/next/")
+        loc = _ics_escape(", ".join(x for x in (np_.get("venue"), np_.get("city")) if x))
+        alarm = ["BEGIN:VALARM", "TRIGGER:-PT1H", "ACTION:DISPLAY", f"DESCRIPTION:{summary} in an hour", "END:VALARM"] if ko else []
         ev.append("\r\n".join(["BEGIN:VEVENT", f"UID:{lg.get('key', 'cbb')}-{ng['date']}-{h}-{c}@{S.SITE_URL.split('//')[1]}",
                                f"DTSTAMP:{stamp}", st, en, f"SUMMARY:{summary}", f"DESCRIPTION:{desc}",
-                               f"LOCATION:{loc}", f"URL:{S.SITE_URL}{b(lg)}/next/", "END:VEVENT"]))
+                               f"LOCATION:{loc}", f"URL:{S.SITE_URL}{b(lg)}/next/"] + alarm + ["END:VEVENT"]))
     cal = "\r\n".join(["BEGIN:VCALENDAR", "VERSION:2.0", f"PRODID:-//{SITE_NAME}//{lg['name']} belt//EN", "CALSCALE:GREGORIAN",
                        f"X-WR-CALNAME:{_ics_escape(lg['name'])} belt defenses", "X-WR-TIMEZONE:America/New_York",
                        "REFRESH-INTERVAL;VALUE=DURATION:PT6H", "X-PUBLISHED-TTL:PT6H", *ev, "END:VCALENDAR"]) + "\r\n"
@@ -962,7 +997,7 @@ ESPN = {"nfl": "football/nfl", "nba": "basketball/nba", "nhl": "hockey/nhl", "ml
         # the leagues added in October 2026 (live score box on game day)
         "wnba": "basketball/wnba", "mls": "soccer/usa.1", "nwsl": "soccer/usa.nwsl", "epl": "soccer/eng.1",
         "laliga": "soccer/esp.1", "seriea": "soccer/ita.1", "bundesliga": "soccer/ger.1", "ligue1": "soccer/fra.1",
-        "eredivisie": "soccer/ned.1"}
+        "eredivisie": "soccer/ned.1", "cfl": "football/cfl", "intl": "soccer/fifa.friendly"}
 
 
 def live_box(lg, d):
@@ -1168,7 +1203,7 @@ def build_preview(lg, d):
         p, s2 = lg["team_colors"](code)
         top, bottom, ink, accent = S.plate(p, s2)
         info = teams.get(str(code)) or {}
-        logo = (f'<img class="mlogo" src="{e(info["logo"])}" alt="" loading="lazy" onerror="this.outerHTML=\'<span class=mlogo>{_monogram(n(code))}</span>\'">'
+        logo = (f'<img class="mlogo" src="{e(info["logo"])}" alt="" loading="eager" fetchpriority="high" decoding="async" onerror="this.outerHTML=\'<span class=mlogo>{_monogram(n(code))}</span>\'">'
                 if info.get("logo") else f'<span class="mlogo">{e(_monogram(n(code)))}</span>')
         form = pv["holder_form"] if code == h else pv["challenger_form"]
         wins = sum(1 for r in form if r["result"] == "W")
@@ -1196,6 +1231,10 @@ def build_preview(lg, d):
     venue = (espn.get("venue") or {})
     vname = venue.get("name") or ng.get("stadium") or ng.get("venue")
     vcity = ", ".join(v for v in (venue.get("city"), venue.get("state")) if v) or ng.get("city")
+    if not vname and not ng.get("neutral"):      # B-7: the home club's ground when the fixture carries none
+        hv = (lg.get("home_venues") or {}).get(ng["holder"] if ng["holder_home"] else ng["challenger"])
+        if hv:
+            vname, vcity = hv[0], vcity or hv[1]
     tv = " · ".join(espn.get("tv") or [])
     time_el = (f'<span class="localtime" data-utc="{e(start)}">{S.kickoff_12h(ng.get("kickoff"))} ET</span>' if start
                else e(S.kickoff_12h(ng.get("kickoff"))))
@@ -1262,7 +1301,7 @@ def build_preview(lg, d):
     beat = f"""<section class="wrap"><div class="lean">
   <div class="kicker">Beat the lean</div>
   <div class="leanbtns"><button class="mono" data-p="{h}">{e(sn(h))} {verb(lg, 'keep', 'keeps')} it</button><button class="mono" data-p="{c}">{e(sn(c))} {verb(lg, 'take', 'takes')} it</button></div>
-  <p class="note" id="leannote">Pick before {'kickoff' if lk == 'nfl' else 'first pitch' if lk == 'mlb' else 'puck drop' if lk == 'nhl' else 'tipoff'}. We grade it after the game.{lean_pick}{lean_rec}</p>
+  <p class="note" id="leannote">Pick before {start_word(lg)}. We grade it after the game.{lean_pick}{lean_rec}</p>
 </div></section>
 <script>
 (function(){{
@@ -1349,7 +1388,7 @@ show();
   </div>
   <div class="acard"><div class="kicker">Belt history between these two</div><p>{bm_line}</p><a class="mono more" href="{b(lg)}/compare/?a={h}&amp;b={c}">Full comparison →</a></div>
   <div class="acard"><div class="kicker">{e(n(c))} &amp; the belt</div>
-    <div class="anums"><div><b class="disp">{pv['challenger_reigns']}</b><span class="mono">Reigns</span></div><div><b class="disp">{c_days:,}</b><span class="mono">Days held</span></div><div><b class="disp">{last_held}</b><span class="mono">Last held</span></div></div>
+    <div class="anums"><div><b class="disp">{pv['challenger_reigns']}</b><span class="mono">{'Reign' if pv['challenger_reigns'] == 1 else 'Reigns'}</span></div><div><b class="disp">{c_days:,}</b><span class="mono">Days held</span></div><div><b class="disp">{last_held}</b><span class="mono">Last held</span></div></div>
     <p>{c_sent}</p>{f'<a class="mono more" href="{team_url(lg, c)}">Team page →</a>' if has_team_page(lg, c) else ''}</div>
 </aside>"""
     crumbs_html = f'<nav class="crumbs mono wrap"><a href="{b(lg)}/">{e(lg["name"])} belt</a> / <a href="{b(lg)}/seasons/">{e(sl(lg, ng.get("season") or pv.get("record_season")))}</a> / Up next</nav>'
@@ -1828,9 +1867,9 @@ def build_game_pages(lg, d):
         p, s2 = lg["team_colors"](w)
         top, bottom, ink, accent = S.plate(p, s2)
         where = "at home" if bg["home"] == w else ("on a neutral floor" if bg.get("neutral") else "on the road")
-        prev_txt = (f"{e(n(l, s))} had held it since {S.d_long(prev_r['start_date'])}, with {S.plural(prev_r.get('defenses', 0), 'defense')} over {prev_r['days']:,} days."
+        prev_txt = (f"{e(n(l, s))} had held it since {S.d_long(prev_r['start_date'])}, with {S.plural(prev_r.get('defenses', 0), 'defense')} over {S.plural(prev_r['days'], 'day')}."
                     if prev_r and bg.get("holder") else "The first game on record: the belt starts here.")
-        after = (f"{e(n(w, s))} held it for {r['days']:,} days and {S.plural(r.get('defenses', 0), 'defense')}"
+        after = (f"{e(n(w, s))} held it for {S.plural(r['days'], 'day')} and {S.plural(r.get('defenses', 0), 'defense')}"
                  + (f", then lost it to {e(n(nxt_r['team']))} on {S.d_long(nxt_r['start_date'])}." if nxt_r else ", and still hold it." if not lg.get("singular") else ", and still holds it."))
         pl = changes[i - 1] if i else None
         nl = changes[i + 1] if i + 1 < len(changes) else None
@@ -2245,6 +2284,10 @@ def _stat_rows(lg, box):
 
 
 MIN_PLAYER_GAMES = 3      # players with fewer belt games are rows in the tables, not pages (BH-2)
+# B-1 (audit #2): a player's page lists the newest PLAYER_TABLE_ROWS games plus per-season totals;
+# the rest of a long career lives in players/<slug>/games.json and loads on demand. Red Kelly's
+# 613-game page was 237 KB of table rows, and 11,900 such pages were a third of the site's 1 GB cap.
+PLAYER_TABLE_ROWS = 50
 
 
 def plink(p):
@@ -2278,6 +2321,12 @@ def build_players(lg, d):
     by_n = {bg["n"]: bg for bg in d["belt_games"]}
     players = {}
     game_lines = defaultdict(list)   # belt game n -> rows with team code
+    full_names = {}                  # B-2: data/<lg>/players.json, id -> full name (NHL box scores give "G. Howe")
+    try:
+        with open(os.path.join("data", k, "players.json")) as f:
+            full_names = {str(a): b for a, b in json.load(f).items() if b}
+    except (OSError, ValueError):
+        pass
 
     def val(row, c, season):
         v = row[ix[c]] if ix[c] < len(row) else None
@@ -2299,6 +2348,7 @@ def build_players(lg, d):
             pid, name, side = str(row[0]), row[1], row[2]
             if not valid_player(pid, name):
                 continue
+            name = full_names.get(pid) or name
             team = home if side == "h" else away
             opp = away if side == "h" else home
             stats = {c: val(row, c, s) for c in cols}
@@ -2308,11 +2358,15 @@ def build_players(lg, d):
             if (stats.get("FGA") is not None and stats.get("FGM") is not None and stats["FGA"] < stats["FGM"]):
                 stats["FGA"] = None
             won = (hp > ap) if side == "h" else (ap > hp)
+            tied = hp == ap          # pre-2005 NHL, old NFL: a tie is neither a win nor a loss
             p = players.setdefault(pid, {"name": name, "games": [], "teams": Counter()})
             p["teams"][team] += 1
             kind = ("took" if bg["outcome"] == "changed" and bg["new_holder"] == team else
                     "lost" if bg["outcome"] == "changed" else
                     "kept" if bg.get("holder") == team else "fell")
+            if tied:
+                kind = "kept" if bg.get("holder") == team else "tied"
+                won = None       # shown as T, counted as neither
             p["games"].append((bg, team, opp, won, kind, stats))
             game_lines[bg["n"]].append((pid, name, team, stats))
     if not players:
@@ -2329,6 +2383,7 @@ def build_players(lg, d):
         if has_page and len(gs) >= SEARCH_MIN_GAMES:
             SEARCH_PLAYERS.append([p["name"], f"{lg['name']} player", url, len(gs)])
         w = sum(1 for x in gs if x[3])
+        ties = sum(1 for x in gs if x[3] is None)
         took = sum(1 for x in gs if x[4] == "took")
         tot = {c: sum((x[5].get(c) or 0) for x in gs) for c in sc["totals"]}
         main_team = p["teams"].most_common(1)[0][0]
@@ -2344,11 +2399,57 @@ def build_players(lg, d):
             m, a = stats.get(c[1]), stats.get(c[2])
             return "—" if m is None or a is None else f"{m}-{a}"
 
-        trs = "".join(
-            f'<tr><td class="mono">{S.d_short(bg["date"], True)}</td><td>{e(lg["short_name"](team))} {"vs." if bg["home"] == team else "at"} {e(n(opp, bg["season"]))}'
-            f'<small>{"Took the belt" if kind == "took" else "Lost the belt" if kind == "lost" else "Kept the belt" if kind == "kept" else "Challenger, lost"} · {_winner_score(bg)}</small></td>'
-            f'<td class="mono">{"W" if won else "L"}</td>' + "".join(f'<td class="mono r">{cell(st, c)}</td>' for c in sc["show"]) + "</tr>"
-            for bg, team, opp, won, kind, st in reversed(gs))
+        def row_cells(bg, team, opp, won, kind, st):
+            return [S.d_short(bg["date"], True),
+                    f'{n(team, bg["season"])} {"vs." if bg["home"] == team else "at"} {n(opp, bg["season"])}',   # era names: Whalers, not Hurricanes, in 1980
+                    f'{"Took the belt" if kind == "took" else "Lost the belt" if kind == "lost" else "Kept the belt" if kind == "kept" else "Tied the holder" if kind == "tied" else "Challenger, lost"} · {_winner_score(bg)}',
+                    "W" if won else ("T" if won is None else "L")] + [cell(st, c) for c in sc["show"]]
+
+        def row_html(cells):
+            # B-1: lean rows -- .box cells are mono and right-aligned by default (styles.css), so only the
+            # two text cells carry a class, and the optional </td> and </tr> end tags are left out.
+            d_, game, note, wl, *vals = cells
+            return (f'<tr><td class=l>{e(d_)}<td class=t>{e(game)}<small>{e(note)}</small><td class=l>{wl}'
+                    + "".join(f'<td>{e(v)}' for v in vals))
+
+        newest = list(reversed(gs))
+        shown = newest[:PLAYER_TABLE_ROWS]
+        trs = "".join(row_html(row_cells(*x)) for x in shown)
+        more_html = ""
+        if len(gs) > PLAYER_TABLE_ROWS and has_page:
+            # per-season totals for the whole career (small), and the full log as JSON on demand
+            by_season = {}
+            for bg, team, opp, won, kind, st in gs:
+                srow = by_season.setdefault(bg["season"], {"g": 0, "w": 0, "took": 0, "tot": Counter(), "team": Counter()})
+                srow["g"] += 1
+                srow["w"] += 1 if won else 0
+                srow["t"] = srow.get("t", 0) + (1 if won is None else 0)
+                srow["took"] += 1 if kind == "took" else 0
+                srow["team"][(team, bg["season"])] += 1
+                for c in sc["totals"]:
+                    if st.get(c) is not None:
+                        srow["tot"][c] += st[c]
+                        srow.setdefault("has", set()).add(c)
+            srows = "".join(
+                f'<tr><td class=l>{e(sl(lg, s_))}<td class=t>{e(n(*v["team"].most_common(1)[0][0]))}'
+                f'<td>{v["g"]}<td>{v["w"]}–{v["g"] - v["w"] - v.get("t", 0)}{"–" + str(v["t"]) if v.get("t") else ""}<td>{v["took"]}'
+                + "".join(f'<td>{v["tot"].get(c, 0):,}' if c in v.get("has", ()) else "<td>—" for c in sc["totals"][:4])
+                for s_, v in sorted(by_season.items(), reverse=True))
+            shead = "".join(f'<th class="mono r">{e(c)}</th>' for c in sc["totals"][:4])
+            S.write(out(lg, f"players/{slug}/games.json"),
+                    json.dumps({"cols": ["Date", "Game", "W/L"] + [c if isinstance(c, str) else c[0] for c in sc["show"]],
+                                "rows": [row_cells(*x) for x in newest]}, separators=(",", ":"), ensure_ascii=False))
+            more_html = f"""
+  <p class="mono note" id="plmore">Newest {PLAYER_TABLE_ROWS} of {len(gs):,} belt games shown. <button type="button" class="btn ghost" id="plall">Show all {len(gs):,} games</button></p>
+  <h2 class="disp sub">By season</h2>
+  <div class="tablewrap"><table class="history box"><thead><tr><th class="mono">Season</th><th class="mono">Team</th><th class="mono r">G</th><th class="mono r">W–L</th><th class="mono r">Title wins</th>{shead}</tr></thead><tbody>{srows}</tbody></table></div>
+<script>
+(function(){{var btn=document.getElementById('plall');if(!btn)return;btn.addEventListener('click',function(){{btn.disabled=true;btn.textContent='Loading…';
+fetch('{b(lg)}/players/{slug}/games.json').then(function(r){{return r.json();}}).then(function(j){{var tb=document.querySelector('table.box tbody'),h='';
+function esc(s){{return String(s).replace(/[&<>"]/g,function(c){{return{{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c];}});}}
+j.rows.forEach(function(r){{h+='<tr><td class=l>'+esc(r[0])+'<td class=t>'+esc(r[1])+'<small>'+esc(r[2])+'</small><td class=l>'+esc(r[3]);for(var i=4;i<r.length;i++)h+='<td>'+esc(r[i]);}});
+tb.innerHTML=h;var p=document.getElementById('plmore');if(p)p.textContent='All '+j.rows.length.toLocaleString()+' belt games.';}}).catch(function(){{btn.disabled=false;btn.textContent='Show all games';}});}});}})();
+</script>"""
         teams_line = ", ".join(e(n(t)) for t, _ in p["teams"].most_common())
         pp, s2 = lg["team_colors"](main_team)
         top, bottom, ink, accent = S.plate(pp, s2)
@@ -2363,9 +2464,9 @@ def build_players(lg, d):
   </div>
 </section>
 <section class="wrap block">
-  {numbers([(len(gs), "Belt games"), (f"{w}–{len(gs) - w}", "Record"), (took, "Title-winning games"), (f"{avg:.1f}", f"{per} per belt game")])}
+  {numbers([(len(gs), "Belt games"), (f"{w}–{len(gs) - w - ties}" + (f"–{ties}" if ties else ""), "Record"), (took, "Title-winning games"), (f"{avg:.1f}", f"{per} per belt game")])}
   <p class="intro">Belt-game totals: {", ".join(f"{tot[c]:,} {c}" for c in sc["totals"] if tot.get(c))}.</p>
-  <div class="tablewrap"><table class="history box"><thead><tr><th class="mono">Date</th><th class="mono">Game</th><th class="mono">W/L</th>{head}</tr></thead><tbody>{trs}</tbody></table></div>
+  <div class="tablewrap"><table class="history box"><thead><tr><th class="mono">Date</th><th class="mono">Game</th><th class="mono">W/L</th>{head}</tr></thead><tbody>{trs}</tbody></table></div>{more_html}
   <p class="mono note">{sc['source']} Stats a season didn't track show as —.</p>
   <p class="mono more"><a href="{b(lg)}/players/">All players →</a> · <a href="{b(lg)}/leaders/">Belt-game leaders →</a></p>
 </section>"""
@@ -2375,11 +2476,14 @@ def build_players(lg, d):
                  jsonld={"@type": "Person", "name": p["name"], "url": S.SITE_URL + f"{b(lg)}/players/{slug}/",
                          "memberOf": [{"@type": "SportsTeam", "name": n(t)} for t in p["teams"]][:6]})
         rows.append({"c": [f'<i style="background:{pp}"></i>{plink(p)}<small>{e(lg["short_name"](main_team))}</small>',
-                           str(len(gs)), f"{w}–{len(gs) - w}", str(took)] + [f"{tot.get(c, 0):,}" for c in sc["totals"][:3]] + [f"{avg:.1f}"],
+                           str(len(gs)), f"{w}–{len(gs) - w - ties}" + (f"–{ties}" if ties else ""), str(took)] + [f"{tot.get(c, 0):,}" for c in sc["totals"][:3]] + [f"{avg:.1f}"],
                      "t": (p["name"] + " " + " ".join(n(t) for t in p["teams"])).lower(),
                      "k": [p["name"].split()[-1] + " " + p["name"], len(gs), w, took] + [tot.get(c, 0) for c in sc["totals"][:3]] + [round(avg, 2)],
                      "f": {"team": main_team}})
     rows.sort(key=lambda r: -r["k"][1])
+    # B-2: id -> slug, so 404.html can send an old "/players/g-howe-8448000/" to the renamed page
+    S.write(out(lg, "players/ids.json"), json.dumps({pid: p["url"].rstrip("/").rsplit("/", 1)[-1] for pid, p in players.items() if p.get("url")},
+                                                    separators=(",", ":")))
     paged_table(lg, "players/", title=f"Every player in a {lg['name']} belt game", subnav_on="more",
                 description=f"Every player who has appeared in a lineal {lg['name']} belt game, with belt-game records and stats.",
                 heading=f"Players in {lg['name']} belt games", note=f"{len(players):,} players",
@@ -2456,8 +2560,8 @@ def box_html(lg, d, bg):
     head = "".join(f'<th class="mono r">{e(c if isinstance(c, str) else c[0])}</th>' for c in sc["show"])
     for team in teams:
         rows = sorted([x for x in lines if x[2] == team], key=lambda x: -(x[3].get(sc["key"]) or 0))
-        trs = "".join(f'<tr><td>{plink(players[pid])}</td>' + "".join(f'<td class="mono r">{cell(st, c)}</td>' for c in sc["show"]) + "</tr>"
-                      for pid, name, t, st in rows if pid in players)
+        trs = "".join(f'<tr><td class=t>{plink(players[pid])}' + "".join(f'<td>{cell(st, c)}' for c in sc["show"])
+                      for pid, name, t, st in rows if pid in players)   # B-1: lean rows, see styles.css .box
         out.append(f'<h3 class="disp sub">{e(n(team, bg["season"]))}</h3><div class="tablewrap"><table class="history box"><thead><tr><th class="mono">Player</th>{head}</tr></thead><tbody>{trs}</tbody></table></div>')
     return f'<section class="pv-sec"><h2 class="kicker">Box score</h2>{"".join(out)}<p class="mono note">{sc["source"]}</p></section>'
 

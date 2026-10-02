@@ -165,7 +165,11 @@ def from_scoreboard(day, teams, confs, conf_of):
         stype = (ev.get("season") or {}).get("type")
         if stype not in (2, 3):
             continue
-        row = {"id": ev["id"], "date": start.date().isoformat(), "start_et": "" if st.get("name") == "STATUS_TBD" else start.strftime("%H:%M"),
+        # N-2: ESPN parks unscheduled tips at midnight ET with timeValid=false; that's TBA, not 12:00 AM.
+        _tv = comp.get("timeValid")
+        _hhmm = start.strftime("%H:%M")
+        _tba = st.get("name") == "STATUS_TBD" or _tv is False or (_tv is None and _hhmm == "00:00")
+        row = {"id": ev["id"], "date": start.date().isoformat(), "start_et": "" if _tba else _hhmm,
                "season": (ev.get("season") or {}).get("year") or current_season(start.date()),
                "season_type": "postseason" if stype == 3 else "regular",
                "tournament": TOURNAMENTS.get(str(comp.get("tournamentId") or ""), ""),

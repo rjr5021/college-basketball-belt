@@ -67,6 +67,7 @@ def main(today=None, D=D, key="cbb", out_path=os.path.join("data", "lineage.json
         counts[r["team"]] += 1
         r["reign_no"] = counts[r["team"]]
         r["index"] = i + 1
+        r["end_season"] = season_at(r["end_date"]) if r.get("end_date") else None   # audit #2, C-2
         r["days"] = max(0, days_between(r["start_date"], r.get("end_date") or today))
         r["season"] = season_at(r["start_date"]) if not r.get("seed") else D.SEED.get("season", 1949)
         r["name"] = names.get(r["team"], r["team"])

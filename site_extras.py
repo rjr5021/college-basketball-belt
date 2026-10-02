@@ -709,8 +709,10 @@ function add(j){I=I.concat(j);run();}
 fetch('/search/index.json').then(function(r){return r.json();}).then(add);
 fetch('/search/players.json').then(function(r){return r.ok?r.json():[];}).then(add).catch(Boolean);})();
 </script>"""
+    # C-1 (audit #2): a results shell has nothing for Google to index (CFB's search page is noindex too)
     S.write("search/index.html", S.page("Search", body, path="/search/", description=(S.search_description() if hasattr(S, "search_description")
-                                                                                   else "Find any team, player, reign or season on Belt Holders.")))
+                                                                                   else "Find any team, player, reign or season on Belt Holders."),
+                                        robots="noindex,follow"))
 
 
 # ----------------------------------------------------------------- teams --

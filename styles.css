@@ -1,3 +1,12 @@
+/* N-6 (audit #2): self-hosted fonts (OFL, see /fonts/OFL.txt) -- no render-blocking third-party stylesheet */
+@font-face{font-family:"Big Shoulders Display";font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/big-shoulders-display-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Big Shoulders Display";font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/big-shoulders-display-latin-800-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Big Shoulders Display";font-style:normal;font-weight:900;font-display:swap;src:url(/fonts/big-shoulders-display-latin-900-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Spectral";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/spectral-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Spectral";font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/spectral-latin-400-italic.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Spectral";font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/spectral-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 :root{--paper:#e7e2d5;--paper2:#dcd5c3;--card:#fbf8f0;--ink:#211a12;--body:#3b3226;--muted:#5b5140;--brass:#a97f38;--brass-text:#725626;--line:rgba(33,26,18,.14);--line2:rgba(33,26,18,.22);--pad:56px}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -324,7 +333,7 @@ tr.cur td{background:rgba(169,127,56,.14)}
 @media (max-width:900px){.wigrid{grid-template-columns:1fr}}
 
 .leadgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-bottom:26px}
-.box td,.box th{padding:6px 8px;font-size:13px}.box td small{display:block}
+.box td,.box th{padding:6px 8px;font-size:13px}.box td small{display:block}.box td{font-family:"IBM Plex Mono","Courier New",monospace;text-align:right}.box td.l{text-align:left}.box td.t{font-family:inherit;text-align:left}
 @media (max-width:900px){.leadgrid{grid-template-columns:1fr}}
 
 .mapbox{position:relative;border:1px solid var(--line);background:var(--card)}.mapbox svg{display:block;width:100%;height:auto}
@@ -359,3 +368,4 @@ h2.kicker{margin:0 0 8px;font-weight:400;line-height:inherit}
 .school-belts{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px 28px}.school-belts .tag{margin-left:8px}
 .livescore{margin-left:8px;color:var(--muted)}tr.islive .livescore{color:#b3261e;font-weight:500}.three .lb li{font-size:16px}.three .lb li span{min-width:0}
 .alerts{flex-wrap:wrap}.alerts .net-feed{flex-basis:100%;margin:0;font-size:12px}.alerts .net-feed a{color:inherit;text-decoration:underline}
+.faqgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}.faq{background:var(--card,rgba(0,0,0,.03));border:1px solid var(--line);border-radius:6px;padding:16px 18px}.faq h3{font-size:22px;margin:0 0 8px}.faq p{margin:0;font-size:15px;line-height:1.5}
