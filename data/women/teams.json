@@ -2020,9 +2020,9 @@
 },
 {
 "id": "533",
-"mascot": "Trojans",
+"mascot": "HANNIBAL LAGRANGE",
 "primaryColor": "000000",
-"school": "Hannibal-LaGrange College",
+"school": "Hannibal LaGrange",
 "secondaryColor": "ffffff"
 },
 {
@@ -6014,6 +6014,13 @@
 "secondaryColor": "ffffff"
 },
 {
+"id": "2861",
+"mascot": "Lakers",
+"primaryColor": "000000",
+"school": "Clayton State",
+"secondaryColor": "ffffff"
+},
+{
 "id": "2862",
 "mascot": "Cougars",
 "primaryColor": "000000",
@@ -7640,6 +7647,11 @@
 "id": "131667",
 "mascot": "Knights",
 "school": "Berkeley"
+},
+{
+"id": "131669",
+"mascot": "Bobcats",
+"school": "Bryant & Stratton-Albany"
 },
 {
 "id": "131682",
