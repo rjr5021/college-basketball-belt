@@ -754,7 +754,7 @@ def stories_for(lg, d):
     parts = [f"<p>No two {unit1(lg)}s have fought over the {lg['name']} belt more often than these.</p>"]
     for i, p in enumerate(rv, 1):
         ties_txt = f", {p['ties']} ties" if p["ties"] else ""
-        parts.append(f"<h2 class=\"disp\">{i}. {e(n(p['a']))} vs. {e(n(p['b']))}</h2><p>{p['meetings']} belt meetings between {p['first'][:4]} and {p['last'][:4]}, {S.plural(p['changes'], 'title change')}. Belt series: {e(lg['short_name'](p['a']))} {p['a_wins']}, {e(lg['short_name'](p['b']))} {p['b_wins']}{ties_txt}. <a href=\"{base(lg)}/rivalries/{rivalry_slug(lg, p['a'], p['b'])}/\">Every meeting →</a></p>")
+        parts.append(f"<h2 class=\"disp\">{i}. {e(n(p['a']))} vs. {e(n(p['b']))}</h2><p>{p['meetings']} belt meetings between {p['first'][:4]} and {p['last'][:4]}, {S.plural(p['changes'], 'title change')}. Belt series: {e(lg['short_name'](p['a']))} {p['a_wins']}, {e(lg['short_name'](p['b']))} {p['b_wins']}{ties_txt}.{(' <a href="' + base(lg) + '/rivalries/' + rivalry_slug(lg, p['a'], p['b']) + '/">Every meeting →</a>') if p['meetings'] >= RIVALRY_MIN else ''}</p>")
     out.append(("rivalries", f"The rivalries that decided the {lg['name']} belt",
                 f"The five pairs of {unit1(lg)}s that have met most often with the belt on the line.", "".join(parts)))
     # 6. frozen (audit 7.18): seasons the holder missed the postseason and carried the belt over

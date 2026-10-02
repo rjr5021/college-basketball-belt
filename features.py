@@ -77,6 +77,8 @@ def start_word(lg):
         return "first pitch"
     if "basketball" in sport or k in ("nba", "wnba", "cbb", "women", "wcbb"):
         return "tipoff"
+    if "australian" in sport or k == "afl":
+        return "first bounce"
     return "kickoff"
 
 
@@ -1631,7 +1633,7 @@ def build_schedule(lg, d):
              if rows else f'<p class="intro">{e(n(h))} {verb(lg, "have", "has")} no games on the schedule yet ({e((d.get("status") or "").lower())}).</p>')
     body = f"""{S.subnav(lg, "more")}
 <section class="wrap block">
-  <div class="head"><h1 class="disp">The belt schedule</h1><span class="mono note">{e(poss(n(h)))} next {len(sched)} games</span></div>
+  <div class="head"><h1 class="disp">The belt schedule</h1><span class="mono note">{e(poss(n(h)))} next {S.plural(len(sched), "game")}</span></div>
   <p class="intro">Every game left on {e(poss(n(h)))} schedule is a belt game for as long as {verb(lg, "they keep", "it keeps")} winning. The last column is the chance {e(sn(h))} still {verb(lg, 'hold', 'holds')} the belt going into that game, so it's still for the title. Lose once and the schedule switches to the new holder’s.</p>
   {table}
   <p class="mono more"><a href="{b(lg)}/outlook/">Every way it can go: the belt tree →</a></p>
