@@ -533,6 +533,7 @@ def build_on_date(lg, d):
   <p class="intro">Your birthday, your wedding day, the day your team moved to town. Pick a date and see who had the belt.</p>
   <form class="compare mono" onsubmit="return false"><label>Date <input type="date" id="od" min="{first}" max="{d['generated']}"></label></form>
   <div id="oout" class="cout"></div>
+  <p class="plain">Every day since {S.d_long(first)} belongs to one of the {len(d['reigns']):,} reigns in the {e(lg['name'])} belt's history, so any date has an answer: the {unit_one(lg)} holding the belt, which reign of theirs it was, when it began, how many defenses it had and when (or whether) it ended. The link in your address bar updates as you pick, so a date can be shared.</p>
 </section>
 <script>
 (function(){{
@@ -777,6 +778,7 @@ def build_daily(lg, d):
   <div class="head"><h1 class="disp">Daily belt game</h1><span class="mono note" id="dd"></span></div>
   <p class="intro">One title change from {e(lg['name'])} history every day. Who took the belt?</p>
   <div id="dq" class="quiz"></div>
+  <p class="plain">How it works: one puzzle a day, the same for everyone. It's a real {e(lg['name'])} belt game in which the holder lost the belt, with the date, the season and the final score; four possible winners, one guess, and the answer links to that season's page. There are {len(items):,} title changes in the rotation, from {min(x[0] for x in items)[:4]} to {max(x[0] for x in items)[:4]}, and your played, won and streak counts stay on this device.</p>
   <p class="mono note" id="ds"></p>
   <p class="mono more"><a href="{b(lg)}/trivia/">Play {e(lg['name'])} belt trivia →</a></p>
 </section>
@@ -875,14 +877,14 @@ def build_trivia(lg, d):
     body = f"""{S.subnav(lg, "more")}
 <section class="wrap block">
   <div class="head"><h1 class="disp">{e(lg['name'])} belt trivia</h1><span class="mono note">{len(qs)} questions from the record book</span></div>
-  <div id="tq" class="quiz"></div>
+  <p class="intro">How well do you know the lineal {e(lg['name'])} belt? {len(qs)} questions built from the record book: who has held it longest, who has the most separate reigns, the longest run of defenses, the season it changed hands most often, and who holds the Losers Belt right now. Pick an answer; the right one lights up, and the score keeps count as you go.</p>
+  <div id="tq" class="quiz">{"".join(f'<div class="tqi"><p class="big"><span class="mono">{i + 1}.</span> {e(q["q"])}</p><div class="opts">' + "".join(f'<button class="mono" data-i="{i}">{e(o)}</button>' for o in q["o"]) + '</div></div>' for i, q in enumerate(qs))}</div>
   <p class="big" id="ts"></p>
   <p class="mono more"><a href="{b(lg)}/daily/">Today's daily belt game →</a> · <a href="{b(lg)}/records/">The records →</a></p>
 </section>
 <script>
 (function(){{
 var Q={json.dumps(qs, separators=(",", ":"))},T=document.getElementById('tq'),score=0,done=0;
-T.innerHTML=Q.map(function(q,i){{return '<div class="tqi"><p class="big"><span class="mono">'+(i+1)+'.</span> '+q.q+'</p><div class="opts">'+q.o.map(function(o){{return '<button class="mono" data-i="'+i+'">'+o+'</button>';}}).join('')+'</div></div>';}}).join('');
 T.querySelectorAll('button').forEach(function(b){{b.onclick=function(){{var q=Q[+b.dataset.i],box=b.parentNode;if(box.dataset.done)return;box.dataset.done=1;done++;
  if(b.textContent===q.a)score++;box.querySelectorAll('button').forEach(function(x){{x.disabled=true;if(x.textContent===q.a)x.className+=' right';else if(x===b)x.className+=' wrong';}});
  if(done===Q.length)document.getElementById('ts').textContent='You got '+score+' of '+Q.length+'.';}};}});
@@ -1685,6 +1687,7 @@ def build_dod(lg, d):
   <div class="head"><h1 class="disp">Defend or dethrone</h1><span class="mono note" id="dscore"></span></div>
   <p class="intro">A real {e(lg['name'])} belt game. Does the holder defend it, or does the challenger take the belt? Holders have defended {pct(1 - changes / total)} of the time. Keep your streak alive.</p>
   <div id="dg" class="quiz"></div>
+  <p class="plain">How it works: each round is a real {e(lg['name'])} belt game, one of {len(items):,} drawn from the {total:,} played so far, shown the way it stood beforehand: the date, the holder, the challenger, home or road. Call it, defend or dethrone, and the result, the score and a link to that season follow. The belt has changed hands {changes:,} times in those games, so guessing "defend" every time gets you {pct(1 - changes / total)}; the point is to beat that. Your streak and your best run stay on this device.</p>
 </section>
 <script>
 (function(){{
@@ -3202,6 +3205,15 @@ def build_states(lg, d):
     page(lg, f"The {lg['name']} belt by state", body, "states/", f"Which states and provinces have held the lineal {lg['name']} belt, and for how long.")
 
 
+def _map_leaders(cities):
+    """One sentence naming the cities with the most days holding the belt (for the map page's text)."""
+    top = sorted(cities, key=lambda c: -c[3])[:5]
+    if not top:
+        return ""
+    parts = [f"{c[0]} ({c[3]:,} days over {S.plural(c[4], 'reign')}: {c[5]})" for c in top]
+    return "The longest-held cities: " + "; ".join(parts) + "."
+
+
 def build_map(lg, d):
     gr = _geo_reigns(lg, d)
     if len(gr) < len(d["reigns"]) * 0.8:
@@ -3233,6 +3245,7 @@ def build_map(lg, d):
   <div class="head"><h1 class="disp">The {e(lg['name'])} belt map</h1><span class="mono note">{len(cities)} cities · circle size = days held</span></div>
   <div class="mapbar"><button class="mono" id="play">▶ Play the journey</button><input type="range" id="slider" min="0" value="0" aria-label="Reign"><span class="mono note" id="mlabel">Every city that has held the belt</span></div>
   <div id="map" class="mapbox"></div>
+  <p class="plain">{len(cities)} cities have held the {e(lg['name'])} belt. Each circle is a city, sized by the days its teams have held it; press play to watch the belt travel reign by reign{(" from " + e(cities[reigns[0][1]][0]) + " onward") if reigns else ""}, or drag the slider to any reign. {e(_map_leaders(cities))}</p>
   <p class="mono note"><a href="{b(lg)}/states/">By state →</a> · <a href="{b(lg)}/web/">Web of the belt →</a></p>
 </section>
 <script src="{D3}"></script><script src="{TOPO}"></script>

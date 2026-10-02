@@ -142,7 +142,13 @@ def analyze(path):
     rec["ids"] = sorted(ids)
     rec["dup_ids"] = sorted(k for k, v in ids.items() if v > 1)[:20]
     body = doc.find(".//body")
-    btxt = (body.text_content() if body is not None else doc.text_content()) or ""
+    # the text checks look at what a reader sees: inline scripts and styles are dropped from a copy first
+    # (otherwise "r.json()" in a script reads as empty parens, and the word counts include JavaScript)
+    import copy as _copy
+    tbody = _copy.deepcopy(body if body is not None else doc)
+    for el in list(tbody.iter("script", "style", "noscript")):
+        el.drop_tree()
+    btxt = tbody.text_content() or ""
     btxt = re.sub(r"\s+", " ", btxt)
     rec["words"] = len(btxt.split())
     found = []
