@@ -32,7 +32,7 @@ LEFTOVER_PATTERNS = [
     (r"\bthe the\b|\ba a\b|\bof of\b|\bin in\b", "doubled word"),
     (r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}", "raw ISO datetime in text"),
     (r"(?<![\d-])\b1 (?:defenses|games|reigns|days|wins|losses|seasons|titles)\b", "1 plural"),
-    (r"\b(?:[A-Z][a-z]+)' (?:\d|belt|reign)", "bare apostrophe possessive"),
+    (r"\b[A-Z][a-z]*[a-rt-z]' (?:\d|belt|reign)", "bare apostrophe possessive"),   # "Michigan' belt" (a dropped s); "Hurricanes' reign" is correct English
     (r"\b\d+ belt games?\b.{0,3}\b0 wins, 0 losses\b", "0-0 line"),
 ]
 LEFTOVER_RE = [(re.compile(p), label) for p, label in LEFTOVER_PATTERNS]
