@@ -85,7 +85,8 @@ W, H = 1080, 1350
 ESPN = {"nfl": "football/nfl", "nba": "basketball/nba", "nhl": "hockey/nhl", "mlb": "baseball/mlb",
         "wnba": "basketball/wnba", "mls": "soccer/usa.1", "nwsl": "soccer/usa.nwsl", "epl": "soccer/eng.1",
         "laliga": "soccer/esp.1", "seriea": "soccer/ita.1", "bundesliga": "soccer/ger.1", "ligue1": "soccer/fra.1",
-        "eredivisie": "soccer/ned.1", "cfl": "football/cfl",
+        "eredivisie": "soccer/ned.1",
+        # (no CFL: ESPN's CFL scoreboard stops at the 2022 Grey Cup)
         "cbb": "basketball/mens-college-basketball", "wcbb": "basketball/womens-college-basketball",
         "ligamx": "soccer/mex.1", "ufl": "football/ufl", "ncaah": "hockey/mens-college-hockey",
         "afl": "australian-football/afl", "nrl": "rugby-league/3",
