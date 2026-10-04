@@ -940,6 +940,16 @@ def build_preview(lg, belt, workdir):
                         "reign_no": reign_no, "game_no": game_no, "belt_name": belt.get("name")}}
 
 
+# Leagues where a finished game always has a winner (overtime, shootout, extra innings).
+NO_TIES = {"nhl", "nba", "wnba", "mlb", "pwhl", "cbb", "wcbb"}
+
+
+def level_score(summ, p):
+    """True when the holder and challenger have the same score in this summary."""
+    hs, os_ = side(summ, p["holder"]), side(summ, p["opponent"])
+    return int(float(hs.get("score") or 0)) == int(float(os_.get("score") or 0))
+
+
 def build_result(p, workdir, summ=None):
     """'Belt Defended' / 'New Champion' for a pending game record `p`."""
     lg = p["lg"]
@@ -1373,6 +1383,11 @@ def one_pass(workdir):
                 typ = (comp_of(summ).get("status") or {}).get("type") or {}
                 if not typ.get("completed"):
                     print(f"{key}: not final yet ({typ.get('detail')})")
+                    continue
+                if lg in NO_TIES and level_score(summ, p):
+                    # ESPN can flip to Final a moment before it adds the deciding goal (2026-10-03:
+                    # Sharks 5, Kings 4 OT was posted as 4-4). No tie is possible here, so wait.
+                    print(f"{key}: final but still level -- waiting for ESPN's deciding score")
                     continue
                 built = build_result(p, workdir, summ)
                 if key in remote_state(st)["results"]:
