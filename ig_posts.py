@@ -772,7 +772,7 @@ def claude_caption(kind, facts, lg):
     example = STYLE_RESULT if kind == "result" else STYLE_PREVIEW
     what = "the result of the belt game that just ended" if kind == "result" else "a preview of today's belt game"
     sport = SPORT.get(lg, "soccer")
-    emoji = {"hockey": "🏒", "basketball": "🏀", "football": "🏈", "baseball": "⚾"}.get(sport, "⚽")
+    emoji = EMOJI.get(sport, "⚽")
     prompt = f"""You write the Instagram captions for {HANDLE}, the account for {ABOUT} (whoever beats the holder takes the belt). This post is about {facts.get('belt_name')}.
 
 Write {what}. Match the voice, length and structure of this caption from the sister account @CollegeFBBelt (a college football example -- adapt it to {sport}):
@@ -789,7 +789,7 @@ Facts for this post (use ONLY these -- never add a stat, record, streak, injury,
 Rules:
 - Same shape: a punchy first line ending in 🏆, short paragraphs, then {"a 'Next up' paragraph" if kind == "result" else f"a '{emoji} day · time · TV · arena' line"}, then a '🔗 ... → link in bio' line, then one line of 8-11 hashtags.
 - Hashtags: start with {SITE_CFG.get('tags', '#BeltHolders')} and #{facts.get('league_tag')}Belt, then both teams' common tags (e.g. #FlaPanthers style only if you're sure; otherwise the plain team names), #{facts.get('league_tag')} and an ABBRvsABBR tag.
-- These are pro (or college) teams: say "franchise" or "club" for pros, never "program" unless it's a college team.
+- Call the teams what they are: "{unit(lg)}" (never "program" unless it's a college team, never "club" for a national team, never "franchise" for a soccer club or a college).
 - The italic note and the caption must not misstate when or where anything happened: a preview is about an upcoming game (the holder won the belt earlier, in the game in the facts), never "begins its reign tonight".
 - Never state a year, count or name that isn't in the facts (e.g. how far back the belt goes: use belt_history_starts or leave it out). If the start time is "TBA", say the time is still to be announced.
 - No @mentions, no links, no hype exclamation marks. En dash in scores (4–2).
@@ -859,7 +859,15 @@ def location(data, venue):
 
 
 def city_for(data, team_name, location_field):
-    return (data.get("cities") or {}).get(team_name) or location_field
+    """'Stays in Jacksonville'. ESPN's location for a soccer club or a national team is the name
+    itself ('Manchester City', 'Spain'), which would read 'Stays in Manchester City' -- return None
+    then, and the card says 'Stays with Manchester City' instead."""
+    city = (data.get("cities") or {}).get(team_name)
+    if city:
+        return city
+    if location_field and fold(team_name).startswith(fold(location_field)) and len(fold(location_field)) >= len(fold(team_name)) - 1:
+        return None
+    return location_field
 
 
 def tags_for(data, left, right, nets):
