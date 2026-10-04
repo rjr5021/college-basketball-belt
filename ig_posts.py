@@ -69,6 +69,8 @@ HANDLE = SITE_CFG.get("handle", "@thebeltholders")
 DOMAIN = SITE_CFG.get("domain", "beltholders.com")
 ABOUT = SITE_CFG.get("about", "beltholders.com, which tracks lineal championship belts in pro sports")
 LEAGUES = [x for x in (os.environ.get("IG_LEAGUES") or SITE_CFG.get("leagues", "nhl")).replace(",", " ").split() if x]
+# IG_LEAGUES=all (2026-10-04, Bob: every active league): every belt in network.json with an ESPN
+# scoreboard below. Off-season leagues have no game today, so they cost nothing.
 REQUIRED = ("IG_ACCESS_TOKEN", "IG_BUSINESS_ACCOUNT_ID")
 DRY = os.environ.get("IG_DRY_RUN") == "1"
 LIVE = (not DRY) and os.environ.get("IG_LIVE", "1") == "1" and all(os.environ.get(k) for k in REQUIRED)
@@ -84,17 +86,49 @@ ESPN = {"nfl": "football/nfl", "nba": "basketball/nba", "nhl": "hockey/nhl", "ml
         "wnba": "basketball/wnba", "mls": "soccer/usa.1", "nwsl": "soccer/usa.nwsl", "epl": "soccer/eng.1",
         "laliga": "soccer/esp.1", "seriea": "soccer/ita.1", "bundesliga": "soccer/ger.1", "ligue1": "soccer/fra.1",
         "eredivisie": "soccer/ned.1", "cfl": "football/cfl",
-        "cbb": "basketball/mens-college-basketball", "wcbb": "basketball/womens-college-basketball"}
-SPORT = {"nfl": "football", "cfl": "football", "nba": "basketball", "wnba": "basketball", "nhl": "hockey",
-         "pwhl": "hockey", "mlb": "baseball", "cbb": "basketball", "wcbb": "basketball"}
+        "cbb": "basketball/mens-college-basketball", "wcbb": "basketball/womens-college-basketball",
+        "ligamx": "soccer/mex.1", "ufl": "football/ufl", "ncaah": "hockey/mens-college-hockey",
+        "afl": "australian-football/afl", "nrl": "rugby-league/3",
+        # the international belt is played across many competitions; the first one is used for
+        # team schedules, and the scoreboard search tries them all (see espn_paths)
+        "intl": ["soccer/" + c for c in (
+            "fifa.friendly", "uefa.nations", "uefa.euroq", "uefa.euro", "fifa.world", "fifa.worldq.uefa",
+            "fifa.worldq.afc", "fifa.worldq.caf", "fifa.worldq.concacaf", "fifa.worldq.conmebol",
+            "fifa.worldq.ofc", "concacaf.nations.league", "concacaf.gold", "caf.nations", "caf.nations_qual",
+            "afc.asian.cup", "conmebol.america")]}
+SPORT = {"nfl": "football", "cfl": "football", "ufl": "football", "nba": "basketball", "wnba": "basketball",
+         "nhl": "hockey", "pwhl": "hockey", "ncaah": "hockey", "mlb": "baseball", "cbb": "basketball",
+         "wcbb": "basketball", "afl": "aussie", "nrl": "rugby"}      # everything else: soccer
 EST = {"nhl": 1917, "nfl": 1920, "nba": 1946, "mlb": 1876}
-COLLEGE = {"cbb", "wcbb", "cfb"}
-EMOJI = {"hockey": "🏒", "basketball": "🏀", "football": "🏈", "baseball": "⚾"}
+COLLEGE = {"cbb", "wcbb", "cfb", "ncaah"}
+SOCCER_CLUBS = {"mls", "nwsl", "epl", "laliga", "seriea", "bundesliga", "ligue1", "eredivisie", "ligamx"}
+NATIONS = {"intl"}
+NO_ARTICLE = COLLEGE | SOCCER_CLUBS | NATIONS     # "Arsenal", "Spain", "Michigan" -- not "the Arsenal"
+EMOJI = {"hockey": "🏒", "basketball": "🏀", "football": "🏈", "baseball": "⚾", "soccer": "⚽",
+         "aussie": "🏉", "rugby": "🏉"}
+
+
+def espn_paths(lg):
+    p = ESPN[lg]
+    return [p] if isinstance(p, str) else list(p)
+
+
+def all_leagues():
+    """The leagues this run covers: IG_LEAGUES, or with 'all' every belt that has an ESPN path."""
+    if "all" not in LEAGUES:
+        return LEAGUES
+    try:
+        net = get_json(NETWORK)
+        keys = [b.get("key") for b in (net.get("belts") or []) if b.get("key") in ESPN]
+    except Exception as e:  # noqa: BLE001
+        print(f"  (couldn't read {NETWORK}: {e}; falling back to every known league)")
+        keys = list(ESPN)
+    return [k for k in keys if k not in ("cbb", "wcbb")]      # the college basketball account lists its own
 
 
 def the(lg, name):
-    """'the Panthers' for pro nicknames, plain 'Michigan' for colleges."""
-    return name if lg in COLLEGE else f"the {name}"
+    """'the Panthers' for pro nicknames, plain 'Michigan' for colleges, clubs and nations."""
+    return name if lg in NO_ARTICLE else f"the {name}"
 
 
 def cap1(text):
@@ -102,8 +136,8 @@ def cap1(text):
 
 
 def vb(lg, plural, singular):
-    """Pro nicknames are plural ('the Panthers hold'), schools singular ('Michigan holds')."""
-    return singular if lg in COLLEGE else plural
+    """Pro nicknames are plural ('the Panthers hold'); schools, clubs and nations singular ('Arsenal holds')."""
+    return singular if lg in NO_ARTICLE else plural
 
 
 def poss(name):
@@ -111,7 +145,13 @@ def poss(name):
 
 
 def unit(lg):
-    return "program" if lg in COLLEGE else "franchise"
+    if lg in COLLEGE:
+        return "program"
+    if lg in SOCCER_CLUBS or SPORT.get(lg) in ("aussie", "rugby"):
+        return "club"
+    if lg in NATIONS:
+        return "national team"
+    return "franchise"
 
 
 # ------------------------------------------------------------------ basics --
@@ -350,9 +390,14 @@ def belt_meetings(games, a, b, before):
 
 
 def espn_scoreboard_event(lg, day, holder, opponent):
-    j = get_json(f"https://site.api.espn.com/apis/site/v2/sports/{ESPN[lg]}/scoreboard?dates={day:%Y%m%d}&limit=400")
+    events = []
+    for path in espn_paths(lg):
+        j = get_json(f"https://site.api.espn.com/apis/site/v2/sports/{path}/scoreboard?dates={day:%Y%m%d}&limit=400")
+        for ev in j.get("events") or []:
+            ev["_path"] = path
+            events.append(ev)
     hk, ok = fold(holder), fold(opponent)
-    for ev in j.get("events") or []:
+    for ev in events:
         comp = (ev.get("competitions") or [{}])[0]
         names = []
         for t in comp.get("competitors") or []:
@@ -363,8 +408,8 @@ def espn_scoreboard_event(lg, day, holder, opponent):
     return None
 
 
-def espn_summary(lg, event_id):
-    return get_json(f"https://site.api.espn.com/apis/site/v2/sports/{ESPN[lg]}/summary?event={event_id}")
+def espn_summary(lg, event_id, path=None):
+    return get_json(f"https://site.api.espn.com/apis/site/v2/sports/{path or espn_paths(lg)[0]}/summary?event={event_id}")
 
 
 def comp_of(summ):
@@ -500,7 +545,7 @@ def standout(lg, summ, team_id, won_by_shutout):
 
 def next_game_after(lg, team_id, after):
     try:
-        sch = get_json(f"https://site.api.espn.com/apis/site/v2/sports/{ESPN[lg]}/teams/{team_id}/schedule")
+        sch = get_json(f"https://site.api.espn.com/apis/site/v2/sports/{espn_paths(lg)[0]}/teams/{team_id}/schedule")
     except Exception as e:  # noqa: BLE001
         print(f"  (no schedule: {e})")
         return None
@@ -840,7 +885,7 @@ def build_preview(lg, belt, workdir):
     ev = espn_scoreboard_event(lg, gday, holder, opp)
     if not ev:
         raise RuntimeError(f"no ESPN event for {holder} vs {opp} on {gday}")
-    summ = espn_summary(lg, ev["id"])
+    summ = espn_summary(lg, ev["id"], ev.get("_path"))
     comp = comp_of(summ)
     hs, os_ = side(summ, holder), side(summ, opp)
     ht, ot = hs["team"], os_["team"]
@@ -936,7 +981,7 @@ def build_preview(lg, belt, workdir):
             "alt_text": (f"{belt.get('name')}: belt on the line. {holder} ({days_held} days, {defenses} defenses) vs. {opp}, "
                          f"{short_date(gday)}, {tstr}, {venue}."),
             "pending": {"lg": lg, "date": gday.isoformat(), "holder": holder, "holder_short": hshort, "opponent": opp,
-                        "opponent_short": oshort, "espn_id": ev["id"], "since": belt["since"], "defenses": defenses,
+                        "opponent_short": oshort, "espn_id": ev["id"], "espn_path": ev.get("_path"), "since": belt["since"], "defenses": defenses,
                         "reign_no": reign_no, "game_no": game_no, "belt_name": belt.get("name")}}
 
 
@@ -954,7 +999,7 @@ def build_result(p, workdir, summ=None):
     """'Belt Defended' / 'New Champion' for a pending game record `p`."""
     lg = p["lg"]
     data = ig_data(lg)
-    summ = summ or espn_summary(lg, p["espn_id"])
+    summ = summ or espn_summary(lg, p["espn_id"], p.get("espn_path"))
     comp = comp_of(summ)
     hs, os_ = side(summ, p["holder"]), side(summ, p["opponent"])
     ht, ot = hs["team"], os_["team"]
@@ -1297,7 +1342,7 @@ def pending_record(lg, belt):
     except Exception:  # noqa: BLE001
         game_no = None
     return {"lg": lg, "date": gday.isoformat(), "holder": belt["holder"], "holder_short": belt.get("holder_short") or "",
-            "opponent": nx["opponent"], "opponent_short": nx.get("opponent_short") or "", "espn_id": ev["id"],
+            "opponent": nx["opponent"], "opponent_short": nx.get("opponent_short") or "", "espn_id": ev["id"], "espn_path": ev.get("_path"),
             "since": belt["since"], "defenses": int(belt.get("defenses") or 0), "reign_no": int(belt.get("reign_no") or 1),
             "game_no": game_no, "belt_name": belt.get("name")}
 
@@ -1332,7 +1377,7 @@ def one_pass(workdir):
     st = remote_state(load_state())
     n = now_et()
     today = n.date()
-    for lg in LEAGUES:
+    for lg in all_leagues():
         try:
             belt = network_belt(lg)
         except Exception as e:  # noqa: BLE001
@@ -1379,7 +1424,7 @@ def one_pass(workdir):
                 save_state(st, f"IG: {lg} drop stale game")
                 continue
             try:
-                summ = espn_summary(lg, p["espn_id"])
+                summ = espn_summary(lg, p["espn_id"], p.get("espn_path"))
                 typ = (comp_of(summ).get("status") or {}).get("type") or {}
                 if not typ.get("completed"):
                     print(f"{key}: not final yet ({typ.get('detail')})")
@@ -1422,7 +1467,7 @@ def check(workdir):
             summary(f"Instagram token check failed: {e}")
     else:
         summary("No IG_ACCESS_TOKEN secret yet.")
-    for lg in LEAGUES:
+    for lg in all_leagues():
         samples = []
         belt = {}
         try:
@@ -1439,7 +1484,7 @@ def check(workdir):
             reigns = site_reigns(lg)
             r = next(x for x in reversed(reigns) if fold(x.get("name")) == fold(g["holder_name"]) and d(x["start_date"]) <= d(g["date"]))
             p = {"lg": lg, "date": g["date"], "holder": g["holder_name"], "holder_short": "", "opponent": g["opponent_name"],
-                 "opponent_short": "", "espn_id": ev["id"], "since": r["start_date"],
+                 "opponent_short": "", "espn_id": ev["id"], "espn_path": ev.get("_path"), "since": r["start_date"],
                  "defenses": sum(1 for x in site_games(lg) if x.get("holder_name") == g["holder_name"]
                                  and d(r["start_date"]) < d(x["date"]) < d(g["date"]) and str(x.get("outcome", "")).startswith("retained")),
                  "reign_no": r.get("reign_no"), "game_no": g.get("n"), "belt_name": belt.get("name")}
