@@ -181,6 +181,50 @@ def fold(s):
     return re.sub(r"[^a-z0-9]", "", s.lower().replace("&", "and"))
 
 
+_AFFIX = re.compile(r"\b(fc|cf|afc|sc|ac|as|ss|us|ssc|cd|ud|sd|club|calcio|the)\b")
+
+
+def _words(s):
+    s = unicodedata.normalize("NFKD", str(s or "")).encode("ascii", "ignore").decode().lower()
+    return [w for w in re.findall(r"[a-z0-9]+", _AFFIX.sub(" ", s.replace("&", "and"))) if w]
+
+
+def team_score(target, espn_team):
+    """How well a site team name matches an ESPN team: 3 same name (club affixes dropped),
+    2 one name contained in the other, 1 a shared distinctive word (5+ letters), 0 no match.
+    ESPN and the site spell clubs differently ('Athletic Bilbao' / 'Athletic Club',
+    'AS Roma' / 'Roma'); callers still require BOTH teams to match one event."""
+    t = "".join(_words(target))
+    if not t:
+        return 0
+    tw = {w for w in _words(target) if len(w) >= 5}
+    best = 0
+    for k in ("displayName", "shortDisplayName", "name", "location", "nickname"):
+        v = (espn_team or {}).get(k)
+        n = "".join(_words(v)) if v else ""
+        if not n:
+            continue
+        if n == t:
+            return 3
+        if (len(n) >= 4 and n in t) or (len(t) >= 4 and t in n):
+            best = max(best, 2)
+        elif tw & {w for w in _words(v) if len(w) >= 5}:
+            best = max(best, 1)
+    return best
+
+
+def team_matches(target, espn_team):
+    return team_score(target, espn_team) > 0
+
+
+def pair_matches(teams, a, b):
+    """Both site names match the two ESPN competitors, one each."""
+    if len(teams) != 2:
+        return False
+    t0, t1 = (x.get("team") or {} for x in teams)
+    return (team_matches(a, t0) and team_matches(b, t1)) or (team_matches(a, t1) and team_matches(b, t0))
+
+
 def esc(s):
     return html.escape(str(s), quote=True)
 
@@ -397,13 +441,16 @@ def espn_scoreboard_event(lg, day, holder, opponent):
             ev["_path"] = path
             events.append(ev)
     hk, ok = fold(holder), fold(opponent)
-    for ev in events:
+    for ev in events:                      # exact names first, as before
         comp = (ev.get("competitions") or [{}])[0]
         names = []
         for t in comp.get("competitors") or []:
             tm = t.get("team") or {}
             names.append({fold(tm.get(k)) for k in ("displayName", "shortDisplayName", "name", "location") if tm.get(k)})
         if len(names) == 2 and any(hk in n for n in names) and any(ok in n for n in names):
+            return ev
+    for ev in events:                      # then spelling differences between the site and ESPN
+        if pair_matches(((ev.get("competitions") or [{}])[0]).get("competitors") or [], holder, opponent):
             return ev
     return None
 
@@ -417,10 +464,14 @@ def comp_of(summ):
 
 
 def side(summ, name):
-    for c in comp_of(summ)["competitors"]:
+    comps = comp_of(summ)["competitors"]
+    for c in comps:
         tm = c["team"]
         if fold(name) in {fold(tm.get(k)) for k in ("displayName", "shortDisplayName", "location", "name") if tm.get(k)}:
             return c
+    scored = sorted(((team_score(name, c["team"]), i) for i, c in enumerate(comps)), reverse=True)
+    if scored and scored[0][0] > 0 and (len(scored) < 2 or scored[0][0] > scored[1][0]):
+        return comps[scored[0][1]]
     raise RuntimeError(f"{name} not in ESPN event")
 
 
