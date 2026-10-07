@@ -416,6 +416,13 @@
 "secondaryColor": "d59f0f"
 },
 {
+"id": "86",
+"mascot": "Fightin' Engineers",
+"primaryColor": "800000",
+"school": "Rose Hulman",
+"secondaryColor": "b3b2b1"
+},
+{
 "id": "87",
 "mascot": "Fighting Irish",
 "primaryColor": "062340",
@@ -2946,7 +2953,7 @@
 "id": "2155",
 "mascot": "Rams",
 "primaryColor": "000000",
-"school": "Cornell College (IA)",
+"school": "Cornell (IA)",
 "secondaryColor": "ffffff"
 },
 {
@@ -6449,7 +6456,7 @@
 "id": "2965",
 "mascot": "Pride",
 "primaryColor": "000000",
-"school": "Clarke University",
+"school": "Clarke",
 "secondaryColor": "ffffff"
 },
 {
