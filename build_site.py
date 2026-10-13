@@ -23,7 +23,7 @@ OUT = "site"
 SITE_NAME = "The College Basketball Belt"
 NETWORK = False          # site_extras: one stories index per belt, no all-league index
 OWNER = "R&O Holdings LLC"      # the company that owns and operates the site (formed 2026-09-29)
-ADSENSE_PUBLISHER_ID = ""        # "pub-3317069252410560" once the site is approved in AdSense
+ADSENSE_PUBLISHER_ID = "pub-3317069252410560"   # approved account; site added for review 2026-10-13
 GOATCOUNTER_CODE = "collegebasketballbelt"
 STYLES_VERSION = "11"
 # 7.15: the belt-picks Cloudflare Worker (global Beat-the-lean leaderboard); empty = off. Men's belt = "cbb", women's = "wcbb".
