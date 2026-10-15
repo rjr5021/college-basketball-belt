@@ -1,4 +1,6 @@
 id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,home_points,away_points,neutral,home_conf,away_conf,home_seed,away_seed,venue,city,state,notes
+377909,2026-11-01,09:30,2027,regular,,scheduled,Villanova,Notre Dame,338,213,0,0,1,Big East,ACC,,,Palazzo dello Sport,Rome,Italy,Eternal City Tip-Off
+377910,2026-11-01,23:59,2027,regular,,scheduled,High Point,Liberty,109,142,0,0,1,Big South,CUSA,,,Rock Hill Sports & Event Center,Rock Hill,SC,Field of 68 Opening Day Marathon
 372615,2026-11-02,,2027,regular,,scheduled,BYU,Ohio State,18,216,0,0,1,Big 12,Big Ten,,,Delta Center,Salt Lake City,UT,
 372616,2026-11-02,,2027,regular,,scheduled,Minnesota,North Dakota,173,201,0,0,,Big Ten,Summit,,,Williams Arena,Minneapolis,MN,
 372617,2026-11-02,,2027,regular,,scheduled,Maryland,Bucknell,160,32,0,0,,Big Ten,Patriot,,,XFINITY Center,College Park,MD,
