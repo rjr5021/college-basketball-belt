@@ -2412,7 +2412,7 @@
 },
 {
 "id": "2033",
-"mascot": "Golden Suns",
+"mascot": "Wonder Boys",
 "primaryColor": "000000",
 "school": "Arkansas Tech",
 "secondaryColor": "ffffff"
@@ -3581,7 +3581,7 @@
 "id": "2290",
 "mascot": "Wildcats",
 "primaryColor": "000000",
-"school": "IND Wesleyan",
+"school": "IU Wesleyan",
 "secondaryColor": "ffffff"
 },
 {
@@ -3705,7 +3705,7 @@
 },
 {
 "id": "2322",
-"mascot": "Bearcats",
+"mascot": "Senators",
 "primaryColor": "000000",
 "school": "Lander",
 "secondaryColor": "ffffff"
@@ -4554,7 +4554,7 @@
 "id": "2500",
 "mascot": "Sea Lions",
 "primaryColor": "000000",
-"school": "Point Loma",
+"school": "Point Loma Nazarene",
 "secondaryColor": "ffffff"
 },
 {
@@ -6469,6 +6469,13 @@
 "mascot": "Rams",
 "primaryColor": "000000",
 "school": "Shepherd",
+"secondaryColor": "ffffff"
+},
+{
+"id": "2980",
+"mascot": "Battling Bishops",
+"primaryColor": "000000",
+"school": "Ohio Wesleyan",
 "secondaryColor": "ffffff"
 },
 {
