@@ -946,6 +946,7 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 375167,2026-11-20,16:00,2027,regular,,scheduled,Idaho State,South Dakota State,116,270,0,0,,Big Sky,Summit,,,Reed Gym,Pocatello,ID,
 375168,2026-11-20,16:30,2027,regular,,scheduled,Rhode Island,Liberty,240,142,0,0,1,A-10,CUSA,,,Colonial Hall,White Sulphur Springs,WV,Greenbrier Tip-Off
 375169,2026-11-20,17:30,2027,regular,,scheduled,Utah,Dayton,331,64,0,0,1,Big 12,A-10,,,TD Arena,Charleston,SC,Charleston Classic
+375206,2026-11-20,17:30,2027,regular,,scheduled,Canisius,Mercyhurst,42,165,0,0,,Metro,NEC,,,Koessler Athletic Center,Buffalo,NY,
 375170,2026-11-20,18:00,2027,regular,,scheduled,Boston College,Massachusetts-Boston,26,585,0,0,,ACC,,,,Conte Forum,Chestnut Hill,MA,
 375171,2026-11-20,18:00,2027,regular,,scheduled,Cal State Northridge,Delaware,38,66,0,0,,Big West,CUSA,,,Premier America Credit Union Arena,Northridge,CA,
 372883,2026-11-20,18:30,2027,regular,,scheduled,Southern Illinois,UT Martin,273,325,0,0,1,MVC,OVC,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,U.S. Virgin Islands Paradise Jam
@@ -993,7 +994,6 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 375204,2026-11-21,14:00,2027,regular,,scheduled,Saint Peter's,Stony Brook,254,285,0,0,,Metro,CAA,,,Yanitelli Center,Jersey City,NJ,
 375205,2026-11-21,14:00,2027,regular,,scheduled,Rider,Navy,243,187,0,0,,Metro,Patriot,,,Alumni Gymnasium (Rider),Lawrenceville,NJ,
 372896,2026-11-21,15:30,2027,regular,,scheduled,Binghamton,Army,24,15,0,0,,Am. East,Patriot,,,Events Center (Binghamton),Binghamton,NY,
-375206,2026-11-21,16:00,2027,regular,,scheduled,Canisius,Mercyhurst,42,165,0,0,,Metro,NEC,,,Koessler Athletic Center,Buffalo,NY,
 375207,2026-11-21,16:00,2027,regular,,scheduled,Jacksonville,Central Arkansas,127,43,0,0,,ASUN,UAC,,,Swisher Gymnasium,Jacksonville,FL,
 375208,2026-11-21,16:30,2027,regular,,scheduled,San Diego,UC Irvine,258,308,0,0,1,WCC,Big West,,,Acrisure Arena,Palm Springs,CA,Acrisure Series
 375209,2026-11-21,17:00,2027,regular,,scheduled,Wofford,Winthrop,356,354,0,0,,SoCon,Big South,,,Jerry Richardson Indoor Stadium,Spartanburg,SC,
