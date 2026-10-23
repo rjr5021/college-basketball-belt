@@ -1354,7 +1354,6 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 372942,2026-11-25,,2027,regular,,scheduled,Northeastern,Massachusetts,205,161,0,0,,CAA,MAC,,,Cabot Center,Boston,MA,
 372943,2026-11-25,,2027,regular,,scheduled,Syracuse,UAlbany,286,306,0,0,,ACC,Am. East,,,JMA Wireless Dome,Syracuse,NY,
 375313,2026-11-25,,2027,regular,,scheduled,UC Riverside,Portland State,309,231,0,0,,Big West,Big Sky,,,SRC Arena,Riverside,CA,
-375314,2026-11-25,,2027,regular,,scheduled,Montana State,Northwest Indian,180,567,0,0,,Big Sky,,,,Worthington Arena,Bozeman,MT,
 375315,2026-11-25,,2027,regular,,scheduled,Texas State,Alcorn State,297,7,0,0,,Pac-12,SWAC,,,Strahan Arena at the University Events Center,San Marcos,TX,
 375316,2026-11-25,,2027,regular,,scheduled,New Orleans,Grambling,193,103,0,0,,Southland,SWAC,,,Lakefront Arena,New Orleans,LA,
 375317,2026-11-25,,2027,regular,,scheduled,New Mexico,Mississippi Valley State,191,175,0,0,,Mountain West,SWAC,,,The Pit,Albuquerque,NM,
@@ -1403,15 +1402,20 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 375322,2026-11-25,19:00,2027,regular,,scheduled,Northern Kentucky,Bellarmine,210,21,0,0,,Horizon,ASUN,,,Truist Arena,Highland Heights,KY,
 375348,2026-11-25,19:00,2027,regular,,scheduled,Cleveland State,Case Western Reserve,53,1352,0,0,,Horizon,,,,Wolstein Center,Cleveland,OH,
 375349,2026-11-25,19:00,2027,regular,,scheduled,Utah State,SMU,329,248,0,0,1,Pac-12,ACC,,,Acrisure Arena,Palm Springs,CA,Acrisure Series
+378124,2026-11-25,19:30,2027,regular,,scheduled,Mississippi State,Wake Forest,174,342,0,0,1,SEC,ACC,,,Imperial Arena,Nassau,,Battle 4 Atlantis - Championship Bracket
 375350,2026-11-25,20:00,2027,regular,,scheduled,Pepperdine,Cal State Bakersfield,228,36,0,0,,WCC,Big West,,,Firestone Fieldhouse,Malibu,CA,
+375314,2026-11-25,21:00,2027,regular,,scheduled,Montana State,Northwest Indian,180,567,0,0,,Big Sky,,,,Worthington Arena,Bozeman,MT,
 375351,2026-11-25,21:00,2027,regular,,scheduled,Loyola Marymount,Eastern Washington,153,80,0,0,,WCC,Big Sky,,,Gersten Pavilion,Los Angeles,CA,
+378125,2026-11-25,23:59,2027,regular,,scheduled,Hawai'i,Incarnate Word,108,120,0,0,,Mountain West,Southland,,,Stan Sheriff Center,Honolulu,HI,
 372946,2026-11-26,,2027,regular,,scheduled,UTSA,Army,328,15,0,0,,American,Patriot,,,UTSA Convocation Center,San Antonio,TX,
 372947,2026-11-26,,2027,regular,,scheduled,UC Davis,Jacksonville State,307,128,0,0,1,Mountain West,CUSA,,,University Credit Union Center,Davis,CA,
-375352,2026-11-26,,2027,regular,,scheduled,Michigan State,Arkansas,169,12,0,0,1,Big Ten,SEC,,,Little Caesars Arena,Detroit,MI,
 375353,2026-11-26,,2027,regular,,scheduled,Omaha,Pacific,221,225,0,0,1,Summit,WCC,,,Resorts World Event Center,Las Vegas,NV,
+378126,2026-11-26,11:00,2027,regular,,scheduled,Cincinnati,Georgia,51,98,0,0,1,Big 12,SEC,,,State Farm Field House,Kissimmee,FL,ESPN Events Invitational - Magic Bracket
 372949,2026-11-26,12:00,2027,regular,,scheduled,Oklahoma,Purdue,217,236,0,0,1,SEC,Big Ten,,,Suncoast Credit Union Arena,Fort Myers,FL,
+377906,2026-11-26,13:30,2027,regular,,scheduled,UCF,Boston College,312,26,,,1,Big 12,ACC,,,State Farm Field House,Kissimmee,FL,ESPN Events Invitational
 375354,2026-11-26,14:00,2027,regular,,scheduled,Arizona State,South Carolina,10,266,0,0,1,Big 12,SEC,,,Acrisure Arena,Palm Springs,CA,Acrisure Series
 372950,2026-11-26,14:30,2027,regular,,scheduled,Texas,Georgetown,295,97,0,0,1,SEC,Big East,,,Jenny Craig Pavilion,San Diego,CA,Rady Children's Invitational
+375352,2026-11-26,16:30,2027,regular,,scheduled,Michigan State,Arkansas,169,12,0,0,1,Big Ten,SEC,,,Little Caesars Arena,Detroit,MI,
 375355,2026-11-26,16:30,2027,regular,,scheduled,USC,Utah State,323,329,0,0,1,Big Ten,Pac-12,,,Acrisure Arena,Palm Springs,CA,Acrisure Series
 375356,2026-11-26,17:00,2027,regular,,scheduled,UCLA,Saint Mary's,313,253,0,0,1,Big Ten,WCC,,,Jenny Craig Pavilion,San Diego,CA,Rady Children's Invitational
 372948,2026-11-26,19:00,2027,regular,,scheduled,DePaul,Pittsburgh,65,229,0,0,1,Big East,ACC,,,Suncoast Credit Union Arena,Fort Myers,FL,Fort Myers Tip-Off - Beach Division
