@@ -1,5 +1,5 @@
 id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,home_points,away_points,neutral,home_conf,away_conf,home_seed,away_seed,venue,city,state,notes
-377909,2026-11-01,09:30,2027,regular,,in_progress,Villanova,Notre Dame,338,213,0,0,1,Big East,ACC,,,Palazzo dello Sport,Rome,Italy,Eternal City Tip-Off
+377909,2026-11-01,09:30,2027,regular,,final,Villanova,Notre Dame,338,213,72,74,1,Big East,ACC,,,Palazzo dello Sport,Rome,Italy,Eternal City Tip-Off
 377910,2026-11-01,23:59,2027,regular,,scheduled,High Point,Liberty,109,142,0,0,1,Big South,CUSA,,,Rock Hill Sports & Event Center,Rock Hill,SC,Field of 68 Opening Day Marathon
 374556,2026-11-02,03:00,2027,regular,,scheduled,Northern Illinois,Grambling,208,103,0,0,1,Horizon,SWAC,,,Rock Hill Sports & Event Center,Rock Hill,SC,Field of 68 Opening Day Marathon
 374557,2026-11-02,06:00,2027,regular,,scheduled,Merrimack,App State,166,9,0,0,1,Metro,Sun Belt,,,Rock Hill Sports & Event Center,Rock Hill,SC,Field of 68 Opening Day Marathon
