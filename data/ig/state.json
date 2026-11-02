@@ -1,0 +1,22 @@
+{
+ "log": [],
+ "pending": {
+  "cbb|Michigan|Oakland|2026-11-02": {
+   "belt_name": "The College Basketball Belt",
+   "date": "2026-11-02",
+   "defenses": 1,
+   "espn_id": "401925733",
+   "espn_path": "basketball/mens-college-basketball",
+   "game_no": 2541,
+   "holder": "Michigan",
+   "holder_short": "Michigan",
+   "lg": "cbb",
+   "opponent": "Oakland",
+   "opponent_short": "Oakland",
+   "reign_no": 18,
+   "since": "2026-04-04"
+  }
+ },
+ "previews": [],
+ "results": []
+}
