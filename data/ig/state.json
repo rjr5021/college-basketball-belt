@@ -1,5 +1,7 @@
 {
- "log": [],
+ "log": [
+  "2026-11-02 17:00 result wcbb|UCLA|Lehigh|2026-11-02 https://www.instagram.com/p/DfQVLajFm80/"
+ ],
  "pending": {
   "cbb|Michigan|Oakland|2026-11-02": {
    "belt_name": "The College Basketball Belt",
@@ -15,23 +17,10 @@
    "opponent_short": "Oakland",
    "reign_no": 18,
    "since": "2026-04-04"
-  },
-  "wcbb|UCLA|Lehigh|2026-11-02": {
-   "belt_name": "The Women's College Basketball Belt",
-   "date": "2026-11-02",
-   "defenses": 0,
-   "espn_id": "401918896",
-   "espn_path": "basketball/womens-college-basketball",
-   "game_no": 1420,
-   "holder": "UCLA",
-   "holder_short": "UCLA",
-   "lg": "wcbb",
-   "opponent": "Lehigh",
-   "opponent_short": "Lehigh",
-   "reign_no": 4,
-   "since": "2026-04-05"
   }
  },
  "previews": [],
- "results": []
+ "results": [
+  "wcbb|UCLA|Lehigh|2026-11-02"
+ ]
 }
