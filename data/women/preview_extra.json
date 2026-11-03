@@ -1,25 +1,27 @@
 {
- "key": "26|2329|2026-11-02",
- "updated": "2026-10-01T15:59Z",
- "start_utc": "2026-11-02T05:00Z",
+ "key": "26|300|2026-11-05",
+ "updated": "2026-11-03T03:03Z",
+ "start_utc": "2026-11-06T03:00Z",
  "espn": {
-  "event_id": "401918896",
-  "start_utc": "2026-11-02T05:00Z",
+  "event_id": "401918897",
+  "start_utc": "2026-11-06T03:00Z",
   "state": "pre",
-  "tv": [],
+  "tv": [
+   "B1G+"
+  ],
   "odds": null,
   "teams": {
    "26": {
     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
     "abbr": "UCLA",
-    "record": null,
-    "rank": null,
+    "record": "1-0",
+    "rank": 11,
     "home_away": "home"
    },
-   "2329": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2329.png",
-    "abbr": "LEH",
-    "record": null,
+   "300": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/300.png",
+    "abbr": "UCI",
+    "record": "0-0",
     "rank": null,
     "home_away": "away"
    }
@@ -33,17 +35,20 @@
  },
  "weather": null,
  "ai": {
-  "overview": "UCLA brings the Women's College Basketball Belt home to face Lehigh in what appears to be a significant mismatch on paper. The Bruins are riding a five-game winning streak that includes a national championship run, while Lehigh limps in having dropped their last two contests. This marks Lehigh's first-ever opportunity to claim the belt, though they'll need to pull off a monumental upset against a UCLA squad that finished 37-1.",
+  "overview": "UCLA hosts UC Irvine with the Women's College Basketball Belt on the line for the first time in this rivalry's history. The Bruins have defended the belt once in their current reign and enter riding a five-game winning streak that includes four playoff victories. UC Irvine, who have never held the belt, come in having lost their last two games.",
   "key_matchups": [
-   "UCLA's dominant playoff form (five straight wins, including a 28-point demolition of South Carolina) versus Lehigh's struggles down the stretch",
-   "The Bruins' defense that held Texas to 44 points in the playoffs against a Lehigh offense that managed just 62 in their last outing",
-   "Can Lehigh (17-16) find any answers against a UCLA team that hasn't lost since finishing 37-1 and beat elite competition by double digits throughout their championship run?"
+   "UCLA's dominant playoff run (four consecutive wins including victories over Texas and South Carolina) versus UC Irvine's recent struggles with back-to-back losses",
+   "UC Irvine's quest to claim the belt for the first time in program history against a hot UCLA squad coming off a 73-53 victory over Lehigh"
   ],
-  "betting_angles": "The Elo model's 97% confidence in UCLA reflects the vast gulf between these programs, with the Bruins coming off five straight wins by an average margin of over 20 points per game. Lehigh's 17-16 record and current two-game skid suggest they lack the firepower to challenge a team that just dominated South Carolina by 28. UCLA's smallest margin of victory in their last five was seven points against Texas, while Lehigh has been on the wrong end of double-digit defeats in both recent losses.",
+  "betting_angles": "UCLA's form is significantly stronger, winning their last five games including impressive playoff victories over ranked opponents. The Bruins have dominated this matchup historically, winning all four previous meetings, and the Elo model clearly favors the home side. UC Irvine's recent form shows two straight losses, including a playoff defeat at San Diego State.",
   "predicted_winner": "UCLA",
-  "predicted_score": "UCLA 84, Lehigh 56",
-  "prediction_writeup": "UCLA should handle this belt defense comfortably given their championship form and Lehigh's mediocre season. The Bruins have won five straight by an average of nearly 21 points per game, including dominant victories over elite opponents like South Carolina and Texas. Lehigh has dropped two straight and sits at 17-16, lacking the profile to seriously threaten a team that went 37-1. The Elo model's 97% projection feels appropriate for a matchup between a national champion and a sub-.500 squad struggling to find consistency.",
-  "written": "2026-10-01",
-  "model": "claude-sonnet-4-5"
+  "predicted_score": "UCLA 76, UC Irvine 54",
+  "prediction_writeup": "UCLA's momentum from their playoff run and perfect record against UC Irvine makes them the clear choice to retain the belt. The Bruins won their most recent meeting 61-48 in 2022 and have never lost to the Anteaters in four tries. UC Irvine's back-to-back losses and lack of experience against UCLA suggest they'll struggle to compete. With the Elo model backing the Bruins and their five-game winning streak intact, expect UCLA to defend the belt successfully at home.",
+  "written": "2026-11-03",
+  "model": "claude-sonnet-4-5",
+  "factcheck": {
+   "attempts": 2,
+   "dropped": []
+  }
  }
 }
