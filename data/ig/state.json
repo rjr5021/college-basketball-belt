@@ -3,7 +3,23 @@
   "2026-11-02 17:00 result wcbb|UCLA|Lehigh|2026-11-02 https://www.instagram.com/p/DfQVLajFm80/",
   "2026-11-02 22:27 result cbb|Michigan|Oakland|2026-11-02 https://www.instagram.com/p/DfQ6jj_lFWl/"
  ],
- "pending": {},
+ "pending": {
+  "wcbb|UCLA|UC Irvine|2026-11-05": {
+   "belt_name": "The Women's College Basketball Belt",
+   "date": "2026-11-05",
+   "defenses": 1,
+   "espn_id": "401918897",
+   "espn_path": "basketball/womens-college-basketball",
+   "game_no": 1421,
+   "holder": "UCLA",
+   "holder_short": "UCLA",
+   "lg": "wcbb",
+   "opponent": "UC Irvine",
+   "opponent_short": "UC Irvine",
+   "reign_no": 4,
+   "since": "2026-04-05"
+  }
+ },
  "previews": [],
  "results": [
   "wcbb|UCLA|Lehigh|2026-11-02",
