@@ -1,7 +1,8 @@
 {
  "log": [
   "2026-11-02 17:00 result wcbb|UCLA|Lehigh|2026-11-02 https://www.instagram.com/p/DfQVLajFm80/",
-  "2026-11-02 22:27 result cbb|Michigan|Oakland|2026-11-02 https://www.instagram.com/p/DfQ6jj_lFWl/"
+  "2026-11-02 22:27 result cbb|Michigan|Oakland|2026-11-02 https://www.instagram.com/p/DfQ6jj_lFWl/",
+  "2026-11-05 15:23 preview wcbb|UCLA|UC Irvine|2026-11-05 https://www.instagram.com/p/DfX4dkalIUk/"
  ],
  "pending": {
   "wcbb|UCLA|UC Irvine|2026-11-05": {
@@ -20,7 +21,9 @@
    "since": "2026-04-05"
   }
  },
- "previews": [],
+ "previews": [
+  "wcbb|UCLA|UC Irvine|2026-11-05"
+ ],
  "results": [
   "wcbb|UCLA|Lehigh|2026-11-02",
   "cbb|Michigan|Oakland|2026-11-02"
