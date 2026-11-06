@@ -1,13 +1,13 @@
 {
- "key": "26|300|2026-11-05",
- "updated": "2026-11-03T03:03Z",
- "start_utc": "2026-11-06T03:00Z",
+ "key": "26|12|2026-11-12",
+ "updated": "2026-11-06T01:47Z",
+ "start_utc": "2026-11-13T03:30Z",
  "espn": {
-  "event_id": "401918897",
-  "start_utc": "2026-11-06T03:00Z",
+  "event_id": "401913056",
+  "start_utc": "2026-11-13T03:30Z",
   "state": "pre",
   "tv": [
-   "B1G+"
+   "BTN"
   ],
   "odds": null,
   "teams": {
@@ -18,10 +18,10 @@
     "rank": 11,
     "home_away": "home"
    },
-   "300": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/300.png",
-    "abbr": "UCI",
-    "record": "0-0",
+   "12": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+    "abbr": "ARIZ",
+    "record": "1-0",
     "rank": null,
     "home_away": "away"
    }
@@ -35,20 +35,23 @@
  },
  "weather": null,
  "ai": {
-  "overview": "UCLA hosts UC Irvine with the Women's College Basketball Belt on the line for the first time in this rivalry's history. The Bruins have defended the belt once in their current reign and enter riding a five-game winning streak that includes four playoff victories. UC Irvine, who have never held the belt, come in having lost their last two games.",
+  "overview": "The Bruins have defended the belt 1 times in this reign and enter on a 5-game winning streak, while Arizona looks to claim the belt for just the second time in their history after winning their last game.",
   "key_matchups": [
-   "UCLA's dominant playoff run (four consecutive wins including victories over Texas and South Carolina) versus UC Irvine's recent struggles with back-to-back losses",
-   "UC Irvine's quest to claim the belt for the first time in program history against a hot UCLA squad coming off a 73-53 victory over Lehigh"
+   "UCLA's dominant playoff run that included wins over Texas, South Carolina, Duke and Minnesota by convincing margins",
+   "Arizona's inconsistent recent form with 3 losses in their last 4 games before bouncing back at Stanford",
+   "UCLA's overwhelming head-to-head dominance at 32-11 all-time, including a 61-41 victory in their most recent meeting"
   ],
-  "betting_angles": "UCLA's form is significantly stronger, winning their last five games including impressive playoff victories over ranked opponents. The Bruins have dominated this matchup historically, winning all four previous meetings, and the Elo model clearly favors the home side. UC Irvine's recent form shows two straight losses, including a playoff defeat at San Diego State.",
+  "betting_angles": "The numbers heavily favor UCLA, who have won their last 5 games including a 73-53 victory over Lehigh to open this season. Arizona enters 1-0 after an 84-69 win at Stanford but had dropped 3 of 4 before that. UCLA holds a commanding 32-11 edge in the all-time series and our Elo model makes them a clear favorite.",
   "predicted_winner": "UCLA",
-  "predicted_score": "UCLA 76, UC Irvine 54",
-  "prediction_writeup": "UCLA's momentum from their playoff run and perfect record against UC Irvine makes them the clear choice to retain the belt. The Bruins won their most recent meeting 61-48 in 2022 and have never lost to the Anteaters in four tries. UC Irvine's back-to-back losses and lack of experience against UCLA suggest they'll struggle to compete. With the Elo model backing the Bruins and their five-game winning streak intact, expect UCLA to defend the belt successfully at home.",
-  "written": "2026-11-03",
+  "predicted_score": "UCLA 71, Arizona 58",
+  "prediction_writeup": "UCLA's momentum is undeniable with 5 straight wins, including playoff victories over elite opponents like South Carolina and Texas. Arizona showed life with their 84-69 win at Stanford, but their previous three-game skid reveals vulnerability. The Bruins' 32-11 all-time dominance in this series and 61-41 victory in the most recent meeting suggest they have Arizona's number. Playing at home with the belt on the line, UCLA should extend their winning streak and retain the championship.",
+  "written": "2026-11-06",
   "model": "claude-sonnet-4-5",
   "factcheck": {
    "attempts": 2,
-   "dropped": []
+   "dropped": [
+    "12"
+   ]
   }
  }
 }
