@@ -766,6 +766,7 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 374985,2026-11-14,13:00,2027,regular,,scheduled,Maine,Drexel,154,71,0,0,,Am. East,CAA,,,The Pit in Memorial Gymnasium,Orono,ME,
 374986,2026-11-14,13:00,2027,regular,,scheduled,Vermont,Plattsburgh St,337,726,0,0,,Am. East,,,,Patrick Gymnasium,Burlington,VT,
 378018,2026-11-14,13:00,2027,regular,,scheduled,Washington State,Northwest University,344,566,0,0,,Pac-12,,,,Beasley Coliseum,Pullman,WA,
+378673,2026-11-14,13:00,2027,regular,,scheduled,Morgan State,Towson,182,301,0,0,1,MEAC,CAA,,,TU Arena,Towson,MD,410 Invitational - Consolation
 372804,2026-11-14,13:30,2027,regular,,scheduled,Colorado State,Loyola Chicago,57,151,0,0,,Pac-12,A-10,,,Moby Arena,Fort Collins,CO,
 372800,2026-11-14,14:00,2027,regular,,scheduled,South Carolina,Gardner-Webb,266,94,0,0,,SEC,Big South,,,Colonial Life Arena,Columbia,SC,
 372807,2026-11-14,14:00,2027,regular,,scheduled,Evansville,Miami (OH),82,167,0,0,,MVC,MAC,,,Ford Center,Evansville,IN,
