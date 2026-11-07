@@ -1,13 +1,13 @@
 {
- "key": "170|314|2026-11-06",
- "updated": "2026-11-03T03:03Z",
- "start_utc": "2026-11-07T01:00Z",
+ "key": "170|157|2026-11-11",
+ "updated": "2026-11-07T01:09Z",
+ "start_utc": "2026-11-12T00:00Z",
  "espn": {
-  "event_id": "401920685",
-  "start_utc": "2026-11-07T01:00Z",
+  "event_id": "401909524",
+  "start_utc": "2026-11-12T00:00Z",
   "state": "pre",
   "tv": [
-   "TNT"
+   "FS1"
   ],
   "odds": null,
   "teams": {
@@ -18,34 +18,34 @@
     "rank": 16,
     "home_away": "home"
    },
-   "314": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
-    "abbr": "CONN",
-    "record": "0-0",
-    "rank": 4,
+   "157": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/269.png",
+    "abbr": "MARQ",
+    "record": "1-0",
+    "rank": null,
     "home_away": "away"
    }
   },
   "venue": {
-   "name": "TD Garden",
-   "city": "Boston",
-   "state": "MA",
+   "name": "Crisler Center",
+   "city": "Ann Arbor",
+   "state": "MI",
    "indoor": true
   }
  },
  "weather": null,
  "ai": {
-  "overview": "The College Basketball Belt returns to the line as Michigan, fresh off their championship run last season, hosts UConn on a neutral floor. The Wolverines captured the belt during their playoff march and have successfully defended it 2 times in this reign, most recently with an 84\u201368 victory over Oakland. UConn, a program that has held the belt 15 times before, gets an immediate rematch after falling 63\u201369 to Michigan in last season's playoffs.",
+  "overview": "Michigan puts the College Basketball Belt on the line for the third time in this reign when they host Marquette on November 11, 2026. The Wolverines have defended the belt twice already and come in riding a five-game winning streak, while Marquette looks to claim the belt for what would be their eighth reign in the lineal championship's history.",
   "key_matchups": [
-   "Rematch from the playoffs where Michigan prevailed 69\u201363, their most recent meeting on 2026-04-06",
-   "Michigan riding momentum with 5 straight wins including four dominant playoff victories",
-   "UConn's championship pedigree with 15 previous belt reigns against Michigan's current 2-defense streak"
+   "Michigan's dominant playoff form\u2014wins of 95\u201362 vs Tennessee and 91\u201373 at Arizona\u2014against Marquette's inconsistent recent stretch that includes losses to Xavier and DePaul",
+   "All-time series advantage for Michigan, who lead 11-5 and won the last meeting 79-61 in 2016",
+   "First-ever belt showdown between these programs despite 16 previous meetings"
   ],
-  "betting_angles": "Michigan enters on a 5-game winning streak with impressive margins in their playoff run, including a 95\u201362 triumph over Tennessee and 91\u201373 at Arizona. The all-time head-to-head stands even at 2-2 across 4 games, but Michigan won the most recent encounter 69\u201363. Our Elo model favors the Wolverines, who also carry home the momentum of having just beaten UConn in the postseason.",
+  "betting_angles": "Michigan enters with momentum from five straight wins, including a 69\u201363 victory over UConn in the playoffs, while Marquette's recent form shows volatility with two losses in their last five games. The Wolverines hold an 11-5 edge in the all-time series and won the most recent encounter 79-61 in 2016. Our Elo model favors Michigan as a clear favorite at home.",
   "predicted_winner": "Michigan",
-  "predicted_score": "Michigan 72, UConn 66",
-  "prediction_writeup": "Michigan's recent form is undeniable, winners of their last 5 games including a playoff victory over this same UConn squad by a 69\u201363 margin. The Wolverines demonstrated their dominance throughout last season's playoff run with commanding wins like 95\u201362 over Tennessee and 91\u201373 at Arizona. While UConn boasts 15 previous belt reigns and will be hungry for revenge, Michigan has already defended the belt 2 times in this reign and the Elo model backs them as favorites. The neutral site removes any home advantage, but the Wolverines' momentum and recent head-to-head success should carry them through in a competitive contest.",
-  "written": "2026-11-03",
+  "predicted_score": "Michigan 76, Marquette 64",
+  "prediction_writeup": "Michigan's five-game winning streak and playoff pedigree suggest they're peaking at the right time to defend the belt. The Wolverines beat UConn 69\u201363 in the playoffs while Marquette beat the same UConn squad 68\u201362, but Michigan's overall body of work looks more impressive. Marquette's recent losses to Xavier and DePaul raise questions about consistency, and playing at Ann Arbor against a team our Elo model rates as a clear favorite presents a steep challenge. Michigan should extend their belt reign to three defenses.",
+  "written": "2026-11-07",
   "model": "claude-sonnet-4-5",
   "factcheck": {
    "attempts": 2,
