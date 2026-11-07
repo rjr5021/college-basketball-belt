@@ -1,54 +1,54 @@
 {
- "key": "170|157|2026-11-11",
- "updated": "2026-11-07T01:09Z",
- "start_utc": "2026-11-12T00:00Z",
+ "key": "314|341|2026-11-09",
+ "updated": "2026-11-07T10:39Z",
+ "start_utc": "2026-11-10T00:00Z",
  "espn": {
-  "event_id": "401909524",
-  "start_utc": "2026-11-12T00:00Z",
+  "event_id": "401920686",
+  "start_utc": "2026-11-10T00:00Z",
   "state": "pre",
   "tv": [
-   "FS1"
+   "truTV"
   ],
   "odds": null,
   "teams": {
-   "170": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
-    "abbr": "MICH",
-    "record": "1-0",
-    "rank": 16,
+   "314": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+    "abbr": "CONN",
+    "record": "2-0",
+    "rank": 4,
     "home_away": "home"
    },
-   "157": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/269.png",
-    "abbr": "MARQ",
-    "record": "1-0",
+   "341": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2681.png",
+    "abbr": "WAG",
+    "record": "0-2",
     "rank": null,
     "home_away": "away"
    }
   },
   "venue": {
-   "name": "Crisler Center",
-   "city": "Ann Arbor",
-   "state": "MI",
+   "name": "M&T Bank Center at Gampel Pavilion",
+   "city": "Storrs",
+   "state": "CT",
    "indoor": true
   }
  },
  "weather": null,
  "ai": {
-  "overview": "Michigan puts the College Basketball Belt on the line for the third time in this reign when they host Marquette on November 11, 2026. The Wolverines have defended the belt twice already and come in riding a five-game winning streak, while Marquette looks to claim the belt for what would be their eighth reign in the lineal championship's history.",
+  "overview": "UConn puts the College Basketball Belt on the line for the first time in this reign when they host Wagner on November 9, 2026. The Huskies claimed the belt earlier this season and bring a 2-0 record into this matchup, while Wagner seeks their first win of the campaign at 0-2. Wagner has never held the belt in the lineage dating back to 1949, but they did shock UConn 67-58 in their last meeting back in 2016.",
   "key_matchups": [
-   "Michigan's dominant playoff form\u2014wins of 95\u201362 vs Tennessee and 91\u201373 at Arizona\u2014against Marquette's inconsistent recent stretch that includes losses to Xavier and DePaul",
-   "All-time series advantage for Michigan, who lead 11-5 and won the last meeting 79-61 in 2016",
-   "First-ever belt showdown between these programs despite 16 previous meetings"
+   "UConn's momentum with wins of 85-77 and 86-46 against Wagner's three-game slide including losses by 26 and 26 points",
+   "Wagner's upset victory in 2016 (67-58) keeps this from being a complete formality despite UConn leading the all-time series 3-1",
+   "UConn's first belt defense of this reign after winning it during playoff action"
   ],
-  "betting_angles": "Michigan enters with momentum from five straight wins, including a 69\u201363 victory over UConn in the playoffs, while Marquette's recent form shows volatility with two losses in their last five games. The Wolverines hold an 11-5 edge in the all-time series and won the most recent encounter 79-61 in 2016. Our Elo model favors Michigan as a clear favorite at home.",
-  "predicted_winner": "Michigan",
-  "predicted_score": "Michigan 76, Marquette 64",
-  "prediction_writeup": "Michigan's five-game winning streak and playoff pedigree suggest they're peaking at the right time to defend the belt. The Wolverines beat UConn 69\u201363 in the playoffs while Marquette beat the same UConn squad 68\u201362, but Michigan's overall body of work looks more impressive. Marquette's recent losses to Xavier and DePaul raise questions about consistency, and playing at Ann Arbor against a team our Elo model rates as a clear favorite presents a steep challenge. Michigan should extend their belt reign to three defenses.",
+  "betting_angles": "UConn enters on a two-game winning streak including an 85-77 victory over Michigan, while Wagner has dropped three straight with their most recent loss coming by 26 points at Miami. The Elo model projects UConn as a clear favorite, consistent with the Huskies' 2-0 start and Wagner's 0-2 record. However, the 2016 upset reminds us that Wagner has shown they can compete with the Huskies, even if the overall series leans 3-1 in UConn's favor.",
+  "predicted_winner": "UConn",
+  "predicted_score": "UConn 82, Wagner 61",
+  "prediction_writeup": "UConn should retain the belt in their first defense of this reign. The Huskies are riding positive momentum with back-to-back wins and just put up 85 points against Michigan in their last outing. Wagner's current form is concerning, having lost three consecutive games by margins of 8, 26, and 26 points while failing to score more than 57 in any of those contests. While Wagner's 2016 upset proves they can challenge UConn, that was a decade ago and the current form gap is too significant. The Elo model's clear edge for the home side feels justified.",
   "written": "2026-11-07",
   "model": "claude-sonnet-4-5",
   "factcheck": {
-   "attempts": 2,
+   "attempts": 1,
    "dropped": []
   }
  }
