@@ -7,7 +7,23 @@
   "2026-11-06 14:45 preview cbb|Michigan|UConn|2026-11-06 https://www.instagram.com/p/DfaY4hyCdoK/",
   "2026-11-07 05:29 result cbb|Michigan|UConn|2026-11-06 https://www.instagram.com/p/Dfb-ELPFSST/"
  ],
- "pending": {},
+ "pending": {
+  "cbb|UConn|Wagner|2026-11-09": {
+   "belt_name": "The College Basketball Belt",
+   "date": "2026-11-09",
+   "defenses": 0,
+   "espn_id": "401920686",
+   "espn_path": "basketball/mens-college-basketball",
+   "game_no": 2543,
+   "holder": "UConn",
+   "holder_short": "UConn",
+   "lg": "cbb",
+   "opponent": "Wagner",
+   "opponent_short": "Wagner",
+   "reign_no": 16,
+   "since": "2026-11-06"
+  }
+ },
  "previews": [
   "wcbb|UCLA|UC Irvine|2026-11-05",
   "cbb|Michigan|UConn|2026-11-06"
