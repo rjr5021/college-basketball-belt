@@ -5,7 +5,8 @@
   "2026-11-05 15:23 preview wcbb|UCLA|UC Irvine|2026-11-05 https://www.instagram.com/p/DfX4dkalIUk/",
   "2026-11-06 06:38 result wcbb|UCLA|UC Irvine|2026-11-05 https://www.instagram.com/p/DfZhO98EYXD/",
   "2026-11-06 14:45 preview cbb|Michigan|UConn|2026-11-06 https://www.instagram.com/p/DfaY4hyCdoK/",
-  "2026-11-07 05:29 result cbb|Michigan|UConn|2026-11-06 https://www.instagram.com/p/Dfb-ELPFSST/"
+  "2026-11-07 05:29 result cbb|Michigan|UConn|2026-11-06 https://www.instagram.com/p/Dfb-ELPFSST/",
+  "2026-11-09 17:47 preview cbb|UConn|Wagner|2026-11-09 https://www.instagram.com/p/DficFokD0xV/"
  ],
  "pending": {
   "cbb|UConn|Wagner|2026-11-09": {
@@ -26,7 +27,8 @@
  },
  "previews": [
   "wcbb|UCLA|UC Irvine|2026-11-05",
-  "cbb|Michigan|UConn|2026-11-06"
+  "cbb|Michigan|UConn|2026-11-06",
+  "cbb|UConn|Wagner|2026-11-09"
  ],
  "results": [
   "wcbb|UCLA|Lehigh|2026-11-02",
