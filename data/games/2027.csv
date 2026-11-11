@@ -600,8 +600,8 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 374830,2026-11-10,22:00,2027,regular,,final,San Francisco,Montana,259,179,63,58,,WCC,Big Sky,,,The Sobrato Center,San Francisco,CA,
 372765,2026-11-11,,2027,regular,,scheduled,South Carolina Beaufort,Nevada,1551,189,0,0,,,Mountain West,,,,,,
 377998,2026-11-11,,2027,regular,,scheduled,UCLA,Arkansas-Pine Bluff,313,14,0,0,,Big Ten,SWAC,,,Pauley Pavilion,Los Angeles,CA,
-374876,2026-11-11,11:30,2027,regular,,scheduled,East Texas A&M,Fairleigh Dickinson,76,84,0,0,,Southland,NEC,,,The Field House,Commerce,TX,
-374870,2026-11-11,12:00,2027,regular,,scheduled,Kansas City,Florida A&M,130,85,0,0,1,Summit,SWAC,,,McArthur Center,St. Petersburg,FL,Showdown in St. Pete
+374876,2026-11-11,11:30,2027,regular,,in_progress,East Texas A&M,Fairleigh Dickinson,76,84,0,0,,Southland,NEC,,,The Field House,Commerce,TX,
+374870,2026-11-11,12:00,2027,regular,,in_progress,Kansas City,Florida A&M,130,85,0,0,1,Summit,SWAC,,,McArthur Center,St. Petersburg,FL,Showdown in St. Pete
 374875,2026-11-11,13:00,2027,regular,,scheduled,UAlbany,Dartmouth,306,62,0,0,,Am. East,Ivy,,,Broadview Center,Albany,NY,
 372764,2026-11-11,14:00,2027,regular,,scheduled,UC Davis,Incarnate Word,307,120,0,0,,Mountain West,Southland,,,University Credit Union Center,Davis,CA,
 372771,2026-11-11,15:00,2027,regular,,scheduled,Air Force,Loyola Chicago,2,151,0,0,,Mountain West,A-10,,,Clune Arena,Colorado Springs,CO,
