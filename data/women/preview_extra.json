@@ -1,10 +1,10 @@
 {
- "key": "26|12|2026-11-12",
- "updated": "2026-11-06T01:47Z",
- "start_utc": "2026-11-13T03:30Z",
+ "key": "26|163|2026-11-15",
+ "updated": "2026-11-13T02:07Z",
+ "start_utc": "2026-11-15T23:00Z",
  "espn": {
-  "event_id": "401913056",
-  "start_utc": "2026-11-13T03:30Z",
+  "event_id": "401915326",
+  "start_utc": "2026-11-15T23:00Z",
   "state": "pre",
   "tv": [
    "BTN"
@@ -14,14 +14,14 @@
    "26": {
     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
     "abbr": "UCLA",
-    "record": "1-0",
-    "rank": 11,
+    "record": "2-0",
+    "rank": 10,
     "home_away": "home"
    },
-   "12": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
-    "abbr": "ARIZ",
-    "record": "1-0",
+   "163": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/163.png",
+    "abbr": "PRIN",
+    "record": "4-0",
     "rank": null,
     "home_away": "away"
    }
@@ -35,22 +35,22 @@
  },
  "weather": null,
  "ai": {
-  "overview": "The Bruins have defended the belt 1 times in this reign and enter on a 5-game winning streak, while Arizona looks to claim the belt for just the second time in their history after winning their last game.",
+  "overview": "The Bruins have defended the belt 2 times in this reign and bring a 5-game winning streak into the matchup, while Princeton arrives with 4 straight victories and an undefeated 4-0 record this season.",
   "key_matchups": [
-   "UCLA's dominant playoff run that included wins over Texas, South Carolina, Duke and Minnesota by convincing margins",
-   "Arizona's inconsistent recent form with 3 losses in their last 4 games before bouncing back at Stanford",
-   "UCLA's overwhelming head-to-head dominance at 32-11 all-time, including a 61-41 victory in their most recent meeting"
+   "UCLA's recent playoff pedigree against Princeton's perfect 4-0 start to the season",
+   "Princeton seeking their first-ever belt victory after never facing UCLA with the title on the line",
+   "The Bruins' 3-0 all-time dominance in this series, including a 77-74 thriller in their last meeting in 2023"
   ],
-  "betting_angles": "The numbers heavily favor UCLA, who have won their last 5 games including a 73-53 victory over Lehigh to open this season. Arizona enters 1-0 after an 84-69 win at Stanford but had dropped 3 of 4 before that. UCLA holds a commanding 32-11 edge in the all-time series and our Elo model makes them a clear favorite.",
+  "betting_angles": "UCLA enters as a clear Elo favorite and holds a perfect 3-0 record in the all-time series, though their most recent meeting in 2023 was decided by just 77-74. Both teams are in strong form, with UCLA riding 5 straight wins including playoff victories over Texas and Duke, while Princeton has won 4 in a row. The Bruins' recent 78-42 victory over UC Irvine showcased their dominant potential at home.",
   "predicted_winner": "UCLA",
-  "predicted_score": "UCLA 71, Arizona 58",
-  "prediction_writeup": "UCLA's momentum is undeniable with 5 straight wins, including playoff victories over elite opponents like South Carolina and Texas. Arizona showed life with their 84-69 win at Stanford, but their previous three-game skid reveals vulnerability. The Bruins' 32-11 all-time dominance in this series and 61-41 victory in the most recent meeting suggest they have Arizona's number. Playing at home with the belt on the line, UCLA should extend their winning streak and retain the championship.",
-  "written": "2026-11-06",
+  "predicted_score": "UCLA 72, Princeton 65",
+  "prediction_writeup": "UCLA's combination of playoff experience and home court advantage should prove decisive in their first belt defense against Princeton. The Bruins have won all 3 previous meetings in this series and are currently on a 5-game winning streak that includes postseason victories over quality opponents like Texas and Duke. While Princeton brings an impressive 4-0 record and has shown resilience in close games like their 76-74 win over Murray State, the Elo model favors UCLA as a clear favorite. The belt stays in Westwood as UCLA extends their current reign to 3 defenses.",
+  "written": "2026-11-13",
   "model": "claude-sonnet-4-5",
   "factcheck": {
    "attempts": 2,
    "dropped": [
-    "12"
+    "15"
    ]
   }
  }
