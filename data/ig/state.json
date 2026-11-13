@@ -11,6 +11,21 @@
   "2026-11-12 15:32 preview wcbb|UCLA|Arizona|2026-11-12 https://www.instagram.com/p/Dfp7B7wG4TD/"
  ],
  "pending": {
+  "cbb|UConn|Ohio State|2026-11-13": {
+   "belt_name": "The College Basketball Belt",
+   "date": "2026-11-13",
+   "defenses": 1,
+   "espn_id": "401916316",
+   "espn_path": "basketball/mens-college-basketball",
+   "game_no": 2544,
+   "holder": "UConn",
+   "holder_short": "UConn",
+   "lg": "cbb",
+   "opponent": "Ohio State",
+   "opponent_short": "Ohio State",
+   "reign_no": 16,
+   "since": "2026-11-06"
+  },
   "wcbb|UCLA|Arizona|2026-11-12": {
    "belt_name": "The Women's College Basketball Belt",
    "date": "2026-11-12",
