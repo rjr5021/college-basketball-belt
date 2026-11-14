@@ -1,51 +1,51 @@
 {
- "key": "314|216|2026-11-13",
- "updated": "2026-11-10T07:42Z",
- "start_utc": "2026-11-14T00:30Z",
+ "key": "314|11|2026-11-18",
+ "updated": "2026-11-14T01:43Z",
+ "start_utc": "2026-11-19T02:00Z",
  "espn": {
-  "event_id": "401916316",
-  "start_utc": "2026-11-14T00:30Z",
+  "event_id": "401909742",
+  "start_utc": "2026-11-19T02:00Z",
   "state": "pre",
   "tv": [
-   "TNT"
+   "FS1"
   ],
   "odds": null,
   "teams": {
+   "11": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+    "abbr": "ARIZ",
+    "record": "2-1",
+    "rank": 12,
+    "home_away": "home"
+   },
    "314": {
     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
     "abbr": "CONN",
     "record": "3-0",
     "rank": 4,
-    "home_away": "home"
-   },
-   "216": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
-    "abbr": "OSU",
-    "record": "2-1",
-    "rank": null,
     "home_away": "away"
    }
   },
   "venue": {
-   "name": "PeoplesBank Arena",
-   "city": "Hartford",
-   "state": "CT",
+   "name": "McKale Center at ALKEME Arena",
+   "city": "Tucson",
+   "state": "AZ",
    "indoor": true
   }
  },
  "weather": null,
  "ai": {
-  "overview": "UConn hosts Ohio State with the College Basketball Belt on the line, marking the first time these programs have ever met with the lineal championship at stake. The Huskies are riding a three-game winning streak and have defended the belt once in their current reign, while the Buckeyes arrive having won their last two games and seeking their tenth belt tenure in program history.",
+  "overview": "UConn brings the College Basketball Belt to Tucson for a November showdown with Arizona on November 18, 2026. The Huskies have defended the belt once in this reign and enter 3-0 on the season, while Arizona sits at 2-1 and has held the belt 15 times previously in the championship's history.",
   "key_matchups": [
-   "UConn's dominant home form against Ohio State's mixed recent results, including losses at BYU and in the playoffs to TCU and Michigan",
-   "The all-time series favors Ohio State 4-3, but their last meeting in 2016 was decided by just four points",
-   "UConn's impressive 83-41 victory over Wagner in their most recent outing versus Ohio State's closer 84-74 win over Marshall"
+   "UConn's recent dominant form, including an 83-41 win over Wagner and an 86-46 rout of Gardner-Webb, against Arizona's mixed results",
+   "Arizona won the most recent meeting 71-67 in 2025 and leads the all-time series 5-3",
+   "The Wildcats are 2-1 after losses to UCLA and Michigan in the playoffs, while UConn is riding a 3-game winning streak"
   ],
-  "betting_angles": "UConn enters 3-0 on the season with three consecutive wins, while Ohio State stands at 2-1 after dropping their opener at BYU. The Elo model makes UConn a clear favorite at home, though the all-time head-to-head tilts slightly toward the Buckeyes at 4-3. Recent form heavily favors the Huskies, who posted an 83-41 blowout against Wagner compared to Ohio State's tighter win over Marshall.",
-  "predicted_winner": "UConn",
-  "predicted_score": "UConn 78, Ohio State 69",
-  "prediction_writeup": "UConn's perfect 3-0 start and current three-game winning streak suggest they're hitting their stride early in the season. The Huskies have shown both offensive firepower and defensive dominance, particularly in their 83-41 dismantling of Wagner. Ohio State has won their last two games but carries a loss at BYU and struggles from last season's playoffs, including the 64-66 defeat to TCU. The Elo model's clear favoritism toward UConn, combined with home court and superior recent form, points to the Huskies successfully defending the belt for a second time.",
-  "written": "2026-11-10",
+  "betting_angles": "UConn has won three straight with impressive margins, including the 83-41 victory over Wagner, but the Elo model favors Arizona at home. The head-to-head history leans Arizona's way at 5-3, including a 71-67 win in their last meeting in 2025. Both teams showed they can score in bunches early this season, with Arizona posting 104 against Cal Poly and UConn hitting 86 against Gardner-Webb.",
+  "predicted_winner": "Arizona",
+  "predicted_score": "UConn 76, Arizona 82",
+  "prediction_writeup": "Arizona gets the nod at home despite UConn's strong 3-0 start. The Wildcats own a 5-3 all-time edge and won the most recent meeting 71-67 in 2025. UConn has been impressive with wins like the 83-41 rout of Wagner, but the Elo model backing Arizona at home carries weight. Arizona's 15 previous belt reigns suggest they understand what it takes to win these championship games. The Wildcats' home court and recent head-to-head success should be enough to claim the belt.",
+  "written": "2026-11-14",
   "model": "claude-sonnet-4-5",
   "factcheck": {
    "attempts": 2,
