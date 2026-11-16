@@ -12,25 +12,10 @@
   "2026-11-13 06:39 result wcbb|UCLA|Arizona|2026-11-12 https://www.instagram.com/p/Dfri2BWoGKU/",
   "2026-11-13 15:09 preview cbb|UConn|Ohio State|2026-11-13 https://www.instagram.com/p/DfsdNHhoBld/",
   "2026-11-13 22:44 result cbb|UConn|Ohio State|2026-11-13 https://www.instagram.com/p/DftRUQ2jdfk/",
-  "2026-11-15 14:10 preview wcbb|UCLA|Princeton|2026-11-15 https://www.instagram.com/p/DfxgHrHmaaW/"
+  "2026-11-15 14:10 preview wcbb|UCLA|Princeton|2026-11-15 https://www.instagram.com/p/DfxgHrHmaaW/",
+  "2026-11-15 21:54 result wcbb|UCLA|Princeton|2026-11-15 https://www.instagram.com/p/DfyVKsjkTe5/"
  ],
- "pending": {
-  "wcbb|UCLA|Princeton|2026-11-15": {
-   "belt_name": "The Women's College Basketball Belt",
-   "date": "2026-11-15",
-   "defenses": 3,
-   "espn_id": "401915326",
-   "espn_path": "basketball/womens-college-basketball",
-   "game_no": 1423,
-   "holder": "UCLA",
-   "holder_short": "UCLA",
-   "lg": "wcbb",
-   "opponent": "Princeton",
-   "opponent_short": "Princeton",
-   "reign_no": 4,
-   "since": "2026-04-05"
-  }
- },
+ "pending": {},
  "previews": [
   "wcbb|UCLA|UC Irvine|2026-11-05",
   "cbb|Michigan|UConn|2026-11-06",
@@ -46,6 +31,7 @@
   "cbb|Michigan|UConn|2026-11-06",
   "cbb|UConn|Wagner|2026-11-09",
   "wcbb|UCLA|Arizona|2026-11-12",
-  "cbb|UConn|Ohio State|2026-11-13"
+  "cbb|UConn|Ohio State|2026-11-13",
+  "wcbb|UCLA|Princeton|2026-11-15"
  ]
 }
