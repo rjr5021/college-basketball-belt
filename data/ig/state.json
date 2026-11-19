@@ -17,7 +17,23 @@
   "2026-11-18 15:58 preview cbb|UConn|Arizona|2026-11-18 https://www.instagram.com/p/Df5a2pckk1f/",
   "2026-11-18 23:42 result cbb|UConn|Arizona|2026-11-18 https://www.instagram.com/p/Df6P6LfkYD4/"
  ],
- "pending": {},
+ "pending": {
+  "wcbb|UCLA|Cal Poly|2026-11-19": {
+   "belt_name": "The Women's College Basketball Belt",
+   "date": "2026-11-19",
+   "defenses": 4,
+   "espn_id": "401918898",
+   "espn_path": "basketball/womens-college-basketball",
+   "game_no": 1424,
+   "holder": "UCLA",
+   "holder_short": "UCLA",
+   "lg": "wcbb",
+   "opponent": "Cal Poly",
+   "opponent_short": "Cal Poly",
+   "reign_no": 4,
+   "since": "2026-04-05"
+  }
+ },
  "previews": [
   "wcbb|UCLA|UC Irvine|2026-11-05",
   "cbb|Michigan|UConn|2026-11-06",
