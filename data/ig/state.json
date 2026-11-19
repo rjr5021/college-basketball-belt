@@ -14,25 +14,10 @@
   "2026-11-13 22:44 result cbb|UConn|Ohio State|2026-11-13 https://www.instagram.com/p/DftRUQ2jdfk/",
   "2026-11-15 14:10 preview wcbb|UCLA|Princeton|2026-11-15 https://www.instagram.com/p/DfxgHrHmaaW/",
   "2026-11-15 21:54 result wcbb|UCLA|Princeton|2026-11-15 https://www.instagram.com/p/DfyVKsjkTe5/",
-  "2026-11-18 15:58 preview cbb|UConn|Arizona|2026-11-18 https://www.instagram.com/p/Df5a2pckk1f/"
+  "2026-11-18 15:58 preview cbb|UConn|Arizona|2026-11-18 https://www.instagram.com/p/Df5a2pckk1f/",
+  "2026-11-18 23:42 result cbb|UConn|Arizona|2026-11-18 https://www.instagram.com/p/Df6P6LfkYD4/"
  ],
- "pending": {
-  "cbb|UConn|Arizona|2026-11-18": {
-   "belt_name": "The College Basketball Belt",
-   "date": "2026-11-18",
-   "defenses": 2,
-   "espn_id": "401909742",
-   "espn_path": "basketball/mens-college-basketball",
-   "game_no": 2545,
-   "holder": "UConn",
-   "holder_short": "UConn",
-   "lg": "cbb",
-   "opponent": "Arizona",
-   "opponent_short": "Arizona",
-   "reign_no": 16,
-   "since": "2026-11-06"
-  }
- },
+ "pending": {},
  "previews": [
   "wcbb|UCLA|UC Irvine|2026-11-05",
   "cbb|Michigan|UConn|2026-11-06",
@@ -50,6 +35,7 @@
   "cbb|UConn|Wagner|2026-11-09",
   "wcbb|UCLA|Arizona|2026-11-12",
   "cbb|UConn|Ohio State|2026-11-13",
-  "wcbb|UCLA|Princeton|2026-11-15"
+  "wcbb|UCLA|Princeton|2026-11-15",
+  "cbb|UConn|Arizona|2026-11-18"
  ]
 }
