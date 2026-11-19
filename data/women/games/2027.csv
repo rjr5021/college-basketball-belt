@@ -1006,12 +1006,12 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401921616,2026-11-18,21:00,2027,regular,,final,UC Irvine,Idaho State,300,304,66,51,,Big West,Big Sky,,,Bren Events Center,Irvine,CA,
 401926987,2026-11-18,21:00,2027,regular,,final,Gonzaga,Montana,2250,149,84,61,,Pac-12,Big Sky,,,McCarthey Athletic Center,Spokane,WA,
 401921496,2026-11-18,21:30,2027,regular,,final,Cal State Bakersfield,Utah Tech,2934,3101,51,55,,Big West,Big Sky,,,Icardo Center,Bakersfield,CA,
-401911746,2026-11-19,11:00,2027,regular,,scheduled,Duke,Fordham,150,2230,,,,ACC,A-10,,,Cameron Indoor Stadium,Durham,NC,
-401912508,2026-11-19,11:00,2027,regular,,scheduled,Elon,Liberty,2210,2335,,,,CAA,CUSA,,,Schar Center,Elon,NC,
-401913008,2026-11-19,11:00,2027,regular,,scheduled,Rutgers,Maryland Eastern Shore,164,2379,,,,Big Ten,MEAC,,,Jersey Mike’s Arena,Piscataway,NJ,
-401913709,2026-11-19,11:00,2027,regular,,scheduled,Florida State,Purdue,52,2509,,,1,ACC,Big Ten,,,State Farm Field House,Kissimmee,FL,WBCA Showcase
-401927105,2026-11-19,11:00,2027,regular,,scheduled,Penn State,Bowling Green,213,189,,,,Big Ten,MAC,,,Rec Hall,University Park,PA,
-401926043,2026-11-19,12:00,2027,regular,,scheduled,Memphis,South Alabama,235,6,,,,American,Sun Belt,,,Elma Roane Fieldhouse,Memphis,TN,
+401911746,2026-11-19,11:00,2027,regular,,final,Duke,Fordham,150,2230,111,44,,ACC,A-10,,,Cameron Indoor Stadium,Durham,NC,
+401912508,2026-11-19,11:00,2027,regular,,final,Elon,Liberty,2210,2335,66,56,,CAA,CUSA,,,Schar Center,Elon,NC,
+401913008,2026-11-19,11:00,2027,regular,,final,Rutgers,Maryland Eastern Shore,164,2379,91,47,,Big Ten,MEAC,,,Jersey Mike’s Arena,Piscataway,NJ,
+401913709,2026-11-19,11:00,2027,regular,,final,Florida State,Purdue,52,2509,63,50,1,ACC,Big Ten,,,State Farm Field House,Kissimmee,FL,WBCA Showcase
+401927105,2026-11-19,11:00,2027,regular,,final,Penn State,Bowling Green,213,189,72,70,,Big Ten,MAC,,,Rec Hall,University Park,PA,
+401926043,2026-11-19,12:00,2027,regular,,final,Memphis,South Alabama,235,6,71,56,,American,Sun Belt,,,Elma Roane Fieldhouse,Memphis,TN,
 401920339,2026-11-19,16:00,2027,regular,,scheduled,Vermont,High Point,261,2272,,,,Am. East,Big South,,,Patrick Gymnasium,Burlington,VT,
 401906092,2026-11-19,18:00,2027,regular,,scheduled,North Carolina,Texas Tech,153,2641,,,1,ACC,Big 12,,,State Farm Field House,Kissimmee,FL,WBCA Showcase
 401906107,2026-11-19,18:00,2027,regular,,scheduled,Wake Forest,App State,154,2026,,,,ACC,Sun Belt,,,LJVM Coliseum,Winston-Salem,NC,
@@ -1413,7 +1413,7 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401916156,2026-11-27,14:30,2027,regular,,scheduled,BYU,Fairfield,252,2217,,,1,Big 12,Metro,,,McArthur Center,St. Petersburg,FL,St. Pete Showcase
 401927517,2026-11-27,14:30,2027,regular,,scheduled,Drexel,Southern Miss,2182,2572,,,1,CAA,Sun Belt,,,Hynes Athletics Center,New Rochelle,NY,Iona Turkey Tip-Off
 401929206,2026-11-27,14:30,2027,regular,,scheduled,St. John's,Richmond,2599,257,,,1,Big East,A-10,,,Henrico Sports & Events Center,Glen Allen,VA,4 Tha Culture Holiday Classic
-401930135,2026-11-27,14:30,2027,regular,,scheduled,Gardner-Webb,East Carolina,2241,151,,,1,Big South,American,,,Haas Pavilion,Berkeley,CA,Raising the B.A.R. Invitational
+401930135,2026-11-27,14:30,2027,regular,,scheduled,East Carolina,Gardner-Webb,151,2241,,,1,American,Big South,,,Haas Pavilion,Berkeley,CA,Raising the B.A.R. Invitational
 401917726,2026-11-27,15:00,2027,regular,,scheduled,Oral Roberts,Loyola Marymount,198,2351,,,1,Summit,WCC,,,The Pavilion,Las Vegas,NV,
 401918671,2026-11-27,15:00,2027,regular,,scheduled,Northwestern State,Louisiana,2466,309,,,,Southland,Sun Belt,,,Prather Coliseum,Natchitoches,LA,
 401919669,2026-11-27,15:00,2027,regular,,scheduled,Texas State,Bradley,326,71,,,,Pac-12,MVC,,,Strahan Arena at the University Events Center,San Marcos,TX,Texas State Tournament

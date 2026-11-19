@@ -1047,7 +1047,7 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 378054,2026-11-18,22:00,2027,regular,,final,Hawai'i,Washington State,108,344,63,79,1,Mountain West,Pac-12,,,,,,
 375107,2026-11-18,22:30,2027,regular,,final,UCLA,Cal State Fullerton,313,37,75,71,,Big Ten,Big West,,,Pauley Pavilion,Los Angeles,CA,
 378685,2026-11-18,22:30,2027,regular,,final,Auburn,UNLV,16,322,86,71,1,SEC,Mountain West,,,Michelob ULTRA Arena,Las Vegas,NV,Players Era 8
-378688,2026-11-19,14:30,2027,regular,,scheduled,West Virginia,Florida,347,87,0,0,1,Big 12,SEC,,,Michelob ULTRA Arena,Las Vegas,NV,Players Era 8 - Third Place Game
+378688,2026-11-19,14:30,2027,regular,,in_progress,West Virginia,Florida,347,87,0,0,1,Big 12,SEC,,,Michelob ULTRA Arena,Las Vegas,NV,Players Era 8 - Third Place Game
 378686,2026-11-19,17:00,2027,regular,,scheduled,Auburn,Notre Dame,16,213,0,0,1,SEC,ACC,,,Michelob ULTRA Arena,Las Vegas,NV,Players Era 8 - Fifth Place
 375137,2026-11-19,18:00,2027,regular,,scheduled,Murray State,NC State,184,185,0,0,1,MVC,ACC,,,Baha Mar Convention Center,Nassau,,Baha Mar Championship
 372864,2026-11-19,19:00,2027,regular,,scheduled,Ohio State,UMBC,216,317,0,0,,Big Ten,Am. East,,,Schottenstein Center,Columbus,OH,
