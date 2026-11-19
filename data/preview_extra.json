@@ -1,57 +1,55 @@
 {
- "key": "314|72|2026-11-25",
- "updated": "2026-11-19T02:46Z",
- "start_utc": "2026-11-26T00:00Z",
+ "key": "11|57|2026-11-23",
+ "updated": "2026-11-19T12:04Z",
+ "start_utc": "2026-11-24T04:30Z",
  "espn": {
-  "event_id": "401909568",
-  "start_utc": "2026-11-26T00:00Z",
+  "event_id": "401909743",
+  "start_utc": "2026-11-24T04:30Z",
   "state": "pre",
   "tv": [
-   "Prime Video"
+   "ESPN2"
   ],
   "odds": null,
   "teams": {
-   "72": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
-    "abbr": "DUKE",
-    "record": "3-2",
-    "rank": 5,
+   "11": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+    "abbr": "ARIZ",
+    "record": "4-1",
+    "rank": 12,
     "home_away": "home"
    },
-   "314": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
-    "abbr": "CONN",
-    "record": "4-0",
-    "rank": 3,
+   "57": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/36.png",
+    "abbr": "CSU",
+    "record": "4-1",
+    "rank": null,
     "home_away": "away"
    }
   },
   "venue": {
-   "name": "T-Mobile Arena",
-   "city": "Las Vegas",
-   "state": "NV",
+   "name": "Lahaina Civic Center",
+   "city": "Maui",
+   "state": "HI",
    "indoor": true
   }
  },
  "weather": null,
  "ai": {
-  "overview": "The Huskies have defended the belt twice in this reign and bring a four-game winning streak into the matchup, while Duke looks to claim the belt for the 29th time in program history after dropping their last contest to Illinois.",
+  "overview": "Arizona brings the College Basketball Belt to a neutral-site showdown against Colorado State on November 23, 2026. The Wildcats claimed the belt in their current reign and have yet to defend it, while the Rams are looking to capture the lineal title for what would be their third time in program history.",
   "key_matchups": [
-   "UConn's current four-game win streak against Duke's loss to Illinois by a 78-99 margin in their most recent outing",
-   "Duke holds a narrow 6-5 edge in the all-time series, including a tight 72-73 UConn win in their last meeting on March 29, 2026",
-   "These teams have met three times previously with the belt on the line, adding historical weight to this neutral-site showdown"
+   "Arizona's four-game winning streak including victories over UConn and Auburn versus Colorado State's rebound from their 58-73 loss to Loyola Chicago",
+   "Historical series that has seen the lead change hands frequently, with Arizona holding a narrow 14-11 edge in the all-time head-to-head",
+   "Both teams enter at 4-1 on the season, but Arizona's recent resume features wins over stronger competition"
   ],
-  "betting_angles": "UConn enters with momentum, riding four straight wins including an 84-68 victory over Ohio State, while Duke is reeling from a lopsided 78-99 loss to Illinois. The Elo model calls this a toss-up despite UConn's 4-0 record and Duke's 3-2 mark. The all-time series is nearly even at 6-5 Duke, and their most recent meeting was decided by a single point.",
-  "predicted_winner": "UConn",
-  "predicted_score": "UConn 79, Duke 76",
-  "prediction_writeup": "UConn's current form gives them the edge in what the Elo model projects as a toss-up. The Huskies have won four straight and appear sharper than a Duke team coming off a 78-99 drubbing at the hands of Illinois. While Duke holds a slight 6-5 advantage in the all-time series, UConn won the most recent meeting 73-72 in March 2026, showing they can win tight games against this opponent. The neutral site keeps this close, but UConn's momentum and belt-holder confidence should carry them through in a low-possession battle.",
+  "betting_angles": "Arizona has won their last 4 games with impressive victories over UConn (85-79) and Auburn (80-69), while Colorado State's most recent win came against North Dakota State (71-64). The all-time series is surprisingly competitive at 14-11 in Arizona's favor across 25 meetings, though they haven't faced each other since 1978. Our Elo model makes Arizona a clear favorite in this neutral-site contest.",
+  "predicted_winner": "Arizona",
+  "predicted_score": "Arizona 82, Colorado State 71",
+  "prediction_writeup": "Arizona's recent form has been dominant with four straight wins including quality victories over UConn and Auburn, while Colorado State is just 1-1 in their last two games after the loss to Loyola Chicago. Both teams sit at 4-1, but the Wildcats have faced tougher competition and shown the ability to win close games, as evidenced by their 85-79 victory over UConn. The Elo model favoring Arizona aligns with their current momentum and stronger resume. Arizona successfully defends the belt in their first title defense of this reign.",
   "written": "2026-11-19",
   "model": "claude-sonnet-4-5",
   "factcheck": {
    "attempts": 2,
-   "dropped": [
-    "25"
-   ]
+   "dropped": []
   }
  }
 }
