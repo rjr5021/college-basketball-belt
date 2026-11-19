@@ -1,55 +1,57 @@
 {
- "key": "314|11|2026-11-18",
- "updated": "2026-11-14T01:43Z",
- "start_utc": "2026-11-19T02:00Z",
+ "key": "314|72|2026-11-25",
+ "updated": "2026-11-19T02:46Z",
+ "start_utc": "2026-11-26T00:00Z",
  "espn": {
-  "event_id": "401909742",
-  "start_utc": "2026-11-19T02:00Z",
+  "event_id": "401909568",
+  "start_utc": "2026-11-26T00:00Z",
   "state": "pre",
   "tv": [
-   "FS1"
+   "Prime Video"
   ],
   "odds": null,
   "teams": {
-   "11": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
-    "abbr": "ARIZ",
-    "record": "2-1",
-    "rank": 12,
+   "72": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+    "abbr": "DUKE",
+    "record": "3-2",
+    "rank": 5,
     "home_away": "home"
    },
    "314": {
     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
     "abbr": "CONN",
-    "record": "3-0",
-    "rank": 4,
+    "record": "4-0",
+    "rank": 3,
     "home_away": "away"
    }
   },
   "venue": {
-   "name": "McKale Center at ALKEME Arena",
-   "city": "Tucson",
-   "state": "AZ",
+   "name": "T-Mobile Arena",
+   "city": "Las Vegas",
+   "state": "NV",
    "indoor": true
   }
  },
  "weather": null,
  "ai": {
-  "overview": "UConn brings the College Basketball Belt to Tucson for a November showdown with Arizona on November 18, 2026. The Huskies have defended the belt once in this reign and enter 3-0 on the season, while Arizona sits at 2-1 and has held the belt 15 times previously in the championship's history.",
+  "overview": "The Huskies have defended the belt twice in this reign and bring a four-game winning streak into the matchup, while Duke looks to claim the belt for the 29th time in program history after dropping their last contest to Illinois.",
   "key_matchups": [
-   "UConn's recent dominant form, including an 83-41 win over Wagner and an 86-46 rout of Gardner-Webb, against Arizona's mixed results",
-   "Arizona won the most recent meeting 71-67 in 2025 and leads the all-time series 5-3",
-   "The Wildcats are 2-1 after losses to UCLA and Michigan in the playoffs, while UConn is riding a 3-game winning streak"
+   "UConn's current four-game win streak against Duke's loss to Illinois by a 78-99 margin in their most recent outing",
+   "Duke holds a narrow 6-5 edge in the all-time series, including a tight 72-73 UConn win in their last meeting on March 29, 2026",
+   "These teams have met three times previously with the belt on the line, adding historical weight to this neutral-site showdown"
   ],
-  "betting_angles": "UConn has won three straight with impressive margins, including the 83-41 victory over Wagner, but the Elo model favors Arizona at home. The head-to-head history leans Arizona's way at 5-3, including a 71-67 win in their last meeting in 2025. Both teams showed they can score in bunches early this season, with Arizona posting 104 against Cal Poly and UConn hitting 86 against Gardner-Webb.",
-  "predicted_winner": "Arizona",
-  "predicted_score": "UConn 76, Arizona 82",
-  "prediction_writeup": "Arizona gets the nod at home despite UConn's strong 3-0 start. The Wildcats own a 5-3 all-time edge and won the most recent meeting 71-67 in 2025. UConn has been impressive with wins like the 83-41 rout of Wagner, but the Elo model backing Arizona at home carries weight. Arizona's 15 previous belt reigns suggest they understand what it takes to win these championship games. The Wildcats' home court and recent head-to-head success should be enough to claim the belt.",
-  "written": "2026-11-14",
+  "betting_angles": "UConn enters with momentum, riding four straight wins including an 84-68 victory over Ohio State, while Duke is reeling from a lopsided 78-99 loss to Illinois. The Elo model calls this a toss-up despite UConn's 4-0 record and Duke's 3-2 mark. The all-time series is nearly even at 6-5 Duke, and their most recent meeting was decided by a single point.",
+  "predicted_winner": "UConn",
+  "predicted_score": "UConn 79, Duke 76",
+  "prediction_writeup": "UConn's current form gives them the edge in what the Elo model projects as a toss-up. The Huskies have won four straight and appear sharper than a Duke team coming off a 78-99 drubbing at the hands of Illinois. While Duke holds a slight 6-5 advantage in the all-time series, UConn won the most recent meeting 73-72 in March 2026, showing they can win tight games against this opponent. The neutral site keeps this close, but UConn's momentum and belt-holder confidence should carry them through in a low-possession battle.",
+  "written": "2026-11-19",
   "model": "claude-sonnet-4-5",
   "factcheck": {
    "attempts": 2,
-   "dropped": []
+   "dropped": [
+    "25"
+   ]
   }
  }
 }
