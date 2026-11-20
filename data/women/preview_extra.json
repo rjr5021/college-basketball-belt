@@ -1,57 +1,55 @@
 {
- "key": "26|13|2026-11-19",
- "updated": "2026-11-16T07:13Z",
- "start_utc": "2026-11-20T03:00Z",
+ "key": "26|2633|2026-11-22",
+ "updated": "2026-11-20T02:34Z",
+ "start_utc": "2026-11-22T22:30Z",
  "espn": {
-  "event_id": "401918898",
-  "start_utc": "2026-11-20T03:00Z",
+  "event_id": "401912957",
+  "start_utc": "2026-11-22T22:30Z",
   "state": "pre",
   "tv": [
-   "B1G+"
+   "ESPN"
   ],
   "odds": null,
   "teams": {
+   "2633": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633_ncw.png",
+    "abbr": "TENN",
+    "record": "6-0",
+    "rank": null,
+    "home_away": "home"
+   },
    "26": {
     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
     "abbr": "UCLA",
     "record": "4-0",
     "rank": 10,
-    "home_away": "home"
-   },
-   "13": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/13.png",
-    "abbr": "CP",
-    "record": "3-1",
-    "rank": null,
     "home_away": "away"
    }
   },
   "venue": {
-   "name": "Pauley Pavilion",
-   "city": "Los Angeles",
-   "state": "CA",
+   "name": "Food City Center",
+   "city": "Knoxville",
+   "state": "TN",
    "indoor": true
   }
  },
  "weather": null,
  "ai": {
-  "overview": "The Bruins are defending the belt for the fifth time in their current reign, while the Mustangs have never held the championship. UCLA enters undefeated at 4-0, having won their last 5 games, while Cal Poly sits at 1-1 with a narrow win over Seattle U in their most recent outing.",
+  "overview": "UCLA brings the Women's College Basketball Belt to Knoxville for a showdown with Tennessee on November 22, 2026. The Bruins have defended the belt 4 times in their current reign and enter as the clear Elo favorite despite playing on the road. Tennessee, with 17 previous belt reigns, will look to reclaim the championship at home.",
   "key_matchups": [
-   "UCLA's dominant defense that held Princeton to 34 points versus a Cal Poly offense that managed just 57 in their last win",
-   "The all-time series history: UCLA leads 8-0 and won the last meeting 115-28",
-   "Cal Poly's quest to capture the belt for the first time in program history against a UCLA team riding a 5-game winning streak"
+   "UCLA's defensive intensity versus Tennessee's explosive offense that scored 110 against Middle Tennessee and 102 against Radford",
+   "Both teams riding 5-game winning streaks into what should be the first major test for either side this season",
+   "Tennessee's home court advantage after UCLA dominated their last meeting 99-77 in 2025"
   ],
-  "betting_angles": "UCLA's recent form is imposing, with wins over Princeton 55-34 and Arizona 76-44, while Cal Poly has dropped two of their last four games including losses of 51-64 at Idaho State and 65-85 versus UC Irvine. The all-time head-to-head record is completely one-sided at 8-0 in UCLA's favor, with the Bruins winning the most recent meeting 115-28. Our Elo model projects UCLA as a clear favorite, consistent with their perfect 4-0 start and the Mustangs' struggles against quality opposition.",
+  "betting_angles": "UCLA enters with the Elo edge despite Tennessee's perfect 6-0 record versus the Bruins' 4-0 mark. The Bruins have won the last two meetings between these programs, including a decisive 22-point victory in 2025. Tennessee's offensive numbers are eye-popping, but UCLA has been defensively stout, holding four of their last five opponents to 55 points or fewer.",
   "predicted_winner": "UCLA",
-  "predicted_score": "UCLA 82, Cal Poly 51",
-  "prediction_writeup": "UCLA's perfect 4-0 start and 5-game winning streak indicate a team in elite form, most recently defeating Princeton 55-34. The all-time series record of 8-0 in UCLA's favor includes a dominant 115-28 victory in their last meeting. Cal Poly enters having won just one of their last two games, a narrow 57-55 win over Seattle U, and has never held the belt in program history. The Bruins' recent defensive performances, including holding UC Irvine to 42 points and Lehigh to 53, suggest Cal Poly will struggle to find offensive rhythm. UCLA retains the belt with a comfortable home victory.",
-  "written": "2026-11-16",
+  "predicted_score": "UCLA 81, Tennessee 73",
+  "prediction_writeup": "UCLA's defensive excellence should keep this competitive even against Tennessee's high-scoring attack. The Bruins held Princeton to just 34 points in their most recent outing and have been consistent on that end all season. While Tennessee brings an undefeated record and home court, UCLA's recent dominance in the head-to-head series (winning the last two by margins of 22 and 12 points) suggests they know how to handle the Volunteers. The Elo model's clear preference for the Bruins combined with their defensive identity should be enough to retain the belt on the road.",
+  "written": "2026-11-20",
   "model": "claude-sonnet-4-5",
   "factcheck": {
-   "attempts": 2,
-   "dropped": [
-    "19"
-   ]
+   "attempts": 1,
+   "dropped": []
   }
  }
 }
