@@ -1083,15 +1083,15 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 375136,2026-11-19,22:30,2027,regular,,final,Santa Clara,VCU,261,333,77,83,,WCC,A-10,,,Leavey Center,Santa Clara,CA,
 378072,2026-11-19,23:00,2027,regular,,final,USC,Tarleton State,323,288,96,51,,Big Ten,UAC,,,Galen Center,Los Angeles,CA,
 378689,2026-11-19,23:00,2027,regular,,final,Kansas,Houston,131,113,83,92,1,Big 12,Big 12,,,Michelob ULTRA Arena,Las Vegas,NV,Players Era 8 - Championship
-375162,2026-11-20,11:00,2027,regular,,scheduled,William & Mary,Averett,353,725,0,0,,CAA,,,,Kaplan Arena,Williamsburg,VA,
-372877,2026-11-20,12:00,2027,regular,,scheduled,Florida State,Green Bay,90,105,0,0,,ACC,Horizon,,,Tucker Center,Tallahassee,FL,
-375163,2026-11-20,12:00,2027,regular,,scheduled,Maryland Eastern Shore,Bloomfield,159,1537,0,0,,MEAC,,,,Hytche Center,Princess Anne,MD,
-372881,2026-11-20,12:30,2027,regular,,scheduled,Middle Tennessee,Temple,171,289,0,0,1,CUSA,American,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,U.S. Virgin Islands Paradise Jam
-375164,2026-11-20,12:30,2027,regular,,scheduled,Minnesota,Oklahoma State,173,218,0,0,1,Big Ten,Big 12,,,TD Arena,Charleston,SC,Charleston Classic
-375165,2026-11-20,14:00,2027,regular,,scheduled,UAB,George Washington,305,96,0,0,1,American,A-10,,,Colonial Hall,White Sulphur Springs,WV,Greenbrier Tip-Off
-372882,2026-11-20,15:00,2027,regular,,scheduled,Stephen F. Austin,Indiana State,282,122,0,0,1,Southland,MVC,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,U.S. Virgin Islands Paradise Jam
-375160,2026-11-20,15:00,2027,regular,,scheduled,UAlbany,Western Illinois,306,349,0,0,1,Am. East,OVC,,,Koessler Athletic Center,Buffalo,NY,Queen City Classic
-375166,2026-11-20,15:00,2027,regular,,scheduled,Virginia Tech,Northwestern,340,212,0,0,1,ACC,Big Ten,,,TD Arena,Charleston,SC,Charleston Classic
+375162,2026-11-20,11:00,2027,regular,,final,William & Mary,Averett,353,725,85,39,,CAA,,,,Kaplan Arena,Williamsburg,VA,
+372877,2026-11-20,12:00,2027,regular,,final,Florida State,Green Bay,90,105,87,63,,ACC,Horizon,,,Tucker Center,Tallahassee,FL,
+375163,2026-11-20,12:00,2027,regular,,final,Maryland Eastern Shore,Bloomfield,159,1537,87,77,,MEAC,,,,Hytche Center,Princess Anne,MD,
+372881,2026-11-20,12:30,2027,regular,,final,Middle Tennessee,Temple,171,289,76,85,1,CUSA,American,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,U.S. Virgin Islands Paradise Jam
+375164,2026-11-20,12:30,2027,regular,,final,Minnesota,Oklahoma State,173,218,85,70,1,Big Ten,Big 12,,,TD Arena,Charleston,SC,Charleston Classic
+375165,2026-11-20,14:00,2027,regular,,in_progress,UAB,George Washington,305,96,0,0,1,American,A-10,,,Colonial Hall,White Sulphur Springs,WV,Greenbrier Tip-Off
+372882,2026-11-20,15:00,2027,regular,,in_progress,Stephen F. Austin,Indiana State,282,122,0,0,1,Southland,MVC,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,U.S. Virgin Islands Paradise Jam
+375160,2026-11-20,15:00,2027,regular,,in_progress,UAlbany,Western Illinois,306,349,0,0,1,Am. East,OVC,,,Koessler Athletic Center,Buffalo,NY,Queen City Classic
+375166,2026-11-20,15:00,2027,regular,,in_progress,Virginia Tech,Northwestern,340,212,0,0,1,ACC,Big Ten,,,TD Arena,Charleston,SC,Charleston Classic
 375167,2026-11-20,16:00,2027,regular,,scheduled,Idaho State,South Dakota State,116,270,0,0,,Big Sky,Summit,,,Reed Gym,Pocatello,ID,
 375168,2026-11-20,16:30,2027,regular,,scheduled,Rhode Island,Liberty,240,142,0,0,1,A-10,CUSA,,,Colonial Hall,White Sulphur Springs,WV,Greenbrier Tip-Off
 375153,2026-11-20,17:00,2027,regular,,scheduled,Miami,Manhattan,168,155,0,0,,ACC,Metro,,,Watsco Center,Coral Gables,FL,
