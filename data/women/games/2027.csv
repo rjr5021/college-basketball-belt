@@ -1096,9 +1096,9 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401917712,2026-11-20,22:00,2027,regular,,final,Loyola Marymount,Idaho State,2351,304,79,67,,WCC,Big Sky,,,Gersten Pavilion,Los Angeles,CA,
 401918467,2026-11-20,23:00,2027,regular,,final,USC,Baylor,30,239,78,69,1,Big Ten,Big 12,,,Intuit Dome,Inglewood,CA,Bad Boy Mowers Series
 401911496,2026-11-21,,2027,regular,,scheduled,Gardner-Webb,Mercer,2241,2382,,,,Big South,SoCon,,,Paul Porter Arena,Boiling Springs,NC,
-401913710,2026-11-21,12:00,2027,regular,,scheduled,Florida State,UCF,52,2116,,,1,ACC,Big 12,,,State Farm Field House,Kissimmee,FL,WBCA Showcase
-401918678,2026-11-21,12:00,2027,regular,,scheduled,George Mason,James Madison,2244,256,,,,A-10,Sun Belt,,,EagleBank Arena,Fairfax,VA,
-401918918,2026-11-21,12:00,2027,regular,,scheduled,Maryland,Morgan State,120,2415,,,,Big Ten,MEAC,,,XFINITY Center,College Park,MD,
+401913710,2026-11-21,12:00,2027,regular,,final,Florida State,UCF,52,2116,81,54,1,ACC,Big 12,,,State Farm Field House,Kissimmee,FL,WBCA Showcase
+401918678,2026-11-21,12:00,2027,regular,,final,George Mason,James Madison,2244,256,55,52,,A-10,Sun Belt,,,EagleBank Arena,Fairfax,VA,
+401918918,2026-11-21,12:00,2027,regular,,final,Maryland,Morgan State,120,2415,109,39,,Big Ten,MEAC,,,XFINITY Center,College Park,MD,
 401909687,2026-11-21,13:00,2027,regular,,scheduled,Brown,UMBC,225,2378,,,,Ivy,Am. East,,,Pizzitola Sports Center,Providence,RI,
 401913019,2026-11-21,13:00,2027,regular,,scheduled,Ohio,Xavier,195,2752,,,,MAC,Big East,,,Convocation Center (OH),Athens,OH,
 401913758,2026-11-21,13:00,2027,regular,,scheduled,Northeastern,Bryant,111,2803,,,,CAA,Am. East,,,Cabot Center,Boston,MA,
