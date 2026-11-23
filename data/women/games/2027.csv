@@ -1147,7 +1147,6 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401917713,2026-11-21,21:15,2027,regular,,final,Chicago State,Seattle U,2130,2547,50,78,1,NEC,WCC,,,Alaska Airlines Center,Anchorage,AK,Great Alaska Shootout
 401917714,2026-11-21,22:00,2027,regular,,final,San Diego,UC Irvine,301,300,58,53,,WCC,Big West,,,Jenny Craig Pavilion,San Diego,CA,
 401906081,2026-11-21,23:30,2027,regular,,final,Alaska Anchorage,Louisville,1,97,40,113,,,ACC,,,Alaska Airlines Center,Anchorage,AK,Great Alaska Shootout
-401917715,2026-11-22,,2027,regular,,scheduled,Louisville,Seattle U,97,2547,,,1,ACC,WCC,,,Alaska Airlines Arena,Seattle,WA,Great Alaska Shootout
 401913767,2026-11-22,11:30,2027,regular,,final,Maine,Pennsylvania,311,219,50,77,,Am. East,Ivy,,,Skip Chappelle Court in Memorial Gymnasium,Orono,ME,
 401918820,2026-11-22,12:00,2027,regular,,final,Kansas City,Missouri State,140,2623,90,94,1,Summit,CUSA,,,T-Mobile Center,Kansas City,MO,28.5 Hoops Women's Invitational
 401911747,2026-11-22,13:00,2027,regular,,final,Fordham,Buffalo,2230,2084,48,60,,A-10,MAC,,,Rose Hill Gym,Bronx,NY,
@@ -1199,14 +1198,13 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401917717,2026-11-22,17:00,2027,regular,,final,San Francisco,Cal State Bakersfield,2539,2934,81,58,,WCC,Big West,,,The Sobrato Center,San Francisco,CA,
 401921465,2026-11-22,17:00,2027,regular,,final,Washington,Cal Poly,264,13,93,42,,Big Ten,Big West,,,Alaska Airlines Arena,Seattle,WA,
 401923737,2026-11-22,17:00,2027,regular,,final,Tulsa,Stephen F. Austin,202,2617,81,62,1,American,Southland,,,Fifth Third Arena (TX),Frisco,TX,Hoopfest Women’s Basketball Classic
-401926980,2026-11-22,17:00,2027,regular,,scheduled,Idaho,Northwest Indian,70,131725,,,,Big Sky,,,,ICCU Arena,Moscow,ID,
 401926985,2026-11-22,17:00,2027,regular,,final,UC Riverside,Idaho State,27,304,44,64,,Big West,Big Sky,,,SRC Arena,Riverside,CA,
 401912957,2026-11-22,17:30,2027,regular,,final,Tennessee,UCLA,2633,26,80,90,,SEC,Big Ten,,,Food City Center,Knoxville,TN,
 401929635,2026-11-22,18:00,2027,regular,,final,Seattle U,Louisville,2547,97,78,97,1,WCC,ACC,,,Alaska Airlines Center,Anchorage,AK,Great Alaska Shootout - Championship
-401906985,2026-11-22,19:30,2027,regular,,scheduled,Kansas State,Missouri,2306,142,,,1,Big 12,SEC,,,T-Mobile Center,Kansas City,MO,28.5 Hoops Women's Invitational
-401913834,2026-11-22,20:00,2027,regular,,scheduled,Rice,Pepperdine,242,2492,,,,American,WCC,,,Tudor Fieldhouse,Houston,TX,
-401913903,2026-11-22,20:00,2027,regular,,scheduled,Texas A&M-Corpus Christi,West Florida,357,2697,,,,Southland,Atlantic Sun,,,Hilliard Center,Corpus Christi,TX,
-401929636,2026-11-22,20:30,2027,regular,,scheduled,Chicago State,Alaska Anchorage,2130,1,,,1,NEC,,,,Alaska Airlines Center,Anchorage,AK,Great Alaska Shootout - Consolation
+401906985,2026-11-22,19:30,2027,regular,,final,Missouri,Kansas State,142,2306,64,72,1,SEC,Big 12,,,T-Mobile Center,Kansas City,MO,28.5 Hoops Women's Invitational
+401913834,2026-11-22,20:00,2027,regular,,final,Rice,Pepperdine,242,2492,73,63,,American,WCC,,,Tudor Fieldhouse,Houston,TX,
+401913903,2026-11-22,20:00,2027,regular,,final,Texas A&M-Corpus Christi,West Florida,357,2697,68,44,,Southland,Atlantic Sun,,,Dugan Wellness Center,Corpus Christi,TX,
+401929636,2026-11-22,20:30,2027,regular,,final,Alaska Anchorage,Chicago State,1,2130,85,65,,,NEC,,,Alaska Airlines Center,Anchorage,AK,Great Alaska Shootout - Consolation
 401917716,2026-11-23,,2027,regular,,scheduled,Alaska Anchorage,Seattle U,1,2547,,,,,WCC,,,Alaska Airlines Center,Anchorage,AK,Great Alaska Shootout
 401926088,2026-11-23,11:00,2027,regular,,scheduled,Navy,Toledo,2426,2649,,,1,Patriot,MAC,,,Baha Mar Convention Center,Nassau,Bahamas,Baha Mar Pink Flamingo Championship
 401916024,2026-11-23,12:00,2027,regular,,scheduled,Michigan State,Alcorn State,127,2016,,,1,Big Ten,SWAC,,,Raider Arena,Destin,FL,Emerald Coast Classic
