@@ -1,55 +1,57 @@
 {
- "key": "26|2633|2026-11-22",
- "updated": "2026-11-20T02:34Z",
- "start_utc": "2026-11-22T22:30Z",
+ "key": "26|2599|2026-11-24",
+ "updated": "2026-11-23T01:58Z",
+ "start_utc": "2026-11-24T22:00Z",
  "espn": {
-  "event_id": "401912957",
-  "start_utc": "2026-11-22T22:30Z",
+  "event_id": "401921306",
+  "start_utc": "2026-11-24T22:00Z",
   "state": "pre",
   "tv": [
-   "ESPN"
+   "Peacock"
   ],
   "odds": null,
   "teams": {
-   "2633": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633_ncw.png",
-    "abbr": "TENN",
-    "record": "6-0",
+   "2599": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png",
+    "abbr": "SJU",
+    "record": "4-1",
     "rank": null,
     "home_away": "home"
    },
    "26": {
     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
     "abbr": "UCLA",
-    "record": "4-0",
+    "record": "6-0",
     "rank": 10,
     "home_away": "away"
    }
   },
   "venue": {
-   "name": "Food City Center",
-   "city": "Knoxville",
-   "state": "TN",
+   "name": "Mohegan Sun Arena",
+   "city": "Uncasville",
+   "state": "CT",
    "indoor": true
   }
  },
  "weather": null,
  "ai": {
-  "overview": "UCLA brings the Women's College Basketball Belt to Knoxville for a showdown with Tennessee on November 22, 2026. The Bruins have defended the belt 4 times in their current reign and enter as the clear Elo favorite despite playing on the road. Tennessee, with 17 previous belt reigns, will look to reclaim the championship at home.",
+  "overview": "UCLA brings the Women's College Basketball Belt to a neutral site showdown against St. The Bruins have defended the belt 6 times in this reign and enter undefeated at 6-0, while St. John's seeks their second-ever belt possession after falling to 4-1 with a loss at Oklahoma State.",
   "key_matchups": [
-   "UCLA's defensive intensity versus Tennessee's explosive offense that scored 110 against Middle Tennessee and 102 against Radford",
-   "Both teams riding 5-game winning streaks into what should be the first major test for either side this season",
-   "Tennessee's home court advantage after UCLA dominated their last meeting 99-77 in 2025"
+   "UCLA's perfect 6-0 start and five-game winning streak against St. John's stumbling into this matchup after their 63-77 loss at Oklahoma State",
+   "The Bruins' dominant recent form, including a 90-80 road win at Tennessee, versus St. John's offensive firepower shown in their 102-33 demolition of Wagner",
+   "UCLA's 3-0 all-time edge in this series, with the teams meeting for the first time ever with the belt on the line"
   ],
-  "betting_angles": "UCLA enters with the Elo edge despite Tennessee's perfect 6-0 record versus the Bruins' 4-0 mark. The Bruins have won the last two meetings between these programs, including a decisive 22-point victory in 2025. Tennessee's offensive numbers are eye-popping, but UCLA has been defensively stout, holding four of their last five opponents to 55 points or fewer.",
+  "betting_angles": "UCLA's undefeated record and five-game winning streak contrast sharply with St. John's coming off a loss. The Bruins have won all three previous meetings, most recently 73-65 in 2021, and our Elo model makes them a clear favorite. UCLA's recent victory margins have been impressive, including wins of 96-34 over Cal Poly and 76-44 over Arizona.",
   "predicted_winner": "UCLA",
-  "predicted_score": "UCLA 81, Tennessee 73",
-  "prediction_writeup": "UCLA's defensive excellence should keep this competitive even against Tennessee's high-scoring attack. The Bruins held Princeton to just 34 points in their most recent outing and have been consistent on that end all season. While Tennessee brings an undefeated record and home court, UCLA's recent dominance in the head-to-head series (winning the last two by margins of 22 and 12 points) suggests they know how to handle the Volunteers. The Elo model's clear preference for the Bruins combined with their defensive identity should be enough to retain the belt on the road.",
-  "written": "2026-11-20",
+  "predicted_score": "UCLA 78, St. John's 65",
+  "prediction_writeup": "UCLA's perfect 6-0 record and momentum from five straight wins, capped by a road victory at Tennessee, position them well to extend their belt reign. The Bruins have dominated this series historically, winning all three prior meetings including a 73-65 decision in their most recent 2021 encounter. St. John's enters having just lost 63-77 at Oklahoma State, breaking a three-game winning streak. With the Elo model favoring UCLA clearly and the Bruins showing consistent dominance this season, they should retain the belt in this neutral-site clash.",
+  "written": "2026-11-23",
   "model": "claude-sonnet-4-5",
   "factcheck": {
-   "attempts": 1,
-   "dropped": []
+   "attempts": 2,
+   "dropped": [
+    "24"
+   ]
   }
  }
 }
