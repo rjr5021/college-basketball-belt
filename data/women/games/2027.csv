@@ -1151,58 +1151,58 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401913767,2026-11-22,11:30,2027,regular,,final,Maine,Pennsylvania,311,219,50,77,,Am. East,Ivy,,,Skip Chappelle Court in Memorial Gymnasium,Orono,ME,
 401918820,2026-11-22,12:00,2027,regular,,final,Kansas City,Missouri State,140,2623,90,94,1,Summit,CUSA,,,T-Mobile Center,Kansas City,MO,28.5 Hoops Women's Invitational
 401911747,2026-11-22,13:00,2027,regular,,final,Fordham,Buffalo,2230,2084,48,60,,A-10,MAC,,,Rose Hill Gym,Bronx,NY,
-401912982,2026-11-22,13:00,2027,regular,,scheduled,Georgia,Louisiana Tech,61,2348,,,,SEC,Sun Belt,,,Stegeman Coliseum,Athens,GA,
+401912982,2026-11-22,13:00,2027,regular,,final,Georgia,Louisiana Tech,61,2348,63,58,,SEC,Sun Belt,,,Stegeman Coliseum,Athens,GA,
 401913718,2026-11-22,13:00,2027,regular,,final,Princeton,Georgia Tech,163,59,68,45,,Ivy,ACC,,,Jadwin Gymnasium,Princeton,NJ,
-401913815,2026-11-22,13:00,2027,regular,,scheduled,Merrimack,UMass Lowell,2771,2349,,,,Metro,Am. East,,,Hammel Court,North Andover,MA,
-401913825,2026-11-22,13:00,2027,regular,,scheduled,UNC Wilmington,East Carolina,350,151,,,,CAA,American,,,Trask Coliseum,Wilmington,NC,
-401913867,2026-11-22,13:00,2027,regular,,scheduled,South Florida,Texas Tech,58,2641,,,1,American,Big 12,,,State Farm Field House,Kissimmee,FL,WBCA Showcase
+401913815,2026-11-22,13:00,2027,regular,,final,Merrimack,UMass Lowell,2771,2349,56,60,,Metro,Am. East,,,Hammel Court,North Andover,MA,
+401913825,2026-11-22,13:00,2027,regular,,final,UNC Wilmington,East Carolina,350,151,63,64,,CAA,American,,,Trask Coliseum,Wilmington,NC,
+401913867,2026-11-22,13:00,2027,regular,,final,South Florida,Texas Tech,58,2641,53,55,1,American,Big 12,,,State Farm Field House,Kissimmee,FL,WBCA Showcase
 401918784,2026-11-22,13:00,2027,regular,,final,Omaha,Air Force,2437,2005,61,58,,Summit,Mountain West,,,Baxter Arena,Omaha,NE,
-401918844,2026-11-22,13:00,2027,regular,,scheduled,Texas,Ohio State,251,194,,,1,SEC,Big Ten,,,Dickies Arena,Fort Worth,TX,Hoops with Heart
+401918844,2026-11-22,13:00,2027,regular,,final,Texas,Ohio State,251,194,75,61,1,SEC,Big Ten,,,Ariat Arena,Fort Worth,TX,Hoops with Heart
 401918890,2026-11-22,13:00,2027,regular,,final,Wisconsin,Lafayette,275,322,83,41,,Big Ten,Patriot,,,Kohl Center,Madison,WI,
 401921242,2026-11-22,13:00,2027,regular,,final,Penn State,Saint Joseph's,213,2603,66,71,,Big Ten,A-10,,,Rec Hall,University Park,PA,
 401926016,2026-11-22,13:00,2027,regular,,final,Loyola Maryland,Drexel,2352,2182,44,53,,Patriot,CAA,,,Reitz Arena,Baltimore,MD,
-401911795,2026-11-22,14:00,2027,regular,,scheduled,Creighton,Nebraska,156,158,,,,Big East,Big Ten,,,Liberty First Credit Union Arena,Omaha,NE,
-401912509,2026-11-22,14:00,2027,regular,,scheduled,Liberty,Lees McRae,2335,2327,,,,CUSA,,,,Liberty Arena (VA),Lynchburg,VA,
-401913681,2026-11-22,14:00,2027,regular,,scheduled,Richmond,Holy Cross,257,107,,,,A-10,Patriot,,,Robins Center,Richmond,VA,
-401913778,2026-11-22,14:00,2027,regular,,scheduled,Boston University,New Hampshire,104,160,,,,Patriot,Am. East,,,Case Gym,Boston,MA,
-401918543,2026-11-22,14:00,2027,regular,,scheduled,Samford,Abilene Christian,2535,2000,,,,SoCon,UAC,,,Pete Hanna Center,Homewood,AL,
-401918669,2026-11-22,14:00,2027,regular,,scheduled,SE Louisiana,Louisiana,2545,309,,,,Southland,Sun Belt,,,University Center,Hammond,LA,
-401918705,2026-11-22,14:00,2027,regular,,scheduled,Arkansas State,North Texas,2032,249,,,1,Sun Belt,American,,,Fifth Third Arena (TX),Frisco,TX,Hoopfest Women’s Basketball Classic
-401918928,2026-11-22,14:00,2027,regular,,scheduled,Indiana,Southern Indiana,84,88,,,,Big Ten,OVC,,,Simon Skjodt Assembly Hall,Bloomington,IN,
-401919070,2026-11-22,14:00,2027,regular,,scheduled,Temple,Georgetown,218,46,,,,American,Big East,,,Liacouras Center,Philadelphia,PA,
-401919694,2026-11-22,14:00,2027,regular,,scheduled,Stonehill,Illinois State,284,2287,,,,NEC,MVC,,,Merkert Gymnasium,South Easton,MA,
-401920018,2026-11-22,14:00,2027,regular,,scheduled,SIU Edwardsville,Valparaiso,2565,2674,,,,OVC,MVC,,,First Community Arena,Edwardsville,IL,
-401920254,2026-11-22,14:00,2027,regular,,scheduled,Butler,Eastern Michigan,2086,2199,,,,Big East,MAC,,,Hinkle Fieldhouse,Indianapolis,IN,
-401926001,2026-11-22,14:00,2027,regular,,scheduled,Vermont,Central Connecticut,261,2115,,,,Am. East,NEC,,,Patrick Gymnasium,Burlington,VT,
-401927088,2026-11-22,14:00,2027,regular,,scheduled,Stetson,Wright State,56,2750,,,,Atlantic Sun,Horizon,,,Insight Credit Union Arena at Edmunds Center,DeLand,FL,
-401927938,2026-11-22,14:00,2027,regular,,scheduled,Delaware,Hampton,48,2261,,,,CUSA,CAA,,,Bob Carpenter Center,Newark,DE,
-401927958,2026-11-22,14:00,2027,regular,,scheduled,Western Carolina,Morehead State,2717,2413,,,,SoCon,OVC,,,Ramsey Center,Cullowhee,NC,
-401928200,2026-11-22,14:00,2027,regular,,scheduled,Gardner-Webb,Mercer,2241,2382,,,,Big South,SoCon,,,Paul Porter Arena,Boiling Springs,NC,
-401906967,2026-11-22,15:00,2027,regular,,scheduled,South Dakota State,Kansas,2571,2305,,,1,Summit,Big 12,,,T-Mobile Center,Kansas City,MO,28.5 Hoops Women's Invitational
-401913739,2026-11-22,15:00,2027,regular,,scheduled,NC State,Coastal Carolina,152,324,,,,ACC,Sun Belt,,,Reynolds Coliseum,Raleigh,NC,
-401917932,2026-11-22,15:00,2027,regular,,scheduled,Iowa State,Drake,66,2181,,,,Big 12,MVC,,,Hilton Coliseum,Ames,IA,
-401918468,2026-11-22,15:00,2027,regular,,scheduled,Baylor,Northern Kentucky,239,94,,,,Big 12,Horizon,,,Foster Pavilion,Waco,TX,
-401918858,2026-11-22,15:00,2027,regular,,scheduled,Southern Miss,Mississippi State,2572,344,,,,Sun Belt,SEC,,,Reed Green Coliseum,Hattiesburg,MS,
-401918911,2026-11-22,15:00,2027,regular,,scheduled,Minnesota,Central Michigan,135,2117,,,,Big Ten,MAC,,,The Barn by Blue Cross and Blue Shield of Minnesota,Minneapolis,MN,
-401923333,2026-11-22,15:00,2027,regular,,scheduled,Tennessee State,UT Arlington,2634,250,,,,OVC,UAC,,,Gentry Center,Nashville,TN,
-401924634,2026-11-22,15:00,2027,regular,,scheduled,Ole Miss,Alabama A&M,145,2010,,,,SEC,SWAC,,,The Sandy and John Black Pavilion at Ole Miss,Oxford,MS,
-401926953,2026-11-22,15:00,2027,regular,,scheduled,Southern Utah,Eastern Washington,253,331,,,,Big Sky,Big Sky,,,America First Event Center,Cedar City,UT,
-401927019,2026-11-22,15:00,2027,regular,,scheduled,Colorado State,Weber State,36,2692,,,,Pac-12,Big Sky,,,Moby Arena,Fort Collins,CO,
-401918004,2026-11-22,15:30,2027,regular,,scheduled,TCU,Utah State,2628,328,,,1,Big 12,Pac-12,,,Dickies Arena,Fort Worth,TX,Hoops with Heart
-401909674,2026-11-22,16:00,2027,regular,,scheduled,San Diego State,Winthrop,21,2737,,,,Pac-12,Big South,,,Viejas Arena,San Diego,CA,
-401913861,2026-11-22,16:00,2027,regular,,scheduled,Wyoming,Harvard,2751,108,,,,Mountain West,Ivy,,,Arena-Auditorium,Laramie,WY,
-401920467,2026-11-22,16:00,2027,regular,,scheduled,Boise State,UC Davis,68,302,,,,Pac-12,Mountain West,,,ExtraMile Arena,Boise,ID,
-401925981,2026-11-22,16:00,2027,regular,,scheduled,South Carolina State,Charleston Southern,2569,2127,,,,MEAC,Big South,,,Smith-Hammond-Middleton Memorial Center,Orangeburg,SC,
-401926988,2026-11-22,16:00,2027,regular,,scheduled,Montana,Montana State-Northern,149,569,,,,Big Sky,,,,Dahlberg Arena,Missoula,MT,
-401907053,2026-11-22,17:00,2027,regular,,scheduled,Oklahoma State,Wichita State,197,2724,,,1,Big 12,American,,,T-Mobile Center,Kansas City,MO,28.5 Hoops Women's Invitational
-401915983,2026-11-22,17:00,2027,regular,,scheduled,Portland,Stanford,2501,24,,,,WCC,ACC,,,Chiles Center,Portland,OR,
-401917717,2026-11-22,17:00,2027,regular,,scheduled,San Francisco,Cal State Bakersfield,2539,2934,,,,WCC,Big West,,,The Sobrato Center,San Francisco,CA,
-401921465,2026-11-22,17:00,2027,regular,,scheduled,Washington,Cal Poly,264,13,,,,Big Ten,Big West,,,Alaska Airlines Arena,Seattle,WA,
-401923737,2026-11-22,17:00,2027,regular,,scheduled,Tulsa,Stephen F. Austin,202,2617,,,1,American,Southland,,,Fifth Third Arena (TX),Frisco,TX,Hoopfest Women’s Basketball Classic
+401911795,2026-11-22,14:00,2027,regular,,final,Creighton,Nebraska,156,158,45,55,,Big East,Big Ten,,,Liberty First Credit Union Arena,Omaha,NE,
+401912509,2026-11-22,14:00,2027,regular,,final,Liberty,Lees McRae,2335,2327,94,43,,CUSA,,,,Liberty Arena (VA),Lynchburg,VA,
+401913681,2026-11-22,14:00,2027,regular,,final,Richmond,Holy Cross,257,107,81,69,,A-10,Patriot,,,Robins Center,Richmond,VA,
+401913778,2026-11-22,14:00,2027,regular,,final,Boston University,New Hampshire,104,160,59,67,,Patriot,Am. East,,,Case Gym,Boston,MA,
+401918543,2026-11-22,14:00,2027,regular,,final,Samford,Abilene Christian,2535,2000,67,90,,SoCon,UAC,,,Pete Hanna Center,Homewood,AL,
+401918669,2026-11-22,14:00,2027,regular,,final,SE Louisiana,Louisiana,2545,309,68,74,,Southland,Sun Belt,,,University Center,Hammond,LA,
+401918705,2026-11-22,14:00,2027,regular,,final,Arkansas State,North Texas,2032,249,71,74,1,Sun Belt,American,,,Fifth Third Arena (TX),Frisco,TX,Hoopfest Women’s Basketball Classic
+401918928,2026-11-22,14:00,2027,regular,,final,Indiana,Southern Indiana,84,88,68,59,,Big Ten,OVC,,,Simon Skjodt Assembly Hall,Bloomington,IN,
+401919070,2026-11-22,14:00,2027,regular,,final,Temple,Georgetown,218,46,82,73,,American,Big East,,,Liacouras Center,Philadelphia,PA,
+401919694,2026-11-22,14:00,2027,regular,,final,Stonehill,Illinois State,284,2287,45,79,,NEC,MVC,,,Merkert Gymnasium,South Easton,MA,
+401920018,2026-11-22,14:00,2027,regular,,final,SIU Edwardsville,Valparaiso,2565,2674,76,69,,OVC,MVC,,,First Community Arena,Edwardsville,IL,
+401920254,2026-11-22,14:00,2027,regular,,final,Butler,Eastern Michigan,2086,2199,77,51,,Big East,MAC,,,Hinkle Fieldhouse,Indianapolis,IN,
+401926001,2026-11-22,14:00,2027,regular,,final,Vermont,Central Connecticut,261,2115,71,59,,Am. East,NEC,,,Patrick Gymnasium,Burlington,VT,
+401927088,2026-11-22,14:00,2027,regular,,final,Stetson,Wright State,56,2750,73,54,,Atlantic Sun,Horizon,,,Insight Credit Union Arena at Edmunds Center,DeLand,FL,
+401927938,2026-11-22,14:00,2027,regular,,final,Delaware,Hampton,48,2261,55,54,,CUSA,CAA,,,Bob Carpenter Center,Newark,DE,
+401927958,2026-11-22,14:00,2027,regular,,final,Western Carolina,Morehead State,2717,2413,65,55,,SoCon,OVC,,,Ramsey Center,Cullowhee,NC,
+401928200,2026-11-22,14:00,2027,regular,,final,Gardner-Webb,Mercer,2241,2382,44,52,,Big South,SoCon,,,Paul Porter Arena,Boiling Springs,NC,
+401906967,2026-11-22,15:00,2027,regular,,final,South Dakota State,Kansas,2571,2305,77,70,1,Summit,Big 12,,,T-Mobile Center,Kansas City,MO,28.5 Hoops Women's Invitational
+401913739,2026-11-22,15:00,2027,regular,,final,NC State,Coastal Carolina,152,324,85,64,,ACC,Sun Belt,,,Reynolds Coliseum,Raleigh,NC,
+401917932,2026-11-22,15:00,2027,regular,,final,Iowa State,Drake,66,2181,62,42,,Big 12,MVC,,,Hilton Coliseum,Ames,IA,
+401918468,2026-11-22,15:00,2027,regular,,final,Baylor,Northern Kentucky,239,94,96,42,,Big 12,Horizon,,,Foster Pavilion,Waco,TX,
+401918858,2026-11-22,15:00,2027,regular,,final,Southern Miss,Mississippi State,2572,344,73,90,,Sun Belt,SEC,,,Reed Green Coliseum,Hattiesburg,MS,
+401918911,2026-11-22,15:00,2027,regular,,final,Minnesota,Central Michigan,135,2117,82,31,,Big Ten,MAC,,,The Barn by Blue Cross and Blue Shield of Minnesota,Minneapolis,MN,
+401923333,2026-11-22,15:00,2027,regular,,final,Tennessee State,UT Arlington,2634,250,55,95,,OVC,UAC,,,Gentry Center,Nashville,TN,
+401924634,2026-11-22,15:00,2027,regular,,final,Ole Miss,Alabama A&M,145,2010,66,47,,SEC,SWAC,,,The Sandy and John Black Pavilion at Ole Miss,Oxford,MS,
+401926953,2026-11-22,15:00,2027,regular,,final,Southern Utah,Eastern Washington,253,331,55,78,,Big Sky,Big Sky,,,America First Event Center,Cedar City,UT,
+401927019,2026-11-22,15:00,2027,regular,,final,Colorado State,Weber State,36,2692,78,57,,Pac-12,Big Sky,,,Moby Arena,Fort Collins,CO,
+401918004,2026-11-22,15:30,2027,regular,,final,Utah State,TCU,328,2628,26,85,1,Pac-12,Big 12,,,Ariat Arena,Fort Worth,TX,Hoops with Heart
+401909674,2026-11-22,16:00,2027,regular,,final,San Diego State,Winthrop,21,2737,63,57,,Pac-12,Big South,,,Viejas Arena,San Diego,CA,
+401913861,2026-11-22,16:00,2027,regular,,final,Wyoming,Harvard,2751,108,40,62,,Mountain West,Ivy,,,Arena-Auditorium,Laramie,WY,
+401920467,2026-11-22,16:00,2027,regular,,final,Boise State,UC Davis,68,302,61,65,,Pac-12,Mountain West,,,ExtraMile Arena,Boise,ID,
+401925981,2026-11-22,16:00,2027,regular,,final,South Carolina State,Charleston Southern,2569,2127,63,61,,MEAC,Big South,,,Smith-Hammond-Middleton Memorial Center,Orangeburg,SC,
+401926988,2026-11-22,16:00,2027,regular,,final,Montana,Montana State-Northern,149,569,98,57,,Big Sky,,,,Dahlberg Arena,Missoula,MT,
+401907053,2026-11-22,17:00,2027,regular,,final,Oklahoma State,Wichita State,197,2724,92,43,1,Big 12,American,,,T-Mobile Center,Kansas City,MO,28.5 Hoops Women's Invitational
+401915983,2026-11-22,17:00,2027,regular,,final,Portland,Stanford,2501,24,73,62,,WCC,ACC,,,Chiles Center,Portland,OR,
+401917717,2026-11-22,17:00,2027,regular,,final,San Francisco,Cal State Bakersfield,2539,2934,81,58,,WCC,Big West,,,The Sobrato Center,San Francisco,CA,
+401921465,2026-11-22,17:00,2027,regular,,final,Washington,Cal Poly,264,13,93,42,,Big Ten,Big West,,,Alaska Airlines Arena,Seattle,WA,
+401923737,2026-11-22,17:00,2027,regular,,final,Tulsa,Stephen F. Austin,202,2617,81,62,1,American,Southland,,,Fifth Third Arena (TX),Frisco,TX,Hoopfest Women’s Basketball Classic
 401926980,2026-11-22,17:00,2027,regular,,scheduled,Idaho,Northwest Indian,70,131725,,,,Big Sky,,,,ICCU Arena,Moscow,ID,
-401926985,2026-11-22,17:00,2027,regular,,scheduled,UC Riverside,Idaho State,27,304,,,,Big West,Big Sky,,,SRC Arena,Riverside,CA,
-401912957,2026-11-22,17:30,2027,regular,,scheduled,Tennessee,UCLA,2633,26,,,,SEC,Big Ten,,,Food City Center,Knoxville,TN,
-401929635,2026-11-22,18:00,2027,regular,,scheduled,Seattle U,Louisville,2547,97,,,1,WCC,ACC,,,Alaska Airlines Center,Anchorage,AK,Great Alaska Shootout - Championship
+401926985,2026-11-22,17:00,2027,regular,,final,UC Riverside,Idaho State,27,304,44,64,,Big West,Big Sky,,,SRC Arena,Riverside,CA,
+401912957,2026-11-22,17:30,2027,regular,,final,Tennessee,UCLA,2633,26,80,90,,SEC,Big Ten,,,Food City Center,Knoxville,TN,
+401929635,2026-11-22,18:00,2027,regular,,final,Seattle U,Louisville,2547,97,78,97,1,WCC,ACC,,,Alaska Airlines Center,Anchorage,AK,Great Alaska Shootout - Championship
 401906985,2026-11-22,19:30,2027,regular,,scheduled,Kansas State,Missouri,2306,142,,,1,Big 12,SEC,,,T-Mobile Center,Kansas City,MO,28.5 Hoops Women's Invitational
 401913834,2026-11-22,20:00,2027,regular,,scheduled,Rice,Pepperdine,242,2492,,,,American,WCC,,,Tudor Fieldhouse,Houston,TX,
 401913903,2026-11-22,20:00,2027,regular,,scheduled,Texas A&M-Corpus Christi,West Florida,357,2697,,,,Southland,Atlantic Sun,,,Hilliard Center,Corpus Christi,TX,
@@ -1379,7 +1379,6 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401913021,2026-11-26,20:00,2027,regular,,scheduled,Santa Clara,Xavier,2541,2752,,,1,WCC,Big East,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,Paradise Jam - Island Division
 401903571,2026-11-26,21:00,2027,regular,,scheduled,Miami (OH),Cincinnati,193,2132,,,1,MAC,Big 12,,,Hard Rock Hotel Riviera Maya,Cancun,Mexico,Cancun Challenge - Riviera Division
 401915694,2026-11-27,,2027,regular,,scheduled,TBD,Manhattan,-1,2363,,,,,Metro,,,,,,FIU Tournament
-401926029,2026-11-27,,2027,regular,,scheduled,Tulsa,Central Michigan,202,2117,,,1,American,MAC,,,Community School of Naples,Naples,FL,Florida Gulf Classic
 401915875,2026-11-27,10:00,2027,regular,,scheduled,Boise State,Stetson,68,56,,,1,Pac-12,Atlantic Sun,,,Ocean Center,Daytona Beach,FL,Daytona Beach Classic
 401921081,2026-11-27,10:00,2027,regular,,scheduled,George Mason,Vermont,2244,261,,,1,A-10,Am. East,,,Ruben Rodriguez Coliseum,Bayamon,Puerto Rico,Puerto Rico Clasico
 401921394,2026-11-27,10:00,2027,regular,,scheduled,Syracuse,Auburn,183,2,,,1,ACC,SEC,,,Coliseo Guillermo Angulo,Carolina,Puerto Rico,Puerto Rico Shootout
@@ -1400,6 +1399,7 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401913904,2026-11-27,13:00,2027,regular,,scheduled,West Florida,UT Arlington,2697,250,,,1,Atlantic Sun,UAC,,,John A. Alario Sr. Event Center,Westwego,LA,Big Easy Classic
 401919536,2026-11-27,13:00,2027,regular,,scheduled,Bucknell,Delaware State,2083,2169,,,,Patriot,MEAC,,,Sojka Pavilion,Lewisburg,PA,
 401922844,2026-11-27,13:00,2027,regular,,scheduled,UIC,UT Rio Grande Valley,82,292,,,1,MVC,Southland,,,Tudor Fieldhouse,Houston,TX,Rice Invitational
+401926029,2026-11-27,13:15,2027,regular,,scheduled,Tulsa,Central Michigan,202,2117,,,1,American,MAC,,,Community School of Naples,Naples,FL,Florida Gulf Classic
 401903573,2026-11-27,13:30,2027,regular,,scheduled,Georgia,Maryland Eastern Shore,61,2379,,,1,SEC,MEAC,,,Hard Rock Hotel Riviera Maya,Cancun,Mexico,Cancun Challenge - Mayan Division
 401913719,2026-11-27,13:30,2027,regular,,scheduled,Georgia Tech,TCU,59,2628,,,1,ACC,Big 12,,,Suncoast Credit Union Arena,Fort Myers,FL,Fort Myers Tip-Off - Shell Division
 401918743,2026-11-27,13:30,2027,regular,,scheduled,North Florida,South Dakota,2454,233,,,,Atlantic Sun,Summit,,,UNF Arena,Jacksonville,FL,North Florida Invitational
@@ -1457,17 +1457,17 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401913030,2026-11-27,20:00,2027,regular,,scheduled,Seton Hall,South Florida,2550,58,,,1,Big East,American,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,Paradise Jam - Reef Division
 401920270,2026-11-27,20:00,2027,regular,,scheduled,Nevada,New Mexico State,2440,166,,,,Mountain West,CUSA,,,Lawlor Events Center,Reno,NV,Nugget Classic
 401903575,2026-11-27,21:00,2027,regular,,scheduled,Minnesota,Cincinnati,135,2132,,,1,Big Ten,Big 12,,,Hard Rock Hotel Riviera Maya,Cancun,Mexico,Cancun Challenge - Riviera Division
-401926030,2026-11-28,,2027,regular,,scheduled,Tulsa,Bowling Green,202,189,,,1,American,MAC,,,Community School of Naples,Naples,FL,Florida Gulf Classic
 401931130,2026-11-28,,2027,regular,,scheduled,California,East Carolina,25,151,,,,ACC,American,,,Haas Pavilion,Berkeley,CA,Raising the B.A.R. Invitational
 401903576,2026-11-28,11:00,2027,regular,,scheduled,Maryland Eastern Shore,Colorado,2379,38,,,1,MEAC,Big 12,,,Hard Rock Hotel Riviera Maya,Cancun,Mexico,Cancun Challenge - Mayan Division
 401915879,2026-11-28,11:00,2027,regular,,scheduled,Maine,Tulane,311,2655,,,1,Am. East,American,,,Ocean Center,Daytona Beach,FL,Daytona Beach Classic
 401918005,2026-11-28,11:00,2027,regular,,scheduled,Mississippi State,TCU,344,2628,,,1,SEC,Big 12,,,Suncoast Credit Union Arena,Fort Myers,FL,Fort Myers Tip-Off - Shell Division
 401918545,2026-11-28,11:00,2027,regular,,scheduled,Abilene Christian,South Dakota,2000,233,,,1,UAC,Summit,,,UNF Arena,Jacksonville,FL,North Florida Invitational
+401926030,2026-11-28,11:00,2027,regular,,scheduled,Tulsa,Bowling Green,202,189,,,1,American,MAC,,,Community School of Naples,Naples,FL,Florida Gulf Classic
 401930115,2026-11-28,11:00,2027,regular,,scheduled,TBD,TBD,-1,-2,,,1,,,,,Hynes Athletics Center,New Rochelle,NY,Iona Turkey Tip-Off - Consolation
-401912510,2026-11-28,12:00,2027,regular,,scheduled,Lehigh,Liberty,2329,2335,,,,Patriot,CUSA,,,Stabler Arena,Bethlehem,PA,Christmas City Classic
 401913041,2026-11-28,12:00,2027,regular,,scheduled,Providence,George Mason,2507,2244,,,1,Big East,A-10,,,Ruben Rodriguez Coliseum,Bayamon,Puerto Rico,Puerto Rico Clasico
 401915787,2026-11-28,12:00,2027,regular,,scheduled,Ohio State,VCU,194,2670,,,1,Big Ten,A-10,,,Henrico Sports & Events Center,Glen Allen,VA,4 Tha Culture Holiday Classic
 401918800,2026-11-28,12:00,2027,regular,,scheduled,North Dakota State,McNeese,2449,2377,,,1,Summit,Southland,,,McArthur Center,St. Petersburg,FL,St. Pete Showcase
+401925625,2026-11-28,12:00,2027,regular,,scheduled,North Carolina Central,Alabama A&M,2428,2010,,,1,MEAC,SWAC,,,Colonial Life Arena,Columbia,SC,PowHER Player Classic
 401927960,2026-11-28,12:00,2027,regular,,scheduled,Morehead State,Western Kentucky,2413,98,,,1,OVC,CUSA,,,Abessinio Court at Eleanor R. Baldwin Arena,Boca Raton,FL,FAU Thanksgiving Classic
 401930136,2026-11-28,12:00,2027,regular,,scheduled,TBD,TBD,-1,-2,,,1,,,,,Haas Pavilion,Berkeley,CA,Raising the B.A.R. Invitational - Consolation
 401921212,2026-11-28,12:30,2027,regular,,scheduled,TBD,TBD,-1,-2,,,1,,,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,Paradise Jam - Island Division - Consolation
@@ -1477,7 +1477,6 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401919899,2026-11-28,13:00,2027,regular,,scheduled,Monmouth,Fairleigh Dickinson,2405,161,,,,CAA,NEC,,,Hackensack Meridian Athletic Center,West Long Branch,NJ,
 401921395,2026-11-28,13:00,2027,regular,,scheduled,Dartmouth,St. Joseph's Brooklyn,159,131775,,,,Ivy,,,,Leede Arena,Hanover,NH,
 401922328,2026-11-28,13:00,2027,regular,,scheduled,William & Mary,Longwood,2729,2344,,,,CAA,Big South,,,Kaplan Arena,Williamsburg,VA,
-401925625,2026-11-28,13:00,2027,regular,,scheduled,North Carolina Central,Alabama A&M,2428,2010,,,1,MEAC,SWAC,,,Colonial Life Arena,Columbia,SC,PowHER Player Classic
 401925886,2026-11-28,13:00,2027,regular,,scheduled,Northeastern,Merrimack,111,2771,,,,CAA,Metro,,,Cabot Center,Boston,MA,
 401915880,2026-11-28,13:15,2027,regular,,scheduled,Missouri,Boise State,142,68,,,1,SEC,Pac-12,,,Ocean Center,Daytona Beach,FL,Daytona Beach Classic
 401919063,2026-11-28,13:15,2027,regular,,scheduled,UCF,Central Michigan,2116,2117,,,1,Big 12,MAC,,,Community School of Naples,Naples,FL,Florida Gulf Classic
@@ -1511,6 +1510,7 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401915881,2026-11-28,15:30,2027,regular,,scheduled,Kentucky,South Dakota State,96,2571,,,1,SEC,Summit,,,Ocean Center,Daytona Beach,FL,Daytona Beach Classic
 401923334,2026-11-28,15:30,2027,regular,,scheduled,UT Arlington,Fresno State,250,278,,,1,UAC,Pac-12,,,John A. Alario Sr. Event Center,Westwego,LA,Big Easy Classic
 401926026,2026-11-28,15:30,2027,regular,,scheduled,Charlotte,Texas A&M,2429,245,,,1,American,SEC,,,Community School of Naples,Naples,FL,Florida Gulf Classic
+401912510,2026-11-28,16:00,2027,regular,,scheduled,Lehigh,Liberty,2329,2335,,,,Patriot,CUSA,,,Stabler Arena,Bethlehem,PA,Christmas City Classic
 401917728,2026-11-28,16:00,2027,regular,,scheduled,Southern Utah,San Diego,253,301,,,,Big Sky,WCC,,,America First Event Center,Cedar City,UT,
 401918920,2026-11-28,16:00,2027,regular,,scheduled,Towson,Maryland,119,120,,,,CAA,Big Ten,,,SECU Arena,Towson,MD,
 401927103,2026-11-28,16:00,2027,regular,,scheduled,South Carolina Upstate,Georgia Southern-East Georgia,2908,134895,,,,Big South,,,,G.B. Hodge Center,Spartanburg,SC,
@@ -1621,6 +1621,7 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401928195,2026-11-30,18:00,2027,regular,,scheduled,Chattanooga,King (TN),236,2312,,,,SoCon,,,,McKenzie Arena,Chattanooga,TN,
 401930162,2026-11-30,18:00,2027,regular,,scheduled,Bryant,American International,2803,2022,,,,Am. East,,,,Chace Athletic Center,Smithfield,RI,
 401907168,2026-11-30,19:00,2027,regular,,scheduled,West Virginia,Coppin State,277,2154,,,,Big 12,MEAC,,,Hope Coliseum,Morgantown,WV,
+401917731,2026-11-30,19:00,2027,regular,,scheduled,San Francisco,Grand Canyon,2539,2253,,,,WCC,Mountain West,,,The Sobrato Center,San Francisco,CA,
 401919441,2026-11-30,19:00,2027,regular,,scheduled,Sacred Heart,Holy Cross,2529,107,,,,Metro,Patriot,,,William H. Pitt Center,Fairfield,CT,
 401927071,2026-11-30,19:00,2027,regular,,scheduled,Michigan,Southern Indiana,130,88,,,,Big Ten,OVC,,,Crisler Center,Ann Arbor,MI,
 401927472,2026-11-30,19:00,2027,regular,,scheduled,Prairie View A&M,UNT Dallas,2504,123546,,,,SWAC,,,,William J. Nicks Building,Prairie View,TX,
@@ -1630,7 +1631,6 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401918437,2026-11-30,20:00,2027,regular,,scheduled,Tarleton State,East Texas A&M,2627,2837,,,,UAC,Southland,,,EECU Center,Stephenville,TX,
 401919695,2026-11-30,20:00,2027,regular,,scheduled,Northwestern,Illinois State,77,2287,,,,Big Ten,MVC,,,Welsh-Ryan Arena,Evanston,IL,
 401923330,2026-11-30,20:00,2027,regular,,scheduled,Denver,Colorado Christian,2172,2862,,,,WCC,,,,Hamilton Gymnasium,Denver,CO,
-401917731,2026-11-30,21:00,2027,regular,,scheduled,San Francisco,Grand Canyon,2539,2253,,,,WCC,Mountain West,,,The Sobrato Center,San Francisco,CA,
 401927015,2026-11-30,21:00,2027,regular,,scheduled,Utah Tech,Park University Gilbert,3101,116420,,,,Big Sky,,,,Burns Arena,St. George,UT,
 401927841,2026-11-30,21:00,2027,regular,,scheduled,Long Beach State,Hope International,299,3091,,,,Big West,,,,LBS Financial Credit Union Pyramid,Long Beach,CA,
 401928313,2026-11-30,21:00,2027,regular,,scheduled,Oregon State,Southern,204,2582,,,,Pac-12,SWAC,,,Gill Coliseum,Corvallis,OR,
@@ -1889,7 +1889,7 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401915599,2026-12-06,13:00,2027,regular,,scheduled,Eastern Michigan,Canisius,2199,2099,,,,MAC,Metro,,,Gervin GameAbove Center,Ypsilanti,MI,
 401916168,2026-12-06,13:00,2027,regular,,scheduled,Dayton,Mount St. Mary's,2168,116,,,,A-10,Metro,,,UD Arena,Dayton,OH,
 401916199,2026-12-06,13:00,2027,regular,,scheduled,Mercyhurst,Niagara,2385,315,,,,NEC,Metro,,,Mercyhurst Athletic Center,Erie,PA,
-401918007,2026-12-06,13:00,2027,regular,,scheduled,TCU,Texas,2628,251,,,1,Big 12,SEC,,,Dickies Arena,Fort Worth,TX,Hoops with Heart
+401918007,2026-12-06,13:00,2027,regular,,scheduled,TCU,Texas,2628,251,,,1,Big 12,SEC,,,Ariat Arena,Fort Worth,TX,Hoops with Heart
 401918701,2026-12-06,13:00,2027,regular,,scheduled,Coastal Carolina,UNC Wilmington,324,350,,,,Sun Belt,CAA,,,The HTC Center,Conway,SC,
 401919093,2026-12-06,13:00,2027,regular,,scheduled,Northern Kentucky,Detroit Mercy,94,2174,,,,Horizon,Horizon,,,Truist Arena,Highland Heights,KY,
 401919412,2026-12-06,13:00,2027,regular,,scheduled,Lafayette,Rider,322,2520,,,,Patriot,Metro,,,Kirby Sports Center,Easton,PA,
