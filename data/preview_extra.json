@@ -1,48 +1,61 @@
 {
- "key": "11|193|2026-12-01",
- "updated": "2026-11-24T02:33Z",
- "start_utc": "2026-12-02T02:00Z",
+ "key": "11|235|2026-11-24",
+ "updated": "2026-11-24T14:13Z",
+ "start_utc": "2026-11-24T22:00Z",
  "espn": {
-  "event_id": "401909744",
-  "start_utc": "2026-12-02T02:00Z",
+  "event_id": "401921710",
+  "start_utc": "2026-11-24T22:00Z",
   "state": "pre",
   "tv": [
-   "ESPN+"
+   "ESPN2"
   ],
-  "odds": null,
+  "odds": {
+   "details": "ARIZ -7.5",
+   "over_under": 155.5,
+   "provider": "DraftKings"
+  },
   "teams": {
    "11": {
     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
     "abbr": "ARIZ",
-    "record": "4-1",
+    "record": "5-1",
     "rank": 8,
     "home_away": "home"
+   },
+   "235": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2507.png",
+    "abbr": "PROV",
+    "record": "5-1",
+    "rank": null,
+    "home_away": "away"
    }
   },
   "venue": {
-   "name": "McKale Center at ALKEME Arena",
-   "city": "Tucson",
-   "state": "AZ",
+   "name": "Lahaina Civic Center",
+   "city": "Maui",
+   "state": "HI",
    "indoor": true
   }
  },
  "weather": null,
  "ai": {
-  "overview": "Arizona puts the College Basketball Belt on the line for the first time in their current reign when they host New Orleans on December 1, 2026. The Wildcats claimed the belt somewhere in their recent stretch and now face a Privateers program that has never held the championship. This marks the first time these programs will meet with the lineal title at stake.",
+  "overview": "The Wildcats have defended the belt once in their current reign and will look to extend it against a Friars squad that has held the hardware twice before. This marks the first time these programs have ever met with the belt on the line.",
   "key_matchups": [
-   "Arizona riding a 4-game winning streak including an 85-79 victory over UConn in their most recent outing",
-   "New Orleans looking to claim their first-ever belt after bouncing back with a 75-70 road win at Texas Southern",
-   "Arizona's 3-0 all-time edge in the series, though the teams haven't met since 1993"
+   "Arizona's 5-game winning streak meets Providence's 4-game surge in a clash of hot teams",
+   "The all-time head-to-head stands dead even at 3-3 across 6 meetings, with Providence winning the last encounter 69-65 in 2015",
+   "Both teams enter at 5-1, but Arizona's recent wins include impressive performances against UConn and Auburn"
   ],
-  "betting_angles": "Arizona enters with a 4-1 record and winners of their last 4 games, while New Orleans sits at 1-2 with just one win in their last 5 outings. The Wildcats hold a perfect 3-0 mark in the all-time series, with their most recent meeting in 1993 resulting in an 80-62 Arizona victory. Our Elo model projects Arizona as a clear favorite in this matchup.",
+  "betting_angles": "Arizona has been rolling with five straight wins, including an 85-79 victory over UConn and an 80-69 road win at Auburn. Providence counters with four consecutive victories, most recently 72-66 over VCU and 67-53 over Colorado. Our Elo model gives Arizona a clear edge despite the even 3-3 all-time series.",
   "predicted_winner": "Arizona",
-  "predicted_score": "Arizona 88, New Orleans 65",
-  "prediction_writeup": "Arizona's current form is vastly superior, having won their last 4 games including quality victories over UConn and Auburn. New Orleans has struggled badly in recent outings, posting losses of 41-86 at Texas Tech and 57-100 at LSU before their lone recent win. The Wildcats' 3-0 all-time dominance in this series and clear Elo edge point to a comfortable home victory. Arizona should retain the belt with relative ease in their first defense of this reign.",
+  "predicted_score": "Arizona 78, Providence 71",
+  "prediction_writeup": "Arizona's current form is exceptional, with five straight wins including quality victories over UConn and at Auburn. The Wildcats have been scoring efficiently, posting 96, 85, 80, 90, and 104 points in their last five outings. While Providence has won four straight and matches Arizona's 5-1 record, the Friars' recent opponents haven't matched the caliber of Arizona's schedule. The Elo model's clear edge for Arizona, combined with their offensive firepower, suggests the Wildcats keep the belt on this neutral court.",
   "written": "2026-11-24",
   "model": "claude-sonnet-4-5",
   "factcheck": {
    "attempts": 2,
-   "dropped": []
+   "dropped": [
+    "24"
+   ]
   }
  }
 }
