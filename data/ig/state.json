@@ -20,25 +20,10 @@
   "2026-11-20 08:34 result wcbb|UCLA|Cal Poly|2026-11-19 https://www.instagram.com/p/Df9xmWtFJsN/",
   "2026-11-22 15:02 preview wcbb|UCLA|Tennessee|2026-11-22 https://www.instagram.com/p/DgDnkwkoEJo/",
   "2026-11-22 19:48 result wcbb|UCLA|Tennessee|2026-11-22 https://www.instagram.com/p/DgEITU9IM9D/",
-  "2026-11-23 10:01 preview cbb|Arizona|Colorado State|2026-11-23 https://www.instagram.com/p/DgFp9DdINJI/"
+  "2026-11-23 10:01 preview cbb|Arizona|Colorado State|2026-11-23 https://www.instagram.com/p/DgFp9DdINJI/",
+  "2026-11-24 02:15 result cbb|Arizona|Colorado State|2026-11-23 https://www.instagram.com/p/DgHZYy9EYdB/"
  ],
- "pending": {
-  "cbb|Arizona|Colorado State|2026-11-23": {
-   "belt_name": "The College Basketball Belt",
-   "date": "2026-11-23",
-   "defenses": 0,
-   "espn_id": "401909743",
-   "espn_path": "basketball/mens-college-basketball",
-   "game_no": 2546,
-   "holder": "Arizona",
-   "holder_short": "Arizona",
-   "lg": "cbb",
-   "opponent": "Colorado State",
-   "opponent_short": "Colorado State",
-   "reign_no": 16,
-   "since": "2026-11-18"
-  }
- },
+ "pending": {},
  "previews": [
   "wcbb|UCLA|UC Irvine|2026-11-05",
   "cbb|Michigan|UConn|2026-11-06",
@@ -62,6 +47,7 @@
   "wcbb|UCLA|Princeton|2026-11-15",
   "cbb|UConn|Arizona|2026-11-18",
   "wcbb|UCLA|Cal Poly|2026-11-19",
-  "wcbb|UCLA|Tennessee|2026-11-22"
+  "wcbb|UCLA|Tennessee|2026-11-22",
+  "cbb|Arizona|Colorado State|2026-11-23"
  ]
 }
