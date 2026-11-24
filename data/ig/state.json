@@ -21,7 +21,8 @@
   "2026-11-22 15:02 preview wcbb|UCLA|Tennessee|2026-11-22 https://www.instagram.com/p/DgDnkwkoEJo/",
   "2026-11-22 19:48 result wcbb|UCLA|Tennessee|2026-11-22 https://www.instagram.com/p/DgEITU9IM9D/",
   "2026-11-23 10:01 preview cbb|Arizona|Colorado State|2026-11-23 https://www.instagram.com/p/DgFp9DdINJI/",
-  "2026-11-24 02:15 result cbb|Arizona|Colorado State|2026-11-23 https://www.instagram.com/p/DgHZYy9EYdB/"
+  "2026-11-24 02:15 result cbb|Arizona|Colorado State|2026-11-23 https://www.instagram.com/p/DgHZYy9EYdB/",
+  "2026-11-24 13:58 preview cbb|Arizona|Providence|2026-11-24 https://www.instagram.com/p/DgIp1sglILt/"
  ],
  "pending": {
   "cbb|Arizona|Providence|2026-11-24": {
@@ -65,7 +66,8 @@
   "cbb|UConn|Arizona|2026-11-18",
   "wcbb|UCLA|Cal Poly|2026-11-19",
   "wcbb|UCLA|Tennessee|2026-11-22",
-  "cbb|Arizona|Colorado State|2026-11-23"
+  "cbb|Arizona|Colorado State|2026-11-23",
+  "cbb|Arizona|Providence|2026-11-24"
  ],
  "results": [
   "wcbb|UCLA|Lehigh|2026-11-02",
