@@ -23,7 +23,23 @@
   "2026-11-23 10:01 preview cbb|Arizona|Colorado State|2026-11-23 https://www.instagram.com/p/DgFp9DdINJI/",
   "2026-11-24 02:15 result cbb|Arizona|Colorado State|2026-11-23 https://www.instagram.com/p/DgHZYy9EYdB/"
  ],
- "pending": {},
+ "pending": {
+  "wcbb|UCLA|St. John's|2026-11-24": {
+   "belt_name": "The Women's College Basketball Belt",
+   "date": "2026-11-24",
+   "defenses": 6,
+   "espn_id": "401921306",
+   "espn_path": "basketball/womens-college-basketball",
+   "game_no": 1426,
+   "holder": "UCLA",
+   "holder_short": "UCLA",
+   "lg": "wcbb",
+   "opponent": "St. John's",
+   "opponent_short": "St. John's",
+   "reign_no": 4,
+   "since": "2026-04-05"
+  }
+ },
  "previews": [
   "wcbb|UCLA|UC Irvine|2026-11-05",
   "cbb|Michigan|UConn|2026-11-06",
