@@ -1,48 +1,61 @@
 {
- "key": "11|193|2026-12-01",
- "updated": "2026-11-25T00:05Z",
- "start_utc": "2026-12-02T02:00Z",
+ "key": "11|220|2026-11-25",
+ "updated": "2026-11-25T09:04Z",
+ "start_utc": "2026-11-25T19:30Z",
  "espn": {
-  "event_id": "401909744",
-  "start_utc": "2026-12-02T02:00Z",
+  "event_id": "401921715",
+  "start_utc": "2026-11-25T19:30Z",
   "state": "pre",
   "tv": [
-   "ESPN+"
+   "ESPN"
   ],
-  "odds": null,
+  "odds": {
+   "details": "ARIZ -5.5",
+   "over_under": 154.5,
+   "provider": "DraftKings"
+  },
   "teams": {
    "11": {
     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
     "abbr": "ARIZ",
-    "record": "5-1",
+    "record": "6-1",
     "rank": 8,
     "home_away": "home"
+   },
+   "220": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
+    "abbr": "MISS",
+    "record": "6-0",
+    "rank": null,
+    "home_away": "away"
    }
   },
   "venue": {
-   "name": "McKale Center at ALKEME Arena",
-   "city": "Tucson",
-   "state": "AZ",
+   "name": "Lahaina Civic Center",
+   "city": "Maui",
+   "state": "HI",
    "indoor": true
   }
  },
  "weather": null,
  "ai": {
-  "overview": "Arizona puts the College Basketball Belt on the line when they host New Orleans on December 1, 2026. The Wildcats have defended the belt once in their current reign and look to extend their streak against a Privateers squad that has never held the championship. This marks the first time these programs will meet with the belt at stake.",
+  "overview": "The Wildcats have defended the belt twice in this reign, while the Rebels are chasing their third belt tenure in program history. These programs split their all-time series at one win apiece, but have never met with the lineal championship on the line.",
   "key_matchups": [
-   "Arizona riding a 5-game winning streak including wins over UConn and Auburn",
-   "New Orleans seeking their first-ever belt after three all-time losses to Arizona",
-   "Wildcats' high-scoring offense averaging over 90 points in recent games"
+   "Arizona's 96-83 win over Colorado State and 85-79 victory over UConn show they can score in bunches, but Ole Miss countered with a 92-60 rout of Central Arkansas and a 91-51 demolition of SE Louisiana",
+   "Ole Miss enters undefeated at 6-0 while Arizona owns a 6-1 record, with both teams riding five-game winning streaks into this neutral court clash",
+   "The all-time series is knotted at 1-1, with Arizona winning the most recent meeting 66-56 in 2001 and Ole Miss taking the first encounter 75-70 back in 1953"
   ],
-  "betting_angles": "Arizona enters on a 5-game winning streak with commanding victories, including a 96\u201383 win over Colorado State and an 80\u201369 road win at Auburn. New Orleans has struggled recently with losses of 41\u201386 at Texas Tech and 57\u2013100 at LSU before their most recent 75\u201370 win at Texas Southern. Our Elo model makes Arizona a clear favorite, and the Wildcats hold a 3-0 all-time edge in this series.",
+  "betting_angles": "Both teams arrive in excellent form, each winning their last five games. Arizona has faced tougher competition recently with wins over UConn and at Auburn, while Ole Miss has been dominant but against less challenging opponents. The Elo model clearly favors Arizona despite the Rebels' unblemished record.",
   "predicted_winner": "Arizona",
-  "predicted_score": "Arizona 88, New Orleans 64",
-  "prediction_writeup": "Arizona has been dominant with five straight wins and owns a perfect 3-0 record against New Orleans all-time. The Wildcats have been scoring efficiently, posting 96 against Colorado State and 104 against Cal Poly in their last five games. New Orleans has struggled on the road this season with heavy defeats at Texas Tech and LSU. With the belt on the line at home and momentum firmly on their side, Arizona should retain the championship comfortably.",
+  "predicted_score": "Arizona 82, Ole Miss 74",
+  "prediction_writeup": "Arizona has already proven they can handle quality opponents this season, posting an 85-79 victory over UConn and an 80-69 road win at Auburn. Ole Miss brings an undefeated record but has yet to face the level of competition Arizona has navigated. The Wildcats' 84-66 win over Providence in their most recent outing suggests they're peaking at the right time. With the Elo model backing Arizona as a clear favorite and the Wildcats having already defended the belt twice this reign, they should have enough firepower to extend their championship run on the neutral court.",
   "written": "2026-11-25",
   "model": "claude-sonnet-4-5",
   "factcheck": {
    "attempts": 2,
-   "dropped": []
+   "dropped": [
+    "25"
+   ]
   }
  }
 }

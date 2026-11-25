@@ -102,5 +102,19 @@
    "over_under": 155.5,
    "provider": "DraftKings"
   }
+ },
+ {
+  "key": "11|220|2026-11-25",
+  "date": "2026-11-25",
+  "holder": "11",
+  "challenger": "220",
+  "pick": "11",
+  "score": "Arizona 82, Ole Miss 74",
+  "made": "2026-11-25",
+  "line": {
+   "details": "ARIZ -5.5",
+   "over_under": 154.5,
+   "provider": "DraftKings"
+  }
  }
 ]
