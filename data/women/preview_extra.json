@@ -1,57 +1,55 @@
 {
- "key": "26|2599|2026-11-24",
- "updated": "2026-11-23T01:58Z",
- "start_utc": "2026-11-24T22:00Z",
+ "key": "26|219|2026-11-29",
+ "updated": "2026-11-25T00:06Z",
+ "start_utc": "2026-11-29T22:00Z",
  "espn": {
-  "event_id": "401921306",
-  "start_utc": "2026-11-24T22:00Z",
+  "event_id": "401918899",
+  "start_utc": "2026-11-29T22:00Z",
   "state": "pre",
   "tv": [
-   "Peacock"
+   "B1G+"
   ],
   "odds": null,
   "teams": {
-   "2599": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png",
-    "abbr": "SJU",
-    "record": "4-1",
-    "rank": null,
-    "home_away": "home"
-   },
    "26": {
     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
     "abbr": "UCLA",
-    "record": "6-0",
+    "record": "7-0",
     "rank": 10,
+    "home_away": "home"
+   },
+   "219": {
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/219.png",
+    "abbr": "PENN",
+    "record": "7-1",
+    "rank": null,
     "home_away": "away"
    }
   },
   "venue": {
-   "name": "Mohegan Sun Arena",
-   "city": "Uncasville",
-   "state": "CT",
+   "name": "Pauley Pavilion",
+   "city": "Los Angeles",
+   "state": "CA",
    "indoor": true
   }
  },
  "weather": null,
  "ai": {
-  "overview": "UCLA brings the Women's College Basketball Belt to a neutral site showdown against St. The Bruins have defended the belt 6 times in this reign and enter undefeated at 6-0, while St. John's seeks their second-ever belt possession after falling to 4-1 with a loss at Oklahoma State.",
+  "overview": "UCLA puts their perfect 7-0 record and the Women's College Basketball Belt on the line when they host Pennsylvania at Pauley Pavilion. The Bruins have defended the belt 7 times in this reign, while the Quakers seek their first-ever taste of championship hardware in this lineal format.",
   "key_matchups": [
-   "UCLA's perfect 6-0 start and five-game winning streak against St. John's stumbling into this matchup after their 63-77 loss at Oklahoma State",
-   "The Bruins' dominant recent form, including a 90-80 road win at Tennessee, versus St. John's offensive firepower shown in their 102-33 demolition of Wagner",
-   "UCLA's 3-0 all-time edge in this series, with the teams meeting for the first time ever with the belt on the line"
+   "UCLA's perfect season and 5-game winning streak against Pennsylvania's 6-1 record and 3-game win streak",
+   "UCLA's dominant home performance, including a 96\u201334 rout of Cal Poly, versus Pennsylvania's road resilience shown in wins at Maine and Saint Joseph's",
+   "Pennsylvania's first-ever shot at belt glory against a UCLA program that has successfully defended 7 times already this season"
   ],
-  "betting_angles": "UCLA's undefeated record and five-game winning streak contrast sharply with St. John's coming off a loss. The Bruins have won all three previous meetings, most recently 73-65 in 2021, and our Elo model makes them a clear favorite. UCLA's recent victory margins have been impressive, including wins of 96-34 over Cal Poly and 76-44 over Arizona.",
+  "betting_angles": "UCLA enters as the Elo favorite with a flawless 7-0 record and momentum from five straight wins, including an impressive 69\u201356 road victory at St. John's. Pennsylvania's only blemish this season was a 60\u201371 loss to North Carolina, but they've bounced back with three consecutive victories. The Bruins have shown both offensive firepower and defensive discipline across their recent stretch.",
   "predicted_winner": "UCLA",
-  "predicted_score": "UCLA 78, St. John's 65",
-  "prediction_writeup": "UCLA's perfect 6-0 record and momentum from five straight wins, capped by a road victory at Tennessee, position them well to extend their belt reign. The Bruins have dominated this series historically, winning all three prior meetings including a 73-65 decision in their most recent 2021 encounter. St. John's enters having just lost 63-77 at Oklahoma State, breaking a three-game winning streak. With the Elo model favoring UCLA clearly and the Bruins showing consistent dominance this season, they should retain the belt in this neutral-site clash.",
-  "written": "2026-11-23",
+  "predicted_score": "UCLA 73, Pennsylvania 58",
+  "prediction_writeup": "UCLA's undefeated record and status as the Elo favorite suggest they should retain the belt at home. The Bruins have demonstrated versatility, from the 96\u201334 demolition of Cal Poly to grinding out a 55\u201334 win over Princeton. Pennsylvania has played well with wins at Maine and Saint Joseph's, but their 60\u201371 loss to North Carolina shows they can be vulnerable against elite competition. UCLA's 7 successful belt defenses this season indicate a team that knows how to protect what's theirs, and that trend should continue on their home court.",
+  "written": "2026-11-25",
   "model": "claude-sonnet-4-5",
   "factcheck": {
    "attempts": 2,
-   "dropped": [
-    "24"
-   ]
+   "dropped": []
   }
  }
 }

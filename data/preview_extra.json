@@ -1,19 +1,15 @@
 {
- "key": "11|235|2026-11-24",
- "updated": "2026-11-24T14:13Z",
- "start_utc": "2026-11-24T22:00Z",
+ "key": "11|193|2026-12-01",
+ "updated": "2026-11-25T00:05Z",
+ "start_utc": "2026-12-02T02:00Z",
  "espn": {
-  "event_id": "401921710",
-  "start_utc": "2026-11-24T22:00Z",
+  "event_id": "401909744",
+  "start_utc": "2026-12-02T02:00Z",
   "state": "pre",
   "tv": [
-   "ESPN2"
+   "ESPN+"
   ],
-  "odds": {
-   "details": "ARIZ -7.5",
-   "over_under": 155.5,
-   "provider": "DraftKings"
-  },
+  "odds": null,
   "teams": {
    "11": {
     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
@@ -21,41 +17,32 @@
     "record": "5-1",
     "rank": 8,
     "home_away": "home"
-   },
-   "235": {
-    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2507.png",
-    "abbr": "PROV",
-    "record": "5-1",
-    "rank": null,
-    "home_away": "away"
    }
   },
   "venue": {
-   "name": "Lahaina Civic Center",
-   "city": "Maui",
-   "state": "HI",
+   "name": "McKale Center at ALKEME Arena",
+   "city": "Tucson",
+   "state": "AZ",
    "indoor": true
   }
  },
  "weather": null,
  "ai": {
-  "overview": "The Wildcats have defended the belt once in their current reign and will look to extend it against a Friars squad that has held the hardware twice before. This marks the first time these programs have ever met with the belt on the line.",
+  "overview": "Arizona puts the College Basketball Belt on the line when they host New Orleans on December 1, 2026. The Wildcats have defended the belt once in their current reign and look to extend their streak against a Privateers squad that has never held the championship. This marks the first time these programs will meet with the belt at stake.",
   "key_matchups": [
-   "Arizona's 5-game winning streak meets Providence's 4-game surge in a clash of hot teams",
-   "The all-time head-to-head stands dead even at 3-3 across 6 meetings, with Providence winning the last encounter 69-65 in 2015",
-   "Both teams enter at 5-1, but Arizona's recent wins include impressive performances against UConn and Auburn"
+   "Arizona riding a 5-game winning streak including wins over UConn and Auburn",
+   "New Orleans seeking their first-ever belt after three all-time losses to Arizona",
+   "Wildcats' high-scoring offense averaging over 90 points in recent games"
   ],
-  "betting_angles": "Arizona has been rolling with five straight wins, including an 85-79 victory over UConn and an 80-69 road win at Auburn. Providence counters with four consecutive victories, most recently 72-66 over VCU and 67-53 over Colorado. Our Elo model gives Arizona a clear edge despite the even 3-3 all-time series.",
+  "betting_angles": "Arizona enters on a 5-game winning streak with commanding victories, including a 96\u201383 win over Colorado State and an 80\u201369 road win at Auburn. New Orleans has struggled recently with losses of 41\u201386 at Texas Tech and 57\u2013100 at LSU before their most recent 75\u201370 win at Texas Southern. Our Elo model makes Arizona a clear favorite, and the Wildcats hold a 3-0 all-time edge in this series.",
   "predicted_winner": "Arizona",
-  "predicted_score": "Arizona 78, Providence 71",
-  "prediction_writeup": "Arizona's current form is exceptional, with five straight wins including quality victories over UConn and at Auburn. The Wildcats have been scoring efficiently, posting 96, 85, 80, 90, and 104 points in their last five outings. While Providence has won four straight and matches Arizona's 5-1 record, the Friars' recent opponents haven't matched the caliber of Arizona's schedule. The Elo model's clear edge for Arizona, combined with their offensive firepower, suggests the Wildcats keep the belt on this neutral court.",
-  "written": "2026-11-24",
+  "predicted_score": "Arizona 88, New Orleans 64",
+  "prediction_writeup": "Arizona has been dominant with five straight wins and owns a perfect 3-0 record against New Orleans all-time. The Wildcats have been scoring efficiently, posting 96 against Colorado State and 104 against Cal Poly in their last five games. New Orleans has struggled on the road this season with heavy defeats at Texas Tech and LSU. With the belt on the line at home and momentum firmly on their side, Arizona should retain the championship comfortably.",
+  "written": "2026-11-25",
   "model": "claude-sonnet-4-5",
   "factcheck": {
    "attempts": 2,
-   "dropped": [
-    "24"
-   ]
+   "dropped": []
   }
  }
 }
