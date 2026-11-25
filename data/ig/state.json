@@ -23,24 +23,10 @@
   "2026-11-23 10:01 preview cbb|Arizona|Colorado State|2026-11-23 https://www.instagram.com/p/DgFp9DdINJI/",
   "2026-11-24 02:15 result cbb|Arizona|Colorado State|2026-11-23 https://www.instagram.com/p/DgHZYy9EYdB/",
   "2026-11-24 13:58 preview cbb|Arizona|Providence|2026-11-24 https://www.instagram.com/p/DgIp1sglILt/",
-  "2026-11-24 13:58 preview wcbb|UCLA|St. John's|2026-11-24 https://www.instagram.com/p/DgIp4b7lOQW/"
+  "2026-11-24 13:58 preview wcbb|UCLA|St. John's|2026-11-24 https://www.instagram.com/p/DgIp4b7lOQW/",
+  "2026-11-25 00:08 result cbb|Arizona|Providence|2026-11-24 https://www.instagram.com/p/DgJvpOegGKY/"
  ],
  "pending": {
-  "cbb|Arizona|Providence|2026-11-24": {
-   "belt_name": "The College Basketball Belt",
-   "date": "2026-11-24",
-   "defenses": 1,
-   "espn_id": "401921710",
-   "espn_path": "basketball/mens-college-basketball",
-   "game_no": 2547,
-   "holder": "Arizona",
-   "holder_short": "Arizona",
-   "lg": "cbb",
-   "opponent": "Providence",
-   "opponent_short": "Providence",
-   "reign_no": 16,
-   "since": "2026-11-18"
-  },
   "wcbb|UCLA|St. John's|2026-11-24": {
    "belt_name": "The Women's College Basketball Belt",
    "date": "2026-11-24",
@@ -83,6 +69,7 @@
   "cbb|UConn|Arizona|2026-11-18",
   "wcbb|UCLA|Cal Poly|2026-11-19",
   "wcbb|UCLA|Tennessee|2026-11-22",
-  "cbb|Arizona|Colorado State|2026-11-23"
+  "cbb|Arizona|Colorado State|2026-11-23",
+  "cbb|Arizona|Providence|2026-11-24"
  ]
 }
