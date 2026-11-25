@@ -25,25 +25,10 @@
   "2026-11-24 13:58 preview cbb|Arizona|Providence|2026-11-24 https://www.instagram.com/p/DgIp1sglILt/",
   "2026-11-24 13:58 preview wcbb|UCLA|St. John's|2026-11-24 https://www.instagram.com/p/DgIp4b7lOQW/",
   "2026-11-25 00:08 result cbb|Arizona|Providence|2026-11-24 https://www.instagram.com/p/DgJvpOegGKY/",
-  "2026-11-25 00:08 result wcbb|UCLA|St. John's|2026-11-24 https://www.instagram.com/p/DgJvsCUgEh2/"
+  "2026-11-25 00:08 result wcbb|UCLA|St. John's|2026-11-24 https://www.instagram.com/p/DgJvsCUgEh2/",
+  "2026-11-25 17:03 result cbb|Arizona|Ole Miss|2026-11-25 https://www.instagram.com/p/DgLjyTjn3r4/"
  ],
- "pending": {
-  "cbb|Arizona|Ole Miss|2026-11-25": {
-   "belt_name": "The College Basketball Belt",
-   "date": "2026-11-25",
-   "defenses": 2,
-   "espn_id": "401921715",
-   "espn_path": "basketball/mens-college-basketball",
-   "game_no": 2548,
-   "holder": "Arizona",
-   "holder_short": "Arizona",
-   "lg": "cbb",
-   "opponent": "Ole Miss",
-   "opponent_short": "Ole Miss",
-   "reign_no": 16,
-   "since": "2026-11-18"
-  }
- },
+ "pending": {},
  "previews": [
   "wcbb|UCLA|UC Irvine|2026-11-05",
   "cbb|Michigan|UConn|2026-11-06",
@@ -72,6 +57,7 @@
   "wcbb|UCLA|Tennessee|2026-11-22",
   "cbb|Arizona|Colorado State|2026-11-23",
   "cbb|Arizona|Providence|2026-11-24",
-  "wcbb|UCLA|St. John's|2026-11-24"
+  "wcbb|UCLA|St. John's|2026-11-24",
+  "cbb|Arizona|Ole Miss|2026-11-25"
  ]
 }
