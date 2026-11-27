@@ -1369,8 +1369,8 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401903558,2026-11-26,16:00,2027,regular,,final,Washington State,Kansas,265,2305,58,69,1,Pac-12,Big 12,,,Hard Rock Hotel Riviera Maya,Cancun,Mexico,Cancun Challenge - Riviera Division
 401916120,2026-11-26,17:30,2027,regular,,final,Texas Tech,Air Force,2641,2005,66,60,1,Big 12,Mountain West,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,Paradise Jam - Island Division
 401903570,2026-11-26,18:30,2027,regular,,final,Missouri State,Minnesota,2623,135,54,89,1,CUSA,Big Ten,,,Hard Rock Hotel Riviera Maya,Cancun,Mexico,Cancun Challenge - Riviera Division
-401913021,2026-11-26,20:00,2027,regular,,scheduled,Santa Clara,Xavier,2541,2752,,,1,WCC,Big East,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,Paradise Jam - Island Division
-401903571,2026-11-26,21:00,2027,regular,,scheduled,Miami (OH),Cincinnati,193,2132,,,1,MAC,Big 12,,,Hard Rock Hotel Riviera Maya,Cancun,Mexico,Cancun Challenge - Riviera Division
+401913021,2026-11-26,20:00,2027,regular,,final,Santa Clara,Xavier,2541,2752,89,80,1,WCC,Big East,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,Paradise Jam - Island Division
+401903571,2026-11-26,21:00,2027,regular,,final,Miami (OH),Cincinnati,193,2132,70,56,1,MAC,Big 12,,,Hard Rock Hotel Riviera Maya,Cancun,Mexico,Cancun Challenge - Riviera Division
 401915694,2026-11-27,,2027,regular,,scheduled,TBD,Manhattan,-1,2363,,,,,Metro,,,,,,FIU Tournament
 401915875,2026-11-27,10:00,2027,regular,,scheduled,Boise State,Stetson,68,56,,,1,Pac-12,Atlantic Sun,,,Ocean Center,Daytona Beach,FL,Daytona Beach Classic
 401921081,2026-11-27,10:00,2027,regular,,scheduled,George Mason,Vermont,2244,261,,,1,A10,Am. East,,,Ruben Rodriguez Coliseum,Bayamon,Puerto Rico,Puerto Rico Clasico
@@ -1404,7 +1404,6 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401916156,2026-11-27,14:30,2027,regular,,scheduled,BYU,Fairfield,252,2217,,,1,Big 12,Metro,,,McArthur Center,St. Petersburg,FL,St. Pete Showcase
 401927517,2026-11-27,14:30,2027,regular,,scheduled,Drexel,Southern Miss,2182,2572,,,1,CAA,Sun Belt,,,Hynes Athletics Center,New Rochelle,NY,Iona Turkey Tip-Off
 401929206,2026-11-27,14:30,2027,regular,,scheduled,St. John's,Richmond,2599,257,,,1,Big East,A10,,,Henrico Sports & Events Center,Glen Allen,VA,4 Tha Culture Holiday Classic
-401930135,2026-11-27,14:30,2027,regular,,scheduled,East Carolina,Gardner-Webb,151,2241,,,1,American,Big South,,,Haas Pavilion,Berkeley,CA,Raising the B.A.R. Invitational
 401917726,2026-11-27,15:00,2027,regular,,scheduled,Oral Roberts,Loyola Marymount,198,2351,,,1,Summit,WCC,,,The Pavilion,Las Vegas,NV,
 401918671,2026-11-27,15:00,2027,regular,,scheduled,Northwestern State,Louisiana,2466,309,,,,Southland,Sun Belt,,,Prather Coliseum,Natchitoches,LA,
 401919669,2026-11-27,15:00,2027,regular,,scheduled,Texas State,Bradley,326,71,,,,Pac-12,MVC,,,Strahan Arena at the University Events Center,San Marcos,TX,Texas State Tournament
@@ -1433,6 +1432,7 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401916121,2026-11-27,17:30,2027,regular,,scheduled,Baylor,Penn State,239,213,,,1,Big 12,Big Ten,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,Paradise Jam - Reef Division
 401918728,2026-11-27,17:30,2027,regular,,scheduled,St. Thomas,Cal State Northridge,2900,2463,,,1,Summit,Big West,,,Dale E. and Sarah Ann Fowler Events Center,Riverside,CA,CBU Classic
 401920255,2026-11-27,17:30,2027,regular,,scheduled,UNLV,Butler,2439,2086,,,,Mountain West,Big East,,,Thomas & Mack Center,Las Vegas,NV,UNLV Thanksgiving Turkey Tip-Off
+401930135,2026-11-27,17:30,2027,regular,,scheduled,East Carolina,Gardner-Webb,151,2241,,,1,American,Big South,,,Haas Pavilion,Berkeley,CA,Raising the B.A.R. Invitational
 401917725,2026-11-27,18:00,2027,regular,,scheduled,UTEP,Pacific,2638,279,,,1,Mountain West,WCC,,,Strahan Arena at the University Events Center,San Marcos,TX,Texas State Tournament
 401918785,2026-11-27,18:00,2027,regular,,scheduled,Omaha,Detroit Mercy,2437,2174,,,1,Summit,Horizon,,,Knapp Center,Des Moines,IA,Drake Thanksgiving Classic
 401928282,2026-11-27,18:00,2027,regular,,scheduled,Fresno State,UL Monroe,278,2433,,,1,Pac-12,Sun Belt,,,John A. Alario Sr. Event Center,Westwego,LA,Big Easy Classic
@@ -1448,8 +1448,8 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401920500,2026-11-27,19:30,2027,regular,,scheduled,Wyoming,Utah State,2751,328,,,1,Mountain West,Pac-12,,,Bren Events Center,Irvine,CA,UC Irvine Thanksgiving Classic
 401926052,2026-11-27,19:30,2027,regular,,scheduled,North Texas,Wofford,249,2747,,,,American,SoCon,,,The Super Pit,Denton,TX,
 401913030,2026-11-27,20:00,2027,regular,,scheduled,Seton Hall,South Florida,2550,58,,,1,Big East,American,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,Paradise Jam - Reef Division
-401920270,2026-11-27,20:00,2027,regular,,scheduled,Nevada,New Mexico State,2440,166,,,,Mountain West,CUSA,,,Lawlor Events Center,Reno,NV,Nugget Classic
 401903575,2026-11-27,21:00,2027,regular,,scheduled,Minnesota,Cincinnati,135,2132,,,1,Big Ten,Big 12,,,Hard Rock Hotel Riviera Maya,Cancun,Mexico,Cancun Challenge - Riviera Division
+401920270,2026-11-27,21:00,2027,regular,,scheduled,Nevada,New Mexico State,2440,166,,,,Mountain West,CUSA,,,Lawlor Events Center,Reno,NV,Nugget Classic
 401931130,2026-11-28,,2027,regular,,scheduled,California,East Carolina,25,151,,,,ACC,American,,,Haas Pavilion,Berkeley,CA,Raising the B.A.R. Invitational
 401903576,2026-11-28,11:00,2027,regular,,scheduled,Maryland Eastern Shore,Colorado,2379,38,,,1,MEAC,Big 12,,,Hard Rock Hotel Riviera Maya,Cancun,Mexico,Cancun Challenge - Mayan Division
 401915879,2026-11-28,11:00,2027,regular,,scheduled,Maine,Tulane,311,2655,,,1,Am. East,American,,,Ocean Center,Daytona Beach,FL,Daytona Beach Classic
@@ -1464,7 +1464,7 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401925625,2026-11-28,12:00,2027,regular,,scheduled,North Carolina Central,Alabama A&M,2428,2010,,,1,MEAC,SWAC,,,Colonial Life Arena,Columbia,SC,PowHER Player Classic
 401927960,2026-11-28,12:00,2027,regular,,scheduled,Morehead State,Western Kentucky,2413,98,,,1,OVC,CUSA,,,Abessinio Court at Eleanor R. Baldwin Arena,Boca Raton,FL,FAU Thanksgiving Classic
 401930136,2026-11-28,12:00,2027,regular,,scheduled,TBD,TBD,-1,-2,,,1,,,,,Haas Pavilion,Berkeley,CA,Raising the B.A.R. Invitational - Consolation
-401921212,2026-11-28,12:30,2027,regular,,scheduled,Air Force,TBD,2005,-2,,,1,Mountain West,,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,Paradise Jam - Island Division - Consolation
+401921212,2026-11-28,12:30,2027,regular,,scheduled,Air Force,Xavier,2005,2752,,,1,Mountain West,Big East,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,Paradise Jam - Island Division - Consolation
 401936135,2026-11-28,12:30,2027,regular,,scheduled,South Carolina State,Charleston Southern,2569,2127,,,1,MEAC,Big South,,,Mitchell Center,Mobile,AL,Jaguar Classic
 401913905,2026-11-28,13:00,2027,regular,,scheduled,Southern Illinois,West Florida,79,2697,,,1,MVC,Atlantic Sun,,,John A. Alario Sr. Event Center,Westwego,LA,Big Easy Classic
 401914494,2026-11-28,13:00,2027,regular,,scheduled,Loyola Maryland,Cornell,2352,172,,,,Patriot,Ivy,,,Reitz Arena,Baltimore,MD,
@@ -1498,7 +1498,7 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 401918729,2026-11-28,15:00,2027,regular,,scheduled,California Baptist,St. Thomas,2856,2900,,,,Big West,Summit,,,Dale E. and Sarah Ann Fowler Events Center,Riverside,CA,CBU Classic
 401919677,2026-11-28,15:00,2027,regular,,scheduled,Drake,Detroit Mercy,2181,2174,,,,MVC,Horizon,,,Knapp Center,Des Moines,IA,Drake Thanksgiving Classic
 401919712,2026-11-28,15:00,2027,regular,,scheduled,Murray State,Northern Kentucky,93,94,,,,MVC,Horizon,,,CFSB Center,Murray,KY,
-401921215,2026-11-28,15:00,2027,regular,,scheduled,TBD,TBD,-1,-2,,,1,,,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,Paradise Jam - Island Division - Championship
+401921215,2026-11-28,15:00,2027,regular,,scheduled,Santa Clara,Texas Tech,2541,2641,,,1,WCC,Big 12,,,Elridge Blake Sports and Fitness Center,Charlotte Amalie,Virgin Islands,Paradise Jam - Island Division - Championship
 401927002,2026-11-28,15:00,2027,regular,,scheduled,Portland State,UC Santa Barbara,2502,2540,,,,Big Sky,Big West,,,Viking Pavilion,Portland,OR,
 401915881,2026-11-28,15:30,2027,regular,,scheduled,Kentucky,South Dakota State,96,2571,,,1,SEC,Summit,,,Ocean Center,Daytona Beach,FL,Daytona Beach Classic
 401923334,2026-11-28,15:30,2027,regular,,scheduled,UT Arlington,Fresno State,250,278,,,1,UAC,Pac-12,,,John A. Alario Sr. Event Center,Westwego,LA,Big Easy Classic
