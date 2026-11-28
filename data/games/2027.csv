@@ -1470,7 +1470,6 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 375353,2026-11-26,22:30,2027,regular,,final,Omaha,Pacific,221,225,62,71,1,Summit,WCC,,,Resorts World Event Center,Las Vegas,NV,
 378721,2026-11-26,23:53,2027,regular,,final,Baylor,Gonzaga,20,102,64,72,1,Big 12,Pac-12,,,T-Mobile Arena,Las Vegas,NV,Players Era 16
 378720,2026-11-26,23:57,2027,regular,,final,Oregon,Texas Tech,223,298,59,62,1,Big Ten,Big 12,,,Michelob ULTRA Arena,Las Vegas,NV,Players Era 16
-372953,2026-11-27,,2027,regular,,scheduled,UC Davis,Pacific,307,225,0,0,1,Mountain West,WCC,,,University Credit Union Center,Davis,CA,
 375358,2026-11-27,,2027,regular,,scheduled,Tulsa,Central Michigan,304,45,0,0,1,American,MAC,,,Reynolds Center,Tulsa,OK,
 375374,2026-11-27,11:00,2027,regular,,final,Virginia,Xavier,339,359,83,71,1,ACC,Big East,,,Imperial Arena,Nassau,,Battle 4 Atlantis
 375367,2026-11-27,12:00,2027,regular,,final,St. Thomas-Minnesota,Liberty,280,142,67,76,1,Summit,CUSA,,,Trask Coliseum,Wilmington,NC,
@@ -1497,36 +1496,37 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 372955,2026-11-27,16:00,2027,regular,,final,George Washington,UMBC,96,317,91,51,,A-10,Am. East,,,Charles E. Smith Center,Washington,DC,
 372959,2026-11-27,16:00,2027,regular,,final,American University,Radford,8,239,64,62,,Patriot,Big South,,,Bender Arena,Washington,DC,Capital Thanksgiving Classic
 375366,2026-11-27,16:00,2027,regular,,final,Missouri,Arkansas-Pine Bluff,177,14,97,61,,SEC,SWAC,,,Mizzou Arena,Columbia,MO,
-375361,2026-11-27,16:30,2027,regular,,in_progress,Lafayette,Niagara,138,194,0,0,,Patriot,Metro,,,Kirby Sports Center,Easton,PA,Lafayette Classic
+375361,2026-11-27,16:30,2027,regular,,final,Lafayette,Niagara,138,194,82,54,,Patriot,Metro,,,Kirby Sports Center,Easton,PA,Lafayette Classic
 377907,2026-11-27,16:30,2027,regular,,final,Boston College,Cincinnati,26,51,59,70,1,ACC,Big 12,,,State Farm Field House,Kissimmee,FL,ESPN Events Invitational
-372957,2026-11-27,17:00,2027,regular,,in_progress,Kansas,Villanova,131,338,0,0,,Big 12,Big East,,,Allen Fieldhouse,Lawrence,KS,
-375370,2026-11-27,17:00,2027,regular,,in_progress,Virginia Tech,Old Dominion,340,219,0,0,,ACC,Sun Belt,,,Cassell Coliseum,Blacksburg,VA,
-375381,2026-11-27,17:00,2027,regular,,in_progress,Texas A&M,Marquette,293,157,0,0,1,SEC,Big East,,,Imperial Arena,Nassau,,Battle 4 Atlantis
+372957,2026-11-27,17:00,2027,regular,,final,Kansas,Villanova,131,338,65,50,,Big 12,Big East,,,Allen Fieldhouse,Lawrence,KS,
+375370,2026-11-27,17:00,2027,regular,,final,Virginia Tech,Old Dominion,340,219,70,61,,ACC,Sun Belt,,,Cassell Coliseum,Blacksburg,VA,
+375381,2026-11-27,17:00,2027,regular,,final,Texas A&M,Marquette,293,157,78,76,1,SEC,Big East,,,Imperial Arena,Nassau,,Battle 4 Atlantis
 378729,2026-11-27,17:00,2027,regular,,in_progress,Texas,TBD,295,1217,0,0,1,SEC,,,,Jenny Craig Pavilion,San Diego,CA,Rady Children's Invitational - Championship
-378128,2026-11-27,17:30,2027,regular,,in_progress,Boise State,Drake,25,70,0,0,1,Pac-12,MVC,,,Mountain America Center,Idaho Falls,ID,Snake River Invitational
-378731,2026-11-27,17:41,2027,regular,,scheduled,Kansas State,Michigan,132,170,0,0,1,Big 12,Big Ten,,,T-Mobile Arena,Las Vegas,NV,Players Era 16 - Seventh Place Game
-372951,2026-11-27,18:00,2027,regular,,in_progress,Illinois,Western Kentucky,118,350,0,0,,Big Ten,CUSA,,,State Farm Center,Champaign,IL,
-372956,2026-11-27,18:00,2027,regular,,in_progress,Indiana,Bowling Green,121,28,0,0,,Big Ten,MAC,,,Simon Skjodt Assembly Hall,Bloomington,IN,
-378680,2026-11-27,18:00,2027,regular,,in_progress,South Carolina Upstate,Southern Wesleyan,268,691,0,0,,Big South,,,,G.B. Hodge Center,Spartanburg,SC,
-375382,2026-11-27,18:40,2027,regular,,scheduled,Pennsylvania,Towson,227,301,0,0,,Ivy,CAA,,,The Palestra,Philadelphia,PA,Cathedral Classic
-372952,2026-11-27,19:00,2027,regular,,scheduled,North Carolina,West Virginia,200,347,0,0,1,ACC,Big 12,,,Spectrum Center,Charlotte,NC,Dick Vitale Invitational presented by Belk
-372954,2026-11-27,19:00,2027,regular,,scheduled,East Tennessee State,Charleston Southern,75,47,0,0,,SoCon,Big South,,,Freedom Hall (TN),Johnson City,TN,ETSU MTE
-375373,2026-11-27,19:00,2027,regular,,scheduled,East Carolina,NC Wesleyan,74,519,0,0,,American,,,,Minges Coliseum,Greenville,NC,
-378131,2026-11-27,19:00,2027,regular,,scheduled,UCF,Georgia,312,98,0,0,1,Big 12,SEC,,,State Farm Field House,Kissimmee,FL,ESPN Events Invitational - Magic Bracket
-378132,2026-11-27,19:00,2027,regular,,scheduled,UC Santa Barbara,Lehigh,311,141,0,0,1,Big West,Patriot,,,Gilbert Arena,Thousand Oaks,CA,Gratitude Thanksgiving Classic
-375360,2026-11-27,19:30,2027,regular,,scheduled,Houston,Oakland,113,214,0,0,,Big 12,Horizon,,,Fertitta Center,Houston,TX,
-378726,2026-11-27,19:30,2027,regular,,scheduled,Penn State,Mississippi State,226,174,0,0,1,Big Ten,SEC,,,Imperial Arena,Nassau,,Battle 4 Atlantis - Championship Bracket
-375359,2026-11-27,20:00,2027,regular,,scheduled,North Texas,North Dakota State,204,202,0,0,1,American,Summit,,,Mountain America Center,Idaho Falls,ID,Snake River Invitational
-375364,2026-11-27,20:00,2027,regular,,scheduled,Washington State,Idaho,344,117,0,0,,Pac-12,Big Sky,,,Beasley Coliseum,Pullman,WA,
-375369,2026-11-27,20:00,2027,regular,,scheduled,Northwestern,Northeastern,212,205,0,0,,Big Ten,CAA,,,Welsh-Ryan Arena,Evanston,IL,
-378133,2026-11-27,20:00,2027,regular,,scheduled,Little Rock,Lane College,144,706,0,0,,UAC,,,,Jack Stephens Center,Little Rock,AR,
-378134,2026-11-27,20:00,2027,regular,,scheduled,Oral Roberts,Missouri State,222,176,0,0,,Summit,CUSA,,,Mabee Center,Tulsa,OK,
-378734,2026-11-27,20:30,2027,regular,,scheduled,Alabama,Miami,5,168,0,0,1,SEC,ACC,,,T-Mobile Arena,Las Vegas,NV,Players Era 16 - Fifth Place Game
-375371,2026-11-27,21:00,2027,regular,,scheduled,Kentucky,Wichita State,135,352,0,0,,SEC,American,,,Rupp Arena,Lexington,KY,
-378732,2026-11-27,21:00,2027,regular,,scheduled,Louisville,Tennessee,150,292,0,0,1,ACC,SEC,,,Michelob ULTRA Arena,Las Vegas,NV,Players Era 16 - Bracket Final
-378135,2026-11-27,22:30,2027,regular,,scheduled,Omaha,Jacksonville State,221,128,0,0,1,Summit,CUSA,,,Resorts World Event Center,Las Vegas,NV,Resorts World Classic
-378735,2026-11-27,23:00,2027,regular,,scheduled,Gonzaga,Creighton,102,61,0,0,1,Pac-12,Big East,,,T-Mobile Arena,Las Vegas,NV,Players Era 16 - Bracket Final
-378736,2026-11-27,23:30,2027,regular,,scheduled,San Diego State,Texas Tech,257,298,0,0,1,Pac-12,Big 12,,,Michelob ULTRA Arena,Las Vegas,NV,Players Era 16 - Fifth Place Game
+378128,2026-11-27,17:30,2027,regular,,final,Boise State,Drake,25,70,88,71,1,Pac-12,MVC,,,Mountain America Center,Idaho Falls,ID,Snake River Invitational
+378731,2026-11-27,17:41,2027,regular,,final,Kansas State,Michigan,132,170,69,98,1,Big 12,Big Ten,,,T-Mobile Arena,Las Vegas,NV,Players Era 16 - Seventh Place Game
+372951,2026-11-27,18:00,2027,regular,,final,Illinois,Western Kentucky,118,350,116,76,,Big Ten,CUSA,,,State Farm Center,Champaign,IL,
+372956,2026-11-27,18:00,2027,regular,,final,Indiana,Bowling Green,121,28,93,57,,Big Ten,MAC,,,Simon Skjodt Assembly Hall,Bloomington,IN,
+378680,2026-11-27,18:00,2027,regular,,final,South Carolina Upstate,Southern Wesleyan,268,691,87,78,,Big South,,,,G.B. Hodge Center,Spartanburg,SC,
+375382,2026-11-27,18:40,2027,regular,,final,Pennsylvania,Towson,227,301,61,72,,Ivy,CAA,,,The Palestra,Philadelphia,PA,Cathedral Classic
+372952,2026-11-27,19:00,2027,regular,,final,North Carolina,West Virginia,200,347,59,72,1,ACC,Big 12,,,Spectrum Center,Charlotte,NC,Dick Vitale Invitational presented by Belk
+372954,2026-11-27,19:00,2027,regular,,final,East Tennessee State,Charleston Southern,75,47,67,76,,SoCon,Big South,,,Freedom Hall (TN),Johnson City,TN,ETSU MTE
+375373,2026-11-27,19:00,2027,regular,,final,East Carolina,NC Wesleyan,74,519,92,43,,American,,,,Minges Coliseum,Greenville,NC,
+378131,2026-11-27,19:00,2027,regular,,final,UCF,Georgia,312,98,88,76,1,Big 12,SEC,,,State Farm Field House,Kissimmee,FL,ESPN Events Invitational - Magic Bracket
+378132,2026-11-27,19:00,2027,regular,,final,UC Santa Barbara,Lehigh,311,141,75,43,1,Big West,Patriot,,,Gilbert Arena,Thousand Oaks,CA,Gratitude Thanksgiving Classic
+375360,2026-11-27,19:30,2027,regular,,final,Houston,Oakland,113,214,77,46,,Big 12,Horizon,,,Fertitta Center,Houston,TX,
+378726,2026-11-27,19:30,2027,regular,,final,Penn State,Mississippi State,226,174,68,63,1,Big Ten,SEC,,,Imperial Arena,Nassau,,Battle 4 Atlantis - Championship Bracket
+372953,2026-11-27,20:00,2027,regular,,final,UC Davis,Pacific,307,225,61,78,1,Mountain West,WCC,,,University Credit Union Center,Davis,CA,
+375359,2026-11-27,20:00,2027,regular,,final,North Texas,North Dakota State,204,202,75,73,1,American,Summit,,,Mountain America Center,Idaho Falls,ID,Snake River Invitational
+375364,2026-11-27,20:00,2027,regular,,final,Washington State,Idaho,344,117,69,61,,Pac-12,Big Sky,,,Beasley Coliseum,Pullman,WA,
+375369,2026-11-27,20:00,2027,regular,,final,Northwestern,Northeastern,212,205,65,61,,Big Ten,CAA,,,Welsh-Ryan Arena,Evanston,IL,
+378133,2026-11-27,20:00,2027,regular,,final,Little Rock,Lane College,144,706,88,58,,UAC,,,,Jack Stephens Center,Little Rock,AR,
+378134,2026-11-27,20:00,2027,regular,,final,Oral Roberts,Missouri State,222,176,72,66,,Summit,CUSA,,,Mabee Center,Tulsa,OK,
+378734,2026-11-27,20:30,2027,regular,,final,Alabama,Miami,5,168,81,87,1,SEC,ACC,,,T-Mobile Arena,Las Vegas,NV,Players Era 16 - Fifth Place Game
+375371,2026-11-27,21:00,2027,regular,,final,Kentucky,Wichita State,135,352,71,73,,SEC,American,,,Rupp Arena,Lexington,KY,
+378732,2026-11-27,21:00,2027,regular,,final,Louisville,Tennessee,150,292,84,64,1,ACC,SEC,,,Michelob ULTRA Arena,Las Vegas,NV,Players Era 16 - Bracket Final
+378135,2026-11-27,22:30,2027,regular,,final,Omaha,Jacksonville State,221,128,78,69,1,Summit,CUSA,,,Resorts World Event Center,Las Vegas,NV,Resorts World Classic
+378735,2026-11-27,23:15,2027,regular,,final,Gonzaga,Creighton,102,61,89,97,1,Pac-12,Big East,,,T-Mobile Arena,Las Vegas,NV,Players Era 16 - Bracket Final
+378736,2026-11-27,23:30,2027,regular,,final,San Diego State,Texas Tech,257,298,75,78,1,Pac-12,Big 12,,,Michelob ULTRA Arena,Las Vegas,NV,Players Era 16 - Fifth Place Game
 372961,2026-11-28,,2027,regular,,scheduled,Nevada,Humboldt State,189,1234,0,0,,Mountain West,,,,Lawlor Events Center,Reno,NV,
 372963,2026-11-28,,2027,regular,,scheduled,Charleston Southern,Morehead State,47,181,0,0,1,Big South,OVC,,,Freedom Hall (TN),Johnson City,TN,ETSU MTE
 372964,2026-11-28,,2027,regular,,scheduled,Richmond,VMI,242,334,0,0,,A-10,SoCon,,,Robins Center,Richmond,VA,
@@ -1604,6 +1604,7 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 375435,2026-11-28,19:00,2027,regular,,scheduled,Cornell,St. Lawrence,60,1564,0,0,,Ivy,,,,Newman Arena,Ithaca,NY,
 372960,2026-11-28,20:00,2027,regular,,scheduled,Minnesota,California,173,40,0,0,1,Big Ten,ACC,,,Sanford Pentagon,Sioux Falls,SD,
 375436,2026-11-28,22:00,2027,regular,,scheduled,UC San Diego,Loyola Marymount,310,153,0,0,,Big West,WCC,,,LionTree Arena,San Diego,CA,
+378737,2026-11-28,22:30,2027,regular,,scheduled,Louisville,Creighton,150,61,0,0,1,ACC,Big East,,,Michelob ULTRA Arena,Las Vegas,NV,Players Era 16 - Championship
 375385,2026-11-29,,2027,regular,,scheduled,North Texas,Drake,204,70,0,0,1,American,MVC,,,Mountain America Center,Idaho Falls,ID,Snake River Invitational
 375437,2026-11-29,,2027,regular,,scheduled,SIU Edwardsville,UTSA,247,328,0,0,,OVC,American,,,First Community Arena,Edwardsville,IL,
 375442,2026-11-29,,2027,regular,,scheduled,Texas State,Nicholls,297,195,0,0,,Pac-12,Southland,,,Strahan Arena at the University Events Center,San Marcos,TX,
@@ -2205,15 +2206,12 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 375806,2026-12-12,,2027,regular,,scheduled,Delaware State,Longwood,67,147,0,0,,MEAC,Big South,,,Memorial Hall (DE),Dover,DE,
 375810,2026-12-12,,2027,regular,,scheduled,Loyola Chicago,IU Indianapolis,151,115,0,0,,A-10,Horizon,,,Gentile Arena,Chicago,IL,
 375811,2026-12-12,,2027,regular,,scheduled,Furman,North Carolina A&T,93,198,0,0,,SoCon,CAA,,,Timmons Arena,Greenville,SC,
-375812,2026-12-12,,2027,regular,,scheduled,Wagner,UMBC,341,317,0,0,,NEC,Am. East,,,Spiro Sports Center,Staten Island,NY,
 375813,2026-12-12,,2027,regular,,scheduled,Fresno State,San Francisco,92,259,0,0,,Pac-12,WCC,,,Save Mart Center,Fresno,CA,
 375814,2026-12-12,,2027,regular,,scheduled,Georgia Southern,UNC Wilmington,99,321,0,0,,Sun Belt,CAA,,,Jack and Ruth Ann Hill Convocation Center,Statesboro,GA,
 375815,2026-12-12,,2027,regular,,scheduled,Southeast Missouri State,Kansas City,272,130,0,0,,OVC,Summit,,,Show Me Center,Cape Girardeau,MO,
 375819,2026-12-12,,2027,regular,,scheduled,Jacksonville,Baptist (Fl),127,1540,0,0,,ASUN,,,,Swisher Gymnasium,Jacksonville,FL,
 375821,2026-12-12,,2027,regular,,scheduled,South Carolina,Youngstown State,266,361,0,0,,SEC,Horizon,,,Colonial Life Arena,Columbia,SC,
 375824,2026-12-12,,2027,regular,,scheduled,Duquesne,Canisius,73,42,0,0,,A-10,Metro,,,UPMC Cooper Fieldhouse,Pittsburgh,PA,
-375826,2026-12-12,,2027,regular,,scheduled,George Mason,Old Dominion,95,219,0,0,,A-10,Sun Belt,,,EagleBank Arena,Fairfax,VA,
-375827,2026-12-12,,2027,regular,,scheduled,Long Island University,Princeton,146,234,0,0,,NEC,Ivy,,,Steinberg Wellness Center,Brooklyn,NY,
 375832,2026-12-12,,2027,regular,,scheduled,Ole Miss,UL Monroe,220,316,0,0,,SEC,Sun Belt,,,The Sandy and John Black Pavilion at Ole Miss,Oxford,MS,
 375834,2026-12-12,,2027,regular,,scheduled,Pacific,Utah Valley,225,332,0,0,,WCC,Big West,,,Alex G. Spanos Center,Stockton,CA,
 375835,2026-12-12,,2027,regular,,scheduled,New Mexico,Saint Mary's,191,253,0,0,,Mountain West,WCC,,,The Pit,Albuquerque,NM,
@@ -2226,12 +2224,16 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 373137,2026-12-12,12:00,2027,regular,,scheduled,Georgetown,North Carolina,97,200,0,0,,Big East,ACC,,,Capital One Arena,Washington,DC,
 375823,2026-12-12,12:00,2027,regular,,scheduled,Florida,Georgia Tech,87,101,0,0,1,SEC,ACC,,,Kia Center,Orlando,FL,Hall of Fame Series - Orlando
 375837,2026-12-12,12:00,2027,regular,,scheduled,Wisconsin,Villanova,355,338,0,0,1,Big Ten,Big East,,,Wells Fargo Center,Philadelphia,PA,
+375826,2026-12-12,12:30,2027,regular,,scheduled,George Mason,Old Dominion,95,219,0,0,,A-10,Sun Belt,,,EagleBank Arena,Fairfax,VA,
 373122,2026-12-12,13:00,2027,regular,,scheduled,Gardner-Webb,Campbell,94,41,0,0,,Big South,CAA,,,Paul Porter Arena,Boiling Springs,NC,
 373125,2026-12-12,13:00,2027,regular,,scheduled,High Point,Miami (OH),109,167,0,0,,Big South,MAC,,,Qubein Center,High Point,NC,
 373127,2026-12-12,13:00,2027,regular,,scheduled,Western Michigan,Toledo,351,300,0,0,,MAC,MAC,,,University Arena (MI),Kalamazoo,MI,
+375812,2026-12-12,13:00,2027,regular,,scheduled,Wagner,UMBC,341,317,0,0,,NEC,Am. East,,,Spiro Sports Center,Staten Island,NY,
+375827,2026-12-12,13:00,2027,regular,,scheduled,Long Island University,Princeton,146,234,0,0,,NEC,Ivy,,,Steinberg Wellness Center,Brooklyn,NY,
 375838,2026-12-12,13:00,2027,regular,,scheduled,Wofford,Virginia-Lynchburg,356,584,0,0,,SoCon,,,,Jerry Richardson Indoor Stadium,Spartanburg,SC,
 375839,2026-12-12,13:00,2027,regular,,scheduled,Yale,UC Santa Barbara,360,311,0,0,1,Ivy,Big West,,,Lee's Family Forum,Henderson,NV,Jack Jones Classic
 375840,2026-12-12,13:00,2027,regular,,scheduled,New Hampshire,Dartmouth,190,62,0,0,,Am. East,Ivy,,,Lundholm Gymnasium,Durham,NH,
+375843,2026-12-12,13:00,2027,regular,,scheduled,Maine,Boston University,154,27,0,0,,Am. East,Patriot,,,The Pit in Memorial Gymnasium,Orono,ME,
 373119,2026-12-12,13:30,2027,regular,,scheduled,Minnesota,SMU,173,248,0,0,1,Big Ten,ACC,,,Comerica Center,Frisco,TX,
 373128,2026-12-12,14:00,2027,regular,,scheduled,Eastern Michigan,Central Michigan,79,45,0,0,,MAC,MAC,,,Gervin GameAbove Center,Ypsilanti,MI,
 373129,2026-12-12,14:00,2027,regular,,scheduled,Buffalo,Purdue Fort Wayne,33,237,0,,,MAC,Horizon,,,Alumni Arena,Buffalo,NY,
@@ -2243,7 +2245,6 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 375833,2026-12-12,14:00,2027,regular,,scheduled,Vanderbilt,West Georgia,336,346,0,0,,SEC,UAC,,,Memorial Gymnasium (TN),Nashville,TN,
 375841,2026-12-12,14:00,2027,regular,,scheduled,Quinnipiac,Hofstra,238,110,0,0,,Metro,CAA,,,M&T Bank Arena,Hamden,CT,
 375842,2026-12-12,14:00,2027,regular,,scheduled,Manhattan,City College NY,155,1221,0,0,,Metro,,,,Draddy Gymnasium,Riverdale,NY,
-375843,2026-12-12,14:00,2027,regular,,scheduled,Maine,Boston University,154,27,0,0,,Am. East,Patriot,,,The Pit in Memorial Gymnasium,Orono,ME,
 375844,2026-12-12,14:00,2027,regular,,scheduled,UMass Lowell,Stonehill,318,284,0,0,,Am. East,NEC,,,Costello Athletic Center,Lowell,MA,
 375845,2026-12-12,14:00,2027,regular,,scheduled,Tulane,Rhode Island,303,240,0,0,,American,A-10,,,Devlin Fieldhouse,New Orleans,LA,
 373118,2026-12-12,14:30,2027,regular,,scheduled,Notre Dame,Ohio State,213,216,0,0,,ACC,Big Ten,,,Purcell Pavilion,South Bend,IN,
@@ -2954,8 +2955,6 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 378321,2026-12-30,21:00,2027,regular,,scheduled,North Dakota,Minnesota Morris,201,1101,0,0,,Summit,,,,Betty Engelstad Sioux Center,Grand Forks,ND,
 373310,2026-12-31,,2027,regular,,scheduled,Weber State,Northern Arizona,345,206,0,0,,Big Sky,Big Sky,,,Dee Events Center,Ogden,UT,
 373312,2026-12-31,,2027,regular,,scheduled,Montana,Northern Colorado,179,207,0,0,,Big Sky,Big Sky,,,Dahlberg Arena,Missoula,MT,
-373313,2026-12-31,,2027,regular,,scheduled,Idaho,Utah Tech,117,330,0,0,,Big Sky,Big Sky,,,ICCU Arena,Moscow,ID,
-373314,2026-12-31,,2027,regular,,scheduled,Eastern Washington,Southern Utah,80,276,0,0,,Big Sky,Big Sky,,,Reese Court,Cheney,WA,
 373318,2026-12-31,,2027,regular,,scheduled,Georgia State,Southern Miss,100,275,0,0,,Sun Belt,Sun Belt,,,GSU Convocation Center,Atlanta,GA,
 373319,2026-12-31,,2027,regular,,scheduled,Georgia Southern,Louisiana,99,148,0,0,,Sun Belt,Sun Belt,,,Jack and Ruth Ann Hill Convocation Center,Statesboro,GA,
 373322,2026-12-31,,2027,regular,,scheduled,Eastern Illinois,Southeast Missouri State,77,272,0,0,,OVC,OVC,,,Groniger Arena,Charleston,IL,
@@ -2996,7 +2995,9 @@ id,date,start_et,season,season_type,tournament,status,home,away,home_id,away_id,
 376276,2026-12-31,17:00,2027,regular,,scheduled,UC Riverside,Cal Poly,309,35,0,0,,Big West,Big West,,,SRC Arena,Riverside,CA,
 376271,2026-12-31,19:00,2027,regular,,scheduled,Butler,UConn,34,314,0,0,,Big East,Big East,,,Hinkle Fieldhouse,Indianapolis,IN,
 376281,2026-12-31,19:00,2027,regular,,scheduled,West Florida,Eastern Kentucky,1073,78,0,0,,ASUN,UAC,,,UWF Field House,Pensacola,FL,
+373314,2026-12-31,20:00,2027,regular,,scheduled,Eastern Washington,Southern Utah,80,276,0,0,,Big Sky,Big Sky,,,Reese Court,Cheney,WA,
 373332,2026-12-31,20:30,2027,regular,,scheduled,Southern Indiana,Tennessee State,365,290,0,0,,OVC,OVC,,,Screaming Eagles Arena,Evansville,IN,
+373313,2026-12-31,21:00,2027,regular,,scheduled,Idaho,Utah Tech,117,330,0,0,,Big Sky,Big Sky,,,ICCU Arena,Moscow,ID,
 376282,2026-12-31,21:00,2027,regular,,scheduled,California Baptist,UC Santa Barbara,39,311,0,0,,Big West,Big West,,,Dale E. and Sarah Ann Fowler Events Center,Riverside,CA,
 376283,2026-12-31,21:00,2027,regular,,scheduled,Long Beach State,UC Irvine,145,308,0,0,,Big West,Big West,,,Walter Pyramid,Long Beach,CA,
 376284,2026-12-31,22:00,2027,regular,,scheduled,Sacramento State,Cal State Northridge,249,38,0,0,,Big West,Big West,,,The Well,Sacramento,CA,
